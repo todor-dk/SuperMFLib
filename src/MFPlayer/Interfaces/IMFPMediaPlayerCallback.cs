@@ -1,0 +1,54 @@
+#region license
+
+/*
+MediaFoundationLib - Provide access to MediaFoundation interfaces via .NET
+Copyright (C) 2007
+http://mfnet.sourceforge.net
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+#endregion
+
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security;
+
+using MediaFoundation.Misc;
+using System.Drawing;
+
+using MediaFoundation.EVR;
+
+namespace MediaFoundation.MFPlayer
+{
+
+#if ALLOW_UNTESTED_INTERFACES
+
+
+    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
+    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
+    Guid("766C8FFB-5FDB-4fea-A28D-B912996F51BD")]
+    public interface IMFPMediaPlayerCallback
+    {
+        [PreserveSig]
+        int OnMediaPlayerEvent(
+            [In, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(EHMarshaler))] MFP_EVENT_HEADER pEventHeader
+            );
+    }
+
+#endif
+
+}
