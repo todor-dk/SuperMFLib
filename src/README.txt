@@ -1,0 +1,1 @@
+﻿This project contains the Media Foundation .Net core.
