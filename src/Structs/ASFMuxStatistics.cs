@@ -34,10 +34,34 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains statistics about the progress of the ASF multiplexer.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct ASF_MUX_STATISTICS {
+    ///   DWORD cFramesWritten;
+    ///   DWORD cFramesDropped;
+    /// } ASF_MUX_STATISTICS;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/353EE03D-B706-4A70-9EAF-C14B47B5159A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/353EE03D-B706-4A70-9EAF-C14B47B5159A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("ASF_MUX_STATISTICS")]
     public struct ASFMuxStatistics
     {
+        /// <summary>
+        /// Number of frames written by the ASF multiplexer.
+        /// </summary>
         public int cFramesWritten;
+        /// <summary>
+        /// Number of frames dropped by the ASF multiplexer.
+        /// </summary>
         public int cFramesDropped;
     }
 

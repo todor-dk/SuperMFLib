@@ -36,12 +36,34 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Describes the rotation of the video image in the counter-clockwise direction.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/E2760742-3914-4B5C-87FB-38F2EF3025C3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E2760742-3914-4B5C-87FB-38F2EF3025C3(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFVideoRotationFormat")]
     public enum MFVideoRotationFormat
     {
+        /// <summary>
+        /// The image is not rotated.
+        /// </summary>
         R0 = 0,
+        /// <summary>
+        /// The image is rotated 90 degrees counter-clockwise.
+        /// </summary>
         R90 = 90,
+        /// <summary>
+        /// The image is rotated 180 degrees.
+        /// </summary>
         R180 = 180,
+        /// <summary>
+        /// The image is rotated 270 degrees counter-clockwise.
+        /// </summary>
         R270 = 270,
     }
 

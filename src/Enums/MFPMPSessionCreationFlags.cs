@@ -34,10 +34,30 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Contains flags that define the behavior of the <see cref="MFExtern.MFCreatePMPMediaSession"/>
+    /// function. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6341AAFF-AA80-4172-8577-0B757A01EA53(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6341AAFF-AA80-4172-8577-0B757A01EA53(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFPMPSESSION_CREATION_FLAGS")]
     public enum MFPMPSessionCreationFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// If this flag is set, the Protected Media Path (PMP) Media Session is created in an unprotected
+        /// process. You can use the unprotected process to play clear content but not protected content. If
+        /// this flag is not set, the PMP Media Session is created in a protected process. In that case, the
+        /// protected process is used for both protected content and clear content.
+        /// </summary>
         UnprotectedProcess = 0x1
     }
 

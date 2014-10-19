@@ -31,10 +31,27 @@ namespace MediaFoundation.Transform
 {
 
 
+    /// <summary>
+    /// Indicates the status of an input stream on a Media Foundation transform (MFT).
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/C63052A1-58B6-4537-9214-6F8D79A9EAFD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C63052A1-58B6-4537-9214-6F8D79A9EAFD(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("_MFT_INPUT_STATUS_FLAGS")]
     public enum MFTInputStatusFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The input stream can receive more data at this time. To deliver more input data, call 
+        /// <see cref="Transform.IMFTransform.ProcessInput"/>. 
+        /// </summary>
         AcceptData = 0x00000001
     }
 

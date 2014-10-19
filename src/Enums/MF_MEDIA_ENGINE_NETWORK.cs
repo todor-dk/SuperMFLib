@@ -35,12 +35,36 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines network status codes for the Media Engine.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/A2A73A54-C360-452C-8887-D3065274358A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A2A73A54-C360-452C-8887-D3065274358A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_NETWORK")]
     public enum MF_MEDIA_ENGINE_NETWORK : short
     {
+        /// <summary>
+        /// The initial state.
+        /// </summary>
         Empty = 0,
+        /// <summary>
+        /// The Media Engine has started the resource selection algorithm, and has selected a media resource,
+        /// but is not using the network.
+        /// </summary>
         Idle = 1,
+        /// <summary>
+        /// The Media Engine is loading a media resource.
+        /// </summary>
         Loading = 2,
+        /// <summary>
+        /// The Media Engine has started the resource selection algorithm, but has not selected a media
+        /// resource.
+        /// </summary>
         NoSource = 3
     }
 

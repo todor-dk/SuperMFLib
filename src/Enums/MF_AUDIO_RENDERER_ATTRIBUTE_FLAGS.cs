@@ -36,7 +36,7 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
-    [Flags, UnmanagedName("MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_* defines")]
+    [Flags, UnmanagedName("MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS")]
     public enum MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS
     {
         None = 0x00000000,

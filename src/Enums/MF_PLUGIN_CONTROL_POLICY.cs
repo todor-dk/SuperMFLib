@@ -35,11 +35,32 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines policy settings for the <see cref="IMFPluginControl2.SetPolicy"/> method. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/AEA55D69-B3F1-463E-9DEC-B6BF7B9859D6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AEA55D69-B3F1-463E-9DEC-B6BF7B9859D6(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_PLUGIN_CONTROL_POLICY")]
     public enum MF_PLUGIN_CONTROL_POLICY
     {
+        /// <summary>
+        /// Enumerate all registered sources and transforms.
+        /// </summary>
         UseAllPlugins = 0,
+        /// <summary>
+        /// Enumerate only approved sources and transforms. Third-party components are excluded unless the
+        /// component is registered with a valid merit value, or the component was registered locally by the
+        /// application.
+        /// </summary>
         UseApprovedPlugins = 1,
+        /// <summary>
+        /// Restrict enumeration to components intended for use in a web browser. 
+        /// </summary>
         UseWebPlugins = 2
     }
 

@@ -35,11 +35,39 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the background color for blit operations, when using Microsoft DirectX Video Acceleration
+    /// High Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA {
+    ///   BOOL         YCbCr;
+    ///   DXVAHD_COLOR BackgroundColor;
+    /// } DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/34B8C29E-A183-4E68-BD46-802C43D554F7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34B8C29E-A183-4E68-BD46-802C43D554F7(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA")]
     public struct DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA
     {
+        /// <summary>
+        /// If <strong>TRUE</strong>, the <strong>BackgroundColor</strong> member specifies a YCbCr color.
+        /// Otherwise, it specifies an RGB color. The default device state is <strong>FALSE</strong> (RGB
+        /// color).
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool YCbCr;
+        /// <summary>
+        /// A <see cref="dxvahd.DXVAHD_COLOR" /> union that specifies the background color. The default state
+        /// value is (0.0, 0.0, 0.0, 1.0).
+        /// </summary>
         public DXVAHD_COLOR BackgroundColor;
     }
 

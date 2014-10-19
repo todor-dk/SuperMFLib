@@ -35,12 +35,38 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines features that a Microsoft DirectX Video Acceleration High Definition (DXVA-HD) device can
+    /// support.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6014780B-3B8A-48D6-AE30-B48127A2C274(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6014780B-3B8A-48D6-AE30-B48127A2C274(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("DXVAHD_FEATURE_CAPS")]
     public enum DXVAHD_FEATURE_CAPS
     {
+        /// <summary>
+        /// The device can set the alpha values on the video output. See 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_ALPHA_FILL_DATA"/>. 
+        /// </summary>
         AlphaFill = 0x1,
+        /// <summary>
+        /// The device can downsample the video output. See 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_CONSTRICTION_DATA"/>. 
+        /// </summary>
         Constriction = 0x2,
+        /// <summary>
+        /// The device can perform luma keying. See <see cref="dxvahd.DXVAHD_STREAM_STATE_LUMA_KEY_DATA"/>. 
+        /// </summary>
         LumaKey = 0x4,
+        /// <summary>
+        /// The device can apply alpha values from color palette entries. See 
+        /// <see cref="dxvahd.DXVAHD_STREAM_STATE_ALPHA_DATA"/>. 
+        /// </summary>
         AlphaPalette = 0x8
     }
 

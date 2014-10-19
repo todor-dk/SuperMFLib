@@ -33,11 +33,40 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Contains information about a video compression format. This structure is used in the
+    /// <see cref="MFVideoFormat" /> structure.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFVideoCompressedInfo {
+    ///   LONGLONG AvgBitrate;
+    ///   LONGLONG AvgBitErrorRate;
+    ///   DWORD    MaxKeyFrameSpacing;
+    /// } MFVideoCompressedInfo;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/FE9AA287-33E9-4413-8BC5-0E7B2DA1112E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FE9AA287-33E9-4413-8BC5-0E7B2DA1112E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 8), UnmanagedName("MFVideoCompressedInfo")]
     public struct MFVideoCompressedInfo
     {
+        /// <summary>
+        /// Average bit rate of the encoded video stream, in bits per second.
+        /// </summary>
         public long AvgBitrate;
+        /// <summary>
+        /// Expected error rate, in bits per second.
+        /// </summary>
         public long AvgBitErrorRate;
+        /// <summary>
+        /// Number of frames between key frames.
+        /// </summary>
         public int MaxKeyFrameSpacing;
     }
 

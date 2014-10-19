@@ -35,11 +35,46 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Enables media sharing.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D56612FC-840A-41EE-B162-7AF16ED3D975(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D56612FC-840A-41EE-B162-7AF16ED3D975(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("8D3CE1BF-2367-40E0-9EEE-40D377CC1B46"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMediaSharingEngine : IMFMediaEngine
     {
+        /// <summary>
+        /// Gets information about the media sharing device.
+        /// </summary>
+        /// <param name="pDevice">
+        /// A pointer to a <see cref="DEVICE_INFO"/> structure. The method fills in this structure with the
+        /// device information. 
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetDevice(
+        ///   [out]  DEVICE_INFO *pDevice
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/29E536F3-E886-4DB6-8863-B4C0144FB693(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/29E536F3-E886-4DB6-8863-B4C0144FB693(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetDevice(
             out DEVICE_INFO pDevice

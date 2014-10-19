@@ -35,13 +35,44 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Identifies statistics that the Media Engine tracks during playback. To get a playback statistic
+    /// from the Media Engine, call <see cref="IMFMediaEngineEx.GetStatistics"/>. 
+    /// <para/>
+    /// In the descriptions that follow, the data type and value-type tag for the <c>PROPVARIANT</c> are
+    /// listed in parentheses. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/EB431C2F-69A3-4376-BEC7-A5AE0329AD15(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EB431C2F-69A3-4376-BEC7-A5AE0329AD15(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_STATISTIC")]
     public enum MF_MEDIA_ENGINE_STATISTIC
     {
+        /// <summary>
+        /// The number of rendered video frames. ( <strong>ULONG</strong>, <strong>VT_UI4</strong>) 
+        /// </summary>
         FramesRendered = 0,
+        /// <summary>
+        /// The number of dropped video frames. ( <strong>ULONG</strong>, <strong>VT_UI4</strong>) 
+        /// </summary>
         FramesDropped = 1,
+        /// <summary>
+        /// The number of bytes that have been downloaded since the last HTTP range request. ( <strong>
+        /// ULARGE_INTEGER</strong>, <strong>VT_UI8</strong>). 
+        /// </summary>
         BytesDownloaded = 2,
+        /// <summary>
+        /// The percentage of the playout buffer filled during buffering. The value is an integer in the range
+        /// 0–100. ( <strong>LONG</strong>, <strong>VT_I4</strong>) 
+        /// </summary>
         BufferProgress = 3,
+        /// <summary>
+        /// The frames per second. (<strong>FLOAT</strong>, <strong>VT_R4</strong>)
+        /// </summary>
         FramesPerSecond = 4
 
     }

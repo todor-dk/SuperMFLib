@@ -35,9 +35,26 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies whether the <see cref="OPM.IOPMVideoOutput"/> interface will use Output Protection
+    /// Manager (OPM) semantics or Certified Output Protection Protocol (COPP) semantics. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D52FBC40-072B-4B7A-87C2-B928563100BB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D52FBC40-072B-4B7A-87C2-B928563100BB(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public enum OPM_VIDEO_OUTPUT_SEMANTICS
     {
+        /// <summary>
+        /// The interface will use COPP semantics.
+        /// </summary>
         OPM_VOS_COPP_SEMANTICS = 0,
+        /// <summary>
+        /// The interface will use OPM semantics.
+        /// </summary>
         OPM_VOS_OPM_SEMANTICS = 1
     }
 

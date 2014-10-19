@@ -35,10 +35,48 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies how the output alpha values are calculated for blit operations when using Microsoft
+    /// DirectX Video Acceleration High Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_BLT_STATE_ALPHA_FILL_DATA {
+    ///   DXVAHD_ALPHA_FILL_MODE Mode;
+    ///   UINT                   StreamNumber;
+    /// } DXVAHD_BLT_STATE_ALPHA_FILL_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/DCD42210-D5F8-42C7-AAC0-08F0CE4B7AC9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DCD42210-D5F8-42C7-AAC0-08F0CE4B7AC9(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_ALPHA_FILL_DATA")]
     public struct DXVAHD_BLT_STATE_ALPHA_FILL_DATA
     {
+        /// <summary>
+        /// Specifies the alpha fill mode, as a member of the <see cref="dxvahd.DXVAHD_ALPHA_FILL_MODE" />
+        /// enumeration.
+        /// <para />
+        /// If the <strong>FeatureCaps</strong> member of the <see cref="dxvahd.DXVAHD_VPDEVCAPS" /> structure
+        /// does not contain the <strong>DXVAHD_FEATURE_CAPS_ALPHA_FILL</strong> flag, the alpha fill mode must
+        /// be set to <strong>DXVAHD_ALPHA_FILL_MODE_OPAQUE</strong>.
+        /// <para />
+        /// The default state value is <strong>DXVAHD_ALPHA_FILL_MODE_OPAQUE</strong>.
+        /// </summary>
         public DXVAHD_ALPHA_FILL_MODE Mode;
+        /// <summary>
+        /// Zero-based index of the input stream to use for the alpha values. This member is used when the
+        /// alpha fill mode is <strong>DXVAHD_ALPHA_FILL_MODE_SOURCE_STREAM</strong>; otherwise, the value is
+        /// ignored.
+        /// <para />
+        /// To get the maximum number of streams, call
+        /// <see cref="dxvahd.IDXVAHD_Device.GetVideoProcessorDeviceCaps" /> and check the <strong>
+        /// MaxStreamStates</strong> member of the <see cref="dxvahd.DXVAHD_VPDEVCAPS" /> structure.
+        /// </summary>
         public int StreamNumber;
     }
 

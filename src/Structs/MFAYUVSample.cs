@@ -34,12 +34,44 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Describes a 4:4:4:4 Y'Cb'Cr' sample.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct __MFAYUVSample {
+    ///   BYTE bCrValue;
+    ///   BYTE bCbValue;
+    ///   BYTE bYValue;
+    ///   BYTE bSampleAlpha8;
+    /// } MFAYUVSample;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/9784B561-3B87-4DF9-A434-55E12F97B05A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9784B561-3B87-4DF9-A434-55E12F97B05A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("MFAYUVSample")]
     public struct MFAYUVSample
     {
+        /// <summary>
+        /// Cr (chroma difference) value.
+        /// </summary>
         public byte bCrValue;
+        /// <summary>
+        /// Cb (chroma difference) value.
+        /// </summary>
         public byte bCbValue;
+        /// <summary>
+        /// Y (luma) value.
+        /// </summary>
         public byte bYValue;
+        /// <summary>
+        /// Alpha value.
+        /// </summary>
         public byte bSampleAlpha8;
     }
 

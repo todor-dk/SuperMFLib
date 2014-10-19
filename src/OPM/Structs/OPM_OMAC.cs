@@ -35,8 +35,28 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains a Message Authentication Code (MAC) for an <c>Output Protection Manager</c> (OPM) message.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _OPM_OMAC {
+    ///   BYTE abOMAC[OPM_OMAC_SIZE];
+    /// } OPM_OMAC;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6FF37A2A-9E63-4097-8EE6-BCC4BD580AB8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6FF37A2A-9E63-4097-8EE6-BCC4BD580AB8(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public struct OPM_OMAC
     {
+        /// <summary>
+        /// A buffer that contains the cryptographic MAC value of the message.
+        /// </summary>
         public Guid abOMAC;
     }
 

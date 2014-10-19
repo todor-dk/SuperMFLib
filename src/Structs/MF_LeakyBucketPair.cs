@@ -36,10 +36,34 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies the buffering requirements of a file.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MF_LEAKY_BUCKET_PAIR {
+    ///   DWORD dwBitrate;
+    ///   DWORD msBufferWindow;
+    /// } MF_LEAKY_BUCKET_PAIR;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/AA95A8F0-2F4C-4D7E-81C3-8A14A6FFA54E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AA95A8F0-2F4C-4D7E-81C3-8A14A6FFA54E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("MF_LEAKY_BUCKET_PAIR")]
     public struct MF_LeakyBucketPair
     {
+        /// <summary>
+        /// Bit rate, in bits per second.
+        /// </summary>
         public int dwBitrate;
+        /// <summary>
+        /// Size of the buffer window, in milliseconds.
+        /// </summary>
         public int msBufferWindow;
     }
 

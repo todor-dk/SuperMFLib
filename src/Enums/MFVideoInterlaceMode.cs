@@ -33,17 +33,59 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Specifies how a video stream is interlaced.
+    /// <para/>
+    /// In the descriptions that follow, upper field refers to the field that contains the leading half
+    /// scan line. Lower field refers to the field that contains the first full scan line.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/10A3D7B1-74ED-46CD-B10E-59A8F01726D5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/10A3D7B1-74ED-46CD-B10E-59A8F01726D5(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFVideoInterlaceMode")]
     public enum MFVideoInterlaceMode
     {
+        /// <summary>
+        /// Interlaced frames. Each frame contains two fields. The field lines are interleaved, with the lower
+        /// field appearing on the first line. 
+        /// </summary>
         FieldInterleavedLowerFirst = 4,
+        /// <summary>
+        /// Interlaced frames. Each frame contains two fields. The field lines are interleaved, with the upper
+        /// field appearing on the first line. 
+        /// </summary>
         FieldInterleavedUpperFirst = 3,
+        /// <summary>
+        /// Interlaced frames. Each frame contains one field, with the lower field appearing first. 
+        /// </summary>
         FieldSingleLower = 6,
+        /// <summary>
+        /// Interlaced frames. Each frame contains one field, with the upper field appearing first. 
+        /// </summary>
         FieldSingleUpper = 5,
+        /// <summary>
+        /// Reserved. This member forces the enumeration type to compile as a <strong>DWORD</strong> value. 
+        /// </summary>
         ForceDWORD = 0x7fffffff,
+        /// <summary>
+        /// Reserved. 
+        /// </summary>
         Last = 8,
+        /// <summary>
+        /// The stream contains a mix of interlaced and progressive modes. 
+        /// </summary>
         MixedInterlaceOrProgressive = 7,
+        /// <summary>
+        /// Progressive frames. 
+        /// </summary>
         Progressive = 2,
+        /// <summary>
+        /// The type of interlacing is not known. 
+        /// </summary>
         Unknown = 0
     }
 

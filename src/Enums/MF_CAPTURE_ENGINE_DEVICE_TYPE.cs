@@ -36,10 +36,26 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies a type of capture device.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/302C998E-51F6-4CEC-8940-DAF561D08EFD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/302C998E-51F6-4CEC-8940-DAF561D08EFD(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_CAPTURE_ENGINE_DEVICE_TYPE")]
     public enum MF_CAPTURE_ENGINE_DEVICE_TYPE
     {
+        /// <summary>
+        /// An audio capture device, such as a microphone.
+        /// </summary>
         Audio = 0x00000000,
+        /// <summary>
+        /// A video capture device, such as a webcam.
+        /// </summary>
         Video = 0x00000001
     }
 

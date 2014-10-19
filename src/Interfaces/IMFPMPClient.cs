@@ -37,11 +37,45 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Enables a media source to receive a pointer to the <see cref="IMFPMPHost"/> interface. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/ADFBA5DD-EAE6-48F3-A155-65BD491C952C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/ADFBA5DD-EAE6-48F3-A155-65BD491C952C(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("6C4E655D-EAD8-4421-B6B9-54DCDBBDF820")]
     public interface IMFPMPClient
     {
+        /// <summary>
+        /// Provides a pointer to the <see cref="IMFPMPHost"/> interface. 
+        /// </summary>
+        /// <param name="pPMPHost">
+        /// A pointer to the <see cref="IMFPMPHost"/> interface. 
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT SetPMPHost(
+        ///   [in]  IMFPMPHost *pPMPHost
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/D6E48F36-7896-4E6D-BA10-D8C0288CCFFC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D6E48F36-7896-4E6D-BA10-D8C0288CCFFC(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int SetPMPHost(
             [In, MarshalAs(UnmanagedType.Interface)] IMFPMPHost pPMPHost

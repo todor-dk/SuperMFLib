@@ -35,11 +35,40 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the intended use for a Microsoft DirectX Video Acceleration High Definition (DXVA-HD)
+    /// device.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D071DEA8-2BAB-4768-BDBE-86AF08A65DC5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D071DEA8-2BAB-4768-BDBE-86AF08A65DC5(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_DEVICE_USAGE")]
     public enum DXVAHD_DEVICE_USAGE
     {
+        /// <summary>
+        /// Normal video playback. The graphics driver should expose a set of capabilities that are appropriate
+        /// for real-time video playback.
+        /// </summary>
         PlaybackNormal = 0,
+        /// <summary>
+        /// Optimal speed.  The graphics driver should expose a minimal set of capabilities that are optimized
+        /// for performance.
+        /// <para/>
+        /// Use this setting if you want better performance and can accept some reduction in video quality. For
+        /// example, you might use this setting in power-saving mode or to play video thumbnails.
+        /// </summary>
         OptimalSpeed = 1,
+        /// <summary>
+        /// Optimal quality. The grahics driver should expose its maximum set of capabilities.
+        /// <para/>
+        /// Specify this setting to get the best video quality possible. It is appropriate for tasks such as
+        /// video editing, when quality is more important than speed. It is not appropriate for real-time
+        /// playback.
+        /// </summary>
         OptimalQuality = 2
     }
 

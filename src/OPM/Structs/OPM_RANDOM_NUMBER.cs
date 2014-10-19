@@ -35,8 +35,28 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains a 128-bit random number for use with <c>Output Protection Manager</c> (OPM).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _OPM_RANDOM_NUMBER {
+    ///   BYTE abRandomNumber[OPM_128_BIT_RANDOM_NUMBER_SIZE];
+    /// } OPM_RANDOM_NUMBER;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D3A5BE4B-39D1-43DA-B87E-AB4DD7815262(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D3A5BE4B-39D1-43DA-B87E-AB4DD7815262(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public struct OPM_RANDOM_NUMBER
     {
+        /// <summary>
+        /// A 128-bit array that contains a random number.
+        /// </summary>
         public Guid abRandomNumber;
     }
 

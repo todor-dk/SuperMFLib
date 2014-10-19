@@ -36,13 +36,38 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies values for audio constriction.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/EAFE3AA5-EF63-471A-9A67-A2EB298B0C0F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EAFE3AA5-EF63-471A-9A67-A2EB298B0C0F(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFAudioConstriction")]
     public enum MFAudioConstriction
     {
+        /// <summary>
+        /// Audio is not constricted. 
+        /// </summary>
         Off = 0,
+        /// <summary>
+        /// Audio is down sampled to 48 kHz/16-bit.
+        /// </summary>
         C48_16 = (Off + 1),
+        /// <summary>
+        /// Audio is down sampled to 44 kHz/16-bit.
+        /// </summary>
         C44_16 = (C48_16 + 1),
+        /// <summary>
+        /// Audio is down sampled to 14hKz/16-bit.
+        /// </summary>
         C14_14 = (C44_16 + 1),
+        /// <summary>
+        /// Audio is muted.
+        /// </summary>
         Mute = (C14_14 + 1)
     }
 

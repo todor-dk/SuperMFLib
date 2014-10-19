@@ -35,10 +35,26 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines values for the media engine seek mode.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/58356FC2-5F1E-463F-98D5-E63AFCC05A02(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/58356FC2-5F1E-463F-98D5-E63AFCC05A02(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_SEEK_MODE")]
     public enum MF_MEDIA_ENGINE_SEEK_MODE
     {
+        /// <summary>
+        /// Specifies normal seek.
+        /// </summary>
         Normal = 0,
+        /// <summary>
+        /// Specifies an approximate seek. 
+        /// </summary>
         Approximate = 1
     }
 

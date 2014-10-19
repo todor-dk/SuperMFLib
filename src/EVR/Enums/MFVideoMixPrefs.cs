@@ -34,14 +34,45 @@ namespace MediaFoundation.EVR
 {
 
 
+    /// <summary>
+    /// Contains flags that are used to configure how the enhanced video renderer (EVR) performs 
+    /// deinterlacing.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/28DCC8B1-684E-4178-9606-118E77D8FF58(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/28DCC8B1-684E-4178-9606-118E77D8FF58(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFVideoMixPrefs")]
     public enum MFVideoMixPrefs
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Force the EVR  to skip the second field (in temporal order) of every interlaced frame. 
+        /// </summary>
         ForceHalfInterlace = 0x00000001,
+        /// <summary>
+        /// If the EVR is falling behind, allow it to skip the second field (in temporal order) of every
+        /// interlaced frame.
+        /// </summary>
         AllowDropToHalfInterlace = 0x00000002,
+        /// <summary>
+        /// If the EVR is falling behind, allow it to use bob deinterlacing, even if the driver supports a
+        /// higher-quality deinterlacing mode.
+        /// </summary>
         AllowDropToBob = 0x00000004,
+        /// <summary>
+        /// Force the EVR to use bob deinterlacing, even if the driver supports a higher-quality mode.
+        /// </summary>
         ForceBob = 0x00000008,
+        /// <summary>
+        /// The bitmask of valid flag values. This constant is not itself a valid flag. 
+        /// </summary>
         Mask = 0x0000000f
     }
 

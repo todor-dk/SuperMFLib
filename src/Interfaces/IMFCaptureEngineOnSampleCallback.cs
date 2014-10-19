@@ -36,11 +36,48 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Callback interface to receive data from the capture engine.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/7C621525-CCD2-45EC-9E7A-3A774B96EA6F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7C621525-CCD2-45EC-9E7A-3A774B96EA6F(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("52150b82-ab39-4467-980f-e48bf0822ecd"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFCaptureEngineOnSampleCallback
     {
+        /// <summary>
+        /// Called when the capture sink receives a sample.
+        /// </summary>
+        /// <param name="pSample">
+        /// A pointer to the <see cref="IMFSample"/> interface. Use this interface to get the time stamp,
+        /// duration, and stream data. For more information, see <c>Media Samples</c>. This parameter can be 
+        /// <strong>NULL</strong>, so make sure to check for a <strong>NULL</strong> value before you
+        /// dereference the pointer. 
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT OnSample(
+        ///   [in, optional]  IMFSample pSample
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/83FEFE33-DEAD-4CE0-9EEE-B8F3801ADC1C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/83FEFE33-DEAD-4CE0-9EEE-B8F3801ADC1C(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int OnSample(
             IMFSample pSample

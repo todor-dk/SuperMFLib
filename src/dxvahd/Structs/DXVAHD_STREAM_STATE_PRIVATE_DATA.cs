@@ -35,11 +35,49 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains data for a private stream state, for  a Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD) input stream. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_PRIVATE_DATA {
+    ///   GUID Guid;
+    ///   UINT DataSize;
+    ///   void *pData;
+    /// } DXVAHD_STREAM_STATE_PRIVATE_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/3B7CE487-EDEC-4FF2-B971-72DDCC28162C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3B7CE487-EDEC-4FF2-B971-72DDCC28162C(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_PRIVATE_DATA")]
     public struct DXVAHD_STREAM_STATE_PRIVATE_DATA
     {
+        /// <summary>
+        /// A GUID that identifies the private stream state. The following GUID is defined.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Value</term><description>Meaning</description></listheader>
+        /// <item><term><strong>DXVAHD_STREAM_STATE_PRIVATE_IVTC</strong></term><description>Retrieves statistics about inverse telecine. The state data ( <strong>pData</strong>) is a <see cref="dxvahd.DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA"/> structure. </description></item>
+        /// </list>
+        /// <para/>
+        /// A device can define additional GUIDs for use with custom stream states. The interpretation of the
+        /// data is then defined by the device.
+        /// </summary>
         public Guid Guid;
+        /// <summary>
+        /// The size, in bytes, of the buffer pointed to by the <strong>pData</strong> member. 
+        /// </summary>
         public int DataSize;
+        /// <summary>
+        /// A pointer to a buffer that contains the private state data. The DXVA-HD runtime passes this buffer
+        /// directly to the device, without validation.
+        /// </summary>
         public IntPtr pData;
     }
 

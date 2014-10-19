@@ -35,12 +35,44 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies an RGB color value.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_COLOR_RGBA {
+    ///   FLOAT R;
+    ///   FLOAT G;
+    ///   FLOAT B;
+    ///   FLOAT A;
+    /// } DXVAHD_COLOR_RGBA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/60A167CB-F95E-4EB5-995F-BE4CCEAEE47D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/60A167CB-F95E-4EB5-995F-BE4CCEAEE47D(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_COLOR_RGBA")]
     public struct DXVAHD_COLOR_RGBA
     {
+        /// <summary>
+        /// The red value.
+        /// </summary>
         public float R;
+        /// <summary>
+        /// The green value.
+        /// </summary>
         public float G;
+        /// <summary>
+        /// The blue value.
+        /// </summary>
         public float B;
+        /// <summary>
+        /// The alpha value. Values range from 0 (transparent) to 1 (opaque).
+        /// </summary>
         public float A;
     }
 

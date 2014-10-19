@@ -35,11 +35,30 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Describes how a video stream is interlaced.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/FC720DD3-E9C1-4B92-AC09-8E53CFF44BEC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FC720DD3-E9C1-4B92-AC09-8E53CFF44BEC(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_FRAME_FORMAT")]
     public enum DXVAHD_FRAME_FORMAT
     {
+        /// <summary>
+        /// Frames are progressive.
+        /// </summary>
         Progressive = 0,
+        /// <summary>
+        /// Frames are interlaced. The top field of each frame is displayed first.
+        /// </summary>
         InterlacedTopFieldFirst = 1,
+        /// <summary>
+        /// Frame are interlaced. The bottom field of each frame is displayed first.
+        /// </summary>
         InterlacedBottomFieldFirst = 2
     }
 

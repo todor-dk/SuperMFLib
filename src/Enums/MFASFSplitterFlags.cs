@@ -32,11 +32,31 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Defines the ASF splitter options.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/8EAAD139-B487-4348-AE19-4251A2AEED14(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8EAAD139-B487-4348-AE19-4251A2AEED14(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFASF_SPLITTERFLAGS")]
     public enum MFASFSplitterFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The splitter delivers samples for the ASF content in reverse order to accommodate reverse playback.
+        /// </summary>
         Reverse = 0x00000001,
+        /// <summary>
+        /// The splitter delivers samples for streams that are protected with Windows Media Digital Rights
+        /// Management.
+        /// </summary>
         WMDRM = 0x00000002
     }
 

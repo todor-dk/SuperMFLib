@@ -36,10 +36,29 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies whether the topology loader will insert hardware-based Media Foundation transforms (MFTs)
+    /// into the topology.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/FDAA13A5-9B23-440E-BE04-AE926E1B0FF5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FDAA13A5-9B23-440E-BE04-AE926E1B0FF5(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFTOPOLOGY_HARDWARE_MODE")]
     public enum MFTOPOLOGY_HARDWARE_MODE
     {
+        /// <summary>
+        /// Use only software  MFTs. Do not use hardware-based MFTs. This mode is the default, for backward
+        /// compatibility with existing applications.
+        /// </summary>
         SoftwareOnly = 0,
+        /// <summary>
+        /// Use hardware-based MFTs when possible, and software MFTs otherwise. This mode is the recommended
+        /// one.
+        /// </summary>
         UseHardware = 1,
     }
 

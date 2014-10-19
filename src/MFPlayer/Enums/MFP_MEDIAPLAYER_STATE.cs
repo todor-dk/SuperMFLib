@@ -38,13 +38,42 @@ namespace MediaFoundation.MFPlayer
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+    /// Applications should use the <c>Media Session</c> for playback. 
+    /// <para/>
+    /// Specifies the current playback state.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/A0D5C840-A1AA-48CF-BF2E-7E5C35951FB6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A0D5C840-A1AA-48CF-BF2E-7E5C35951FB6(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFP_MEDIAPLAYER_STATE")]
     public enum MFP_MEDIAPLAYER_STATE
     {
+        /// <summary>
+        /// Initial state. No media items have been set on the player object.
+        /// </summary>
         Empty = 0x00000000,
+        /// <summary>
+        /// Playback is stopped.
+        /// </summary>
         Stopped = 0x00000001,
+        /// <summary>
+        /// Playback is in progress.
+        /// </summary>
         Playing = 0x00000002,
+        /// <summary>
+        /// Playback is paused.
+        /// </summary>
         Paused = 0x00000003,
+        /// <summary>
+        /// The player object was shut down. This state is returned after the application calls 
+        /// <see cref="MFPlayer.IMFPMediaPlayer.Shutdown"/>. 
+        /// </summary>
         Shutdown = 0x00000004
     }
 

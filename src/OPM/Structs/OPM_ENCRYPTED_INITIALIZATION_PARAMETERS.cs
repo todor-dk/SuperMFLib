@@ -35,8 +35,29 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains initialization parameters for an <c>Output Protection Manager</c> (OPM) session.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _OPM_ENCRYPTED_INITIALIZATION_PARAMETERS {
+    ///   BYTE abEncryptedInitializationParameters[OPM_ENCRYPTED_INITIALIZATION_PARAMETERS_SIZE];
+    /// } OPM_ENCRYPTED_INITIALIZATION_PARAMETERS;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/ABCF0B84-7370-48DA-B4DD-4FADED6BE343(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/ABCF0B84-7370-48DA-B4DD-4FADED6BE343(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public struct OPM_ENCRYPTED_INITIALIZATION_PARAMETERS
     {
+        /// <summary>
+        /// Pointer to a buffer that contains encrypted initialization parameters for the session. For more
+        /// information, see <see cref="OPM.IOPMVideoOutput.FinishInitialization" />.
+        /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)]
         public byte[] abEncryptedInitializationParameters;
     }

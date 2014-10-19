@@ -33,10 +33,34 @@ namespace MediaFoundation.Transform
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Not for application use.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _STREAM_MEDIUM {
+    ///   GUID   gidMedium;
+    ///   UINT32 unMediumInstance;
+    /// } STREAM_MEDIUM, *PSTREAM_MEDIUM;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/C3E3FD40-F6E6-4E43-927F-5DFF4169A52C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C3E3FD40-F6E6-4E43-927F-5DFF4169A52C(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("STREAM_MEDIUM")]
     public struct STREAM_MEDIUM
     {
+        /// <summary>
+        /// Reserved.
+        /// </summary>
         Guid gidMedium;
+        /// <summary>
+        /// Reserved.
+        /// </summary>
         int unMediumInstance;
     }
 

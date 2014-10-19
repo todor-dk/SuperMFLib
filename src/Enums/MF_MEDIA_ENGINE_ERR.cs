@@ -35,13 +35,38 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines error status codes for the Media Engine.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/CFA5C2AF-C804-47B4-B76A-907F26CF3DFC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CFA5C2AF-C804-47B4-B76A-907F26CF3DFC(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_ERR")]
     public enum MF_MEDIA_ENGINE_ERR : short
     {
+        /// <summary>
+        /// No error.
+        /// </summary>
         NoError = 0,
+        /// <summary>
+        /// The process of fetching the media resource was stopped at the user's request. 
+        /// </summary>
         Aborted = 1,
+        /// <summary>
+        /// A network error occurred while fetching the media resource. 
+        /// </summary>
         Network = 2,
+        /// <summary>
+        /// An error occurred while decoding the media resource. 
+        /// </summary>
         Decode = 3,
+        /// <summary>
+        /// The media resource is not supported. 
+        /// </summary>
         SrcNotSupported = 4
     }
 

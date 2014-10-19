@@ -34,12 +34,44 @@ namespace MediaFoundation.EVR
 {
 
 
+    /// <summary>
+    /// Contains values for DirectX Video Acceleration (DXVA) video processing operations.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVA2_ProcAmpValues {
+    ///   DXVA2_Fixed32 Brightness;
+    ///   DXVA2_Fixed32 Contrast;
+    ///   DXVA2_Fixed32 Hue;
+    ///   DXVA2_Fixed32 Saturation;
+    /// } DXVA2_ProcAmpValues;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/C84ACD34-E922-46BB-9913-0F94C7C47155(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C84ACD34-E922-46BB-9913-0F94C7C47155(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVA2_ProcAmpValues")]
     public class DXVA2ProcAmpValues
     {
+        /// <summary>
+        /// Brightness value.
+        /// </summary>
         public int Brightness;
+        /// <summary>
+        /// Contrast value.
+        /// </summary>
         public int Contrast;
+        /// <summary>
+        /// Hue value.
+        /// </summary>
         public int Hue;
+        /// <summary>
+        /// Saturation value.
+        /// </summary>
         public int Saturation;
     }
 

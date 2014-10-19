@@ -37,11 +37,40 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// The callback for the <see cref="IMFVideoSampleAllocatorCallback"/> interface. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/909C2A68-81DD-4816-B34F-71A67B620FAF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/909C2A68-81DD-4816-B34F-71A67B620FAF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("A792CDBE-C374-4E89-8335-278E7B9956A4")]
     public interface IMFVideoSampleAllocatorNotify
     {
+        /// <summary>
+        /// Called when a video sample is returned to the allocator.
+        /// </summary>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT NotifyRelease();
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/0467EBBE-B00D-41C1-8F50-77CA09337B15(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0467EBBE-B00D-41C1-8F50-77CA09337B15(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int NotifyRelease();
     }

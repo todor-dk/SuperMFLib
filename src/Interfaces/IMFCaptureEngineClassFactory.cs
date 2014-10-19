@@ -36,11 +36,55 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Creates an instance of the capture engine.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/FAFA52AD-B96E-4ADC-BE79-3BE5F1ACC92A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FAFA52AD-B96E-4ADC-BE79-3BE5F1ACC92A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("8f02d140-56fc-4302-a705-3a97c78be779"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFCaptureEngineClassFactory
     {
+        /// <summary>
+        /// Creates an instance of the capture engine.
+        /// </summary>
+        /// <param name="clsid">
+        /// The CLSID of the object to create. Currently, this parameter must equal <strong>
+        /// CLSID_MFCaptureEngine</strong>. 
+        /// </param>
+        /// <param name="riid">
+        /// The IID of the requested interface. The capture engine supports the <see cref="IMFCaptureEngine"/>
+        /// interface. 
+        /// </param>
+        /// <param name="ppvObject">
+        /// Receives a pointer to the requested interface. The caller must release the interface.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT CreateInstance(
+        ///   [in]   REFCLSID clsid,
+        ///   [in]   REFIID riid,
+        ///   [out]  LPVOID *ppvObject
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/D5E7D96B-9438-4332-AD05-249D2DA2481A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D5E7D96B-9438-4332-AD05-249D2DA2481A(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int CreateInstance(
                 [In, MarshalAs(UnmanagedType.LPStruct)] Guid clsid,

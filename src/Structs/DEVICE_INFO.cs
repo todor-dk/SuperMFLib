@@ -35,21 +35,57 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains information about a media sharing device.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct DEVICE_INFO {
+    ///   BSTR pFriendlyDeviceName;
+    ///   BSTR pUniqueDeviceName;
+    ///   BSTR pManufacturerName;
+    ///   BSTR pModelName;
+    ///   BSTR pIconURL;
+    /// } DEVICE_INFO;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/B006298C-B733-4E76-BD31-A3D1DD4DC766(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B006298C-B733-4E76-BD31-A3D1DD4DC766(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DEVICE_INFO")]
     public struct DEVICE_INFO
     {
+        /// <summary>
+        /// The friendly name of the device.
+        /// </summary>
         [MarshalAs(UnmanagedType.BStr)]
         string pFriendlyDeviceName;
 
+        /// <summary>
+        /// A string that uniquely identifes the device.
+        /// </summary>
         [MarshalAs(UnmanagedType.BStr)]
         string pUniqueDeviceName;
 
+        /// <summary>
+        /// The manufacturer name.
+        /// </summary>
         [MarshalAs(UnmanagedType.BStr)]
         string pManufacturerName;
 
+        /// <summary>
+        /// The model name.
+        /// </summary>
         [MarshalAs(UnmanagedType.BStr)]
         string pModelName;
 
+        /// <summary>
+        /// The URL of an icon for the device.
+        /// </summary>
         [MarshalAs(UnmanagedType.BStr)]
         string pIconURL;
     }

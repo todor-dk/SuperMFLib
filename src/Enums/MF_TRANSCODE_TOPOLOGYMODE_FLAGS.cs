@@ -36,10 +36,27 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines flags for the <see cref="MFAttributesClsid.MF_TRANSCODE_TOPOLOGYMODE"/> attribute. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/9A98A052-9FB0-4C63-BC9C-8E112E37973F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9A98A052-9FB0-4C63-BC9C-8E112E37973F(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MF_TRANSCODE_TOPOLOGYMODE_FLAGS")]
     public enum MF_TRANSCODE_TOPOLOGYMODE_FLAGS
     {
+        /// <summary>
+        /// The topology loader will exclude hardware-based transforms (such as codecs and color converters)
+        /// from the topology. It will use only software transforms.
+        /// </summary>
         SoftwareOnly = 0,
+        /// <summary>
+        /// The topology loader may insert hardware-based transforms into the transcode topology.
+        /// </summary>
         HardwareAllowed = 1
     }
 

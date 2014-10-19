@@ -37,11 +37,45 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Enables an application to use a Media Foundation transform (MFT) that has restrictions on its use.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/B144589B-D559-4686-B617-0E3C393380E9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B144589B-D559-4686-B617-0E3C393380E9(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("508E71D3-EC66-4FC3-8775-B4B9ED6BA847")]
     public interface IMFFieldOfUseMFTUnlock
     {
+        /// <summary>
+        /// Unlocks a Media Foundation transform (MFT) so that the application can use it.
+        /// </summary>
+        /// <param name="pUnkMFT">
+        /// A pointer to the <strong>IUnknown</strong> interface of the MFT. 
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT Unlock(
+        ///   [in]  IUnknown *pUnkMFT
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/54B15E72-6551-4162-90CA-A9BED68CA62F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54B15E72-6551-4162-90CA-A9BED68CA62F(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int Unlock(
             [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkMFT

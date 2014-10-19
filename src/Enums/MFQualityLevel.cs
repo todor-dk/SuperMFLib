@@ -36,15 +36,47 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies the quality level for a pipeline component. The quality level determines how the
+    /// component consumes or produces samples.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6FE5ABBB-C079-4D74-9C75-6FB502054546(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6FE5ABBB-C079-4D74-9C75-6FB502054546(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_QUALITY_LEVEL")]
     public enum MFQualityLevel
     {
+        /// <summary>
+        /// Normal quality. 
+        /// </summary>
         Normal,
+        /// <summary>
+        /// One level below normal quality. 
+        /// </summary>
         NormalMinus1,
+        /// <summary>
+        /// Two levels below normal quality. 
+        /// </summary>
         NormalMinus2,
+        /// <summary>
+        /// Three levels below normal quality. 
+        /// </summary>
         NormalMinus3,
+        /// <summary>
+        /// Four levels below normal quality. 
+        /// </summary>
         NormalMinus4,
+        /// <summary>
+        /// Five levels below normal quality. 
+        /// </summary>
         NormalMinus5,
+        /// <summary>
+        /// Maximum number of quality levels. This value is not a valid flag. 
+        /// </summary>
         NumQualityLevels
     }
 

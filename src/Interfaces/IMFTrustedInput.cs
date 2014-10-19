@@ -37,11 +37,62 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Implemented by components that provide input trust authorities (ITAs). This interface is used to
+    /// get the ITA for each of the component's streams. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/59A9DEF7-69A6-4F80-BB5E-1CB372FF6EAB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/59A9DEF7-69A6-4F80-BB5E-1CB372FF6EAB(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("542612C4-A1B8-4632-B521-DE11EA64A0B0")]
     public interface IMFTrustedInput
     {
+        /// <summary>
+        /// Retrieves the input trust authority (ITA) for a specified stream.
+        /// </summary>
+        /// <param name="dwStreamID">
+        /// The stream identifier for which the ITA is being requested.
+        /// </param>
+        /// <param name="riid">
+        /// The interface identifier (IID) of the interface being requested. Currently the only supported value
+        /// is IID_IMFInputTrustAuthority.
+        /// </param>
+        /// <param name="ppunkObject">
+        /// Receives a pointer to the ITA's <strong>IUnknown</strong> interface. The caller must release the
+        /// interface. 
+        /// </param>
+        /// <returns>
+        /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
+        /// those in the following table. 
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Return code</term><description>Description</description></listheader>
+        /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
+        /// <item><term><strong>E_NOINTERFACE</strong></term><description>The ITA does not expose the requested interface.</description></item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetInputTrustAuthority(
+        ///   [in]   DWORD dwStreamID,
+        ///   [in]   REFIID riid,
+        ///   [out]  IUnknown **ppunkObject
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/B4EBF02E-554A-4E7E-93D3-6F37D8B689BF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4EBF02E-554A-4E7E-93D3-6F37D8B689BF(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetInputTrustAuthority(
             [In] int dwStreamID,

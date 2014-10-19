@@ -33,12 +33,41 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Represents a ratio.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFRatio {
+    ///   DWORD Numerator;
+    ///   DWORD Denominator;
+    /// } MFRatio;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/315D31D6-BF68-4495-9BAE-1F624F497C1A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/315D31D6-BF68-4495-9BAE-1F624F497C1A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("MFRatio")]
     public struct MFRatio
     {
+        /// <summary>
+        /// Numerator of the ratio.
+        /// </summary>
         public int Numerator;
+        /// <summary>
+        /// Denominator of the ratio.
+        /// </summary>
         public int Denominator;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFRatio" /> struct.
+        /// </summary>
+        /// <param name="n">Numerator of the ratio.</param>
+        /// <param name="d">Denominator of the ratio.</param>
         public MFRatio(int n, int d)
         {
             Numerator = n;

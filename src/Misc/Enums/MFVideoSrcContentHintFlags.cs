@@ -29,11 +29,30 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// Describes the intended aspect ratio for a video stream.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6166B880-36BC-4AC3-9D66-D3DD17C29AE7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6166B880-36BC-4AC3-9D66-D3DD17C29AE7(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFVideoSrcContentHintFlags")]
     public enum  MFVideoSrcContentHintFlags
     {
+        /// <summary>
+        /// The aspect ratio is unknown.
+        /// </summary>
         None  = 0,
+        /// <summary>
+        /// The source is 16×9 content encoded within a 4×3 area.
+        /// </summary>
         F16x9  = 1,
+        /// <summary>
+        /// The source is 2.35:1 content encoded within a 16×9 or 4×3 area.
+        /// </summary>
         F235_1 = 2
     }
 

@@ -35,11 +35,38 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the type of video surface created by a Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD) device.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/06DF2D2F-9163-4672-8EA4-57F1942320C5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/06DF2D2F-9163-4672-8EA4-57F1942320C5(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_SURFACE_TYPE")]
     public enum DXVAHD_SURFACE_TYPE
     {
+        /// <summary>
+        /// A surface for an input stream. This surface type is equivalent to an off-screen plain surface in
+        /// Microsoft Direct3D. The application can use the surface in Direct3D calls.
+        /// </summary>
         VideoInput = 0,
+        /// <summary>
+        /// A private surface for an input stream. This surface type is equivalent to an off-screen plain
+        /// surface, except that the application cannot use the surface in Direct3D calls.
+        /// </summary>
         VideoInputPrivate = 1,
+        /// <summary>
+        /// A surface for an output stream. This surface type is equivalent to an off-screen plain surface in
+        /// Direct3D. The application can use the surface in Direct3D calls. 
+        /// <para/>
+        /// This surface type is recommended for video processing applications that need to lock the surface
+        /// and access the surface memory. For video playback with optimal performance, a render-target surface
+        /// or swap chain is recommended instead.
+        /// </summary>
         VideoOutput = 2
     }
 

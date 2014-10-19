@@ -36,10 +36,26 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies how a 3D video frame is stored in a media sample.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/4EC788EC-85C9-41B2-A105-3B6EA040F2B7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4EC788EC-85C9-41B2-A105-3B6EA040F2B7(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFVideo3DSampleFormat")]
     public enum MFVideo3DSampleFormat
     {
+        /// <summary>
+        /// All of the views are stored in the same buffer. The sample contains a single buffer. 
+        /// </summary>
         Packed = 0,
+        /// <summary>
+        /// Each view is stored in a separate buffer. The sample contains one buffer per view.
+        /// </summary>
         MultiView = 1
     }
 

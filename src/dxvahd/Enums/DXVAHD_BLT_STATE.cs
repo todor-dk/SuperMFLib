@@ -35,14 +35,56 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies state parameters for blit operations when using Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD).
+    /// <para/>
+    /// To set a state parameter, call the 
+    /// <see cref="dxvahd.IDXVAHD_VideoProcessor.SetVideoProcessBltState"/> method. This method takes a 
+    /// <strong>DXVAHD_BLT_STATE</strong> value and a byte array as input. The byte array contains state
+    /// data, the structure of which is defined by the <strong>DXVAHD_BLT_STATE</strong> value. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/CD5F56FF-61D7-49DF-8114-F6A14DE8E06B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CD5F56FF-61D7-49DF-8114-F6A14DE8E06B(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_BLT_STATE")]
     public enum DXVAHD_BLT_STATE
     {
+        /// <summary>
+        /// Specifies the target rectangle, which is the area within the destination surface where the output
+        /// will be drawn. The state data is a <see cref="dxvahd.DXVAHD_BLT_STATE_TARGET_RECT_DATA"/>
+        /// structure. 
+        /// </summary>
         TargetRect = 0,
+        /// <summary>
+        /// Specifies the background color. The state data is a 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA"/> structure. 
+        /// </summary>
         BackgroundColor = 1,
+        /// <summary>
+        /// Specifies the output color space. The state data is a 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA"/> structure. 
+        /// </summary>
         OutputColorSpace = 2,
+        /// <summary>
+        /// Specifies how DXVA-HD device calculates output alpha values. The state data is a 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_ALPHA_FILL_DATA"/> structure. 
+        /// </summary>
         AlphaFill = 3,
+        /// <summary>
+        /// Specifies the amount of downsampling to perform on the output. The state data is a 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_CONSTRICTION_DATA"/> structure. 
+        /// </summary>
         Constriction = 4,
+        /// <summary>
+        /// Specifies that the state data contains a private DXVA-HD blit state. Use this state for proprietary
+        /// or device-specific parameters. The state data is a 
+        /// <see cref="dxvahd.DXVAHD_BLT_STATE_PRIVATE_DATA"/> structure. 
+        /// </summary>
         Private = 1000
     }
 

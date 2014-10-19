@@ -31,11 +31,36 @@ namespace MediaFoundation.Transform
 {
 
 
+    /// <summary>
+    /// Defines flags for processing output samples in a Media Foundation transform (MFT).
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/846E91A5-7CD8-4B58-9484-B9CB9AF0BEBF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/846E91A5-7CD8-4B58-9484-B9CB9AF0BEBF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("_MFT_PROCESS_OUTPUT_FLAGS")]
     public enum MFTProcessOutputFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Do not produce output for streams in which the <strong>pSample</strong> member of the 
+        /// <see cref="Transform.MFTOutputDataBuffer"/> structure is <strong>NULL</strong>. This flag is not
+        /// valid unless the MFT has marked the output stream with the MFT_OUTPUT_STREAM_DISCARDABLE or
+        /// MFT_OUTPUT_STREAM_LAZY_READ flag. For more information, see 
+        /// <see cref="Transform.IMFTransform.GetOutputStreamInfo"/>. 
+        /// </summary>
         DiscardWhenNoBuffer = 0x00000001,
+        /// <summary>
+        /// Regenerates the last output sample.
+        /// <para/>
+        /// <strong>Note</strong> Requires Windows 8. 
+        /// </summary>
         RegenerateLastOutput = 0x00000002
     }
 

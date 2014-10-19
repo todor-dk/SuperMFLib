@@ -38,9 +38,35 @@ namespace MediaFoundation.MFPlayer
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+    /// Applications should use the <c>Media Session</c> for playback. 
+    /// <para/>
+    /// Event structure for the <strong>MFP_EVENT_TYPE_PLAY</strong> event. This event is sent when the 
+    /// <see cref="MFPlayer.IMFPMediaPlayer.Play"/> method completes. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct MFP_PLAY_EVENT {
+    ///   MFP_EVENT_HEADER header;
+    ///   IMFPMediaItem    *pMediaItem;
+    /// } MFP_PLAY_EVENT;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/2CF8805F-8A3C-45A6-87AD-FA4DA9115833(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2CF8805F-8A3C-45A6-87AD-FA4DA9115833(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    [Obsolete("This API may be removed from future releases of Windows.")]
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFP_PLAY_EVENT")]
     public class MFP_PLAY_EVENT : MFP_EVENT_HEADER
     {
+        /// <summary>
+        /// Pointer to the <see cref="MFPlayer.IMFPMediaItem"/> interface of the current media item. 
+        /// </summary>
         public IMFPMediaItem pMediaItem;
     }
 

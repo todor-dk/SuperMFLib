@@ -34,10 +34,29 @@ namespace MediaFoundation.OPM
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies the protection level for DisplayPort Content Protection (DPCP).
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/C761F3C1-F18E-4AE9-9AA1-1BA440A6C8DF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C761F3C1-F18E-4AE9-9AA1-1BA440A6C8DF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public enum OPM_DPCP_PROTECTION_LEVEL
     {
+        /// <summary>
+        /// DPCP is disabled.
+        /// </summary>
         OPM_DPCP_OFF = 0,
+        /// <summary>
+        /// DPCP is enabled.
+        /// </summary>
         OPM_DPCP_ON = 1,
+        /// <summary>
+        /// Reserved.
+        /// </summary>
         OPM_DPCP_FORCE_ULONG = 0x7fffffff
     }
 

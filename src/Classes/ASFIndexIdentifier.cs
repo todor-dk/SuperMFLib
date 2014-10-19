@@ -32,10 +32,34 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Specifies an index for the ASF indexer object. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _ASF_INDEX_IDENTIFIER {
+    ///   GUID guidIndexType;
+    ///   WORD wStreamNumber;
+    /// } ASF_INDEX_IDENTIFIER;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/8103A62E-6D1A-4DCD-AF91-CEDB30523004(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8103A62E-6D1A-4DCD-AF91-CEDB30523004(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("ASF_INDEX_IDENTIFIER")]
     public class ASFIndexIdentifier
     {
+        /// <summary>
+        /// The type of index. Currently this value must be GUID_NULL, which specifies time-based indexing. 
+        /// </summary>
         public Guid guidIndexType;
+        /// <summary>
+        /// The stream number to which this structure applies. 
+        /// </summary>
         public short wStreamNumber;
     }
 

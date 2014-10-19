@@ -36,10 +36,34 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies a range of bytes.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// struct MF_BYTE_STREAM_CACHE_RANGE {
+    ///   QWORD qwStartOffset;
+    ///   QWORD qwEndOffset;
+    /// };
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/BE684626-32AC-4BF1-8CF1-D68F8A0ABB9E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BE684626-32AC-4BF1-8CF1-D68F8A0ABB9E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MF_BYTE_STREAM_CACHE_RANGE")]
     public class MF_BYTE_STREAM_CACHE_RANGE
     {
+        /// <summary>
+        /// The offset, in bytes, of the start of the range.
+        /// </summary>
         long qwStartOffset;
+        /// <summary>
+        /// The offset, in bytes, of the end of the range.
+        /// </summary>
         long qwEndOffset;
     }
 

@@ -35,6 +35,27 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the color space for a Microsoft DirectX Video Acceleration High Definition (DXVA-HD)
+    /// input stream.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA {
+    ///   UINT Type  :1;
+    ///   UINT RGB_Range  :1;
+    ///   UINT YCbCr_Matrix  :1;
+    ///   UINT YCbCr_xvYCC  :1;
+    /// } DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/54B53E4D-990B-4496-AAE6-039F443337AE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54B53E4D-990B-4496-AAE6-039F443337AE(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA")]
     public struct DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA
     {

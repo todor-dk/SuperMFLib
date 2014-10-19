@@ -36,16 +36,70 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies the buffering parameters for a network byte stream.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFBYTESTREAM_BUFFERING_PARAMS {
+    ///   QWORD                cbTotalFileSize;
+    ///   QWORD                cbPlayableDataSize;
+    ///   MF_LEAKY_BUCKET_PAIR *prgBuckets;
+    ///   DWORD                cBuckets;
+    ///   QWORD                qwNetBufferingTime;
+    ///   QWORD                qwExtraBufferingTimeDuringSeek;
+    ///   QWORD                qwPlayDuration;
+    ///   float                dRate;
+    /// } MFBYTESTREAM_BUFFERING_PARAMS;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6667D32C-36A8-414E-A546-02D00A447B70(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6667D32C-36A8-414E-A546-02D00A447B70(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFBYTESTREAM_BUFFERING_PARAMS")]
     public struct MFByteStreamBufferingParams
     {
+        /// <summary>
+        /// Size of the file, in bytes. If the total size is unknown, set this member to -1.
+        /// </summary>
         public long cbTotalFileSize;
+        /// <summary>
+        /// Size of the playable media data in the file, excluding any trailing data that is not useful for
+        /// playback. If this value is unknown, set this member to -1.
+        /// </summary>
         public long cbPlayableDataSize;
+        /// <summary>
+        /// Pointer to an array of <see cref="MF_LeakyBucketPair" /> structures. Each member of the array gives
+        /// the buffer window for a particular bit rate.
+        /// </summary>
         public IntPtr prgBuckets;
+        /// <summary>
+        /// The number of elements in the <strong>prgBuckets</strong> array.
+        /// </summary>
         public int cBuckets;
+        /// <summary>
+        /// Amount of data to buffer from the network, in 100-nanosecond units. This value is in addition to
+        /// the buffer windows defined in the <strong>prgBuckets</strong> member.
+        /// </summary>
         public long qwNetBufferingTime;
+        /// <summary>
+        /// Amount of additional data to buffer when seeking, in 100-nanosecond units. This value reflects the
+        /// fact that downloading must start from the previous key frame before the seek point. If the value is
+        /// unknown, set this member to zero.
+        /// </summary>
         public long qwExtraBufferingTimeDuringSeek;
+        /// <summary>
+        /// The playback duration of the file, in 100-nanosecond units. If the duration is unknown, set this
+        /// member to zero.
+        /// </summary>
         public long qwPlayDuration;
+        /// <summary>
+        /// Playback rate.
+        /// </summary>
         public float dRate;
     }
 

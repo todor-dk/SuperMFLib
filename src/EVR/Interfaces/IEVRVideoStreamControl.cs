@@ -34,15 +34,71 @@ namespace MediaFoundation.EVR
 {
 
 
+    /// <summary>
+    /// This interface is not supported.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/EA7B0DD2-2EFF-4A37-826B-6F87FBEA5785(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EA7B0DD2-2EFF-4A37-826B-6F87FBEA5785(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("d0cfe38b-93e7-4772-8957-0400c49a4485")]
     public interface IEVRVideoStreamControl
     {
+        /// <summary>
+        /// <strong>Note</strong> This method is not supported. 
+        /// </summary>
+        /// <param name="fActive">
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT SetStreamActiveState(
+        ///   [in]  BOOL fActive
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/85F711F1-1536-4AB0-90B7-79E22C210198(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/85F711F1-1536-4AB0-90B7-79E22C210198(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int SetStreamActiveState(
             [MarshalAs(UnmanagedType.Bool)] bool fActive);
 
+        /// <summary>
+        /// <strong>Note</strong> This method is not supported. 
+        /// </summary>
+        /// <param name="lpfActive">
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetStreamActiveState(
+        ///   [out]  BOOL *lpfActive
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/D4CA1DA7-7768-45B4-A0BE-F3EF86FED7B9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D4CA1DA7-7768-45B4-A0BE-F3EF86FED7B9(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetStreamActiveState(
             [MarshalAs(UnmanagedType.Bool)] out bool lpfActive);

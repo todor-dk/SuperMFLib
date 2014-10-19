@@ -35,11 +35,38 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies whether the output is downsampled in a  blit operation, when using Microsoft DirectX
+    /// Video Acceleration High Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_BLT_STATE_CONSTRICTION_DATA {
+    ///   BOOL Enable;
+    ///   SIZE Size;
+    /// } DXVAHD_BLT_STATE_CONSTRICTION_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/962A99BD-060D-4101-B65A-D0406E136BF7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/962A99BD-060D-4101-B65A-D0406E136BF7(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_CONSTRICTION_DATA")]
     public struct DXVAHD_BLT_STATE_CONSTRICTION_DATA
     {
+        /// <summary>
+        /// If <strong>TRUE</strong>, downsampling is enabled <strong></strong>. Otherwise, downsampling is
+        /// disabled and the <strong>Size</strong> member is ignored. The default state value is <strong>FALSE
+        /// </strong> (downsampling is disabled).
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool Enable;
+        /// <summary>
+        /// The x size
+        /// </summary>
         public MFSize xSize;
     }
 

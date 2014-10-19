@@ -40,16 +40,79 @@ namespace MediaFoundation.ReadWrite
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Callback interface for the Microsoft Media Foundation sink writer. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/FA0295E6-473D-4304-9A7B-24584CADE0A0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FA0295E6-473D-4304-9A7B-24584CADE0A0(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("666f76de-33d2-41b9-a458-29ed0a972c58")]
     public interface IMFSinkWriterCallback
     {
+        /// <summary>
+        /// Called when the <c>IMFSinkWriter::Finalize</c> method completes. 
+        /// </summary>
+        /// <param name="hrStatus">
+        /// The status code for the <c>Finalize</c> operation. If the value is an error code, the output file
+        /// might be invalid. 
+        /// </param>
+        /// <returns>
+        /// Returns an <strong>HRESULT</strong> value. Currently, the sink writer ignores the return value. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT OnFinalize(
+        ///   [in]  HRESULT hrStatus
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/9DA7BB55-BF9F-4579-AE8E-B33CE5461950(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9DA7BB55-BF9F-4579-AE8E-B33CE5461950(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int OnFinalize(
             int hrStatus
         );
 
+        /// <summary>
+        /// Called when the <see cref="ReadWrite.IMFSinkWriter.PlaceMarker"/> method completes. 
+        /// </summary>
+        /// <param name="dwStreamIndex">
+        /// The zero-based index of the stream. This parameter equals the value of the <em>dwStreamIndex</em>
+        /// parameter in the <c>PlaceMarker</c> method. 
+        /// </param>
+        /// <param name="pvContext">
+        /// The application-defined value that was given in the <em>pvContext</em> parameter in the 
+        /// <c>PlaceMarker</c> method. 
+        /// </param>
+        /// <returns>
+        /// Returns an <strong>HRESULT</strong> value. Currently, the sink writer ignores the return value. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT OnMarker(
+        ///   [in]  DWORD dwStreamIndex,
+        ///   [in]  LPVOID pvContext
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/5B1CA6A7-C2BC-4B30-AA86-05BD4CCC052C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5B1CA6A7-C2BC-4B30-AA86-05BD4CCC052C(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int OnMarker(
             int dwStreamIndex,

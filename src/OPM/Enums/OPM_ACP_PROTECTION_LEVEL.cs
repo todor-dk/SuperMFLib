@@ -35,12 +35,37 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the protection level for Analog Copy Protection (ACP).
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/F52B4EE6-1AB3-4153-86E3-5AE69FD8A958(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F52B4EE6-1AB3-4153-86E3-5AE69FD8A958(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public enum OPM_ACP_PROTECTION_LEVEL
     {
+        /// <summary>
+        /// ACP is disabled.
+        /// </summary>
         OPM_ACP_OFF = 0,
+        /// <summary>
+        /// ACP protection level 1.
+        /// </summary>
         OPM_ACP_LEVEL_ONE = 1,
+        /// <summary>
+        /// ACP protection level 2.
+        /// </summary>
         OPM_ACP_LEVEL_TWO = 2,
+        /// <summary>
+        /// ACP protection level 3.
+        /// </summary>
         OPM_ACP_LEVEL_THREE = 3,
+        /// <summary>
+        /// Reserved.
+        /// </summary>
         OPM_ACP_FORCE_ULONG = 0x7fffffff
     }
 

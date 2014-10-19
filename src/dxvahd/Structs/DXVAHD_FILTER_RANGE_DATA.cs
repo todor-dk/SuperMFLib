@@ -35,12 +35,45 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines the range of supported values for an image filter.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_FILTER_RANGE_DATA {
+    ///   INT   Minimum;
+    ///   INT   Maximum;
+    ///   INT   Default;
+    ///   FLOAT Multiplier;
+    /// } DXVAHD_FILTER_RANGE_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/CD349AC5-9825-4DC8-8735-5D846ABB353B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CD349AC5-9825-4DC8-8735-5D846ABB353B(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_FILTER_RANGE_DATA")]
     public struct DXVAHD_FILTER_RANGE_DATA
     {
+        /// <summary>
+        /// The minimum value of the filter.
+        /// </summary>
         public int Minimum;
+        /// <summary>
+        /// The maximum value of the filter.
+        /// </summary>
         public int Maximum;
+        /// <summary>
+        /// The default value of the filter.
+        /// </summary>
         public int Default;
+        /// <summary>
+        /// A multiplier. Use the following formula to translate the filter setting into the actual filter
+        /// value: <em>Actual Value</em> = <em>Set Value</em> × <em>Multiplier</em>.
+        /// </summary>
         public float Multiplier;
     }
 

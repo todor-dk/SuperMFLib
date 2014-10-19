@@ -32,7 +32,7 @@ namespace MediaFoundation
 {
 
 
-    [Flags, UnmanagedName("MFASF_INDEXERFLAGS")]
+    [Flags, UnmanagedName("MFASF_INDEXER_FLAGS")]
     public enum MFAsfIndexerFlags
     {
         None = 0x0,

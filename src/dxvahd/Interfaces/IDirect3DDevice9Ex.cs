@@ -35,6 +35,19 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Applications use the methods of the IDirect3DDevice9Ex interface to render primitives, create
+    /// resources, work with system-level variables, adjust gamma ramp levels, work with palettes, and
+    /// create shaders. The IDirect3DDevice9Ex interface derives from the <c>IDirect3DDevice9</c>
+    /// interface. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/VS|DIRECTX_SDK|~\IDIRECT3DDEVICE9EX.HTM(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/VS|DIRECTX_SDK|~\IDIRECT3DDEVICE9EX.HTM(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public interface IDirect3DDevice9Ex
     {
     }

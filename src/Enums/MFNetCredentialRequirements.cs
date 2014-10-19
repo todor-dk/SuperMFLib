@@ -36,11 +36,34 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies how the credential manager should obtain user credentials. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/9257D1D7-7CCB-4172-82F0-3694EBB9D487(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9257D1D7-7CCB-4172-82F0-3694EBB9D487(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFNetCredentialRequirements")]
     public enum MFNetCredentialRequirements
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The credential manager should prompt the user to provide the credentials. 
+        /// </summary>
         RequirePrompt = 0x00000001,
+        /// <summary>
+        /// <strong>Note</strong> Requires Windows 7 or later. 
+        /// <para/>
+        /// The credentials are saved to persistent storage. This flag acts as a hint for the application's UI.
+        /// If the application prompts the user for credentials, the UI can indicate that the credentials have
+        /// already been saved.
+        /// </summary>
         RequireSaveSelected = 0x00000002
     }
 

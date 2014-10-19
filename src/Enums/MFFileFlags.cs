@@ -34,11 +34,32 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Specifies the behavior when opening a file. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/1E1C906E-C832-4DF1-96F5-86E690C3C34E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1E1C906E-C832-4DF1-96F5-86E690C3C34E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MF_FILE_FLAGS")]
     public enum MFFileFlags
     {
+        /// <summary>
+        /// Use the default behavior. 
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Open the file with no system caching. 
+        /// </summary>
         NoBuffering = 0x1,
+        /// <summary>
+        /// Subsequent open operations can have write access to the file. 
+        /// <para/>
+        /// <strong>Note</strong> Requires Windows 7 or later. 
+        /// </summary>
         AllowWriteSharing = 0x2
     }
 

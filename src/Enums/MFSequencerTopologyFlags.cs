@@ -34,10 +34,27 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Contains flags for adding a topology to the sequencer source, or updating a topology already in the
+    /// queue.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D52BAC8C-E490-417C-AC00-E4CF57FD151C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D52BAC8C-E490-417C-AC00-E4CF57FD151C(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFSequencerTopologyFlags")]
     public enum MFSequencerTopologyFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// This topology is the last topology in the sequence.
+        /// </summary>
         Last = 0x00000001
     }
 

@@ -36,13 +36,40 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Indicates the type of control protocol that is used in streaming or downloading. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/DD628B9E-3C52-4C14-AA0F-5E0B811D3F57(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DD628B9E-3C52-4C14-AA0F-5E0B811D3F57(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFNETSOURCE_PROTOCOL_TYPE")]
     public enum MFNetSourceProtocolType
     {
+        /// <summary>
+        /// The protocol type has not yet been determined. 
+        /// </summary>
         Undefined,
+        /// <summary>
+        /// The protocol type is HTTP. This includes HTTPv9, WMSP, and HTTP download. 
+        /// </summary>
         Http,
+        /// <summary>
+        /// The protocol type is Real Time Streaming Protocol (RTSP). 
+        /// </summary>
         Rtsp,
+        /// <summary>
+        /// The content is read from a file. The file might be local or on a remote share. 
+        /// </summary>
         File,
+        /// <summary>
+        /// The protocol type is multicast.
+        /// <para/>
+        /// <strong>Note</strong> Requires Windows 7 or later. 
+        /// </summary>
         MultiCast
     }
 

@@ -35,9 +35,34 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the format for an input stream, when using Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_D3DFORMAT_DATA {
+    ///   D3DFORMAT Format;
+    /// } DXVAHD_STREAM_STATE_D3DFORMAT_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/A1BA825B-0574-4657-8A10-447A3CAF8149(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A1BA825B-0574-4657-8A10-447A3CAF8149(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_D3DFORMAT_DATA")]
     public struct DXVAHD_STREAM_STATE_D3DFORMAT_DATA
     {
+        /// <summary>
+        /// The surface format, specified as a <strong>D3DFORMAT</strong> value. You can also use a FOURCC code
+        /// to specify a format that is not defined in the <strong>D3DFORMAT</strong> enumeration. For more
+        /// information, see <c>Video FOURCCs</c>. 
+        /// <para/>
+        /// The default state value is <strong>D3DFMT_UNKNOWN</strong>. 
+        /// </summary>
         public int Format; // D3DFORMAT
     }
 

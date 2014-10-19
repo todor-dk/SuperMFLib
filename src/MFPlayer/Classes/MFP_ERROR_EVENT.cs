@@ -38,6 +38,28 @@ namespace MediaFoundation.MFPlayer
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+    /// Applications should use the <c>Media Session</c> for playback. 
+    /// <para/>
+    /// Event structure for the <strong>MFP_EVENT_TYPE_ERROR</strong> event. This event is sent if an error
+    /// occurs during playback. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct MFP_ERROR_EVENT {
+    ///   MFP_EVENT_HEADER header;
+    /// } MFP_ERROR_EVENT;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/0CCFDEFA-4913-4A02-BB91-14DF1C185DDF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0CCFDEFA-4913-4A02-BB91-14DF1C185DDF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    [Obsolete("This API may be removed from future releases of Windows.")]
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFP_ERROR_EVENT")]
     public class MFP_ERROR_EVENT : MFP_EVENT_HEADER
     {

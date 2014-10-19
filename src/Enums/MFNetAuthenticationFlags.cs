@@ -36,12 +36,34 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies how the user's credentials will be used.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/4A2F5537-B78C-49A6-9B66-D3CA34C3FC67(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4A2F5537-B78C-49A6-9B66-D3CA34C3FC67(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFNetAuthenticationFlags")]
     public enum MFNetAuthenticationFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The credentials will be used to authenticate with a proxy.
+        /// </summary>
         Proxy = 0x00000001,
+        /// <summary>
+        /// The credentials will be sent over the network unencrypted.
+        /// </summary>
         ClearText = 0x00000002,
+        /// <summary>
+        /// The credentials must be from a user who is currently logged on.
+        /// </summary>
         LoggedOnUser = 0x00000004
     }
 

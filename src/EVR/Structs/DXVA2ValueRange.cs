@@ -34,12 +34,44 @@ namespace MediaFoundation.EVR
 {
 
 
+    /// <summary>
+    /// Defines the range of supported values for a DirectX Video Acceleration (DXVA) operation.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVA2_ValueRange {
+    ///   DXVA2_Fixed32 MinValue;
+    ///   DXVA2_Fixed32 MaxValue;
+    ///   DXVA2_Fixed32 DefaultValue;
+    ///   DXVA2_Fixed32 StepSize;
+    /// } DXVA2_ValueRange;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/E01328BB-9069-4874-AA35-B3C9BC1C6094(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E01328BB-9069-4874-AA35-B3C9BC1C6094(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVA2_ValueRange")]
     public struct DXVA2ValueRange
     {
+        /// <summary>
+        /// Minimum supported value.
+        /// </summary>
         public int MinValue;
+        /// <summary>
+        /// Maximum supported value.
+        /// </summary>
         public int MaxValue;
+        /// <summary>
+        /// Default value.
+        /// </summary>
         public int DefaultValue;
+        /// <summary>
+        /// Minimum increment between values.
+        /// </summary>
         public int StepSize;
     }
 

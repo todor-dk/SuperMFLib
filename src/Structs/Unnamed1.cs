@@ -36,13 +36,25 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Contains the <c>d</c>, <c>u32</c> and <c>u64</c> members of the <see cref="MFAttributeType"/> structure.
+    /// </summary>
     [StructLayout(LayoutKind.Explicit, Pack = 8), UnmanagedName("unnamed internal struct")]
     public struct Unnamed1
     {
+        /// <summary>
+        /// Attribute value (floating point). This member is used when <see cref="MFTopoNodeAttributeUpdate.attrType"/> equals MF_ATTRIBUTE_DOUBLE. 
+        /// </summary>
         [FieldOffset(0)]
         public double d;
+        /// <summary>
+        /// Attribute value (unsigned 32-bit integer). This member is used when <see cref="MFTopoNodeAttributeUpdate.attrType"/> equals MF_ATTRIBUTE_UINT32. 
+        /// </summary>
         [FieldOffset(0)]
         public int u32;
+        /// <summary>
+        /// Attribute value (unsigned 32-bit integer). This member is used when <see cref="MFTopoNodeAttributeUpdate.attrType"/> equals MF_ATTRIBUTE_UINT64. See Remarks. 
+        /// </summary>
         [FieldOffset(0)]
         public long u64;
     }

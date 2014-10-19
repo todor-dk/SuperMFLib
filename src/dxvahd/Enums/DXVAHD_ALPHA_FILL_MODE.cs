@@ -35,12 +35,39 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies how the output alpha values are calculated for Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD) blit operations.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/F5E9F37E-5600-4139-86B2-7F63C2981B69(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F5E9F37E-5600-4139-86B2-7F63C2981B69(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_ALPHA_FILL_MODE")]
     public enum DXVAHD_ALPHA_FILL_MODE
     {
+        /// <summary>
+        /// Alpha values inside the target rectangle are set to opaque.
+        /// </summary>
         Opaque = 0,
+        /// <summary>
+        /// Alpha values inside the target rectangle are set to the alpha value specified in the background
+        /// color. See <see cref="dxvahd.DXVAHD_BLT_STATE.BackgroundColor"/>. 
+        /// </summary>
         Background = 1,
+        /// <summary>
+        /// Existing alpha values remain unchanged in the output surface.
+        /// </summary>
         Destination = 2,
+        /// <summary>
+        /// Alpha values from the input stream  are scaled and copied to the corresponding destination
+        /// rectangle for that stream. If the input stream does not have alpha data, the DXVA-HD device sets
+        /// the alpha values in the target rectangle to an opaque value. If the input stream is disabled or the
+        /// source rectangle is empty, the alpha values in the target rectangle are not modified.
+        /// </summary>
         SourceStream = 3
     }
 

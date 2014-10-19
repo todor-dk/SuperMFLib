@@ -38,11 +38,55 @@ namespace MediaFoundation.MFPlayer
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+    /// Applications should use the <c>Media Session</c> for playback. 
+    /// <para/>
+    /// Callback interface for the <see cref="MFPlayer.IMFPMediaPlayer"/> interface. 
+    /// <para/>
+    /// To set the callback, pass an <strong>IMFPMediaPlayerCallback</strong> pointer to the 
+    /// <see cref="MFExtern.MFPCreateMediaPlayer"/> function in the <em>pCallback</em> parameter. The
+    /// application implements the <strong>IMFPMediaPlayerCallback</strong> interface. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/7D9D01BF-861A-4C35-93B1-DBF85CBF0A32(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7D9D01BF-861A-4C35-93B1-DBF85CBF0A32(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("766C8FFB-5FDB-4fea-A28D-B912996F51BD")]
     public interface IMFPMediaPlayerCallback
     {
+        /// <summary>
+        /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+        /// Applications should use the <c>Media Session</c> for playback. 
+        /// <para/>
+        /// Called by the MFPlay player object to notify the application of a playback event.
+        /// </summary>
+        /// <param name="pEventHeader">
+        /// Pointer to an <see cref="MFPlayer.MFP_EVENT_HEADER"/> structure that contains information about the
+        /// event. 
+        /// </param>
+        /// <returns>
+        /// This method does not return a value.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// void OnMediaPlayerEvent(
+        ///   [in]  MFP_EVENT_HEADER *pEventHeader
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/2A80A9D0-83EE-4BB0-AB2C-0F68367F3BF8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2A80A9D0-83EE-4BB0-AB2C-0F68367F3BF8(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int OnMediaPlayerEvent(
             [In, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(EHMarshaler))] MFP_EVENT_HEADER pEventHeader

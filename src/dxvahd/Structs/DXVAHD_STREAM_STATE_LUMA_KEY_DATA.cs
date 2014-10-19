@@ -35,12 +35,42 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the luma key for an input stream, when using Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_LUMA_KEY_DATA {
+    ///   BOOL  Enable;
+    ///   FLOAT Lower;
+    ///   FLOAT Upper;
+    /// } DXVAHD_STREAM_STATE_LUMA_KEY_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D94B04D9-9D94-4392-A0BF-A33210AEEF1F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D94B04D9-9D94-4392-A0BF-A33210AEEF1F(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_LUMA_KEY_DATA")]
     public struct DXVAHD_STREAM_STATE_LUMA_KEY_DATA
     {
+        /// <summary>
+        /// If <strong>TRUE</strong>, luma keying is enabled. Otherwise, luma keying is disabled. The default
+        /// value is <strong>FALSE</strong>. 
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool Enable;
+        /// <summary>
+        /// The lower bound for the luma key. The range is [0…1]. The default state value is 0.0. 
+        /// </summary>
         public float Lower;
+        /// <summary>
+        /// The upper bound for the luma key. The range is [0…1]. The default state value is 0.0. 
+        /// </summary>
         public float Upper;
     }
 

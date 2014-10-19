@@ -35,9 +35,32 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies how a Microsoft DirectX Video Acceleration High Definition (DXVA-HD) input stream is
+    /// interlaced.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA {
+    ///   DXVAHD_FRAME_FORMAT FrameFormat;
+    /// } DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/4FA6A7F7-DF9F-4E38-884C-81A01F913DF0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4FA6A7F7-DF9F-4E38-884C-81A01F913DF0(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA")]
     public struct DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA
     {
+        /// <summary>
+        /// The video interlacing, specified as a <see cref="dxvahd.DXVAHD_FRAME_FORMAT"/> value. 
+        /// <para/>
+        /// The default state value is <strong>DXVAHD_FRAME_FORMAT_PROGRESSIVE</strong> (progressive frames). 
+        /// </summary>
         public DXVAHD_FRAME_FORMAT FrameFormat;
     }
 

@@ -34,12 +34,34 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Specifies the requested access mode for opening a file.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/38108686-5378-4844-8D5A-A433E89F62BB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/38108686-5378-4844-8D5A-A433E89F62BB(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_FILE_ACCESSMODE")]
     public enum MFFileAccessMode
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Read mode.
+        /// </summary>
         Read = 1,
+        /// <summary>
+        /// Write mode.
+        /// </summary>
         Write = 2,
+        /// <summary>
+        /// Read and write mode.
+        /// </summary>
         ReadWrite = 3
     }
 

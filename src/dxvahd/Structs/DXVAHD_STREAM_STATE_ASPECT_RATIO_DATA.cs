@@ -35,12 +35,44 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the pixel aspect ratio (PAR) for the source and destination rectangles.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA {
+    ///   BOOL            Enable;
+    ///   DXVAHD_RATIONAL SourceAspectRatio;
+    ///   DXVAHD_RATIONAL DestinationAspectRatio;
+    /// } DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA, *PDXVAHD_STREAM_STATE_ASPECT_RATIO_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/DD7AB16E-2DC6-462E-B55D-B93A14C362CF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DD7AB16E-2DC6-462E-B55D-B93A14C362CF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA")]
     public struct DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA
     {
+        /// <summary>
+        /// <strong>If TRUE</strong>, the <strong>SourceAspectRatio</strong> and <strong>DestinationAspectRatio
+        /// </strong> members contain valid values <strong></strong>. Otherwise, the pixel aspect ratios are
+        /// unspecified. 
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool Enable;
+        /// <summary>
+        /// A <see cref="dxvahd.DXVAHD_RATIONAL"/> structure that contains the source PAR. The default state
+        /// value is 1:1 (square pixels). 
+        /// </summary>
         public DXVAHD_RATIONAL SourceAspectRatio;
+        /// <summary>
+        /// A <see cref="dxvahd.DXVAHD_RATIONAL"/> structure that contains the destination PAR. The default
+        /// state value is 1:1 (square pixels). 
+        /// </summary>
         public DXVAHD_RATIONAL DestinationAspectRatio;
     }
 

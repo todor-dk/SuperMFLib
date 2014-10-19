@@ -35,11 +35,51 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Callback interface to receive notifications from a network source on the progress of an
+    /// asynchronous open operation.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/9145910B-81F1-4FD1-8F6F-D6273E0EDDE6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9145910B-81F1-4FD1-8F6F-D6273E0EDDE6(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("059054B3-027C-494C-A27D-9113291CF87F"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFSourceOpenMonitor
     {
+        /// <summary>
+        /// Called by the network source when the open operation begins or ends.
+        /// </summary>
+        /// <param name="pEvent">
+        /// Pointer to the <see cref="IMFMediaEvent"/> interface. 
+        /// </param>
+        /// <returns>
+        /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
+        /// those in the following table. 
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Return code</term><description>Description</description></listheader>
+        /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT OnSourceEvent(
+        ///   [in]  IMFMediaEvent *pEvent
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/19B9A891-5116-41B3-8750-85F2C23D3D7F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/19B9A891-5116-41B3-8750-85F2C23D3D7F(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int OnSourceEvent(
             [In, MarshalAs(UnmanagedType.Interface)] IMFMediaEvent pEvent

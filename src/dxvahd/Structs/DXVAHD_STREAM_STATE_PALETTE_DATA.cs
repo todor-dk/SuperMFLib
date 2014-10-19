@@ -35,10 +35,38 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains the color palette entries for an input stream, when using Microsoft DirectX Video
+    /// Acceleration High Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_PALETTE_DATA {
+    ///   UINT     Count;
+    ///   D3DCOLOR *pEntries;
+    /// } DXVAHD_STREAM_STATE_PALETTE_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/91F69451-72E6-4028-92D5-555DCF834CF7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/91F69451-72E6-4028-92D5-555DCF834CF7(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_PALETTE_DATA")]
     public struct DXVAHD_STREAM_STATE_PALETTE_DATA
     {
+        /// <summary>
+        /// The number of palette entries. The default state value is 0.
+        /// </summary>
         public int Count;
+        /// <summary>
+        /// A pointer to an array of <strong>D3DCOLOR</strong> values. For RGB streams, the palette entries use
+        /// a D3DFMT_A8R8G8B8 (ARGB-32) representation. For YCbCr streams, the palette entries use an AYUV
+        /// representation. The alpha channel is used for alpha blending; see 
+        /// <see cref="dxvahd.DXVAHD_STREAM_STATE_ALPHA_DATA"/>. 
+        /// </summary>
         public int[] pEntries; // D3DCOLOR
     }
 

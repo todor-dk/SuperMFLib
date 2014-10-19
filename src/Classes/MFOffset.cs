@@ -33,16 +33,47 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Specifies an offset as a fixed-point real number. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFOffset {
+    ///   WORD  fract;
+    ///   short value;
+    /// } MFOffset;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/E93539FE-3E4A-4B34-8D6A-B3F300A70FFC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E93539FE-3E4A-4B34-8D6A-B3F300A70FFC(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 2), UnmanagedName("MFOffset")]
     public class MFOffset
     {
+        /// <summary>
+        /// The fractional part of the number. 
+        /// </summary>
         public short fract;
+        /// <summary>
+        /// The integer part of the number. 
+        /// </summary>
         public short Value;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFOffset"/> class.
+        /// </summary>
         public MFOffset()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFOffset"/> class.
+        /// </summary>
+        /// <param name="v">The integer part of the number.</param>
         public MFOffset(float v)
         {
             Value = (short)v;

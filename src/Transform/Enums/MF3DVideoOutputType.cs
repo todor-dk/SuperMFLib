@@ -33,10 +33,26 @@ namespace MediaFoundation.Transform
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies how to  output a 3D stereoscopic video stream.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/A41469B3-9BBF-4664-9ABA-6894A4F94BBE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A41469B3-9BBF-4664-9ABA-6894A4F94BBE(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MF3DVideoOutputType")]
     public enum MF3DVideoOutputType
     {
+        /// <summary>
+        /// Output the base view only. Discard the other view.
+        /// </summary>
         MF3DVideoOutputType_BaseView = 0,
+        /// <summary>
+        /// Output a stereo view (two buffers).
+        /// </summary>
         MF3DVideoOutputType_Stereo = 1
     }
 

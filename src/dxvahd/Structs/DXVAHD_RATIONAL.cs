@@ -35,10 +35,34 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains a rational number (ratio).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_RATIONAL {
+    ///   UINT Numerator;
+    ///   UINT Denominator;
+    /// } DXVAHD_RATIONAL;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/8064820E-533E-4B40-8EEB-E3AD6A6B1FF7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8064820E-533E-4B40-8EEB-E3AD6A6B1FF7(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_RATIONAL")]
     public struct DXVAHD_RATIONAL
     {
+        /// <summary>
+        /// The numerator of the ratio.
+        /// </summary>
         public int Numerator;
+        /// <summary>
+        /// The denominator of the ratio.
+        /// </summary>
         public int Denominator;
     }
 

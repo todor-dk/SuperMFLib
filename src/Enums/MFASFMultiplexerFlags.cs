@@ -34,10 +34,27 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines the ASF multiplexer options.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/6989AC24-F25F-4BC8-A4B9-3E41434A0D44(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6989AC24-F25F-4BC8-A4B9-3E41434A0D44(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFASF_MULTIPLEXERFLAGS")]
     public enum MFASFMultiplexerFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The multiplexer automatically adjusts the bit rate of the ASF content in response to the
+        /// characteristics of the streams being multiplexed.
+        /// </summary>
         AutoAdjustBitrate = 0x00000001
     }
 

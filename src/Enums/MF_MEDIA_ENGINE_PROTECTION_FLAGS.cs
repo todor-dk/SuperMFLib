@@ -35,11 +35,35 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains flags that specify whether the Media Engine will play protected content, and whether the
+    /// Media Engine will use the <c>Protected Media Path</c> (PMP). 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/02326325-F122-4D6A-8CA7-3B201378BC15(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/02326325-F122-4D6A-8CA7-3B201378BC15(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MF_MEDIA_ENGINE_PROTECTION_FLAGS")]
     public enum MF_MEDIA_ENGINE_PROTECTION_FLAGS
     {
+        /// <summary>
+        /// Enable playback of protected content. The Media Engine will not play DRM-protected content unless
+        /// this flag is set. If you set this flag, also set the 
+        /// <see cref="MF_MEDIA_ENGINE.CONTENT_PROTECTION_MANAGER"/> attribute. 
+        /// </summary>
         EnableProtectedContent = 1,
+        /// <summary>
+        /// Use the <c>Protected Media Path</c> (PMP) for all playback, including clear (non-protected)
+        /// content. 
+        /// </summary>
         UsePMPForAllContent = 2,
+        /// <summary>
+        /// Create the PMP inside an unprotected process. You can use this option to play clear content, but
+        /// not to play protected content.
+        /// </summary>
         UseUnprotectedPMP = 4
 
     }

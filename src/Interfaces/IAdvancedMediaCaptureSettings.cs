@@ -33,11 +33,44 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Provides settings for advanced media capture.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/F99669A1-5E6E-4E3B-8907-5FB537ECADFE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F99669A1-5E6E-4E3B-8907-5FB537ECADFE(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("24E0485F-A33E-4aa1-B564-6019B1D14F65"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IAdvancedMediaCaptureSettings
     {
+        /// <summary>
+        /// Gets the DirectX device manager.
+        /// </summary>
+        /// <param name="value">
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetDirectxDeviceManager(
+        ///   [out]  IMFDXGIDeviceManager **value
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/3FD6EAD4-BC37-4AC9-BBDD-E7E2FBBCBCDE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3FD6EAD4-BC37-4AC9-BBDD-E7E2FBBCBCDE(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetDirectxDeviceManager(
             out IMFDXGIDeviceManager value

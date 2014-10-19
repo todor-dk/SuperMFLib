@@ -35,11 +35,48 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains data for the <see cref="OPM.MFOpmStatusRequests.OPM_SET_PROTECTION_LEVEL" /> command in
+    /// <c>Output Protection Manager</c> (OPM).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _OPM_SET_PROTECTION_LEVEL_PARAMETERS {
+    ///   ULONG ulProtectionType;
+    ///   ULONG ulProtectionLevel;
+    ///   ULONG Reserved;
+    ///   ULONG Reserved2;
+    /// } OPM_SET_PROTECTION_LEVEL_PARAMETERS;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/074C30B2-AD79-4ACE-89FB-859FAC016EBF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/074C30B2-AD79-4ACE-89FB-859FAC016EBF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public struct OPM_SET_PROTECTION_LEVEL_PARAMETERS
     {
+        /// <summary>
+        /// Identifies the protection mechanism. For a list of possible values, see
+        /// <c>OPM Protection Type Flags</c>.
+        /// </summary>
         public int ulProtectionType;
+        /// <summary>
+        /// Specifies the protection level. The meaning of this value depends on the protection mechanism that
+        /// is queried. For each protection mechanism, the value is a flag from a different enumeration, as
+        /// shown in the following table.
+        /// <para /><list type="table"><listheader><term>Protection mechanism</term><description>Enumeration</description></listheader><item><term>ACP</term><description><see cref="OPM.OPM_ACP_PROTECTION_LEVEL" /></description></item><item><term>CGMS-A</term><description><c>CGMS-A Protection Flags</c></description></item><item><term>DPCP</term><description><see cref="OPM.OPM_DPCP_PROTECTION_LEVEL" /></description></item><item><term>HDCP</term><description><see cref="OPM.OPM_HDCP_PROTECTION_LEVEL" /></description></item></list>
+        /// </summary>
         public int ulProtectionLevel;
+        /// <summary>
+        /// Reserved for future use. Set to zero.
+        /// </summary>
         public int Reserved;
+        /// <summary>
+        /// Reserved for future use. Set to zero.
+        /// </summary>
         public int Reserved2;
     }
 

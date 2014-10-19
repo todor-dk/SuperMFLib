@@ -31,10 +31,27 @@ namespace MediaFoundation.Transform
 {
 
 
+    /// <summary>
+    /// Indicates whether a Media Foundation transform (MFT) can produce output data.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/951900B1-364E-4867-A1F8-50D485D13C77(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/951900B1-364E-4867-A1F8-50D485D13C77(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("_MFT_OUTPUT_STATUS_FLAGS")]
     public enum MFTOutputStatusFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// There is a sample available for at least one output stream. To retrieve the available output
+        /// samples, call <see cref="Transform.IMFTransform.ProcessOutput"/>. 
+        /// </summary>
         SampleReady = 0x00000001
     }
 

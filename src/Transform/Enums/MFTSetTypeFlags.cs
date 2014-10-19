@@ -31,10 +31,26 @@ namespace MediaFoundation.Transform
 {
 
 
+    /// <summary>
+    /// Defines flags for the setting or testing the media type on a Media Foundation transform (MFT).
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/DD7E97FB-80AB-4E6B-AC2A-A257D7E8EC63(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DD7E97FB-80AB-4E6B-AC2A-A257D7E8EC63(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("_MFT_SET_TYPE_FLAGS")]
     public enum MFTSetTypeFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Test the proposed media type, but do not set it.
+        /// </summary>
         TestOnly = 0x00000001
     }
 

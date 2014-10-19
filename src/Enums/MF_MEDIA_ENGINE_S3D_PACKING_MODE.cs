@@ -35,11 +35,30 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the layout for a packed 3D video frame.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/13638568-11BE-4D1B-897E-5F8472C03677(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/13638568-11BE-4D1B-897E-5F8472C03677(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_S3D_PACKING_MODE")]
     public enum MF_MEDIA_ENGINE_S3D_PACKING_MODE
     {
+        /// <summary>
+        /// None.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The views are packed side-by-side in a single frame.
+        /// </summary>
         SideBySide = 1,
+        /// <summary>
+        /// The views are packed top-to-bottom in a single frame.
+        /// </summary>
         TopBottom = 2
 
     }

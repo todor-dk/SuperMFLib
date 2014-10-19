@@ -35,11 +35,35 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines a color value for Microsoft DirectX Video Acceleration High Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef union _DXVAHD_COLOR {
+    ///   DXVAHD_COLOR_RGBA   RGB;
+    ///   DXVAHD_COLOR_YCbCrA YCbCr;
+    /// } DXVAHD_COLOR;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/833BB91B-D891-4C3F-BE20-367B0A23E97E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/833BB91B-D891-4C3F-BE20-367B0A23E97E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Explicit), UnmanagedName("DXVAHD_COLOR")]
     public struct DXVAHD_COLOR
     {
+        /// <summary>
+        /// A <see cref="dxvahd.DXVAHD_COLOR_RGBA" /> structure that contains an RGB color value.
+        /// </summary>
         [FieldOffset(0)]
         public DXVAHD_COLOR_RGBA RGB;
+        /// <summary>
+        /// A <see cref="dxvahd.DXVAHD_COLOR_YCbCrA" /> structure that contains a YCbCr color value.
+        /// </summary>
         [FieldOffset(0)]
         public DXVAHD_COLOR_YCbCrA YCbCr;
     }

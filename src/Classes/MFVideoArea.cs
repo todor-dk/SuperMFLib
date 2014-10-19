@@ -33,18 +33,52 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Specifies a rectangular area within a video frame. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFVideoArea {
+    ///   MFOffset OffsetX;
+    ///   MFOffset OffsetY;
+    ///   SIZE     Area;
+    /// } MFVideoArea;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/D22B8B9C-399B-4FCE-A173-833005B5BF03(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D22B8B9C-399B-4FCE-A173-833005B5BF03(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("MFVideoArea")]
     public class MFVideoArea
     {
+        /// <summary>
+        /// An <see cref="MFOffset"/> structure that contains the x-coordinate of the upper-left corner of the
+        /// rectangle. This coordinate might have a fractional value. 
+        /// </summary>
         public MFOffset OffsetX;
+        /// <summary>
+        /// An <see cref="MFOffset"/> structure that contains the y-coordinate of the upper-left corner of the
+        /// rectangle. This coordinate might have a fractional value. 
+        /// </summary>
         public MFOffset OffsetY;
+        /// <summary>
+        /// A <see cref="Misc.MFSize"/> structure that contains the width and height of the rectangle. 
+        /// </summary>
         public MFSize Area;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFVideoArea"/> class.
+        /// </summary>
         public MFVideoArea()
         {
             OffsetX = new MFOffset();
             OffsetY = new MFOffset();
         }
+
 
         public MFVideoArea(float x, float y, int width, int height)
         {

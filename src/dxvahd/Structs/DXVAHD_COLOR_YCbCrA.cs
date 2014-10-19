@@ -35,12 +35,44 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies a YCbCr color value.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_COLOR_YCbCrA {
+    ///   FLOAT Y;
+    ///   FLOAT Cb;
+    ///   FLOAT Cr;
+    ///   FLOAT A;
+    /// } DXVAHD_COLOR_YCbCrA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/3E37DAF1-5529-4042-AB6E-89A7F77D5E15(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3E37DAF1-5529-4042-AB6E-89A7F77D5E15(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_COLOR_YCbCrA")]
     public struct DXVAHD_COLOR_YCbCrA
     {
+        /// <summary>
+        /// The Y (luma) value.
+        /// </summary>
         public float Y;
+        /// <summary>
+        /// The Cb chroma value.
+        /// </summary>
         public float Cb;
+        /// <summary>
+        /// The Cr chroma value.
+        /// </summary>
         public float Cr;
+        /// <summary>
+        /// The alpha value. Values range from 0 (transparent) to 1 (opaque).
+        /// </summary>
         public float A;
     }
 

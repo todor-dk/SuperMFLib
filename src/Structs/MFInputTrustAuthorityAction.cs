@@ -36,11 +36,40 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
-    [StructLayout(LayoutKind.Sequential), UnmanagedName("MFINPUTTRUSTAUTHORITY_ACTION")]
+    /// <summary>
+    /// Describes an action requested by an output trust authority (OTA). The request is sent to an input
+    /// trust authority (ITA).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFINPUTTRUSTAUTHORITY_ACTION {
+    ///   MFPOLICYMANAGER_ACTION Action;
+    ///   BYTE                   *pbTicket;
+    ///   DWORD                  cbTicket;
+    /// } MFINPUTTRUSTAUTHORITY_ACCESS_ACTION;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/24E74739-054C-46EF-8DF7-B29A9A2EA94A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/24E74739-054C-46EF-8DF7-B29A9A2EA94A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    [StructLayout(LayoutKind.Sequential), UnmanagedName("MFINPUTTRUSTAUTHORITY_ACCESS_ACTION")]
     public struct MFInputTrustAuthorityAction
     {
+        /// <summary>
+        /// Specifies the action as a member of the <c>MFPOLICYMANAGER_ACTION</c> enumeration.
+        /// </summary>
         public MFPolicyManagerAction Action;
+        /// <summary>
+        /// Pointer to a buffer that contains a ticket object, provided by the OTA.
+        /// </summary>
         public IntPtr pbTicket;
+        /// <summary>
+        /// Size of the ticket object, in bytes.
+        /// </summary>
         public int cbTicket;
     }
 

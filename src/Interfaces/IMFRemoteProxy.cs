@@ -37,17 +37,94 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Exposed by objects that act as a proxy for a remote object. To obtain a pointer to this interface,
+    /// call <see cref="IMFGetService.GetService"/> with the service identifier MF_REMOTE_PROXY. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/46AF5BA7-C362-4CFD-AE6D-B698C6403A65(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/46AF5BA7-C362-4CFD-AE6D-B698C6403A65(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("994E23AD-1CC2-493C-B9FA-46F1CB040FA4")]
     public interface IMFRemoteProxy
     {
+        /// <summary>
+        /// Retrieves a pointer to the remote object for which this object is a proxy.
+        /// </summary>
+        /// <param name="riid">
+        /// Interface identifier (IID) of the requested interface.
+        /// </param>
+        /// <param name="ppv">
+        /// Receives a pointer to the requested interface. The caller must release the interface.
+        /// </param>
+        /// <returns>
+        /// The method returns an HRESULT. Possible values include, but are not limited to, those in the
+        /// following table.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Return code</term><description>Description</description></listheader>
+        /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetRemoteObject(
+        ///   [in]   REFIID riid,
+        ///   [out]  void **ppv
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/2D9E35BD-FE4C-4A98-91C8-2192AE34B2B3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2D9E35BD-FE4C-4A98-91C8-2192AE34B2B3(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetRemoteObject(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
             [MarshalAs(UnmanagedType.Interface)] out object ppv
             );
 
+        /// <summary>
+        /// Retrieves a pointer to the object that is hosting this proxy.
+        /// </summary>
+        /// <param name="riid">
+        /// Interface identifier (IID) of the requested interface.
+        /// </param>
+        /// <param name="ppv">
+        /// Receives a pointer to the requested interface. The caller must release the interface.
+        /// </param>
+        /// <returns>
+        /// The method returns an HRESULT. Possible values include, but are not limited to, those in the
+        /// following table.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Return code</term><description>Description</description></listheader>
+        /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetRemoteHost(
+        ///   [in]   REFIID riid,
+        ///   [out]  void **ppv
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/E3A4407A-D8E4-4C7B-81DA-88D63E0D77B8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E3A4407A-D8E4-4C7B-81DA-88D63E0D77B8(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetRemoteHost(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,

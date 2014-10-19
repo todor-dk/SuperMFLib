@@ -36,14 +36,42 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines the values for the source stream category.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/F82CFF90-CFA5-4000-A0E6-547042EDE02F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F82CFF90-CFA5-4000-A0E6-547042EDE02F(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_CAPTURE_ENGINE_STREAM_CATEGORY")]
     public enum MF_CAPTURE_ENGINE_STREAM_CATEGORY
     {
+        /// <summary>
+        /// Specifies a video preview stream.
+        /// </summary>
         VideoPreview = 0x00000000,
+        /// <summary>
+        /// Specifies a video capture stream.
+        /// </summary>
         VideoCapture = 0x00000001,
+        /// <summary>
+        /// Specifies an independent photo stream.
+        /// </summary>
         PhotoIndependent = 0x00000002,
+        /// <summary>
+        /// Specifies a dependent photo stream.
+        /// </summary>
         PhotoDependent = 0x00000003,
+        /// <summary>
+        /// Specifies an audio stream.
+        /// </summary>
         Audio = 0x00000004,
+        /// <summary>
+        /// Specifies an unsupported stream.
+        /// </summary>
         Unsupported = 0x00000005
     }
 

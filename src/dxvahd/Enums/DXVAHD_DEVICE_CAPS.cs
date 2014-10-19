@@ -35,12 +35,39 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines video processing capabilities for a Microsoft DirectX Video Acceleration High Definition
+    /// (DXVA-HD) device.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/1F3DDE4C-CD9D-4361-B2B2-DB3C9D2EA146(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1F3DDE4C-CD9D-4361-B2B2-DB3C9D2EA146(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("DXVAHD_DEVICE_CAPS")]
     public enum DXVAHD_DEVICE_CAPS
     {
+        /// <summary>
+        /// The device can blend video content in linear color space. Most video content is gamma corrected,
+        /// resulting in nonlinear values. If the DXVA-HD device sets this flag, it means the device converts
+        /// colors to linear space before blending, which produces better results. 
+        /// </summary>
         LinearSpace = 0x1,
+        /// <summary>
+        /// The device supports the xvYCC color space for YCbCr data.
+        /// </summary>
         xvYCC = 0x2,
+        /// <summary>
+        /// The device can perform range conversion when the input and output are both RGB but use different
+        /// color ranges (0-255 or 16-235, for 8-bit RGB).
+        /// </summary>
         RGBRangeConversion = 0x4,
+        /// <summary>
+        /// The device can apply a matrix conversion to YCbCr values when the input and output are both YCbCr.
+        /// For example, the driver can convert colors from BT.601 to BT.709.
+        /// </summary>
         YCbCrMatrixConversion = 0x8
     }
 

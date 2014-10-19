@@ -35,11 +35,58 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Creates a proxy to a byte stream.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/DF29B5FC-864F-4400-8EDB-3A2CD797E37A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DF29B5FC-864F-4400-8EDB-3A2CD797E37A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("a6b43f84-5c0a-42e8-a44d-b1857a76992f"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFByteStreamProxyClassFactory
     {
+        /// <summary>
+        /// Creates a proxy to a byte stream. The proxy enables a media source to read from a byte stream in
+        /// another process.
+        /// </summary>
+        /// <param name="pByteStream">
+        /// A pointer to the <see cref="IMFByteStream"/> interface of the byte stream to proxy. 
+        /// </param>
+        /// <param name="pAttributes">
+        /// Reserved. Set to <strong>NULL</strong>. 
+        /// </param>
+        /// <param name="riid">
+        /// The interface identifer (IID) of the interface being requested.
+        /// </param>
+        /// <param name="ppvObject">
+        /// Receives a pointer to the interface. The caller must release the interface.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT CreateByteStreamProxy(
+        ///   [in]   IMFByteStream *pByteStream,
+        ///   [in]   IMFAttributes *pAttributes,
+        ///   [in]   REFIID riid,
+        ///   [out]  LPVOID *ppvObject
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/5A7E6218-615F-43E3-BB96-0D39138A4E28(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5A7E6218-615F-43E3-BB96-0D39138A4E28(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int CreateByteStreamProxy(
             IMFByteStream pByteStream,

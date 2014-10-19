@@ -34,11 +34,32 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Indicates whether the URL is from a trusted source.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/FD008A23-71F7-4718-A51A-EE88453B6FDD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FD008A23-71F7-4718-A51A-EE88453B6FDD(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_URL_TRUST_STATUS")]
     public enum MFURLTrustStatus
     {
+        /// <summary>
+        /// The validity of the URL cannot be guaranteed because it is not signed. The application should warn
+        /// the user.
+        /// </summary>
         Untrusted,
+        /// <summary>
+        /// The URL is the original one provided with the content.
+        /// </summary>
         Trusted,
+        /// <summary>
+        /// The URL was originally signed and has been tampered with. The file should be considered corrupted,
+        /// and the application should not navigate to the URL without issuing a strong warning the user.
+        /// </summary>
         Tampered
     }
 

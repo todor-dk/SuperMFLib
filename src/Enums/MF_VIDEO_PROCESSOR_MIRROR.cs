@@ -36,11 +36,30 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies how to flip a video image.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/AFD29AD7-8DC9-4834-8F8E-D062A3A19BD0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AFD29AD7-8DC9-4834-8F8E-D062A3A19BD0(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_VIDEO_PROCESSOR_MIRROR")]
     public enum MF_VIDEO_PROCESSOR_MIRROR
     {
+        /// <summary>
+        /// Do not flip the image.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Flip the image horizontally.
+        /// </summary>
         Horizontal = 1,
+        /// <summary>
+        /// Flip the image vertically.
+        /// </summary>
         Vertical = 2
     }
 #endif

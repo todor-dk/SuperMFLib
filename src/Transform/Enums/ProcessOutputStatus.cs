@@ -31,10 +31,26 @@ namespace MediaFoundation.Transform
 {
 
 
+    /// <summary>
+    /// Indicates the status of a call to <see cref="Transform.IMFTransform.ProcessOutput"/>. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/80804B33-1DAC-41F8-8446-8F929BF9B931(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/80804B33-1DAC-41F8-8446-8F929BF9B931(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("_MFT_PROCESS_OUTPUT_STATUS")]
     public enum ProcessOutputStatus
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// The Media Foundation transform (MFT) has created one or more new output streams.
+        /// </summary>
         NewStreams = 0x00000100
     }
 

@@ -37,9 +37,22 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// Class BitmapInfoHeaderWithData.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/A00CAA49-E4DF-419F-89A7-AB03C13A1B5B(v=VS.110,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A00CAA49-E4DF-419F-89A7-AB03C13A1B5B(v=VS.110,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("BITMAPINFO")]
     public class BitmapInfoHeaderWithData : BitmapInfoHeader
     {
+        /// <summary>
+        /// Specifies an array of RGBQUAD or DWORD data types that define the colors in the bitmap. 
+        /// </summary>
         public int[] bmiColors;
     }
 

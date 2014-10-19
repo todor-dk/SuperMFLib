@@ -35,12 +35,35 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines capabilities related to input formats for a Microsoft DirectX Video Acceleration High
+    /// Definition (DXVA-HD) device.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/DDFFF29C-3A40-4238-93E7-821C4FFC27AF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DDFFF29C-3A40-4238-93E7-821C4FFC27AF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("DXVAHD_INPUT_FORMAT_CAPS")]
     public enum DXVAHD_INPUT_FORMAT_CAPS
     {
+        /// <summary>
+        /// The device can deinterlace an input stream that contains interlaced RGB video.
+        /// </summary>
         RGBInterlaced = 0x1,
+        /// <summary>
+        /// The device can perform color adjustment on RGB video.
+        /// </summary>
         RGBProcAmp = 0x2,
+        /// <summary>
+        /// The device can perform luma keying on RGB video.
+        /// </summary>
         RGBLumaKey = 0x4,
+        /// <summary>
+        /// The device can deinterlace input streams with palettized color formats.
+        /// </summary>
         PaletteInterlaced = 0x8
     }
 

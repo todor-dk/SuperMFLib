@@ -33,13 +33,53 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Describes a video format.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFVIDEOFORMAT {
+    ///   DWORD                 dwSize;
+    ///   MFVideoInfo           videoInfo;
+    ///   GUID                  guidFormat;
+    ///   MFVideoCompressedInfo compressedInfo;
+    ///   MFVideoSurfaceInfo    surfaceInfo;
+    /// } MFVIDEOFORMAT;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/7FBC4A35-117C-4F0C-9E9B-FF44E30A1618(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7FBC4A35-117C-4F0C-9E9B-FF44E30A1618(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 8), UnmanagedName("MFVIDEOFORMAT")]
     public class MFVideoFormat
     {
+        /// <summary>
+        /// Size of the structure, in bytes. This value includes the size of the palette entries that may
+        /// appear after the <strong>surfaceInfo</strong> member. 
+        /// </summary>
         public int dwSize;
+        /// <summary>
+        /// <see cref="MFVideoInfo"/> structure. This structure contains information that applies to both
+        /// compressed and uncompressed formats. 
+        /// </summary>
         public MFVideoInfo videoInfo;
+        /// <summary>
+        /// Video subtype. See <c>Video Subtype GUIDs</c>. 
+        /// </summary>
         public Guid guidFormat;
+        /// <summary>
+        /// <see cref="MFVideoCompressedInfo"/> structure. This structure contains information that applies
+        /// only to compressed formats. 
+        /// </summary>
         public MFVideoCompressedInfo compressedInfo;
+        /// <summary>
+        /// <see cref="MFVideoSurfaceInfo"/> structure. This structure contains information that applies only
+        /// to uncompressed formats. 
+        /// </summary>
         public MFVideoSurfaceInfo surfaceInfo;
     }
 

@@ -36,12 +36,34 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Specifies how 3D video frames are stored in memory.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/0E31BC98-E69D-405E-9EA6-026916123091(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0E31BC98-E69D-405E-9EA6-026916123091(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFVideo3DFormat")]
     public enum MFVideo3DFormat
     {
+        /// <summary>
+        /// The base view is stored in a single buffer. The other view is discarded.
+        /// </summary>
         BaseView = 0,
+        /// <summary>
+        /// Each media sample contains multiple buffers, one for each view.
+        /// </summary>
         MultiView = 1,
+        /// <summary>
+        /// Each media sample contains one buffer, with both views packed side-by-side into a single frame. 
+        /// </summary>
         PackedLeftRight = 2,
+        /// <summary>
+        /// Each media sample contains one buffer, with both views packed top-and-bottom into a single frame. 
+        /// </summary>
         PackedTopBottom = 3
     }
 

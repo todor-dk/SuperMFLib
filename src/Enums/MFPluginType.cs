@@ -33,10 +33,26 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Specifies the object type for the <see cref="IMFPluginControl"/> interface. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/F967CF3F-582C-457A-BA75-980FEB2D9BF3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F967CF3F-582C-457A-BA75-980FEB2D9BF3(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_Plugin_Type")]
     public enum MFPluginType
     {
+        /// <summary>
+        /// Media Foundation transform (MFT).
+        /// </summary>
         MFT = 0,
+        /// <summary>
+        /// Media source.
+        /// </summary>
         MediaSource = 1
     }
 

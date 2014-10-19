@@ -34,12 +34,44 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Describes an ARGB color value.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _MFARGB {
+    ///   BYTE rgbBlue;
+    ///   BYTE rgbGreen;
+    ///   BYTE rgbRed;
+    ///   BYTE rgbAlpha;
+    /// } MFARGB;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/CE7AC174-9F00-42A4-9B48-ED86B406D83E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CE7AC174-9F00-42A4-9B48-ED86B406D83E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("MFARGB")]
     public struct MFARGB
     {
+        /// <summary>
+        /// Blue value.
+        /// </summary>
         public byte rgbBlue;
+        /// <summary>
+        /// Green value.
+        /// </summary>
         public byte rgbGreen;
+        /// <summary>
+        /// Red value.
+        /// </summary>
         public byte rgbRed;
+        /// <summary>
+        /// Alpha value.
+        /// </summary>
         public byte rgbAlpha;
     }
 

@@ -33,7 +33,7 @@ namespace MediaFoundation
 {
 
 
-    [UnmanagedName("unnamed enum")]
+    [UnmanagedName("Media Foundation Events")]
     public enum MediaEventType
     {
         MEUnknown = 0,

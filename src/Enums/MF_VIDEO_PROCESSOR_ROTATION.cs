@@ -35,10 +35,26 @@ namespace MediaFoundation
 {
 
 #if ALLOW_UNTESTED_INTERFACES
+    /// <summary>
+    /// Specifies how to rotate a video image.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/B5B75A2A-6620-4E5B-8074-3A9E2FFB40F8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B5B75A2A-6620-4E5B-8074-3A9E2FFB40F8(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_VIDEO_PROCESSOR_ROTATION")]
     public enum MF_VIDEO_PROCESSOR_ROTATION
     {
+        /// <summary>
+        /// Do not rotate the image.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Rotate the image to the correct viewing orientation.
+        /// </summary>
         Normal = 1
     }
 

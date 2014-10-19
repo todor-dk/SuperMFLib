@@ -38,10 +38,43 @@ namespace MediaFoundation.MFPlayer
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+    /// Applications should use the <c>Media Session</c> for playback. 
+    /// <para/>
+    /// Event structure for the <strong>MFP_EVENT_TYPE_MEDIAITEM_CREATED</strong> event. This event is sent
+    /// when the <see cref="MFPlayer.IMFPMediaPlayer.CreateMediaItemFromURL"/> or 
+    /// <see cref="MFPlayer.IMFPMediaPlayer.CreateMediaItemFromObject"/> method completes. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct MFP_MEDIAITEM_CREATED_EVENT {
+    ///   MFP_EVENT_HEADER header;
+    ///   IMFPMediaItem    *pMediaItem;
+    ///   DWORD_PTR        dwUserData;
+    /// } MFP_MEDIAITEM_CREATED_EVENT;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/68E4076F-C03C-4780-9731-67EB6E78EC8B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/68E4076F-C03C-4780-9731-67EB6E78EC8B(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    [Obsolete("This API may be removed from future releases of Windows.")]
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFP_MEDIAITEM_CREATED_EVENT")]
     public class MFP_MEDIAITEM_CREATED_EVENT : MFP_EVENT_HEADER
     {
+        /// <summary>
+        /// Pointer to the <see cref="MFPlayer.IMFPMediaItem"/> interface of the new media item. If creating
+        /// the media item failed, this member is <strong>NULL</strong>. 
+        /// </summary>
         public IMFPMediaItem pMediaItem;
+        /// <summary>
+        /// Application-defined user data for the media item. This value is specified when the application
+        /// calls <c>CreateMediaItemFromURL</c> or <c>CreateMediaItemFromObject</c>. 
+        /// </summary>
         public IntPtr dwUserData;
     }
 

@@ -35,10 +35,26 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies media engine extension types.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/B66D1A68-B3DA-4A03-B6E4-6C6566ADCAF1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B66D1A68-B3DA-4A03-B6E4-6C6566ADCAF1(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_EXTENSION_TYPE")]
     public enum MF_MEDIA_ENGINE_EXTENSION_TYPE
     {
+        /// <summary>
+        /// Media Source.
+        /// </summary>
         MediaSource = 0,
+        /// <summary>
+        /// Byte Stream.
+        /// </summary>
         ByteStream = 1
     }
 

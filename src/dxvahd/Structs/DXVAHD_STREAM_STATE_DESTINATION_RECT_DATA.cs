@@ -35,11 +35,48 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the destination rectangle for an input stream, when using Microsoft DirectX Video
+    /// Acceleration High Definition (DXVA-HD).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA {
+    ///   BOOL Enable;
+    ///   RECT DestinationRect;
+    /// } DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/F850531B-EEE0-4943-8C41-050EC78EAB63(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F850531B-EEE0-4943-8C41-050EC78EAB63(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA")]
     public struct DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA
     {
+        /// <summary>
+        /// Specifies whether to use the destination rectangle, or use the entire output surface. The default
+        /// state value is <strong>FALSE</strong>. 
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Value</term><description>Meaning</description></listheader>
+        /// <item><term><strong>TRUE</strong></term><description>Use the destination rectangle given in the <strong>DestinationRect</strong> member. </description></item>
+        /// <item><term><strong>FALSE</strong></term><description>Use the entire output surface as the destination rectangle.</description></item>
+        /// </list>
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool Enable;
+        /// <summary>
+        /// The <em>destination rectangle</em>, which defines the portion of the output surface where the
+        /// source rectangle is blitted. The destination rectangle is given in pixel coordinates, relative to
+        /// the output surface. The default value is an empty rectangle, (0, 0, 0, 0). 
+        /// <para/>
+        /// If the <strong>Enable</strong> member is <strong>FALSE</strong>, the <strong>DestinationRect
+        /// </strong> member is ignored. 
+        /// </summary>
         public MFRect DestinationRect;
     }
 

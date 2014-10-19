@@ -35,6 +35,18 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Controls how media sources and transforms are enumerated in Microsoft Media Foundation.
+    /// <para/>
+    /// To get a pointer to this interface, call <see cref="MFExtern.MFGetPluginControl"/>. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/CDC6FD4F-C544-43BB-BA99-5468EF49949D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CDC6FD4F-C544-43BB-BA99-5468EF49949D(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("5C6C44BF-1DB6-435B-9249-E8CD10FDEC96")]

@@ -35,11 +35,30 @@ namespace MediaFoundation
 {
 
 
+    /// <summary>
+    /// Defines the object types that are created by the source resolver.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/E919AE78-E3A5-42C5-B4E0-186E7E4FE54A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E919AE78-E3A5-42C5-B4E0-186E7E4FE54A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_OBJECT_TYPE")]
     public enum MFObjectType
     {
+        /// <summary>
+        /// Media source. You can query the object for the <see cref="IMFMediaSource"/> interface. 
+        /// </summary>
         MediaSource,
+        /// <summary>
+        /// Byte stream. You can query the object for the <see cref="IMFByteStream"/> interface. 
+        /// </summary>
         ByteStream,
+        /// <summary>
+        /// Invalid type.
+        /// </summary>
         Invalid
     }
 }

@@ -35,13 +35,43 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Defines preload hints for the Media Engine. These values correspond to the <strong>preload</strong>
+    /// attribute of the <strong>HTMLMediaElement</strong> interface in HTML5. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/784B3B3F-0A9E-4E34-9197-CE20E2F3FF78(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/784B3B3F-0A9E-4E34-9197-CE20E2F3FF78(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_PRELOAD")]
     public enum MF_MEDIA_ENGINE_PRELOAD
     {
+        /// <summary>
+        /// The <strong>preload</strong> attribute is missing. 
+        /// </summary>
         Missing = 0,
+        /// <summary>
+        /// The <strong>preload</strong> attribute is an empty string. This value is equivalent to <strong>
+        /// MF_MEDIA_ENGINE_PRELOAD_AUTOMATIC</strong>. 
+        /// </summary>
         Empty = 1,
+        /// <summary>
+        /// The <strong>preload</strong> attribute is "none". This value is a hint to the user agent not to
+        /// preload the resource. 
+        /// </summary>
         None = 2,
+        /// <summary>
+        /// The <strong>preload</strong> attribute is "metadata". This value is a hint to the user agent to
+        /// fetch the resource metadata. 
+        /// </summary>
         Metadata = 3,
+        /// <summary>
+        /// The <strong>preload</strong> attribute is "auto". This value is a hint to the user agent to preload
+        /// the entire resource. 
+        /// </summary>
         Automatic = 4
     }
 

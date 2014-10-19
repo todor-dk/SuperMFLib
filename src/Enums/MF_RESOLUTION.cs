@@ -35,7 +35,7 @@ namespace MediaFoundation
 {
 
 #if ALLOW_UNTESTED_INTERFACES
-    [Flags, UnmanagedName("Unnamed enum")]
+    [Flags, UnmanagedName("Source Resolver Flags")]
     public enum MF_RESOLUTION
     {
         None = 0,

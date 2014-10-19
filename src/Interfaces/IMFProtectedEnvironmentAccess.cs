@@ -37,11 +37,64 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Provides a method that allows content protection systems to perform a handshake with the protected
+    /// environment. This is needed because the <strong>CreateFile</strong> and <strong>DeviceIoControl
+    /// </strong> APIs are not available to Windows Store apps. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/2CD93BC9-4A42-4E16-80AA-4ECF5900F5E4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2CD93BC9-4A42-4E16-80AA-4ECF5900F5E4(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("ef5dc845-f0d9-4ec9-b00c-cb5183d38434")]
     public interface IMFProtectedEnvironmentAccess
     {
+        /// <summary>
+        /// Allows content protection systems to access the protected environment.
+        /// </summary>
+        /// <param name="inputLength">
+        /// The length in bytes of the input data.
+        /// </param>
+        /// <param name="input">
+        /// A pointer to the input data.
+        /// </param>
+        /// <param name="outputLength">
+        /// The length in bytes of the output data.
+        /// </param>
+        /// <param name="output">
+        /// A pointer to the output data.
+        /// </param>
+        /// <returns>
+        /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
+        /// those in the following table. 
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Return code</term><description>Description</description></listheader>
+        /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT Call(
+        ///   UINT32 inputLength,
+        ///   const BYTE *input,
+        ///   UINT32 outputLength,
+        ///   BYTE *output
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/805473C4-A2C9-483A-9A2C-29A9C63DD58C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/805473C4-A2C9-483A-9A2C-29A9C63DD58C(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int Call( 
             int inputLength,

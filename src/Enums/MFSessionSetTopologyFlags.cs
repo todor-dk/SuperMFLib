@@ -33,12 +33,51 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// Defines the behavior of the <see cref="IMFMediaSession.SetTopology"/> method. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/2993BDF9-CF28-4E20-9F38-F51FB0F6429E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2993BDF9-CF28-4E20-9F38-F51FB0F6429E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFSESSION_SETTOPOLOGY_FLAGS")]
     public enum MFSessionSetTopologyFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0x0,
+        /// <summary>
+        /// Stop the current presentation, clear all pending presentations, and immediately queue the new
+        /// topology (specified by the <em>pTopology</em> parameter). 
+        /// <para/>
+        /// If the <em>pTopology</em> parameter is <strong>NULL</strong>, this flag has no effect. 
+        /// </summary>
         Immediate = 0x1,
+        /// <summary>
+        /// The topology does not need to be resolved. Use this flag if you are setting a full topology. 
+        /// </summary>
         NoResolution = 0x2,
+        /// <summary>
+        /// <strong>Note</strong> Requires Windows 7. 
+        /// <para/>
+        /// Clear the current topology, as follows:
+        /// <para/>
+        /// <para>* If <em>pTopology</em> is not <strong>NULL</strong>, the topology is cleared only if <em>
+        /// pTopology</em> matches the current topology (that is, only if <em>pTopology</em> points to the
+        /// current topology). </para><para>* If the <em>pTopology</em> parameter is <strong>NULL</strong>, the
+        /// current topology is cleared, regardless of which topology is current. </para>
+        /// <para/>
+        /// Pending topologies are not removed from the playback queue. If there is a pending topology on the
+        /// queue, that topology will be loaded after the current topology is cleared. Otherwise, playback
+        /// simply stops.
+        /// <para/>
+        /// To remove all of the pending topologies from the queue, call 
+        /// <see cref="IMFMediaSession.ClearTopologies"/>. 
+        /// </summary>
         ClearCurrent = 0x4
     }
 

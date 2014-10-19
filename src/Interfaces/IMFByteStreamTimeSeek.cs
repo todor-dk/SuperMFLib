@@ -37,21 +37,118 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Seeks a byte stream by time position.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/BD9EDFF7-46BA-4788-A44E-C69C4B0BEB50(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BD9EDFF7-46BA-4788-A44E-C69C4B0BEB50(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("64976BFA-FB61-4041-9069-8C9A5F659BEB")]
     public interface IMFByteStreamTimeSeek
     {
+        /// <summary>
+        /// Queries whether the byte stream supports time-based seeking.
+        /// </summary>
+        /// <param name="pfTimeSeekIsSupported">
+        /// Receives the value <strong>TRUE</strong> if the byte stream supports time-based seeking, or 
+        /// <strong>FALSE</strong> otherwise. 
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT IsTimeSeekSupported(
+        ///   [out]  BOOL *pfTimeSeekIsSupported
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/92FCE0EF-046C-4639-958E-731795C5A123(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/92FCE0EF-046C-4639-958E-731795C5A123(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int IsTimeSeekSupported( 
             out bool pfTimeSeekIsSupported
         );
-        
+
+        /// <summary>
+        /// Seeks to a new position in the byte stream.
+        /// </summary>
+        /// <param name="qwTimePosition">
+        /// The new position, in 100-nanosecond units.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT TimeSeek(
+        ///   QWORD qwTimePosition
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/786F1299-A9E2-4B2C-A6AE-F88E6BF022DC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/786F1299-A9E2-4B2C-A6AE-F88E6BF022DC(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int TimeSeek( 
             long qwTimePosition
         );
-        
+
+        /// <summary>
+        /// Gets the result of a time-based seek.
+        /// </summary>
+        /// <param name="pqwStartTime">
+        /// Receives the new position after the seek, in 100-nanosecond units.
+        /// </param>
+        /// <param name="pqwStopTime">
+        /// Receives the stop time, in 100-nanosecond units. If the stop time is unknown, the value is zero.
+        /// </param>
+        /// <param name="pqwDuration">
+        /// Receives the total duration of the file, in 100-nanosecond units. If the duration is unknown, the
+        /// value is –1.
+        /// </param>
+        /// <returns>
+        /// This method can return one of these values.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Return code</term><description>Description</description></listheader>
+        /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
+        /// <item><term><strong>MF_E_INVALIDREQUEST</strong></term><description>The byte stream does not support time-based seeking, or no data is available.</description></item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetTimeSeekResult(
+        ///   [out]  QWORD *pqwStartTime,
+        ///   [out]  QWORD *pqwStopTime,
+        ///   [out]  QWORD *pqwDuration
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/D56E1F06-AA05-430C-BF5C-30B38831B842(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D56E1F06-AA05-430C-BF5C-30B38831B842(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetTimeSeekResult( 
             out long pqwStartTime,

@@ -35,7 +35,7 @@ namespace MediaFoundation
 {
 
 
-    [Flags, UnmanagedName("unnamed enum")]
+    [Flags, UnmanagedName("Source Resolver Flags")]
     public enum MFResolution
     {
         None = 0x0,

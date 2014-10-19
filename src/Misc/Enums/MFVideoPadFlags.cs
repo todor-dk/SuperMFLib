@@ -29,11 +29,30 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// Specifies whether to pad a video image so that it fits within a specified aspect ratio.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/C68FDD6E-4FC9-4D70-91F0-DAB70315EC21(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C68FDD6E-4FC9-4D70-91F0-DAB70315EC21(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFVideoPadFlags")]
     public enum MFVideoPadFlags
     {
+        /// <summary>
+        /// Do not pad the image.
+        /// </summary>
         PAD_TO_None = 0,
+        /// <summary>
+        /// Pad the image so that it can be displayed in a 4×3 area.
+        /// </summary>
         PAD_TO_4x3 = 1,
+        /// <summary>
+        /// Pad the image so that it can be displayed in a 16×9 area.
+        /// </summary>
         PAD_TO_16x9 = 2
     }
 

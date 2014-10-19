@@ -35,12 +35,34 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Specifies the type of Microsoft DirectX Video Acceleration High Definition (DXVA-HD) device.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/C472F2C6-214D-4BB0-BA9D-8DD04FF2A646(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C472F2C6-214D-4BB0-BA9D-8DD04FF2A646(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("DXVAHD_DEVICE_TYPE")]
     public enum DXVAHD_DEVICE_TYPE
     {
+        /// <summary>
+        /// Hardware device. Video processing is performed in the GPU by the driver.
+        /// </summary>
         Hardware = 0,
+        /// <summary>
+        /// Software device. Video processing is performed in the CPU by a software plug-in.
+        /// </summary>
         Software = 1,
+        /// <summary>
+        /// Reference device. Video processing is performed in the CPU by a software plug-in.
+        /// </summary>
         Reference = 2,
+        /// <summary>
+        /// Other. The device is neither a hardware device nor a software plug-in.
+        /// </summary>
         Other = 3
     }
 

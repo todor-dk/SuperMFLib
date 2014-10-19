@@ -35,8 +35,31 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Contains parameters for the <see cref="OPM.MFOpmStatusRequests.OPM_SET_HDCP_SRM" /> command. This
+    /// command updates the system renewability message (SRM) for High-Bandwidth Digital Content Protection
+    /// (HDCP).
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _OPM_SET_HDCP_SRM_PARAMETERS {
+    ///   ULONG ulSRMVersion;
+    /// } OPM_SET_HDCP_SRM_PARAMETERS;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/0689E132-8DEF-43D1-965F-A6F652AD0FBE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0689E132-8DEF-43D1-965F-A6F652AD0FBE(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public struct OPM_SET_HDCP_SRM_PARAMETERS
     {
+        /// <summary>
+        /// Contains the SRM version number in little-endian format. This number is contained in the <strong>
+        /// SRM Version</strong> field of the SRM. For more information, see the HDCP specification.
+        /// </summary>
         public int ulSRMVersion;
     }
 
