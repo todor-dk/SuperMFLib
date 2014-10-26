@@ -34,11 +34,30 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// Flags used in conjunction with the <see cref="MFExtern.MFStartup"/> method.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MFSTARTUP_* defines")]
     public enum MFStartup
     {
+        /// <summary>
+        /// Do not initialize the sockets library. 
+        /// </summary>
         NoSocket = 0x1,
+        /// <summary>
+        /// Equivalent to <see cref="NoSocket"/>. 
+        /// </summary>
         Lite = 0x1,
+        /// <summary>
+        /// Initialize the entire Media Foundation platform. This is the default value when dwFlags is not specified. 
+        /// </summary>
         Full = 0
     }
 

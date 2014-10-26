@@ -34,16 +34,66 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
-
+    /// <summary>
+    /// Defines the behavior of the source resolver. These flags are also used by 
+    /// scheme handlers and byte stream handlers.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/windows/desktop/ms705656(v=vs.85).aspx">http://msdn.microsoft.com/en-US/library/windows/desktop/ms705656(v=vs.85).aspx</a>
+    /// </remarks>
+    /// <see cref="MF_RESOLUTION"/>
+    // NB: Same enum as MF_RESOLUTION!!!
     [Flags, UnmanagedName("Source Resolver Flags")]
     public enum MFResolution
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0x0,
+        /// <summary>
+        /// Attempt to create a media source.
+        /// </summary>
         MediaSource = 0x00000001,
+        /// <summary>
+        /// Attempt to create a byte stream.
+        /// </summary>
         ByteStream = 0x00000002,
+        /// <summary>
+        /// If source resolution fails using the byte-stream handler that is registered for the MIME type or 
+        /// file name extension, the source resolver enumerates through all of the registered byte-stream handlers.
+        /// <para/>
+        /// Byte-stream handlers are registered by file name extension or MIME type. Initially, the source resolver 
+        /// attempts to use a handler that matches the file name extension or the MIME type. If that fails, 
+        /// then by default the entire source resolution fails and the source resolver returns an error code 
+        /// to the application. If this flag is specified, however, the source resolver continues to enumerates 
+        /// through all of the registered byte-stream handlers. Possibly a mis-matched handler can successfully 
+        /// create the media source.
+        /// <para/>This flag cannot be combined with the <see cref="KeepByteStreamAliveOnFail"/> flag. 
+        /// See Remarks for more information.
+        /// </summary>
         ContentDoesNotHaveToMatchExtensionOrMimeType = 0x00000010,
+        /// <summary>
+        /// If the source resolution fails, the source resolver does not close the byte stream. 
+        /// By default, the source resolver closes the byte stream on failure.
+        /// <para/>
+        /// If this flag is used and the source resolution fails, the caller should call the method 
+        /// again and set the <see cref="ContentDoesNotHaveToMatchExtensionOrMimeType"/> flag.
+        /// <para/>
+        /// This flag cannot be combined with the <see cref="ContentDoesNotHaveToMatchExtensionOrMimeType"/> flag. 
+        /// See Remarks for more information.
+        /// </summary>
         KeepByteStreamAliveOnFail = 0x00000020,
+        /// <summary>
+        /// Requests read access to the source.
+        /// </summary>
         Read = 0x00010000,
+        /// <summary>
+        /// Requests write access to the source.
+        /// </summary>
         Write = 0x00020000
     }
 }

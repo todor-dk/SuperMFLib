@@ -33,7 +33,10 @@ using System.Drawing;
 namespace MediaFoundation.EVR
 {
 
-
+    /// <summary>
+    /// Represents the default video mixer for the enhanced video renderer (EVR). 
+    /// The CLSID is <c>CLSID_MFVideoMixer9</c>.
+    /// </summary>
     [UnmanagedName("CLSID_MFVideoMixer9"),
     ComImport,
     Guid("E474E05A-AB65-4f6a-827C-218B1BAAF31F")]

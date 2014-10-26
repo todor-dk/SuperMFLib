@@ -39,10 +39,15 @@ namespace MediaFoundation.ReadWrite
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// Enumeration containing values used by the <see cref="IMFSourceReader"/> methods.
+    /// </summary>
     [UnmanagedName("Unnamed enum")]
     public enum MF_SOURCE_READER_INDEX
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
         CURRENT_TYPE_INDEX = unchecked((int)0xFFFFFFFF)
     }
 

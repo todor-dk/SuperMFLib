@@ -36,12 +36,28 @@ using MediaFoundation.Transform;
 namespace MediaFoundation.Misc
 {
 
-
-    [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("WAVEFORMATEX")]
+    /// <summary>
+    /// Extends the <see cref="WaveFormatExtensible"/> class with additional data.
+    /// </summary>
+    /// <remarks>
+    /// Online Documentation:
+    /// <a href="http://msdn.microsoft.com/en-US/library/B16CDCAB-FA4F-4C9A-B1F3-AF459BD33245(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B16CDCAB-FA4F-4C9A-B1F3-AF459BD33245(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    /// <seealso cref="WaveFormatExtensible"/>
+    [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("WAVEFORMATEXTENSIBLE")]
     public class WaveFormatExtensibleWithData : WaveFormatExtensible
     {
+        /// <summary>
+        /// Data that immediately follows the <c>WAVEFORMATEXTENSIBLE</c> structure.
+        /// </summary>
         public byte[] byteData;
 
+        /// <summary>
+        /// Implements the equality operator.
+        /// </summary>
+        /// <param name="a">The left operand to compare for equality.</param>
+        /// <param name="b">The right operand to compare for equality.</param>
+        /// <returns>The result of the equality comparison operator.</returns>
         public static bool operator ==(WaveFormatExtensibleWithData a, WaveFormatExtensibleWithData b)
         {
             bool bRet = ((WaveFormatExtensible)a) == ((WaveFormatExtensible)b);
@@ -75,16 +91,31 @@ namespace MediaFoundation.Misc
             return bRet;
         }
 
+        /// <summary>
+        /// Implements the inequality operator.
+        /// </summary>
+        /// <param name="a">The left operand to compare for inequality.</param>
+        /// <param name="b">The right operand to compare for inequality.</param>
+        /// <returns>The result of the inequality comparison operator.</returns>
         public static bool operator !=(WaveFormatExtensibleWithData a, WaveFormatExtensibleWithData b)
         {
             return !(a == b);
         }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current object.</param>
+        /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
             return this == (obj as WaveFormatExtensibleWithData);
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             return base.GetHashCode();

@@ -34,10 +34,25 @@ namespace MediaFoundation.OPM
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// A value that indicates whether the connected device is an HDCP repeater.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/1FB59959-782B-44E8-81B1-ECA3C32A0783(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1FB59959-782B-44E8-81B1-ECA3C32A0783(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public enum a
     {
+        /// <summary>
+        /// The device is not an HDCP repeater.
+        /// </summary>
         OPM_HDCP_FLAG_NONE = 0,
+        /// <summary>
+        /// The device is an HDCP repeater.
+        /// </summary>
         OPM_HDCP_FLAG_REPEATER = 0x1
     }
 

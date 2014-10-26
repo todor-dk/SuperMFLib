@@ -33,10 +33,11 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>.
+    /// </summary>
     [UnmanagedName("CLSID_MPEG2ByteStreamPlugin"),
-ComImport,
-Guid("40871C59-AB40-471F-8DC3-1F259D862479")]
+        ComImport, Guid("40871C59-AB40-471F-8DC3-1F259D862479")]
     public class MPEG2ByteStreamPlugin
     {
     }

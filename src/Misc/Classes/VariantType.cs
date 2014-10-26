@@ -38,190 +38,574 @@ namespace MediaFoundation.Misc
 
 
     /// <summary>
-    /// ConstPropVariant is used for [In] parameters.  This is important since
-    /// for [In] parameters, you must *not* clear the PropVariant.  The caller
+    /// <see cref="ConstPropVariant"/> is used for [In] parameters.  This is important since
+    /// for [In] parameters, you must *not* clear the <see cref="PropVariant"/>.  The caller
     /// will need to do that himself.
-    ///
-    /// Likewise, if you want to store a copy of a ConstPropVariant, you should
-    /// store it to a PropVariant using the PropVariant constructor that takes a
-    /// ConstPropVariant.  If you try to store the ConstPropVariant, when the
+    /// <para/>
+    /// Likewise, if you want to store a copy of a <see cref="ConstPropVariant"/>, you should
+    /// store it to a <see cref="PropVariant"/> using the <see cref="PropVariant"/> constructor that takes a
+    /// <see cref="ConstPropVariant"/>.  If you try to store the <see cref="ConstPropVariant"/>, when the
     /// caller frees his copy, yours will no longer be valid.
+    /// <para/>
+    /// The <strong>PROPVARIANT</strong> structure is used in the <c>ReadMultiple</c> and 
+    /// <c>WriteMultiple</c> methods of <c>IPropertyStorage</c> to define the type tag and the value of a
+    /// property in a property set. 
+    /// <para/>
+    /// The <strong>PROPVARIANT</strong> structure is also used by the <c>GetValue</c> and <c>SetValue</c>
+    /// methods of <see cref="Misc.IPropertyStore"/>, which replaces <c>IPropertySetStorage</c> as the
+    /// primary way to program item properties in Windows Vista. For more information, see 
+    /// <c>Property Handlers</c>. 
+    /// <para/>
+    /// There are five members. The first member, the value-type tag, and the last member, the value of the
+    /// property, are significant. The middle three members are reserved for future use.
+    /// <para/>
+    /// 	<strong>Note</strong> The <strong>bool</strong> member in previous definitions of this structure
+    /// has been renamed to <strong>boolVal</strong>, because some compilers now recognize <strong>bool
+    /// </strong> as a keyword. 
+    /// <para/>
+    /// 	<strong>Note</strong> The <strong>PROPVARIANT</strong> structure, defined below, includes types
+    /// that can be serialized in the version 1 property set serialization format. The version 1 format
+    /// supports all types allowed in the version 0 format plus some additional types. The added types
+    /// include "Version 1" in the comment field below. Use these types only if a version 1 property set is
+    /// intended. For more information, see <c>Property Set Serialization</c>. 
+    /// <para/>
+    /// The <strong>PROPVARIANT</strong> structure is defined as follows: 
     /// </summary>
+    /// <remarks>
+    /// 	<strong>C/C++ Syntax</strong>
+    /// 	<code>
+    /// typedef struct PROPVARIANT {
+    ///   VARTYPE vt;
+    ///   WORD    wReserved1;
+    ///   WORD    wReserved2;
+    ///   WORD    wReserved3;
+    ///   union {
+    ///     CHAR              cVal;
+    ///     UCHAR             bVal;
+    ///     SHORT             iVal;
+    ///     USHORT            uiVal;
+    ///     LONG              lVal;
+    ///     ULONG             ulVal;
+    ///     INT               intVal;
+    ///     UINT              uintVal;
+    ///     LARGE_INTEGER     hVal;
+    ///     ULARGE_INTEGER    uhVal;
+    ///     FLOAT             fltVal;
+    ///     DOUBLE            dblVal;
+    ///     VARIANT_BOOL      boolVal;
+    ///     SCODE             scode;
+    ///     CY                cyVal;
+    ///     DATE              date;
+    ///     FILETIME          filetime;
+    ///     CLSID             *puuid;
+    ///     CLIPDATA          *pclipdata;
+    ///     BSTR              bstrVal;
+    ///     BSTRBLOB          bstrblobVal;
+    ///     BLOB              blob;
+    ///     LPSTR             pszVal;
+    ///     LPWSTR            pwszVal;
+    ///     IUnknown          *punkVal;
+    ///     IDispatch         *pdispVal;
+    ///     IStream           *pStream;
+    ///     IStorage          *pStorage;
+    ///     LPVERSIONEDSTREAM pVersionedStream;
+    ///     LPSAFEARRAY       parray;
+    ///     CAC               cac;
+    ///     CAUB              caub;
+    ///     CAI               cai;
+    ///     CAUI              caui;
+    ///     CAL               cal;
+    ///     CAUL              caul;
+    ///     CAH               cah;
+    ///     CAUH              cauh;
+    ///     CAFLT             caflt;
+    ///     CADBL             cadbl;
+    ///     CABOOL            cabool;
+    ///     CASCODE           cascode;
+    ///     CACY              cacy;
+    ///     CADATE            cadate;
+    ///     CAFILETIME        cafiletime;
+    ///     CACLSID           cauuid;
+    ///     CACLIPDATA        caclipdata;
+    ///     CABSTR            cabstr;
+    ///     CABSTRBLOB        cabstrblob;
+    ///     CALPSTR           calpstr;
+    ///     CALPWSTR          calpwstr;
+    ///     CAPROPVARIANT     capropvar;
+    ///     CHAR              *pcVal;
+    ///     UCHAR             *pbVal;
+    ///     SHORT             *piVal;
+    ///     USHORT            *puiVal;
+    ///     LONG              *plVal;
+    ///     ULONG             *pulVal;
+    ///     INT               *pintVal;
+    ///     UINT              *puintVal;
+    ///     FLOAT             *pfltVal;
+    ///     DOUBLE            *pdblVal;
+    ///     VARIANT_BOOL      *pboolVal;
+    ///     DECIMAL           *pdecVal;
+    ///     SCODE             *pscode;
+    ///     CY                *pcyVal;
+    ///     DATE              *pdate;
+    ///     BSTR              *pbstrVal;
+    ///     IUnknown          **ppunkVal;
+    ///     IDispatch         **ppdispVal;
+    ///     LPSAFEARRAY       *pparray;
+    ///     PROPVARIANT       *pvarVal;
+    ///   };
+    /// } PROPVARIANT;
+    /// </code>
+    /// 	<para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/E86CC279-826D-4767-8D96-FC8280060EA1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E86CC279-826D-4767-8D96-FC8280060EA1(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    /// <seealso cref="PropVariant"/>
     [StructLayout(LayoutKind.Explicit)]
     public class ConstPropVariant : IDisposable
     {
+        /// <summary>
+        /// Specifies the variant type of the value contained in the <see cref="ConstPropVariant"/>.
+        /// </summary>
+        [UnmanagedName("VARTYPE")]
         public enum VariantType : short
         {
+            /// <summary>
+            /// <strong>VT_EMPTY</strong>. Valid member: None.
+            /// <para/>
+            /// A property with a type indicator of VT_EMPTY has no data associated with it; 
+            /// that is, the size of the value is zero. 
+            /// </summary>
             None = 0,
+            /// <summary>
+            /// <strong>VT_I2</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.iVal"/>.
+            /// <para/>
+            /// Two bytes representing a 2-byte signed integer value.
+            /// </summary>
             Short = 2,
+            /// <summary>
+            /// <strong>VT_I4</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.intValue"/>.
+            /// <para/>
+            /// 4-byte signed integer value.
+            /// </summary>
             Int32 = 3,
+            /// <summary>
+            /// <strong>VT_R4</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.fltVal"/>.
+            /// <para/>
+            /// 32-bit IEEE floating point value.
+            /// </summary>
             Float = 4,
+            /// <summary>
+            /// <strong>VT_R8</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.doubleValue"/>.
+            /// <para/>
+            /// 64-bit IEEE floating point value.
+            /// </summary>
             Double = 5,
+            /// <summary>
+            /// <strong>VT_UNKNOWN</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ptr"/>.
+            /// <para/>
+            /// Pointer to an IUnknown interface.
+            /// </summary>
             IUnknown = 13,
+            /// <summary>
+            /// <strong>VT_UI1</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.bVal"/>.
+            /// <para/>
+            /// 1-byte unsigned integer.
+            /// </summary>
             UByte = 17,
+            /// <summary>
+            /// <strong>VT_UI2</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.uiVal"/>.
+            /// <para/>
+            /// 2-byte unsigned integer.
+            /// </summary>
             UShort = 18,
+            /// <summary>
+            /// <strong>VT_UI4</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.uintVal"/>.
+            /// <para/>
+            /// 4-byte unsigned integer.
+            /// </summary>
             UInt32 = 19,
+            /// <summary>
+            /// <strong>VT_I8</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.longValue"/>.
+            /// <para/>
+            /// 8-byte signed integer.
+            /// </summary>
             Int64 = 20,
+            /// <summary>
+            /// <strong>VT_UI8</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ulongValue"/>.
+            /// <para/>
+            /// 8-byte unsigned integer.
+            /// </summary>
             UInt64 = 21,
+            /// <summary>
+            /// <strong>VT_LPWSTR</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ptr"/>.
+            /// <para/>
+            /// A pointer to a null-terminated Unicode string in the user default locale.
+            /// </summary>
             String = 31,
+            /// <summary>
+            /// <strong>VT_CLSID</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ptr"/>.
+            /// <para/>
+            /// Pointer to a class identifier (CLSID) (or other globally unique identifier (GUID)).
+            /// </summary>
             Guid = 72,
+            /// <summary>
+            /// <strong>VT_VECTOR | VT_UI1</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.blobValue"/>.
+            /// <para/>
+            /// Array of bytes.
+            /// </summary>
             Blob = 0x1000 + 17,
+            /// <summary>
+            /// <strong>VT_VECTOR | VT_LPWSTR</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.calpwstrVal"/>.
+            /// <para/>
+            /// Array of strings.
+            /// </summary>
             StringArray = 0x1000 + 31
         }
 
-        [StructLayout(LayoutKind.Sequential), UnmanagedName("BLOB")]
+        /// <summary>
+        /// Represents a counted array of unsigned bytes. 
+        /// This is used when the <see cref="ConstPropVariant.ValueType"/> is <see cref="VariantType.Blob"/>.
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential), UnmanagedName("BLOB")] // UnmanagedName("CAUB")
         protected struct Blob
         {
+            /// <summary>
+            /// Element count of the array.
+            /// </summary>
             public int cbSize;
+            /// <summary>
+            /// Pointer to the first value of the array.
+            /// </summary>
             public IntPtr pBlobData;
         }
 
+        /// <summary>
+        /// Represents a counted array of strings. 
+        /// This is used when the <see cref="ConstPropVariant.ValueType"/> is <see cref="VariantType.StringArray"/>.
+        /// </summary>
         [StructLayout(LayoutKind.Sequential), UnmanagedName("CALPWSTR")]
         protected struct CALPWstr
         {
+            /// <summary>
+            /// Element count of the array.
+            /// </summary>
             public int cElems;
+            /// <summary>
+            /// Pointer to the first string in the array.
+            /// </summary>
             public IntPtr pElems;
         }
 
         #region Member variables
 
+        /// <summary>
+        /// Value type tag.
+        /// </summary>
         [FieldOffset(0)]
         protected VariantType type;
 
+        /// <summary>
+        /// Reserved for future use.
+        /// </summary>
         [FieldOffset(2)]
         protected short reserved1;
 
+        /// <summary>
+        /// Reserved for future use.
+        /// </summary>
         [FieldOffset(4)]
         protected short reserved2;
 
+        /// <summary>
+        /// Reserved for future use.
+        /// </summary>
         [FieldOffset(6)]
         protected short reserved3;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_I2.
+        /// </summary>
         [FieldOffset(8)]
         protected short iVal;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_UI2.
+        /// </summary>
         [FieldOffset(8), CLSCompliant(false)]
         protected ushort uiVal;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_UI1.
+        /// </summary>
         [FieldOffset(8), CLSCompliant(false)]
         protected byte bVal;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_INT.
+        /// </summary>
         [FieldOffset(8)]
         protected int intValue;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_UINT.
+        /// </summary>
         [FieldOffset(8), CLSCompliant(false)]
         protected uint uintVal;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_R4.
+        /// </summary>
         [FieldOffset(8)]
         protected float fltVal;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_I8.
+        /// </summary>
         [FieldOffset(8)]
         protected long longValue;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_UI8.
+        /// </summary>
         [FieldOffset(8), CLSCompliant(false)]
         protected ulong ulongValue;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_R8.
+        /// </summary>
         [FieldOffset(8)]
         protected double doubleValue;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is ***.
+        /// </summary>
         [FieldOffset(8)]
         protected Blob blobValue;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is pointer to a value.
+        /// </summary>
         [FieldOffset(8)]
         protected IntPtr ptr;
 
+        /// <summary>
+        /// Valid when <see cref="type"/> is VT_VECTOR | VT_LPWSTR.
+        /// </summary>
         [FieldOffset(8)]
         protected CALPWstr calpwstrVal;
 
         #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConstPropVariant"/> class.
+        /// </summary>
         public ConstPropVariant()
         {
             type = VariantType.None;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConstPropVariant"/> class.
+        /// </summary>
+        /// <param name="v">The type of the value.</param>
         protected ConstPropVariant(VariantType v)
         {
             type = v;
         }
 
+        /// <summary>
+        /// Converts this propvariant to a string by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to string.</param>
+        /// <returns>A strings that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.String"/>.
+        /// </exception>
         public static explicit operator string(ConstPropVariant f)
         {
             return f.GetString();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a string array by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to string array.</param>
+        /// <returns>An array of strings that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.StringArray"/>.
+        /// </exception>
         public static explicit operator string[](ConstPropVariant f)
         {
             return f.GetStringArray();
         }
 
+        /// <summary>
+        /// Converts this propvariant to an unsigned byte by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to byte.</param>
+        /// <returns>An unsigned byte that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.UByte"/>.
+        /// </exception>
         public static explicit operator byte(ConstPropVariant f)
         {
             return f.GetUByte();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a signed 2-byte integer by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to signed 2-byte integer.</param>
+        /// <returns>A signed 2-byte integer that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Short"/>.
+        /// </exception>
         public static explicit operator short(ConstPropVariant f)
         {
             return f.GetShort();
         }
 
+        /// <summary>
+        /// Converts this propvariant to an unsigned 2-byte integer by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to unsigned 2-byte integer.</param>
+        /// <returns>An unsigned 2-byte integer that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.UShort"/>.
+        /// </exception>
         [CLSCompliant(false)]
         public static explicit operator ushort(ConstPropVariant f)
         {
             return f.GetUShort();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a signed 4-byte integer by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to signed 4-byte integer.</param>
+        /// <returns>A signed 4-byte integer that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Int32"/>.
+        /// </exception>
         public static explicit operator int(ConstPropVariant f)
         {
             return f.GetInt();
         }
 
+        /// <summary>
+        /// Converts this propvariant to an unsigned 4-byte integer by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to unsigned 4-byte integer.</param>
+        /// <returns>An unsigned 4-byte integer that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.UInt32"/>.
+        /// </exception>
         [CLSCompliant(false)]
         public static explicit operator uint(ConstPropVariant f)
         {
             return f.GetUInt();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a 4-byte float by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to 4-byte float.</param>
+        /// <returns>A 4-byte float that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Float"/>.
+        /// </exception>
         public static explicit operator float(ConstPropVariant f)
         {
             return f.GetFloat();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a 8-byte float by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to 8-byte float.</param>
+        /// <returns>A 8-byte float that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Double"/>.
+        /// </exception>
         public static explicit operator double(ConstPropVariant f)
         {
             return f.GetDouble();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a signed 8-byte integer by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to signed 8-byte integer.</param>
+        /// <returns>A signed 8-byte integer that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Int64"/>.
+        /// </exception>
         public static explicit operator long(ConstPropVariant f)
         {
             return f.GetLong();
         }
 
+        /// <summary>
+        /// Converts this propvariant to an unsigned 8-byte integer by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to unsigned 8-byte integer.</param>
+        /// <returns>An unsigned 8-byte integer that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.UInt64"/>.
+        /// </exception>
         [CLSCompliant(false)]
         public static explicit operator ulong(ConstPropVariant f)
         {
             return f.GetULong();
         }
 
+        /// <summary>
+        /// Converts this propvariant to a Guid by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to Guid.</param>
+        /// <returns>A Guid that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Guid"/>.
+        /// </exception>
         public static explicit operator Guid(ConstPropVariant f)
         {
             return f.GetGuid();
         }
 
+        /// <summary>
+        /// Converts this propvariant to an array of unsigned bytes (byte array) by returning its value.
+        /// </summary>
+        /// <param name="f">Propvariant to convert to array of unsigned bytes (byte array).</param>
+        /// <returns>A array of unsigned bytes (byte array) that is the value of the propvariant.</returns>
+        /// <exception cref="ArgumentException">
+        /// If the <see cref="ValueType"/> is not <see cref="VariantType.Blob"/>.
+        /// </exception>
         public static explicit operator byte[](ConstPropVariant f)
         {
             return f.GetBlob();
         }
 
-        // I decided not to do implicits since perf is likely to be
-        // better recycling the PropVariant, and the only way I can
-        // see to support Implicit is to create a new PropVariant.
-        // Also, since I can't free the previous instance, IUnknowns
-        // will linger until the GC cleans up.  Not what I think I
-        // want.
-
+        /// <summary>
+        /// Converts, if possible, the <see cref="ValueType" /> of this propvariant
+        /// to the corresponding <see cref="MFAttributeType" />.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="MFAttributeType"/> that corresponds to the <see cref="ValueType"/> of this propvariant.
+        /// </returns>
+        /// <exception cref="System.Exception">
+        /// If the <see cref="ValueType"/> cannot be converted to <see cref="MFAttributeType"/>.
+        /// </exception>
         public MFAttributeType GetMFAttributeType()
         {
+            // I decided not to do implicits since perf is likely to be
+            // better recycling the PropVariant, and the only way I can
+            // see to support Implicit is to create a new PropVariant.
+            // Also, since I can't free the previous instance, IUnknowns
+            // will linger until the GC cleans up.  Not what I think I
+            // want.
             switch (type)
             {
                 case VariantType.None:
@@ -242,11 +626,27 @@ namespace MediaFoundation.Misc
             }
         }
 
+        /// <summary>
+        /// Value type tag. This is the same as <see cref="ValueType"/>.
+        /// </summary>
+        /// <returns>The value type tag of this propvariant.</returns>
         public VariantType GetVariantType()
         {
             return type;
         }
 
+        /// <summary>
+        /// Value type tag. This is the same as <see cref="GetVariantType"/>.
+        /// </summary>
+        public VariantType ValueType
+        {
+            get { return this.type; }
+        }
+
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.StringArray"/>.
+        /// </summary>
+        /// <returns>An array of strings that is the value of the propvariant.</returns>
         public string[] GetStringArray()
         {
             if (type == VariantType.StringArray)
@@ -266,6 +666,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not a string array");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.String"/>.
+        /// </summary>
+        /// <returns>A strings that is the value of the propvariant.</returns>
         public string GetString()
         {
             if (type == VariantType.String)
@@ -275,6 +679,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not a string");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.UByte"/>.
+        /// </summary>
+        /// <returns>An unsigned byte that is the value of the propvariant.</returns>
         public byte GetUByte()
         {
             if (type == VariantType.UByte)
@@ -284,6 +692,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not a byte");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Short"/>.
+        /// </summary>
+        /// <returns>A signed 2-byte integer that is the value of the propvariant.</returns>
         public short GetShort()
         {
             if (type == VariantType.Short)
@@ -293,6 +705,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an Short");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.UShort"/>.
+        /// </summary>
+        /// <returns>An unsigned 2-byte integer that is the value of the propvariant.</returns>
         [CLSCompliant(false)]
         public ushort GetUShort()
         {
@@ -303,6 +719,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an UShort");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Int32"/>.
+        /// </summary>
+        /// <returns>A signed 4-byte integer that is the value of the propvariant.</returns>
         public int GetInt()
         {
             if (type == VariantType.Int32)
@@ -312,6 +732,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an int32");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.UInt32"/>.
+        /// </summary>
+        /// <returns>An unsigned 4-byte integer that is the value of the propvariant.</returns>
         [CLSCompliant(false)]
         public uint GetUInt()
         {
@@ -322,6 +746,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an uint32");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Int64"/>.
+        /// </summary>
+        /// <returns>A signed 8-byte integer that is the value of the propvariant.</returns>
         public long GetLong()
         {
             if (type == VariantType.Int64)
@@ -331,6 +759,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an int64");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.UInt64"/>.
+        /// </summary>
+        /// <returns>An unsigned 8-byte integer that is the value of the propvariant.</returns>
         [CLSCompliant(false)]
         public ulong GetULong()
         {
@@ -341,6 +773,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an uint64");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Float"/>.
+        /// </summary>
+        /// <returns>A 4-byte floating point that is the value of the propvariant.</returns>
         public float GetFloat()
         {
             if (type == VariantType.Float)
@@ -350,6 +786,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not a Float");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Double"/>.
+        /// </summary>
+        /// <returns>A 8-byte floating point that is the value of the propvariant.</returns>
         public double GetDouble()
         {
             if (type == VariantType.Double)
@@ -359,6 +799,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not a double");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Guid"/>.
+        /// </summary>
+        /// <returns>A Guid that is the value of the propvariant.</returns>
         public Guid GetGuid()
         {
             if (type == VariantType.Guid)
@@ -368,6 +812,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not a Guid");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.Blob"/>.
+        /// </summary>
+        /// <returns>An array of unsigned bytes (binary array) that is the value of the propvariant.</returns>
         public byte[] GetBlob()
         {
             if (type == VariantType.Blob)
@@ -381,6 +829,10 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents are not a Blob");
         }
 
+        /// <summary>
+        /// Returns the value of the propvariant when <see cref="ValueType"/> is <see cref="VariantType.IUnknown"/>.
+        /// </summary>
+        /// <returns>A COM object that is the value of the propvariant.</returns>
         public object GetIUnknown()
         {
             if (type == VariantType.IUnknown)
@@ -390,6 +842,53 @@ namespace MediaFoundation.Misc
             throw new ArgumentException("PropVariant contents not an IUnknown");
         }
 
+        /// <summary>
+        /// Returns the current value of the PROPVARIANT structure.
+        /// </summary>
+        /// <returns>The current value of this PROPVARIANT structure.</returns>
+        public object GetValue()
+        {
+            switch (this.type)
+            {
+                case VariantType.None:
+                    return null;
+                case VariantType.Short:
+                    return this.GetShort();
+                case VariantType.Int32:
+                    return this.GetUInt();
+                case VariantType.Float:
+                    return this.GetFloat();
+                case VariantType.Double:
+                    return this.GetDouble();
+                case VariantType.IUnknown:
+                    return this.GetIUnknown();
+                case VariantType.UByte:
+                    return this.GetUByte();
+                case VariantType.UShort:
+                    return this.GetUShort();
+                case VariantType.UInt32:
+                    return this.GetUInt();
+                case VariantType.Int64:
+                    return this.GetLong();
+                case VariantType.UInt64:
+                    return this.GetULong();
+                case VariantType.String:
+                    return this.GetString();
+                case VariantType.Guid:
+                    return this.GetGuid();
+                case VariantType.Blob:
+                    return this.GetBlob();
+                case VariantType.StringArray:
+                    return this.GetStringArray();
+                default:
+                    throw new ArgumentException(String.Format("PropVariant contents an unrecognized type: {0}", this.type));
+            }
+        }
+
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             // This method is primarily intended for debugging so that a readable string will show
@@ -527,6 +1026,10 @@ namespace MediaFoundation.Misc
             return sRet;
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             // Give a (slightly) better hash value in case someone uses PropVariants
@@ -634,6 +1137,11 @@ namespace MediaFoundation.Misc
             return iRet;
         }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current object.</param>
+        /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
             bool bRet;
@@ -789,30 +1297,45 @@ namespace MediaFoundation.Misc
             return bRet;
         }
 
-        public static bool operator ==(ConstPropVariant pv1, ConstPropVariant pv2)
+        /// <summary>
+        /// Implements the equality operator.
+        /// </summary>
+        /// <param name="a">The left operand to compare for equality.</param>
+        /// <param name="b">The right operand to compare for equality.</param>
+        /// <returns>The result of the equality comparison operator.</returns>
+        public static bool operator ==(ConstPropVariant a, ConstPropVariant b)
         {
             // If both are null, or both are same instance, return true.
-            if (System.Object.ReferenceEquals(pv1, pv2))
+            if (System.Object.ReferenceEquals(a, b))
             {
                 return true;
             }
 
             // If one is null, but not both, return false.
-            if (((object)pv1 == null) || ((object)pv2 == null))
+            if (((object)a == null) || ((object)b == null))
             {
                 return false;
             }
 
-            return pv1.Equals(pv2);
+            return a.Equals(b);
         }
 
-        public static bool operator !=(ConstPropVariant pv1, ConstPropVariant pv2)
+        /// <summary>
+        /// Implements the inequality operator.
+        /// </summary>
+        /// <param name="a">The left operand to compare for inequality.</param>
+        /// <param name="b">The right operand to compare for inequality.</param>
+        /// <returns>The result of the inequality comparison operator.</returns>
+        public static bool operator !=(ConstPropVariant a, ConstPropVariant b)
         {
-            return !(pv1 == pv2);
+            return !(a == b);
         }
 
         #region IDisposable Members
 
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
         public void Dispose()
         {
             // If we are a ConstPropVariant, we must *not* call PropVariantClear.  That

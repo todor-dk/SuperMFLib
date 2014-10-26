@@ -29,13 +29,40 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// This enumeration contains options for the <see cref="VideoInfoHeader2.ControlFlags"/> field.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/5E3D5BF0-435F-45DA-8409-A1463B56A7AE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5E3D5BF0-435F-45DA-8409-A1463B56A7AE(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("From AMCONTROL_*"), Flags]
     public enum AMControl
     {
+
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Indicates the dwControlFlags flags are used.
+        /// </summary>
         Used = 0x00000001,
+        /// <summary>
+        /// The image should be padded and displayed in a 4 x 3 area.
+        /// </summary>
         PadTo4x3 = 0x00000002,
+        /// <summary>
+        /// The image should be padded and displayed in a 16 x 9 area.
+        /// </summary>
         PadTo16x9 = 0x00000004,
+        /// <summary>
+        /// Additional DXVA color information is contained in the upper 24 bits of the <see cref="VideoInfoHeader2.ControlFlags"/> field.
+        /// </summary>
+        ColorinfoPresent = 0x00000080
     }
 
 }

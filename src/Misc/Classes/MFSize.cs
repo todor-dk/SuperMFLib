@@ -37,24 +37,59 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// The SIZE structure defines the width and height of a rectangle.
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct tagSIZE {
+    ///   LONG cx;
+    ///   LONG cy;
+    /// } SIZE, *PSIZE, *LPSIZE;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/08D81096-069F-4554-9BB9-D4A37C0950AC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/08D81096-069F-4554-9BB9-D4A37C0950AC(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("SIZE")]
     public class MFSize
     {
+        /// <summary>
+        /// Specifies the rectangle's width. The units depend on which function uses this structure. 
+        /// </summary>
         public int cx;
+        /// <summary>
+        /// Specifies the rectangle's height. The units depend on which function uses this structure.
+        /// </summary>
         public int cy;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFSize"/> class.
+        /// </summary>
         public MFSize()
         {
             cx = 0;
             cy = 0;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFSize"/> class.
+        /// </summary>
+        /// <param name="iWidth">The width. The units depend on which function uses this structure. </param>
+        /// <param name="iHeight">The height. The units depend on which function uses this structure.</param>
         public MFSize(int iWidth, int iHeight)
         {
             cx = iWidth;
             cy = iHeight;
         }
 
+        /// <summary>
+        /// Specifies the rectangle's width. The units depend on which function uses this structure. 
+        /// </summary>
         public int Width
         {
             get
@@ -66,6 +101,10 @@ namespace MediaFoundation.Misc
                 cx = value;
             }
         }
+
+        /// <summary>
+        /// Specifies the rectangle's height. The units depend on which function uses this structure.
+        /// </summary>
         public int Height
         {
             get

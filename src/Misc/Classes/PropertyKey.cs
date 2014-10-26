@@ -29,16 +29,60 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// Specifies the FMTID/PID identifier that programmatically identifies a property. Replaces 
+    /// <c>SHCOLUMNID</c>. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct {
+    ///   GUID  fmtid;
+    ///   DWORD pid;
+    /// } PROPERTYKEY;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/3F5F31AF-F040-443B-9045-9761055381EA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3F5F31AF-F040-443B-9045-9761055381EA(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("PROPERTYKEY")]
     public class PropertyKey
     {
+        /// <summary>
+        /// A unique GUID for the property.
+        /// </summary>
         public Guid fmtid;
+        /// <summary>
+        /// A property identifier (PID). This parameter is not used as in SHCOLUMNID. 
+        /// It is recommended that you set this value to PID_FIRST_USABLE. 
+        /// Any value greater than or equal to 2 is acceptable.
+        /// <para/>
+        /// Note  Values of 0 and 1 are reserved and should not be used.
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/77AF6EC6-442D-4A8A-BE42-A5EFB1F3F664(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/77AF6EC6-442D-4A8A-BE42-A5EFB1F3F664(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         public int pID;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PropertyKey"/> class.
+        /// </summary>
         public PropertyKey()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PropertyKey"/> class.
+        /// </summary>
+        /// <param name="f">A unique GUID for the property.</param>
+        /// <param name="p">A property identifier (PID).</param>
         public PropertyKey(Guid f, int p)
         {
             fmtid = f;

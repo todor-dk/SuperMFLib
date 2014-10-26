@@ -29,27 +29,96 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// Specifies which channels are present in the multichannel audio stream. 
+    /// Least significant bit corresponds with the front left speaker, 
+    /// the next least significant bit corresponds to the front right speaker, and so on. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-gb/library/windows/desktop/dd390971(v=vs.85).aspx">http://msdn.microsoft.com/en-gb/library/windows/desktop/dd390971(v=vs.85).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("SPEAKER_* defines")]
     public enum WaveMask
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0x0,
+        /// <summary>
+        /// Front left
+        /// </summary>
         FrontLeft = 0x1,
+        /// <summary>
+        /// Front right
+        /// </summary>
         FrontRight = 0x2,
+        /// <summary>
+        /// Front center
+        /// </summary>
         FrontCenter = 0x4,
+        /// <summary>
+        /// Low frequency
+        /// </summary>
         LowFrequency = 0x8,
+        /// <summary>
+        /// Back left
+        /// </summary>
         BackLeft = 0x10,
+        /// <summary>
+        /// Back right
+        /// </summary>
         BackRight = 0x20,
+        /// <summary>
+        /// Front left of center
+        /// </summary>
         FrontLeftOfCenter = 0x40,
+        /// <summary>
+        /// Front right of center
+        /// </summary>
         FrontRightOfCenter = 0x80,
+        /// <summary>
+        /// Back center
+        /// </summary>
         BackCenter = 0x100,
+        /// <summary>
+        /// Side left
+        /// </summary>
         SideLeft = 0x200,
+        /// <summary>
+        /// Side right
+        /// </summary>
         SideRight = 0x400,
+        /// <summary>
+        /// Top center
+        /// </summary>
         TopCenter = 0x800,
+        /// <summary>
+        /// Top front left
+        /// </summary>
         TopFrontLeft = 0x1000,
+        /// <summary>
+        /// Top front center
+        /// </summary>
         TopFrontCenter = 0x2000,
+        /// <summary>
+        /// Top front right
+        /// </summary>
         TopFrontRight = 0x4000,
+        /// <summary>
+        /// Top back left
+        /// </summary>
         TopBackLeft = 0x8000,
+        /// <summary>
+        /// Top back center
+        /// </summary>
         TopBackCenter = 0x10000,
+        /// <summary>
+        /// Top back right
+        /// </summary>
         TopBackRight = 0x20000
     }
 

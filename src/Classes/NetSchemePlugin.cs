@@ -33,6 +33,9 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// Scheme and Bytestream handler CLSID for <strong>Net</strong>.
+    /// </summary>
     [UnmanagedName("CLSID_NetSchemePlugin"),
 ComImport,
 Guid("e9f4ebab-d97b-463e-a2b1-c54ee3f9414d")]

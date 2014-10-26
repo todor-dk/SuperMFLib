@@ -33,6 +33,10 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// HTTP scheme handler. 
+    /// The CLSID is <c>CLSID_HttpSchemePlugin</c>.
+    /// </summary>
     [UnmanagedName("CLSID_HttpSchemePlugin"),
 ComImport,
 Guid("44cb442b-9da9-49df-b3fd-023777b16e50")]

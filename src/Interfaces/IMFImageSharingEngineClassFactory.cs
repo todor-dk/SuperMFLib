@@ -35,11 +35,20 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>.
+    /// </summary>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("1FC55727-A7FB-4FC8-83AE-8AF024990AF1"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFImageSharingEngineClassFactory
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
+        /// <param name="pUniqueDeviceName"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="ppEngine"><i>***** Documentation Missing *****</i>.</param>
+        /// <returns><i>***** Documentation Missing *****</i>.</returns>
         [PreserveSig]
         int CreateInstanceFromUDN(
             [MarshalAs(UnmanagedType.BStr)]

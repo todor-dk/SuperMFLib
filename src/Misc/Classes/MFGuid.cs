@@ -49,6 +49,9 @@ namespace MediaFoundation.Misc
         [FieldOffset(0)]
         private Guid guid;
 
+        /// <summary>
+        /// A read-only instance of the <see cref="MFGuid"/> class whose contens are an empty Guid.
+        /// </summary>
         public static readonly MFGuid Empty = Guid.Empty;
 
         /// <summary>
@@ -92,13 +95,17 @@ namespace MediaFoundation.Misc
         /// <summary>
         /// Get a string representation of this MFGuid Instance with a specific format.
         /// </summary>
-        /// <param name="format"><see cref="System.Guid.ToString"/> for a description of the format parameter.</param>
+        /// <param name="format"><see cref="System.Guid.ToString()"/> for a description of the format parameter.</param>
         /// <returns>A string representing this instance according to the format parameter</returns>
         public string ToString(string format)
         {
             return this.guid.ToString(format);
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             return this.guid.GetHashCode();

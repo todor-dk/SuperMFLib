@@ -33,7 +33,10 @@ using System.Drawing;
 namespace MediaFoundation.EVR
 {
 
-
+    /// <summary>
+    /// Represents the default video presenter for the enhanced video renderer (EVR). 
+    /// The CLSID is <c>CLSID_MFVideoPresenter9</c>.
+    /// </summary>
     [UnmanagedName("CLSID_MFVideoPresenter9"),
     ComImport,
     Guid("98455561-5136-4d28-AB08-4CEE40EA2781")]

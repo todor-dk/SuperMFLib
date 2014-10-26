@@ -39,9 +39,29 @@ namespace MediaFoundation.dxvahd
     /// Specifies the output color space for blit operations, when using Microsoft DirectX Video
     /// Acceleration High Definition (DXVA-HD).
     /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct _DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA {
+    ///   UINT Usage  :1;
+    ///   UINT RGB_Range  :1;
+    ///   UINT YCbCr_Matrix  :1;
+    ///   UINT YCbCr_xvYCC  :1;
+    /// } DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/EC817EBC-DC3F-4101-863A-218F0A8C998A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EC817EBC-DC3F-4101-863A-218F0A8C998A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA")]
     public struct DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
         public int Value;
     }
 

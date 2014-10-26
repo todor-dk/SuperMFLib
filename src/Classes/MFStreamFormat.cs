@@ -33,9 +33,19 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// This class contains the GUIDs of media stream subtypes. 
+    /// To specify the subtype, set the <see cref="MFAttributesClsid.MF_MT_SUBTYPE"/> attribute on the media type.
+    /// </summary>
     public static class MFStreamFormat
     {
+        /// <summary>
+        /// MPEG-2 program stream.
+        /// </summary>
         public static readonly Guid MPEG2Transport = new Guid(0xe06d8023, 0xdb46, 0x11cf, 0xb4, 0xd1, 0x00, 0x80, 0x5f, 0x6c, 0xbb, 0xea);
+        /// <summary>
+        /// MPEG-2 transport stream.
+        /// </summary>
         public static readonly Guid MPEG2Program = new Guid(0x263067d1, 0xd330, 0x45dc, 0xb6, 0x69, 0x34, 0xd9, 0x86, 0xe4, 0xe3, 0xe1);
     }
 

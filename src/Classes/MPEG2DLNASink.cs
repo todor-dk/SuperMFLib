@@ -36,7 +36,10 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// To get a pointer to an <see cref="IMFDLNASinkInit"/> interface, instantiate this class. 
+    /// The CLSID is <c>CLSID_MPEG2DLNASink</c>.
+    /// </summary>
     [UnmanagedName("CLSID_MPEG2DLNASink"),
     ComImport,
     Guid("fa5fe7c5-6a1d-4b11-b41f-f959d6c76500")]

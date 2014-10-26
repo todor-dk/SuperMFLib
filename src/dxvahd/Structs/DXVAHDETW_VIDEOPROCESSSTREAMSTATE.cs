@@ -34,18 +34,34 @@ namespace MediaFoundation.dxvahd
 
 #if ALLOW_UNTESTED_INTERFACES
 
-    // Currently not used!
-
-    //[StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_VIDEOPROCESSSTREAMSTATE")]
-    //public struct DXVAHDETW_VIDEOPROCESSSTREAMSTATE
-    //{
-    //    public long pObject;
-    //    public int StreamNumber;
-    //    public DXVAHD_STREAM_STATE State;
-    //    public int DataSize;
-    //    [MarshalAs(UnmanagedType.Bool)]
-    //    public bool SetState;
-    //}
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_VIDEOPROCESSSTREAMSTATE")]
+    public struct DXVAHDETW_VIDEOPROCESSSTREAMSTATE
+    {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
+        public long pObject;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
+        public int StreamNumber;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
+        public DXVAHD_STREAM_STATE State;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
+        public int DataSize;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
+        [MarshalAs(UnmanagedType.Bool)]
+        public bool SetState;
+    }
 
 #endif
 

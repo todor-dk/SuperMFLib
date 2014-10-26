@@ -40,28 +40,57 @@ namespace MediaFoundation.Misc
     /// <summary>
     /// MFRect is a managed representation of the Win32 RECT structure.
     /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct tagRECT {
+    ///   LONG left;
+    ///   LONG top;
+    ///   LONG right;
+    ///   LONG bottom;
+    /// } RECT, *PRECT, NEAR *NPRECT, FAR *LPRECT;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/A44F33F4-49B2-4A36-A7BD-FC4A9D3A3943(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A44F33F4-49B2-4A36-A7BD-FC4A9D3A3943(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential)]
     public class MFRect
     {
+        /// <summary>
+        /// Specifies the <em>x</em>-coordinate of the upper-left corner of the rectangle. 
+        /// </summary>
         public int left;
+        /// <summary>
+        /// Specifies the <em>y</em>-coordinate of the upper-left corner of the rectangle. 
+        /// </summary>
         public int top;
+        /// <summary>
+        /// Specifies the <em>x</em>-coordinate of the lower-right corner of the rectangle. 
+        /// </summary>
         public int right;
+        /// <summary>
+        /// Specifies the <em>y</em>-coordinate of the lower-right corner of the rectangle. 
+        /// </summary>
         public int bottom;
 
         /// <summary>
-        /// Empty contructor. Initialize all fields to 0
+        /// Empty constructor. Initialize all fields to 0
         /// </summary>
         public MFRect()
         {
         }
 
         /// <summary>
-        /// A parametred constructor. Initialize fields with given values.
+        /// Initializes a new instance of the <see cref="MFRect"/> class with given values.
         /// </summary>
-        /// <param name="left">the left value</param>
-        /// <param name="top">the top value</param>
-        /// <param name="right">the right value</param>
-        /// <param name="bottom">the bottom value</param>
+        /// <param name="l">The <em>x</em>-coordinate of the upper-left corner of the rectangle.</param>
+        /// <param name="t">The <em>y</em>-coordinate of the upper-left corner of the rectangle.</param>
+        /// <param name="r">The <em>x</em>-coordinate of the lower-right corner of the rectangle.</param>
+        /// <param name="b">The <em>y</em>-coordinate of the lower-right corner of the rectangle.</param>
         public MFRect(int l, int t, int r, int b)
         {
             left = l;
@@ -71,11 +100,12 @@ namespace MediaFoundation.Misc
         }
 
         /// <summary>
-        /// A parametred constructor. Initialize fields with a given <see cref="System.Drawing.Rectangle"/>.
+        /// Initializes a new instance of the <see cref="MFRect"/> class with given <see cref="System.Drawing.Rectangle"/>.
         /// </summary>
         /// <param name="rectangle">A <see cref="System.Drawing.Rectangle"/></param>
         /// <remarks>
-        /// Warning, MFRect define a rectangle by defining two of his corners and <see cref="System.Drawing.Rectangle"/> define a rectangle with his upper/left corner, his width and his height.
+        /// Warning, MFRect define a rectangle by defining two of its corners and <see cref="System.Drawing.Rectangle"/> 
+        /// define a rectangle with his upper/left corner, its width and height.
         /// </remarks>
         public MFRect(Rectangle rectangle)
         {
@@ -86,7 +116,7 @@ namespace MediaFoundation.Misc
         }
 
         /// <summary>
-        /// Provide de string representation of this MFRect instance
+        /// Provide the string representation of this MFRect instance.
         /// </summary>
         /// <returns>A string formated like this : [left, top - right, bottom]</returns>
         public override string ToString()
@@ -94,6 +124,10 @@ namespace MediaFoundation.Misc
             return string.Format("[{0}, {1}] - [{2}, {3}]", left, top, right, bottom);
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             return left.GetHashCode() |
@@ -102,6 +136,11 @@ namespace MediaFoundation.Misc
                 bottom.GetHashCode();
         }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current object.</param>
+        /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
             if (obj is MFRect)
@@ -122,8 +161,12 @@ namespace MediaFoundation.Misc
         }
 
         /// <summary>
-        /// Checks to see if the rectangle is empty
+        /// Checks to see if the rectangle is empty. 
         /// </summary>
+        /// <remarks>
+        /// An empty rectangle is a rectangle where <see cref="right"/> &lt;= <see cref="left"/>,
+        /// or where <see cref="bottom"/> &lt;= <see cref="top"/>.
+        /// </remarks>
         /// <returns>Returns true if the rectangle is empty</returns>
         public bool IsEmpty()
         {

@@ -33,9 +33,18 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// Image subtypes (MFMediaType_Image major type)
+    /// </summary>
     public static class MFImageFormat
     {
+        /// <summary>
+        /// JPEG subtype: same as <c>GUID_ContainerFormatJpeg</c>.
+        /// </summary>
         public static readonly Guid JPEG = new Guid(0x19e4a5aa, 0x5662, 0x4fc5, 0xa0, 0xc0, 0x17, 0x58, 0x02, 0x8e, 0x10, 0x57);
+        /// <summary>
+        /// RGB32 subtype: same as <c>MFVideoFormat_RGB32</c>.
+        /// </summary>
         public static readonly Guid RGB32 = new Guid(0x00000016, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
     }
 

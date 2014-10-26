@@ -34,6 +34,10 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
+    /// <summary>
+    /// To get a pointer to an <see cref="IPlayToSourceClassFactory"/> interface, instantiate this class. 
+    /// The CLSID is <c>CLSID_PlayToSourceClassFactory</c>.
+    /// </summary>
     [UnmanagedName("CLSID_PlayToSourceClassFactory"),
 ComImport,
 Guid("DA17539A-3DC3-42C1-A749-A183B51F085E")]

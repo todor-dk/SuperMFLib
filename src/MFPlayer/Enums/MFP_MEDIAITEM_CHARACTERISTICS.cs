@@ -38,13 +38,45 @@ namespace MediaFoundation.MFPlayer
 #if ALLOW_UNTESTED_INTERFACES
 
 
-    [Flags, UnmanagedName("MFP_MEDIAITEM_CHARACTERISTICS")]
+    /// <summary>
+    /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
+    /// Applications should use the <c>Media Session</c> for playback. 
+    /// <para/>
+    /// Contains flags that describe a media item.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/7BBB45E6-717D-413C-95FD-DB730AB960FF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7BBB45E6-717D-413C-95FD-DB730AB960FF(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
+    [Obsolete("Applications should use the Media Session for playback.")]
+    [Flags, UnmanagedName("_MFP_MEDIAITEM_CHARACTERISTICS")]
     public enum MFP_MEDIAITEM_CHARACTERISTICS
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0x00000000,
+        /// <summary>
+        /// The media item represents a live data source, such as video camera. If playback is stopped and then
+        /// restarted, there will be a gap in the content.
+        /// </summary>
         IsLive = 0x00000001,
+        /// <summary>
+        /// The media item supports seeking. If this flag is absent, the 
+        /// <see cref="MFPlayer.IMFPMediaPlayer.SetPosition"/> method will fail. 
+        /// </summary>
         CanSeek = 0x00000002,
+        /// <summary>
+        /// The media item can pause. If this flag is absent, the <see cref="MFPlayer.IMFPMediaPlayer.Pause"/>
+        /// method will likely fail. 
+        /// </summary>
         CanPause = 0x00000004,
+        /// <summary>
+        /// Seeking can take a long time. For example, the source might download content through HTTP.
+        /// </summary>
         HasSlowSeek = 0x00000008
     }
 

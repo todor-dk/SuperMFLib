@@ -33,7 +33,19 @@ using System.Drawing;
 namespace MediaFoundation.EVR
 {
 
-
+    /// <summary>
+    /// To get a pointer to <see cref="IMFVideoPresenter"/> interface that implements the EVT tearless presents, 
+    /// instantiate this class. The CLSID is <c>CLSID_EVRTearlessWindowPresenter9</c>.
+    /// </summary>
+    /// <remarks>
+    /// From: https://social.msdn.microsoft.com/Forums/windowsdesktop/en-US/fb03e918-4cf1-4220-8479-96a95108f0d7/cannot-get-the-iidimfvideopresenter-interface-from-tearless-window-presenter-evr?forum=mediafoundationdevelopment
+    /// <para/>
+    /// Contrary to what the poorly named CLSID would lead you to believe, CLSID_EVRTerarlessWindowPresenter9 is 
+    /// not actually a full presenter object but a helper object that the full video presenter uses to render frames.  
+    /// This helper object is used by the default video presenter.
+    /// <para/>
+    /// The EVR was designed to minimize video tearing, and is supposed to be significantly better than the VMR in this respect. 
+    /// </remarks>
     [UnmanagedName("CLSID_EVRTearlessWindowPresenter9"),
     ComImport,
     Guid("a0a7a57b-59b2-4919-a694-add0a526c373")]

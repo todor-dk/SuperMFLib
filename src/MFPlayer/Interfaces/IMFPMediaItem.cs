@@ -54,6 +54,7 @@ namespace MediaFoundation.MFPlayer
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/2839D256-BDAF-40CF-9F9D-46F9E2CE59E8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2839D256-BDAF-40CF-9F9D-46F9E2CE59E8(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
+    [Obsolete("Applications should use the Media Session for playback.")]
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("90EB3E6B-ECBF-45cc-B1DA-C6FE3EA70D57")]

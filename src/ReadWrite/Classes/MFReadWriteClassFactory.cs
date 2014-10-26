@@ -37,7 +37,10 @@ using MediaFoundation.Transform;
 namespace MediaFoundation.ReadWrite
 {
 
-
+    /// <summary>
+    /// To get a pointer to an <see cref="IMFReadWriteClassFactory"/> interface, instantiate this class. 
+    /// The CLSID is <c>CLSID_MFReadWriteClassFactory</c>.
+    /// </summary>
     [UnmanagedName("CLSID_MFReadWriteClassFactory"), 
     ComImport, 
     Guid("48e2ed0f-98c2-4a37-bed5-166312ddd83f")]

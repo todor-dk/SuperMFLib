@@ -35,16 +35,30 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.Misc
 {
+    /// <summary>
+    /// Attribute that is used to decorate the types in the Media Foundation Library
+    /// to indicate which unmanaged type they represent.
+    /// <para/>
+    /// Example: <see cref="WaveFormatEx"/> represents the <c>WAVEFORMATEX</c> native structure.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Enum | AttributeTargets.Struct | AttributeTargets.Class)]
     public class UnmanagedNameAttribute : System.Attribute
     {
         private string m_Name;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnmanagedNameAttribute"/> class.
+        /// </summary>
+        /// <param name="s">The name of the unmanaged type.</param>
         public UnmanagedNameAttribute(string s)
         {
             m_Name = s;
         }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return m_Name;

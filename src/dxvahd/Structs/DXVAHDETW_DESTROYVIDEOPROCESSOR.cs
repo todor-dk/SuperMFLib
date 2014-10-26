@@ -34,10 +34,15 @@ namespace MediaFoundation.dxvahd
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_DESTROYVIDEOPROCESSOR")]
     public struct DXVAHDETW_DESTROYVIDEOPROCESSOR
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public long pObject;
     }
 

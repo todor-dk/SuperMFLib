@@ -37,16 +37,24 @@ namespace MediaFoundation.Misc
 {
 
 
+
     /// <summary>
-    /// Class BitmapInfoHeaderWithData.
+    /// The BITMAPINFO structure defines the dimensions and color information for a Windows device-independent bitmap (DIB). 
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
-    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct tagBITMAPINFO {
+    ///    BITMAPINFOHEADER bmiHeader;
+    ///    RGBQUAD bmiColors[1];
+    /// } BITMAPINFO;
+    /// </code>
     /// <para/>
-    /// View the original documentation topic online: 
-    /// <a href="http://msdn.microsoft.com/en-US/library/A00CAA49-E4DF-419F-89A7-AB03C13A1B5B(v=VS.110,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A00CAA49-E4DF-419F-89A7-AB03C13A1B5B(v=VS.110,d=hv.2).aspx</a>
-    /// </remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para />
+    /// View the original documentation topic online:
+    /// <a href="http://msdn.microsoft.com/en-US/library/A00CAA49-E4DF-419F-89A7-AB03C13A1B5B(v=VS.110,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A00CAA49-E4DF-419F-89A7-AB03C13A1B5B(v=VS.110,d=hv.2).aspx</a></remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("BITMAPINFO")]
     public class BitmapInfoHeaderWithData : BitmapInfoHeader
     {

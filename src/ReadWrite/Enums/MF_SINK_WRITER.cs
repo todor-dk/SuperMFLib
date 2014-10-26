@@ -39,12 +39,24 @@ namespace MediaFoundation.ReadWrite
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// Enumeration used with many methods of among others the <see cref="IMFSinkWriter"/>
+    /// to indicate different predefined streams.
+    /// </summary>
     [UnmanagedName("Unnamed enum")]
     public enum MF_SINK_WRITER
     {
+        /// <summary>
+        /// Invalid stream index.
+        /// </summary>
         InvalidStreamIndex = unchecked((int)0xFFFFFFFF),
+        /// <summary>
+        /// All streams.
+        /// </summary>
         AllStreams = unchecked((int)0xFFFFFFFE),
+        /// <summary>
+        /// Query the media sink for the stream index.
+        /// </summary>
         MediaSink = unchecked((int)0xFFFFFFFF)
     }
 

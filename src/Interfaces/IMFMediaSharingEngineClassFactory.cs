@@ -35,11 +35,21 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>.
+    /// </summary>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("524D2BC4-B2B1-4FE5-8FAC-FA4E4512B4E0"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMediaSharingEngineClassFactory
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
+        /// <param name="dwFlags"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="pAttr"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="ppEngine"><i>***** Documentation Missing *****</i>.</param>
+        /// <returns><i>***** Documentation Missing *****</i>.</returns>
         [PreserveSig]
         int CreateInstance(
             int dwFlags,

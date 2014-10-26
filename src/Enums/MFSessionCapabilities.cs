@@ -33,15 +33,42 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
+    /// <summary>
+    /// Flags used in conjunction with the <see cref="IMFMediaSession.GetSessionCapabilities"/> method.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFSESSIONCAP_* defines")]
     public enum MFSessionCapabilities
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0x00000000,
+        /// <summary>
+        /// The Media Session can be started.
+        /// </summary>
         Start = 0x00000001,
+        /// <summary>
+        /// The Media Session can be seeked.
+        /// </summary>
         Seek = 0x00000002,
+        /// <summary>
+        /// The Media Session can be paused.
+        /// </summary>
         Pause = 0x00000004,
+        /// <summary>
+        /// The Media Session supports forward playback at rates faster than 1.0.
+        /// </summary>
         RateForward = 0x00000010,
+        /// <summary>
+        /// The Media Session supports reverse playback.
+        /// </summary>
         RateReverse = 0x00000020
     }
 }

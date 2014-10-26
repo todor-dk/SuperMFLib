@@ -35,16 +35,43 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_VIDEOPROCESSBLTHD")]
     public struct DXVAHDETW_VIDEOPROCESSBLTHD
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public long pObject;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public long pOutputSurface;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public MFRect TargetRect;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public int OutputFormat; // D3DFORMAT
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public int ColorSpace;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public int OutputFrame;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public int StreamCount;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool Enter;
     }

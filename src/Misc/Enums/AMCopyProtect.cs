@@ -28,11 +28,26 @@ using System.Runtime.InteropServices;
 namespace MediaFoundation.Misc
 {
 
-
+    /// <summary>
+    /// This enumeration contains options for the <see cref="VideoInfoHeader2.CopyProtectFlags"/> field.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/5E3D5BF0-435F-45DA-8409-A1463B56A7AE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5E3D5BF0-435F-45DA-8409-A1463B56A7AE(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("AMCOPYPROTECT_*")]
     public enum AMCopyProtect
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// Indicate that the duplication of the stream should be restricted.
+        /// </summary>
         RestrictDuplication = 0x00000001
     }
 

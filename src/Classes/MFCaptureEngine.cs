@@ -33,6 +33,10 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="IMFCaptureEngineClassFactory.CreateInstance"/>
     [UnmanagedName("CLSID_MFCaptureEngine"),
 ComImport,
 Guid("efce38d3-8914-4674-a7df-ae1b3d654b8a")]

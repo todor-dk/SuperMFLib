@@ -33,9 +33,12 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// Class for creating the Image Sharing Engine.
+    /// </summary>
+    /// <seealso cref="IMFImageSharingEngineClassFactory"/>
     [UnmanagedName("CLSID_MFImageSharingEngineClassFactory"),
-ComImport,
-Guid("B22C3339-87F3-4059-A0C5-037AA9707EAF")]
+        ComImport, Guid("B22C3339-87F3-4059-A0C5-037AA9707EAF")]
     public class MFImageSharingEngineClassFactory
     {
     }

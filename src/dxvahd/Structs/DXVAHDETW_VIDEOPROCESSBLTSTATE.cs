@@ -35,12 +35,27 @@ namespace MediaFoundation.dxvahd
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_VIDEOPROCESSBLTSTATE")]
     public struct DXVAHDETW_VIDEOPROCESSBLTSTATE
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public long pObject;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public DXVAHD_BLT_STATE State;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public int DataSize;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         [MarshalAs(UnmanagedType.Bool)]
         public bool SetState;
     }

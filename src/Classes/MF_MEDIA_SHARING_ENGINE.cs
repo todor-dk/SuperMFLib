@@ -33,9 +33,18 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// MFMediaSharingEngine creation attributes
+    /// </summary>
     public static class MF_MEDIA_SHARING_ENGINE
     {
+        /// <summary>
+        /// Device name. Data type: STRING.
+        /// </summary>
         public static readonly Guid DEVICE_NAME = new Guid(0x771e05d1, 0x862f, 0x4299, 0x95, 0xac, 0xae, 0x81, 0xfd, 0x14, 0xf3, 0xe7);
+        /// <summary>
+        /// Device. Data type: IUnknown.
+        /// </summary>
         public static readonly Guid DEVICE = new Guid(0xb461c58a, 0x7a08, 0x4b98, 0x99, 0xa8, 0x70, 0xfd, 0x5f, 0x3b, 0xad, 0xfd);
     }
 

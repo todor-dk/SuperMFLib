@@ -72,6 +72,17 @@ namespace MediaFoundation
 
         #region Audio Subtypes
 
+        /// <summary>
+        /// In MF, media types for uncompressed video formats MUST be composed from a FourCC or D3DFORMAT combined with
+        /// this "base GUID" {00000000-0000-0010-8000-00AA00389B71} by replacing the initial 32 bits with the FourCC/D3DFORMAT
+        /// <para/>
+        /// Audio media types for types which already have a defined wFormatTag value can be constructed similarly, by
+        /// putting the wFormatTag (zero-extended to 32 bits) into the first 32 bits of the base GUID.
+        /// <para/>
+        /// Compressed video or audio can also use any well-known GUID that exists, or can create a new GUID.
+        /// <para/>
+        /// GUIDs for common media types are defined below.
+        /// </summary>
         public static readonly Guid Base = new Guid(0x00000000, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
         /// <summary>
         /// Uncompressed PCM audio. Format Tag: WAVE_FORMAT.
@@ -158,8 +169,11 @@ namespace MediaFoundation
         #region Video Subtypes
 
 
-
         // {00000000-767a-494d-b478-f29d25dc9037}       MFMPEG4Format_Base
+        /// <summary>
+        /// Value used for creating MPEG-4 types. See: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/dd757766%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/dd757766%28v=vs.85%29.aspx</a>
+        /// </summary>
         public static readonly Guid MFMPEG4Format = new Guid(0x00000000, 0x767a, 0x494d, 0xb4, 0x78, 0xf2, 0x9d, 0x25, 0xdc, 0x90, 0x37);
 
         #region Uncompressed RGB Formats

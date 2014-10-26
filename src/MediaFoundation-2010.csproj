@@ -59,7 +59,18 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Alt.cs" />
+    <Compile Include="Alt\IMFFinalizableMediaSinkAlt.cs" />
+    <Compile Include="Alt\IMFGetServiceAlt.cs" />
+    <Compile Include="Alt\IMFMediaEventGeneratorAlt.cs" />
+    <Compile Include="Alt\IMFMediaEventQueueAlt.cs" />
+    <Compile Include="Alt\IMFMediaSinkAlt.cs" />
+    <Compile Include="Alt\IMFMediaSourceAlt.cs" />
+    <Compile Include="Alt\IMFMediaStreamAlt.cs" />
+    <Compile Include="Alt\IMFSourceReaderAsync.cs" />
+    <Compile Include="Alt\IMFStreamSinkAlt.cs" />
+    <Compile Include="Alt\IMFTopologyServiceLookupAlt.cs" />
+    <Compile Include="Alt\IMFTopologyServiceLookupClientAlt.cs" />
+    <Compile Include="Alt\MFExternAlt.cs" />
     <Compile Include="Classes\ASFIndexIdentifier.cs" />
     <Compile Include="Classes\CColorConvertDMO.cs" />
     <Compile Include="Classes\CLSID.cs" />
@@ -154,8 +165,8 @@
     <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_SOURCE_RECT_DATA.cs" />
     <Compile Include="dxvahd\Structs\DXVAHD_VPCAPS.cs" />
     <Compile Include="dxvahd\Structs\DXVAHD_VPDEVCAPS.cs" />
-    <Compile Include="eAVEncH264VLevel.cs" />
-    <Compile Include="eAVEncH264VProfile.cs" />
+    <Compile Include="Enums\eAVEncH264VLevel.cs" />
+    <Compile Include="Enums\eAVEncH264VProfile.cs" />
     <Compile Include="Enums\ASFSelectionStatus.cs" />
     <Compile Include="Enums\ASFStatusFlags.cs" />
     <Compile Include="Enums\MediaEventType.cs" />

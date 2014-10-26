@@ -33,10 +33,12 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
+    /// <summary>
+    /// To get a pointer to an <see cref="IMFCaptureEngineClassFactory"/> interface, instantiate this class. 
+    /// The CLSID is <c>CLSID_MFCaptureEngineClassFactory</c>.
+    /// </summary>
     [UnmanagedName("CLSID_MFCaptureEngineClassFactory"),
-ComImport,
-Guid("efce38d3-8914-4674-a7df-ae1b3d654b8a")]
+        ComImport, Guid("efce38d3-8914-4674-a7df-ae1b3d654b8a")]
     public class MFCaptureEngineClassFactory
     {
     }

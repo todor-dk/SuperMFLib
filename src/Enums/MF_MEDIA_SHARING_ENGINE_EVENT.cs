@@ -35,9 +35,15 @@ namespace MediaFoundation
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Events fired by the video/audio elements. Extends <see cref="MF_MEDIA_ENGINE_EVENT"/>.
+    /// </summary>
     [UnmanagedName("MF_MEDIA_SHARING_ENGINE_EVENT")]
     public enum MF_MEDIA_SHARING_ENGINE_EVENT
     {
+        /// <summary>
+        /// Disconnect event.
+        /// </summary>
         Disconnect = 2000
     }
 

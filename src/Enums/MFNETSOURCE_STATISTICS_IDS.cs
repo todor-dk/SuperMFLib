@@ -195,7 +195,10 @@ namespace MediaFoundation
         /// ( <strong>LONG</strong>, <strong>VT_I4</strong>). 
         /// </summary>
         DOWNLOADPROGRESS_ID,
-
+        /// <summary>
+        /// The name of protocol when MFNETSOURCE_PROTOCOL_ID is MFNETSOURCE_UNDEFINED.
+        /// Data type: STRING
+        /// </summary>
         UNPREDEFINEDPROTOCOLNAME_ID
     }
 

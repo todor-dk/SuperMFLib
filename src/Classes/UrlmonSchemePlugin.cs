@@ -33,6 +33,9 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// Scheme and Bytestream handler CLSID for <strong>Urlmon</strong>.
+    /// </summary>
     [UnmanagedName("CLSID_UrlmonSchemePlugin"),
 ComImport,
 Guid("9ec4b4f9-3029-45ad-947b-344de2a249e2")]

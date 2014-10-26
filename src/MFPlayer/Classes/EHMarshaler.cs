@@ -37,6 +37,7 @@ namespace MediaFoundation.MFPlayer
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    [Obsolete]
     internal class EHMarshaler : ICustomMarshaler
     {
         public IntPtr MarshalManagedToNative(object managedObj)

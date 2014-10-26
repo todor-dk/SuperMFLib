@@ -39,15 +39,36 @@ namespace MediaFoundation.ReadWrite
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// This enumerator contains special stream index values 
+    /// that are used with functions that expect stream indexes.
+    /// </summary>
     [UnmanagedName("Unnamed enum")]
     public enum MF_SOURCE_READER
     {
+        /// <summary>
+        /// Indicates an invalid stream index.
+        /// </summary>
         InvalidStreamIndex = unchecked((int)0xFFFFFFFF),
+        /// <summary>
+        /// All streams.
+        /// </summary>
         AllStreams = unchecked((int)0xFFFFFFFE),
+        /// <summary>
+        /// Get the next available sample, regardless of which stream.
+        /// </summary>
         AnyStream = unchecked((int)0xFFFFFFFE),
+        /// <summary>
+        /// The first audio stream.
+        /// </summary>
         FirstAudioStream = unchecked((int)0xFFFFFFFD),
+        /// <summary>
+        /// The first video stream.
+        /// </summary>
         FirstVideoStream = unchecked((int)0xFFFFFFFC),
+        /// <summary>
+        /// If this flag is set, the method queries the media source. 
+        /// </summary>
         MediaSource = unchecked((int)0xFFFFFFFF),
     }
 

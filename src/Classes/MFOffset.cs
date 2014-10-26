@@ -80,12 +80,20 @@ namespace MediaFoundation
             fract = (short)(65536 * (v - Value));
         }
 
+        /// <summary>
+        /// Fill the current offset instance form the given float value.
+        /// </summary>
+        /// <param name="v">Float value for the offset.</param>
         public void MakeOffset(float v)
         {
             Value = (short)v;
             fract = (short)(65536 * (v-Value));
         }
 
+        /// <summary>
+        /// Get the current offset as float value.
+        /// </summary>
+        /// <returns>The float value of the offset.</returns>
         public float GetOffset()
         {
             return ((float)Value) + (((float)fract) / 65536.0f);

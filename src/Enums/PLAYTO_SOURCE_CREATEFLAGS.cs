@@ -34,14 +34,41 @@ namespace MediaFoundation
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// Contains flags for the <see cref="IPlayToSourceClassFactory.CreateInstance"/> method.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/windows/desktop/hh162910(v=vs.85).aspx">http://msdn.microsoft.com/en-US/library/windows/desktop/hh162910(v=vs.85).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("PLAYTO_SOURCE_CREATEFLAGS")]
-    public enum PLAYTO_SOURCE_CREATEFLAGS
+    public enum PLAYTO_SOURCE_CREATEFLAGS  // PLAYTO_SOURCE_CREATEFLAGS
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0x0,
+        /// <summary>
+        /// Share images.
+        /// </summary>
         Image = 0x1,
+        /// <summary>
+        /// Share audio.
+        /// </summary>
         Audio = 0x2,
-        Video = 0x4
+        /// <summary>
+        /// Share video.
+        /// </summary>
+        Video = 0x4,
+        /// <summary>
+        /// Share DRM protected media.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
+        Protected = 0x8
     }
 
 #endif

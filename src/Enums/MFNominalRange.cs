@@ -81,9 +81,13 @@ namespace MediaFoundation
         /// </summary>
         MFNominalRange_64_127 = 4,
 
-
+        /// <summary>
+        /// For internal use.
+        /// </summary>
         MFNominalRange_Last,
-
+        /// <summary>
+        /// For internal use.
+        /// </summary>
         MFNominalRange_ForceDWORD = 0x7fffffff,
     }
 

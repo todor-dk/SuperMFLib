@@ -32,11 +32,23 @@ using System.Drawing;
 namespace MediaFoundation
 {
 
-
+    /// <summary>
+    /// Flags used in conjunction with the <see cref="IMFByteStream.Seek"/> method.
+    /// </summary>
+    /// <remarks>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [Flags, UnmanagedName("MFBYTESTREAM_SEEK_FLAG_ defines")]
     public enum MFByteStreamSeekingFlags
     {
+        /// <summary>
+        /// Default value / no flags are set.
+        /// </summary>
         None = 0,
+        /// <summary>
+        /// All pending I/O requests are canceled after the seek request completes successfully. 
+        /// </summary>
         CancelPendingIO = 1
     }
 

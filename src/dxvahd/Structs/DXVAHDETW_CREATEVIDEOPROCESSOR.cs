@@ -34,11 +34,23 @@ namespace MediaFoundation.dxvahd
 
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_CREATEVIDEOPROCESSOR")]
     public struct DXVAHDETW_CREATEVIDEOPROCESSOR
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public long pObject;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public long pD3D9Ex;
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public Guid VPGuid;
     }
 

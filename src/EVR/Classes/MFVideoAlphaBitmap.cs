@@ -69,7 +69,7 @@ namespace MediaFoundation.EVR
         /// <c>hdc</c> Handle to the device context (DC) of a GDI bitmap. 
         /// If <see cref="GetBitmapFromDC"/> is <c>FALSE</c>, this member is ignored.
         /// <para/>
-        /// <c>pDDs</c> Pointer to the <see cref="IDirect3DSurface9"/> interface of a Direct3D surface that 
+        /// <c>pDDs</c> Pointer to the <see cref="dxvahd.IDirect3DSurface9"/> interface of a Direct3D surface that 
         /// contains the bitmap. If <see cref="GetBitmapFromDC"/> is <c>TRUE</c>, this member is ignored.
         /// </summary>
         public IntPtr stru;

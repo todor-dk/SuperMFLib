@@ -33,6 +33,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// Color Converter DSP. Converts a video stream between color formats. 
+    /// The CLSID is <c>CLSID_CColorConvertDMO</c>.
+    /// </summary>
+    /// <remarks>
+    /// Online Documentation:
+    /// <a href="http://msdn.microsoft.com/en-gb/library/windows/desktop/ff819079(v=vs.85).aspx">http://msdn.microsoft.com/en-gb/library/windows/desktop/ff819079(v=vs.85).aspx</a>.
+    /// </remarks>
     [UnmanagedName("CLSID_CColorConvertDMO"), ComImport, Guid("98230571-0087-4204-b020-3282538e57d3")]
     public class CColorConvertDMO
     {

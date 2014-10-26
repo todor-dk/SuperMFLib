@@ -59,6 +59,9 @@ namespace MediaFoundation.dxvahd
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA")]
     public struct DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA
     {
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
+        /// </summary>
         public int Value;
     }
 

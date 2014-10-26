@@ -33,9 +33,12 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
+    /// <summary>
+    /// To get a pointer to an <see cref="IMFByteStreamProxyClassFactory"/> interface, instantiate this class. 
+    /// The CLSID is <c>CLSID_MFByteStreamProxyClassFactory</c>.
+    /// </summary>
     [UnmanagedName("CLSID_MFByteStreamProxyClassFactory"),
-ComImport,
-Guid("770e8e77-4916-441c-a9a7-b342d0eebc71")]
+        ComImport, Guid("770e8e77-4916-441c-a9a7-b342d0eebc71")]
     public class MFByteStreamProxyClassFactory
     {
     }

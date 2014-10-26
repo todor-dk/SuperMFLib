@@ -37,22 +37,120 @@ namespace MediaFoundation.Misc
 {
 
 
+    /// <summary>
+    /// The <strong>WAVEFORMATEX</strong> structure defines the format of waveform-audio data. Only format
+    /// information common to all waveform-audio data formats is included in this structure. For formats
+    /// that require additional information, this structure is included as the first member in another
+    /// structure, along with the additional information. 
+    /// </summary>
+    /// <remarks>
+    /// <strong>C/C++ Syntax</strong>
+    /// <code>
+    /// typedef struct {
+    ///   WORD  wFormatTag;
+    ///   WORD  nChannels;
+    ///   DWORD nSamplesPerSec;
+    ///   DWORD nAvgBytesPerSec;
+    ///   WORD  nBlockAlign;
+    ///   WORD  wBitsPerSample;
+    ///   WORD  cbSize;
+    /// } WAVEFORMATEX;
+    /// </code>
+    /// <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/4F3BF6FB-B15F-43B3-82F1-E7A8A3007057(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4F3BF6FB-B15F-43B3-82F1-E7A8A3007057(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("WAVEFORMATEX")]
     public class WaveFormatEx
     {
+        /// <summary>
+        /// Waveform-audio format type. Format tags are registered with Microsoft Corporation for many
+        /// compression algorithms. A complete list of format tags can be found in the Mmreg.h header file. For
+        /// one- or two-channel Pulse Code Modulation (PCM) data, this value should be WAVE_FORMAT_PCM.
+        /// <para/>
+        /// <para>* If <strong>wFormatTag</strong> equals WAVE_FORMAT_EXTENSIBLE, the structure is interpreted
+        /// as a <see cref="Misc.WaveFormatExtensible"/> structure. </para><para>* If <strong>wFormatTag
+        /// </strong> equals WAVE_FORMAT_MPEG, the structure is interpreted as an <c>MPEG1WAVEFORMAT</c>
+        /// structure. </para><para>* If <strong>wFormatTag</strong> equals WAVE_FORMAT_MPEGLAYER3, the
+        /// structure is interpreted as an <c>MPEGLAYER3WAVEFORMAT</c> structure. </para>
+        /// <para/>
+        /// Before reinterpreting a <strong>WAVEFORMATEX</strong> structure as one of these extended
+        /// structures, verify that the actual structure size is sufficiently large and that the <strong>cbSize
+        /// </strong> member indicates a valid size. 
+        /// </summary>
         public short wFormatTag;
+        /// <summary>
+        /// Number of channels in the waveform-audio data. Monaural data uses one channel and stereo data uses
+        /// two channels.
+        /// </summary>
         public short nChannels;
+        /// <summary>
+        /// Sample rate, in samples per second (hertz). If <strong>wFormatTag</strong> is WAVE_FORMAT_PCM, then
+        /// common values for <strong>nSamplesPerSec</strong> are 8.0 kHz, 11.025 kHz, 22.05 kHz, and 44.1 kHz.
+        /// For non-PCM formats, this member must be computed according to the manufacturer's specification of
+        /// the format tag. 
+        /// </summary>
         public int nSamplesPerSec;
+        /// <summary>
+        /// Required average data-transfer rate, in bytes per second, for the format tag. If <strong>wFormatTag
+        /// </strong> is WAVE_FORMAT_PCM, <strong>nAvgBytesPerSec</strong> must equal <strong>nSamplesPerSec
+        /// </strong> × <strong>nBlockAlign</strong>. For non-PCM formats, this member must be computed
+        /// according to the manufacturer's specification of the format tag. 
+        /// </summary>
         public int nAvgBytesPerSec;
+        /// <summary>
+        /// Block alignment, in bytes. The block alignment is the minimum atomic unit of data for the <strong>
+        /// wFormatTag</strong> format type. If <strong>wFormatTag</strong> is WAVE_FORMAT_PCM, <strong>
+        /// nBlockAlign</strong> must equal ( <strong>nChannels</strong> × <strong>wBitsPerSample</strong>) /
+        /// 8. For non-PCM formats, this member must be computed according to the manufacturer's specification
+        /// of the format tag. 
+        /// <para/>
+        /// Software must process a multiple of <strong>nBlockAlign</strong> bytes of data at a time. Data
+        /// written to and read from a device must always start at the beginning of a block. For example, it is
+        /// illegal to start playback of PCM data in the middle of a sample (that is, on a non-block-aligned
+        /// boundary). 
+        /// </summary>
         public short nBlockAlign;
+        /// <summary>
+        /// Bits per sample for the <strong>wFormatTag</strong> format type. If <strong>wFormatTag</strong> is 
+        /// <strong>WAVE_FORMAT_PCM</strong>, then <strong>wBitsPerSample</strong> should be equal to 8 or 16.
+        /// For non-PCM formats, this member must be set according to the manufacturer's specification of the
+        /// format tag. If <strong>wFormatTag</strong> is <strong>WAVE_FORMAT_EXTENSIBLE</strong>, this value
+        /// can be any integer multiple of 8. 
+        /// <para/>
+        /// Some compression schemes do not define a value for <strong>wBitsPerSample</strong>, so this member
+        /// can be zero. 
+        /// </summary>
         public short wBitsPerSample;
+        /// <summary>
+        /// Size, in bytes, of extra format information appended to the end of the <strong>WAVEFORMATEX
+        /// </strong> structure. This information can be used by non-PCM formats to store extra attributes for
+        /// the <strong>wFormatTag</strong>. If no extra information is required by the <strong>wFormatTag
+        /// </strong>, this member must be set to zero. For <strong>WAVE_FORMAT_PCM</strong> formats (and only 
+        /// <strong>WAVE_FORMAT_PCM</strong> formats), this member is ignored. However it is still recommended
+        /// to set the value. 
+        /// </summary>
         public short cbSize;
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return string.Format("{0} {1} {2} {3}", wFormatTag, nChannels, nSamplesPerSec, wBitsPerSample);
         }
 
+        /// <summary>
+        /// Marshals this instance to unmanaged memory and returns the pointer to that memory location.
+        /// </summary>
+        /// <returns>
+        /// An integer representing the address of the block of memory allocated. 
+        /// This memory must be released with <see cref="Marshal.FreeCoTaskMem"/>.
+        /// </returns>
         public IntPtr GetPtr()
         {
             IntPtr ip;
@@ -131,6 +229,12 @@ namespace MediaFoundation.Misc
             return ip;
         }
 
+        /// <summary>
+        /// Marshals the unmanaged memory location given in the memory pointer <paramref name="pNativeData"/>
+        /// to <see cref="WaveFormatEx"/> object.
+        /// </summary>
+        /// <param name="pNativeData">Memory location pointing to a <c>WAVEFORMATEX</c> structure.</param>
+        /// <returns>A WaveFormatEx object from the given memory location.</returns>
         public static WaveFormatEx PtrToWave(IntPtr pNativeData)
         {
             short wFormatTag = Marshal.ReadInt16(pNativeData);
@@ -226,6 +330,12 @@ namespace MediaFoundation.Misc
             return wfe;
         }
 
+        /// <summary>
+        /// Implements the equality operator.
+        /// </summary>
+        /// <param name="a">The left operand to compare for equality.</param>
+        /// <param name="b">The right operand to compare for equality.</param>
+        /// <returns>The result of the equality comparison operator.</returns>
         public static bool operator ==(WaveFormatEx a, WaveFormatEx b)
         {
             // If both are null, or both are same instance, return true.
@@ -263,16 +373,31 @@ namespace MediaFoundation.Misc
             return bRet;
         }
 
+        /// <summary>
+        /// Implements the inequality operator.
+        /// </summary>
+        /// <param name="a">The left operand to compare for inequality.</param>
+        /// <param name="b">The right operand to compare for inequality.</param>
+        /// <returns>The result of the inequality comparison operator.</returns>
         public static bool operator !=(WaveFormatEx a, WaveFormatEx b)
         {
             return !(a == b);
         }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current object.</param>
+        /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
             return this == (obj as WaveFormatEx);
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             return nAvgBytesPerSec + wFormatTag;

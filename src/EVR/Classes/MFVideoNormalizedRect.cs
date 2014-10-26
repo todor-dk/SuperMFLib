@@ -102,13 +102,19 @@ namespace MediaFoundation.EVR
             bottom = b;
         }
 
-
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return string.Format("left = {0}, top = {1}, right = {2}, bottom = {3}", left, top, right, bottom);
         }
 
-
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
             return left.GetHashCode() |
@@ -117,7 +123,11 @@ namespace MediaFoundation.EVR
                 bottom.GetHashCode();
         }
 
-
+        /// <summary>
+        /// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current object.</param>
+        /// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
             if (obj is MFVideoNormalizedRect)
@@ -130,11 +140,24 @@ namespace MediaFoundation.EVR
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the rectangle is empty. 
+        /// </summary>
+        /// <remarks>
+        /// An empty rectangle is a rectangle where <see cref="right"/> &lt;= <see cref="left"/>,
+        /// or where <see cref="bottom"/> &lt;= <see cref="top"/>.
+        /// </remarks>
+        /// <returns>Returns true if the rectangle is empty</returns>
         public bool IsEmpty()
         {
             return (right <= left || bottom <= top);
         }
 
+        /// <summary>
+        /// Fill the properties of this rectangle instance from the properties of the 
+        /// given rectangle <paramref name="from"/>.
+        /// </summary>
+        /// <param name="from">Source rectangle whoes properties are to be copied to this rectangle.</param>
         public void CopyFrom(MFVideoNormalizedRect from)
         {
             left = from.left;

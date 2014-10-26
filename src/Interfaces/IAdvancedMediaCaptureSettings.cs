@@ -76,11 +76,31 @@ namespace MediaFoundation
             out IMFDXGIDeviceManager value
             );
 
+
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
+        /// <param name="value"><i>***** Documentation Missing *****</i>.</param>
+        /// <returns><i>***** Documentation Missing *****</i>.</returns>
+        // BUG-BUG: Nowhere does this method appear in the header files !!!!
+        [Obsolete("Don't use !!!! Nowhere does this method appear in the header files !!!!")]
         [PreserveSig]
         int SetDirectCompositionVisual(
             [MarshalAs(UnmanagedType.IUnknown)] object value
             );
 
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
+        /// <param name="pSrcNormalizedTop"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="pSrcNormalizedBottom"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="pSrcNormalizedRight"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="pSrcNormalizedLeft"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="pDstSize"><i>***** Documentation Missing *****</i>.</param>
+        /// <param name="pBorderClr"><i>***** Documentation Missing *****</i>.</param>
+        /// <returns><i>***** Documentation Missing *****</i>.</returns>
+        // BUG-BUG: Nowhere does this method appear in the header files !!!!
+        [Obsolete("Don't use !!!! Nowhere does this method appear in the header files !!!!")]
         [PreserveSig]
         int UpdateVideo(
              [In] MfFloat pSrcNormalizedTop,

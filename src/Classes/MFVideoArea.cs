@@ -80,6 +80,13 @@ namespace MediaFoundation
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MFVideoArea"/> class.
+        /// </summary>
+        /// <param name="x">The x-coordinate of the upper-left corner of the rectangle.</param>
+        /// <param name="y">The y-coordinate of the upper-left corner of the rectangle.</param>
+        /// <param name="width">The width of the rectangle.</param>
+        /// <param name="height">The height of the rectangle.</param>
         public MFVideoArea(float x, float y, int width, int height)
         {
             OffsetX = new MFOffset(x);
@@ -87,6 +94,13 @@ namespace MediaFoundation
             Area = new MFSize(width, height);
         }
 
+        /// <summary>
+        /// Fill the coordinates of the this MFVideoArea instance with the given values.
+        /// </summary>
+        /// <param name="x">The x-coordinate of the upper-left corner of the rectangle.</param>
+        /// <param name="y">The y-coordinate of the upper-left corner of the rectangle.</param>
+        /// <param name="width">The width of the rectangle.</param>
+        /// <param name="height">The height of the rectangle.</param>
         public void MakeArea(float x, float y, int width, int height)
         {
             OffsetX.MakeOffset(x);

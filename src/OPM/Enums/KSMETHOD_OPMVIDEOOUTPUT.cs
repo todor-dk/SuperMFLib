@@ -34,18 +34,28 @@ namespace MediaFoundation.OPM
 
 #if ALLOW_UNTESTED_INTERFACES
 
-
+    /// <summary>
+    /// Defines values for the KSPROPSETID_OPMVideoOutput property.
+    /// </summary>
+    /// <remarks>
+    /// See: http://msdn.microsoft.com/en-us/library/windows/hardware/ff568687(v=vs.85).aspx
+    /// </remarks>
     public enum KSMETHOD_OPMVIDEOOUTPUT
     {
-        //  Output is OPM_RANDOM_NUMBER followed by certificate
+        /// <summary>
+        /// Output is OPM_RANDOM_NUMBER followed by certificate.
+        /// </summary>
         KSMETHOD_OPMVIDEOOUTPUT_STARTINITIALIZATION = 0,
 
-        //  Input OPM_ENCRYPTED_INITIALIZATION_PARAMETERS
-        //  Output OPM_STANDARD_INFORMATION
+        /// <summary>
+        /// Input OPM_ENCRYPTED_INITIALIZATION_PARAMETERS, output OPM_STANDARD_INFORMATION
+        /// </summary>
         KSMETHOD_OPMVIDEOOUTPUT_FINISHINITIALIZATION = 1,
 
-        //  Input is OPM_GET_INFO_PARAMETERS, output is OPM_REQUESTED_INFORMATION
-        //  Use KsMethod - both input and output in the buffer (not after the KSMETHOD structure)
+        /// <summary>
+        /// Input is OPM_GET_INFO_PARAMETERS, output is OPM_REQUESTED_INFORMATION.
+        ///  Use KsMethod - both input and output in the buffer (not after the KSMETHOD structure)
+        /// </summary>
         KSMETHOD_OPMVIDEOOUTPUT_GETINFORMATION = 2
     }
 

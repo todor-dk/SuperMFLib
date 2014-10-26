@@ -34,14 +34,36 @@ namespace MediaFoundation.EVR
 {
 
 
-    [UnmanagedName("MF_SERVICE_LOOKUP_TYPE")]
+    /// <summary>
+    /// Specifies the scope of the search of <see cref="IMFTopologyServiceLookup.LookupService"/>. 
+    /// Currently this parameter is ignored. Use the value <see cref="Global"/>.
+    /// </summary>
+    [UnmanagedName("_MF_SERVICE_LOOKUP_TYPE")]
     public enum MFServiceLookupType
     {
+        /// <summary>
+        /// <i>***** Currently this value is not used *****</i>.
+        /// </summary>
         Upstream = 0,
+        /// <summary>
+        /// <i>***** Currently this value is not used *****</i>.
+        /// </summary>
         UpstreamDirect,
+        /// <summary>
+        /// <i>***** Currently this value is not used *****</i>.
+        /// </summary>
         Downstream,
+        /// <summary>
+        /// <i>***** Currently this value is not used *****</i>.
+        /// </summary>
         DownstreamDirect,
+        /// <summary>
+        /// <i>***** Currently this value is not used *****</i>.
+        /// </summary>
         All,
+        /// <summary>
+        /// <i>***** Currently this value is not used *****</i>.
+        /// </summary>
         Global
     }
 

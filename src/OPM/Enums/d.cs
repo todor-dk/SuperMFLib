@@ -35,9 +35,25 @@ namespace MediaFoundation.OPM
 #if ALLOW_UNTESTED_INTERFACES
 
 
+    /// <summary>
+    /// Queries whether a digital video interface (DVI) connector supports DVI version 1.1 or later.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/B6C450C0-E97F-472D-AE09-FA1E062AEB9E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B6C450C0-E97F-472D-AE09-FA1E062AEB9E(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     public enum d
     {
+        /// <summary>
+        /// DVI version 1.0.
+        /// </summary>
         OPM_DVI_CHARACTERISTIC_1_0 = 1,
+        /// <summary>
+        /// DVI version 1.1 or later.
+        /// </summary>
         OPM_DVI_CHARACTERISTIC_1_1_OR_ABOVE = 2
     }
 

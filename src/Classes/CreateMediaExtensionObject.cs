@@ -33,10 +33,11 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
+    /// <summary>
+    /// <i>***** Documentation Missing *****</i>.
+    /// </summary>
     [UnmanagedName("CLSID_CreateMediaExtensionObject"),
-ComImport,
-Guid("ef65a54d-0788-45b8-8b14-bc0f6a6b5137")]
+        ComImport, Guid("ef65a54d-0788-45b8-8b14-bc0f6a6b5137")]
     public class CreateMediaExtensionObject
     {
     }
