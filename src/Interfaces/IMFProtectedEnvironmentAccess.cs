@@ -101,7 +101,14 @@ namespace MediaFoundation
             IntPtr input,
             int outputLength,
             IntPtr output
-        );        
+        );
+
+
+        [PreserveSig]
+        int ReadGRL(
+            out int outputLength,
+            out IntPtr output
+            );
     }
 
 #endif

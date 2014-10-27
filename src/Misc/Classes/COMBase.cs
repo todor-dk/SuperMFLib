@@ -98,7 +98,7 @@ namespace MediaFoundation.Misc
         /// <returns>
         /// TRUE if <paramref name="hr"/> represents a success status value; otherwise, FALSE.
         /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Succeeded(int hr)
         {
             return hr >= 0;
@@ -113,7 +113,7 @@ namespace MediaFoundation.Misc
         /// <returns>
         /// TRUE if <paramref name="hr"/> represents a failed status value; otherwise, FALSE. 
         /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Failed(int hr)
         {
             return hr < 0;

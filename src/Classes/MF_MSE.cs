@@ -1,4 +1,4 @@
-#region license
+﻿#region license
 
 /*
 MediaFoundationLib - Provide access to MediaFoundation interfaces via .NET
@@ -33,21 +33,10 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-    /// <summary>
-    /// MFMediaSharingEngine creation attributes
-    /// </summary>
-    public static class MF_MEDIA_SHARING_ENGINE
+    public static class MF_MSE
     {
-        /// <summary>
-        /// Device name. Data type: STRING.
-        /// </summary>
-        public static readonly Guid DEVICE_NAME = new Guid(0x771e05d1, 0x862f, 0x4299, 0x95, 0xac, 0xae, 0x81, 0xfd, 0x14, 0xf3, 0xe7);
-        /// <summary>
-        /// Device. Data type: IUnknown.
-        /// </summary>
-        public static readonly Guid DEVICE = new Guid(0xb461c58a, 0x7a08, 0x4b98, 0x99, 0xa8, 0x70, 0xfd, 0x5f, 0x3b, 0xad, 0xfd);
-
-        public static readonly Guid INITIAL_SEEK_TIME = new Guid(0x6f3497f5, 0xd528, 0x4a4f, 0x8d, 0xd7, 0xdb, 0x36, 0x65, 0x7e, 0xc4, 0xc9);
+        public static readonly Guid MF_MSE_CALLBACK = new Guid(0x9063a7c0, 0x42c5, 0x4ffd, 0xa8, 0xa8, 0x6f, 0xcf, 0x9e, 0xa3, 0xd0, 0x0c);
+        public static readonly Guid MF_MSE_ACTIVELIST_CALLBACK = new Guid(0x949bda0f, 0x4549, 0x46d5, 0xad, 0x7f, 0xb8, 0x46, 0xe1, 0xab, 0x16, 0x52);
+        public static readonly Guid MF_MSE_BUFFERLIST_CALLBACK = new Guid(0x42e669b0, 0xd60e, 0x4afb, 0xa8, 0x5b, 0xd8, 0xe5, 0xfe, 0x6b, 0xda, 0xb5);
     }
-
 }

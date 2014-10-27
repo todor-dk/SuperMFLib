@@ -92,6 +92,7 @@ namespace MediaFoundation
         /// <para/>
         /// <strong>Note</strong> Requires Windows 7 or later. 
         /// </summary>
-        CanSkipBackward = 0x40
+        CanSkipBackward = 0x40,
+        DoesNotUseNetwork = 0x80
     }
 }

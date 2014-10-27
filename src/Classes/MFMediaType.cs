@@ -156,6 +156,7 @@ namespace MediaFoundation
         /// <summary>
         /// QCELP (Qualcomm Code Excited Linear Prediction) audio. Format Tag: None.
         /// </summary>
+        [Obsolete]
         public static readonly Guid MFAudioFormat_QCELP = new Guid(0x5E7F6D41, 0xB115, 0x11D0, 0xBA, 0x91, 0x00, 0x80, 0x5F, 0xB4, 0xB9, 0x7E);
 
         /// <summary>
@@ -163,6 +164,10 @@ namespace MediaFoundation
         /// Format Tag: WAVE_FORMAT.
         /// </summary>
         public static readonly Guid RAW_AAC1 = new Guid(0x000000FF, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+
+        public static readonly Guid AMR_NB = new Guid(0x7361, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+        public static readonly Guid AMR_WB = new Guid(0x7362, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+        public static readonly Guid AMR_WP = new Guid(0x7363, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 
         #endregion
 
@@ -408,6 +413,10 @@ namespace MediaFoundation
         /// 8-bit per channel planar YUV 4:2:0 video. 
         /// </summary>
         public static readonly Guid O420 = new FourCC("420O").ToMediaSubtype();
+
+        public static readonly Guid HEVC = new FourCC("HEVC").ToMediaSubtype();
+        public static readonly Guid HEVC_ES = new FourCC("HEVS").ToMediaSubtype();
+
         /// <summary>
         /// MPEG-2 video. (Equivalent to MEDIASUBTYPE_MPEG2_VIDEO in DirectShow.)
         /// </summary>

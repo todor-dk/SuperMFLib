@@ -67,7 +67,8 @@ namespace MediaFoundation
         /// <summary>
         /// The media resource is not supported. 
         /// </summary>
-        SrcNotSupported = 4
+        SrcNotSupported = 4,
+        Encrypted = 5,
     }
 
 #endif

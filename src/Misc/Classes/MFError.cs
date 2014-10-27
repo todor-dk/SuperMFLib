@@ -344,6 +344,8 @@ namespace MediaFoundation.Misc
         /// Error: Hardware MFT failed to start streaming due to lack of hardware resources.
         /// </summary>
         public const int MF_E_HW_MFT_FAILED_START_STREAMING = unchecked((int)0xC00D3704);
+
+        public const int MF_E_OPERATION_IN_PROGRESS = unchecked((int)0xC00D3705);
         /// <summary>
         /// Error: Parsing is still in progress and is not yet complete.
         /// </summary>
@@ -758,6 +760,9 @@ namespace MediaFoundation.Misc
         /// Error: The operation failed because no samples were processed by the sink.
         /// </summary>
         public const int MF_E_SINK_NO_SAMPLES_PROCESSED = unchecked((int)0xC00D4A44);
+
+        public const int MF_E_SINK_HEADERS_NOT_FOUND = unchecked((int)0xC00D4A45);
+
         /// <summary>
         /// Error: There is no available procamp hardware with which to perform color correction.
         /// </summary>
@@ -1311,6 +1316,27 @@ namespace MediaFoundation.Misc
         /// Error: The op is invalid.
         /// </summary>
         public const int MF_E_CAPTURE_ENGINE_INVALID_OP = unchecked((int)0xC00DABE4);
+
+
+
+        public const int MF_E_CAPTURE_ENGINE_ALL_EFFECTS_REMOVED = unchecked((int)0xC00DABE5);
+        public const int MF_E_CAPTURE_SOURCE_NO_INDEPENDENT_PHOTO_STREAM_PRESENT = unchecked((int)0xC00DABE6);
+        public const int MF_E_CAPTURE_SOURCE_NO_VIDEO_STREAM_PRESENT = unchecked((int)0xC00DABE7);
+        public const int MF_E_CAPTURE_SOURCE_NO_AUDIO_STREAM_PRESENT = unchecked((int)0xC00DABE8);
+        public const int MF_E_CAPTURE_SOURCE_DEVICE_EXTENDEDPROP_OP_IN_PROGRESS = unchecked((int)0xC00DABE9);
+        public const int MF_E_CAPTURE_PROPERTY_SET_DURING_PHOTO = unchecked((int)0xC00DABEA);
+        public const int MF_E_CAPTURE_NO_SAMPLES_IN_QUEUE = unchecked((int)0xC00DABEB);
+        public const int MF_E_HW_ACCELERATED_THUMBNAIL_NOT_SUPPORTED = unchecked((int)0xC00DABEC);
+
+        public const int MF_INDEX_SIZE_ERR = unchecked((int)0x80700001);
+        public const int MF_NOT_FOUND_ERR = unchecked((int)0x80700008);
+        public const int MF_NOT_SUPPORTED_ERR = unchecked((int)0x80700009);
+        public const int MF_INVALID_STATE_ERR = unchecked((int)0x8070000B);
+        public const int MF_SYNTAX_ERR = unchecked((int)0x8070000C);
+        public const int MF_INVALID_ACCESS_ERR = unchecked((int)0x8070000F);
+        public const int MF_QUOTA_EXCEEDED_ERR = unchecked((int)0x80700016);
+        public const int MF_PARSE_ERR = unchecked((int)0x80700051);
+
 
         /// <summary>
         /// Error: The Direct3D device manager was not initialized. The owner of the device must 

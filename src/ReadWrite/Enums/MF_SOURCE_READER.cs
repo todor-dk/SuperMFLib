@@ -66,6 +66,15 @@ namespace MediaFoundation.ReadWrite
         /// The first video stream.
         /// </summary>
         FirstVideoStream = unchecked((int)0xFFFFFFFC),
+
+        FirstSourcePhotoStream = unchecked((int)0xFFFFFFFB),
+        PreferredSourceVideoStreamForPreview = unchecked((int)0xFFFFFFFA),
+        PreferredSourceVideoStreamForRecord = unchecked((int)0xFFFFFFF9),
+        FirstSourceIndependentPhotoStream = unchecked((int)0xFFFFFFF8),
+        PreferredSourceStreamForVideoRecord = unchecked((int)0xFFFFFFF9),
+        PreferredSourceStreamForPhoto = unchecked((int)0xFFFFFFF8),
+        PreferredSourceStreamForAudio = unchecked((int)0xFFFFFFF7),
+
         /// <summary>
         /// If this flag is set, the method queries the media source. 
         /// </summary>

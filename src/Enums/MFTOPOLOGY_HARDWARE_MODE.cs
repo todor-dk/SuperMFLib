@@ -60,6 +60,7 @@ namespace MediaFoundation
         /// one.
         /// </summary>
         UseHardware = 1,
+        UseOnlyHardware = 2,
     }
 
 #endif

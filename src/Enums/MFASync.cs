@@ -72,7 +72,8 @@ namespace MediaFoundation
         /// <summary>
         /// Reply callback.
         /// </summary>
-        ReplyCallback = 0x00000008
+        ReplyCallback = 0x00000008,
+        LocalizeRemoteCallback = 0x00000010,
     }
 
 }

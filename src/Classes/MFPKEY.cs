@@ -383,6 +383,12 @@ namespace MediaFoundation
         /// <a href="http://msdn.microsoft.com/en-US/library/A1B1E088-72D3-4B5F-B868-64896AF04EF1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A1B1E088-72D3-4B5F-B868-64896AF04EF1(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static readonly PropertyKey MediaProtectionSystemContext = new PropertyKey(new Guid(0x636b271d, 0xddc7, 0x49e9, 0xa6, 0xc6, 0x47, 0x38, 0x59, 0x62, 0xe5, 0xbd), 0x02);
+
+
+        public static readonly PropertyKey MediaProtectionSystemIdMapping = new PropertyKey(new Guid(0x636b271d, 0xddc7, 0x49e9, 0xa6, 0xc6, 0x47, 0x38, 0x59, 0x62, 0xe5, 0xbd), 0x03);
+        public static readonly PropertyKey MediaProtectionContainerGuid = new PropertyKey(new Guid(0x42af3d7c, 0xcf, 0x4a0f, 0x81, 0xf0, 0xad, 0xf5, 0x24, 0xa5, 0xa5, 0xb5), 0x1);
+        public static readonly PropertyKey MediaProtectionSystemContextsPerTrack = new PropertyKey(new Guid(0x4454b092, 0xd3da, 0x49b0, 0x84, 0x52, 0x68, 0x50, 0xc7, 0xdb, 0x76, 0x4d), 0x03);
+        public static readonly PropertyKey HTTP_ByteStream_Download_Mode = new PropertyKey(new Guid(0x817f11b7, 0xa982, 0x46ec, 0xa4, 0x49, 0xef, 0x58, 0xae, 0xd5, 0x3c, 0xa8), 0x01);
     }
 
 }

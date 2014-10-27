@@ -1,4 +1,4 @@
-#region license
+ï»¿#region license
 
 /*
 MediaFoundationLib - Provide access to MediaFoundation interfaces via .NET
@@ -28,41 +28,22 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
 using MediaFoundation.Misc;
+using MediaFoundation;
+using System.Drawing;
 
 namespace MediaFoundation
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
-
-    /// <summary>
-    /// Defines events that are sent by the sharing engine.
-    /// </summary>
-    /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
-    /// with the sole purpose to increase usability and add IntelliSense support.
-    /// <para/>
-    /// View the original documentation topic online: 
-    /// <a href="http://msdn.microsoft.com/en-US/library/475BC98E-6795-4629-AD41-9C6A63AC51C7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/475BC98E-6795-4629-AD41-9C6A63AC51C7(v=VS.85,d=hv.2).aspx</a>
-    /// </remarks>
-    [UnmanagedName("MF_SHARING_ENGINE_EVENT")]
-    public enum MF_SHARING_ENGINE_EVENT
+    [UnmanagedName("MF_OPM_ACP_PROTECTION_LEVEL")]
+    public enum MF_OPM_ACP_PROTECTION_LEVEL
     {
-        /// <summary>
-        /// Reserved for internal use.
-        /// </summary>
-        Disconnect = 2000,
-        /// <summary>
-        /// Reserved for internal use.
-        /// </summary>
-        LocalRenderingStarted = 2001,
-        /// <summary>
-        /// Reserved for internal use.
-        /// </summary>
-        LocalRenderingEnded = 2002,
-        Stopped = 2003,
+        Off = 0,
+        LevelOne = 1,
+        LevelTwo = 2,
+        LevelThree = 3,
+        ForceULong = 0x7fffffff
     }
 
 #endif
-
 }

@@ -207,7 +207,10 @@ namespace MediaFoundation
         /// If the Media Engine is not created with the <strong>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</strong>,
         /// it does not send this event, and the <c>Load</c> thread does not wait to be signalled. 
         /// </summary>
-        NotifyStableState = 1008
+        NotifyStableState = 1008,
+        FirstFrameReady = 1009,
+        TracksChange = 1010,
+        OpmInfo = 1011,
     }
 
 #endif

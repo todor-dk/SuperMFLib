@@ -2275,6 +2275,10 @@ namespace MediaFoundation
         /// <a href="http://msdn.microsoft.com/en-US/library/85EE663C-94B7-47EA-ABBA-A8371342EEB2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/85EE663C-94B7-47EA-ABBA-A8371342EEB2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         MEVideoCaptureDevicePreempted = 801,
+
+        MEStreamSinkFormatInvalidated = 802,
+        MEEncodingParameters = 803,
+        MEContentProtectionMetadata = 900,
         /// <summary>
         /// Internal. Don't use.
         /// </summary>

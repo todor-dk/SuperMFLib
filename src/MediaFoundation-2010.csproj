@@ -17,7 +17,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -33,14 +33,14 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;ALLOW_UNTESTED_INTERFACES</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
@@ -52,11 +52,12 @@
     <DefineConstants>ALLOW_UNTESTED_INTERFACES</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>none</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>5</LangVersion>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>bin\x64\Release\MediaFoundation.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Alt\IMFFinalizableMediaSinkAlt.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Classes\MF_CAPTURE_ENGINE.cs" />
     <Compile Include="Classes\MF_MEDIA_ENGINE.cs" />
     <Compile Include="Classes\MF_MEDIA_SHARING_ENGINE.cs" />
+    <Compile Include="Classes\MF_MSE.cs" />
     <Compile Include="Classes\MPEG2ByteStreamPlugin.cs" />
     <Compile Include="Classes\MPEG2DLNASink.cs" />
     <Compile Include="Classes\NetSchemePlugin.cs" />
@@ -247,7 +249,9 @@
     <Compile Include="Enums\MF_MEDIA_ENGINE_EVENT.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_EXTENSION_TYPE.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS.cs" />
+    <Compile Include="Enums\MF_MEDIA_ENGINE_KEYERR.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_NETWORK.cs" />
+    <Compile Include="Enums\MF_MEDIA_ENGINE_OPM_STATUS.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_PRELOAD.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_PROTECTION_FLAGS.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_READY.cs" />
@@ -255,16 +259,43 @@
     <Compile Include="Enums\MF_MEDIA_ENGINE_SEEK_MODE.cs" />
     <Compile Include="Enums\MF_MEDIA_ENGINE_STATISTIC.cs" />
     <Compile Include="Enums\MF_MEDIA_SHARING_ENGINE_EVENT.cs" />
+    <Compile Include="Enums\MF_MSE_ERROR.cs" />
+    <Compile Include="Enums\MF_MSE_READY.cs" />
+    <Compile Include="Enums\MF_OPM_ACP_PROTECTION_LEVEL.cs" />
+    <Compile Include="Enums\MF_OPM_CGMSA_PROTECTION_LEVEL.cs" />
     <Compile Include="Enums\MF_PLUGIN_CONTROL_POLICY.cs" />
     <Compile Include="Enums\MF_Plugin_Type.cs" />
     <Compile Include="Enums\MF_RESOLUTION.cs" />
     <Compile Include="Enums\MF_SHARING_ENGINE_EVENT.cs" />
     <Compile Include="Enums\MF_TRANSCODE_ADJUST_PROFILE_FLAGS.cs" />
     <Compile Include="Enums\MF_TRANSCODE_TOPOLOGYMODE_FLAGS.cs" />
+    <Compile Include="Enums\MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.cs" />
     <Compile Include="Enums\MF_VIDEO_PROCESSOR_MIRROR.cs" />
     <Compile Include="Enums\MF_VIDEO_PROCESSOR_ROTATION.cs" />
     <Compile Include="Enums\PLAYTO_SOURCE_CREATEFLAGS.cs" />
     <Compile Include="EVR\Classes\DXVA2ProcAmpValues.cs" />
+    <Compile Include="Interfaces\IMFBufferListNotify.cs" />
+    <Compile Include="Interfaces\IMFCaptureEngineOnSampleCallback2.cs" />
+    <Compile Include="Interfaces\IMFCaptureSink2.cs" />
+    <Compile Include="Interfaces\IMFCdmSuspendNotify.cs" />
+    <Compile Include="Interfaces\IMFDXGIDeviceManagerSource.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineClassFactory2.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineClassFactoryEx.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineEME.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineNeedKeyNotify.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineOPMInfo.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineSrcElementsEx.cs" />
+    <Compile Include="Interfaces\IMFMediaEngineSupportsSourceTransfer.cs" />
+    <Compile Include="Interfaces\IMFMediaKeys.cs" />
+    <Compile Include="Interfaces\IMFMediaKeySession.cs" />
+    <Compile Include="Interfaces\IMFMediaKeySessionNotify.cs" />
+    <Compile Include="Interfaces\IMFMediaSourceExtension.cs" />
+    <Compile Include="Interfaces\IMFMediaSourceExtensionNotify.cs" />
+    <Compile Include="Interfaces\IMFMediaStreamSourceSampleRequest.cs" />
+    <Compile Include="Interfaces\IMFSourceBuffer.cs" />
+    <Compile Include="Interfaces\IMFSourceBufferList.cs" />
+    <Compile Include="Interfaces\IMFSourceBufferNotify.cs" />
+    <Compile Include="Interfaces\IPlayToControlWithCapabilities.cs" />
     <Compile Include="MFPlayer\Classes\EHMarshaler.cs" />
     <Compile Include="EVR\Classes\EnhancedVideoRenderer.cs" />
     <Compile Include="EVR\Classes\EVRTearlessWindowPresenter9.cs" />
@@ -564,6 +595,7 @@
     <Compile Include="ReadWrite\Interfaces\IMFReadWriteClassFactory.cs" />
     <Compile Include="ReadWrite\Interfaces\IMFSinkWriter.cs" />
     <Compile Include="ReadWrite\Interfaces\IMFSinkWriterCallback.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSinkWriterEncoderConfig.cs" />
     <Compile Include="ReadWrite\Interfaces\IMFSinkWriterEx.cs" />
     <Compile Include="ReadWrite\Interfaces\IMFSourceReader.cs" />
     <Compile Include="ReadWrite\Interfaces\IMFSourceReaderCallback.cs" />
@@ -588,6 +620,7 @@
     <Compile Include="Structs\MF_LeakyBucketPair.cs" />
     <Compile Include="Structs\Mpeg2VideoInfo.cs" />
     <Compile Include="Structs\MT_ARBITRARY_HEADER.cs" />
+    <Compile Include="Structs\ROI_AREA.cs" />
     <Compile Include="Structs\Unnamed1.cs" />
     <Compile Include="Transform\Classes\MFTRegisterTypeInfo.cs" />
     <Compile Include="Transform\Enums\MF3DVideoOutputType.cs" />

@@ -73,7 +73,10 @@ namespace MediaFoundation
         /// <summary>
         /// The frames per second. (<strong>FLOAT</strong>, <strong>VT_R4</strong>)
         /// </summary>
-        FramesPerSecond = 4
+        FramesPerSecond = 4,
+        PlaybackJitter = 5,
+        FramesCorrupted = 6,
+        TotalFrameDelay = 7,
 
     }
 

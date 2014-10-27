@@ -132,6 +132,9 @@ namespace MediaFoundation
         /// Specifies to constrict video.
         /// </summary>
         public static readonly Guid MFPROTECTION_CONSTRICTVIDEO = new Guid(0x193370ce, 0xc5e4, 0x4c3a, 0x8a, 0x66, 0x69, 0x59, 0xb4, 0xda, 0x44, 0x42);
+
+        public static readonly Guid MFPROTECTION_CONSTRICTVIDEO_NOOPM = new Guid(0xa580e8cd, 0xc247, 0x4957, 0xb9, 0x83, 0x3c, 0x2e, 0xeb, 0xd1, 0xff, 0x59);
+
         /// <summary>
         /// Specifies protection is disabled.
         /// </summary>
@@ -210,6 +213,12 @@ namespace MediaFoundation
         /// <a href="http://msdn.microsoft.com/en-US/library/8AA25AFD-EFA8-4FE0-92D4-8432F9D633C9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8AA25AFD-EFA8-4FE0-92D4-8432F9D633C9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static readonly Guid MFSampleExtension_PacketCrossOffsets = new Guid(0x2789671d, 0x389f, 0x40bb, 0x90, 0xd9, 0xc2, 0x82, 0xf7, 0x7f, 0x9a, 0xbd);
+
+        public static readonly Guid MFSampleExtension_Encryption_SampleID = new Guid(0x6698b84e, 0x0afa, 0x4330, 0xae, 0xb2, 0x1c, 0x0a, 0x98, 0xd7, 0xa4, 0x4d);
+        public static readonly Guid MFSampleExtension_Encryption_KeyID = new Guid(0x76376591, 0x795f, 0x4da1, 0x86, 0xed, 0x9d, 0x46, 0xec, 0xa1, 0x09, 0xa9);
+        public static readonly Guid MFSampleExtension_Content_KeyID = new Guid(0xc6c7f5b0, 0xacca, 0x415b, 0x87, 0xd9, 0x10, 0x44, 0x14, 0x69, 0xef, 0xc6);
+        public static readonly Guid MFSampleExtension_Encryption_SubSampleMappingSplit = new Guid(0xfe0254b9, 0x2aa5, 0x4edc, 0x99, 0xf7, 0x17, 0xe8, 0x9d, 0xbf, 0x91, 0x74);
+
         /// <summary>
         /// <i>***** Documentation Missing *****</i>.
         /// </summary>
@@ -342,5 +351,7 @@ namespace MediaFoundation
         /// <a href="http://msdn.microsoft.com/en-US/library/831F023B-C06F-4099-9F4C-DF38F3D1382F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/831F023B-C06F-4099-9F4C-DF38F3D1382F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static readonly Guid MFP_POSITIONTYPE_100NS = Guid.Empty;
+
+        public static readonly Guid CLSID_MFMediaEngineClassFactory = new Guid(0xb44392da, 0x499b, 0x446b, 0xa4, 0xcb, 0x0, 0x5f, 0xea, 0xd0, 0xe6, 0xd5);
     }
 }

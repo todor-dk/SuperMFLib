@@ -144,6 +144,7 @@ namespace MediaFoundation
         /// <summary>
         /// ********* DOCUMENTATION NOT FOUND *********
         /// </summary>
+        [Obsolete]
         public static readonly Guid DISABLE_LOW_LATENCY = new Guid(0xdab5a16d, 0x1f0f, 0x44da, 0xad, 0x48, 0x82, 0x27, 0x31, 0x89, 0x43, 0xb8);
         /// <summary>
         /// ********* DOCUMENTATION NOT FOUND *********
@@ -162,6 +163,8 @@ namespace MediaFoundation
         /// ********* DOCUMENTATION NOT FOUND *********
         /// </summary>
         public static readonly Guid SINK_PREPARED = new Guid(0x7BFCE257, 0x12B1, 0x4409, 0x8C, 0x34, 0xD4, 0x45, 0xDA, 0xAB, 0x75, 0x78);
+
+        public static readonly Guid OUTPUT_MEDIA_TYPE_SET = new Guid(0xcaaad994, 0x83ec, 0x45e9, 0xa3, 0x0a, 0x1f, 0x20, 0xaa, 0xdb, 0x98, 0x31);
     }
 
 }
