@@ -35,13 +35,38 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines protection levels for <strong>MFPROTECTION_ACP</strong>. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/82D289EE-7A81-4FBB-A259-6CF0CBD0D76A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/82D289EE-7A81-4FBB-A259-6CF0CBD0D76A(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_OPM_ACP_PROTECTION_LEVEL")]
     public enum MF_OPM_ACP_PROTECTION_LEVEL
     {
+        /// <summary>
+        /// Specifies ACP is disabled.
+        /// </summary>
         Off = 0,
+        /// <summary>
+        /// Specifies ACP is level one.
+        /// </summary>
         LevelOne = 1,
+        /// <summary>
+        /// Specifies ACP is level two.
+        /// </summary>
         LevelTwo = 2,
+        /// <summary>
+        /// Specifies ACP is level three.
+        /// </summary>
         LevelThree = 3,
+        /// <summary>
+        /// Reserved.
+        /// </summary>
         ForceULong = 0x7fffffff
     }
 

@@ -2276,9 +2276,42 @@ namespace MediaFoundation
         /// </remarks>
         MEVideoCaptureDevicePreempted = 801,
 
+        /// <summary>
+        /// Sent by a stream sink when the downstream format has become invalidated and it needs to be renegotiated. 
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-gb/library/windows/desktop/dn302107(v=vs.85).aspx">http://msdn.microsoft.com/en-gb/library/windows/desktop/dn302107(v=vs.85).aspx</a>
+        /// </remarks>
         MEStreamSinkFormatInvalidated = 802,
+
+        /// <summary>
+        /// Sent by the pipeline to encoder MFTs serially with media samples via <see cref="Transform.IMFTransform.ProcessEvent"/>. 
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302106(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302106(v=vs.85).aspx</a>
+        /// </remarks>
         MEEncodingParameters = 803,
+
+        /// <summary>
+        /// Media Stream uses this event to send protection system specific metadata to the decoder.  
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302078(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302078(v=vs.85).aspx</a>
+        /// </remarks>
         MEContentProtectionMetadata = 900,
+
         /// <summary>
         /// Internal. Don't use.
         /// </summary>

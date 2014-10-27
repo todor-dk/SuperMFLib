@@ -33,14 +33,42 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines media key error codes for the media engine.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302188(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302188(v=vs.85).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_KEYERR")]
     public enum MF_MEDIA_ENGINE_KEYERR
     {
+        /// <summary>
+        /// Unknown error occurred.
+        /// </summary>
         Unknown = 1,
+        /// <summary>
+        /// An error with the client occurred.
+        /// </summary>
         Client = 2,
+        /// <summary>
+        /// An error with the service occurred.
+        /// </summary>
         Service = 3,
+        /// <summary>
+        /// An error with the output occurred.
+        /// </summary>
         Output = 4,
+        /// <summary>
+        /// An error occurred related to a hardware change.
+        /// </summary>
         HardwareChange = 5,
+        /// <summary>
+        /// An error with the domain occurred.
+        /// </summary>
         Domain = 6,
     }
 

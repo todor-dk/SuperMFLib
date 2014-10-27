@@ -47,6 +47,9 @@ namespace MediaFoundation
         /// </summary>
         public static readonly Guid DEVICE = new Guid(0xb461c58a, 0x7a08, 0x4b98, 0x99, 0xa8, 0x70, 0xfd, 0x5f, 0x3b, 0xad, 0xfd);
 
+        /// <summary>
+        /// Initial seek time. Data type: Double.
+        /// </summary>
         public static readonly Guid INITIAL_SEEK_TIME = new Guid(0x6f3497f5, 0xd528, 0x4a4f, 0x8d, 0xd7, 0xdb, 0x36, 0x65, 0x7e, 0xc4, 0xc9);
     }
 

@@ -33,6 +33,18 @@ using MediaFoundation.EVR;
 namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
+
+    /// <summary>
+    /// Extensions for the <see cref="IMFCaptureEngineOnSampleCallback"/> callback interface 
+    /// that is used to receive data from the capture engine.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280677(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280677(v=vs.85).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("e37ceed7-340f-4514-9f4d-9c2ae026100b")]
@@ -40,6 +52,33 @@ namespace MediaFoundation
     {
         #region IMFCaptureEngineOnSampleCallback methods
 
+        /// <summary>
+        /// Called when the capture sink receives a sample.
+        /// </summary>
+        /// <param name="pSample">
+        /// A pointer to the <see cref="IMFSample"/> interface. Use this interface to get the time stamp,
+        /// duration, and stream data. For more information, see <c>Media Samples</c>. This parameter can be 
+        /// <strong>NULL</strong>, so make sure to check for a <strong>NULL</strong> value before you
+        /// dereference the pointer. 
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT OnSample(
+        ///   [in, optional]  IMFSample pSample
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/83FEFE33-DEAD-4CE0-9EEE-B8F3801ADC1C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/83FEFE33-DEAD-4CE0-9EEE-B8F3801ADC1C(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         new int OnSample(
             IMFSample pSample
@@ -47,6 +86,29 @@ namespace MediaFoundation
 
         #endregion
 
+        /// <summary>
+        /// Called by the capture sink when the format of the sample is changed.
+        /// </summary>
+        /// <param name="pEvent">
+        ///  The new media type.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT OnSynchronizedEvent(
+        ///   [in]  IMFMediaEvent *pEvent
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280678(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280678(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int OnSynchronizedEvent(
             IMFMediaEvent pEvent

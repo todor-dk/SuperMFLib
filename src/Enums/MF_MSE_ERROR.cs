@@ -33,12 +33,34 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines the different error states of the Media Source Extension.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302195(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302195(v=vs.85).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MSE_ERROR")]
     public enum MF_MSE_ERROR
     {
+        /// <summary>
+        /// Specifies no error.
+        /// </summary>
         NoError = 0,
+        /// <summary>
+        /// Specifies an error with the network.
+        /// </summary>
         Network = 1,
+        /// <summary>
+        /// Specifies an error with decoding.
+        /// </summary>
         Decode = 2,
+        /// <summary>
+        /// Specifies an unknown error.
+        /// </summary>
         UnknownError = 3,
     }
 

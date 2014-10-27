@@ -33,11 +33,30 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines the different ready states of the Media Source Extension.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302196(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302196(v=vs.85).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MSE_READY")]
     public enum MF_MSE_READY
     {
+        /// <summary>
+        /// The media source is closed.
+        /// </summary>
         Closed = 1,
+        /// <summary>
+        /// The media source is open.
+        /// </summary>
         Open = 2,
+        /// <summary>
+        /// The media source is ended.
+        /// </summary>
         Ended = 3,
     }
 

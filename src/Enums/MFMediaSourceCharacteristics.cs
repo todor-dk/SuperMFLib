@@ -93,6 +93,12 @@ namespace MediaFoundation
         /// <strong>Note</strong> Requires Windows 7 or later. 
         /// </summary>
         CanSkipBackward = 0x40,
+        /// <summary>
+        /// The media source is not currently using the network to receive the content. Networking hardware may
+        /// enter a power saving state when this bit is set.
+        /// <para/>
+        /// <strong>Note</strong> Requires Windows 8 or later. 
+        /// </summary>
         DoesNotUseNetwork = 0x80
     }
 }

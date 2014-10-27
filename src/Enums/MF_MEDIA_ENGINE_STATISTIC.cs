@@ -74,8 +74,23 @@ namespace MediaFoundation
         /// The frames per second. (<strong>FLOAT</strong>, <strong>VT_R4</strong>)
         /// </summary>
         FramesPerSecond = 4,
+        /// <summary>
+        /// The amount of playback jitter. (<strong>DOUBLE</strong>, <strong>VT_R8</strong>)
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         PlaybackJitter = 5,
+        /// <summary>
+        /// The number of corrupted frames. (<strong>ULONG</strong>, <strong>VT_UI4</strong>)
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         FramesCorrupted = 6,
+        /// <summary>
+        /// The total amount of frame delay. (<strong>DOUBLE</strong>, <strong>VT_R8</strong>)
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         TotalFrameDelay = 7,
 
     }

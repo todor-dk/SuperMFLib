@@ -165,8 +165,28 @@ namespace MediaFoundation
         /// </summary>
         public static readonly Guid RAW_AAC1 = new Guid(0x000000FF, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 
+        /// <summary>
+        /// Adaptative Multi-Rate audio.
+        /// Format Tag: WAVE_FORMAT_AMR_NB.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         public static readonly Guid AMR_NB = new Guid(0x7361, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+
+        /// <summary>
+        /// Adaptative Multi-Rate Wideband audio.
+        /// Format Tag: WAVE_FORMAT_AMR_WB.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         public static readonly Guid AMR_WB = new Guid(0x7362, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+
+        /// <summary>
+        /// Adaptative Multi-Rate Wideband Plus audio.
+        /// Format Tag: WAVE_FORMAT_AMR_WP.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         public static readonly Guid AMR_WP = new Guid(0x7363, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
 
         #endregion
@@ -414,7 +434,21 @@ namespace MediaFoundation
         /// </summary>
         public static readonly Guid O420 = new FourCC("420O").ToMediaSubtype();
 
+        /// <summary>
+        /// The HEVC Main profile and Main Still Picture profile.
+        /// <para/>
+        /// Each sample contains one complete picture.
+        /// <para/>
+        /// Supported in Windows 8.1 and later. The HEVC Main profile and Main Still Picture profile elementary stream.  
+        /// </summary>
         public static readonly Guid HEVC = new FourCC("HEVC").ToMediaSubtype();
+        /// <summary>
+        /// This media type is the same as <see cref="HEVC"/>, except media samples contain 
+        /// a fragmented HEVC bitstream. Each sample may contain a partial picture; 
+        /// multiple complete pictures; or one or more complete pictures plus a partial picture.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         public static readonly Guid HEVC_ES = new FourCC("HEVS").ToMediaSubtype();
 
         /// <summary>

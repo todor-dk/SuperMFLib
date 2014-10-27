@@ -60,6 +60,11 @@ namespace MediaFoundation
         /// one.
         /// </summary>
         UseHardware = 1,
+        /// <summary>
+        /// If hardware-based MFTs are available, the topoloader will insert them. If not, the connection will fail.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         UseOnlyHardware = 2,
     }
 

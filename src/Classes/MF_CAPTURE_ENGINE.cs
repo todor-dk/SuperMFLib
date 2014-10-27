@@ -164,6 +164,20 @@ namespace MediaFoundation
         /// </summary>
         public static readonly Guid SINK_PREPARED = new Guid(0x7BFCE257, 0x12B1, 0x4409, 0x8C, 0x34, 0xD4, 0x45, 0xDA, 0xAB, 0x75, 0x78);
 
+        /// <summary>
+        /// Indicates that the output type has been set on the capture engine in response to <see cref="IMFCaptureSink2.SetOutputMediaType"/>.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>GUID</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302183(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302183(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid OUTPUT_MEDIA_TYPE_SET = new Guid(0xcaaad994, 0x83ec, 0x45e9, 0xa3, 0x0a, 0x1f, 0x20, 0xaa, 0xdb, 0x98, 0x31);
     }
 

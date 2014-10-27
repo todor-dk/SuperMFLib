@@ -73,6 +73,9 @@ namespace MediaFoundation
         /// Reply callback.
         /// </summary>
         ReplyCallback = 0x00000008,
+        /// <summary>
+        /// The callback object is not apartment-agile and the callback pointer must be localized after an RPC.
+        /// </summary>
         LocalizeRemoteCallback = 0x00000010,
     }
 

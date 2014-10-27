@@ -33,14 +33,42 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines the status of the Output Protection Manager (OPM).
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302190(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302190(v=vs.85).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_MEDIA_ENGINE_OPM_STATUS")]
     public enum MF_MEDIA_ENGINE_OPM_STATUS
     {
+        /// <summary>
+        /// Default status. Used to return the correct status when the content is unprotected.
+        /// </summary>
         NotRequested = 0,
+        /// <summary>
+        /// OPM successfully established.
+        /// </summary>
         Established = 1,
+        /// <summary>
+        /// OPM failed because running in a virtual machined (VM).
+        /// </summary>
         FailedVM = 2,
+        /// <summary>
+        /// OPM failed because there is no graphics driver and the system is using Broadcast Driver Architecture (BDA).
+        /// </summary>
         FailedBDA = 3,
+        /// <summary>
+        /// OPM failed because the graphics driver is not PE signed, falling back to WARP.
+        /// </summary>
         FailedUnsignedDriver = 4,
+        /// <summary>
+        /// OPM failed for other reasons.
+        /// </summary>
         Failed = 5,
     }
 

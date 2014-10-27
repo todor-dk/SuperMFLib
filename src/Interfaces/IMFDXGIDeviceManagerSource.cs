@@ -35,11 +35,45 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Provides functionality for getting the <see cref="IMFDXGIDeviceManager"/> from 
+    /// the Microsoft Media Foundation video rendering sink.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280687(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280687(v=vs.85).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("20bc074b-7a8d-4609-8c3b-64a0a3b5d7ce")]
     public interface IMFDXGIDeviceManagerSource
     {
+        /// <summary>
+        /// Gets the <see cref="IMFDXGIDeviceManager"/> from the Microsoft Media Foundation video rendering sink.
+        /// </summary>
+        /// <param name="ppManager">
+        /// The <see cref="IMFDXGIDeviceManager"/> object.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT GetManager(
+        ///   [out]  IMFDXGIDeviceManager **ppManager
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280688(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280688(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int GetManager(
             out IMFDXGIDeviceManager ppManager

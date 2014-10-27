@@ -33,14 +33,54 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Enables <see cref="IMFSourceBufferList"/> object to notify its clients of important state changes.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280674(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280674(v=vs.85).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("24cd47f7-81d8-4785-adb2-af697a963cd2"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFBufferListNotify
     {
+        /// <summary>
+        /// Indicates that a <see cref="IMFSourceBuffer"/> has been added.
+        /// </summary>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// void OnAddSourceBuffer();
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280675(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280675(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         void OnAddSourceBuffer();
 
+        /// <summary>
+        /// Indicates that a <see cref="IMFSourceBuffer"/> has been removed.
+        /// </summary>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// void OnRemoveSourceBuffer();
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280676(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280676(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         void OnRemoveSourceBuffer();
     }

@@ -345,6 +345,9 @@ namespace MediaFoundation.Misc
         /// </summary>
         public const int MF_E_HW_MFT_FAILED_START_STREAMING = unchecked((int)0xC00D3704);
 
+        /// <summary>
+        /// Error: The operation is already in progress.
+        /// </summary>
         public const int MF_E_OPERATION_IN_PROGRESS = unchecked((int)0xC00D3705);
         /// <summary>
         /// Error: Parsing is still in progress and is not yet complete.
@@ -761,6 +764,9 @@ namespace MediaFoundation.Misc
         /// </summary>
         public const int MF_E_SINK_NO_SAMPLES_PROCESSED = unchecked((int)0xC00D4A44);
 
+        /// <summary>
+        /// Error: Sink could not create valid output file because required headers were not provided to the sink.
+        /// </summary>
         public const int MF_E_SINK_HEADERS_NOT_FOUND = unchecked((int)0xC00D4A45);
 
         /// <summary>
@@ -1319,22 +1325,70 @@ namespace MediaFoundation.Misc
 
 
 
+        /// <summary>
+        /// Error: The effects previously added were incompatible with the new topology which caused all effects to be removed.
+        /// </summary>
         public const int MF_E_CAPTURE_ENGINE_ALL_EFFECTS_REMOVED = unchecked((int)0xC00DABE5);
+        /// <summary>
+        /// Error: The current capture source does not have an independent photo stream.
+        /// </summary>
         public const int MF_E_CAPTURE_SOURCE_NO_INDEPENDENT_PHOTO_STREAM_PRESENT = unchecked((int)0xC00DABE6);
+        /// <summary>
+        /// Error: The current capture source does not have a video stream.
+        /// </summary>
         public const int MF_E_CAPTURE_SOURCE_NO_VIDEO_STREAM_PRESENT = unchecked((int)0xC00DABE7);
+        /// <summary>
+        /// Error: The current capture source does not have an audio stream.
+        /// </summary>
         public const int MF_E_CAPTURE_SOURCE_NO_AUDIO_STREAM_PRESENT = unchecked((int)0xC00DABE8);
+        /// <summary>
+        /// Error: The capture source device has an asynchronous extended property operation in progress.
+        /// </summary>
         public const int MF_E_CAPTURE_SOURCE_DEVICE_EXTENDEDPROP_OP_IN_PROGRESS = unchecked((int)0xC00DABE9);
+        /// <summary>
+        /// Error: A property cannot be set because a photo or photo sequence is in progress.
+        /// </summary>
         public const int MF_E_CAPTURE_PROPERTY_SET_DURING_PHOTO = unchecked((int)0xC00DABEA);
+        /// <summary>
+        /// Error: No more samples in queue.
+        /// </summary>
         public const int MF_E_CAPTURE_NO_SAMPLES_IN_QUEUE = unchecked((int)0xC00DABEB);
+        /// <summary>
+        /// Error: Hardware accelerated thumbnail generation is not supported for the currently selected mediatype on the mediacapture stream.
+        /// </summary>
         public const int MF_E_HW_ACCELERATED_THUMBNAIL_NOT_SUPPORTED = unchecked((int)0xC00DABEC);
 
+        /// <summary>
+        /// Error: MF Media Engine error - index size error.
+        /// </summary>
         public const int MF_INDEX_SIZE_ERR = unchecked((int)0x80700001);
+        /// <summary>
+        /// Error: MF Media Engine error - not found error.
+        /// </summary>
         public const int MF_NOT_FOUND_ERR = unchecked((int)0x80700008);
+        /// <summary>
+        /// Error: MF Media Engine error - not supported error.
+        /// </summary>
         public const int MF_NOT_SUPPORTED_ERR = unchecked((int)0x80700009);
+        /// <summary>
+        /// Error: MF Media Engine error - invalid state error.
+        /// </summary>
         public const int MF_INVALID_STATE_ERR = unchecked((int)0x8070000B);
+        /// <summary>
+        /// Error: MF Media Engine error - syntax error.
+        /// </summary>
         public const int MF_SYNTAX_ERR = unchecked((int)0x8070000C);
+        /// <summary>
+        /// Error: MF Media Engine error - invalid access error.
+        /// </summary>
         public const int MF_INVALID_ACCESS_ERR = unchecked((int)0x8070000F);
+        /// <summary>
+        /// Error: MF Media Engine error - quota exceeded error.
+        /// </summary>
         public const int MF_QUOTA_EXCEEDED_ERR = unchecked((int)0x80700016);
+        /// <summary>
+        /// Error: MF Media Engine error - parse error.
+        /// </summary>
         public const int MF_PARSE_ERR = unchecked((int)0x80700051);
 
 

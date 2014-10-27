@@ -8908,6 +8908,54 @@ namespace MediaFoundation
         );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Creates an Audio-Video Interleaved (AVI) Sink.
+        /// </summary>
+        /// <param name="pIByteStream">
+        /// Pointer to the byte stream that will be used to write the AVI file.
+        /// </param>
+        /// <param name="pVideoMediaType">
+        /// Pointer to the media type of the video input stream.
+        /// </param>
+        /// <param name="pAudioMediaType">
+        /// Pointer to the media type of the audio input stream.
+        /// </param>
+        /// <param name="ppIMediaSink">
+        /// Receives a pointer to the <see cref="IMFMediaSink"/> Interface. The caller must release this interface.
+        /// </param>
+        /// <returns>
+        /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT WINAPI MFCreateAVIMediaSink(
+        ///   _In_      IMFByteStream *pIByteStream,
+        ///   _In_      IMFMediaType *pVideoMediaType,
+        ///   _In_opt_  IMFMediaType *pAudioMediaType,
+        ///   _Out_     IMFMediaSink **ppIMediaSink 
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302108(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302108(v=vs.85).aspx</a>
+        /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateAVIMediaSink(
             [In] IMFByteStream pIByteStream,
@@ -8916,6 +8964,37 @@ namespace MediaFoundation
             out IMFMediaSink ppIMediaSink
         );
 
+        /// <summary>
+        /// Creates an WAVE archive sink. The WAVE archive sink takes audio and writes it to an .wav file. 
+        /// </summary>
+        /// <param name="pTargetByteStream">
+        /// Pointer to the byte stream that will be used to write the .wav file.
+        /// </param>
+        /// <param name="pAudioMediaType">
+        /// Pointer to the audio media type.
+        /// </param>
+        /// <param name="ppMediaSink">
+        /// Receives a pointer to the <see cref="IMFMediaSink"/> interface. The caller must release this interface.
+        /// </param>
+        /// <returns>
+        /// The function returns an <strong>HRESULT</strong>.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT WINAPI MFCreateWAVEMediaSink(
+        ///   _In_   IMFByteStream *pTargetByteStream,
+        ///   _In_   IMFMediaType *pAudioMediaType,
+        ///   _Out_  IMFMediaSink **ppMediaSink 
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302112(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302112(v=vs.85).aspx</a>
+        /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateWAVEMediaSink(
             [In] IMFByteStream pTargetByteStream,
@@ -8923,6 +9002,38 @@ namespace MediaFoundation
             out IMFMediaSink ppMediaSink
         );
 
+        /// <summary>
+        /// Gets the local system ID.
+        /// </summary>
+        /// <param name="verifier">
+        /// Application-specific verifier value.
+        /// </param>
+        /// <param name="size">
+        /// Length in bytes of verifier.
+        /// </param>
+        /// <param name="id">
+        /// Returned ID string. This value must be freed by the caller by calling <c>CoTaskMemFree</c>. 
+        /// </param>
+        /// <returns>
+        /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
+        /// those in the following table. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT WINAPI MFGetLocalId(
+        ///   _In_  const BYTE *verifier,
+        ///   UINT32 size,
+        ///   _In_  LPWSTR *id
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/24EA8907-9EBF-42FF-8823-05D48E27F9EA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/24EA8907-9EBF-42FF-8823-05D48E27F9EA(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFGetLocalId(
             [In] IntPtr verifier,

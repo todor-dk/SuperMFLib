@@ -33,11 +33,45 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Represents a callback to the media engine to notify key request data.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/BBEDFBE8-9389-4B4F-8D52-111C787A6268(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BBEDFBE8-9389-4B4F-8D52-111C787A6268(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("46a30204-a696-4b18-8804-246b8f031bb1"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMediaEngineNeedKeyNotify
     {
+        /// <summary>
+        /// Notifies the application that a key or keys are needed along with any initialization data.
+        /// </summary>
+        /// <param name="initData">
+        /// The initialization data.
+        /// </param>
+        /// <param name="cb">
+        /// The count in bytes of <em>initData</em>. 
+        /// </param>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// void NeedKey(
+        ///   const BYTE *initData,
+        ///   DWORD cb
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/2B9A64D6-1A0F-4375-973A-42734AC5658E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2B9A64D6-1A0F-4375-973A-42734AC5658E(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         void NeedKey(
            IntPtr initData,

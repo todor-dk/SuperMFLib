@@ -70,6 +70,9 @@ namespace MediaFoundation
         /// The Media Session supports reverse playback.
         /// </summary>
         RateReverse = 0x00000020,
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
         DoesNotUseNetwork = 0x00000040
     }
 }

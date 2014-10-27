@@ -60,6 +60,9 @@ namespace MediaFoundation
         /// Reserved for internal use.
         /// </summary>
         LocalRenderingEnded = 2002,
+        /// <summary>
+        /// The device has stopped.
+        /// </summary>
         Stopped = 2003,
     }
 

@@ -68,6 +68,11 @@ namespace MediaFoundation
         /// The media resource is not supported. 
         /// </summary>
         SrcNotSupported = 4,
+        /// <summary>
+        /// An error occurred while encrypting the media resource.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         Encrypted = 5,
     }
 

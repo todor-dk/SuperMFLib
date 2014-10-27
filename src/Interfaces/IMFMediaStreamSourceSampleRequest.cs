@@ -35,11 +35,45 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Represents a request for a  sample from a MediaStreamSource. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/43617CDA-84B1-405F-8A20-BE793413C186(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/43617CDA-84B1-405F-8A20-BE793413C186(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("380b9af9-a85b-4e78-a2af-ea5ce645c6b4")]
     public interface IMFMediaStreamSourceSampleRequest
     {
+        /// <summary>
+        /// Sets the sample for the media stream source.
+        /// </summary>
+        /// <param name="value">
+        /// The sample for the media stream source.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT SetSample(
+        ///   [in]  IMFSample *value
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/A35C5E18-F307-4E40-BC92-F91AA9EB80BA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A35C5E18-F307-4E40-BC92-F91AA9EB80BA(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int SetSample(
             IMFSample value

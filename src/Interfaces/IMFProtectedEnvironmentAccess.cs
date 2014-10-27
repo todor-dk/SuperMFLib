@@ -104,6 +104,34 @@ namespace MediaFoundation
         );
 
 
+        /// <summary>
+        /// Gets the Global Revocation List (GLR).
+        /// </summary>
+        /// <param name="outputLength">
+        /// The length of the data returned in <strong>output</strong>. 
+        /// </param>
+        /// <param name="output">
+        /// Receives the contents of the global revocation list file.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
+        /// </strong> error code. 
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT ReadGRL(
+        ///   UINT32 *outputLength,
+        ///   BYTE **output
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/38B70C99-1823-498C-B3E4-D2CAD05278DE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/38B70C99-1823-498C-B3E4-D2CAD05278DE(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int ReadGRL(
             out int outputLength,

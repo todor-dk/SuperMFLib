@@ -1068,12 +1068,54 @@ namespace MediaFoundation
         public static readonly Guid MF_EVENT_TOPOLOGY_STATUS = new Guid(0x30c5018d, 0x9a53, 0x454b, 0xad, 0x9e, 0x6d, 0x5f, 0x8f, 0xa7, 0xc4, 0x3b);
 
         // MF_EVENT_STREAM_METADATA_KEYDATA {CD59A4A1-4A3B-4BBD-8665-72A40FBEA776}
+        /// <summary>
+        /// Specifies protection system specific data.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>BLOB</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302186(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302186(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_EVENT_STREAM_METADATA_KEYDATA = new Guid(0xcd59a4a1, 0x4a3b, 0x4bbd, 0x86, 0x65, 0x72, 0xa4, 0xf, 0xbe, 0xa7, 0x76);
 
         // MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS {5063449D-CC29-4FC6-A75A-D247B35AF85C}
+        /// <summary>
+        /// Specifies the content key IDs.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>BLOB</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302185(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302185(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS = new Guid(0x5063449d, 0xcc29, 0x4fc6, 0xa7, 0x5a, 0xd2, 0x47, 0xb3, 0x5a, 0xf8, 0x5c);
 
         // MF_EVENT_STREAM_METADATA_SYSTEMID {1EA2EF64-BA16-4A36-8719-FE7560BA32AD}
+        /// <summary>
+        /// Specifies the system ID for which the key data is intended. 
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>BLOB</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302187(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302187(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_EVENT_STREAM_METADATA_SYSTEMID = new Guid(0x1ea2ef64, 0xba16, 0x4a36, 0x87, 0x19, 0xfe, 0x75, 0x60, 0xba, 0x32, 0xad);
 
         /// <summary>
@@ -3005,9 +3047,37 @@ namespace MediaFoundation
         public static readonly Guid MF_MT_USER_DATA = new Guid(0xb6bc765f, 0x4c3b, 0x40a4, 0xbd, 0x51, 0x25, 0x35, 0xb6, 0x6f, 0xe0, 0x9d);
 
         // {ad76a80b-2d5c-4e0b-b375-64e520137036}   MF_MT_VIDEO_PROFILE             {UINT32}    This is an alias of  MF_MT_MPEG2_PROFILE
+        /// <summary>
+        /// Specifies the profile of video encoding on the output media type. This is an alias of MF_MT_MPEG2_PROFILE attribute.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302198(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302198(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_MT_VIDEO_PROFILE = new Guid(0xad76a80b, 0x2d5c, 0x4e0b, 0xb3, 0x75, 0x64, 0xe5, 0x20, 0x13, 0x70, 0x36);
 
         // {96f66574-11c5-4015-8666-bff516436da7}   MF_MT_VIDEO_LEVEL               {UINT32}    This is an alias of  MF_MT_MPEG2_LEVEL
+        /// <summary>
+        /// Specifies the MPEG-2 or H.264 level in a video media type. This is an alias of MF_MT_MPEG2_LEVEL.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302197(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302197(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_MT_VIDEO_LEVEL = new Guid(0x96f66574, 0x11c5, 0x4015, 0x86, 0x66, 0xbf, 0xf5, 0x16, 0x43, 0x6d, 0xa7);
 
         // {73d1072d-1870-4174-a063-29ff4ff6c11e}
@@ -3663,23 +3733,122 @@ namespace MediaFoundation
         public static readonly Guid MFSampleExtension_DerivedFromTopField = new Guid(0x6852465a, 0xae1c, 0x4553, 0x8e, 0x9b, 0xc3, 0x42, 0x0f, 0xcb, 0x16, 0x37);
 
         // MFSampleExtension_MeanAbsoluteDifference {1cdbde11-08b4-4311-a6dd-0f9f371907aa}
+        /// <summary>
+        /// This attribute returns the mean absolute difference (MAD) across all macro-blocks in the Y plane. 
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302162(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302162(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFSampleExtension_MeanAbsoluteDifference = new Guid(0x1cdbde11, 0x08b4, 0x4311, 0xa6, 0xdd, 0x0f, 0x9f, 0x37, 0x19, 0x07, 0xaa);
 
         // MFSampleExtension_LongTermReferenceFrameInfo {9154733f-e1bd-41bf-81d3-fcd918f71332}
+        /// <summary>
+        /// Specifies Long Term Reference (LTR) frame info and is returned on the output sample. 
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302161(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302161(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFSampleExtension_LongTermReferenceFrameInfo = new Guid(0x9154733f, 0xe1bd, 0x41bf, 0x81, 0xd3, 0xfc, 0xd9, 0x18, 0xf7, 0x13, 0x32);
 
         // MFSampleExtension_ROIRectangle {3414a438-4998-4d2c-be82-be3ca0b24d43}
+        /// <summary>
+        /// Specifies the bounds of the region of interest which indicates the region of the frame that requires different quality. 
+        /// <para/>
+        /// <see cref="ROI_AREA"/> stored as <strong>BLOB</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302165(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302165(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFSampleExtension_ROIRectangle = new Guid(0x3414a438, 0x4998, 0x4d2c, 0xbe, 0x82, 0xbe, 0x3c, 0xa0, 0xb2, 0x4d, 0x43);
 
         // MFSampleExtension_PhotoThumbnail {74BBC85C-C8BB-42DC-B586DA17FFD35DCC}
+        /// <summary>
+        /// Contains the photo thumbnail of a <see cref="IMFSample"/>.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>IUnknown</strong> stored as <strong>IMFMediaBuffer</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302163(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302163(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFSampleExtension_PhotoThumbnail = new Guid(0x74BBC85C, 0xC8BB, 0x42DC, 0xB5, 0x86, 0xDA, 0x17, 0xFF, 0xD3, 0x5D, 0xCC);
 
         // MFSampleExtension_PhotoThumbnailMediaType {61AD5420-EBF8-4143-89AF6BF25F672DEF}
+        /// <summary>
+        /// Contains the <see cref="IMFMediaType"/> which describes the image format type contained in 
+        /// the <see cref="MFSampleExtension_PhotoThumbnail"/> attribute.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>IUnknown</strong> stored as <strong>IMFMediaBuffer</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302164(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302164(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFSampleExtension_PhotoThumbnailMediaType = new Guid(0x61AD5420, 0xEBF8, 0x4143, 0x89, 0xAF, 0x6B, 0xF2, 0x5F, 0x67, 0x2D, 0xEF);
 
         // MFSampleExtension_CaptureMetadata
+        /// <summary>
+        /// The <see cref="IMFAttributes"/> store for all the metadata related to the capture pipeline.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>IUnknown</strong> stored as <see cref="IMFAttributes"/>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302157(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302157(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFSampleExtension_CaptureMetadata = new Guid(0x2EBE23A8, 0xFAF5, 0x444A, 0xA6, 0xA2, 0xEB, 0x81, 0x08, 0x80, 0xAB, 0x5D);
 
+        /// <summary>
+        /// Indicates if a flash was triggered for the captured frame.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302184(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302184(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_CAPTURE_METADATA_PHOTO_FRAME_FLASH = new Guid(0x0F9DD6C6, 0x6003, 0x45D8, 0xBD, 0x59, 0xF1, 0xF5, 0x3E, 0x3D, 0x04, 0xE8);
 
         // MFSampleExtension_Discontinuity {9cdf01d9-a0f0-43ba-b077-eaa06cbd728a}
@@ -5106,7 +5275,37 @@ namespace MediaFoundation
         /// </remarks>
         public static readonly Guid MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE = new Guid(0x53476a11, 0x3f13, 0x49fb, 0xac, 0x42, 0xee, 0x27, 0x33, 0xc9, 0x67, 0x41);
 
+        /// <summary>
+        /// Specifies whether the H.264 video remux MFT should mark I pictures as clean point for better seek-ability. 
+        /// This has the potential for corruptions on seeks in non-conforming final MP4 files. 
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>Bool</strong> stored as <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302175(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302175(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT = new Guid(0x364e8f85, 0x3f2e, 0x436c, 0xb2, 0xa2, 0x44, 0x40, 0xa0, 0x12, 0xa9, 0xe8);
+
+        /// <summary>
+        /// Specifies that the MFT encoder supports receiving <see cref="MediaEventType.MEEncodingParameters"/> events while streaming.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>Bool</strong> stored as <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302174(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302174(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MFT_ENCODER_SUPPORTS_CONFIG_EVENT = new Guid(0x86a355ae, 0x3a77, 0x4ec4, 0x9f, 0x31, 0x1, 0x14, 0x9a, 0x4e, 0x92, 0xde);
 
         #endregion
@@ -6762,7 +6961,36 @@ namespace MediaFoundation
         public static readonly Guid MF_LOW_LATENCY = new Guid(0x9c27891a, 0xed7a, 0x40e1, 0x88, 0xe8, 0xb2, 0x27, 0x27, 0xa0, 0x24, 0xee);
 
         // {E3F2E203-D445-4B8C-9211-AE390D3BA017}  {UINT32} Maximum macroblocks per second that can be handled by MFT
+        /// <summary>
+        /// Specifies, on <see cref="Transform.IMFTransform"/>, the maximum macroblock processing rate, in macroblocks per second, 
+        /// that is supported by the hardware encoder.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302206(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302206(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_VIDEO_MAX_MB_PER_SEC = new Guid(0xe3f2e203, 0xd445, 0x4b8c, 0x92, 0x11, 0xae, 0x39, 0xd, 0x3b, 0xa0, 0x17);
+        /// <summary>
+        /// Sets the algorithm used by the video processor. 
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <see cref="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE"/> stored as <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302207(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302207(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_VIDEO_PROCESSOR_ALGORITHM = new Guid(0x4a0a1e1f, 0x272c, 0x4fb6, 0x9e, 0xb1, 0xdb, 0x33, 0xc, 0xbc, 0x97, 0xca);
 
         /// <summary>
@@ -6802,6 +7030,13 @@ namespace MediaFoundation
         /// </remarks>
         public static readonly Guid MF_TOPOLOGY_DXVA_MODE = new Guid(0x1e8d34f6, 0xf5ab, 0x4e23, 0xbb, 0x88, 0x87, 0x4a, 0xa3, 0xa1, 0xa7, 0x4d);
 
+        /// <summary>
+        /// If set, topoloader will pull in video processor if necessary during non-transcode topology resolution.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>Bool</strong> stored as <strong>UINT32</strong>
+        /// </summary>
         public static readonly Guid MF_TOPOLOGY_ENABLE_XVP_FOR_PLAYBACK = new Guid(0x1967731f, 0xcd78, 0x42fc, 0xb0, 0x26, 0x9, 0x92, 0xa5, 0x6e, 0x56, 0x93);
 
         /// <summary>
@@ -9500,6 +9735,20 @@ namespace MediaFoundation
         /// </remarks>
         public static readonly Guid MF_SA_D3D11_SHARED = new Guid(0x7b8f32c3, 0x6d96, 0x4b89, 0x92, 0x3, 0xdd, 0x38, 0xb6, 0x14, 0x14, 0xf3);
 
+        /// <summary>
+        /// Indicates to the video sample allocator to create textures as shareable using the legacy mechanism.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/jj553487(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/jj553487(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid MF_SA_D3D11_SHARED_WITHOUT_MUTEX = new Guid(0x39dbd44d, 0x2e44, 0x4931, 0xa4, 0xc8, 0x35, 0x2d, 0x3d, 0xc4, 0x21, 0x15);
 
         /// <summary>
@@ -9592,7 +9841,25 @@ namespace MediaFoundation
         /// </remarks>
         public static readonly Guid MFT_ENUM_HARDWARE_VENDOR_ID_Attribute = new Guid(0x3aecb0cc, 0x35b, 0x4bcc, 0x81, 0x85, 0x2b, 0x8d, 0x55, 0x1e, 0xf3, 0xaf);
 
+        /// <summary>
+        /// This attribute is set to 1 if it is certain that all video frames in the WVC1 content use progressive and 
+        /// single slice encoding. Media Source can set this attribute on the IMFMediaType for WVC1 streams.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
         public static readonly Guid MF_WVC1_PROG_SINGLE_SLICE_CONTENT = new Guid(0x67EC2559, 0x0F2F, 0x4420, 0xA4, 0xDD, 0x2F, 0x8E, 0xE7, 0xA5, 0x73, 0x8B);
+
+        /// <summary>
+        /// This attribute is set to 1 if it is certain that all video frames in the content use progressive encoding.  
+        /// The MP4 Media Source can set this attribute on the IMFMediaType for H.264 streams after examining the SPS 
+        /// available in the MP4 'moov' box.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>UINT32</strong>
+        /// </summary>
         public static readonly Guid MF_PROGRESSIVE_CODING_CONTENT = new Guid(0x8F020EEA, 0x1508, 0x471F, 0x9D, 0xA6, 0x50, 0x7D, 0x7C, 0xFA, 0x40, 0xDB);
 
         /// <summary>
@@ -10019,7 +10286,79 @@ namespace MediaFoundation
         /// </summary>
         public static readonly Guid MFTranscodeContainerType_MPEG2 = new Guid(0xbfc2dbf9, 0x7bb4, 0x4f8f, 0xaf, 0xde, 0xe1, 0x12, 0xc4, 0x4b, 0xa8, 0x82);
 
+        /// <summary>
+        /// Specifies the container type of an encoded file. The container types are supported by Media
+        /// Foundation.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>GUID</strong>
+        /// <para/>
+        /// Possible values for the container types provided by Media Foundation are described in the following
+        /// table.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Value</term><description>Meaning</description></listheader>
+        /// <item><term><strong>MFTranscodeContainerType_ASF</strong></term><description>ASF file container.</description></item>
+        /// <item><term><strong>MFTranscodeContainerType_MPEG4</strong></term><description>MP4 file container.</description></item>
+        /// <item><term><strong>MFTranscodeContainerType_MP3</strong></term><description>MP3 file container.</description></item>
+        /// <item><term><strong>MFTranscodeContainerType_3GP</strong></term><description>3GP file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_AC3</strong></term><description>AC3 file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_ADTS</strong></term><description>ADTS file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_MPEG2</strong></term><description>MPEG2 file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_FMPEG4</strong></term><description>FMPEG4 file container. </description></item>
+        /// </list>
+        /// <para/>
+        /// <strong>Get/set</strong>
+        /// <para/>
+        /// To get this attribute, call <see cref="IMFAttributes.GetGUID"/>. 
+        /// <para/>
+        /// To set this attribute, call <see cref="IMFAttributes.SetGUID"/>. 
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/97FD968A-6843-4695-AECE-02F9ACD618FD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/97FD968A-6843-4695-AECE-02F9ACD618FD(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         public static readonly Guid MFTranscodeContainerType_WAVE = new Guid(0x64c3453c, 0x0f26, 0x4741, 0xbe, 0x63, 0x87, 0xbd, 0xf8, 0xbb, 0x93, 0x5b);
+        /// <summary>
+        /// Specifies the container type of an encoded file. The container types are supported by Media
+        /// Foundation.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>GUID</strong>
+        /// <para/>
+        /// Possible values for the container types provided by Media Foundation are described in the following
+        /// table.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Value</term><description>Meaning</description></listheader>
+        /// <item><term><strong>MFTranscodeContainerType_ASF</strong></term><description>ASF file container.</description></item>
+        /// <item><term><strong>MFTranscodeContainerType_MPEG4</strong></term><description>MP4 file container.</description></item>
+        /// <item><term><strong>MFTranscodeContainerType_MP3</strong></term><description>MP3 file container.</description></item>
+        /// <item><term><strong>MFTranscodeContainerType_3GP</strong></term><description>3GP file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_AC3</strong></term><description>AC3 file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_ADTS</strong></term><description>ADTS file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_MPEG2</strong></term><description>MPEG2 file container. </description></item>
+        /// <item><term><strong>MFTranscodeContainerType_FMPEG4</strong></term><description>FMPEG4 file container. </description></item>
+        /// </list>
+        /// <para/>
+        /// <strong>Get/set</strong>
+        /// <para/>
+        /// To get this attribute, call <see cref="IMFAttributes.GetGUID"/>. 
+        /// <para/>
+        /// To set this attribute, call <see cref="IMFAttributes.SetGUID"/>. 
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/97FD968A-6843-4695-AECE-02F9ACD618FD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/97FD968A-6843-4695-AECE-02F9ACD618FD(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         public static readonly Guid MFTranscodeContainerType_AVI = new Guid(0x7edfe8af, 0x402f, 0x4d76, 0xa3, 0x3c, 0x61, 0x9f, 0xd1, 0x57, 0xd0, 0xf1);
 
         /// <summary>

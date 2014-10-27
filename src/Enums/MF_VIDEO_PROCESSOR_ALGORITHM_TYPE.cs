@@ -35,10 +35,26 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines algorithms for the video processor which is use by <see cref="MFAttributesClsid.MF_VIDEO_PROCESSOR_ALGORITHM"/>.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302208(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302208(v=vs.85).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_VIDEO_PROCESSOR_ALGORITHM_TYPE")]
     public enum MF_VIDEO_PROCESSOR_ALGORITHM_TYPE
     {
+        /// <summary>
+        /// Default mode favors a balance of quality and speed.
+        /// </summary>
         Default = 0,
+        /// <summary>
+        /// The video processor will always internally process in AYUV and use high quality filters.
+        /// </summary>
         MrfCrf444 = 1
     }
 

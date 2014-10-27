@@ -241,6 +241,20 @@ namespace MediaFoundation
         /// </remarks>
         public static readonly Guid MFCONNECTOR_UDI_EMBEDDED = new Guid(0x57cd5975, 0xce47, 0x11d9, 0x92, 0xdb, 0x00, 0x0b, 0xdb, 0x28, 0xff, 0x98);
 
+        /// <summary>
+        /// Miracast wireless connector. 
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// <para/>
+        /// <seealso cref="IMFOutputPolicy.GenerateRequiredSchemas"/>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/23F5F0DF-E2CC-4593-8C3E-DCA3638161E2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/23F5F0DF-E2CC-4593-8C3E-DCA3638161E2(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         public static readonly Guid MFCONNECTOR_MIRACAST = new Guid(0x57cd5977, 0xce47, 0x11d9, 0x92, 0xdb, 0x00, 0x0b, 0xdb, 0x28, 0xff, 0x98);
 
         /// <summary>

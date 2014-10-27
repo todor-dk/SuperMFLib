@@ -33,14 +33,61 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Used to enable the client to notify the Content Decryption Module (CDM) 
+    /// when global resources should be brought into a consistent state prior to suspending. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280681(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280681(v=vs.85).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("7a5645d2-43bd-47fd-87b7-dcd24cc7d692"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFCdmSuspendNotify
     {
+        /// <summary>
+        /// Indicates that the suspend process is starting and resources should be brought into a consistent state. 
+        /// </summary>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT Begin();
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280682(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280682(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int Begin();
 
+        /// <summary>
+        /// The actual suspend is about to occur and no more calls will be made into the Content Decryption Module (CDM).
+        /// </summary>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT End();
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn280683(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn280683(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int End();
     }

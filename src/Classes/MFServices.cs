@@ -196,11 +196,51 @@ namespace MediaFoundation
         /// </summary>
         public static readonly Guid MF_LOCAL_MFT_REGISTRATION_SERVICE = new Guid(0xddf5cf9c, 0x4506, 0x45aa, 0xab, 0xf0, 0x6d, 0x5d, 0x94, 0xdd, 0x1b, 0x4a);
 
+        /// <summary>
+        /// GUID passed to <see cref="IMFGetService.GetService"/> to retrieve a bytestream
+        /// service interface such as <see cref="IMFByteStreamCacheControl2"/>, 
+        /// <see cref="IMFByteStreamBuffering"/>, or <see cref="IPropertyStore"/>
+        /// from a Media Source.
+        /// </summary>
         public static readonly Guid MF_BYTESTREAM_SERVICE = new Guid(0xab025e2b, 0x16d9, 0x4180, 0xa1, 0x27, 0xba, 0x6c, 0x70, 0x15, 0x61, 0x61);
+
+        /// <summary>
+        /// Exposed by: <i>*****Unknown*****</i>.
+        /// <para/>
+        /// Use this service Guid with the <see cref="IMFGetService.GetService"/> to get an 
+        /// instance of a <i>*****Unknown*****</i> interface.
+        /// </summary>
         public static readonly Guid MF_WRAPPED_BUFFER_SERVICE = new Guid(0xab544072, 0xc269, 0x4ebc, 0xa5, 0x52, 0x1c, 0x3b, 0x32, 0xbe, 0xd5, 0xca);
+        /// <summary>
+        /// Exposed by: <i>*****Unknown*****</i>.
+        /// <para/>
+        /// Use this service Guid with the <see cref="IMFGetService.GetService"/> to get an 
+        /// instance of a <i>*****Unknown*****</i> interface.
+        /// </summary>
         public static readonly Guid MF_WRAPPED_SAMPLE_SERVICE = new Guid(0x31f52bf2, 0xd03e, 0x4048, 0x80, 0xd0, 0x9c, 0x10, 0x46, 0xd8, 0x7c, 0x61);
+        /// <summary>
+        /// Exposed by: <i>*****Unknown*****</i>.
+        /// <para/>
+        /// Use this service Guid with the <see cref="IMFGetService.GetService"/> to get an 
+        /// instance of a <see cref="IMFMediaSource"/> interface.
+        /// </summary>
         public static readonly Guid MF_MEDIASOURCE_SERVICE = new Guid(0xf09992f7, 0x9fba, 0x4c4a, 0xa3, 0x7f, 0x8c, 0x47, 0xb4, 0xe1, 0xdf, 0xe7);
+
+        /// <summary>
+        /// GUID identifying the PlayToService. 
+        /// This is used when trying to access <c>PlayTo</c> interfaces through the <c>IServiceProvider</c> interface.
+        /// </summary>
         public static readonly Guid GUID_PlayToService = new Guid(0xf6a8ff9d, 0x9e14, 0x41c9, 0xbf, 0x0f, 0x12, 0x0a, 0x2b, 0x3c, 0xe1, 0x20);
+
+        /// <summary>
+        /// GUID identifying the <c>NativeDeviceService</c>. If the user has a pointer to just an <c>IBasicDevice</c>, 
+        /// it can be QI'd for <c>IServiceProvider</c>.
+        /// <para/>
+        /// IServiceProvider->QueryService() can be used with GUID_NativeDeviceService to get native interfaces for the device. 
+        /// <para/>
+        /// For example: You can retrieve a IUPnPDevice pointer as follows: 
+        /// pBasicDevice->QueryService( GUID_NativeDeviceService, IID_IUPnPDevice, (void **)spUPnPDevice);
+        /// </summary>
         public static readonly Guid GUID_NativeDeviceService = new Guid(0xef71e53c, 0x52f4, 0x43c5, 0xb8, 0x6a, 0xad, 0x6c, 0xb2, 0x16, 0xa6, 0x1e);
     }
 }

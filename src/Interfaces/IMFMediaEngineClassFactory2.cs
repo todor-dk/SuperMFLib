@@ -33,11 +33,58 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Creates an instance of the <see cref="IMFMediaKeys"/> object.
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn449731(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn449731(v=vs.85).aspx</a>
+    /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("09083cef-867f-4bf6-8776-dee3a7b42fca"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMediaEngineClassFactory2
     {
+        /// <summary>
+        /// Creates a media keys object based on the specified key system.
+        /// </summary>
+        /// <param name="keySystem">
+        /// The media key system.
+        /// </param>
+        /// <param name="defaultCdmStorePath">
+        /// Points to the default file location for the store Content Decryption Module (CDM) data.
+        /// </param>
+        /// <param name="inprivateCdmStorePath">
+        /// Points to a the inprivate location for the store Content Decryption Module (CDM) data. 
+        /// Specifying this path allows the CDM to comply with the application’s privacy policy by 
+        /// putting personal information in the file location indicated by this path.
+        /// </param>
+        /// <param name="ppKeys">
+        /// Receives the media keys.
+        /// </param>
+        /// <returns>
+        /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
+        /// </returns>
+        /// <remarks>
+        /// <strong>C/C++ Syntax</strong>
+        /// <code>
+        /// HRESULT CreateMediaKeys2(
+        ///   [in]            BSTR keySystem,
+        ///   [in]            BSTR defaultCdmStorePath,
+        ///   [in, optional]  BSTR inprivateCdmStorePath,
+        ///   [out]           IMFMediaKeys **ppKeys
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn449732(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn449732(v=vs.85).aspx</a>
+        /// </remarks>
         [PreserveSig]
         int CreateMediaKeys2(
             [MarshalAs(UnmanagedType.BStr)] string keySystem,

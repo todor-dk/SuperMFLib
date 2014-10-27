@@ -67,12 +67,34 @@ namespace MediaFoundation.ReadWrite
         /// </summary>
         FirstVideoStream = unchecked((int)0xFFFFFFFC),
 
+        /// <summary>
+        /// <i>***** Documentation Missing *****</i>.
+        /// </summary>
         FirstSourcePhotoStream = unchecked((int)0xFFFFFFFB),
+        /// <summary>
+        /// The preferred stream for previewing video.
+        /// </summary>
         PreferredSourceVideoStreamForPreview = unchecked((int)0xFFFFFFFA),
+        /// <summary>
+        /// The preferred stream for recording video.
+        /// </summary>
         PreferredSourceVideoStreamForRecord = unchecked((int)0xFFFFFFF9),
+        /// <summary>
+        /// Same as <see cref="PreferredSourceStreamForPhoto"/>.
+        /// </summary>
         FirstSourceIndependentPhotoStream = unchecked((int)0xFFFFFFF8),
+        /// <summary>
+        /// The preferred stream for recording video.
+        /// </summary>
         PreferredSourceStreamForVideoRecord = unchecked((int)0xFFFFFFF9),
+        /// <summary>
+        /// The first independent photo stream if present, or else the same stream chosen by 
+        /// <see cref="PreferredSourceVideoStreamForPreview"/>.
+        /// </summary>
         PreferredSourceStreamForPhoto = unchecked((int)0xFFFFFFF8),
+        /// <summary>
+        /// The first available audio stream.
+        /// </summary>
         PreferredSourceStreamForAudio = unchecked((int)0xFFFFFFF7),
 
         /// <summary>

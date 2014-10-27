@@ -35,14 +35,43 @@ namespace MediaFoundation
 {
 #if ALLOW_UNTESTED_INTERFACES
 
+    /// <summary>
+    /// Defines protection levels for <strong>MFPROTECTION_CGMSA</strong>. 
+    /// </summary>
+    /// <remarks>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// with the sole purpose to increase usability and add IntelliSense support.
+    /// <para/>
+    /// View the original documentation topic online: 
+    /// <a href="http://msdn.microsoft.com/en-US/library/EEFE04F7-E878-4F09-B973-B0FD3E9431AA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EEFE04F7-E878-4F09-B973-B0FD3E9431AA(v=VS.85,d=hv.2).aspx</a>
+    /// </remarks>
     [UnmanagedName("MF_OPM_CGMSA_PROTECTION_LEVEL")]
     public enum MF_OPM_CGMSA_PROTECTION_LEVEL
     {
+        /// <summary>
+        /// CGMS-A is disabled.
+        /// </summary>
         Off = 0x00,
+        /// <summary>
+        /// The protection level is Copy Freely.
+        /// </summary>
         CopyFreely = 0x01,
+        /// <summary>
+        /// The protection level is Copy No More.
+        /// </summary>
         CopyNoMore = 0x02,
+        /// <summary>
+        /// The protection level is Copy One Generation.
+        /// </summary>
         CopyOneGeneration = 0x03,
+        /// <summary>
+        /// The protection level is Copy Never.
+        /// </summary>
         CopyNever = 0x04,
+        /// <summary>
+        /// Redistribution control (also called the broadcast flag) is required. This flag can be combined with
+        /// the other flags.
+        /// </summary>
         RedistributionControlRequired = 0x08,
     }
 

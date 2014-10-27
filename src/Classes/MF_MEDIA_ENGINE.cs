@@ -355,7 +355,25 @@ namespace MediaFoundation
         /// </remarks>
         public static readonly Guid BROWSER_COMPATIBILITY_MODE_IE10 = new Guid(0x11a47afd, 0x6589, 0x4124, 0xb3, 0x12, 0x61, 0x58, 0xec, 0x51, 0x7f, 0xc3);
 
-        // MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE11
+        /// <summary>
+        /// Specifies the browser compatibility mode IE11.
+        /// <para/>
+        /// 	<strong>Data type</strong>
+        /// 	<para/>
+        /// 	<strong>GUID</strong>
+        /// 	<para/>
+        /// Set MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE to one of the following values:
+        /// <para/>
+        /// 	<para>* <strong>MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE9</strong></para><para>* <strong>
+        /// MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE10</strong></para>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/9F850CDE-D862-4E72-8B55-5FAFDA43E399(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9F850CDE-D862-4E72-8B55-5FAFDA43E399(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         public static readonly Guid BROWSER_COMPATIBILITY_MODE_IE11 = new Guid(0x1cf1315f, 0xce3f, 0x4035, 0x93, 0x91, 0x16, 0x14, 0x2f, 0x77, 0x51, 0x89);
 
 
@@ -377,9 +395,33 @@ namespace MediaFoundation
         public static readonly Guid SOURCE_RESOLVER_CONFIG_STORE = new Guid(0x0ac0c497, 0xb3c4, 0x48c9, 0x9c, 0xde, 0xbb, 0x8c, 0xa2, 0x44, 0x2c, 0xa3);
 
         // MF_MEDIA_ENGINE_NEEDKEY_CALLBACK
+        /// <summary>
+        /// Attribute which is passed in the <see cref="IMFMediaEngineNeedKeyNotify"/> to the media engine on creation.
+        /// <para/>
+        /// <strong>Data type</strong>
+        /// <para/>
+        /// <strong>IMFMediaEngineNeedKeyNotify*</strong> stored as <strong>IUnknown*</strong>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302189(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302189(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid NEEDKEY_CALLBACK = new Guid(0x7ea80843, 0xb6e4, 0x432c, 0x8e, 0xa4, 0x78, 0x48, 0xff, 0xe4, 0x22, 0x0e);
 
         // MF_MEDIA_ENGINE_TRACK_ID
+        /// <summary>
+        /// Specifies the track id.
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn449735(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn449735(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly Guid TRACK_ID = new Guid(0x65bea312, 0x4043, 0x4815, 0x8e, 0xab, 0x44, 0xdc, 0xe2, 0xef, 0x8f, 0x2a);
     }
 

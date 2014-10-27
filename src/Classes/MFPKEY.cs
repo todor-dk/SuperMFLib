@@ -385,9 +385,67 @@ namespace MediaFoundation
         public static readonly PropertyKey MediaProtectionSystemContext = new PropertyKey(new Guid(0x636b271d, 0xddc7, 0x49e9, 0xa6, 0xc6, 0x47, 0x38, 0x59, 0x62, 0xe5, 0xbd), 0x02);
 
 
+        /// <summary>
+        /// Specifies a <c>IPropertySet</c> that defines the mapping from a property system id to a property
+        /// system activation id. 
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Data type</term><description>PROPVARIANT type (vt)</description><description>PROPVARIANT member</description></listheader>
+        /// <item><term><strong>IUNKNOWN</strong></term><description>VT_UNKNOWN</description><description><strong>punkVal </strong></description></item>
+        /// </list>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/CA333C46-3C5A-40AC-9885-454E380428A7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CA333C46-3C5A-40AC-9885-454E380428A7(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
         public static readonly PropertyKey MediaProtectionSystemIdMapping = new PropertyKey(new Guid(0x636b271d, 0xddc7, 0x49e9, 0xa6, 0xc6, 0x47, 0x38, 0x59, 0x62, 0xe5, 0xbd), 0x03);
+
+        /// <summary>
+        /// Specifies the GUID that identifies the Digital Rights Management (DRM) protection system in the container.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Data type</term><description>PROPVARIANT type (vt)</description><description>PROPVARIANT member</description></listheader>
+        /// <item><term><strong>GUID (CLSID*)</strong></term><description>VT_CLSID</description><description><strong>puuid </strong></description></item>
+        /// </list>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302123(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302123(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly PropertyKey MediaProtectionContainerGuid = new PropertyKey(new Guid(0x42af3d7c, 0xcf, 0x4a0f, 0x81, 0xf0, 0xad, 0xf5, 0x24, 0xa5, 0xa5, 0xb5), 0x1);
+
+        /// <summary>
+        /// Set to an IPropertySet that defines a mapping from track type to a <c>IRandomAccessStream</c>
+        /// that contains the Digital Rights Management (DRM) context.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Data type</term><description>PROPVARIANT type (vt)</description><description>PROPVARIANT member</description></listheader>
+        /// <item><term><strong>IUNKNOWN</strong></term><description>VT_UNKNOWN that points to a IMap&lt;HSTRING,IInspectable*&gt;</description><description><strong>punkVal</strong></description></item>
+        /// </list>
+        /// </summary>
+        /// <remarks>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302124(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/dn302124(v=vs.85).aspx</a>
+        /// </remarks>
         public static readonly PropertyKey MediaProtectionSystemContextsPerTrack = new PropertyKey(new Guid(0x4454b092, 0xd3da, 0x49b0, 0x84, 0x52, 0x68, 0x50, 0xc7, 0xdb, 0x76, 0x4d), 0x03);
+
+        /// <summary>
+        /// When set and TRUE, specifies that the URL is being downloaded to disk instead of being played.
+        /// <para/>
+        /// <list type="table">
+        /// <listheader><term>Data type</term><description>PROPVARIANT type (vt)</description><description>PROPVARIANT member</description></listheader>
+        /// <item><term><strong>BOOL</strong></term><description>VT_BOOL</description><description><strong></strong></description></item>
+        /// </list>
+        /// </summary>
         public static readonly PropertyKey HTTP_ByteStream_Download_Mode = new PropertyKey(new Guid(0x817f11b7, 0xa982, 0x46ec, 0xa4, 0x49, 0xef, 0x58, 0xae, 0xd5, 0x3c, 0xa8), 0x01);
     }
 

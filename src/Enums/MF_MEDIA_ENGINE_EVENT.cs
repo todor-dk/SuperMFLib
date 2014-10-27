@@ -208,8 +208,27 @@ namespace MediaFoundation
         /// it does not send this event, and the <c>Load</c> thread does not wait to be signalled. 
         /// </summary>
         NotifyStableState = 1008,
+        /// <summary>
+        /// The first frame of the media source is ready to render.
+        /// </summary>
         FirstFrameReady = 1009,
+        /// <summary>
+        /// Raised when a new track is added or removed.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         TracksChange = 1010,
+        /// <summary>
+        /// Raised when there is new information about the Output Protection Manager (OPM).
+        /// <para/>
+        /// This event will be raised when an OPM failure occurs, but ITA allows fallback without the OPM. 
+        /// In this case, constriction can be applied. 
+        /// <para/>
+        /// This event will not be raised when there is an OPM failure and the fallback also fails. 
+        /// For example, if ITA blocks playback entirely when OPM cannot be established.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
+        /// </summary>
         OpmInfo = 1011,
     }
 
