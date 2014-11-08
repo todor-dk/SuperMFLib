@@ -63,7 +63,7 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="pguidType">
         /// A variable that receives the type identifier. For a list of predefined mutual exclusion type
-        /// constants, see <c>ASF Mutual Exclusion Type GUIDs</c>. 
+        /// constants, see <see cref="MFASFMutexType"/>. 
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
@@ -98,7 +98,7 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="guidType">
         /// The type of mutual exclusion that is represented by the ASF mutual exclusion object. For a list of
-        /// predefined mutual exclusion type constants, see <c>ASF Mutual Exclusion Type GUIDs</c>. 
+        /// predefined mutual exclusion type constants, see <see cref="MFASFMutexType"/>. 
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,

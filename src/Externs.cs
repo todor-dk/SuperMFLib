@@ -98,6 +98,7 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="Version">
         /// Version number. Use the value <strong>MF_VERSION</strong>, defined in mfapi.h. 
+        /// See also <see cref="MF_VERSION"/>.
         /// </param>
         /// <param name="dwFlags">
         /// This parameter is optional when using C++ but required in C. The value must be one of the following
@@ -142,6 +143,41 @@ namespace MediaFoundation
             int Version,
             MFStartup dwFlags
         );
+
+        /// <summary>
+        /// Version of the Media Foundation SDK. This is the Windows 7 or higher version.
+        /// </summary>
+        public const int MF_SDK_VERSION_WIN7 = 0x0002;
+
+        /// <summary>
+        /// Version of the Media Foundation SDK. This is the Windows Vista (and not Windows 7 or higher).
+        /// </summary>
+        public const int MF_SDK_VERSION_WINVISTA = 0x0001;
+
+        /// <summary>
+        /// This value is unused in the Win7 release and left at its Vista release value.
+        /// </summary>
+        public const int MF_API_VERSION = 0x0070;
+
+        /// <summary>
+        /// Version number of the Media Foundation used in conjunction with <see cref="MFStartup"/>
+        /// when the operating system is Windows 7 or newer.
+        /// </summary>
+        public const int MF_VERSION_WIN7 = ((MF_SDK_VERSION_WIN7 << 16) | MF_API_VERSION);
+
+        /// <summary>
+        /// Version number of the Media Foundation used in conjunction with <see cref="MFStartup"/>
+        /// when the operating system is Windows Vista.
+        /// </summary>
+        public const int MF_VERSION_WINVISTA = ((MF_SDK_VERSION_WINVISTA << 16) | MF_API_VERSION);
+
+        /// <summary>
+        /// Version number of the Media Foundation used in conjunction with <see cref="MFStartup"/>.
+        /// This depends on the current operating system.
+        /// </summary>
+        public static readonly int MF_VERSION = ((Environment.OSVersion.Platform == PlatformID.Win32NT)
+            && (Environment.OSVersion.Version.Major == 6) && (Environment.OSVersion.Version.Minor == 0))
+                ? MF_VERSION_WINVISTA : MF_VERSION_WIN7; // Vista (and 2008) is version 6.0.x.x. Windows 7 is 6.1.x.x
 
         /// <summary>
         /// Creates a presentation time source that is based on the system time.
