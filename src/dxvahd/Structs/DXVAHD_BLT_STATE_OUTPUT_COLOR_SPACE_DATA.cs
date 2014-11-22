@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// Acceleration High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA {
     ///   UINT Usage  :1;
     ///   UINT RGB_Range  :1;

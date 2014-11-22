@@ -63,8 +63,8 @@ namespace MediaFoundation
         /// <param name="ppPlayer">Receives a pointer to the <see cref="IMFMediaEngine" /> interface. The caller must release the
         /// interface.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateInstance(
         /// [in]   DWORD dwFlags,
         /// [in]   IMFAttributes *pAttr,
@@ -90,8 +90,8 @@ namespace MediaFoundation
         /// <param name="ppTimeRange">Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the
         /// interface.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateTimeRange(
         /// [out]  IMFMediaTimeRange **ppTimeRange
         /// );
@@ -113,8 +113,8 @@ namespace MediaFoundation
         /// <param name="ppError">Receives a pointer to the <see cref="IMFMediaError" /> interface. The caller must release the
         /// interface.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateError(
         /// [out]  IMFMediaError **ppError
         /// );
@@ -147,8 +147,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateMediaSourceExtension(
         ///   [in]   DWORD dwFlags,
         ///   [in]   IMFAttributes *pAttr,
@@ -187,8 +186,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateMediaKeys(
         ///   BSTR keySystem,
         ///   BSTR cdmStorePath,
@@ -227,8 +225,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsTypeSupported(
         ///   BSTR type,
         ///   BSTR keySystem,

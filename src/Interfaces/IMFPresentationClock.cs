@@ -67,8 +67,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetClockCharacteristics(
         /// [out]  DWORD *pdwCharacteristics
         /// );
@@ -101,8 +101,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_CLOCK_NO_TIME_SOURCE</strong></term><description> The clock does not have a time source. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCorrelatedTime(
         /// [in]   DWORD dwReserved,
         /// [out]  LONGLONG *pllClockTime,
@@ -135,8 +135,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetContinuityKey(
         /// [out]  DWORD *pdwContinuityKey
         /// );
@@ -166,8 +166,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetState(
         /// [in]   DWORD dwReserved,
         /// [out]  MFCLOCK_STATE *peClockState
@@ -198,8 +198,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProperties(
         /// [out]  MFCLOCK_PROPERTIES *pClockProperties
         /// );
@@ -236,8 +236,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetTimeSource(
         ///   [in]  IMFPresentationTimeSource *pTimeSource
         /// );
@@ -272,8 +271,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTimeSource(
         ///   [out]  IMFPresentationTimeSource **ppTimeSource
         /// );
@@ -308,8 +306,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTime(
         ///   [out]  MFTIME *phnsClockTime
         /// );
@@ -342,8 +339,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddClockStateSink(
         ///   [in]  IMFClockStateSink *pStateSink
         /// );
@@ -376,8 +372,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveClockStateSink(
         ///   [in]  IMFClockStateSink *pStateSink
         /// );
@@ -415,8 +410,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Start(
         ///   [in]  LONGLONG llClockStartOffset
         /// );
@@ -449,8 +443,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Stop();
         /// </code>
         /// <para/>
@@ -480,8 +473,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Pause();
         /// </code>
         /// <para/>

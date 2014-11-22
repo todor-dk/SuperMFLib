@@ -70,8 +70,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetNumberOfStreams(
         ///   [in]  DWORD dwMaxStreams
         /// );
@@ -105,8 +104,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNumberOfStreams(
         ///   [out]  DWORD *pdwMaxStreams
         /// );

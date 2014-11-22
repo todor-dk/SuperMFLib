@@ -58,8 +58,7 @@ namespace MediaFoundation
         /// The count in bytes of <em>initData</em>. 
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void NeedKey(
         ///   const BYTE *initData,
         ///   DWORD cb

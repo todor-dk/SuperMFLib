@@ -66,8 +66,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(
         /// [in]  IMFAsyncCallback *pCallback,
         /// [in]  IUnknown *pState
@@ -100,8 +100,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(
         /// [in]  IMFAsyncResult *pResult
         /// );
@@ -134,8 +134,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(
         /// [in]  IMFAsyncCallback *pCallback,
         /// [in]  IUnknown *pState
@@ -168,8 +168,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(
         /// [in]  IMFAsyncResult *pResult
         /// );
@@ -207,8 +207,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_BUFFERTOOSMALL</strong></term><description>The <em>pwszClass</em> buffer is too small to receive the class name. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTopologyWorkQueueMMCSSClass(
         /// [in]       DWORD dwTopologyWorkQueueId,
         /// [out]      LPWSTR pwszClass,
@@ -245,8 +245,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTopologyWorkQueueMMCSSTaskId(
         /// [in]   DWORD dwTopologyWorkQueueId,
         /// [out]  DWORD *pdwTaskId
@@ -281,8 +281,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginRegisterPlatformWorkQueueWithMMCSS(
         /// [in]  DWORD dwPlatformWorkQueue,
         /// [in]  LPCWSTR wszClass,
@@ -322,8 +322,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndRegisterPlatformWorkQueueWithMMCSS(
         /// [in]   IMFAsyncResult *pResult,
         /// [out]  DWORD *pdwTaskId
@@ -360,8 +360,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS(
         /// [in]  DWORD dwPlatformWorkQueue,
         /// [in]  IMFAsyncCallback *pCallback,
@@ -396,8 +396,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(
         /// [in]  IMFAsyncResult *pResult
         /// );
@@ -432,8 +432,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_BUFFERTOOSMALL</strong></term><description>The <em>pwszClass</em> buffer is too small to receive the class name. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPlaftormWorkQueueMMCSSClass(
         /// [in]       DWORD dwPlatformWorkQueueId,
         /// [out]      LPWSTR pwszClass,
@@ -469,8 +469,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPlatformWorkQueueMMCSSTaskId(
         /// [in]   DWORD dwPlatformWorkQueueId,
         /// [out]  DWORD *pdwTaskId
@@ -505,8 +505,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTopologyWorkQueueMMCSSPriority(
         ///   [in]   DWORD dwTopologyWorkQueueId,
         ///   [out]  LONG *plPriority
@@ -553,8 +552,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginRegisterPlatformWorkQueueWithMMCSSEx(
         ///   [in]  DWORD dwPlatformWorkQueue,
         ///   [in]  LPCWSTR wszClass,
@@ -594,8 +592,7 @@ namespace MediaFoundation
         /// Pointer to a buffer allocated by the caller that the work queue's MMCSS task id will be copied to.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPlatformWorkQueueMMCSSPriority(
         ///   [in]   DWORD dwPlatformWorkQueueId,
         ///   [out]  LONG *plPriority

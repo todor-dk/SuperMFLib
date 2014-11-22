@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Defines the range of supported values for an image filter.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_FILTER_RANGE_DATA {
     ///   INT   Minimum;
     ///   INT   Maximum;

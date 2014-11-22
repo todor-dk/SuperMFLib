@@ -34,8 +34,7 @@ namespace MediaFoundation.Misc
     /// video image, including interlace, copy protection, and pixel aspect ratio information. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagVIDEOINFOHEADER2 {
     ///   RECT             rcSource;
     ///   RECT             rcTarget;

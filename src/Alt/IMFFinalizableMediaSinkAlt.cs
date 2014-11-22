@@ -97,8 +97,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong><strong>MF_E_SHUTDOWN</strong></strong></term><description> The media sink's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCharacteristics(
         /// [out]  DWORD *pdwCharacteristics
         /// );
@@ -135,8 +135,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_STREAMSINKS_FIXED</strong></term><description>This media sink has a fixed set of stream sinks. New stream sinks cannot be added.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStreamSink(
         /// [in]   DWORD dwStreamSinkIdentifier,
         /// [in]   IMFMediaType *pMediaType,
@@ -175,8 +175,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_STREAMSINKS_FIXED</strong></term><description>This media sink has a fixed set of stream sinks. Stream sinks cannot be removed.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveStreamSink(
         /// [in]  DWORD dwStreamSinkIdentifier
         /// );
@@ -206,8 +206,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media sink's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSinkCount(
         /// [out]  DWORD *pcStreamSinkCount
         /// );
@@ -241,8 +241,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media sink's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSinkByIndex(
         /// [in]   DWORD dwIndex,
         /// [out]  IMFStreamSink **ppStreamSink
@@ -277,8 +277,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media sink's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSinkById(
         /// [in]   DWORD dwStreamSinkIdentifier,
         /// [out]  IMFStreamSink **ppStreamSink
@@ -313,8 +313,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media sink's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPresentationClock(
         /// [in]  IMFPresentationClock *pPresentationClock
         /// );
@@ -346,8 +346,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media sink's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPresentationClock(
         /// [out]  IMFPresentationClock **ppPresentationClock
         /// );
@@ -376,8 +376,8 @@ namespace MediaFoundation.Alt
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media sink was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para />

@@ -66,8 +66,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetFlags(
         ///   [in]  DWORD dwFlags
         /// );
@@ -100,8 +99,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFlags(
         ///   [out]  DWORD *pdwFlags
         /// );
@@ -139,8 +137,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Initialize(
         ///   [in]  IMFASFContentInfo *pIContentInfo
         /// );
@@ -178,8 +175,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetIndexPosition(
         ///   [in]   IMFASFContentInfo *pIContentInfo,
         ///   [out]  QWORD *pcbIndexOffset
@@ -218,8 +214,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetIndexByteStreams(
         ///   [in]  IMFByteStream **ppIByteStreams,
         ///   [in]  DWORD cByteStreams
@@ -254,8 +249,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetIndexByteStreamCount(
         ///   [out]  DWORD *pcByteStreams
         /// );
@@ -302,8 +296,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetIndexStatus(
         ///   [in]       ASF_INDEX_IDENTIFIER *pIndexIdentifier,
         ///   [out]      BOOL *pfIsIndexed,
@@ -347,8 +340,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetIndexStatus(
         ///   [in]  BYTE *pIndexDescriptor,
         ///   [in]  DWORD cbIndexDescriptor,
@@ -420,8 +412,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSeekPositionForValue(
         ///   [in]   const PROPVARIANT *pvarValue,
         ///   [in]   ASF_INDEX_IDENTIFIER *pIndexIdentifier,
@@ -463,8 +454,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GenerateIndexEntries(
         ///   [in]  IMFSample *pIASFPacketSample
         /// );
@@ -500,8 +490,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CommitIndex(
         ///   [in]  IMFASFContentInfo *pIContentInfo
         /// );
@@ -534,8 +523,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetIndexWriteSpace(
         ///   [out]  QWORD *pcbIndexWriteSpace
         /// );
@@ -574,8 +562,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCompletedIndex(
         ///   [in]  IMFMediaBuffer *pIIndexBuffer,
         ///   [in]  QWORD cbOffsetWithinIndex

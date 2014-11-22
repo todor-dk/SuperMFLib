@@ -76,8 +76,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_ATTRIBUTENOTFOUND</strong></term><description> The specified key was not found. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetItem(
         /// [in]       REFGUID guidKey,
         /// [in, out]  PROPVARIANT *pValue
@@ -110,8 +110,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_ATTRIBUTENOTFOUND</strong></term><description>The specified key is not stored in this object.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetItemType(
         /// [in]   REFGUID guidKey,
         /// [out]  MF_ATTRIBUTE_TYPE *pType
@@ -146,8 +146,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CompareItem(
         /// [in]   REFGUID guidKey,
         /// [in]   REFPROPVARIANT Value,
@@ -185,8 +185,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Compare(
         /// [in]   IMFAttributes *pTheirs,
         /// [in]   MF_ATTRIBUTES_MATCH_TYPE MatchType,
@@ -225,8 +225,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a <strong>UINT32</strong>. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUINT32(
         /// [in]   REFGUID guidKey,
         /// [out]  UINT32 *punValue
@@ -263,8 +263,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description> The attribute value is not a <strong>UINT64</strong>. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUINT64(
         /// [in]   REFGUID guidKey,
         /// [out]  UINT64 *punValue
@@ -301,8 +301,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a <strong>double</strong>. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDouble(
         /// [in]   REFGUID guidKey,
         /// [out]  double *pfValue
@@ -338,8 +338,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a GUID.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetGUID(
         /// [in]   REFGUID guidKey,
         /// [out]  GUID *pguidValue
@@ -376,8 +376,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a string.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStringLength(
         /// [in]   REFGUID guidKey,
         /// [out]  UINT32 *pcchLength
@@ -421,8 +421,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a string.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetString(
         /// [in]   REFGUID guidKey,
         /// [out]  LPWSTR pwszValue,
@@ -465,8 +465,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description> The attribute value is not a string. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllocatedString(
         /// [in]   REFGUID guidKey,
         /// [out]  LPWSTR *ppwszValue,
@@ -504,8 +504,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a byte array.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBlobSize(
         /// [in]   REFGUID guidKey,
         /// [out]  UINT32 *pcbBlobSize
@@ -546,8 +546,8 @@ namespace MediaFoundation
         /// <item><term><strong><strong>MF_E_INVALIDTYPE</strong></strong></term><description>The attribute value is not a byte array.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBlob(
         /// [in]   REFGUID guidKey,
         /// [out]  UINT8 *pBuf,
@@ -588,8 +588,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not a byte array.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllocatedBlob(
         /// [in]   REFGUID guidKey,
         /// [out]  UINT8 **ppBuf,
@@ -628,8 +628,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description>The attribute value is not an <strong>IUnknown</strong> pointer. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUnknown(
         /// [in]   REFGUID guidKey,
         /// [in]   REFIID riid,
@@ -668,8 +668,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDTYPE</strong></term><description> Invalid attribute type. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetItem(
         /// [in]  REFGUID guidKey,
         /// [in]  REFPROPVARIANT Value
@@ -700,8 +700,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteItem(
         /// [in]  REFGUID guidKey
         /// );
@@ -729,8 +729,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteAllItems();
         /// </code>
         /// <para />
@@ -757,8 +757,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUINT32(
         /// [in]  REFGUID guidKey,
         /// [in]  UINT32 unValue
@@ -791,8 +791,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUINT64(
         /// [in]  REFGUID guidKey,
         /// [in]  UINT64 unValue
@@ -825,8 +825,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDouble(
         /// [in]  REFGUID guidKey,
         /// [in]  double fValue
@@ -860,8 +860,8 @@ namespace MediaFoundation
         /// <item><term><strong>E_OUTOFMEMORY</strong></term><description>Insufficient memory.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetGUID(
         /// [in]  REFGUID guidKey,
         /// [in]  REFGUID guidValue
@@ -895,8 +895,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetString(
         /// [in]  REFGUID guidKey,
         /// [in]  LPCWSTR wszValue
@@ -930,8 +930,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetBlob(
         /// [in]  REFGUID guidKey,
         /// [in]  const UINT8 *pBuf,
@@ -966,8 +966,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUnknown(
         /// [in]  REFGUID guidKey,
         /// [in]  IUnknown *pUnknown
@@ -999,8 +999,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT LockStore();
         /// </code>
         /// <para />
@@ -1025,8 +1025,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UnlockStore();
         /// </code>
         /// <para />
@@ -1052,8 +1052,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCount(
         /// [out]  UINT32 *pcItems
         /// );
@@ -1089,8 +1089,8 @@ namespace MediaFoundation
         /// <item><term><strong>E_INVALIDARG</strong></term><description>Invalid index.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetItemByIndex(
         /// [in]       UINT32 unIndex,
         /// [out]      GUID *pguidKey,
@@ -1119,8 +1119,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CopyAllItems(
         /// [in]  IMFAttributes *pDest
         /// );
@@ -1158,8 +1158,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSampleFlags(
         ///   [out]  DWORD *pdwSampleFlags
         /// );
@@ -1196,8 +1195,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSampleFlags(
         ///   [in]  DWORD dwSampleFlags
         /// );
@@ -1231,8 +1229,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSampleTime(
         ///   [out]  LONGLONG *phnsSampleTime
         /// );
@@ -1265,8 +1262,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSampleTime(
         ///   [in]  LONGLONG hnsSampleTime
         /// );
@@ -1300,8 +1296,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSampleDuration(
         ///   [out]  LONGLONG *phnsSampleDuration
         /// );
@@ -1329,8 +1324,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSampleDuration(
         ///   [in]  LONGLONG hnsSampleDuration
         /// );
@@ -1363,8 +1357,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBufferCount(
         ///   [out]  DWORD *pdwBufferCount
         /// );
@@ -1409,8 +1402,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBufferByIndex(
         ///   [in]   DWORD dwIndex,
         ///   [out]  IMFMediaBuffer **ppBuffer
@@ -1447,8 +1439,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ConvertToContiguousBuffer(
         ///   [out]  IMFMediaBuffer **ppBuffer
         /// );
@@ -1482,8 +1473,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddBuffer(
         ///   [in]  IMFMediaBuffer *pBuffer
         /// );
@@ -1517,8 +1507,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveBufferByIndex(
         ///   [in]  DWORD dwIndex
         /// );
@@ -1548,8 +1537,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllBuffers();
         /// </code>
         /// <para/>
@@ -1580,8 +1568,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTotalLength(
         ///   [out]  DWORD *pcbTotalLength
         /// );
@@ -1619,8 +1606,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CopyToBuffer(
         ///   [in]  IMFMediaBuffer *pBuffer
         /// );

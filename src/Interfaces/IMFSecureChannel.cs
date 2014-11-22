@@ -72,8 +72,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCertificate(
         ///   [out]  BYTE **ppCert,
         ///   [out]  DWORD *pcbCert
@@ -112,8 +111,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetupSession(
         ///   [in]  BYTE *pbEncryptedSessionKey,
         ///   [in]  DWORD cbSessionKey

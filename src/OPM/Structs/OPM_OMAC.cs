@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains a Message Authentication Code (MAC) for an <c>Output Protection Manager</c> (OPM) message.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_OMAC {
     ///   BYTE abOMAC[OPM_OMAC_SIZE];
     /// } OPM_OMAC;

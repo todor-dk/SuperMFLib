@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains parameters for the <see cref="OPM.IOPMVideoOutput.GetInformation" /> method.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_GET_INFO_PARAMETERS {
     ///   OPM_OMAC          omac;
     ///   OPM_RANDOM_NUMBER rnRandomNumber;

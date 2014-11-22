@@ -57,8 +57,7 @@ namespace MediaFoundation
         /// Returns the number of time ranges.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD GetLength();
         /// </code>
         /// <para/>
@@ -86,8 +85,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStart(
         ///   [in]   DWORD index,
         ///   [out]  double *pStart
@@ -121,8 +119,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetEnd(
         ///   [in]   DWORD index,
         ///   [out]  double *pEnd
@@ -152,8 +149,7 @@ namespace MediaFoundation
         /// <em>time</em> parameter. Otherwise, returns <strong>FALSE</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL ContainsTime(
         ///   [in]  double time
         /// );
@@ -184,8 +180,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddRange(
         ///   [in]  double startTime,
         ///   [in]  double endTime
@@ -212,8 +207,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Clear();
         /// </code>
         /// <para/>

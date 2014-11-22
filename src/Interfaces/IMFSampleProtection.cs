@@ -68,8 +68,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInputProtectionVersion(
         ///   [out]  DWORD *pdwVersion
         /// );
@@ -102,8 +101,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputProtectionVersion(
         ///   [out]  DWORD *pdwVersion
         /// );
@@ -145,8 +143,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProtectionCertificate(
         ///   [in]   DWORD dwVersion,
         ///   [out]  BYTE **ppCert,
@@ -202,8 +199,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InitOutputProtection(
         ///   [in]   DWORD dwVersion,
         ///   [in]   DWORD dwOutputId,
@@ -258,8 +254,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InitInputProtection(
         ///   [in]  DWORD dwVersion,
         ///   [in]  DWORD dwInputId,

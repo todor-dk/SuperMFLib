@@ -38,8 +38,7 @@ namespace MediaFoundation.EVR
     /// Specifies a bitmap for the enhanced video renderer (EVR) to alpha-blend with the video.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFVideoAlphaBitmap {
     ///   BOOL                     GetBitmapFromDC;
     ///   union {

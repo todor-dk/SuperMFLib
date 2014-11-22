@@ -40,8 +40,7 @@ namespace MediaFoundation.OPM
     /// <see cref="OPM.MFOpmStatusRequests.OPM_GET_CONNECTED_HDCP_DEVICE_INFORMATION" /> query.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_CONNECTED_HDCP_DEVICE_INFORMATION {
     ///   OPM_RANDOM_NUMBER             rnRandomNumber;
     ///   ULONG                         ulStatusFlags;

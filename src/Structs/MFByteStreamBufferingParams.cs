@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// Specifies the buffering parameters for a network byte stream.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFBYTESTREAM_BUFFERING_PARAMS {
     ///   QWORD                cbTotalFileSize;
     ///   QWORD                cbPlayableDataSize;

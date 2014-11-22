@@ -72,8 +72,7 @@ namespace MediaFoundation.Misc
     /// The <strong>PROPVARIANT</strong> structure is defined as follows: 
     /// </summary>
     /// <remarks>
-    /// 	<strong>C/C++ Syntax</strong>
-    /// 	<code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct PROPVARIANT {
     ///   VARTYPE vt;
     ///   WORD    wReserved1;

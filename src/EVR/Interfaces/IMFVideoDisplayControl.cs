@@ -77,8 +77,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNativeVideoSize(
         ///   [in, out]  SIZE *pszVideo,
         ///   [in, out]  SIZE *pszARVideo
@@ -119,8 +118,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetIdealVideoSize(
         ///   [in, out]  SIZE *pszMin,
         ///   [in, out]  SIZE *pszMax
@@ -163,8 +161,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVideoPosition(
         ///   [in]  const MFVideoNormalizedRect *pnrcSource,
         ///   [in]  const LPRECT prcDest
@@ -204,8 +201,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoPosition(
         ///   [out]  MFVideoNormalizedRect *pnrcSource,
         ///   [out]  LPRECT prcDest
@@ -243,8 +239,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAspectRatioMode(
         ///   [in]  DWORD dwAspectRatioMode
         /// );
@@ -279,8 +274,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAspectRatioMode(
         ///   [out]  DWORD *pdwAspectRatioMode
         /// );
@@ -315,8 +309,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVideoWindow(
         ///   [in]  HWND hwndVideo
         /// );
@@ -350,8 +343,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoWindow(
         ///   [out]  HWND *phwndVideo
         /// );
@@ -384,8 +376,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RepaintVideo();
         /// </code>
         /// <para/>
@@ -403,7 +394,7 @@ namespace MediaFoundation.EVR
         /// </summary>
         /// <param name="pBih">
         /// Pointer to a <strong>BITMAPINFOHEADER</strong> structure that receives a description of the bitmap.
-        /// Set the <strong>biSize</strong> member of the structure to <code>sizeof(BITMAPINFOHEADER)</code>
+        /// Set the <strong>biSize</strong> member of the structure to <c>sizeof(BITMAPINFOHEADER)</c>
         /// before calling the method. 
         /// </param>
         /// <param name="pDib">
@@ -428,8 +419,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentImage(
         ///   [in, out]  BITMAPINFOHEADER *pBih,
         ///   [out]      BYTE **pDib,
@@ -469,8 +459,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetBorderColor(
         ///   [in]  COLORREF Clr
         /// );
@@ -504,8 +493,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBorderColor(
         ///   [out]  COLORREF *pClr
         /// );
@@ -541,8 +529,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetRenderingPrefs(
         ///   [in]  DWORD dwRenderFlags
         /// );
@@ -577,8 +564,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRenderingPrefs(
         ///   [out]  DWORD *pdwRenderFlags
         /// );
@@ -620,8 +606,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetFullscreen(
         ///   [in]  BOOL fFullscreen
         /// );
@@ -656,8 +641,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFullscreen(
         ///   [out]  BOOL *pfFullscreen
         /// );

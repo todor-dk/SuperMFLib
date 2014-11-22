@@ -38,8 +38,7 @@ namespace MediaFoundation.EVR
     /// Describes the capabilities of a DirectX Video Acceleration (DVXA) video processor mode.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVA2_VideoProcessorCaps {
     ///   UINT    DeviceCaps;
     ///   D3DPOOL InputPool;

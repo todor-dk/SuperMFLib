@@ -41,8 +41,7 @@ namespace MediaFoundation.Misc
     /// MFRect is a managed representation of the Win32 RECT structure.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagRECT {
     ///   LONG left;
     ///   LONG top;

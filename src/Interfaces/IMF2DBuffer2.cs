@@ -68,8 +68,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDREQUEST</strong></term><description>The buffer cannot be locked at this time.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Lock2D(
         /// [out]  BYTE **pbScanline0,
         /// [out]  LONG *plPitch
@@ -100,8 +100,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Unlock2D();
         /// </code>
         /// <para />
@@ -128,8 +128,8 @@ namespace MediaFoundation
         /// <item><term><strong>ERROR_INVALID_FUNCTION</strong></term><description>You must lock the buffer before calling this method.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetScanline0AndPitch(
         /// [out]  BYTE **pbScanline0,
         /// [out]  LONG *plPitch
@@ -161,8 +161,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsContiguousFormat(
         /// [out]  BOOL *pfIsContiguous
         /// );
@@ -191,8 +191,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetContiguousLength(
         /// [out]  DWORD *pcbLength
         /// );
@@ -224,8 +224,8 @@ namespace MediaFoundation
         /// <item><term><strong>E_INVALIDARG</strong></term><description>Invalid size specified in <em>pbDestBuffer</em>. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ContiguousCopyTo(
         /// [out]  BYTE *pbDestBuffer,
         /// [in]   DWORD cbDestBuffer
@@ -258,8 +258,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ContiguousCopyFrom(
         /// [in]  const BYTE *pbSrcBuffer,
         /// [in]  DWORD cbSrcBuffer
@@ -310,8 +310,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Lock2DSize(
         ///   [in]   IMF2DBuffer_LockFlags lockFlags,
         ///   [out]  BYTE **ppbScanline0,
@@ -347,8 +346,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Copy2DTo(
         ///   [in]  IMF2DBuffer2 *pDestBuffer
         /// );

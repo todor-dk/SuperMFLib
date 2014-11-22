@@ -66,8 +66,7 @@ namespace MediaFoundation.ReadWrite
         /// Returns an <strong>HRESULT</strong> value. Currently, the sink writer ignores the return value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnFinalize(
         ///   [in]  HRESULT hrStatus
         /// );
@@ -99,8 +98,7 @@ namespace MediaFoundation.ReadWrite
         /// Returns an <strong>HRESULT</strong> value. Currently, the sink writer ignores the return value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnMarker(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  LPVOID pvContext

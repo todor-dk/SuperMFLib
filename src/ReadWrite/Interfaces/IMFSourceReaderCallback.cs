@@ -81,8 +81,7 @@ namespace MediaFoundation.ReadWrite
         /// Returns an <strong>HRESULT</strong> value. Currently, the source reader ignores the return value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnReadSample(
         ///   [in]  HRESULT hrStatus,
         ///   [in]  DWORD dwStreamIndex,
@@ -118,8 +117,7 @@ namespace MediaFoundation.ReadWrite
         /// Returns an <strong>HRESULT</strong> value. Currently, the source reader ignores the return value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnFlush(
         ///   DWORD dwStreamIndex
         /// );
@@ -150,8 +148,7 @@ namespace MediaFoundation.ReadWrite
         /// Returns an <strong>HRESULT</strong> value. Currently, the source reader ignores the return value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnEvent(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IMFMediaEvent *pEvent

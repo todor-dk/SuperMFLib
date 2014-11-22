@@ -17,35 +17,47 @@ namespace TestsVersion_10
     {
         IMFClock m_c;
 
-        public void DoTests()
+        [TestInitialize]
+        public void Prepare()
         {
-            GetInterface();
+            IMFPresentationTimeSource ppts = null;
+            int hr = MFExtern.MFCreateSystemTimeSource(out ppts);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(ppts);
 
-#if false
-            // Tested by adding this code to BasicPlayer's pause
-            IMFClock m_c;
-            MFClockCharacteristicsFlags c;
-            long l, l2;
-            int iKey;
-            MFClockState pState;
-            MFClockProperties pProp;
+            IMFPresentationClock pc;
 
-            m_pSession.GetClock(out m_c);
-            m_c.GetClockCharacteristics(out c);
-            m_c.GetCorrelatedTime(0, out l, out l2);
-            m_c.GetContinuityKey(out iKey);
-            m_c.GetState(0, out pState);
-            m_c.GetProperties(out pProp);
+            hr = MFExtern.MFCreatePresentationClock(out pc);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(pc);
 
-            TestGetClockCharacteristics();
-            TestGetCorrelatedTime();
-            TestGetContinuityKey();
-            TestGetState();
-            TestGetProperties();
-#endif
+            hr = pc.SetTimeSource(ppts);
+            MFError.ThrowExceptionForHR(hr);
+
+            m_c = pc;
+            Assert.IsNotNull(m_c);
+            
+
+            //IMFMediaSession ms;
+
+            //hr = MFExtern.MFCreateMediaSession(null, out ms);
+            //MFError.ThrowExceptionForHR(hr);
+            //Assert.IsNotNull(ms);
+
+            //hr = ms.GetClock(out m_c);
+            //MFError.ThrowExceptionForHR(hr);
+            //Assert.IsNotNull(m_c);
         }
 
-        void TestGetClockCharacteristics()
+        [TestCleanup]
+        public void CleanUp()
+        {
+            COMBase.SafeRelease(m_c);
+            m_c = null;
+        }
+
+        [TestMethod]
+        public void IMFClock_TestsGetClockCharacteristics()
         {
             MFClockCharacteristicsFlags c;
 
@@ -53,28 +65,32 @@ namespace TestsVersion_10
             MFError.ThrowExceptionForHR(hr);
         }
 
-        void TestGetCorrelatedTime()
+        [TestMethod]
+        public void IMFClock_TestsGetCorrelatedTime()
         {
             long l, l2;
             int hr = m_c.GetCorrelatedTime(0, out l, out l2);
             MFError.ThrowExceptionForHR(hr);
         }
 
-        void TestGetContinuityKey()
+        [TestMethod]
+        public void IMFClock_TestsGetContinuityKey()
         {
             int iKey;
             int hr = m_c.GetContinuityKey(out iKey);
             MFError.ThrowExceptionForHR(hr);
         }
 
-        void TestGetState()
+        [TestMethod]
+        public void IMFClock_TestsGetState()
         {
             MFClockState pState;
             int hr = m_c.GetState(0, out pState);
             MFError.ThrowExceptionForHR(hr);
         }
 
-        void TestGetProperties()
+        [TestMethod]
+        public void IMFClock_TestsGetProperties()
         {
             MFClockProperties pProp;
 
@@ -82,20 +98,6 @@ namespace TestsVersion_10
             MFError.ThrowExceptionForHR(hr);
         }
 
-        private void GetInterface()
-        {
-            IMFPresentationClock pc;
 
-            int hr = MFExtern.MFCreatePresentationClock(out pc);
-            MFError.ThrowExceptionForHR(hr);
-            m_c = pc as IMFClock;
-
-            IMFMediaSession ms;
-
-            hr = MFExtern.MFCreateMediaSession(null, out ms);
-            MFError.ThrowExceptionForHR(hr);
-            hr = ms.GetClock(out m_c);
-            MFError.ThrowExceptionForHR(hr);
-        }
     }
 }

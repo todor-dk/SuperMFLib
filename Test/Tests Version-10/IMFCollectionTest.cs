@@ -17,66 +17,76 @@ namespace TestsVersion_10
     {
         IMFCollection m_col;
 
-        public void DoTests()
+        [TestInitialize]
+        public void Prepare()
         {
-            GetInterface();
+            int hr = MFExtern.MFCreateCollection(out m_col);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(m_col);
+        }
 
+        [TestCleanup]
+        public void CleanUp()
+        {
+            COMBase.SafeRelease(m_col);
+            m_col = null;
+        }
+
+        [TestMethod]
+        public void IMFCollection_Tests()
+        {
             TestAddElement();
             TestGetElementCount(1);
             TestGetElement();
             TestInsertElementAt();
+            TestGetElementCount(2);
             TestRemoveElement();
+            TestGetElementCount(1);
             TestRemoveAllElements();
+            TestGetElementCount(0);
         }
 
-        void TestGetElementCount(int iCnt)
-        {
-            int i;
-            int hr = m_col.GetElementCount(out i);
-            MFError.ThrowExceptionForHR(hr);
-            Debug.Assert(i == iCnt);
-        }
-
-        void TestGetElement()
-        {
-            object o;
-            int hr = m_col.GetElement(0, out o);
-            MFError.ThrowExceptionForHR(hr);
-
-            Debug.Assert(o == this);
-        }
-
-        void TestAddElement()
+        private void TestAddElement()
         {
             int hr = m_col.AddElement(this);
             MFError.ThrowExceptionForHR(hr);
         }
 
-        void TestRemoveElement()
+        private void TestGetElementCount(int iCnt)
+        {
+            int i = -1;
+            int hr = m_col.GetElementCount(out i);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.AreEqual(iCnt, i);
+        }
+
+        private void TestGetElement()
+        {
+            object o;
+            int hr = m_col.GetElement(0, out o);
+            MFError.ThrowExceptionForHR(hr);
+
+            Assert.AreSame(this, o);
+        }
+
+        private void TestInsertElementAt()
+        {
+            int hr = m_col.InsertElementAt(0, this);
+            MFError.ThrowExceptionForHR(hr);
+        }
+
+        private void TestRemoveElement()
         {
             object o;
             int hr = m_col.RemoveElement(0, out o);
             MFError.ThrowExceptionForHR(hr);
-            TestGetElementCount(1);
+
+            Assert.AreSame(this, o);
         }
 
-        void TestInsertElementAt()
-        {
-            int hr = m_col.InsertElementAt(0, this);
-            MFError.ThrowExceptionForHR(hr);
-            TestGetElementCount(2);
-        }
-
-        void TestRemoveAllElements()
+        private void TestRemoveAllElements()
         {
             int hr = m_col.RemoveAllElements();
-            MFError.ThrowExceptionForHR(hr);
-            TestGetElementCount(0);
-        }
-
-        private void GetInterface()
-        {
-            int hr = MFExtern.MFCreateCollection(out m_col);
             MFError.ThrowExceptionForHR(hr);
         }
     }

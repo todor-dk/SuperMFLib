@@ -76,8 +76,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Lock(
         ///   [out]  BYTE **ppbBuffer,
         ///   [out]  DWORD *pcbMaxLength,
@@ -113,8 +112,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Unlock();
         /// </code>
         /// <para/>
@@ -144,8 +142,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentLength(
         ///   [out]  DWORD *pcbCurrentLength
         /// );
@@ -180,8 +177,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentLength(
         ///   [in]  DWORD cbCurrentLength
         /// );
@@ -214,8 +210,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMaxLength(
         ///   [out]  DWORD *pcbMaxLength
         /// );

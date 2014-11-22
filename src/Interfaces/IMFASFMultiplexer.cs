@@ -70,8 +70,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Initialize(
         ///   [in]  IMFASFContentInfo *pIContentInfo
         /// );
@@ -105,8 +104,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetFlags(
         ///   [in]  DWORD dwFlags
         /// );
@@ -140,8 +138,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFlags(
         ///   [out]  DWORD *pdwFlags
         /// );
@@ -189,8 +186,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessSample(
         ///   [in]  WORD wStreamNumber,
         ///   [in]  IMFSample *pISample,
@@ -231,8 +227,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNextPacket(
         ///   [out]  DWORD *pdwStatusFlags,
         ///   [out]  IMFSample **ppIPacket
@@ -264,8 +259,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush();
         /// </code>
         /// <para/>
@@ -298,8 +292,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT End(
         ///   [in]  IMFASFContentInfo *pIContentInfo
         /// );
@@ -334,8 +327,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStatistics(
         ///   [in]   WORD wStreamNumber,
         ///   [out]  ASF_MUX_STATISTICS *pMuxStats
@@ -371,8 +363,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSyncTolerance(
         ///   [in]  DWORD msSyncTolerance
         /// );

@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// when the <see cref="MFPlayer.IMFPMediaPlayer.SetMediaItem"/> method completes. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_MEDIAITEM_SET_EVENT {
     ///   MFP_EVENT_HEADER header;
     ///   IMFPMediaItem    *pMediaItem;

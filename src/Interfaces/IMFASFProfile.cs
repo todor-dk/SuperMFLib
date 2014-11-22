@@ -79,8 +79,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetItem(
         ///   [in]       REFGUID guidKey,
         ///   [in, out]  PROPVARIANT *pValue
@@ -119,8 +118,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetItemType(
         ///   [in]   REFGUID guidKey,
         ///   [out]  MF_ATTRIBUTE_TYPE *pType
@@ -163,8 +161,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CompareItem(
         ///   [in]   REFGUID guidKey,
         ///   [in]   REFPROPVARIANT Value,
@@ -210,8 +207,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Compare(
         ///   [in]   IMFAttributes *pTheirs,
         ///   [in]   MF_ATTRIBUTES_MATCH_TYPE MatchType,
@@ -256,8 +252,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUINT32(
         ///   [in]   REFGUID guidKey,
         ///   [out]  UINT32 *punValue
@@ -300,8 +295,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUINT64(
         ///   [in]   REFGUID guidKey,
         ///   [out]  UINT64 *punValue
@@ -344,8 +338,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDouble(
         ///   [in]   REFGUID guidKey,
         ///   [out]  double *pfValue
@@ -387,8 +380,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetGUID(
         ///   [in]   REFGUID guidKey,
         ///   [out]  GUID *pguidValue
@@ -431,8 +423,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStringLength(
         ///   [in]   REFGUID guidKey,
         ///   [out]  UINT32 *pcchLength
@@ -486,8 +477,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetString(
         ///   [in]   REFGUID guidKey,
         ///   [out]  LPWSTR pwszValue,
@@ -538,8 +528,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllocatedString(
         ///   [in]   REFGUID guidKey,
         ///   [out]  LPWSTR *ppwszValue,
@@ -583,8 +572,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBlobSize(
         ///   [in]   REFGUID guidKey,
         ///   [out]  UINT32 *pcbBlobSize
@@ -635,8 +623,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBlob(
         ///   [in]   REFGUID guidKey,
         ///   [out]  UINT8 *pBuf,
@@ -683,8 +670,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllocatedBlob(
         ///   [in]   REFGUID guidKey,
         ///   [out]  UINT8 **ppBuf,
@@ -731,8 +717,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUnknown(
         ///   [in]   REFGUID guidKey,
         ///   [in]   REFIID riid,
@@ -777,8 +762,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetItem(
         ///   [in]  REFGUID guidKey,
         ///   [in]  REFPROPVARIANT Value
@@ -813,8 +797,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteItem(
         ///   [in]  REFGUID guidKey
         /// );
@@ -844,8 +827,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteAllItems();
         /// </code>
         /// <para/>
@@ -878,8 +860,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUINT32(
         ///   [in]  REFGUID guidKey,
         ///   [in]  UINT32 unValue
@@ -918,8 +899,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUINT64(
         ///   [in]  REFGUID guidKey,
         ///   [in]  UINT64 unValue
@@ -958,8 +938,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDouble(
         ///   [in]  REFGUID guidKey,
         ///   [in]  double fValue
@@ -999,8 +978,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetGUID(
         ///   [in]  REFGUID guidKey,
         ///   [in]  REFGUID guidValue
@@ -1040,8 +1018,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetString(
         ///   [in]  REFGUID guidKey,
         ///   [in]  LPCWSTR wszValue
@@ -1083,8 +1060,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetBlob(
         ///   [in]  REFGUID guidKey,
         ///   [in]  const UINT8 *pBuf,
@@ -1125,8 +1101,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUnknown(
         ///   [in]  REFGUID guidKey,
         ///   [in]  IUnknown *pUnknown
@@ -1160,8 +1135,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT LockStore();
         /// </code>
         /// <para/>
@@ -1188,8 +1162,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UnlockStore();
         /// </code>
         /// <para/>
@@ -1219,8 +1192,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCount(
         ///   [out]  UINT32 *pcItems
         /// );
@@ -1264,8 +1236,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetItemByIndex(
         ///   [in]       UINT32 unIndex,
         ///   [out]      GUID *pguidKey,
@@ -1298,8 +1269,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CopyAllItems(
         ///   [in]  IMFAttributes *pDest
         /// );
@@ -1334,8 +1304,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamCount(
         ///   [out]  DWORD *pcStreams
         /// );
@@ -1380,8 +1349,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStream(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  WORD *pwStreamNumber,
@@ -1422,8 +1390,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamByNumber(
         ///   [in]   WORD wStreamNumber,
         ///   [out]  IMFASFStreamConfig **ppIStream
@@ -1458,8 +1425,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStream(
         ///   [in]  IMFASFStreamConfig *pIStream
         /// );
@@ -1491,8 +1457,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveStream(
         ///   [in]  WORD wStreamNumber
         /// );
@@ -1530,8 +1495,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateStream(
         ///   [in]   IMFMediaType *pIMediaType,
         ///   [out]  IMFASFStreamConfig **ppIStream
@@ -1566,8 +1530,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMutualExclusionCount(
         ///   [out]  DWORD *pcMutexs
         /// );
@@ -1603,8 +1566,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMutualExclusion(
         ///   [in]   DWORD dwMutexIndex,
         ///   [out]  IMFASFMutualExclusion **ppIMutex
@@ -1639,8 +1601,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddMutualExclusion(
         ///   [in]  IMFASFMutualExclusion *pIMutex
         /// );
@@ -1672,8 +1633,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveMutualExclusion(
         ///   [in]  DWORD dwMutexIndex
         /// );
@@ -1707,8 +1667,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateMutualExclusion(
         ///   [out]  IMFASFMutualExclusion **ppIMutex
         /// );
@@ -1735,8 +1694,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamPrioritization(
         ///   [out]  IMFASFStreamPrioritization **ppIStreamPrioritization
         /// );
@@ -1767,8 +1725,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStreamPrioritization(
         ///   [in]  IMFASFStreamPrioritization *pIStreamPrioritization
         /// );
@@ -1796,8 +1753,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveStreamPrioritization();
         /// </code>
         /// <para/>
@@ -1820,8 +1776,7 @@ namespace MediaFoundation
         /// Returns <strong>E_NOTIMPL</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateStreamPrioritization(
         ///   [out]  IMFASFStreamPrioritization **ppIStreamPrioritization
         /// );
@@ -1853,8 +1808,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Clone(
         ///   [out]  IMFASFProfile **ppIProfile
         /// );

@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// Video Acceleration High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_BLT_STATE_CONSTRICTION_DATA {
     ///   BOOL Enable;
     ///   SIZE Size;

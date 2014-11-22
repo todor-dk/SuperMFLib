@@ -85,8 +85,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginEnableContent(
         ///   [in]  IMFActivate *pEnablerActivate,
         ///   [in]  IMFTopology *pTopo,
@@ -128,8 +127,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndEnableContent(
         ///   [in]  IMFAsyncResult *pResult
         /// );

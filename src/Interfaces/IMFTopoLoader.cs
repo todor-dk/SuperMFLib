@@ -78,8 +78,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Load(
         ///   [in]   IMFTopology *pInputTopo,
         ///   [out]  IMFTopology **ppOutputTopo,

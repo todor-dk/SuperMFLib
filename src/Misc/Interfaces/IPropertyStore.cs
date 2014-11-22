@@ -51,12 +51,11 @@ namespace MediaFoundation.Misc
         /// A pointer to a value that indicates the property count.
         /// </param>
         /// <returns>
-        /// The <code>IpropertyStore::GetCount</code> method returns a value of S_OK when the call is
+        /// The <c>IpropertyStore::GetCount</c> method returns a value of S_OK when the call is
         /// successful, even if the file has no properties attached. Any other code returned is an error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCount(
         ///   DWORD *cProps
         /// );
@@ -81,12 +80,11 @@ namespace MediaFoundation.Misc
         /// </param>
         /// <param name="pkey">The pkey.</param>
         /// <returns>
-        /// The <code>IPropertyStore::GetAt</code> method returns a value of S_OK if successful. Otherwise, any
+        /// The <c>IPropertyStore::GetAt</c> method returns a value of S_OK if successful. Otherwise, any
         /// other code it returns must be considered to be an error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAt(
         ///   DWORD iProp,
         ///   PROPERTYKEY *pKey
@@ -110,7 +108,7 @@ namespace MediaFoundation.Misc
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="pv">
-        /// After the <code>IPropertyStore::GetValue</code> method returns successfully, this parameter points
+        /// After the <c>IPropertyStore::GetValue</c> method returns successfully, this parameter points
         /// to a <c>PROPVARIANT </c> structure that contains data about the property. 
         /// </param>
         /// <returns>
@@ -122,8 +120,7 @@ namespace MediaFoundation.Misc
         /// as a success code. The SUCCEEDED macro is defined in the Winerror.h file.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetValue(
         ///   REFPROPERTYKEY Key,
         ///   PROPVARIANT *pv
@@ -148,7 +145,7 @@ namespace MediaFoundation.Misc
         /// <param name="key">The key.</param>
         /// <param name="propvar">The propvar.</param>
         /// <returns>
-        /// The <code>IPropertyStore::SetValue</code> method can return any one of the following: 
+        /// The <c>IPropertyStore::SetValue</c> method can return any one of the following: 
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -158,8 +155,7 @@ namespace MediaFoundation.Misc
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetValue(
         ///   REFPROPERTYKEY Key,
         ///   Const PROPVARIANT *pv
@@ -182,7 +178,7 @@ namespace MediaFoundation.Misc
         /// After a change has been made, this method saves the changes.
         /// </summary>
         /// <returns>
-        /// The <code>IPropertyStore::Commit</code> method returns any one of the following: 
+        /// The <c>IPropertyStore::Commit</c> method returns any one of the following: 
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -192,8 +188,7 @@ namespace MediaFoundation.Misc
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Commit(
         ///    VOID
         /// );

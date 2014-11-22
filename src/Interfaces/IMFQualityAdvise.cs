@@ -78,8 +78,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDropMode(
         ///   [in]  MF_QUALITY_DROP_MODE eDropMode
         /// );
@@ -114,8 +113,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetQualityLevel(
         ///   [in]  MF_QUALITY_LEVEL eQualityLevel
         /// );
@@ -148,8 +146,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDropMode(
         ///   [out]  MF_QUALITY_DROP_MODE *peDropMode
         /// );
@@ -182,8 +179,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetQualityLevel(
         ///   [out]  MF_QUALITY_LEVEL *peQualityLevel
         /// );
@@ -218,8 +214,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DropTime(
         ///   [in]  LONGLONG hnsAmountToDrop
         /// );

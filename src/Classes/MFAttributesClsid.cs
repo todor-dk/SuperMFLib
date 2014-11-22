@@ -6167,7 +6167,7 @@ namespace MediaFoundation
         /// <para/>
         /// The value of the attribute has the following format:
         /// <para/>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// struct {
         ///    WORD wReserved;
         ///    WM_LEAKY_BUCKET_PAIR bucket[2];
@@ -8011,8 +8011,8 @@ namespace MediaFoundation
         /// This attribute contains a pair of GUIDs: a major type and a subtype. These GUIDs describe the
         /// default output format of the device. The device might support additional output formats.
         /// <para/>
-        /// For example, if a video capture device outputs RGB-32 video, the value of this attribute is <code>{
-        /// MFMediaType_Video, MFVideoFormat_RGB32 }</code>. 
+        /// For example, if a video capture device outputs RGB-32 video, the value of this attribute is 
+        /// <c>{ MFMediaType_Video, MFVideoFormat_RGB32 }</c>. 
         /// <para/>
         /// This attribute is a hint to the application. To get the exact output format, create the media
         /// source for the device and get the media source's presentation descriptor.

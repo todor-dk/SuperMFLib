@@ -73,8 +73,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetTargetMediaType(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IMFMediaType *pTargetMediaType,
@@ -109,8 +108,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT PlaceEncodingParameters(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IMFAttributes *pEncodingParameters

@@ -77,8 +77,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The object was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetEvent(
         /// [in]   DWORD dwFlags,
         /// [out]  IMFMediaEvent **ppEvent
@@ -116,8 +116,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_S_MULTIPLE_BEGIN</strong></term><description>There is a pending request with the same callback pointer and state object.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginGetEvent(
         /// [in]  IMFAsyncCallback *pCallback,
         /// [in]  IUnknown *punkState
@@ -152,8 +152,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The object was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndGetEvent(
         /// [in]   IMFAsyncResult *pResult,
         /// [out]  IMFMediaEvent **ppEvent
@@ -194,8 +194,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The object was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT QueueEvent(
         /// [in]  MediaEventType met,
         /// [in]  REFGUID guidExtendedType,
@@ -236,8 +236,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media source's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCharacteristics(
         /// [out]  DWORD *pdwCharacteristics
         /// );
@@ -269,8 +269,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media source's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreatePresentationDescriptor(
         /// [out]  IMFPresentationDescriptor **ppPresentationDescriptor
         /// );
@@ -318,8 +318,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_UNSUPPORTED_TIME_FORMAT</strong></term><description> The media source does not support the time format specified in <em>pguidTimeFormat</em>. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Start(
         /// [in]  IMFPresentationDescriptor *pPresentationDescriptor,
         /// [in]  const GUID *pguidTimeFormat,
@@ -352,8 +352,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media source's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Stop();
         /// </code>
         /// <para />
@@ -379,8 +379,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The media source's <c>Shutdown</c> method has been called. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Pause();
         /// </code>
         /// <para />
@@ -404,8 +404,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para />
@@ -436,8 +436,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSourceAttributes(
         ///   [out]  IMFAttributes **ppAttributes
         /// );
@@ -476,8 +475,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamAttributes(
         ///   [in]   DWORD dwStreamIdentifier,
         ///   [out]  IMFAttributes **ppAttributes
@@ -514,8 +512,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetD3DManager(
         ///   [in]  IUnknown *pManager
         /// );

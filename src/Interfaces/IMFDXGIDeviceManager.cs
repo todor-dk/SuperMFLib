@@ -66,8 +66,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CloseDeviceHandle(
         ///   [in]  HANDLE hDevice
         /// );
@@ -112,8 +111,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoService(
         ///   [in]   HANDLE hDevice,
         ///   [in]   REFIID riid,
@@ -170,8 +168,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT LockDevice(
         ///   [in]   HANDLE hDevice,
         ///   [in]   REFIID riid,
@@ -210,8 +207,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OpenDeviceHandle(
         ///   [out]  HANDLE *phDevice
         /// );
@@ -244,8 +240,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ResetDevice(
         ///   [in]  IUnknown *pUnkDevice,
         ///   [in]  UINT resetToken
@@ -282,8 +277,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT TestDevice(
         ///   [in]  HANDLE hDevice
         /// );
@@ -315,8 +309,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UnlockDevice(
         ///   [in]  HANDLE hDevice,
         ///   [in]  BOOL fSaveState

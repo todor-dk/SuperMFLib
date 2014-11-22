@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Specifies a YCbCr color value.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_COLOR_YCbCrA {
     ///   FLOAT Y;
     ///   FLOAT Cb;

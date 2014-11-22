@@ -70,8 +70,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetResource(
         ///   [in]   REFIID riid,
         ///   [out]  LPVOID *ppvObject
@@ -101,8 +100,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSubresourceIndex(
         ///   [out]  UINT *puSubresource
         /// );
@@ -142,8 +140,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUnknown(
         ///   [in]   REFIID guid,
         ///   [in]   REFIID riid,
@@ -185,8 +182,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUnknown(
         ///   [in]  REFIID guid,
         ///   [in]  IUnknown *pUnkData

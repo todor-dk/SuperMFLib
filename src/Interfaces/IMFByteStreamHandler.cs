@@ -90,8 +90,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginCreateObject(
         ///   [in]   IMFByteStream *pByteStream,
         ///   [in]   LPCWSTR pwszURL,
@@ -147,8 +146,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndCreateObject(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  MF_OBJECT_TYPE *pObjectType,
@@ -187,8 +185,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CancelObjectCreation(
         ///   [in]  IUnknown *pIUnknownCancelCookie
         /// );
@@ -222,8 +219,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMaxNumberOfBytesRequiredForResolution(
         ///   [out]  QWORD *pqwBytes
         /// );

@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains the result of an <c>Output Protection Manager</c> (OPM) status request.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_REQUESTED_INFORMATION {
     ///   OPM_OMAC omac;
     ///   ULONG    cbRequestedInformationSize;

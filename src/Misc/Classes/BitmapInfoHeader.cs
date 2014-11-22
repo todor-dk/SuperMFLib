@@ -42,8 +42,7 @@ namespace MediaFoundation.Misc
     /// format of a DIB. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagBITMAPINFOHEADER {
     ///   DWORD biSize;
     ///   LONG  biWidth;

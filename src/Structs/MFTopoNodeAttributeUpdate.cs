@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// Specifies a new attribute value for a topology node.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFTOPONODE_ATTRIBUTE_UPDATE {
     ///   TOPOID            NodeId;
     ///   GUID              guidAttributeKey;

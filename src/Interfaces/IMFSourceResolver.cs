@@ -87,8 +87,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateObjectFromURL(
         ///   [in]   LPCWSTR pwszURL,
         ///   [in]   DWORD dwFlags,
@@ -152,8 +151,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateObjectFromByteStream(
         ///   [in]   IMFByteStream *pByteStream,
         ///   [in]   LPCWSTR pwszURL,
@@ -222,8 +220,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginCreateObjectFromURL(
         ///   [in]   LPCWSTR pwszURL,
         ///   [in]   DWORD dwFlags,
@@ -276,8 +273,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndCreateObjectFromURL(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  MF_OBJECT_TYPE *pObjectType,
@@ -345,8 +341,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginCreateObjectFromByteStream(
         ///   [in]   IMFByteStream *pByteStream,
         ///   [in]   LPCWSTR pwszURL,
@@ -401,8 +396,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndCreateObjectFromByteStream(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  MF_OBJECT_TYPE *pObjectType,
@@ -432,8 +426,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CancelObjectCreation(
         ///   [in]  IUnknown **ppIUnknownCancelCookie
         /// );

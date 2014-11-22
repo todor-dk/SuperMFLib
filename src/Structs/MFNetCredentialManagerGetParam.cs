@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// Contains the authentication information for the credential manager.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFNetCredentialManagerGetParam {
     ///   HRESULT hrOp;
     ///   BOOL    fAllowLoggedOnUser;

@@ -75,8 +75,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDirectXManager(
         ///   [in]  IUnknown *pManager
         /// );
@@ -106,8 +105,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UninitializeSampleAllocator();
         /// </code>
         /// <para/>
@@ -141,8 +139,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InitializeSampleAllocator(
         ///   [in]  DWORD cRequestedFrames,
         ///   [in]  IMFMediaType *pMediaType
@@ -179,8 +176,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AllocateSample(
         ///   [out]  IMFSample **ppSample
         /// );

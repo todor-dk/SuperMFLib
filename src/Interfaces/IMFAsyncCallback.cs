@@ -89,8 +89,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetParameters(
         ///   [out]  DWORD *pdwFlags,
         ///   [out]  DWORD *pdwQueue
@@ -126,8 +125,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Invoke(
         ///   [in]  IMFAsyncResult *pAsyncResult
         /// );

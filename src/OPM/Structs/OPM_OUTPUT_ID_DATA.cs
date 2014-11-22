@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains the result from an <see cref="OPM.MFOpmStatusRequests.OPM_GET_OUTPUT_ID" /> status request.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_OUTPUT_ID_DATA {
     ///   OPM_RANDOM_NUMBER rnRandomNumber;
     ///   ULONG             ulStatusFlags;

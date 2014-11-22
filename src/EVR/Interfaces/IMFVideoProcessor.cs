@@ -79,8 +79,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAvailableVideoProcessorModes(
         ///   [in, out]  UINT *lpdwNumProcessingModes,
         ///   [out]      GUID **ppVideoProcessingModes
@@ -119,8 +118,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorCaps(
         ///   [in]   LPGUID lpVideoProcessorMode,
         ///   [out]  DXVA2_VideoProcessorCaps *lpVideoProcessorCaps
@@ -157,8 +155,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorMode(
         ///   [out]  LPGUID lpMode
         /// );
@@ -195,8 +192,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVideoProcessorMode(
         ///   [in]  LPGUID lpMode
         /// );
@@ -235,8 +231,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProcAmpRange(
         ///   [in]   DWORD dwProperty,
         ///   [out]  DXVA2_ValueRange *pPropRange
@@ -273,8 +268,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProcAmpValues(
         ///   [in]   DWORD dwFlags,
         ///   [out]  DXVA2_ProcAmpValues *pValues
@@ -317,8 +311,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetProcAmpValues(
         ///   [in]  DWORD dwFlags,
         ///   [in]  DXVA2_ProcAmpValues *pValues
@@ -362,8 +355,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFilteringRange(
         ///   [in]   DWORD dwProperty,
         ///   [out]  DXVA2_ValueRange *pPropRange
@@ -402,8 +394,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFilteringValue(
         ///   [in]   DWORD dwProperty,
         ///   [out]  DXVA2_Fixed32 *pValue
@@ -444,8 +435,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetFilteringValue(
         ///   [in]  DWORD dwProperty,
         ///   [in]  DXVA2_Fixed32 *pValue
@@ -480,8 +470,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBackgroundColor(
         ///   [out]  COLORREF *lpClrBkg
         /// );
@@ -515,8 +504,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetBackgroundColor(
         ///   [in]  COLORREF ClrBkg
         /// );

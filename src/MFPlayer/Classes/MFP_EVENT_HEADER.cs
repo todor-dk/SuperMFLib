@@ -45,8 +45,7 @@ namespace MediaFoundation.MFPlayer
     /// Contains information that is common to  every type of MFPlay event.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_EVENT_HEADER {
     ///   MFP_EVENT_TYPE        eEventType;
     ///   HRESULT               hrEvent;

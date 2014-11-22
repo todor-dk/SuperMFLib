@@ -38,8 +38,7 @@ namespace MediaFoundation.EVR
     /// Contains values for DirectX Video Acceleration (DXVA) video processing operations.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVA2_ProcAmpValues {
     ///   DXVA2_Fixed32 Brightness;
     ///   DXVA2_Fixed32 Contrast;

@@ -36,8 +36,7 @@ namespace MediaFoundation.Transform
     /// values, call <see cref="Transform.IMFTransform.GetInputStreamInfo" />.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFT_INPUT_STREAM_INFO {
     ///   LONGLONG hnsMaxLatency;
     ///   DWORD    dwFlags;

@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Specifies a custom rate for frame-rate conversion or inverse telecine (IVTC).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_CUSTOM_RATE_DATA {
     ///   DXVAHD_RATIONAL CustomRate;
     ///   UINT            OutputFrames;

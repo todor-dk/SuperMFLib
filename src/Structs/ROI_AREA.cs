@@ -39,8 +39,7 @@ namespace MediaFoundation
     /// Defines a regions of interest. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _ROI_AREA {
     ///   RECT   rect;
     ///   INT32  QPDelta;

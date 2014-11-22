@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// occurs during playback. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_ERROR_EVENT {
     ///   MFP_EVENT_HEADER header;
     /// } MFP_ERROR_EVENT;

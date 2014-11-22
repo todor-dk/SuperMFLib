@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains the result from an <see cref="OPM.MFOpmStatusRequests.OPM_GET_CODEC_INFO" /> query.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_GET_CODEC_INFO_INFORMATION {
     ///   OPM_RANDOM_NUMBER rnRandomNumber;
     ///   DWORD             Merit;

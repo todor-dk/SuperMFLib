@@ -75,8 +75,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetType(
         ///   [out]  GUID *pguidType
         /// );
@@ -110,8 +109,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetType(
         ///   [in]  REFGUID guidType
         /// );
@@ -143,8 +141,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRecordCount(
         ///   [out]  DWORD *pdwRecordCount
         /// );
@@ -189,8 +186,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamsForRecord(
         ///   [in]       DWORD dwRecordNumber,
         ///   [out]      WORD *pwStreamNumArray,
@@ -231,8 +227,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStreamForRecord(
         ///   [in]  DWORD dwRecordNumber,
         ///   [in]  WORD wStreamNumber
@@ -270,8 +265,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveStreamFromRecord(
         ///   [in]  DWORD dwRecordNumber,
         ///   [in]  WORD wStreamNumber
@@ -305,8 +299,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveRecord(
         ///   [in]  DWORD dwRecordNumber
         /// );
@@ -339,8 +332,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddRecord(
         ///   [out]  DWORD *pdwRecordNumber
         /// );
@@ -373,8 +365,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Clone(
         ///   [out]  IMFASFMutualExclusion **ppIMutex
         /// );

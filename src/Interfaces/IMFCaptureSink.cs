@@ -73,8 +73,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputMediaType(
         ///   [in]   DWORD dwSinkStreamIndex,
         ///   [out]  IMFMediaType **ppMediaType
@@ -121,8 +120,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetService(
         ///   [in]   DWORD dwSinkStreamIndex,
         ///   [in]   REFGUID rguidService,
@@ -187,8 +185,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStream(
         ///   [in]   DWORD dwSourceStreamIndex,
         ///   [in]   IMFMediaType *pMediaType,
@@ -225,8 +222,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Prepare();
         /// </code>
         /// <para/>
@@ -247,8 +243,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllStreams();
         /// </code>
         /// <para/>

@@ -40,8 +40,7 @@ namespace MediaFoundation.OPM
     /// in <c>Output Protection Manager</c> (OPM).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_ACTUAL_OUTPUT_FORMAT {
     ///   OPM_RANDOM_NUMBER  rnRandomNumber;
     ///   ULONG              ulStatusFlags;

@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains initialization parameters for an <c>Output Protection Manager</c> (OPM) session.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_ENCRYPTED_INITIALIZATION_PARAMETERS {
     ///   BYTE abEncryptedInitializationParameters[OPM_ENCRYPTED_INITIALIZATION_PARAMETERS_SIZE];
     /// } OPM_ENCRYPTED_INITIALIZATION_PARAMETERS;

@@ -72,8 +72,7 @@ namespace MediaFoundation.OPM
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT StartInitialization(
         ///   [out]  OPM_RANDOM_NUMBER *prnRandomNumber,
         ///   [out]  BYTE **ppbCertificate,
@@ -112,8 +111,7 @@ namespace MediaFoundation.OPM
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT FinishInitialization(
         ///   [in]  const OPM_ENCRYPTED_INITIALIZATION_PARAMETERS *pParameters
         /// );
@@ -151,8 +149,7 @@ namespace MediaFoundation.OPM
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInformation(
         ///   [in]   const OPM_GET_INFO_PARAMETERS *pParameters,
         ///   [out]  OPM_REQUESTED_INFORMATION *pRequestedInformation
@@ -194,8 +191,7 @@ namespace MediaFoundation.OPM
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT COPPCompatibleGetInformation(
         ///   [in]   const OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS *pParameters,
         ///   [out]  OPM_REQUESTED_INFORMATION *pRequestedInformation
@@ -232,8 +228,7 @@ namespace MediaFoundation.OPM
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Configure(
         ///   [in]  const OPM_CONFIGURE_PARAMETERS *pParameters,
         ///   [in]  ULONG ulAdditionalParametersSize,

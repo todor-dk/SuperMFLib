@@ -78,8 +78,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetEvent(
         ///   [in]   DWORD dwFlags,
         ///   [out]  IMFMediaEvent **ppEvent
@@ -121,8 +120,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginGetEvent(
         ///   [in]  IMFAsyncCallback *pCallback,
         ///   [in]  IUnknown *punkState
@@ -164,8 +162,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndGetEvent(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  IMFMediaEvent **ppEvent
@@ -217,8 +214,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT QueueEvent(
         ///   [in]  MediaEventType met,
         ///   [in]  REFGUID guidExtendedType,

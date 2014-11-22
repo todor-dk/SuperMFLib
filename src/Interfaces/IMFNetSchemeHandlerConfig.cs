@@ -68,8 +68,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNumberOfSupportedProtocols(
         ///   [out]  ULONG *pcProtocols
         /// );
@@ -107,8 +106,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSupportedProtocolType(
         ///   [in]   ULONG nProtocolIndex,
         ///   [out]  MFNETSOURCE_PROTOCOL_TYPE *pnProtocolType
@@ -134,8 +132,7 @@ namespace MediaFoundation
         /// This method returns S_OK.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ResetProtocolRolloverSettings();
         /// </code>
         /// <para/>

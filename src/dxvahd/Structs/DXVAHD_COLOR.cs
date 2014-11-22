@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Defines a color value for Microsoft DirectX Video Acceleration High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef union _DXVAHD_COLOR {
     ///   DXVAHD_COLOR_RGBA   RGB;
     ///   DXVAHD_COLOR_YCbCrA YCbCr;

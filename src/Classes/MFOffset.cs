@@ -37,8 +37,7 @@ namespace MediaFoundation
     /// Specifies an offset as a fixed-point real number. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFOffset {
     ///   WORD  fract;
     ///   short value;

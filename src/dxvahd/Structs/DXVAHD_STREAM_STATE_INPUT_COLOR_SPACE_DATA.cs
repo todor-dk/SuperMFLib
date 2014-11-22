@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// input stream.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA {
     ///   UINT Type  :1;
     ///   UINT RGB_Range  :1;

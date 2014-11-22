@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// method.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_DATA {
     ///   BOOL              Enable;
     ///   UINT              OutputIndex;

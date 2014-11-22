@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_BLT_STATE_PRIVATE_DATA {
     ///   GUID Guid;
     ///   UINT DataSize;

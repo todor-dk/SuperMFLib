@@ -76,8 +76,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUser(
         ///   [in]  BYTE *pbData,
         ///   [in]  DWORD cbData,
@@ -122,8 +121,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPassword(
         ///   [in]  BYTE *pbData,
         ///   [in]  DWORD cbData,
@@ -171,8 +169,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUser(
         ///   [out]      BYTE *pbData,
         ///   [in, out]  DWORD *pcbData,
@@ -220,8 +217,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPassword(
         ///   [out]      BYTE *pbData,
         ///   [in, out]  DWORD *pcbData,
@@ -259,8 +255,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT LoggedOnUser(
         ///   [in]  BOOL *pfLoggedOnUser
         /// );

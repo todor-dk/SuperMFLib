@@ -57,8 +57,7 @@ namespace MediaFoundation
         /// Returns a value from the <see cref="MF_MEDIA_ENGINE_ERR"/> enumeration. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// USHORT GetErrorCode();
         /// </code>
         /// <para/>
@@ -78,8 +77,7 @@ namespace MediaFoundation
         /// Returns an <strong>HRESULT</strong> value that gives additional information about the last error. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetExtendedErrorCode();
         /// </code>
         /// <para/>
@@ -103,8 +101,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetErrorCode(
         ///   [in]  MF_MEDIA_ENGINE_ERR error
         /// );
@@ -132,8 +129,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetExtendedErrorCode(
         ///   [in]  HRESULT error
         /// );

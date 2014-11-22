@@ -44,8 +44,7 @@ namespace MediaFoundation.dxvahd
     /// content, for performance reasons.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_CONTENT_DESC {
     ///   DXVAHD_FRAME_FORMAT InputFrameFormat;
     ///   DXVAHD_RATIONAL     InputFrameRate;

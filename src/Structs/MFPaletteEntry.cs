@@ -38,8 +38,7 @@ namespace MediaFoundation
     /// Contains one palette entry in a color table.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef union _MFPaletteEntry {
     ///   MFARGB       ARGB;
     ///   MFAYUVSample AYCbCr;

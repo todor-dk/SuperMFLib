@@ -65,8 +65,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamCount(
         ///   [out]  DWORD *pcStreams
         /// );
@@ -98,8 +97,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputCount(
         ///   [out]  DWORD *pcOutputs
         /// );
@@ -135,8 +133,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputStreamCount(
         ///   [in]   DWORD dwOutputNum,
         ///   [out]  DWORD *pcStreams
@@ -176,8 +173,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputStreamNumbers(
         ///   [in]   DWORD dwOutputNum,
         ///   [out]  WORD *rgwStreamNumbers
@@ -215,8 +211,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputFromStream(
         ///   [in]   WORD wStreamNum,
         ///   [out]  DWORD *pdwOutput
@@ -254,8 +249,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputOverride(
         ///   [in]   DWORD dwOutputNum,
         ///   [out]  ASF_SELECTION_STATUS *pSelection
@@ -293,8 +287,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOutputOverride(
         ///   [in]  DWORD dwOutputNum,
         ///   [in]  ASF_SELECTION_STATUS Selection
@@ -331,8 +324,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputMutexCount(
         ///   [in]   DWORD dwOutputNum,
         ///   [out]  DWORD *pcMutexes
@@ -375,8 +367,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputMutex(
         ///   [in]   DWORD dwOutputNum,
         ///   [in]   DWORD dwMutexNum,
@@ -418,8 +409,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOutputMutexSelection(
         ///   [in]  DWORD dwOutputNum,
         ///   [in]  DWORD dwMutexNum,
@@ -456,8 +446,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBandwidthStepCount(
         ///   [out]  DWORD *pcStepCount
         /// );
@@ -507,8 +496,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBandwidthStep(
         ///   [in]   DWORD dwStepNum,
         ///   [out]  DWORD *pdwBitrate,
@@ -551,8 +539,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BitrateToStepNumber(
         ///   [in]   DWORD dwBitrate,
         ///   [out]  DWORD *pdwStepNum
@@ -587,8 +574,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamSelectorFlags(
         ///   [in]  DWORD dwStreamSelectorFlags
         /// );

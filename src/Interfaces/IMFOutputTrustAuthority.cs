@@ -71,8 +71,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAction(
         ///   [out]  MFPOLICYMANAGER_ACTION *pAction
         /// );
@@ -122,8 +121,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPolicy(
         ///   [in]   IMFOutputPolicy **ppPolicy,
         ///   [in]   DWORD nPolicy,

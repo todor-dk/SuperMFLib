@@ -74,8 +74,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SaveReference(
         ///   [in]  REFIID riid,
         ///   [in]  IUnknown *pUnk
@@ -113,8 +112,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT LoadReference(
         ///   [in]   REFIID riid,
         ///   [out]  void **ppv

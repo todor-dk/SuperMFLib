@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// this event to forward certain events from the Media Foundation pipeline to the application. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_MF_EVENT {
     ///   MFP_EVENT_HEADER header;
     ///   MediaEventType   MFEventType;

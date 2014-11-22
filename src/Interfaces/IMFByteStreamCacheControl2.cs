@@ -62,8 +62,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT StopBackgroundTransfer();
         /// </code>
         /// <para />
@@ -93,8 +93,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetByteRanges(
         ///   [out]  DWORD *pcRanges,
         ///   [out]  MF_BYTE_STREAM_CACHE_RANGE **ppRanges
@@ -125,8 +124,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCacheLimit(
         ///   [in]  QWORD qwBytes
         /// );
@@ -155,8 +153,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsBackgroundTransferActive(
         ///   [out]  BOOL *pfActive
         /// );

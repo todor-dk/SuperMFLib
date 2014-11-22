@@ -92,8 +92,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateInstanceFromURL(
         ///   [in]   REFCLSID clsid,
         ///   [in]   LPCWSTR *pwszURL,
@@ -161,8 +160,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateInstanceFromObject(
         ///   [in]   REFCLSID clsid,
         ///   [in]   IUnknown *punkObject,

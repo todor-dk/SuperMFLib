@@ -38,8 +38,7 @@ namespace MediaFoundation
     /// Describes an ARGB color value.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFARGB {
     ///   BYTE rgbBlue;
     ///   BYTE rgbGreen;

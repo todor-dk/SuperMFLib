@@ -62,8 +62,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetError(
         ///   [out]  IMFMediaError **ppError
         /// );
@@ -91,8 +90,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetErrorCode(
         ///   [in]  MF_MEDIA_ENGINE_ERR error
         /// );
@@ -121,8 +119,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSourceElements(
         ///   [in]  IMFMediaEngineSrcElements *pSrcElements
         /// );
@@ -150,8 +147,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSource(
         ///   [in]  BSTR pUrl
         /// );
@@ -181,8 +177,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentSource(
         ///   [out]  BSTR *ppUrl
         /// );
@@ -206,8 +201,7 @@ namespace MediaFoundation
         /// Returns an <see cref="MF_MEDIA_ENGINE_NETWORK"/> enumeration value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// USHORT GetNetworkState();
         /// </code>
         /// <para/>
@@ -227,8 +221,7 @@ namespace MediaFoundation
         /// Returns an <see cref="MF_MEDIA_ENGINE_PRELOAD"/> enumeration value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPreload();
         /// </code>
         /// <para/>
@@ -252,8 +245,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPreload(
         ///   [in]  MF_MEDIA_ENGINE_PRELOAD Preload
         /// );
@@ -282,8 +274,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBuffered(
         ///   [out]  IMFMediaTimeRange **ppBuffered
         /// );
@@ -308,8 +299,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Load();
         /// </code>
         /// <para/>
@@ -336,8 +326,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CanPlayType(
         ///   [in]   BSTR type,
         ///   [out]  MF_MEDIA_ENGINE_CANPLAY *pAnswer
@@ -363,8 +352,7 @@ namespace MediaFoundation
         /// Returns an <see cref="MF_MEDIA_ENGINE_READY"/> enumeration value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// USHORT GetReadyState();
         /// </code>
         /// <para/>
@@ -384,8 +372,7 @@ namespace MediaFoundation
         /// Returns <strong>TRUE</strong> if the Media Engine is seeking, or <strong>FALSE</strong> otherwise. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL IsSeeking();
         /// </code>
         /// <para/>
@@ -405,8 +392,7 @@ namespace MediaFoundation
         /// Returns the playback position, in seconds.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetCurrentTime();
         /// </code>
         /// <para/>
@@ -430,8 +416,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentTime(
         ///   [in]  double seekTime
         /// );
@@ -455,8 +440,7 @@ namespace MediaFoundation
         /// Returns the initial playback position, in seconds.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetStartTime();
         /// </code>
         /// <para/>
@@ -477,8 +461,7 @@ namespace MediaFoundation
         /// (NaN). If the duration is unbounded, the method returns an infinite value.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetDuration();
         /// </code>
         /// <para/>
@@ -498,8 +481,7 @@ namespace MediaFoundation
         /// Returns <strong>TRUE</strong> if playback is paused, or <strong>FALSE</strong> otherwise. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL IsPaused();
         /// </code>
         /// <para/>
@@ -520,8 +502,7 @@ namespace MediaFoundation
         /// indicates reverse playback.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetDefaultPlaybackRate();
         /// </code>
         /// <para/>
@@ -546,8 +527,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDefaultPlaybackRate(
         ///   [in]  double Rate
         /// );
@@ -572,8 +552,7 @@ namespace MediaFoundation
         /// reverse playback.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetPlaybackRate();
         /// </code>
         /// <para/>
@@ -598,8 +577,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPlaybackRate(
         ///   [in]  double Rate
         /// );
@@ -628,8 +606,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPlayed(
         ///   [out]  IMFMediaTimeRange **ppPlayed
         /// );
@@ -655,8 +632,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSeekable(
         ///   [out]  IMFMediaTimeRange **ppPlayed
         /// );
@@ -681,8 +657,7 @@ namespace MediaFoundation
         /// end of the media resource. Returns <strong>FALSE</strong> otherwise. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL IsEnded();
         /// </code>
         /// <para/>
@@ -703,8 +678,7 @@ namespace MediaFoundation
         /// </strong> otherwise. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL GetAutoPlay();
         /// </code>
         /// <para/>
@@ -730,8 +704,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAutoPlay(
         ///   [in]  BOOL AutoPlay
         /// );
@@ -755,8 +728,7 @@ namespace MediaFoundation
         /// Returns <strong>TRUE</strong> if looping is enabled, or <strong>FALSE</strong> otherwise. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL GetLoop();
         /// </code>
         /// <para/>
@@ -780,8 +752,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetLoop(
         ///   [in]  BOOL Loop
         /// );
@@ -806,8 +777,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Play();
         /// </code>
         /// <para/>
@@ -828,8 +798,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Pause();
         /// </code>
         /// <para/>
@@ -849,8 +818,7 @@ namespace MediaFoundation
         /// Returns <strong>TRUE</strong> if the audio is muted, or <strong>FALSE</strong> otherwise. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL GetMuted();
         /// </code>
         /// <para/>
@@ -874,8 +842,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetMuted(
         ///   [in]  BOOL Muted
         /// );
@@ -900,8 +867,7 @@ namespace MediaFoundation
         /// and 1.0 indicates full volume (no attenuation).
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetVolume();
         /// </code>
         /// <para/>
@@ -926,8 +892,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVolume(
         ///   [in]  double Volume
         /// );
@@ -953,8 +918,7 @@ namespace MediaFoundation
         /// stream. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL HasVideo();
         /// </code>
         /// <para/>
@@ -976,8 +940,7 @@ namespace MediaFoundation
         /// audio stream. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL HasAudio();
         /// </code>
         /// <para/>
@@ -1004,8 +967,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNativeVideoSize(
         ///   [out]  DWORD *cx,
         ///   [out]  DWORD *cy
@@ -1038,8 +1000,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoAspectRatio(
         ///   [out]  DWORD *cx,
         ///   [out]  DWORD *cy
@@ -1066,8 +1027,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>
@@ -1101,8 +1061,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT TransferVideoFrame(
         ///   [in]  IUnknown *pDstSurf,
         ///   [in]  const MFVideoNormalizedRect *pSrc,
@@ -1141,8 +1100,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnVideoStreamTick(
         ///   [out]  LONGLONG *pPts
         /// );

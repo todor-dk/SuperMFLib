@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains a 128-bit random number for use with <c>Output Protection Manager</c> (OPM).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_RANDOM_NUMBER {
     ///   BYTE abRandomNumber[OPM_128_BIT_RANDOM_NUMBER_SIZE];
     /// } OPM_RANDOM_NUMBER;

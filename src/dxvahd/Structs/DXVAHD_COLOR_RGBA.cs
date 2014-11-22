@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Specifies an RGB color value.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_COLOR_RGBA {
     ///   FLOAT R;
     ///   FLOAT G;

@@ -77,8 +77,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPreferredClsid(
         ///   [in]   DWORD pluginType,
         ///   [in]   LPCWSTR selector,
@@ -128,8 +127,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPreferredClsidByIndex(
         ///   [in]   DWORD pluginType,
         ///   [in]   DWORD index,
@@ -171,8 +169,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPreferredClsid(
         ///   [in]  DWORD pluginType,
         ///   [in]  LPCWSTR selector,
@@ -214,8 +211,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsDisabled(
         ///   [in]  DWORD pluginType,
         ///   [in]  REFCLSID clsid
@@ -258,8 +254,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDisabledByIndex(
         ///   [in]   DWORD pluginType,
         ///   [in]   DWORD index,
@@ -304,8 +299,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDisabled(
         ///   [in]  DWORD pluginType,
         ///   [in]  REFCLSID clsid,

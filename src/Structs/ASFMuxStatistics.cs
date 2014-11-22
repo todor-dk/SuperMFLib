@@ -38,8 +38,7 @@ namespace MediaFoundation
     /// Contains statistics about the progress of the ASF multiplexer.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct ASF_MUX_STATISTICS {
     ///   DWORD cFramesWritten;
     ///   DWORD cFramesDropped;

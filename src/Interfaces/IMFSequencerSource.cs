@@ -78,8 +78,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AppendTopology(
         ///   [in]   IMFTopology *pTopology,
         ///   [in]   DWORD dwFlags,
@@ -116,8 +115,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteTopology(
         ///   [in]  MFSequencerElementId dwId
         /// );
@@ -160,8 +158,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPresentationContext(
         ///   [in]   IMFPresentationDescriptor *pPD,
         ///   [out]  MFSequencerElementId *pId,
@@ -202,8 +199,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateTopology(
         ///   [in]  MFSequencerElementId dwId,
         ///   [in]  IMFTopology *pTopology
@@ -241,8 +237,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateTopologyFlags(
         ///   [in]  MFSequencerElementId dwId,
         ///   [in]  DWORD dwFlags

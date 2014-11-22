@@ -57,8 +57,7 @@ namespace MediaFoundation
         /// <strong>false</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL GetUpdating();
         /// </code>
         /// <para/>
@@ -82,8 +81,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBuffered(
         ///   [out]  IMFMediaTimeRange **ppBuffered
         /// );
@@ -107,8 +105,7 @@ namespace MediaFoundation
         /// The timestamp offset.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetTimeStampOffset();
         /// </code>
         /// <para/>
@@ -131,8 +128,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetTimeStampOffset(
         ///   [in]  double offset
         /// );
@@ -156,8 +152,7 @@ namespace MediaFoundation
         /// The timestamp for the start of the append window.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetAppendWindowStart();
         /// </code>
         /// <para/>
@@ -181,8 +176,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAppendWindowStart(
         ///   [in]  double time
         /// );
@@ -206,8 +200,7 @@ namespace MediaFoundation
         /// The timestamp for the end of the append window.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetAppendWindowEnd();
         /// </code>
         /// <para/>
@@ -229,8 +222,7 @@ namespace MediaFoundation
         /// The timestamp for the end of the append window.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAppendWindowEnd(
         ///   [in]  double time
         /// );
@@ -261,8 +253,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Append(
         ///   [in]  const BYTE *pData,
         ///   [in]  DWORD len
@@ -295,8 +286,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AppendByteStream(
         ///   [in]  IMFByteStream *pStream,
         ///   [in]  DWORDLONG *pMaxLen
@@ -323,8 +313,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Abort();
         /// </code>
         /// <para/>
@@ -351,8 +340,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Remove(
         ///   [in]  double start,
         ///   [in]  double end

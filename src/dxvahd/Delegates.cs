@@ -51,8 +51,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_CreateDevice)(
     ///   _In_   IDirect3DDevice9Ex *pD3DDevice,
     ///   _Out_  HANDLE *phDevice
@@ -87,8 +86,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_ProposeVideoPrivateFormat)(
     ///   _In_     HANDLE hDevice,
     ///   _Inout_  D3DFORMAT *pFormat
@@ -129,8 +127,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessorDeviceCaps)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   const DXVAHD_CONTENT_DESC *pContentDesc,
@@ -178,8 +175,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessorOutputFormats)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   const DXVAHD_CONTENT_DESC *pContentDesc,
@@ -229,8 +225,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessorInputFormats)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   const DXVAHD_CONTENT_DESC *pContentDesc,
@@ -280,8 +275,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessorCaps)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   const DXVAHD_CONTENT_DESC *pContentDesc,
@@ -328,8 +322,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessorCustomRates)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   const GUID *pVPGuid,
@@ -371,8 +364,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessorFilterRange)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   DXVAHD_FILTER Filter,
@@ -404,8 +396,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_DestroyDevice)(
     ///   _In_  HANDLE hDevice
     /// );
@@ -439,8 +430,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_CreateVideoProcessor)(
     ///   _In_   HANDLE hDevice,
     ///   _In_   const GUID *pVPGuid,
@@ -482,8 +472,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_SetVideoProcessBltState)(
     ///   _In_  HANDLE hVideoProcessor,
     ///   _In_  DXVAHD_BLT_STATE State,
@@ -522,8 +511,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessBltStatePrivate)(
     ///   _In_     HANDLE hVideoProcessor,
     ///   _Inout_  DXVAHD_BLT_STATE_PRIVATE_DATA *pData
@@ -566,8 +554,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_SetVideoProcessStreamState)(
     ///   _In_  HANDLE hVideoProcessor,
     ///   _In_  UINT StreamNumber,
@@ -611,8 +598,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_GetVideoProcessStreamStatePrivate)(
     ///   _In_     HANDLE hVideoProcessor,
     ///   _In_     UINT StreamNumber,
@@ -658,8 +644,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_VideoProcessBltHD)(
     ///   _In_  HANDLE hVideoProcessor,
     ///   _In_  IDirect3DSurface9 *pOutputSurface,
@@ -694,8 +679,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_DestroyVideoProcessor)(
     ///   _In_  HANDLE hVideoProcessor
     /// );
@@ -727,8 +711,7 @@ namespace MediaFoundation.dxvahd
     /// <strong>HRESULT</strong> error code. 
     /// </returns>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef HRESULT ( CALLBACK *PDXVAHDSW_Plugin)(
     ///   _In_   UINT Size,
     ///   _Out_  void *pCallbacks

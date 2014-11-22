@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// DirectX Video Acceleration High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_BLT_STATE_ALPHA_FILL_DATA {
     ///   DXVAHD_ALPHA_FILL_MODE Mode;
     ///   UINT                   StreamNumber;

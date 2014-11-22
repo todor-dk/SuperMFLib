@@ -78,8 +78,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>MF_E_INVALIDSTREAMNUMBER</strong></term><description>Invalid stream identifier.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamZOrder(
         /// [in]  DWORD dwStreamID,
         /// [in]  DWORD dwZ
@@ -114,8 +114,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>MF_E_INVALIDSTREAMNUMBER</strong></term><description>Invalid stream identifier.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamZOrder(
         /// [in]   DWORD dwStreamID,
         /// [out]  DWORD *pdwZ
@@ -152,8 +152,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>MF_E_INVALIDSTREAMNUMBER</strong></term><description> Invalid stream identifier. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamOutputRect(
         /// [in]  DWORD dwStreamID,
         /// [in]  const MFVideoNormalizedRect *pnrcOutput
@@ -189,8 +189,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>MF_E_INVALIDSTREAMNUMBER</strong></term><description>Invalid stream identifier.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamOutputRect(
         /// [in]   DWORD dwStreamID,
         /// [out]  MFVideoNormalizedRect *pnrcOutput
@@ -222,8 +222,7 @@ namespace MediaFoundation.EVR
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetMixingPrefs(
         ///   [in]  DWORD dwMixFlags
         /// );
@@ -252,8 +251,7 @@ namespace MediaFoundation.EVR
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMixingPrefs(
         ///   [out]  DWORD *pdwMixFlags
         /// );

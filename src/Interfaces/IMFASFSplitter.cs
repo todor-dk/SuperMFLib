@@ -67,8 +67,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Initialize(
         ///   [in]  IMFASFContentInfo *pIContentInfo
         /// );
@@ -103,8 +102,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetFlags(
         ///   [in]  DWORD dwFlags
         /// );
@@ -138,8 +136,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFlags(
         ///   [out]  DWORD *pdwFlags
         /// );
@@ -176,8 +173,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SelectStreams(
         ///   [in]  WORD *pwStreamNumbers,
         ///   [in]  WORD wNumStreams
@@ -221,8 +217,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSelectedStreams(
         ///   [out]      WORD *pwStreamNumbers,
         ///   [in, out]  WORD *pwNumStreams
@@ -268,8 +263,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ParseData(
         ///   [in]  IMFMediaBuffer *pIBuffer,
         ///   [in]  DWORD cbBufferOffset,
@@ -322,8 +316,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNextSample(
         ///   [out]  DWORD *pdwStatusFlags,
         ///   [out]  WORD *pwStreamNumber,
@@ -356,8 +349,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush();
         /// </code>
         /// <para/>
@@ -387,8 +379,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetLastSendTime(
         ///   [out]  DWORD *pdwLastSendTime
         /// );

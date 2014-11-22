@@ -69,8 +69,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyTopology(
         ///   [in]  IMFTopology *pTopology
         /// );
@@ -105,8 +104,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyPresentationClock(
         ///   [in]  IMFPresentationClock *pClock
         /// );
@@ -146,8 +144,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyProcessInput(
         ///   [in]  IMFTopologyNode *pNode,
         ///   [in]  long lInputIndex,
@@ -191,8 +188,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyProcessOutput(
         ///   [in]  IMFTopologyNode *pNode,
         ///   [in]  long lOutputIndex,
@@ -233,8 +229,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyQualityEvent(
         ///   [in]  IUnknown *pObject,
         ///   [in]  IMFMediaEvent *pEvent
@@ -266,8 +261,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>

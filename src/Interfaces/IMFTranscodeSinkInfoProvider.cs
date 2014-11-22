@@ -65,8 +65,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOutputFile(
         ///   [in]  LPCWSTR pwszFileName
         /// );
@@ -94,8 +93,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOutputByteStream(
         ///   [in]  IMFActivate *pByteStreamActivate
         /// );
@@ -124,8 +122,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetProfile(
         ///   [in]  IMFTranscodeProfile *pProfile
         /// );
@@ -158,8 +155,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSinkInfo(
         ///   [out]  MF_TRANSCODE_SINK_INFO *pSinkInfo
         /// );

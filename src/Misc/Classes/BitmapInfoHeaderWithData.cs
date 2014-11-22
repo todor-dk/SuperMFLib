@@ -42,8 +42,7 @@ namespace MediaFoundation.Misc
     /// The BITMAPINFO structure defines the dimensions and color information for a Windows device-independent bitmap (DIB). 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagBITMAPINFO {
     ///    BITMAPINFOHEADER bmiHeader;
     ///    RGBQUAD bmiColors[1];

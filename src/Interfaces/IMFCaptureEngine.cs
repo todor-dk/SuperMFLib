@@ -125,8 +125,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Initialize(
         ///   [in]            IMFCaptureEngineOnEventCallback *pEventCallback,
         ///   [in, optional]  IMFAttributes *pAttributes,
@@ -162,8 +161,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT StartPreview();
         /// </code>
         /// <para/>
@@ -189,8 +187,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT StopPreview();
         /// </code>
         /// <para/>
@@ -216,8 +213,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT StartRecord();
         /// </code>
         /// <para/>
@@ -247,8 +243,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT StopRecord(
         ///   [in]  BOOL bFinalize,
         ///   [in]  BOOL bFlushUnprocessedSamples
@@ -275,8 +270,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT TakePhoto();
         /// </code>
         /// <para/>
@@ -310,8 +304,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSink(
         ///   [in]   MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType,
         ///   [out]  IMFCaptureSink **ppSink
@@ -343,8 +336,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSource(
         ///   [out]  IMFCaptureSource **ppSource
         /// );

@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// The <strong>MPEG2VIDEOINFO</strong> structure describes an MPEG-2 video stream.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagMPEG2VIDEOINFO {
     ///   VIDEOINFOHEADER2 hdr;
     ///   DWORD            dwStartTimeCode;

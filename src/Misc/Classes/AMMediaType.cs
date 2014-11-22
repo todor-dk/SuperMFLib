@@ -37,8 +37,7 @@ namespace MediaFoundation.Misc
     /// it should be released with FreeAMMediaType() to avoid leaking
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MediaType {
     ///   GUID     majortype;
     ///   GUID     subtype;

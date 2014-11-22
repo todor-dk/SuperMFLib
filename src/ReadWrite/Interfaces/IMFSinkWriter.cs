@@ -71,8 +71,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStream(
         ///   [in]   IMFMediaType *pTargetMediaType,
         ///   [out]  DWORD *pdwStreamIndex
@@ -119,8 +118,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetInputMediaType(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IMFMediaType *pInputMediaType,
@@ -155,8 +153,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginWriting();
         /// </code>
         /// <para/>
@@ -189,8 +186,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WriteSample(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IMFSample *pSample
@@ -224,8 +220,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SendStreamTick(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  LONGLONG llTimestamp
@@ -268,8 +263,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT PlaceMarker(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  LPVOID pvContext
@@ -306,8 +300,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyEndOfSegment(
         ///   [in]  DWORD dwStreamIndex
         /// );
@@ -342,8 +335,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush(
         ///   [in]  DWORD dwStreamIndex
         /// );
@@ -391,8 +383,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetServiceForStream(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   REFGUID guidService,
@@ -437,8 +428,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStatistics(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  MF_SINK_WRITER_STATISTICS *pStats

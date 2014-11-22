@@ -36,8 +36,7 @@ namespace MediaFoundation.Transform
     /// values, call <see cref="Transform.IMFTransform.GetOutputStreamInfo" />.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFT_OUTPUT_STREAM_INFO {
     ///   DWORD dwFlags;
     ///   DWORD cbSize;

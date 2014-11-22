@@ -37,8 +37,7 @@ namespace MediaFoundation.Transform
     /// Not for application use.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _STREAM_MEDIUM {
     ///   GUID   gidMedium;
     ///   UINT32 unMediumInstance;

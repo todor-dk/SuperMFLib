@@ -66,8 +66,7 @@ namespace MediaFoundation.Transform
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RegisterMFTs(
         ///   [in]  MFT_REGISTRATION_INFO *pMFTs,
         ///   [in]  DWORD cMFTs

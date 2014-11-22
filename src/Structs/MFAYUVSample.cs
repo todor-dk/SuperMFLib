@@ -38,8 +38,7 @@ namespace MediaFoundation
     /// Describes a 4:4:4:4 Y'Cb'Cr' sample.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct __MFAYUVSample {
     ///   BYTE bCrValue;
     ///   BYTE bCbValue;

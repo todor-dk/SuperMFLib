@@ -88,8 +88,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetClientCertificate(
         ///   [in]   LPCWSTR pszURL,
         ///   [out]  BYTE **ppbData,
@@ -128,8 +127,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginGetClientCertificate(
         ///   [in]  LPCWSTR pszURL,
         ///   [in]  IMFAsyncCallback *pCallback,
@@ -169,8 +167,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndGetClientCertificate(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  BYTE **ppbData,
@@ -215,8 +212,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCertificatePolicy(
         ///   [in]   LPCWSTR pszURL,
         ///   [out]  BOOL *pfOverrideAutomaticCheck,
@@ -256,8 +252,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnServerCertificate(
         ///   [in]   LPCWSTR pszURL,
         ///   [in]   BYTE *pbData,

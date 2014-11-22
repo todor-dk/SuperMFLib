@@ -73,8 +73,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(
         ///   [in]  IMFAsyncCallback *pCallback,
         ///   [in]  IUnknown *pState
@@ -111,8 +110,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(
         ///   [in]  IMFAsyncResult *pResult
         /// );
@@ -151,8 +149,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(
         ///   [in]  IMFAsyncCallback *pCallback,
         ///   [in]  IUnknown *pState
@@ -189,8 +186,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(
         ///   [in]  IMFAsyncResult *pResult
         /// );
@@ -236,8 +232,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTopologyWorkQueueMMCSSClass(
         ///   [in]       DWORD dwTopologyWorkQueueId,
         ///   [out]      LPWSTR pwszClass,
@@ -280,8 +275,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTopologyWorkQueueMMCSSTaskId(
         ///   [in]   DWORD dwTopologyWorkQueueId,
         ///   [out]  DWORD *pdwTaskId
@@ -328,8 +322,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginRegisterPlatformWorkQueueWithMMCSS(
         ///   [in]  DWORD dwPlatformWorkQueue,
         ///   [in]  LPCWSTR wszClass,
@@ -375,8 +368,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndRegisterPlatformWorkQueueWithMMCSS(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  DWORD *pdwTaskId
@@ -421,8 +413,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS(
         ///   [in]  DWORD dwPlatformWorkQueue,
         ///   [in]  IMFAsyncCallback *pCallback,
@@ -461,8 +452,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(
         ///   [in]  IMFAsyncResult *pResult
         /// );
@@ -505,8 +495,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPlaftormWorkQueueMMCSSClass(
         ///   [in]       DWORD dwPlatformWorkQueueId,
         ///   [out]      LPWSTR pwszClass,
@@ -547,8 +536,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPlatformWorkQueueMMCSSTaskId(
         ///   [in]   DWORD dwPlatformWorkQueueId,
         ///   [out]  DWORD *pdwTaskId

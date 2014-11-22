@@ -75,8 +75,7 @@ namespace MediaFoundation.MFPlayer
         /// This method does not return a value.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnMediaPlayerEvent(
         ///   [in]  MFP_EVENT_HEADER *pEventHeader
         /// );

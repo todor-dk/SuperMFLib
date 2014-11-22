@@ -66,8 +66,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetState(
         ///   [out]  IUnknown **ppunkState
         /// );
@@ -97,8 +96,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStatus();
         /// </code>
         /// <para/>
@@ -127,8 +125,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStatus(
         ///   [in]  HRESULT hrStatus
         /// );
@@ -165,8 +162,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetObject(
         ///   [out]  IUnknown **ppObject
         /// );
@@ -193,8 +189,7 @@ namespace MediaFoundation
         /// store this pointer, you must call <strong>AddRef</strong> on the pointer. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// IUnknown* GetStateNoAddRef();
         /// </code>
         /// <para/>

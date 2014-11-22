@@ -18,10 +18,33 @@ namespace TestsVersion_10
         IMFMediaEventQueue m_meq;
         AutoResetEvent m_are = new AutoResetEvent(false);
 
-        public void DoTests()
+        private void Prepare()
         {
-            GetInterface();
+            int hr = MFExtern.MFCreateEventQueue(out m_meq);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(m_meq);
+        }
 
+        [TestCleanup]
+        public void CleanUp()
+        {
+            COMBase.SafeRelease(m_meq);
+            m_meq = null;
+        }
+
+        [TestMethod]
+        public void IMFMediaEventQueue_Tests()
+        {
+            // Idiotic MF requires an MTA. The unit tests run STA and this throws an exception.
+            // To work around this, create an MTA thread and run the test in tha MTA thread.
+            Thread thread = new Thread(this.TestsWorker);
+            thread.SetApartmentState(ApartmentState.MTA);
+            thread.Start();
+            thread.Join();
+        }
+
+        private void TestsWorker()
+        {
             TestQueueEvent();
             TestGetEvent();
             TestQueueEventParamUnk();
@@ -31,22 +54,7 @@ namespace TestsVersion_10
             TestShutdown();
         }
 
-        void TestGetEvent()
-        {
-            IMFMediaEvent pEvent;
-
-            int hr = m_meq.GetEvent(MFEventFlag.NoWait, out pEvent);
-            MFError.ThrowExceptionForHR(hr);
-        }
-
-        void TestBeginGetEvent()
-        {
-            int hr = m_meq.BeginGetEvent(this, null);
-            MFError.ThrowExceptionForHR(hr);
-            m_are.WaitOne(-1, true);
-        }
-
-        void TestQueueEvent()
+        private void TestQueueEvent()
         {
             IMFMediaEvent pEvent;
 
@@ -58,11 +66,35 @@ namespace TestsVersion_10
                 out pEvent
                 );
             MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(pEvent);
+
             hr = m_meq.QueueEvent(pEvent);
             MFError.ThrowExceptionForHR(hr);
         }
 
-        void TestQueueEventParamVar()
+        private void TestGetEvent()
+        {
+            IMFMediaEvent pEvent;
+
+            int hr = m_meq.GetEvent(MFEventFlag.NoWait, out pEvent);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(pEvent);
+        }
+
+        private void TestQueueEventParamUnk()
+        {
+            int hr = m_meq.QueueEventParamUnk(MediaEventType.MESessionEnded, Guid.Empty, 0, this);
+            MFError.ThrowExceptionForHR(hr);
+        }
+
+        private void TestBeginGetEvent()
+        {
+            int hr = m_meq.BeginGetEvent(this, null);
+            MFError.ThrowExceptionForHR(hr);
+            m_are.WaitOne(-1, true);
+        }
+
+        private void TestQueueEventParamVar()
         {
             IMFMediaEvent pEvent;
             Guid g = Guid.NewGuid();
@@ -77,27 +109,14 @@ namespace TestsVersion_10
             hr = pEvent.GetValue(p);
             MFError.ThrowExceptionForHR(hr);
 
-            Debug.Assert(p.GetString() == "asdf");
+            Assert.AreEqual("asdf", p.GetValue());
         }
 
-        void TestQueueEventParamUnk()
-        {
-            int hr = m_meq.QueueEventParamUnk(MediaEventType.MESessionEnded, Guid.Empty, 0, this);
-            MFError.ThrowExceptionForHR(hr);
-        }
-
-        void TestShutdown()
+        private void TestShutdown()
         {
             int hr = m_meq.Shutdown();
             MFError.ThrowExceptionForHR(hr);
         }
-
-        private void GetInterface()
-        {
-            int hr = MFExtern.MFCreateEventQueue(out m_meq);
-            MFError.ThrowExceptionForHR(hr);
-        }
-
 
         #region IMFAsyncCallback Members
 
@@ -114,6 +133,14 @@ namespace TestsVersion_10
 
             int hr = m_meq.EndGetEvent(pAsyncResult, out pEvent);
             MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(pEvent);
+
+            PropVariant p = new PropVariant();
+            hr = pEvent.GetValue(p);
+            MFError.ThrowExceptionForHR(hr);
+
+            Assert.AreSame(this, p.GetValue());
+
             m_are.Set();
 
             return S_Ok;

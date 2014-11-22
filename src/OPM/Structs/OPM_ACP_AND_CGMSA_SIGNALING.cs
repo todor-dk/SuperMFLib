@@ -40,8 +40,7 @@ namespace MediaFoundation.OPM
     /// query.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_ACP_AND_CGMSA_SIGNALING {
     ///   OPM_RANDOM_NUMBER rnRandomNumber;
     ///   ULONG             ulStatusFlags;

@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Contains a rational number (ratio).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_RATIONAL {
     ///   UINT Numerator;
     ///   UINT Denominator;

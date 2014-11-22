@@ -95,8 +95,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT LookupService(
         ///   [in]       MF_SERVICE_LOOKUP_TYPE Type,
         ///   [in]       DWORD dwIndex,

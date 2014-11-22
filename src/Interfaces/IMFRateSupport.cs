@@ -80,8 +80,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSlowestRate(
         ///   [in]   MFRATE_DIRECTION eDirection,
         ///   [in]   BOOL fThin,
@@ -129,8 +128,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetFastestRate(
         ///   [in]   MFRATE_DIRECTION eDirection,
         ///   [in]   BOOL fThin,
@@ -180,8 +178,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsRateSupported(
         ///   [in]       BOOL fThin,
         ///   [in]       float flRate,

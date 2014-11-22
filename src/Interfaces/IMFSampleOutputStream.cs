@@ -70,8 +70,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginWriteSample(
         ///   [in]  IMFSample *pSample,
         ///   [in]  IMFAsyncCallback *pCallback,
@@ -104,8 +103,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndWriteSample(
         ///   [in]  IMFAsyncResult *pResult
         /// );

@@ -62,8 +62,7 @@ namespace MediaFoundation.Misc
     /// The <strong>PROPVARIANT</strong> structure is defined as follows: 
     /// </summary>
     /// <remarks>
-    /// 	<strong>C/C++ Syntax</strong>
-    /// 	<code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct PROPVARIANT {
     ///   VARTYPE vt;
     ///   WORD    wReserved1;
@@ -145,7 +144,7 @@ namespace MediaFoundation.Misc
     ///   };
     /// } PROPVARIANT;
     /// </code>
-    /// 	<para/>
+    /// <para/>
     /// The above documentation is © Microsoft Corporation. It is reproduced here 
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
@@ -172,8 +171,7 @@ namespace MediaFoundation.Misc
         /// Pointer to the source <c>PROPVARIANT</c> structure. 
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT PropVariantCopy(
         ///   _Out_  PROPVARIANT *pvarDest,
         ///   _In_   const PROPVARIANT *pvarSrc
@@ -202,8 +200,7 @@ namespace MediaFoundation.Misc
         /// <strong>PROPVARIANT</strong> is zeroed and the type is set to VT_EMPTY. 
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT PropVariantClear(
         ///   _Inout_  PROPVARIANT *pvar
         /// );

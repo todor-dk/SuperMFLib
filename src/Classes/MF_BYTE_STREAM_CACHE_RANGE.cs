@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// Specifies a range of bytes.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// struct MF_BYTE_STREAM_CACHE_RANGE {
     ///   QWORD qwStartOffset;
     ///   QWORD qwEndOffset;

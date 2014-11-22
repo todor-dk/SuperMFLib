@@ -35,8 +35,7 @@ namespace MediaFoundation.Transform
     /// Contains media type information for registering a Media Foundation transform (MFT). 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFT_REGISTER_TYPE_INFO {
     ///   GUID guidMajorType;
     ///   GUID guidSubtype;

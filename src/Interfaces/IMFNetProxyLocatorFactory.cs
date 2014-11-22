@@ -79,8 +79,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateProxyLocator(
         ///   [in]   LPCWSTR pszProtocol,
         ///   [out]  IMFNetProxyLocator **ppProxyLocator

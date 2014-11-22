@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// interlaced.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA {
     ///   DXVAHD_FRAME_FORMAT FrameFormat;
     /// } DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA;

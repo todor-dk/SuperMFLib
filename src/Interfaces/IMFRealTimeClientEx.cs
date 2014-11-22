@@ -73,8 +73,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RegisterThreadsEx(
         ///   [in, out]  DWORD *pdwTaskIndex,
         ///   [in]       LPCWSTR wszClassName,
@@ -104,8 +103,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UnregisterThreads();
         /// </code>
         /// <para/>
@@ -132,8 +130,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetWorkQueueEx(
         ///   DWORD dwMultithreadedWorkQueueId,
         ///   LONG lWorkItemBasePriority

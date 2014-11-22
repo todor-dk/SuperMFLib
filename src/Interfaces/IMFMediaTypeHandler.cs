@@ -72,8 +72,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsMediaTypeSupported(
         ///   [in]   IMFMediaType *pMediaType,
         ///   [out]  IMFMediaType **ppMediaType
@@ -103,8 +102,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMediaTypeCount(
         ///   [out]  DWORD *pdwTypeCount
         /// );
@@ -143,8 +141,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMediaTypeByIndex(
         ///   [in]   DWORD dwIndex,
         ///   [out]  IMFMediaType **ppType
@@ -180,8 +177,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentMediaType(
         ///   [in]  IMFMediaType *pMediaType
         /// );
@@ -216,8 +212,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentMediaType(
         ///   [out]  IMFMediaType **ppMediaType
         /// );
@@ -246,8 +241,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMajorType(
         ///   [out]  GUID *pguidMajorType
         /// );

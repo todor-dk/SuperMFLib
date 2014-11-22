@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// the <see cref="MFPlayer.IMFPMediaPlayer.FrameStep"/> method completes. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_FRAME_STEP_EVENT {
     ///   MFP_EVENT_HEADER header;
     ///   IMFPMediaItem    *pMediaItem;

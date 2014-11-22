@@ -37,8 +37,7 @@ namespace MediaFoundation
     /// Describes a video format.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFVIDEOFORMAT {
     ///   DWORD                 dwSize;
     ///   MFVideoInfo           videoInfo;

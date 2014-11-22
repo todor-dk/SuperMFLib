@@ -107,8 +107,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCharacteristics(
         ///   [out]  DWORD *pdwCharacteristics
         /// );
@@ -153,8 +152,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStreamSink(
         ///   [in]   DWORD dwStreamSinkIdentifier,
         ///   [in]   IMFMediaType *pMediaType,
@@ -197,8 +195,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveStreamSink(
         ///   [in]  DWORD dwStreamSinkIdentifier
         /// );
@@ -232,8 +229,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSinkCount(
         ///   [out]  DWORD *pcStreamSinkCount
         /// );
@@ -273,8 +269,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSinkByIndex(
         ///   [in]   DWORD dwIndex,
         ///   [out]  IMFStreamSink **ppStreamSink
@@ -315,8 +310,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSinkById(
         ///   [in]   DWORD dwStreamSinkIdentifier,
         ///   [out]  IMFStreamSink **ppStreamSink
@@ -355,8 +349,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPresentationClock(
         ///   [in]  IMFPresentationClock *pPresentationClock
         /// );
@@ -392,8 +385,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPresentationClock(
         ///   [out]  IMFPresentationClock **ppPresentationClock
         /// );
@@ -424,8 +416,7 @@ namespace MediaFoundation.Alt
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>

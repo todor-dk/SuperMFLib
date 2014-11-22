@@ -72,8 +72,7 @@ namespace MediaFoundation.OPM
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OPMGetVideoOutputsFromHMONITOR(
         ///   _In_   HMONITOR hMonitor,
         ///   _In_   OPM_VIDEO_OUTPUT_SEMANTICS vos,
@@ -126,8 +125,7 @@ namespace MediaFoundation.OPM
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(
         ///   _In_   IDirect3DDevice9 *pDirect3DDevice9,
         ///   _In_   OPM_VIDEO_OUTPUT_SEMANTICS vos,

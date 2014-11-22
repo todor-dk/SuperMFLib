@@ -72,8 +72,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRemoteObject(
         ///   [in]   REFIID riid,
         ///   [out]  void **ppv
@@ -111,8 +110,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRemoteHost(
         ///   [in]   REFIID riid,
         ///   [out]  void **ppv

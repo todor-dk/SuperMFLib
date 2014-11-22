@@ -64,8 +64,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetElementCount(
         ///   [out]  DWORD *pcElements
         /// );
@@ -98,8 +97,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetElement(
         ///   [in]   DWORD dwElementIndex,
         ///   [out]  IUnknown **ppUnkElement
@@ -134,8 +132,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddElement(
         ///   [in]  IUnknown *pUnkElement
         /// );
@@ -174,8 +171,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveElement(
         ///   [in]   DWORD dwElementIndex,
         ///   [out]  IUnknown **ppUnkElement
@@ -213,8 +209,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InsertElementAt(
         ///   [in]  DWORD dwIndex,
         ///   [in]  IUnknown *pUnknown
@@ -246,8 +241,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllElements();
         /// </code>
         /// <para/>

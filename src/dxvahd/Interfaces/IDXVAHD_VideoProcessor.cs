@@ -75,8 +75,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVideoProcessBltState(
         ///   [in]  DXVAHD_BLT_STATE State,
         ///   [in]  UINT DataSize,
@@ -118,8 +117,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessBltState(
         ///   [in]   DXVAHD_BLT_STATE State,
         ///   [in]   UINT DataSize,
@@ -167,8 +165,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVideoProcessStreamState(
         ///   [in]  UINT StreamNumber,
         ///   [in]  DXVAHD_STREAM_STATE State,
@@ -217,8 +214,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessStreamState(
         ///   [in]   UINT StreamNumber,
         ///   [in]   DXVAHD_STREAM_STATE State,
@@ -271,8 +267,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT VideoProcessBltHD(
         ///   [in]  IDirect3DSurface9 *pOutputSurface,
         ///   [in]  UINT OutputFrame,

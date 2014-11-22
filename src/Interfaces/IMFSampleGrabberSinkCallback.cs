@@ -65,8 +65,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockStart(
         /// [in]  MFTIME hnsSystemTime,
         /// [in]  LONGLONG llClockStartOffset
@@ -98,8 +98,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SINK_ALREADYSTOPPED</strong></term><description>Deprecated. Do not use this error code.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockStop(
         /// [in]  MFTIME hnssSystemTime
         /// );
@@ -123,8 +123,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockPause(
         /// [in]  MFTIME hnsSystemTime
         /// );
@@ -148,8 +148,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockRestart(
         /// [in]  MFTIME hnsSystemTime
         /// );
@@ -174,8 +174,8 @@ namespace MediaFoundation
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockSetRate(
         /// [in]  MFTIME hnsSystemTime,
         /// [in]  float flRate
@@ -211,8 +211,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnSetPresentationClock(
         ///   [in]  IMFPresentationClock *pPresentationClock
         /// );
@@ -258,8 +257,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnProcessSample(
         ///   [in]  REFGUID guidMajorMediaType,
         ///   [in]  DWORD dwSampleFlags,
@@ -299,8 +297,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnShutdown();
         /// </code>
         /// <para/>

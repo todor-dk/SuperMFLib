@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// Acceleration High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHDSW_CALLBACKS {
     ///   PDXVAHDSW_CreateDevice                      CreateDevice;
     ///   PDXVAHDSW_ProposeVideoPrivateFormat         ProposeVideoPrivateFormat;

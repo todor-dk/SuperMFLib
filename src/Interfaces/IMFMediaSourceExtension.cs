@@ -55,8 +55,7 @@ namespace MediaFoundation
         /// The collection of source buffers.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// IMFSourceBufferList GetSourceBuffers();
         /// </code>
         /// <para/>
@@ -76,8 +75,7 @@ namespace MediaFoundation
         /// The list of active source buffers.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// IMFSourceBufferList GetActiveSourceBuffers();
         /// </code>
         /// <para/>
@@ -97,8 +95,7 @@ namespace MediaFoundation
         /// The ready state of the media source.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// MF_MSE_READY GetReadyState();
         /// </code>
         /// <para/>
@@ -118,8 +115,7 @@ namespace MediaFoundation
         /// The duration of the media source in 100-nanosecond units. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// double GetDuration();
         /// </code>
         /// <para/>
@@ -143,8 +139,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDuration(
         ///   [in]  double duration
         /// );
@@ -176,8 +171,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddSourceBuffer(
         ///   [in]   BSTR type,
         ///   [in]   IMFSourceBufferNotify *pNotify,
@@ -210,8 +204,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveSourceBuffer(
         ///   [in]  IMFSourceBuffer *pSourceBuffer
         /// );
@@ -239,8 +232,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetEndOfStream(
         ///   [in]  MF_MSE_ERROR error
         /// );
@@ -267,8 +259,7 @@ namespace MediaFoundation
         /// <strong>true</strong> if the media type is supported; otherwise, <strong>false</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL IsTypeSupported(
         ///   [in]  BSTR type
         /// );
@@ -295,8 +286,7 @@ namespace MediaFoundation
         /// The source buffer.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// IMFSourceBuffer GetSourceBuffer(
         ///   [in]  DWORD dwStreamIndex
         /// );

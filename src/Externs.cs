@@ -54,8 +54,8 @@ namespace MediaFoundation
         /// <returns>Type: <strong>HRESULT</strong><para />
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
         /// HRESULT</strong> error code.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT PSCreateMemoryPropertyStore(
         /// _In_   REFIID riid,
         /// _Out_  void **ppv
@@ -79,8 +79,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFShutdown(void);
         /// </code>
         /// <para/>
@@ -124,8 +123,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFStartup(
         ///   ULONG Version,
         ///   DWORD dwFlags = MFSTARTUP_FULL
@@ -196,8 +194,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSystemTimeSource(
         ///   IMFPresentationTimeSource **ppSystemTimeSource
         /// );
@@ -231,8 +228,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateCollection(
         ///   _Out_  IMFCollection **ppIMFCollection
         /// );
@@ -271,8 +267,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateStreamDescriptor(
         ///   DWORD dwStreamIdentifier,
         ///   DWORD cMediaTypes,
@@ -310,8 +305,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreatePropertyStore(
         ///   _Out_  IPropertyStore **ppStore
         /// );
@@ -345,8 +339,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAttributes(
         ///   _Out_  IMFAttributes **ppMFAttributes,
         ///   _In_   UINT32 cInitialSize
@@ -391,8 +384,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateWaveFormatExFromMFMediaType(
         ///   IMFMediaType *pMFType,
         ///   WAVEFORMATEX **ppWF,
@@ -445,8 +437,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAsyncResult(
         ///   IUnknown *punkObject,
         ///   IMFAsyncCallback *pCallback,
@@ -488,8 +479,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInvokeCallback(
         ///   IMFAsyncResult *pAsyncResult
         /// );
@@ -525,8 +515,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreatePresentationDescriptor(
         ///   DWORD cStreamDescriptors,
         ///   IMFStreamDescriptor **apStreamDescriptors,
@@ -571,8 +560,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromWaveFormatEx(
         ///   IMFMediaType *pMFType,
         ///   const WAVEFORMATEX *pWaveFormat,
@@ -610,8 +598,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateEventQueue(
         ///   IMFMediaEventQueue **ppMediaEventQueue
         /// );
@@ -640,8 +627,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaType(
         ///   IMFMediaType **ppMFType
         /// );
@@ -690,8 +676,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaEvent(
         ///   MediaEventType met,
         ///   REFGUID guidExtendedType,
@@ -733,8 +718,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSample(
         ///   IMFSample **ppIMFSample
         /// );
@@ -772,8 +756,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMemoryBuffer(
         ///   DWORD cbMaxLength,
         ///   IMFMediaBuffer **ppBuffer
@@ -823,8 +806,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetService(
         ///   IUnknown *punkObject,
         ///   REFGUID guidService,
@@ -867,8 +849,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoRendererActivate(
         ///   _In_   HWND hwndVideo,
         ///   _Out_  IMFActivate **ppActivate
@@ -902,8 +883,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTopologyNode(
         ///   _In_   MF_TOPOLOGY_TYPE NodeType,
         ///   _Out_  IMFTopologyNode **ppNode
@@ -934,8 +914,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSourceResolver(
         ///   _Out_  IMFSourceResolver **ppISourceResolver
         /// );
@@ -974,8 +953,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaSession(
         ///   IMFAttributes *pConfiguration,
         ///   IMFMediaSession **ppMS
@@ -1011,8 +989,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTopology(
         ///   IMFTopology **ppTopo
         /// );
@@ -1041,8 +1018,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAudioRendererActivate(
         ///   _Out_  IMFActivate **ppActivate
         /// );
@@ -1072,8 +1048,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreatePresentationClock(
         ///   IMFPresentationClock **ppPresentationClock
         /// );
@@ -1120,8 +1095,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFEnumDeviceSources(
         ///   _In_   IMFAttributes *pAttributes,
         ///   _Out_  IMFActivate ***pppSourceActivate,
@@ -1215,8 +1189,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTRegister(
         ///   _In_  CLSID clsidMFT,
         ///   _In_  GUID guidCategory,
@@ -1262,8 +1235,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTUnregister(
         ///   _In_  CLSID clsidMFT
         /// );
@@ -1321,8 +1293,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTGetInfo(
         ///   _In_   CLSID clsidMFT,
         ///   _Out_  LPWSTR *pszName,
@@ -1376,8 +1347,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateNamedPropertyStore(
         ///   _Out_  INamedPropertyStore **ppStore
         /// );
@@ -1407,8 +1377,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFLockPlatform(void);
         /// </code>
         /// <para/>
@@ -1435,8 +1404,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFUnlockPlatform(void);
         /// </code>
         /// <para/>
@@ -1465,8 +1433,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetTimerPeriodicity(
         ///   _Out_  DWORD *Periodicity
         /// );
@@ -1507,8 +1474,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateFile(
         ///   MF_FILE_ACCESSMODE AccessMode,
         ///   MF_FILE_OPENMODE OpenMode,
@@ -1554,8 +1520,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTempFile(
         ///   MF_FILE_ACCESSMODE AccessMode,
         ///   MF_FILE_OPENMODE OpenMode,
@@ -1618,8 +1583,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFBeginCreateFile(
         ///   _In_   MF_FILE_ACCESSMODE AccessMode,
         ///   _In_   MF_FILE_OPENMODE OpenMode,
@@ -1668,8 +1632,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFEndCreateFile(
         ///   _In_   IMFAsyncResult *pResult,
         ///   _Out_  IMFByteStream **ppFile
@@ -1705,8 +1668,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCancelCreateFile(
         ///   _In_  IUnknown *pCancelCookie
         /// );
@@ -1760,8 +1722,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAlignedMemoryBuffer(
         ///   DWORD cbMaxLength,
         ///   DWORD fAlignmentFlags,
@@ -1788,8 +1749,7 @@ namespace MediaFoundation
         /// Returns the system time, in 100-nanosecond units. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// MFTIME MFGetSystemTime(void);
         /// </code>
         /// <para/>
@@ -1823,8 +1783,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetSupportedSchemes(
         ///   _Out_  PROPVARIANT *pPropVarSchemeArray
         /// );
@@ -1861,8 +1820,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetSupportedMimeTypes(
         ///   _Out_  PROPVARIANT *pPropVarMimeTypeArray
         /// );
@@ -1896,8 +1854,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSimpleTypeHandler(
         ///   _Out_  IMFMediaTypeHandler **ppHandler
         /// );
@@ -1935,8 +1892,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSequencerSegmentOffset(
         ///   _In_   MFSequencerElementId dwId,
         ///   _In_   MFTIME hnsOffset,
@@ -1976,8 +1932,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoRenderer(
         ///   _In_   REFIID riidRenderer,
         ///   _Out_  void **ppVideoRenderer
@@ -2026,8 +1981,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaBufferWrapper(
         ///   _In_   IMFMediaBuffer *pBuffer,
         ///   _In_   DWORD cbOffset,
@@ -2080,8 +2034,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(
         ///   IMFSample *pIMFSample,
         ///   IMFMediaBuffer *pIMFMediaBuffer,
@@ -2129,8 +2082,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitAttributesFromBlob(
         ///   _In_  IMFAttributes *pAttributes,
         ///   _In_  const UINT8 *pBuf,
@@ -2171,8 +2123,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetAttributesAsBlobSize(
         ///   _In_   IMFAttributes *pAttributes,
         ///   _Out_  UINT32 *pcbBufSize
@@ -2215,8 +2166,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetAttributesAsBlob(
         ///   _In_   IMFAttributes *pAttributes,
         ///   _Out_  UINT8 *pBuf,
@@ -2260,8 +2210,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFSerializeAttributesToStream(
         ///   IMFAttributes *pAttr,
         ///   DWORD dwOptions,
@@ -2304,8 +2253,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFDeserializeAttributesFromStream(
         ///   IMFAttributes *pAttr,
         ///   DWORD dwOptions,
@@ -2347,8 +2295,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMFVideoFormatFromMFMediaType(
         ///   _In_   IMFMediaType *pMFType,
         ///   _Out_  MFVIDEOFORMAT **ppMFVF,
@@ -2385,8 +2332,7 @@ namespace MediaFoundation
         /// format is compressed or not recognized, the return value is D3DFMT_UNKNOWN. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD MFGetUncompressedVideoFormat(
         ///   _In_  const MFVIDEOFORMAT *pVideoFormat
         /// );
@@ -2427,8 +2373,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromMFVideoFormat(
         ///   IMFMediaType *pMFType,
         ///   const MFVIDEOFORMAT *pMFVF,
@@ -2479,8 +2424,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitAMMediaTypeFromMFMediaType(
         ///   IMFMediaType *pMFType,
         ///   GUID guidFormatBlockType,
@@ -2529,8 +2473,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAMMediaTypeFromMFMediaType(
         ///   IMFMediaType *pMFType,
         ///   GUID guidFormatBlockType,
@@ -2572,8 +2515,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromAMMediaType(
         ///   IMFMediaType *pMFType,
         ///   const AM_MEDIA_TYPE *pAMType
@@ -2617,8 +2559,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromVideoInfoHeader(
         ///   IMFMediaType *pMFType,
         ///   const VIDEOINFOHEADER *pVIH,
@@ -2671,8 +2612,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromVideoInfoHeader2(
         ///   IMFMediaType *pMFType,
         ///   const VIDEOINFOHEADER2 *pVIH2,
@@ -2714,8 +2654,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMediaType(
         ///   _In_   const MFVIDEOFORMAT *pVideoFormat,
         ///   _Out_  IMFVideoMediaType **ppIVideoMediaType
@@ -2787,8 +2726,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTEnum(
         ///   _In_   GUID guidCategory,
         ///   _In_   UINT32 Flags,
@@ -2839,8 +2777,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSequencerSource(
         ///   IUnknown *pReserved,
         ///   IMFSequencerSource **ppSequencerSource
@@ -2877,8 +2814,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFAllocateWorkQueue(
         ///   _Out_  DWORD *pdwWorkQueue
         /// );
@@ -2911,8 +2847,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFUnlockWorkQueue(
         ///   _In_  DWORD dwWorkQueue
         /// );
@@ -2957,8 +2892,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFPutWorkItem(
         ///   _In_  DWORD dwQueue,
         ///   _In_  IMFAsyncCallback *pCallback,
@@ -3008,8 +2942,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreatePMPMediaSession(
         ///   DWORD dwCreationFlags,
         ///   IMFAttributes *pConfiguration,
@@ -3049,8 +2982,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFContentInfo(
         ///   IMFASFContentInfo **ppIContentInfo
         /// );
@@ -3083,8 +3015,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFSplitter(
         ///   IMFASFSplitter **ppISplitter
         /// );
@@ -3117,8 +3048,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFProfile(
         ///   IMFASFProfile **ppIProfile
         /// );
@@ -3150,8 +3080,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAudioRenderer(
         ///   _In_   IMFAttributes *pAudioAttributes,
         ///   _Out_  IMFMediaSink **ppSink
@@ -3187,8 +3116,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFIndexer(
         ///   IMFASFIndexer **ppIIndexer
         /// );
@@ -3222,8 +3150,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetStrideForBitmapInfoHeader(
         ///   _In_   DWORD format,
         ///   _In_   DWORD dwWidth,
@@ -3273,8 +3200,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCalculateBitmapImageSize(
         ///   _In_   const BITMAPINFOHEADER *pBMIH,
         ///   _In_   UINT32 cbBufSize,
@@ -3313,8 +3239,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoSampleFromSurface(
         ///   _In_   IUnknown *pUnkSurface,
         ///   _Out_  IMFSample **ppSample
@@ -3350,8 +3275,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFFrameRateToAverageTimePerFrame(
         ///   _In_   UINT32 unNumerator,
         ///   _In_   UINT32 unDenominator,
@@ -3389,8 +3313,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFUnwrapMediaType(
         ///   IMFMediaType *pWrap,
         ///   IMFMediaType **ppOrig
@@ -3431,8 +3354,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTopoLoader(
         ///   IMFTopoLoader **ppObj
         /// );
@@ -3466,8 +3388,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateStandardQualityManager(
         ///   _Out_  IMFQualityManager **ppQualityManager
         /// );
@@ -3505,8 +3426,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreatePMPServer(
         ///   _In_   DWORD dwCreationFlags,
         ///   _Out_  IMFPMPServer **ppPMPServer
@@ -3542,8 +3462,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFMultiplexer(
         ///   IMFASFMultiplexer **ppIMultiplexer
         /// );
@@ -3587,8 +3506,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFPutWorkItemEx(
         ///   _In_  DWORD dwQueue,
         ///   _In_  IMFAsyncResult *pResult
@@ -3636,8 +3554,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFScheduleWorkItem(
         ///   _In_   IMFAsyncCallback *pCallback,
         ///   _In_   IUnknown *pState,
@@ -3685,8 +3602,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFScheduleWorkItemEx(
         ///   _In_   IMFAsyncResult *pResult,
         ///   _In_   INT64 Timeout,
@@ -3719,8 +3635,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCancelWorkItem(
         ///   _In_  MFWORKITEM_KEY Key
         /// );
@@ -3760,8 +3675,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFAddPeriodicCallback(
         ///   _In_   MFPERIODICCALLBACK Callback,
         ///   _In_   IUnknown *pContext,
@@ -3799,8 +3713,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFRemovePeriodicCallback(
         ///   _In_  DWORD dwKey
         /// );
@@ -3828,8 +3741,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFLockWorkQueue(
         ///   _In_  DWORD dwWorkQueue
         /// );
@@ -3878,8 +3790,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFBeginRegisterWorkQueueWithMMCSS(
         ///   _In_  DWORD dwWorkQueueId,
         ///   _In_  LPCWSTR wszClass,
@@ -3924,8 +3835,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFEndRegisterWorkQueueWithMMCSS(
         ///   _In_  IMFAsyncResult *pResult,
         ///   _In_  DWORD *pdwTaskId
@@ -3970,8 +3880,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFBeginUnregisterWorkQueueWithMMCSS(
         ///   _In_  DWORD dwWorkQueueId,
         ///   _In_  IMFAsyncCallback *pDoneCallback,
@@ -4009,8 +3918,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFEndUnregisterWorkQueueWithMMCSS(
         ///   _In_  IMFAsyncResult *pResult
         /// );
@@ -4067,8 +3975,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetWorkQueueMMCSSClass(
         ///   _In_     DWORD dwWorkQueueId,
         ///   _Out_    LPWSTR pwszClass,
@@ -4109,8 +4016,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetWorkQueueMMCSSTaskId(
         ///   _In_   DWORD dwWorkQueueId,
         ///   _Out_  LPDWORD pdwTaskId
@@ -4158,8 +4064,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAC3MediaSink(
         ///   _In_   IMFByteStream *pTargetByteStream,
         ///   _In_   IMFMediaType *pAudioMediaType,
@@ -4207,8 +4112,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateADTSMediaSink(
         ///   _In_   IMFByteStream *pTargetByteStream,
         ///   _In_   IMFMediaType *pAudioMediaType,
@@ -4252,8 +4156,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMuxSink(
         ///   _In_   GUID guidOutputSubType,
         ///   _In_   IMFAttributes *pOutputAttributes,
@@ -4306,8 +4209,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WINAPI MFCreateFMPEG4MediaSink(
         ///   _In_   IMFByteStream *pIByteStream,
         ///   _In_   IMFMediaType *pVideoMediaType,
@@ -4353,8 +4255,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTranscodeTopologyFromByteStream(
         ///   _In_   IMFMediaSource *pSrc,
         ///   _In_   IMFByteStream *pOutputStream,
@@ -4386,8 +4287,7 @@ namespace MediaFoundation
         /// </param>
         /// <returns>System.Int32.</returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// STDAPI MFCreateTrackedSample(
         ///   _Out_  IMFTrackedSample **ppMFSample
         /// );
@@ -4418,8 +4318,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateStreamOnMFByteStream(
         ///   _In_   IMFByteStream *pByteStream,
         ///   _Out_  IStream **ppStream
@@ -4453,8 +4352,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMFByteStreamOnStreamEx(
         ///   _In_   IUnknown punkStream,
         ///   _Out_  IMFByteStream **ppByteStream
@@ -4490,8 +4388,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateStreamOnMFByteStreamEx(
         ///   _In_   IMFByteStream *pByteStream,
         ///   _In_   REFIID riid,
@@ -4526,8 +4423,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WINAPI MFCreateMediaTypeFromProperties(
         ///   _In_   IUnknown *punkStream,
         ///   _Out_  IMFMediaType **ppMediaType
@@ -4563,8 +4459,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WINAPI MFCreatePropertiesFromMediaType(
         ///   _In_   IMFMediaType *pMediaType,
         ///   _In_   REFIID riid,
@@ -4594,8 +4489,7 @@ namespace MediaFoundation
         /// </param>
         /// <returns>System.Int32.</returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// STDAPI MFCreateProtectedEnvironmentAccess(
         ///   _Out_  IMFProtectedEnvironmentAccess **ppAccess
         /// );
@@ -4624,8 +4518,7 @@ namespace MediaFoundation
         /// </param>
         /// <returns>System.Int32.</returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// STDAPI MFLoadSignedLibrary(
         ///   _In_   LPCWSTR pszName,
         ///   _Out_  IMFSignedLibrary **ppLib
@@ -4652,8 +4545,7 @@ namespace MediaFoundation
         /// </param>
         /// <returns>System.Int32.</returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// STDAPI MFGetSystemId(
         ///   _Out_  IMFSystemId **ppId
         /// );
@@ -4702,8 +4594,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFPutWorkItem2(
         ///   _In_  DWORD dwQueue,
         ///   _In_  LONG Priority,
@@ -4753,8 +4644,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFPutWorkItemEx2(
         ///   _In_  DWORD dwQueue,
         ///   _In_  LONG Priority,
@@ -4799,8 +4689,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFPutWaitingWorkItem(
         ///   _In_   HANDLE hEvent,
         ///   _In_   LONG Priority,
@@ -4852,8 +4741,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFAllocateSerialWorkQueue(
         ///   _In_   DWORD dwWorkQueue,
         ///   _Out_  DWORD *pdwWorkQueue
@@ -4904,8 +4792,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFBeginRegisterWorkQueueWithMMCSSEx(
         ///   _In_  DWORD dwWorkQueueId,
         ///   _In_  LPCWSTR wszClass,
@@ -4951,8 +4838,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFRegisterPlatformWithMMCSS(
         ///   _In_     PCWSTR wszClass,
         ///   _Inout_  DWORD *pdwTaskId,
@@ -4982,8 +4868,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFUnregisterPlatformFromMMCSS(void);
         /// </code>
         /// <para/>
@@ -5019,8 +4904,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFLockSharedWorkQueue(
         ///   _In_     PCWSTR wszClass,
         ///   _In_     LONG BasePriority,
@@ -5059,8 +4943,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetWorkQueueMMCSSPriority(
         ///   _In_   DWORD dwWorkQueueId,
         ///   _Out_  LONG *lPriority
@@ -5090,8 +4973,7 @@ namespace MediaFoundation
         /// Returns a <c>DXGI_FORMAT</c> value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DXGI_FORMAT STDAPI MFMapDX9FormatToDXGIFormat(
         ///   _In_  DWORD dx9
         /// );
@@ -5119,8 +5001,7 @@ namespace MediaFoundation
         /// Returns a <c>D3DFORMAT</c> value or FOURCC code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD STDAPI MFMapDXGIFormatToDX9Format(
         ///   _In_  DXGI_FORMAT dx11
         /// );
@@ -5154,8 +5035,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFLockDXGIDeviceManager(
         ///   _Out_  UINT *pResetToken,
         ///   _Out_  IMFDXGIDeviceManager **ppManager
@@ -5182,8 +5062,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFUnlockDXGIDeviceManager(void);
         /// </code>
         /// <para/>
@@ -5200,7 +5079,7 @@ namespace MediaFoundation
         /// Creates a media buffer object that manages a Windows Imaging Component (WIC) bitmap.
         /// </summary>
         /// <param name="riid">
-        /// Set this parameter to <code>__uuidof(IWICBitmap)</code>. 
+        /// Set this parameter to <c>__uuidof(IWICBitmap)</c>. 
         /// </param>
         /// <param name="punkSurface">
         /// A pointer to the <c>IUnknown</c> interface of the bitmap surface. The bitmap surface must be a WIC
@@ -5215,8 +5094,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateWICBitmapBuffer(
         ///   _In_   REFIID riid,
         ///   _In_   IUnknown *punkSurface,
@@ -5267,8 +5145,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateDXGISurfaceBuffer(
         ///   _In_   REFIID riid,
         ///   _In_   IUnknown *punkSurface,
@@ -5317,8 +5194,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoSampleAllocatorEx(
         ///   _In_   REFIID riid,
         ///   _Out_  void** ppSampleAllocator
@@ -5353,8 +5229,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateDXGIDeviceManager(
         ///   _Out_  UINT *pResetToken,
         ///   _Out_  IMFDXGIDeviceManager **ppDXVAManager
@@ -5391,8 +5266,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFRegisterLocalSchemeHandler(
         ///   _In_  PCWSTR szScheme,
         ///   _In_  IMFActivate *pActivate
@@ -5431,8 +5305,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFRegisterLocalByteStreamHandler(
         ///   _In_  PCWSTR szFileExtension,
         ///   _In_  PCWSTR szMimeType,
@@ -5468,8 +5341,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMFByteStreamWrapper(
         ///   _In_  IMFByteStream *pStream,
         ///   _In_  IMFByteStream **ppStreamWrapper
@@ -5513,8 +5385,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaExtensionActivate(
         ///   _In_   PCWSTR szActivatableClassId,
         ///   _In_   IUnknown *pConfiguration,
@@ -5571,8 +5442,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreate2DMediaBuffer(
         ///   _In_   DWORD dwWidth,
         ///   _In_   DWORD dwHeight,
@@ -5622,8 +5492,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaBufferFromMediaType(
         ///   _In_   IMFMediaType *pMediaType,
         ///   _In_   LONGLONG llDuration,
@@ -5662,8 +5531,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetContentProtectionSystemCLSID(
         ///   _In_   REFGUID guidProtectionSystemID,
         ///   _Out_  CLSID *pclsid
@@ -5696,8 +5564,7 @@ namespace MediaFoundation
         /// code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateCaptureEngine(
         ///   _Out_  IMFCaptureEngine **ppCaptureEngine
         /// );
@@ -5748,8 +5615,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSinkWriterFromURL(
         ///   _In_   LPCWSTR pwszOutputURL,
         ///   _In_   IMFByteStream *pByteStream,
@@ -5792,8 +5658,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSinkWriterFromMediaSink(
         ///   _In_   IMFMediaSink *pMediaSink,
         ///   _In_   IMFAttributes *pAttributes,
@@ -5834,8 +5699,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSourceReaderFromURL(
         ///   _In_   LPCWSTR pwszURL,
         ///   _In_   IMFAttributes *pAttributes,
@@ -5877,8 +5741,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSourceReaderFromByteStream(
         ///   _In_   IMFByteStream *pByteStream,
         ///   _In_   IMFAttributes *pAttributes,
@@ -5925,8 +5788,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSourceReaderFromMediaSource(
         ///   _In_   IMFMediaSource *pMediaSource,
         ///   _In_   IMFAttributes *pAttributes,
@@ -6001,8 +5863,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFPCreateMediaPlayer(
         ///   _In_   LPCWSTR pwszURL,
         ///   _In_   BOOL fStartPlayback,
@@ -6048,8 +5909,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateRemoteDesktopPlugin(
         ///   IMFRemoteDesktopPlugin **ppPlugin
         /// );
@@ -6099,8 +5959,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateDXSurfaceBuffer(
         ///   _In_   REFIID riid,
         ///   _In_   IUnknown *punkSurface,
@@ -6142,8 +6001,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFValidateMediaTypeSize(
         ///   _In_  GUID FormatType,
         ///   _In_  UINT8 *pBlock,
@@ -6194,8 +6052,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromMPEG1VideoInfo(
         ///   IMFMediaType *pMFType,
         ///   const MPEG1VIDEOINFO *pMP1VI,
@@ -6248,8 +6105,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitMediaTypeFromMPEG2VideoInfo(
         ///   IMFMediaType *pMFType,
         ///   const MPEG2VIDEOINFO *pMP2VI,
@@ -6298,8 +6154,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCalculateImageSize(
         ///   _In_   REFGUID guidSubtype,
         ///   _In_   UINT32 unWidth,
@@ -6344,8 +6199,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFAverageTimePerFrameToFrameRate(
         ///   _In_   UINT64 unAverageTimePerFrame,
         ///   _Out_  UINT32 *punNumerator,
@@ -6380,8 +6234,7 @@ namespace MediaFoundation
         /// </strong>. Otherwise, the function returns <strong>FALSE</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL MFCompareFullToPartialMediaType(
         ///   IMFMediaType *pMFTypeFull,
         ///   IMFMediaType *pMFTypePartial
@@ -6427,8 +6280,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFWrapMediaType(
         ///   IMFMediaType *pOrig,
         ///   REFGUID MajorType,
@@ -6466,8 +6318,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMediaTypeFromSubtype(
         ///   _In_   const GUID *pAMSubtype,
         ///   _Out_  IMFVideoMediaType **ppIVideoMediaType
@@ -6502,8 +6353,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// BOOL MFIsFormatYUV(
         ///   _In_  DWORD Format
         /// );
@@ -6546,8 +6396,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetPlaneSize(
         ///   _In_   DWORD format,
         ///   _In_   DWORD dwWidth,
@@ -6590,8 +6439,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitVideoFormat(
         ///   _Out_  MFVIDEOFORMAT *pVideoFormat,
         ///   _In_   MFStandardVideoFormat type
@@ -6636,8 +6484,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFInitVideoFormat_RGB(
         ///   _In_  MFVIDEOFORMAT *pVideoFormat,
         ///   _In_  DWORD dwWidth,
@@ -6681,8 +6528,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFConvertColorInfoToDXVA(
         ///   _Out_  DWORD *pdwToDXVA,
         ///   _In_   const MFVIDEOFORMAT *pFromFormat
@@ -6723,8 +6569,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFConvertColorInfoFromDXVA(
         ///   _Inout_  MFVIDEOFORMAT *pToFormat,
         ///   _In_     DWORD dwFromDXVA
@@ -6770,8 +6615,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCopyImage(
         ///   _In_  BYTE *pDest,
         ///   _In_  LONG lDestStride,
@@ -6817,8 +6661,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFConvertFromFP16Array(
         ///   _In_  float *pDest,
         ///   _In_  const WORD *pSrc,
@@ -6858,8 +6701,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFConvertToFP16Array(
         ///   _In_  WORD *pDest,
         ///   _In_  const float *pSrc,
@@ -6910,8 +6752,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMediaTypeFromRepresentation(
         ///   _In_   GUID guidRepresentation,
         ///   _In_   LPVOID pvRepresentation,
@@ -6950,8 +6791,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFRequireProtectedEnvironment(
         ///   _In_  IMFPresentationDescriptor *pPresentationDescriptor
         /// );
@@ -6992,8 +6832,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFSerializePresentationDescriptor(
         ///   IMFPresentationDescriptor *pPD,
         ///   DWORD *pcbData,
@@ -7037,8 +6876,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFDeserializePresentationDescriptor(
         ///   DWORD cbData,
         ///   BYTE *pbData,
@@ -7079,8 +6917,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFShutdownObject(
         ///   IUnknown *pUnk
         /// );
@@ -7117,8 +6954,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSampleGrabberSinkActivate(
         ///   IMFMediaType *pIMFMediaType,
         ///   IMFSampleGrabberSinkCallback *pIMFSampleGrabberSinkCallback,
@@ -7166,8 +7002,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateProxyLocator(
         ///   _In_   LPCWSTR pszProtocol,
         ///   _In_   IPropertyStore *pProxyConfig,
@@ -7208,8 +7043,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateNetSchemePlugin(
         ///   _In_   REFIID riid,
         ///   _Out_  LPVOID *ppvHandler
@@ -7249,8 +7083,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFProfileFromPresentationDescriptor(
         ///   IMFPresentationDescriptor *pIPD,
         ///   IMFASFProfile **ppIProfile
@@ -7293,8 +7126,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFIndexerByteStream(
         ///   _In_   IMFByteStream *pIContentByteStream,
         ///   _In_   QWORD cbIndexStartOffset,
@@ -7334,8 +7166,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFStreamSelector(
         ///   IMFASFProfile *pIASFProfile,
         ///   IMFASFStreamSelector **ppSelector
@@ -7373,8 +7204,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFMediaSink(
         ///   IMFByteStream *pIByteStream,
         ///   IMFMediaSink **ppIMediaSink
@@ -7417,8 +7247,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFMediaSinkActivate(
         ///   LPCWSTR pwszFileName,
         ///   IMFASFContentInfo *pContentInfo,
@@ -7462,8 +7291,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateWMVEncoderActivate(
         ///   IMFMediaType *pMediaType,
         ///   IPropertyStore *pEncodingConfigurationProperties,
@@ -7507,8 +7335,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateWMAEncoderActivate(
         ///   IMFMediaType *pMediaType,
         ///   IPropertyStore *pEncodingConfigurationProperties,
@@ -7549,8 +7376,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreatePresentationDescriptorFromASFProfile(
         ///   IMFASFProfile *pIProfile,
         ///   IMFPresentationDescriptor **ppIPD
@@ -7598,8 +7424,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoPresenter(
         ///   _In_   IUnknown *pOwner,
         ///   _In_   REFIID riidDevice,
@@ -7651,8 +7476,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMixer(
         ///   IUnknown *pOwner,
         ///   REFIID riidDevice,
@@ -7714,8 +7538,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMixerAndPresenter(
         ///   _In_   IUnknown *pMixerOwner,
         ///   _In_   IUnknown *pPresenterOwner,
@@ -7762,8 +7585,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFStreamingMediaSink(
         ///   IMFByteStream *pIByteStream,
         ///   IMFMediaSink **ppIMediaSink
@@ -7814,8 +7636,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateASFStreamingMediaSinkActivate(
         ///   IMFActivate *pByteStreamActivate,
         ///   IMFASFContentInfo *pContentInfo,
@@ -7848,8 +7669,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTransformActivate(
         ///   _Out_  IMFActivate **ppActivate
         /// );
@@ -7882,8 +7702,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateDeviceSource(
         ///   _In_   IMFAttributes *pAttributes,
         ///   _Out_  IMFMediaSource **ppSource
@@ -7915,8 +7734,7 @@ namespace MediaFoundation
         /// </param>
         /// <returns>System.Int32.</returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// STDAPI MFCreateDeviceSourceActivate(
         ///   _In_   IMFAttributes *pAttributes,
         ///   _Out_  IMFActivate **ppActivate
@@ -7947,8 +7765,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateSampleCopierMFT(
         ///   _Out_  IMFTransform **ppCopierMFT
         /// );
@@ -7983,8 +7800,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTranscodeProfile(
         ///   _Out_  IMFTranscodeProfile **ppTranscodeProfile
         /// );
@@ -8053,8 +7869,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// STDAPI MFCreateTranscodeTopology(
         ///   _In_   IMFMediaSource *pSrc,
         ///   _In_   LPCWSTR pwszOutputFilePath,
@@ -8116,8 +7931,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTranscodeGetAudioOutputAvailableTypes(
         ///   _In_   REFGUID guidSubType,
         ///   _In_   DWORD dwMFTFlags,
@@ -8159,8 +7973,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateTranscodeSinkActivate(
         ///   _Out_   **ppActivate
         /// );
@@ -8191,8 +8004,7 @@ namespace MediaFoundation
         /// Returns an <strong>HRESULT</strong> value. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMFByteStreamOnStream(
         ///   _In_   IStream *pStream,
         ///   _Out_  IMFByteStream **ppByteStream
@@ -8233,8 +8045,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAggregateSource(
         ///   _In_   IMFCollection *pSourceCollection,
         ///   _Out_  IMFMediaSource **ppAggSource
@@ -8290,8 +8101,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetTopoNodeCurrentType(
         ///   IMFTopologyNode *pNode,
         ///   DWORD dwStreamIndex,
@@ -8343,8 +8153,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMPEG4MediaSink(
         ///   _In_   IMFByteStream *pIByteStream,
         ///   _In_   IMFMediaType *pVideoMediaType,
@@ -8397,8 +8206,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreate3GPMediaSink(
         ///   _In_   IMFByteStream *pIByteStream,
         ///   _In_   IMFMediaType *pVideoMediaType,
@@ -8437,8 +8245,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateMP3MediaSink(
         ///   _In_   IMFByteStream *pTargetByteStream,
         ///   _Out_  IMFMediaSink **ppMediaSink
@@ -8499,8 +8306,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(
         ///   _In_   const BITMAPINFOHEADER *pbmihBitMapInfoHeader,
         ///   _In_   UINT32 cbBitMapInfoHeader,
@@ -8547,8 +8353,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFGetPluginControl(
         ///   _Out_  IMFPluginControl **ppPluginControl
         /// );
@@ -8590,8 +8395,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT STDAPI MFGetMFTMerit(
         ///   _Inout_  IUnknown *pMFT,
         ///   _In_     UINT32 cbVerifier,
@@ -8653,8 +8457,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTEnumEx(
         ///   _In_   GUID guidCategory,
         ///   _In_   UINT32 Flags,
@@ -8713,8 +8516,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFAllocateWorkQueueEx(
         ///   _In_   MFASYNC_WORKQUEUE_TYPE WorkQueueType,
         ///   _Out_  DWORD *pdwWorkQueue
@@ -8771,8 +8573,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTRegisterLocal(
         ///   _In_  IClassFactory *pClassFactory,
         ///   _In_  REFGUID guidCategory,
@@ -8821,8 +8622,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTUnregisterLocal(
         ///   _In_  IClassFactory *pClassFactory
         /// );
@@ -8876,8 +8676,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTRegisterLocalByCLSID(
         ///   _In_  REFCLSID clisdMFT,
         ///   _In_  REFGUID guidCategory,
@@ -8925,8 +8724,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFTUnregisterLocalByCLSID(
         ///   _In_  CLSID clsidMFT
         /// );
@@ -8976,8 +8774,7 @@ namespace MediaFoundation
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WINAPI MFCreateAVIMediaSink(
         ///   _In_      IMFByteStream *pIByteStream,
         ///   _In_      IMFMediaType *pVideoMediaType,
@@ -9016,8 +8813,7 @@ namespace MediaFoundation
         /// The function returns an <strong>HRESULT</strong>.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WINAPI MFCreateWAVEMediaSink(
         ///   _In_   IMFByteStream *pTargetByteStream,
         ///   _In_   IMFMediaType *pAudioMediaType,
@@ -9055,8 +8851,7 @@ namespace MediaFoundation
         /// those in the following table. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WINAPI MFGetLocalId(
         ///   _In_  const BYTE *verifier,
         ///   UINT32 size,
@@ -9096,8 +8891,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateAudioMediaType(
         ///   _In_   const WAVEFORMATEX *pAudioFormat,
         ///   _Out_  IMFAudioMediaType **ppIAudioMediaType
@@ -9134,8 +8928,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateCredentialCache(
         ///   IMFNetCredentialCache **ppCache
         /// );
@@ -9186,8 +8979,7 @@ namespace MediaFoundation
         /// Returns <strong>E_FAIL</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(
         ///   const BITMAPINFOHEADER *pbmihBitMapInfoHeader,
         ///   DWORD dwPixelAspectRatioX,
@@ -9271,8 +9063,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMediaTypeFromVideoInfoHeader(
         ///   const KS_VIDEOINFOHEADER *pVideoInfoHeader,
         ///   DWORD cbVideoInfoHeader,
@@ -9333,8 +9124,7 @@ namespace MediaFoundation
         /// HRESULT</strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFCreateVideoMediaTypeFromVideoInfoHeader2(
         ///   const KS_VIDEOINFOHEADER2 *pVideoInfoHeader,
         ///   DWORD cbVideoInfoHeader,

@@ -37,8 +37,7 @@ namespace MediaFoundation
     /// Represents a ratio.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFRatio {
     ///   DWORD Numerator;
     ///   DWORD Denominator;

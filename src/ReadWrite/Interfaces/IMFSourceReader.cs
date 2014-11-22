@@ -77,8 +77,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSelection(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  BOOL *pfSelected
@@ -120,8 +119,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamSelection(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  BOOL fSelected
@@ -172,8 +170,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNativeMediaType(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   DWORD dwMediaTypeIndex,
@@ -222,8 +219,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentMediaType(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  IMFMediaType **ppMediaType
@@ -278,8 +274,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentMediaType(
         ///   [in]       DWORD dwStreamIndex,
         ///   [in, out]  DWORD *pdwReserved,
@@ -330,8 +325,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentPosition(
         ///   [in]  REFGUID guidTimeFormat,
         ///   [in]  REFPROPVARIANT varPosition
@@ -398,8 +392,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ReadSample(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   DWORD dwControlFlags,
@@ -445,8 +438,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush(
         ///   [in]  DWORD dwStreamIndex
         /// );
@@ -496,8 +488,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetServiceForStream(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   REFGUID guidService,
@@ -557,8 +548,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPresentationAttribute(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   REFGUID guidAttribute,

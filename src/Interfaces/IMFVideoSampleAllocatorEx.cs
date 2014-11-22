@@ -68,8 +68,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDirectXManager(
         /// [in]  IUnknown *pManager
         /// );
@@ -97,8 +97,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UninitializeSampleAllocator();
         /// </code>
         /// <para />
@@ -126,8 +126,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_INVALIDMEDIATYPE</strong></term><description>Invalid media type.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InitializeSampleAllocator(
         /// [in]  DWORD cRequestedFrames,
         /// [in]  IMFMediaType *pMediaType
@@ -160,8 +160,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SAMPLEALLOCATOR_EMPTY</strong></term><description> No samples are available. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AllocateSample(
         /// [out]  IMFSample **ppSample
         /// );
@@ -207,8 +207,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InitializeSampleAllocatorEx(
         ///   [in]  DWORD cInitialSamples,
         ///   [in]  DWORD cMaximumSamples,

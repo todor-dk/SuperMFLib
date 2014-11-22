@@ -44,8 +44,7 @@ namespace MediaFoundation.Misc
     /// structure, along with the additional information. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct {
     ///   WORD  wFormatTag;
     ///   WORD  nChannels;

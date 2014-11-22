@@ -36,8 +36,7 @@ namespace MediaFoundation.Transform
     /// used in the <see cref="Transform.IMFTransform.ProcessOutput" /> method.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFT_OUTPUT_DATA_BUFFER {
     ///   DWORD         dwStreamID;
     ///   IMFSample     *pSample;

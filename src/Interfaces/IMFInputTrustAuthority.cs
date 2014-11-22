@@ -83,8 +83,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDecrypter(
         ///   [in]   REFIID riid,
         ///   [out]  void **ppv
@@ -126,8 +125,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RequestAccess(
         ///   [in]   MFPOLICYMANAGER_ACTION Action,
         ///   [out]  IMFActivate **ppContentEnablerActivate
@@ -168,8 +166,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPolicy(
         ///   [in]   MFPOLICYMANAGER_ACTION Action,
         ///   [out]  IMFOutputPolicy **ppPolicy
@@ -205,8 +202,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BindAccess(
         ///   [in]  MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *pParam
         /// );
@@ -241,8 +237,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateAccess(
         ///   [in]  MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *pParam
         /// );
@@ -272,8 +267,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Reset();
         /// </code>
         /// <para/>

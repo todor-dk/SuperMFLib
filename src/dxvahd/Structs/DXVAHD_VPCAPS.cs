@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// video processor.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_VPCAPS {
     ///   GUID VPGuid;
     ///   UINT PastFrames;

@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// device.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_VPDEVCAPS {
     ///   DXVAHD_DEVICE_TYPE DeviceType;
     ///   UINT               DeviceCaps;

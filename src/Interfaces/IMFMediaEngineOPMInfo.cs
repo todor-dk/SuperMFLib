@@ -68,8 +68,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOPMInfo(
         ///   [out]  MF_MEDIA_ENGINE_OPM_STATUS *pStatus,
         ///   [out]  BOOL *pConstricted

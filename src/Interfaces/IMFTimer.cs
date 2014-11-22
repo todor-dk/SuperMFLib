@@ -83,8 +83,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetTimer(
         ///   [in]   DWORD dwFlags,
         ///   [in]   LONGLONG llClockTime,
@@ -126,8 +125,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CancelTimer(
         ///   [in]  IUnknown *punkKey
         /// );

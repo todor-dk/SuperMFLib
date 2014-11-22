@@ -39,8 +39,7 @@ namespace MediaFoundation
     /// Defines the properties of a clock.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFCLOCK_PROPERTIES {
     ///   unsigned __int64 qwCorrelationRate;
     ///   GUID             guidClockId;

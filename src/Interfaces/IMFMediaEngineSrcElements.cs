@@ -57,8 +57,7 @@ namespace MediaFoundation
         /// Returns the number of source elements.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD GetLength();
         /// </code>
         /// <para/>
@@ -88,8 +87,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetURL(
         ///   [in]   DWORD index,
         ///   [out]  BSTR *pURL
@@ -125,8 +123,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetType(
         ///   [in]   DWORD index,
         ///   [out]  BSTR *pType
@@ -162,8 +159,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMedia(
         ///   [in]   DWORD index,
         ///   [out]  BSTR *pMedia
@@ -200,8 +196,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddElement(
         ///   [in]  BSTR pURL,
         ///   [in]  BSTR pType,
@@ -230,8 +225,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllElements();
         /// </code>
         /// <para/>

@@ -69,8 +69,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMaximumDropMode(
         ///   [out]  MF_QUALITY_DROP_MODE *peDropMode
         /// );
@@ -99,8 +98,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMinimumQualityLevel(
         ///   [out]  MF_QUALITY_LEVEL *peQualityLevel
         /// );

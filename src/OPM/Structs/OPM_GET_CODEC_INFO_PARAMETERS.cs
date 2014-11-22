@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains information for the <see cref="OPM.MFOpmStatusRequests.OPM_GET_CODEC_INFO" /> command.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_GET_CODEC_INFO_PARAMETERS {
     ///   DWORD cbVerifier;
     ///   BYTE  Verifier[OPM_GET_INFORMATION_PARAMETERS_SIZE - 4];

@@ -69,8 +69,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetClockCharacteristics(
         ///   [out]  DWORD *pdwCharacteristics
         /// );
@@ -111,8 +110,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCorrelatedTime(
         ///   [in]   DWORD dwReserved,
         ///   [out]  LONGLONG *pllClockTime,
@@ -149,8 +147,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetContinuityKey(
         ///   [out]  DWORD *pdwContinuityKey
         /// );
@@ -186,8 +183,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetState(
         ///   [in]   DWORD dwReserved,
         ///   [out]  MFCLOCK_STATE *peClockState
@@ -222,8 +218,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProperties(
         ///   [out]  MFCLOCK_PROPERTIES *pClockProperties
         /// );

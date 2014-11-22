@@ -52,8 +52,7 @@ namespace MediaFoundation
         /// Used to indicate that the  media source has opened.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnSourceOpen();
         /// </code>
         /// <para/>
@@ -70,8 +69,7 @@ namespace MediaFoundation
         /// Used to indicate that the media source has ended.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnSourceEnded();
         /// </code>
         /// <para/>
@@ -88,8 +86,7 @@ namespace MediaFoundation
         /// Used to indicate that the media source has closed.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnSourceClose();
         /// </code>
         /// <para/>

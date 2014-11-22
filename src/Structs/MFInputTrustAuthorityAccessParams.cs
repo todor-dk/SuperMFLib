@@ -41,8 +41,7 @@ namespace MediaFoundation
     /// <see cref="IMFInputTrustAuthority.UpdateAccess" /> method.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS {
     ///   DWORD                               dwSize;
     ///   DWORD                               dwVer;

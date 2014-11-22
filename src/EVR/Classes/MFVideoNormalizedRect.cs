@@ -44,8 +44,7 @@ namespace MediaFoundation.EVR
     /// quadrant is defined as {0.0, 0.0, 0.5, 0.5}.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFVideoNormalizedRect {
     ///   float left;
     ///   float top;

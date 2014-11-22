@@ -36,8 +36,7 @@ namespace MediaFoundation
     /// Specifies an index for the ASF indexer object. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _ASF_INDEX_IDENTIFIER {
     ///   GUID guidIndexType;
     ///   WORD wStreamNumber;

@@ -59,8 +59,7 @@ namespace MediaFoundation.EVR
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamActiveState(
         ///   [in]  BOOL fActive
         /// );
@@ -86,8 +85,7 @@ namespace MediaFoundation.EVR
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamActiveState(
         ///   [out]  BOOL *lpfActive
         /// );

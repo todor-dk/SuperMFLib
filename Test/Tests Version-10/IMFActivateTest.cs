@@ -23,6 +23,7 @@ namespace TestsVersion_10
             int hr;
             hr = MFExtern.MFCreateVideoRendererActivate(IntPtr.Zero, out m_a);
             MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(m_a);
         }
 
         [TestCleanup]

@@ -38,8 +38,7 @@ namespace MediaFoundation
     /// <see cref="MFVideoFormat" /> structure.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFVideoSurfaceInfo {
     ///   DWORD          Format;
     ///   DWORD          PaletteEntries;

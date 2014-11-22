@@ -43,8 +43,7 @@ namespace MediaFoundation.Misc
     /// <see cref="Misc.WaveFormatEx"/>. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct {
     ///   WAVEFORMATEX Format;
     ///   union {

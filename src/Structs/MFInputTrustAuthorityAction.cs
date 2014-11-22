@@ -41,8 +41,7 @@ namespace MediaFoundation
     /// trust authority (ITA).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFINPUTTRUSTAUTHORITY_ACTION {
     ///   MFPOLICYMANAGER_ACTION Action;
     ///   BYTE                   *pbTicket;

@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// Acceleration High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_STATE_PALETTE_DATA {
     ///   UINT     Count;
     ///   D3DCOLOR *pEntries;

@@ -81,8 +81,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT FindFirstProxy(
         ///   [in]  LPCWSTR pszHost,
         ///   [in]  LPCWSTR pszUrl,
@@ -117,8 +116,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT FindNextProxy();
         /// </code>
         /// <para/>
@@ -147,8 +145,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RegisterProxyResult(
         ///   [in]  HRESULT hrOp
         /// );
@@ -187,8 +184,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentProxy(
         ///   [out]      LPWSTR pszStr,
         ///   [in, out]  DWORD *pcchStr
@@ -224,8 +220,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Clone(
         ///   [out]  IMFNetProxyLocator **ppProxyLocator
         /// );

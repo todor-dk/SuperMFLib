@@ -85,8 +85,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCredential(
         ///   [in]   LPCWSTR pszUrl,
         ///   [in]   LPCWSTR pszRealm,
@@ -131,8 +130,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetGood(
         ///   [in]  IMFNetCredential *pCred,
         ///   [in]  BOOL fGood
@@ -172,8 +170,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUserOptions(
         ///   [in]  IMFNetCredential *pCred,
         ///   [in]  DWORD dwOptionsFlags

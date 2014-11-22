@@ -37,8 +37,7 @@ namespace MediaFoundation
     /// Specifies a rectangular area within a video frame. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFVideoArea {
     ///   MFOffset OffsetX;
     ///   MFOffset OffsetY;

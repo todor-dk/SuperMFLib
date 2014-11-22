@@ -34,8 +34,7 @@ namespace MediaFoundation.Misc
     /// video image. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagVIDEOINFOHEADER {
     ///   RECT             rcSource;
     ///   RECT             rcTarget;

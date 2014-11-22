@@ -60,8 +60,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ShouldTransferSource(
         ///   [out]  BOOL *pfShouldTransfer
         /// );
@@ -95,8 +94,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DetachMediaSource(
         ///   [out]  IMFByteStream **ppByteStream,
         ///   [out]  IMFMediaSource **ppMediaSource,
@@ -134,8 +132,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AttachMediaSource(
         ///   [in]  IMFByteStream *pByteStream,
         ///   [in]  IMFMediaSource *pMediaSource,

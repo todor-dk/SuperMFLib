@@ -73,8 +73,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAllocator(
         ///   [in]  IMFAsyncCallback *pSampleAllocator,
         ///   [in]  IUnknown *pUnkState

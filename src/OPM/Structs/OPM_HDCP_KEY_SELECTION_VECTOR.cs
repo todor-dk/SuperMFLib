@@ -40,8 +40,7 @@ namespace MediaFoundation.OPM
     /// receiver.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_HDCP_KEY_SELECTION_VECTOR {
     ///   BYTE abKeySelectionVector[OPM_HDCP_KEY_SELECTION_VECTOR_SIZE];
     /// } OPM_HDCP_KEY_SELECTION_VECTOR;

@@ -54,8 +54,8 @@ namespace MediaFoundation
         /// Gets the length.
         /// </summary>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD GetLength();
         /// </code>
         /// <para />
@@ -76,8 +76,8 @@ namespace MediaFoundation
         /// the <strong>BSTR</strong> by calling <strong>SysFreeString</strong>. If no URL is set, this
         /// parameter receives the value <strong>NULL</strong>.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetURL(
         /// [in]   DWORD index,
         /// [out]  BSTR *pURL
@@ -104,8 +104,8 @@ namespace MediaFoundation
         /// </strong> by calling <strong>SysFreeString</strong>. If no MIME type is set, this parameter
         /// receives the value <strong>NULL</strong>.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetType(
         /// [in]   DWORD index,
         /// [out]  BSTR *pType
@@ -132,8 +132,8 @@ namespace MediaFoundation
         /// <strong>BSTR</strong> by calling <strong>SysFreeString</strong>. If no media type is set, this
         /// parameter receives the value <strong>NULL</strong>.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMedia(
         /// [in]   DWORD index,
         /// [out]  BSTR *pMedia
@@ -159,8 +159,8 @@ namespace MediaFoundation
         /// <param name="pMedia">A media-query string that specifies the intended media type, or <strong>NULL</strong>. If
         /// specified, the string should conform to the W3C <em>Media Queries</em> specification.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddElement(
         /// [in]  BSTR pURL,
         /// [in]  BSTR pType,
@@ -184,8 +184,8 @@ namespace MediaFoundation
         /// Removes all elements.
         /// </summary>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllElements();
         /// </code>
         /// <para />
@@ -221,8 +221,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddElementEx(
         ///   BSTR pURL,
         ///   BSTR pType,
@@ -259,8 +258,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetKeySystem(
         ///   DWORD index,
         ///   BSTR *pType

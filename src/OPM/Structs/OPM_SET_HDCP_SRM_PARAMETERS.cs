@@ -41,8 +41,7 @@ namespace MediaFoundation.OPM
     /// (HDCP).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_SET_HDCP_SRM_PARAMETERS {
     ///   ULONG ulSRMVersion;
     /// } OPM_SET_HDCP_SRM_PARAMETERS;

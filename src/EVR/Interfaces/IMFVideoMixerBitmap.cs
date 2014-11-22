@@ -75,8 +75,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAlphaBitmap(
         ///   [in]  const MFVideoAlphaBitmap *pBmpParms
         /// );
@@ -106,8 +105,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ClearAlphaBitmap();
         /// </code>
         /// <para/>
@@ -140,8 +138,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateAlphaBitmapParameters(
         ///   [in]  const MFVideoAlphaBitmapParams *pBmpParms
         /// );
@@ -176,8 +173,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAlphaBitmapParameters(
         ///   [out]  MFVideoAlphaBitmapParams *pBmpParms
         /// );

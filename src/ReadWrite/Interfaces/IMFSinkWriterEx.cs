@@ -72,8 +72,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStream(
         /// [in]   IMFMediaType *pTargetMediaType,
         /// [out]  DWORD *pdwStreamIndex
@@ -112,8 +112,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_TOPO_CODEC_NOT_FOUND</strong></strong></term><description>Could not find an encoder for the encoded format.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetInputMediaType(
         /// [in]  DWORD dwStreamIndex,
         /// [in]  IMFMediaType *pInputMediaType,
@@ -146,8 +146,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDREQUEST</strong></strong></term><description>The request is invalid.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginWriting();
         /// </code>
         /// <para />
@@ -174,8 +174,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDREQUEST</strong></strong></term><description>The request is invalid.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT WriteSample(
         /// [in]  DWORD dwStreamIndex,
         /// [in]  IMFSample *pSample
@@ -203,8 +203,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SendStreamTick(
         /// [in]  DWORD dwStreamIndex,
         /// [in]  LONGLONG llTimestamp
@@ -241,8 +241,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDREQUEST</strong></strong></term><description>The request is invalid.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT PlaceMarker(
         /// [in]  DWORD dwStreamIndex,
         /// [in]  LPVOID pvContext
@@ -275,8 +275,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDREQUEST</strong></strong></term><description>The request is invalid.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyEndOfSegment(
         /// [in]  DWORD dwStreamIndex
         /// );
@@ -307,8 +307,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDREQUEST</strong></strong></term><description>The request is invalid.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush(
         /// [in]  DWORD dwStreamIndex
         /// );
@@ -346,8 +346,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetServiceForStream(
         /// [in]   DWORD dwStreamIndex,
         /// [in]   REFGUID guidService,
@@ -386,8 +386,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong>MF_E_INVALIDSTREAMNUMBER</strong></term><description>Invalid stream number.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStatistics(
         /// [in]   DWORD dwStreamIndex,
         /// [out]  MF_SINK_WRITER_STATISTICS *pStats
@@ -429,8 +429,7 @@ namespace MediaFoundation.ReadWrite
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTransformForStream(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   DWORD dwTransformIndex,

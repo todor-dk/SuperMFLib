@@ -65,8 +65,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCaptureDeviceSource(
         ///   [in]   MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType,
         ///   [out]  IMFMediaSource **ppMediaSource
@@ -99,8 +98,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCaptureDeviceActivate(
         ///   [in]   MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType,
         ///   [out]  IMFActivate **ppActivate
@@ -145,8 +143,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetService(
         ///   [in]   REFGUID rguidService,
         ///   [in]   REFIID riid,
@@ -199,8 +196,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddEffect(
         ///   [in]  DWORD dwSourceStreamIndex,
         ///   [in]  IUnknown *pUnknown
@@ -247,8 +243,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveEffect(
         ///   [in]  DWORD dwSourceStreamIndex,
         ///   [in]  IUnknown *pUnknown
@@ -291,8 +286,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllEffects(
         ///   [in]  DWORD dwSourceStreamIndex
         /// );
@@ -341,8 +335,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAvailableDeviceMediaType(
         ///   [in]  DWORD dwSourceStreamIndex,
         ///   [in]  DWORD dwMediaTypeIndex,
@@ -390,8 +383,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentDeviceMediaType(
         ///   [in]  DWORD dwSourceStreamIndex,
         ///   [in]  IMFMediaType *pMediaType
@@ -438,8 +430,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentDeviceMediaType(
         ///   [in]   DWORD dwSourceStreamIndex,
         ///   [out]  IMFMediaType **ppMediaType
@@ -469,8 +460,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDeviceStreamCount(
         ///   [out]  DWORD *pdwStreamCount
         /// );
@@ -501,8 +491,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDeviceStreamCategory(
         ///   [in]   DWORD dwSourceStreamIndex,
         ///   [out]  MF_CAPTURE_ENGINE_STREAM_CATEGORY *pStreamCategory
@@ -536,8 +525,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMirrorState(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]   *pfMirrorState
@@ -576,8 +564,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetMirrorState(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]   fMirrorState
@@ -617,8 +604,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamIndexFromFriendlyName(
         ///   [in]   UINT32 uifriendlyName,
         ///   [out]  DWORD *pdwActualStreamIndex

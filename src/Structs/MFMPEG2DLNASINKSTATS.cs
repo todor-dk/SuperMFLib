@@ -43,8 +43,7 @@ namespace MediaFoundation
     /// This structure is used with the <see cref="MFAttributesClsid.MF_MP2DLNA_STATISTICS" /> attribute.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFMPEG2DLNASINKSTATS {
     ///   DWORDLONG cBytesWritten;
     ///   BOOL      fPAL;

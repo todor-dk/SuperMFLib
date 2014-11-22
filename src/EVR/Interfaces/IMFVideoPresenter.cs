@@ -69,8 +69,8 @@ namespace MediaFoundation.EVR
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockStart(
         /// [in]  MFTIME hnsSystemTime,
         /// [in]  LONGLONG llClockStartOffset
@@ -102,8 +102,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>MF_E_SINK_ALREADYSTOPPED</strong></term><description>Deprecated. Do not use this error code.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockStop(
         /// [in]  MFTIME hnssSystemTime
         /// );
@@ -127,8 +127,8 @@ namespace MediaFoundation.EVR
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockPause(
         /// [in]  MFTIME hnsSystemTime
         /// );
@@ -152,8 +152,8 @@ namespace MediaFoundation.EVR
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockRestart(
         /// [in]  MFTIME hnsSystemTime
         /// );
@@ -178,8 +178,8 @@ namespace MediaFoundation.EVR
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockSetRate(
         /// [in]  MFTIME hnsSystemTime,
         /// [in]  float flRate
@@ -220,8 +220,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessMessage(
         ///   [in]  MFVP_MESSAGE_TYPE eMessage,
         ///   [in]  ULONG_PTR ulParam
@@ -259,8 +258,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentMediaType(
         ///   [out]  IMFVideoMediaType **ppMediaType
         /// );

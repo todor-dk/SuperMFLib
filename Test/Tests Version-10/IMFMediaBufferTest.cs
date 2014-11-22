@@ -17,10 +17,24 @@ namespace TestsVersion_10
     {
         IMFMediaBuffer m_mb;
 
-        public void DoTests()
+        [TestInitialize]
+        public void Prepare()
         {
-            GetInterface();
+            int hr = MFExtern.MFCreateMemoryBuffer(100, out m_mb);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(m_mb);
+        }
 
+        [TestCleanup]
+        public void CleanUp()
+        {
+            COMBase.SafeRelease(m_mb);
+            m_mb = null;
+        }
+
+        [TestMethod]
+        public void IMFMediaBuffer_Tests()
+        {
             TestSetCurrentLength();
             TestGetMaxLength();
 
@@ -28,21 +42,7 @@ namespace TestsVersion_10
             TestUnlock();
         }
 
-        void TestLock()
-        {
-            IntPtr ip;
-            int imax, iCur;
-            int hr = m_mb.Lock(out ip, out imax, out iCur);
-            MFError.ThrowExceptionForHR(hr);
-        }
-
-        void TestUnlock()
-        {
-            int hr = m_mb.Unlock();
-            MFError.ThrowExceptionForHR(hr);
-        }
-
-        void TestSetCurrentLength()
+        private void TestSetCurrentLength()
         {
             int i;
 
@@ -51,23 +51,35 @@ namespace TestsVersion_10
             hr = m_mb.GetCurrentLength(out i);
             MFError.ThrowExceptionForHR(hr);
 
-            Debug.Assert(i == 33);
+            Assert.AreEqual(33, i);
         }
 
-        void TestGetMaxLength()
+        private void TestGetMaxLength()
         {
             int i;
 
             int hr = m_mb.GetMaxLength(out i);
             MFError.ThrowExceptionForHR(hr);
 
-            Debug.Assert(i == 100);
+            Assert.AreEqual(100, i);
         }
 
-        private void GetInterface()
+        private void TestLock()
         {
-            int hr = MFExtern.MFCreateMemoryBuffer(100, out m_mb);
+            IntPtr ip;
+            int imax, iCur;
+            int hr = m_mb.Lock(out ip, out imax, out iCur);
             MFError.ThrowExceptionForHR(hr);
         }
+
+        private void TestUnlock()
+        {
+            int hr = m_mb.Unlock();
+            MFError.ThrowExceptionForHR(hr);
+        }
+
+
+
+
     }
 }

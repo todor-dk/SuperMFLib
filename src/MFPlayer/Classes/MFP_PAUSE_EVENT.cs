@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// <see cref="MFPlayer.IMFPMediaPlayer.Pause"/> method completes. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_PAUSE_EVENT {
     ///   MFP_EVENT_HEADER header;
     ///   IMFPMediaItem    *pMediaItem;

@@ -69,8 +69,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputTrustAuthorityCount(
         ///   [out]  DWORD *pcOutputTrustAuthorities
         /// );
@@ -103,8 +102,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputTrustAuthorityByIndex(
         ///   [in]   DWORD dwIndex,
         ///   [out]  IMFOutputTrustAuthority **ppauthority
@@ -141,8 +139,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsFinal(
         ///   [out]  BOOL *pfIsFinal
         /// );

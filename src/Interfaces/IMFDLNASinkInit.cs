@@ -77,8 +77,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Initialize(
         ///   [in]  IMFByteStream *pByteStream,
         ///   [in]  BOOL fPal

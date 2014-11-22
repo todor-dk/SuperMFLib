@@ -56,8 +56,8 @@ namespace MediaFoundation
         /// <param name="pFactory">A pointer to the <see cref="IMFSharingEngineClassFactory" /> interface. The media element uses this
         /// interface to create the Sharing Engine.</param>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Connect(
         /// [in]  IMFSharingEngineClassFactory *pFactory
         /// );
@@ -77,8 +77,8 @@ namespace MediaFoundation
         /// Disconnects.
         /// </summary>
         /// <returns>System.Int32.</returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Disconnect();
         /// </code>
         /// <para />
@@ -103,8 +103,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCapabilities(
         ///   [out]  PLAYTO_SOURCE_CREATEFLAGS *pCapabilities
         /// );

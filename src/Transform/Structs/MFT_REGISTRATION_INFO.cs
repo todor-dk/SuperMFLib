@@ -38,8 +38,7 @@ namespace MediaFoundation.Transform
     /// Contains parameters for the  <see cref="Transform.IMFLocalMFTRegistration.RegisterMFTs" />  method.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFT_REGISTRATION_INFO {
     ///   CLSID                  clsid;
     ///   GUID                   guidCategory;

@@ -47,8 +47,7 @@ namespace MediaFoundation.MFPlayer
     /// application can respond by providing the user credentials. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT {
     ///   MFP_EVENT_HEADER     header;
     ///   DWORD_PTR            dwUserData;

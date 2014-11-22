@@ -89,8 +89,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMFMetadata(
         ///   [in]   IMFPresentationDescriptor *pPresentationDescriptor,
         ///   [in]   DWORD dwStreamIdentifier,

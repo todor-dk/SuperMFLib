@@ -58,8 +58,8 @@ namespace MediaFoundation
         /// <returns>The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
         /// those in the following table.
         /// <para /><list type="table"><listheader><term>Return code</term><description>Description</description></listheader><item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item><item><term><strong>D3DERR_INVALIDCALL</strong></term><description>Cannot lock the Direct3D surface.</description></item><item><term><strong>MF_E_INVALIDREQUEST</strong></term><description>The buffer cannot be locked at this time.</description></item></list></returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Lock2D(
         /// [out]  BYTE **pbScanline0,
         /// [out]  LONG *plPitch
@@ -91,8 +91,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Unlock2D();
         /// </code>
         /// <para/>
@@ -125,8 +124,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetScanline0AndPitch(
         ///   [out]  BYTE **pbScanline0,
         ///   [out]  LONG *plPitch
@@ -162,8 +160,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsContiguousFormat(
         ///   [out]  BOOL *pfIsContiguous
         /// );
@@ -196,8 +193,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetContiguousLength(
         ///   [out]  DWORD *pcbLength
         /// );
@@ -235,8 +231,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ContiguousCopyTo(
         ///   [out]  BYTE *pbDestBuffer,
         ///   [in]   DWORD cbDestBuffer
@@ -275,8 +270,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ContiguousCopyFrom(
         ///   [in]  const BYTE *pbSrcBuffer,
         ///   [in]  DWORD cbSrcBuffer

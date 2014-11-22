@@ -40,8 +40,7 @@ namespace MediaFoundation.OPM
     /// <c>Output Protection Manager</c> (OPM).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_SET_PROTECTION_LEVEL_PARAMETERS {
     ///   ULONG ulProtectionType;
     ///   ULONG ulProtectionLevel;

@@ -75,8 +75,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamCount(
         ///   [out]  DWORD dwStreamIndex
         /// );
@@ -118,8 +117,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStream(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  WORD *pwStreamNumber,
@@ -161,8 +159,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStream(
         ///   [in]  WORD wStreamNumber,
         ///   [in]  WORD wStreamFlags
@@ -199,8 +196,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveStream(
         ///   [in]  DWORD dwStreamIndex
         /// );
@@ -235,8 +231,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Clone(
         ///   [out]  IMFASFStreamPrioritization **ppIStreamPrioritization
         /// );

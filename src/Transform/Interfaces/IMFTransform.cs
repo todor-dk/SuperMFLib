@@ -69,8 +69,7 @@ namespace MediaFoundation.Transform
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamLimits(
         ///   [out]  DWORD *pdwInputMinimum,
         ///   [out]  DWORD *pdwInputMaximum,
@@ -107,8 +106,7 @@ namespace MediaFoundation.Transform
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamCount(
         ///   [out]  DWORD *pcInputStreams,
         ///   [out]  DWORD *pcOutputStreams
@@ -165,8 +163,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamIDs(
         ///   [in]   DWORD dwInputIDArraySize,
         ///   [out]  DWORD *pdwInputIDs,
@@ -212,8 +209,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInputStreamInfo(
         ///   [in]   DWORD dwInputStreamID,
         ///   [out]  MFT_INPUT_STREAM_INFO *pStreamInfo
@@ -255,8 +251,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputStreamInfo(
         ///   [in]   DWORD dwOutputStreamID,
         ///   [out]  MFT_OUTPUT_STREAM_INFO *pStreamInfo
@@ -293,8 +288,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAttributes(
         ///   [out]  IMFAttributes **pAttributes
         /// );
@@ -331,8 +325,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInputStreamAttributes(
         ///   [in]   DWORD dwInputStreamID,
         ///   [out]  IMFAttributes **ppAttributes
@@ -371,8 +364,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputStreamAttributes(
         ///   [in]   DWORD dwOutputStreamID,
         ///   [out]  IMFAttributes **ppAttributes
@@ -411,8 +403,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteInputStream(
         ///   [in]  DWORD dwStreamID
         /// );
@@ -450,8 +441,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddInputStreams(
         ///   [in]  DWORD cStreams,
         ///   [in]  DWORD *adwStreamIDs
@@ -498,8 +488,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInputAvailableType(
         ///   [in]   DWORD dwInputStreamID,
         ///   [in]   DWORD dwTypeIndex,
@@ -549,8 +538,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputAvailableType(
         ///   [in]   DWORD dwOutputStreamID,
         ///   [in]   DWORD dwTypeIndex,
@@ -600,8 +588,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetInputType(
         ///   [in]  DWORD dwInputStreamID,
         ///   [in]  IMFMediaType *pType,
@@ -652,8 +639,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOutputType(
         ///   [in]  DWORD dwOutputStreamID,
         ///   [in]  IMFMediaType *pType,
@@ -697,8 +683,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInputCurrentType(
         ///   [in]   DWORD dwInputStreamID,
         ///   [out]  IMFMediaType **ppType
@@ -740,8 +725,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputCurrentType(
         ///   [in]   DWORD dwOutputStreamID,
         ///   [out]  IMFMediaType **ppType
@@ -784,8 +768,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetInputStatus(
         ///   [in]   DWORD dwInputStreamID,
         ///   [out]  DWORD *pdwFlags
@@ -823,8 +806,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputStatus(
         ///   [out]  DWORD *pdwFlags
         /// );
@@ -867,8 +849,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOutputBounds(
         ///   LONGLONG hnsLowerBound,
         ///   LONGLONG hnsUpperBound
@@ -911,8 +892,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessEvent(
         ///   [in]  DWORD dwInputStreamID,
         ///   [in]  IMFMediaEvent *pEvent
@@ -953,8 +933,7 @@ namespace MediaFoundation.Transform
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessMessage(
         ///   [in]  MFT_MESSAGE_TYPE eMessage,
         ///   [in]  ULONG_PTR ulParam
@@ -1008,8 +987,7 @@ namespace MediaFoundation.Transform
         /// , unlike the <strong>IMediaObject::ProcessInput</strong> method. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessInput(
         ///   [in]  DWORD dwInputStreamID,
         ///   [in]  IMFSample *pSample,
@@ -1067,8 +1045,7 @@ namespace MediaFoundation.Transform
         /// </strong>, unlike the <strong>IMediaObject::ProcessOutput</strong> method. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessOutput(
         ///   [in]       DWORD dwFlags,
         ///   [in]       DWORD cOutputBufferCount,

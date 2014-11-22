@@ -44,8 +44,7 @@ namespace MediaFoundation.ReadWrite
     /// Contains statistics about the performance of the sink writer.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MF_SINK_WRITER_STATISTICS {
     ///   DWORD    cb;
     ///   LONGLONG llLastTimestampReceived;

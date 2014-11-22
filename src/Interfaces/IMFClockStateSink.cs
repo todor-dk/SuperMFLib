@@ -66,8 +66,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockStart(
         ///   [in]  MFTIME hnsSystemTime,
         ///   [in]  LONGLONG llClockStartOffset
@@ -101,8 +100,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockStop(
         ///   [in]  MFTIME hnssSystemTime
         /// );
@@ -130,8 +128,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockPause(
         ///   [in]  MFTIME hnsSystemTime
         /// );
@@ -159,8 +156,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockRestart(
         ///   [in]  MFTIME hnsSystemTime
         /// );
@@ -191,8 +187,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT OnClockSetRate(
         ///   [in]  MFTIME hnsSystemTime,
         ///   [in]  float flRate

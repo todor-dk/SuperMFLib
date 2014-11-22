@@ -74,8 +74,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDesiredSampleTimeAndDuration(
         ///   [out]  LONGLONG *phnsSampleTime,
         ///   [out]  LONGLONG *phnsSampleDuration
@@ -104,8 +103,7 @@ namespace MediaFoundation.EVR
         /// The duration of the requested sample.
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void SetDesiredSampleTimeAndDuration(
         ///   [in]  LONGLONG hnsSampleTime,
         ///   [in]  LONGLONG hnsSampleDuration
@@ -129,8 +127,7 @@ namespace MediaFoundation.EVR
         /// <see cref="EVR.IMFDesiredSample.SetDesiredSampleTimeAndDuration"/>. 
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void Clear();
         /// </code>
         /// <para/>

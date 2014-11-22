@@ -25,8 +25,7 @@ namespace TestsVersion_10
         AutoResetEvent m_mre = new AutoResetEvent(false);
         bool m_write = false;
 
-        [TestInitialize]
-        public void Prepare()
+        private void Prepare()
         {
             this.BasePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             this.InputPath = Path.Combine(this.BasePath, "Resources\\AspectRatio4x3.wmv");
@@ -63,13 +62,21 @@ namespace TestsVersion_10
                 File.Delete(this.TargetPath);
         }
 
-
-        //const string path = @"C:\sourceforge\mflib\Test\v1.0\test.wmv";
-
-
         [TestMethod]
         public void IMFByteStream_Tests()
         {
+            // Idiotic MF requires an MTA. The unit tests run STA and this throws an exception.
+            // To work around this, create an MTA thread and run the test in tha MTA thread.
+            Thread thread = new Thread(this.TestsWorker);
+            thread.SetApartmentState(ApartmentState.MTA);
+            thread.Start();
+            thread.Join();
+        }
+
+        public void TestsWorker()
+        {
+            this.Prepare();
+
             TestGetCapabilities();
             TestGetLength();
             TestGetCurrentPosition();
@@ -103,6 +110,7 @@ namespace TestsVersion_10
 
             int hr = m_bs.GetLength(out l);
             MFError.ThrowExceptionForHR(hr);
+            Assert.AreEqual(54033, l);
             //Assert.AreEqual(2163028, l);
         }
 
@@ -229,8 +237,6 @@ namespace TestsVersion_10
         }
 
 
-
-
         #region IMFAsyncCallback Members
 
         public int GetParameters(out MFASync pdwFlags, out MFAsyncCallbackQueue pdwQueue)
@@ -270,7 +276,6 @@ namespace TestsVersion_10
             {
                 Assert.IsTrue(e is NullReferenceException);
             }
-
 
             if (!m_write)
             {

@@ -79,8 +79,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateNodeAttributes(
         ///   [in]  TOPOID TopoId,
         ///   [in]  DWORD cUpdates,

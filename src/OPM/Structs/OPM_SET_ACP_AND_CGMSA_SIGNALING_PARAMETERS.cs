@@ -44,8 +44,7 @@ namespace MediaFoundation.OPM
     /// Management System — Analog (CGMS-A) specifications. For example:
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS {
     ///   ULONG ulNewTVProtectionStandard;
     ///   ULONG ulAspectRatioChangeMask1;

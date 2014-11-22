@@ -43,8 +43,7 @@ namespace MediaFoundation
     /// <see cref="IMFTranscodeSinkInfoProvider.GetSinkInfo" />.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MF_TRANSCODE_SINK_INFO {
     ///   DWORD        dwVideoStreamID;
     ///   IMFMediaType *pVideoMediaType;

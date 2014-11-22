@@ -39,8 +39,7 @@ namespace MediaFoundation.dxvahd
     /// Specifies the pixel aspect ratio (PAR) for the source and destination rectangles.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA {
     ///   BOOL            Enable;
     ///   DXVAHD_RATIONAL SourceAspectRatio;

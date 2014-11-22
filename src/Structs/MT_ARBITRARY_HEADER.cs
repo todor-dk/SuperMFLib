@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// Contains format data for a binary stream in an Advanced Streaming Format (ASF) file.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MT_ARBITRARY_HEADER {
     ///   GUID  majortype;
     ///   GUID  subtype;

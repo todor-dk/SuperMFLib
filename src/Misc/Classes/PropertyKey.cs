@@ -34,8 +34,7 @@ namespace MediaFoundation.Misc
     /// <c>SHCOLUMNID</c>. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct {
     ///   GUID  fmtid;
     ///   DWORD pid;

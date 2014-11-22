@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// the <see cref="MFPlayer.IMFPMediaPlayer.SetPosition"/> method completes. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_POSITION_SET_EVENT {
     ///   MFP_EVENT_HEADER header;
     ///   IMFPMediaItem    *pMediaItem;

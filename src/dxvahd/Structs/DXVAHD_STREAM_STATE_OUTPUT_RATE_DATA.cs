@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// High Definition (DXVA-HD).
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA {
     ///   BOOL               RepeatFrame;
     ///   DXVAHD_OUTPUT_RATE OutputRate;

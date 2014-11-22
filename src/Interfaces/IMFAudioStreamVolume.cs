@@ -73,8 +73,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetChannelCount(
         ///   [out]  UINT32 *pdwCount
         /// );
@@ -111,8 +110,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetChannelVolume(
         ///   [in]  UINT32 dwIndex,
         ///   [in]  const float fLevel
@@ -151,8 +149,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetChannelVolume(
         ///   [in]   UINT32 dwIndex,
         ///   [out]  float *pfLevel
@@ -193,8 +190,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetAllVolumes(
         ///   [in]  UINT32 dwCount,
         ///   [in]  const float *pfVolumes
@@ -234,8 +230,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllVolumes(
         ///   [in]   UINT32 dwCount,
         ///   [out]  float *pfVolumes

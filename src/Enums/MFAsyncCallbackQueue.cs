@@ -88,9 +88,7 @@ namespace MediaFoundation
         /// <summary>
         /// Bit mask to distinguish platform work queues from those created by calling <c>MFAllocateWorkQueue</c>.
         /// For a work queue created by MFAllocateWorkQueue, the following value is nonzero:
-        /// <code>
-        /// (identifier &amp; MFAsyncCallbackQueue.PrivateMask)
-        /// </code>
+        /// <c>(identifier &amp; MFAsyncCallbackQueue.PrivateMask)</c>
         /// </summary>
         PrivateMask = unchecked((int)0xFFFF0000),
         /// <summary>

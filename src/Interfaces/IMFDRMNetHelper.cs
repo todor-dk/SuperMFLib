@@ -85,8 +85,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ProcessLicenseRequest(
         ///   [in]   BYTE *pLicenseRequest,
         ///   [in]   DWORD cbLicenseRequest,
@@ -125,8 +124,7 @@ namespace MediaFoundation
         /// The method returns <strong>E_NOTIMPL</strong>. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetChainedLicenseResponse(
         ///   [out]  BYTE **ppLicenseResponse,
         ///   [out]  DWORD *pcbLicenseResponse

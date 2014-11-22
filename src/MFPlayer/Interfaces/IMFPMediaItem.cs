@@ -75,8 +75,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMediaPlayer(
         ///   [out]  IMFPMediaPlayer **ppMediaPlayer
         /// );
@@ -115,8 +114,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetURL(
         ///   [out]  LPWSTR *ppwszURL
         /// );
@@ -155,8 +153,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetObject(
         ///   [out]  IUnknown **ppIUnknown
         /// );
@@ -187,8 +184,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetUserData(
         ///   [out]  DWORD_PTR *pdwUserData
         /// );
@@ -218,8 +214,7 @@ namespace MediaFoundation.MFPlayer
         /// This method can return one of these values.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetUserData(
         ///   [in]  DWORD_PTR dwUserData
         /// );
@@ -267,8 +262,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStartStopPosition(
         ///   [out]  GUID *pguidStartPositionType,
         ///   [out]  PROPVARIANT *pvStartValue,
@@ -327,8 +321,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStartStopPosition(
         ///   [in]  const GUID *pguidStartPositionType,
         ///   [in]  const PROPVARIANT *pvStartValue,
@@ -370,8 +363,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT HasVideo(
         ///   [out]  BOOL *pfHasVideo,
         ///   [out]  BOOL *pfSelected
@@ -409,8 +401,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT HasAudio(
         ///   [out]  BOOL *pfHasAudio,
         ///   [out]  BOOL *pfSelected
@@ -452,8 +443,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsProtected(
         ///   [out]  BOOL *pfProtected
         /// );
@@ -492,8 +482,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDuration(
         ///   [in]   REFGUID guidPositionType,
         ///   [out]  PROPVARIANT *pvDurationValue
@@ -526,8 +515,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNumberOfStreams(
         ///   [out]  DWORD *pdwStreamCount
         /// );
@@ -568,8 +556,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSelection(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  BOOL *pfEnabled
@@ -612,8 +599,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamSelection(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  BOOL fEnabled
@@ -658,8 +644,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamAttribute(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   REFGUID guidMFAttribute,
@@ -701,8 +686,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPresentationAttribute(
         ///   [in]   REFGUID guidMFAttribute,
         ///   [out]  PROPVARIANT *pvValue
@@ -736,8 +720,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCharacteristics(
         ///   [out]  MFP_MEDIAITEM_CHARACTERISTICS *pCharacteristics
         /// );
@@ -781,8 +764,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamSink(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IUnknown *pMediaSink
@@ -816,8 +798,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMetadata(
         ///   [out]  IPropertyStore **ppMetadataStore
         /// );

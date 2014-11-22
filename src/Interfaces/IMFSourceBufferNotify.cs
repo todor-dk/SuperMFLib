@@ -52,8 +52,7 @@ namespace MediaFoundation
         /// Used to indicate that the source buffer has started updating.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnUpdateStart();
         /// </code>
         /// <para/>
@@ -70,8 +69,7 @@ namespace MediaFoundation
         /// Used to indicate that the source buffer has been aborted.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnAbort();
         /// </code>
         /// <para/>
@@ -90,8 +88,7 @@ namespace MediaFoundation
         /// <param name="hr">
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnError(
         ///   [in]  HRESULT hr
         /// );
@@ -110,8 +107,7 @@ namespace MediaFoundation
         /// Used to indicate that the source buffer is updating.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnUpdate();
         /// </code>
         /// <para/>
@@ -128,8 +124,7 @@ namespace MediaFoundation
         /// Used to indicate that the source buffer has finished updating.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnUpdateEnd();
         /// </code>
         /// <para/>

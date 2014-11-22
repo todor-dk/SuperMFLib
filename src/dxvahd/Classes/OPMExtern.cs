@@ -76,8 +76,7 @@ namespace MediaFoundation.dxvahd
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DXVAHD_CreateDevice(
         ///   _In_   IDirect3DDevice9Ex *pD3DDevice,
         ///   _In_   const DXVAHD_CONTENT_DESC *pContentDesc,

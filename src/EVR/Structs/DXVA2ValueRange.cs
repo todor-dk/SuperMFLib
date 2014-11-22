@@ -38,8 +38,7 @@ namespace MediaFoundation.EVR
     /// Defines the range of supported values for a DirectX Video Acceleration (DXVA) operation.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVA2_ValueRange {
     ///   DXVA2_Fixed32 MinValue;
     ///   DXVA2_Fixed32 MaxValue;

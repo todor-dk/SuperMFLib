@@ -46,8 +46,7 @@ namespace MediaFoundation.MFPlayer
     /// when the current media item finishes playing. 
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct MFP_PLAYBACK_ENDED_EVENT {
     ///   MFP_EVENT_HEADER header;
     ///   IMFPMediaItem    *pMediaItem;

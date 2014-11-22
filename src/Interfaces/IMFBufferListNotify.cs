@@ -52,8 +52,7 @@ namespace MediaFoundation
         /// Indicates that a <see cref="IMFSourceBuffer"/> has been added.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnAddSourceBuffer();
         /// </code>
         /// <para/>
@@ -70,8 +69,7 @@ namespace MediaFoundation
         /// Indicates that a <see cref="IMFSourceBuffer"/> has been removed.
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void OnRemoveSourceBuffer();
         /// </code>
         /// <para/>

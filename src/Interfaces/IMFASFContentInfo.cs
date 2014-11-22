@@ -75,8 +75,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetHeaderSize(
         ///   [in]   IMFMediaBuffer *pIStartOfContent,
         ///   [out]  QWORD *cbHeaderSize
@@ -120,8 +119,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ParseHeader(
         ///   [in]  IMFMediaBuffer *pIHeaderBuffer,
         ///   [in]  QWORD cbOffsetWithinHeader
@@ -164,8 +162,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GenerateHeader(
         ///   [in, out]  IMFMediaBuffer *pIHeader,
         ///   [out]      DWORD *pcbHeader
@@ -201,8 +198,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProfile(
         ///   [out]  IMFASFProfile **ppIProfile
         /// );
@@ -234,8 +230,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetProfile(
         ///   [in]  IMFASFProfile *pIProfile
         /// );
@@ -268,8 +263,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GeneratePresentationDescriptor(
         ///   [out]  IMFPresentationDescriptor **ppIPresentationDescriptor
         /// );
@@ -305,8 +299,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetEncodingConfigurationPropertyStore(
         ///   [in]   WORD wStreamNumber,
         ///   [out]  IPropertyStore **ppIStore

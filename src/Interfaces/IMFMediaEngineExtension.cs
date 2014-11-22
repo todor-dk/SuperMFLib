@@ -68,8 +68,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CanPlayType(
         ///   [in]   BOOL AudioOnly,
         ///   [in]   BSTR MimeType,
@@ -136,8 +135,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginCreateObject(
         ///   [in]            BSTR bstrURL,
         ///   [in]            IMFByteStream *pByteStream,
@@ -176,8 +174,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CancelObjectCreation(
         ///   [in]  IUnknown *pIUnknownCancelCookie
         /// );
@@ -209,8 +206,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndCreateObject(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  IUnknown **ppObject

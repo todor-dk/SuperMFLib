@@ -71,8 +71,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>VFW_E_WRONG_STATE</strong></term><description>This method has already been called, or at least one pin is already connected.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetNumberOfStreams(
         /// [in]  DWORD dwMaxStreams
         /// );
@@ -102,8 +102,8 @@ namespace MediaFoundation.EVR
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNumberOfStreams(
         /// [out]  DWORD *pdwMaxStreams
         /// );
@@ -140,8 +140,7 @@ namespace MediaFoundation.EVR
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetConfigPrefs(
         ///   [in]  DWORD dwConfigFlags
         /// );
@@ -171,8 +170,7 @@ namespace MediaFoundation.EVR
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetConfigPrefs(
         ///   [out]  DWORD *pdwConfigFlags
         /// );

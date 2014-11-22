@@ -41,8 +41,7 @@ namespace MediaFoundation.Misc
     /// The SIZE structure defines the width and height of a rectangle.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct tagSIZE {
     ///   LONG cx;
     ///   LONG cy;

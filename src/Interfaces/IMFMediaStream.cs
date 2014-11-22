@@ -72,8 +72,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The object was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetEvent(
         /// [in]   DWORD dwFlags,
         /// [out]  IMFMediaEvent **ppEvent
@@ -111,8 +111,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_S_MULTIPLE_BEGIN</strong></term><description>There is a pending request with the same callback pointer and state object.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginGetEvent(
         /// [in]  IMFAsyncCallback *pCallback,
         /// [in]  IUnknown *punkState
@@ -147,8 +147,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The object was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndGetEvent(
         /// [in]   IMFAsyncResult *pResult,
         /// [out]  IMFMediaEvent **ppEvent
@@ -188,8 +188,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_SHUTDOWN</strong></term><description>The object was shut down.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT QueueEvent(
         /// [in]  MediaEventType met,
         /// [in]  REFGUID guidExtendedType,
@@ -231,8 +231,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMediaSource(
         ///   [out]  IMFMediaSource **ppMediaSource
         /// );
@@ -267,8 +266,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamDescriptor(
         ///   [out]  IMFStreamDescriptor **ppStreamDescriptor
         /// );
@@ -306,8 +304,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RequestSample(
         ///   [in]  IUnknown *pToken
         /// );

@@ -80,8 +80,8 @@ namespace MediaFoundation
         /// <item><term><strong><strong>E_NOTIMPL</strong></strong></term><description> Not implemented. Assume the default behavior. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetParameters(
         /// [out]  DWORD *pdwFlags,
         /// [out]  DWORD *pdwQueue
@@ -113,8 +113,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Invoke(
         /// [in]  IMFAsyncResult *pAsyncResult
         /// );
@@ -139,8 +139,7 @@ namespace MediaFoundation
         /// void pointer to the object.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void* GetObjectPointer();
         /// </code>
         /// <para/>
@@ -160,8 +159,7 @@ namespace MediaFoundation
         /// The tag of the object.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD GetObjectTag();
         /// </code>
         /// <para/>

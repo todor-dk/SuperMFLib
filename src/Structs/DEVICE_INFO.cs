@@ -39,8 +39,7 @@ namespace MediaFoundation
     /// Contains information about a media sharing device.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct DEVICE_INFO {
     ///   BSTR pFriendlyDeviceName;
     ///   BSTR pUniqueDeviceName;

@@ -81,8 +81,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNearestKeyFrames(
         ///   [in]   const GUID *pguidTimeFormat,
         ///   [in]   const PROPVARIANT *pvarStartPosition,

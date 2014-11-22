@@ -75,8 +75,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetOutputMediaType(
         ///   [in]   DWORD dwSinkStreamIndex,
         ///   [out]  IMFMediaType **ppMediaType
@@ -122,8 +121,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetService(
         ///   [in]   DWORD dwSinkStreamIndex,
         ///   [in]   REFGUID rguidService,
@@ -188,8 +186,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddStream(
         ///   [in]   DWORD dwSourceStreamIndex,
         ///   [in]   IMFMediaType *pMediaType,
@@ -226,8 +223,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Prepare();
         /// </code>
         /// <para/>
@@ -248,8 +244,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllStreams();
         /// </code>
         /// <para/>
@@ -275,8 +270,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetRenderHandle(
         ///   [in]  HANDLE handle
         /// );
@@ -304,8 +298,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetRenderSurface(
         ///   [in]  IUnknown *pSurface
         /// );
@@ -343,8 +336,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateVideo(
         ///   [in]  const MFVideoNormalizedRect *pSrc,
         ///   [in]  const RECT *pDst,
@@ -381,8 +373,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetSampleCallback(
         ///   [in]  DWORD dwStreamSinkIndex,
         ///   [in]  IMFCaptureEngineOnSampleCallback *pCallback
@@ -413,8 +404,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMirrorState(
         ///   [out]   *pfMirrorState
         /// );
@@ -442,8 +432,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetMirrorState(
         ///   [in]  BOOL fMirrorState
         /// );
@@ -474,8 +463,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRotation(
         ///   [in]   DWORD dwStreamIndex,
         ///   [out]  DWORD *pdwRotationValue
@@ -509,8 +497,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetRotation(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  DWORD dwRotationValue
@@ -540,8 +527,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCustomSink(
         ///   [in]  IMFMediaSink *pMediaSink
         /// );

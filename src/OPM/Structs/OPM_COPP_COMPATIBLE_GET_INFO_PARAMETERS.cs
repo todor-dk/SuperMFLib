@@ -39,8 +39,7 @@ namespace MediaFoundation.OPM
     /// Contains parameters for the <see cref="OPM.IOPMVideoOutput.COPPCompatibleGetInformation" /> method.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS {
     ///   OPM_RANDOM_NUMBER rnRandomNumber;
     ///   GUID              guidInformation;

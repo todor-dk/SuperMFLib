@@ -39,8 +39,7 @@ namespace MediaFoundation
     /// This structure is used in the <see cref="MFVideoFormat" /> structure.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MFVideoInfo {
     ///   DWORD                    dwWidth;
     ///   DWORD                    dwHeight;

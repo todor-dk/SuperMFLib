@@ -62,8 +62,7 @@ namespace MediaFoundation.Misc
         /// S_OK and the <em>pv</em> member is set to VT_EMPTY. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNamedValue(
         ///   [in]   LPCWSTR pszName,
         ///   [out]  PROPVARIANT *pv
@@ -98,8 +97,7 @@ namespace MediaFoundation.Misc
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetNamedValue(
         ///   [in]  LPCWSTR pszName,
         ///   [in]  const PROPVARIANT *pv
@@ -132,8 +130,7 @@ namespace MediaFoundation.Misc
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNameCount(
         ///   [out]  DWORD *pdwCount
         /// );
@@ -170,8 +167,7 @@ namespace MediaFoundation.Misc
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNameAt(
         ///   [in]   DWORD iProp,
         ///   [out]  BSTR *pbstrName

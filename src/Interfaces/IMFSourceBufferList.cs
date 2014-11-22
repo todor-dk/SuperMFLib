@@ -55,8 +55,7 @@ namespace MediaFoundation
         /// The number of source buffers in the list.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// DWORD GetLength();
         /// </code>
         /// <para/>
@@ -79,8 +78,7 @@ namespace MediaFoundation
         /// The source buffer.
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// IMFSourceBuffer GetSourceBuffer(
         ///   [in]  DWORD index
         /// );

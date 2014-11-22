@@ -70,8 +70,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_NO_MORE_DROP_MODES</strong></term><description>The component does not support the specified mode or any higher modes.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetDropMode(
         /// [in]  MF_QUALITY_DROP_MODE eDropMode
         /// );
@@ -102,8 +102,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_NO_MORE_QUALITY_LEVELS</strong></term><description>The component does not support the specified quality level or any levels below it.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetQualityLevel(
         /// [in]  MF_QUALITY_LEVEL eQualityLevel
         /// );
@@ -132,8 +132,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDropMode(
         /// [out]  MF_QUALITY_DROP_MODE *peDropMode
         /// );
@@ -162,8 +162,8 @@ namespace MediaFoundation
         /// <item><term><strong>S_OK</strong></term><description>The method succeeded.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetQualityLevel(
         /// [out]  MF_QUALITY_LEVEL *peQualityLevel
         /// );
@@ -194,8 +194,8 @@ namespace MediaFoundation
         /// <item><term><strong>MF_E_DROPTIME_NOT_SUPPORTED</strong></term><description>The object does not support this method.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DropTime(
         /// [in]  LONGLONG hnsAmountToDrop
         /// );
@@ -228,8 +228,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT NotifyQualityEvent(
         ///   [in]   IMFMediaEvent *pEvent,
         ///   [out]  DWORD *pdwFlags

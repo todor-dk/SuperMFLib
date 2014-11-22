@@ -17,63 +17,66 @@ namespace TestsVersion_10
     {
         IMFMediaEvent m_me;
 
-        public void DoTests()
-        {
-            GetInterface();
+        private static readonly Guid ExtendedType = Guid.NewGuid();
 
-            TestGetType();
-            TestGetExtendedType();
-            TestGetStatus();
-            TestGetValue();
+        [TestInitialize]
+        public void Prepare()
+        {
+            int hr = MFExtern.MFCreateMediaEvent(
+                MediaEventType.MESourceStarted,
+                IMFMediaEventTest.ExtendedType,
+                313,
+                new PropVariant("asdf"),
+                out m_me);
+            MFError.ThrowExceptionForHR(hr);
+            Assert.IsNotNull(m_me);
         }
 
-        void TestGetType()
+        [TestCleanup]
+        public void CleanUp()
+        {
+            COMBase.SafeRelease(m_me);
+            m_me = null;
+        }
+
+        [TestMethod]
+        public void IMFMediaEvent_TestGetType()
         {
             MediaEventType m;
-
             int hr = m_me.GetType(out m);
             MFError.ThrowExceptionForHR(hr);
-
-            Debug.Assert(MediaEventType.MESourceStarted == m);
+            Assert.AreEqual(MediaEventType.MESourceStarted, m);
         }
 
-        void TestGetExtendedType()
+        [TestMethod]
+        public void IMFMediaEvent_TestGetExtendedType()
         {
             Guid g;
             int hr = m_me.GetExtendedType(out g);
             MFError.ThrowExceptionForHR(hr);
 
-            Debug.Assert(g != Guid.Empty);
+            Assert.AreEqual(IMFMediaEventTest.ExtendedType, g);
         }
 
-        void TestGetStatus()
+        [TestMethod]
+        public void IMFMediaEvent_TestGetStatus()
         {
             int i;
             int hr = m_me.GetStatus(out i);
             MFError.ThrowExceptionForHR(hr);
 
-            Debug.Assert(i == 313);
+            Assert.AreEqual(313, i);
         }
 
-        void TestGetValue()
+        [TestMethod]
+        public void IMFMediaEvent_TestGetValue()
         {
             PropVariant p = new PropVariant("FDSA");
             int hr = m_me.GetValue(p);
             MFError.ThrowExceptionForHR(hr);
 
-            Debug.Assert(p.GetString() == "asdf");
+            Assert.AreEqual("asdf", p.GetValue());
         }
 
-        private void GetInterface()
-        {
-            int hr = MFExtern.MFCreateMediaEvent(
-                MediaEventType.MESourceStarted,
-                Guid.NewGuid(),
-                313,
-                new PropVariant("asdf"),
-                out m_me
-                );
-            MFError.ThrowExceptionForHR(hr);
-        }
     }
 }

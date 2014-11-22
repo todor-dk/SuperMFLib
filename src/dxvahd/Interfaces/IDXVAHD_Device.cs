@@ -94,8 +94,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateVideoSurface(
         ///   [in]       UINT Width,
         ///   [in]       UINT Height,
@@ -140,8 +139,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorDeviceCaps(
         ///   [out]  DXVAHD_VPDEVCAPS *pCaps
         /// );
@@ -176,8 +174,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorOutputFormats(
         ///   [in]   UINT Count,
         ///   [out]  D3DFORMAT *pFormats
@@ -214,8 +211,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorInputFormats(
         ///   [in]   UINT Count,
         ///   [out]  D3DFORMAT *pFormats
@@ -252,8 +248,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorCaps(
         ///   [in]   UINT Count,
         ///   [out]  DXVAHD_VPCAPS *pCaps
@@ -296,8 +291,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorCustomRates(
         ///   [in]   const GUID *pVPGuid,
         ///   [in]   UINT Count,
@@ -341,8 +335,7 @@ namespace MediaFoundation.dxvahd
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoProcessorFilterRange(
         ///   [in]   DXVAHD_FILTER Filter,
         ///   [out]  DXVAHD_FILTER_RANGE_DATA *pRange
@@ -378,8 +371,7 @@ namespace MediaFoundation.dxvahd
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateVideoProcessor(
         ///   [in]   const GUID *pVPGuid,
         ///   [out]  IDXVAHD_VideoProcessor **ppVideoProcessor

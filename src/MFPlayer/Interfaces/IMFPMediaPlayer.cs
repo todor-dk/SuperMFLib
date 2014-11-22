@@ -77,8 +77,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Play();
         /// </code>
         /// <para/>
@@ -109,8 +108,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Pause();
         /// </code>
         /// <para/>
@@ -140,8 +138,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Stop();
         /// </code>
         /// <para/>
@@ -173,8 +170,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT FrameStep();
         /// </code>
         /// <para/>
@@ -219,8 +215,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetPosition(
         ///   [in]  REFGUID guidPositionType,
         ///   [in]  const PROPVARIANT *pvPositionValue
@@ -269,8 +264,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPosition(
         ///   [in]   REFGUID guidPositionType,
         ///   [out]  PROPVARIANT *pvPositionValue
@@ -315,8 +309,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetDuration(
         ///   [in]   REFGUID guidPositionType,
         ///   [out]  PROPVARIANT *pvDurationValue
@@ -359,8 +352,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetRate(
         ///   [in]  float flRate
         /// );
@@ -394,8 +386,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRate(
         ///   [out]  float *pflRate
         /// );
@@ -438,8 +429,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetSupportedRates(
         ///   [in]   BOOL fForwardDirection,
         ///   [out]  float *pflSlowestRate,
@@ -475,8 +465,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetState(
         ///   [out]  MFP_MEDIAPLAYER_STATE *peState
         /// );
@@ -529,8 +518,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateMediaItemFromURL(
         ///   [in]   LPCWSTR pwszURL,
         ///   [in]   BOOL fSync,
@@ -588,8 +576,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT CreateMediaItemFromObject(
         ///   [in]   IUnknown *pIUnknownObj,
         ///   [in]   BOOL fSync,
@@ -635,8 +622,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetMediaItem(
         ///   [in]  IMFPMediaItem *pIMFPMediaItem
         /// );
@@ -666,8 +652,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ClearMediaItem();
         /// </code>
         /// <para/>
@@ -703,8 +688,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMediaItem(
         ///   [out]  IMFPMediaItem **ppIMFPMediaItem
         /// );
@@ -736,8 +720,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVolume(
         ///   [out]  float *pflVolume
         /// );
@@ -775,8 +758,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVolume(
         ///   [in]  float flVolume
         /// );
@@ -815,8 +797,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBalance(
         ///   [out]  float *pflBalance
         /// );
@@ -861,8 +842,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetBalance(
         ///   [in]  float flBalance
         /// );
@@ -894,8 +874,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetMute(
         ///   [out]  BOOL *pfMute
         /// );
@@ -926,8 +905,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetMute(
         ///   BOOL fMute
         /// );
@@ -969,8 +947,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNativeVideoSize(
         ///   [out]  SIZE *pszVideo,
         ///   [out]  SIZE *pszARVideo
@@ -1014,8 +991,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetIdealVideoSize(
         ///   [out]  SIZE *pszMin,
         ///   [out]  SIZE *pszMax
@@ -1064,8 +1040,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetVideoSourceRect(
         ///   [in]  const MFVideoNormalizedRect *pnrcSource
         /// );
@@ -1110,8 +1085,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoSourceRect(
         ///   [out]  MFVideoNormalizedRect *pnrcSource
         /// );
@@ -1150,8 +1124,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void SetAspectRatioMode(
         ///   [in]  DWORD dwAspectRatioMode
         /// );
@@ -1191,8 +1164,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAspectRatioMode(
         ///   [out]  DWORD *pdwAspectRatioMode
         /// );
@@ -1223,8 +1195,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetVideoWindow(
         ///   [out]  HWND *phwndVideo
         /// );
@@ -1259,8 +1230,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT UpdateVideo();
         /// </code>
         /// <para/>
@@ -1295,8 +1265,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetBorderColor(
         ///   [in]  COLORREF Clr
         /// );
@@ -1334,8 +1303,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetBorderColor(
         ///   [out]  COLORREF *pClr
         /// );
@@ -1385,8 +1353,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT InsertEffect(
         ///   [in]  IUnknown *pEffect,
         ///   [in]  BOOL fOptional
@@ -1427,8 +1394,7 @@ namespace MediaFoundation.MFPlayer
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveEffect(
         ///   [in]  IUnknown *pEffect
         /// );
@@ -1457,8 +1423,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllEffects();
         /// </code>
         /// <para/>
@@ -1482,8 +1447,7 @@ namespace MediaFoundation.MFPlayer
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>

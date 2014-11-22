@@ -40,8 +40,7 @@ namespace MediaFoundation
     /// Specifies the buffering requirements of a file.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _MF_LEAKY_BUCKET_PAIR {
     ///   DWORD dwBitrate;
     ///   DWORD msBufferWindow;

@@ -86,8 +86,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginGetCredentials(
         ///   [in]  MFNetCredentialManagerGetParam *pParam,
         ///   [in]  IMFAsyncCallback *pCallback,
@@ -128,8 +127,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndGetCredentials(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  IMFNetCredential **ppCred
@@ -170,8 +168,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetGood(
         ///   [in]  IMFNetCredential *pCred,
         ///   [in]  BOOL fGood

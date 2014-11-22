@@ -40,8 +40,7 @@ namespace MediaFoundation.dxvahd
     /// Definition (DXVA-HD) device.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA {
     ///   BOOL Enable;
     ///   UINT ITelecineFlags;

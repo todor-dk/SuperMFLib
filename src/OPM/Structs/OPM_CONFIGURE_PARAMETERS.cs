@@ -40,8 +40,7 @@ namespace MediaFoundation.OPM
     /// command.
     /// </summary>
     /// <remarks>
-    /// <strong>C/C++ Syntax</strong>
-    /// <code>
+    /// <code language="cpp" title="C/C++ Syntax">
     /// typedef struct _OPM_CONFIGURE_PARAMETERS {
     ///   OPM_OMAC omac;
     ///   GUID     guidSetting;

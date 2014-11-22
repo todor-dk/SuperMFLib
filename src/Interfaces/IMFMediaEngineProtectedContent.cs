@@ -62,8 +62,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ShareResources(
         ///   [in]  IUnknown *pUnkDeviceContext
         /// );
@@ -92,8 +91,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetRequiredProtections(
         ///   [out]  DWORD *pFrameProtectionFlags
         /// );
@@ -121,8 +119,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetOPMWindow(
         ///   [in]  HWND hwnd
         /// );
@@ -165,8 +162,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT TransferVideoFrame(
         ///   [in]   IUnknown *pDstSurf,
         ///   [in]   const MFVideoNormalizedRect *pSrc,
@@ -202,8 +198,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetContentProtectionManager(
         ///   [in]  IMFContentProtectionManager *pCPM
         /// );
@@ -235,8 +230,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetApplicationCertificate(
         ///   [in]  const BYTE *pbBlob,
         ///   [in]  DWORD cbBlob

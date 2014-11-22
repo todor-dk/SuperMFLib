@@ -83,8 +83,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginConvertTimecodeToHNS(
         ///   [in]  const PROPVARIANT *pPropVarTimecode,
         ///   [in]  IMFAsyncCallback *pCallback,
@@ -121,8 +120,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndConvertTimecodeToHNS(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  MFTIME *phnsTime
@@ -168,8 +166,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT BeginConvertHNSToTimecode(
         ///   [in]  MFTIME hnsTime,
         ///   [in]  IMFAsyncCallback *pCallback,
@@ -209,8 +206,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT EndConvertHNSToTimecode(
         ///   [in]   IMFAsyncResult *pResult,
         ///   [out]  PROPVARIANT *pPropVarTimecode

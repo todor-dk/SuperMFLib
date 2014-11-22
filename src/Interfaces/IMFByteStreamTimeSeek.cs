@@ -64,8 +64,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT IsTimeSeekSupported(
         ///   [out]  BOOL *pfTimeSeekIsSupported
         /// );
@@ -93,8 +92,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT TimeSeek(
         ///   QWORD qwTimePosition
         /// );
@@ -134,8 +132,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTimeSeekResult(
         ///   [out]  QWORD *pqwStartTime,
         ///   [out]  QWORD *pqwStopTime,

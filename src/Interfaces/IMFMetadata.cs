@@ -65,8 +65,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetLanguage(
         ///   [in]  LPCWSTR pwszRFC1766
         /// );
@@ -102,8 +101,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetLanguage(
         ///   [out]  LPWSTR *ppwszRFC1766
         /// );
@@ -137,8 +135,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllLanguages(
         ///   [out]  PROPVARIANT *ppvLanguages
         /// );
@@ -170,8 +167,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetProperty(
         ///   [in]  LPCWSTR pwszName,
         ///   [in]  const PROPVARIANT *ppvValue
@@ -214,8 +210,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetProperty(
         ///   [in]   LPCWSTR pwszName,
         ///   [out]  PROPVARIANT *ppvValue
@@ -251,8 +246,7 @@ namespace MediaFoundation
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT DeleteProperty(
         ///   [in]  LPCWSTR pwszName
         /// );
@@ -283,8 +277,7 @@ namespace MediaFoundation
         /// </strong> error code. 
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetAllPropertyNames(
         ///   [out]  PROPVARIANT *ppvNames
         /// );

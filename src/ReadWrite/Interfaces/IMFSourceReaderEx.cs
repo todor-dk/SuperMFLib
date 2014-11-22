@@ -71,8 +71,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetStreamSelection(
         /// [in]   DWORD dwStreamIndex,
         /// [out]  BOOL *pfSelected
@@ -101,8 +101,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetStreamSelection(
         /// [in]  DWORD dwStreamIndex,
         /// [in]  BOOL fSelected
@@ -139,8 +139,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_NO_MORE_TYPES</strong></strong></term><description>The <em>dwMediaTypeIndex</em> parameter is out of range. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetNativeMediaType(
         /// [in]   DWORD dwStreamIndex,
         /// [in]   DWORD dwMediaTypeIndex,
@@ -177,8 +177,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDSTREAMNUMBER</strong></strong></term><description>The <em>dwStreamIndex</em> parameter is invalid. </description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetCurrentMediaType(
         /// [in]   DWORD dwStreamIndex,
         /// [out]  IMFMediaType **ppMediaType
@@ -219,8 +219,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_TOPO_CODEC_NOT_FOUND</strong></strong></term><description>Could not find a decoder for the native stream type.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentMediaType(
         /// [in]       DWORD dwStreamIndex,
         /// [in, out]  DWORD *pdwReserved,
@@ -260,8 +260,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>MF_E_INVALIDREQUEST</strong></strong></term><description>One or more sample requests are still pending.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetCurrentPosition(
         /// [in]  REFGUID guidTimeFormat,
         /// [in]  REFPROPVARIANT varPosition
@@ -307,8 +307,8 @@ namespace MediaFoundation.ReadWrite
         /// <item><term><strong><strong>E_INVALIDARG</strong></strong></term><description>Invalid argument. See Remarks.</description></item>
         /// </list>
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT ReadSample(
         /// [in]   DWORD dwStreamIndex,
         /// [in]   DWORD dwControlFlags,
@@ -343,8 +343,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush(
         /// [in]  DWORD dwStreamIndex
         /// );
@@ -377,8 +377,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetServiceForStream(
         /// [in]   DWORD dwStreamIndex,
         /// [in]   REFGUID guidService,
@@ -421,8 +421,8 @@ namespace MediaFoundation.ReadWrite
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
         /// </strong> error code. 
         /// </returns>
-        /// <remarks><strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetPresentationAttribute(
         /// [in]   DWORD dwStreamIndex,
         /// [in]   REFGUID guidAttribute,
@@ -472,8 +472,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT SetNativeMediaType(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   IMFMediaType *pMediaType,
@@ -525,8 +524,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT AddTransformForStream(
         ///   [in]  DWORD dwStreamIndex,
         ///   [in]  IUnknown *pTransformOrActivate
@@ -569,8 +567,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT RemoveAllTransformsForStream(
         ///   [in]  DWORD dwStreamIndex
         /// );
@@ -621,8 +618,7 @@ namespace MediaFoundation.ReadWrite
         /// </list>
         /// </returns>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT GetTransformForStream(
         ///   [in]   DWORD dwStreamIndex,
         ///   [in]   DWORD dwTransformIndex,

@@ -61,8 +61,7 @@ namespace MediaFoundation
         /// The length in bytes of <em>message</em>. 
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void KeyMessage(
         ///   BSTR destinationURL,
         ///   const BYTE *message,
@@ -87,8 +86,7 @@ namespace MediaFoundation
         /// Notifies the application that the key has been added. 
         /// </summary>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void KeyAdded();
         /// </code>
         /// <para/>
@@ -109,8 +107,7 @@ namespace MediaFoundation
         /// <param name="systemCode">
         /// </param>
         /// <remarks>
-        /// <strong>C/C++ Syntax</strong>
-        /// <code>
+        /// <code language="cpp" title="C/C++ Syntax">
         /// void KeyError(
         ///   USHORT code,
         ///   DWORD systemCode
