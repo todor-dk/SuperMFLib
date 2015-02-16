@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <see cref="Attributes{T}"/> class implements a wrapper arround the
+    /// The <see cref="Attributes{T}"/> class implements a wrapper around the
     /// <see cref="IMFAttributes"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFAttributes"/>
@@ -1107,7 +1107,7 @@ namespace MediaFoundation
     }
 
     /// <summary>
-    /// The <see cref="Attributes"/> class implements a wrapper arround the
+    /// The <see cref="Attributes"/> class implements a wrapper around the
     /// <see cref="IMFAttributes"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFAttributes"/>

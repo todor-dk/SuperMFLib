@@ -24,7 +24,7 @@ namespace MediaFoundation.Internals
         public static string GetMessage(int errorCode)
         {
             string errorText = MFError.GetErrorText(errorCode);
-            if (String.IsNullOrWhiteSpace(errorText))
+            if (!String.IsNullOrWhiteSpace(errorText))
                 return errorText;
 
             StringBuilder sb = new StringBuilder(512);

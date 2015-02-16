@@ -8,7 +8,7 @@ using MediaFoundation.Misc;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <see cref="MediaTypeHandler"/> class implements a wrapper arround the
+    /// The <see cref="MediaTypeHandler"/> class implements a wrapper around the
     /// <see cref="IMFMediaTypeHandler"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFMediaTypeHandler"/>
@@ -199,6 +199,20 @@ namespace MediaFoundation
                 int hr = this.Interface.GetMajorType(out pguidMajorType);
                 COM.ThrowIfNotOK(hr);
                 return pguidMajorType;
+            }
+        }
+
+        /// <summary>
+        /// Returns the name of the major type of the object. 
+        /// <para/>
+        /// <strong>IMPORTANT:</strong> This name is not stable and is intended only for debug purposes.
+        /// </summary>
+        /// <seealso cref="MajorType"/>
+        public string MajorTypeName
+        {
+            get
+            {
+                return GuidMapper.Current.GetName(this.MajorType) ?? this.MajorType.ToString();
             }
         }
     }

@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <see cref="Topology"/> class implements a wrapper arround the
+    /// The <see cref="Topology"/> class implements a wrapper around the
     /// <see cref="IMFTopology"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFTopology"/>

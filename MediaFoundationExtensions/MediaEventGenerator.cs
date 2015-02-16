@@ -8,7 +8,7 @@ using MediaFoundation.Misc;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <see cref="MediaEventGenerator"/> class implements a wrapper arround the
+    /// The <see cref="MediaEventGenerator"/> class implements a wrapper around the
     /// <see cref="IMFMediaEventGenerator"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFMediaEventGenerator"/>
@@ -133,7 +133,7 @@ namespace MediaFoundation
     }
 
     /// <summary>
-    /// The <see cref="MediaEventGenerator"/> class implements a wrapper arround the
+    /// The <see cref="MediaEventGenerator"/> class implements a wrapper around the
     /// <see cref="IMFMediaEventGenerator"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFMediaEventGenerator"/>

@@ -8,7 +8,7 @@ using MediaFoundation.dxvahd;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <see cref="DXVAHD_Device"/> class implements a wrapper arround the
+    /// The <see cref="DXVAHD_Device"/> class implements a wrapper around the
     /// <see cref="IDXVAHD_Device"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IDXVAHD_Device"/>

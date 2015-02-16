@@ -57,7 +57,7 @@ namespace MediaFoundation
         {
             if (self == null)
                 return null;
-            IMFGetService servive = self.Interface as IMFGetService;
+            IMFGetService servive = self.GetUniqueReferenceOrNull<IMFGetService>();
             if (servive == null)
                 return null;
             return new GetService(servive);
