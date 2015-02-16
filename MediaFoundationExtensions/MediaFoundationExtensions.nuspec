@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MediaFoundationExtensions</id>
+    <version>$version$</version>
+    <title>Media Foundation Lib Extensions</title>
+    <authors>Todor Todorov</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MFLib is a library allowing .NET access to Windows Media Foundation technology.
+
+MFLib Extensions is a library that wraps MFLib and adds easy to use contrusts and accessors around the MFLib library by hiding the interop complexities.</description>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+  </metadata>
+</package>
