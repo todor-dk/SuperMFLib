@@ -101,7 +101,11 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The client must
         /// implement this interface.</param>
-        /// <param name="o">The o.</param>
+        /// <param name="punkState">
+        /// Pointer to the IUnknown interface of a state object, defined by the caller. 
+        /// This parameter can be NULL. You can use this object to hold state information. 
+        /// The object is returned to the caller when the callback is invoked.
+        /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
         /// those in the following table. 
@@ -132,7 +136,7 @@ namespace MediaFoundation
         [PreserveSig]
         new int BeginGetEvent(
             [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncCallback pCallback,
-            [In, MarshalAs(UnmanagedType.IUnknown)] object o);
+            [In, MarshalAs(UnmanagedType.IUnknown)] object punkState);
 
         /// <summary>
         /// Completes an asynchronous request for the next event in the queue.

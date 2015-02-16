@@ -166,6 +166,39 @@ namespace MediaFoundation.Misc
     public class ConstPropVariant : IDisposable
     {
         /// <summary>
+        /// Creates a copy of a <c>PROPVARIANT</c> structure. 
+        /// </summary>
+        /// <param name="pvarDest">
+        /// Type: <strong><c>PROPVARIANT</c>* </strong>
+        /// <para/>
+        /// Pointer to the destination <c>PROPVARIANT</c> structure that receives the copy. 
+        /// </param>
+        /// <param name="pvarSource">
+        /// Type: <strong>const <c>PROPVARIANT</c>* </strong>
+        /// <para/>
+        /// Pointer to the source <c>PROPVARIANT</c> structure. 
+        /// </param>
+        /// <remarks>
+        /// <code language="cpp" title="C/C++ Syntax">
+        /// HRESULT PropVariantCopy(
+        ///   _Out_  PROPVARIANT *pvarDest,
+        ///   _In_   const PROPVARIANT *pvarSrc
+        /// );
+        /// </code>
+        /// <para/>
+        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// with the sole purpose to increase usability and add IntelliSense support.
+        /// <para/>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/F17F1722-F041-414C-B838-F1F83427FF0C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F17F1722-F041-414C-B838-F1F83427FF0C(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
+        [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false), SuppressUnmanagedCodeSecurity]
+        protected static extern void PropVariantCopy(
+            [Out, MarshalAs(UnmanagedType.LPStruct)] PropVariant pvarDest,
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarSource
+            );
+
+        /// <summary>
         /// Specifies the variant type of the value contained in the <see cref="ConstPropVariant"/>.
         /// </summary>
         [UnmanagedName("VARTYPE")]
@@ -1328,6 +1361,22 @@ namespace MediaFoundation.Misc
         public static bool operator !=(ConstPropVariant a, ConstPropVariant b)
         {
             return !(a == b);
+        }
+
+        /// <summary>
+        /// Copies the contents of this propvariant into the <see cref="PropVariant" /> given in
+        /// the <paramref name="copyDestination" /> parameter.
+        /// </summary>
+        /// <param name="copyDestination">A propvariant that receives the copy.</param>
+        /// <exception cref="System.ArgumentNullException">IF <paramref name="copyDestination"/> is null.</exception>
+        public void Copy(PropVariant copyDestination)
+        {
+            if (copyDestination == null)
+                throw new ArgumentNullException("pval");
+
+            copyDestination.Clear();
+
+            ConstPropVariant.PropVariantCopy(copyDestination, this);
         }
 
         #region IDisposable Members

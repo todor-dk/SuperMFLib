@@ -158,39 +158,6 @@ namespace MediaFoundation.Misc
         #region Declarations
 
         /// <summary>
-        /// Creates a copy of a <c>PROPVARIANT</c> structure. 
-        /// </summary>
-        /// <param name="pvarDest">
-        /// Type: <strong><c>PROPVARIANT</c>* </strong>
-        /// <para/>
-        /// Pointer to the destination <c>PROPVARIANT</c> structure that receives the copy. 
-        /// </param>
-        /// <param name="pvarSource">
-        /// Type: <strong>const <c>PROPVARIANT</c>* </strong>
-        /// <para/>
-        /// Pointer to the source <c>PROPVARIANT</c> structure. 
-        /// </param>
-        /// <remarks>
-        /// <code language="cpp" title="C/C++ Syntax">
-        /// HRESULT PropVariantCopy(
-        ///   _Out_  PROPVARIANT *pvarDest,
-        ///   _In_   const PROPVARIANT *pvarSrc
-        /// );
-        /// </code>
-        /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
-        /// with the sole purpose to increase usability and add IntelliSense support.
-        /// <para/>
-        /// View the original documentation topic online: 
-        /// <a href="http://msdn.microsoft.com/en-US/library/F17F1722-F041-414C-B838-F1F83427FF0C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F17F1722-F041-414C-B838-F1F83427FF0C(v=VS.85,d=hv.2).aspx</a>
-        /// </remarks>
-        [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false), SuppressUnmanagedCodeSecurity]
-        protected static extern void PropVariantCopy(
-            [Out, MarshalAs(UnmanagedType.LPStruct)] PropVariant pvarDest,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarSource
-            );
-
-        /// <summary>
         /// Clears a <c>PROPVARIANT</c> structure. 
         /// </summary>
         /// <param name="pvar">
@@ -223,7 +190,7 @@ namespace MediaFoundation.Misc
         /// Initializes a new instance of the <see cref="PropVariant"/> class.
         /// </summary>
         public PropVariant() : base(VariantType.None)
-        {
+        { 
         }
 
         /// <summary>
@@ -415,21 +382,6 @@ namespace MediaFoundation.Misc
             Clear();
         }
 
-        /// <summary>
-        /// Copies the contents of this propvariant into the <see cref="PropVariant" /> given in
-        /// the <paramref name="copyDestination" /> parameter.
-        /// </summary>
-        /// <param name="copyDestination">A propvariant that receives the copy.</param>
-        /// <exception cref="System.ArgumentNullException">IF <paramref name="copyDestination"/> is null.</exception>
-        public void Copy(PropVariant copyDestination)
-        {
-            if (copyDestination == null)
-                throw new ArgumentNullException("pval");
-
-            copyDestination.Clear();
-
-            PropVariantCopy(copyDestination, this);
-        }
 
         /// <summary>
         /// Frees all elements that can be freed in this propvariant. 
@@ -439,6 +391,51 @@ namespace MediaFoundation.Misc
         public void Clear()
         {
             PropVariantClear(this);
+        }
+
+        /// <summary>
+        /// Create and anitialize a new <see cref="PropVariant"/> with the given <paramref name="value"/>.
+        /// The <seealso cref="ValueType"/> of the PropVariant is derived from the type of the <paramref name="value"/>.
+        /// </summary>
+        /// <param name="value">Value for the PropVariant.</param>
+        /// <returns>A new PropVariant for the given value.</returns>
+        public static PropVariant FromValue(object value)
+        {
+            if (value is ConstPropVariant)
+            {
+                PropVariant result = new PropVariant();
+                ((ConstPropVariant)value).Copy(result);
+                return result;
+            }
+            if (value == null)
+                return new PropVariant();
+            if (value is string)
+                return new PropVariant((string)value);
+            if (value is string[])
+                return new PropVariant((string[])value);
+            if (value is Int32)
+                return new PropVariant((Int32)value);
+            if (value is Int64)
+                return new PropVariant((Int64)value);
+            if (value is Int16)
+                return new PropVariant((Int16)value);
+            if (value is UInt32)
+                return new PropVariant((UInt32)value);
+            if (value is UInt64)
+                return new PropVariant((UInt64)value);
+            if (value is UInt16)
+                return new PropVariant((UInt16)value);
+            if (value is Byte)
+                return new PropVariant((Byte)value);
+            if (value is Single)
+                return new PropVariant((Single)value);
+            if (value is Double)
+                return new PropVariant((Double)value);
+            if (value is Guid)
+                return new PropVariant((Guid)value);
+            if (value is byte[])
+                return new PropVariant((byte[])value);
+            return new PropVariant(value); // VariantType.IUnknown:
         }
 
         #region IDisposable Members

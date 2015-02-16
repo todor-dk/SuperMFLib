@@ -139,5 +139,4 @@ namespace MediaFoundation.Misc
             return Convert.ToInt32(obj) == m_value;
         }
     }
-
 }

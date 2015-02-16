@@ -88,7 +88,7 @@ namespace MediaFoundation
         [PreserveSig]
         int IsMediaTypeSupported(
             [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pMediaType,
-            IntPtr ppMediaType  //[MarshalAs(UnmanagedType.Interface)] out IMFMediaType ppMediaType
+            [MarshalAs(UnmanagedType.Interface)] out IMFMediaType ppMediaType
             );
 
         /// <summary>

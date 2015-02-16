@@ -206,7 +206,7 @@ namespace MediaFoundation
         [PreserveSig]
         int SetAllVolumes(
             [In] int dwCount,
-            [In] ref float pfVolumes
+            [In] float[] pfVolumes
             );
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace MediaFoundation
         [PreserveSig]
         int GetAllVolumes(
             [In] int dwCount,
-            out float pfVolumes
+            [Out] float[] pfVolumes
             );
     }
 

@@ -327,9 +327,9 @@ namespace MediaFoundation.ReadWrite
         [PreserveSig]
         new int ReadSample(
             int dwStreamIndex,
-            int dwControlFlags,
+            MF_SOURCE_READER_CONTROL_FLAG dwControlFlags,
             out int pdwActualStreamIndex,
-            out int pdwStreamFlags,
+            out MF_SOURCE_READER_FLAG pdwStreamFlags,
             out long pllTimestamp,
             out IMFSample ppSample
         );
