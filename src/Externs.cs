@@ -68,7 +68,9 @@ namespace MediaFoundation
         /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6E7A2AC0-2A4A-41EC-A2A8-DDBE8AA45BC9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6E7A2AC0-2A4A-41EC-A2A8-DDBE8AA45BC9(v=VS.85,d=hv.2).aspx</a></remarks>
         [DllImport("Propsys.dll"), SuppressUnmanagedCodeSecurity]
-        public static extern int PSCreateMemoryPropertyStore(Guid riid, out IPropertyStore propStore);
+        public static extern int PSCreateMemoryPropertyStore(
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
+            [MarshalAs(UnmanagedType.IUnknown)] out object propStore);
 
         /// <summary>
         /// Shuts down the Microsoft Media Foundation platform. Call this function once for every call to 

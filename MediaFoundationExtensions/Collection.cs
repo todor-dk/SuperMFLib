@@ -7,7 +7,7 @@ using MediaFoundation.Internals;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <see cref="Collection"/> class implements a wrapper around the
+    /// The <see cref="Collection{TItem}"/> class implements a wrapper around the
     /// <see cref="IMFCollection"/> COM interface. This adds <see cref="IDisposable"/>
     /// support to make it compatible with the <strong>using</strong> statement as well as
     /// exposing <i>civilized</i> version of the <see cref="IMFCollection"/>
@@ -24,20 +24,18 @@ namespace MediaFoundation
     /// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public class Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
+        where TItem : COM
     {
-        private readonly Func<object, TItem> ObjectToItem;
-        private readonly Func<TItem, object> ItemToObject;
+        private readonly Func<object, TItem> ItemFactory;
 
         #region Construction
 
-        internal Collection(IMFCollection comInterface, Func<object, TItem> objectToItem, Func<TItem, object> itemToObject)
+        internal Collection(IMFCollection comInterface, Func<object, TItem> itemFactory)
             : base(comInterface)
         {
-            Contract.RequiresNotNull(objectToItem, "objectToItem");
-            Contract.RequiresNotNull(itemToObject, "itemToObject");
+            Contract.RequiresNotNull(itemFactory, "itemFactory");
 
-            this.ObjectToItem = objectToItem;
-            this.ItemToObject = itemToObject;
+            this.ItemFactory = itemFactory;
         }
 
         #endregion
@@ -79,9 +77,7 @@ namespace MediaFoundation
             object ppUnkElement;
             int hr = this.Interface.GetElement(index, out ppUnkElement);
             COM.ThrowIfNotOK(hr);
-            TItem item = this.ObjectToItem(ppUnkElement);
-            if (!Object.ReferenceEquals(ppUnkElement, item))
-                COM.SafeRelease(ppUnkElement);
+            TItem item = this.ItemFactory(ppUnkElement);
             return item;
         }
 
@@ -97,10 +93,8 @@ namespace MediaFoundation
         /// </remarks>
         public void AddElement(TItem item)
         {
-            object pUnkElement = this.ItemToObject(item);
+            object pUnkElement = item.GetInterface();
             int hr = this.Interface.AddElement(pUnkElement);
-            if (!Object.ReferenceEquals(pUnkElement, item))
-                COM.SafeRelease(pUnkElement);
             COM.ThrowIfNotOK(hr);
         }
 
@@ -124,9 +118,7 @@ namespace MediaFoundation
             object ppUnkElement;
             int hr = this.Interface.RemoveElement(index, out ppUnkElement);
             COM.ThrowIfNotOK(hr);
-            TItem item = this.ObjectToItem(ppUnkElement);
-            if (!Object.ReferenceEquals(ppUnkElement, item))
-                COM.SafeRelease(ppUnkElement);
+            TItem item = this.ItemFactory(ppUnkElement);
             return item;
         }
 
@@ -145,10 +137,8 @@ namespace MediaFoundation
         /// </remarks>
         public void InsertElementAt(int index, TItem item)
         {
-            object pUnkElement = this.ItemToObject(item);
+            object pUnkElement = item.GetInterface();
             int hr = this.Interface.InsertElementAt(index, pUnkElement);
-            if (!Object.ReferenceEquals(pUnkElement, item))
-                COM.SafeRelease(pUnkElement);
             COM.ThrowIfNotOK(hr);
         }
 
@@ -203,6 +193,8 @@ namespace MediaFoundation
 
             public bool MoveNext()
             {
+                if (this.Current != null)
+                    this.Current.Dispose();
                 if (this.NextIndex < this.Collection.Count)
                 {
                     this.Current = this.Collection.GetElement(this.NextIndex);
@@ -219,37 +211,39 @@ namespace MediaFoundation
             public void Reset()
             {
                 this.NextIndex = 0;
+                if (this.Current != null)
+                    this.Current.Dispose();
                 this.Current = default(TItem);
             }
         }
     }
 
-    /// <summary>
-    /// The <see cref="Collection"/> class implements a wrapper around the
-    /// <see cref="IMFCollection"/> COM interface. This adds <see cref="IDisposable"/>
-    /// support to make it compatible with the <strong>using</strong> statement as well as
-    /// exposing <i>civilized</i> version of the <see cref="IMFCollection"/>
-    /// interface's methods.
-    /// <para/>
-    /// <see cref="IMFCollection"/>: 
-    /// Represents a generic collection of <strong>IUnknown</strong> pointers. 
-    /// </summary>
-    /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
-    /// with the sole purpose to increase usability and add IntelliSense support.
-    /// <para/>
-    /// View the original documentation topic online: 
-    /// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
-    /// </remarks>
-    public sealed class Collection : Collection<object>
-    {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Collection"/> class.
-        /// </summary>
-        /// <param name="comInterface">The COM interface.</param>
-        internal Collection(IMFCollection comInterface)
-            : base(comInterface, e => e, e => e)
-        {
-        }
-    }
+    ///// <summary>
+    ///// The <see cref="Collection"/> class implements a wrapper around the
+    ///// <see cref="IMFCollection"/> COM interface. This adds <see cref="IDisposable"/>
+    ///// support to make it compatible with the <strong>using</strong> statement as well as
+    ///// exposing <i>civilized</i> version of the <see cref="IMFCollection"/>
+    ///// interface's methods.
+    ///// <para/>
+    ///// <see cref="IMFCollection"/>: 
+    ///// Represents a generic collection of <strong>IUnknown</strong> pointers. 
+    ///// </summary>
+    ///// <remarks>
+    ///// The above documentation is © Microsoft Corporation. It is reproduced here 
+    ///// with the sole purpose to increase usability and add IntelliSense support.
+    ///// <para/>
+    ///// View the original documentation topic online: 
+    ///// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
+    ///// </remarks>
+    //public sealed class Collection : Collection<object>
+    //{
+    //    /// <summary>
+    //    /// Initializes a new instance of the <see cref="Collection"/> class.
+    //    /// </summary>
+    //    /// <param name="comInterface">The COM interface.</param>
+    //    internal Collection(IMFCollection comInterface)
+    //        : base(comInterface, e => e, e => e)
+    //    {
+    //    }
+    //}
 }

@@ -11,7 +11,7 @@ namespace MediaFoundation
     /// <summary>
     /// This class contains common functionality often used with COM interop.
     /// </summary>
-    public abstract class COM
+    public abstract class COM : IDisposable
     {
         /// <summary>
         /// If <paramref name="hr"/> has a "failed" status code (E_*), throw an exception.  
@@ -186,6 +186,27 @@ namespace MediaFoundation
         /// </summary>
         /// <returns>Returns the COM interface.</returns>
         protected abstract object InternalGetInterface();
+
+        #region IDisposable Interface
+
+        /// <summary>
+        /// Releases the COM interface.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+        }
+
+
+        /// <summary>
+        /// Dispose resources.
+        /// </summary>
+        /// <param name="disposing">True if disposing, false if due to GC.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+        }
+
+        #endregion
     }
 
     /// <summary>
@@ -194,7 +215,7 @@ namespace MediaFoundation
     /// with the <strong>using</strong> statement.
     /// </summary>
     /// <typeparam name="TInterface">Type of the COM interface.</typeparam>
-    public abstract class COM<TInterface> : COM, IDisposable
+    public abstract class COM<TInterface> : COM
         where TInterface : class
     {
         private TInterface _Interface;
@@ -237,22 +258,15 @@ namespace MediaFoundation
         #region IDisposable Interface
 
         /// <summary>
-        /// Releases the COM interface.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            this.Released = true;
-            COM.SafeRelease(ref this._Interface);
-        }
-
-
-        /// <summary>
         /// Dispose resources.
         /// </summary>
         /// <param name="disposing">True if disposing, false if due to GC.</param>
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
+            if (disposing)
+                COM.SafeRelease(ref this._Interface);
+            this.Released = true;
+            base.Dispose(disposing);
         }
 
         #endregion

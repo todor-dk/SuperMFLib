@@ -76,5 +76,26 @@ namespace MediaFoundation
             int hr = MFExtern.MFShutdown();
             COM.ThrowIfNotOK(hr);
         }
+
+
+        /// <summary>
+        /// Gets the error message for a Win32 error code or HRESULT.
+        /// </summary>
+        /// <param name="errorCode">Win32 error code or HRESULT.</param>
+        /// <returns>Returns the error message for a Win32 <paramref name="errorCode"/>.</returns>
+        public static string GetErrorMessage(int errorCode)
+        {
+            return Internals.Helpers.GetMessage(errorCode);
+        }
+
+        /// <summary>
+        /// Returns the symbolic name for the given guid.
+        /// </summary>
+        /// <param name="guid">Media Foundation defined guid.</param>
+        /// <returns>The symbolic name of the guid or null if none found.</returns>
+        public static string GetGuidName(Guid guid)
+        {
+            return Internals.GuidMapper.Current.GetName(guid);
+        }
     }
 }

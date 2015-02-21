@@ -196,10 +196,10 @@ namespace MediaFoundation
         /// <param name="disposing">True if disposing, false if due to GC.</param>
         protected override void Dispose(bool disposing)
         {
-            base.Dispose(disposing);
             // Shuts down the Media Session and releases all the resources used by the Media Session.
             int hr = this.Interface.Shutdown();
             COM.ThrowIfNotOK(hr);
+            base.Dispose(disposing);
         }
 
         /// <summary>

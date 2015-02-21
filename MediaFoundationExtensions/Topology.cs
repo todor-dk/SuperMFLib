@@ -228,7 +228,7 @@ namespace MediaFoundation
             IMFCollection ppCollection;
             int hr = this.Interface.GetSourceNodeCollection(out ppCollection);
             COM.ThrowIfNotOK(hr);
-            return ppCollection.ToCollection(e => ((IMFTopologyNode)e).ToTopologyNode(), e => e.GetInterface());
+            return ppCollection.ToCollection(e => ((IMFTopologyNode)e).ToTopologyNode());
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace MediaFoundation
             IMFCollection ppCollection;
             int hr = this.Interface.GetOutputNodeCollection(out ppCollection);
             COM.ThrowIfNotOK(hr);
-            return ppCollection.ToCollection(e => ((IMFTopologyNode)e).ToTopologyNode(), e => e.GetInterface());
+            return ppCollection.ToCollection(e => ((IMFTopologyNode)e).ToTopologyNode());
         }
     }
 }
