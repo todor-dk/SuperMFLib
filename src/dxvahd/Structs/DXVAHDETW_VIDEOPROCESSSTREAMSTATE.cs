@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -38,7 +38,7 @@ namespace MediaFoundation.dxvahd
     /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.
     /// </summary>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDETW_VIDEOPROCESSSTREAMSTATE")]
-    public struct DXVAHDETW_VIDEOPROCESSSTREAMSTATE
+    internal struct DXVAHDETW_VIDEOPROCESSSTREAMSTATE
     {
         /// <summary>
         /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.

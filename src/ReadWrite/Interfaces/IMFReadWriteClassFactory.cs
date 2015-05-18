@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.ReadWrite
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("E7FE2E12-661C-40DA-92F9-4F002AB67627")]
-    public interface IMFReadWriteClassFactory
+    internal interface IMFReadWriteClassFactory
     {
         /// <summary>
         /// Creates an instance of the sink writer or source reader, given a URL.

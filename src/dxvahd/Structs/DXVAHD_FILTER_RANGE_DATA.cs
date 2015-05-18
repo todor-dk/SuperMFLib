@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/CD349AC5-9825-4DC8-8735-5D846ABB353B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CD349AC5-9825-4DC8-8735-5D846ABB353B(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_FILTER_RANGE_DATA")]
-    public struct DXVAHD_FILTER_RANGE_DATA
+    internal struct DXVAHD_FILTER_RANGE_DATA
     {
         /// <summary>
         /// The minimum value of the filter.

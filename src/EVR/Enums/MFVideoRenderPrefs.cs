@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -45,7 +46,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/A56E7E09-23AF-4AD3-9846-4102233ED3C4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A56E7E09-23AF-4AD3-9846-4102233ED3C4(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFVideoRenderPrefs")]
-    public enum MFVideoRenderPrefs
+    internal enum MFVideoRenderPrefs
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -114,5 +115,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         Mask = 0x000001ff,
     }
-
+#endif
 }

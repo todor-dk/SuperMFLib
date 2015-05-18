@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -63,7 +63,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/9319A98D-8F43-4F29-8787-18DEC53DFF88(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9319A98D-8F43-4F29-8787-18DEC53DFF88(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_CONTENT_DESC")]
-    public struct DXVAHD_CONTENT_DESC
+    internal struct DXVAHD_CONTENT_DESC
     {
         /// <summary>
         /// A member of the <see cref="dxvahd.DXVAHD_FRAME_FORMAT" /> enumeration that describes how the video

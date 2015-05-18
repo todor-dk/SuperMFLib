@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -51,7 +51,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/ABCF0B84-7370-48DA-B4DD-4FADED6BE343(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/ABCF0B84-7370-48DA-B4DD-4FADED6BE343(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_ENCRYPTED_INITIALIZATION_PARAMETERS
+    internal struct OPM_ENCRYPTED_INITIALIZATION_PARAMETERS
     {
         /// <summary>
         /// Pointer to a buffer that contains encrypted initialization parameters for the session. For more

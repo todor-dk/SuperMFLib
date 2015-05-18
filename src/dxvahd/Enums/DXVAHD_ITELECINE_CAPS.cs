@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/BF3E0D24-2671-4E79-9CFE-D776D8E5FB47(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BF3E0D24-2671-4E79-9CFE-D776D8E5FB47(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVAHD_ITELECINE_CAPS")]
-    public enum DXVAHD_ITELECINE_CAPS
+    internal enum DXVAHD_ITELECINE_CAPS
     {
         /// <summary>
         /// The video processor can reverse 3:2 pulldown.

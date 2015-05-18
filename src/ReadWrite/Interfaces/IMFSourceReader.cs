@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.ReadWrite
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("70ae66f2-c809-4e4f-8915-bdcb406b7993")]
-    public interface IMFSourceReader
+    internal interface IMFSourceReader
     {
         /// <summary>
         /// Queries whether a stream is selected.

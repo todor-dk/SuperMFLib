@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -68,7 +68,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/74C329CC-AF54-4CF8-8CB6-EED9E96DB4C5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/74C329CC-AF54-4CF8-8CB6-EED9E96DB4C5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHDSW_CALLBACKS")]
-    public struct DXVAHDSW_CALLBACKS
+    internal struct DXVAHDSW_CALLBACKS
     {
         /// <summary>
         /// Function pointer of type <see cref="dxvahd.PDXVAHDSW_CreateDevice" />.

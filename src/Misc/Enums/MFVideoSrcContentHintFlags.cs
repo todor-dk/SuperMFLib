@@ -25,8 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -40,7 +41,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/6166B880-36BC-4AC3-9D66-D3DD17C29AE7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6166B880-36BC-4AC3-9D66-D3DD17C29AE7(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoSrcContentHintFlags")]
-    public enum  MFVideoSrcContentHintFlags
+    internal enum  MFVideoSrcContentHintFlags
     {
         /// <summary>
         /// The aspect ratio is unknown.
@@ -55,5 +56,5 @@ namespace MediaFoundation.Misc
         /// </summary>
         F235_1 = 2
     }
-
+#endif
 }

@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -46,7 +47,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/60D97B9E-D77C-4E53-94EA-EBD59C2601DF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/60D97B9E-D77C-4E53-94EA-EBD59C2601DF(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVA2_ProcAmp_* defines")]
-    public enum DXVA2ProcAmp
+    internal enum DXVA2ProcAmp
     {
         /// <summary>
         /// None.
@@ -69,5 +70,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         Saturation = 0x0008
     }
-
+#endif
 }

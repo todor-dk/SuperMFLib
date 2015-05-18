@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -40,7 +40,7 @@ namespace MediaFoundation.OPM
     /// <remarks>
     /// See: http://msdn.microsoft.com/en-us/library/windows/hardware/ff568687(v=vs.85).aspx
     /// </remarks>
-    public enum KSMETHOD_OPMVIDEOOUTPUT
+    internal enum KSMETHOD_OPMVIDEOOUTPUT
     {
         /// <summary>
         /// Output is OPM_RANDOM_NUMBER followed by certificate.

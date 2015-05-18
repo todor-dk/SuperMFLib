@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/2A810071-B5F7-4216-8108-83DCE5C12836(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2A810071-B5F7-4216-8108-83DCE5C12836(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_TARGET_RECT_DATA")]
-    public struct DXVAHD_BLT_STATE_TARGET_RECT_DATA
+    internal struct DXVAHD_BLT_STATE_TARGET_RECT_DATA
     {
         /// <summary>
         /// Specifies whether to use the target rectangle. The default state value is <strong>FALSE</strong>.

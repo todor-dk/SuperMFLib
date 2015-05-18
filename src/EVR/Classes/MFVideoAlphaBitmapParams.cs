@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Specifies how the enhanced video renderer (EVR) alpha-blends a bitmap with the video.
@@ -56,7 +56,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/3A7F67FA-CA54-4B6F-9CFC-E8EBA57F00CE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3A7F67FA-CA54-4B6F-9CFC-E8EBA57F00CE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFVideoAlphaBitmapParams")]
-    public class MFVideoAlphaBitmapParams
+    internal class  MFVideoAlphaBitmapParams
     {
         /// <summary>
         /// Bitwise OR of one or more flags from the <see cref="EVR.MFVideoAlphaBitmapFlags"/> enumeration.
@@ -120,4 +120,5 @@ namespace MediaFoundation.EVR
         public int dwFilterMode;
     }
 
+#endif
 }

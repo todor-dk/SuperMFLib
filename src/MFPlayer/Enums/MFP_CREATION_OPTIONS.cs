@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.MFPlayer
     /// </remarks>
     [Obsolete("Applications should use the Media Session for playback.")]
     [Flags, UnmanagedName("_MFP_CREATION_OPTIONS")]
-    public enum MFP_CREATION_OPTIONS
+    internal enum MFP_CREATION_OPTIONS
     {
         /// <summary>
         /// Use the default creation options.

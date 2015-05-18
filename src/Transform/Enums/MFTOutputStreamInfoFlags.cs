@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Describes an output stream on a Media Foundation transform (MFT).
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/F67E1E81-BAF5-414A-AC23-45D4D6317255(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F67E1E81-BAF5-414A-AC23-45D4D6317255(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_OUTPUT_STREAM_INFO_FLAGS")]
-    public enum MFTOutputStreamInfoFlags
+    internal enum MFTOutputStreamInfoFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -117,4 +117,5 @@ namespace MediaFoundation.Transform
         Removable = 0x00000800
     }
 
+#endif
 }

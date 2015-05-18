@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Indicates the status of a call to <see cref="Transform.IMFTransform.ProcessOutput"/>. 
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/80804B33-1DAC-41F8-8446-8F929BF9B931(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/80804B33-1DAC-41F8-8446-8F929BF9B931(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_PROCESS_OUTPUT_STATUS")]
-    public enum ProcessOutputStatus
+    internal enum ProcessOutputStatus
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -54,4 +54,5 @@ namespace MediaFoundation.Transform
         NewStreams = 0x00000100
     }
 
+#endif
 }

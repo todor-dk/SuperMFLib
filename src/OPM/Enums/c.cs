@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -59,7 +59,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/93E816FB-1B40-4865-9C0C-24D96C83FB7F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/93E816FB-1B40-4865-9C0C-24D96C83FB7F(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum c
+    internal enum c
     {
         /// <summary>
         /// Indicates a type of physical connector that is not on this list.

@@ -33,8 +33,10 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
+
+#if NOT_IN_USE
 
     /// <summary>
     /// Extends the <see cref="WaveFormatExtensible"/> class with additional data.
@@ -45,7 +47,7 @@ namespace MediaFoundation.Misc
     /// </remarks>
     /// <seealso cref="WaveFormatExtensible"/>
     [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("WAVEFORMATEXTENSIBLE")]
-    public class WaveFormatExtensibleWithData : WaveFormatExtensible
+    internal class  WaveFormatExtensibleWithData : WaveFormatExtensible
     {
         /// <summary>
         /// Data that immediately follows the <c>WAVEFORMATEXTENSIBLE</c> structure.
@@ -122,4 +124,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

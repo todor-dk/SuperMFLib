@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -45,7 +46,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/D9989C44-8A3C-4F8B-A63D-E39E26797935(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D9989C44-8A3C-4F8B-A63D-E39E26797935(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFVideoAlphaBitmapFlags")]
-    public enum MFVideoAlphaBitmapFlags
+    internal enum MFVideoAlphaBitmapFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -110,5 +111,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         BitMask = 0x0000003f
     }
-
+#endif
 }

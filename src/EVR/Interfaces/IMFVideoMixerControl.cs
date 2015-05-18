@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Controls how the <c>Enhanced Video Renderer</c> (EVR) mixes video substreams. Applications can use
@@ -55,7 +55,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("A5C6C53F-C202-4AA5-9695-175BA8C508A5")]
-    public interface IMFVideoMixerControl
+    internal interface IMFVideoMixerControl
     {
         /// <summary>
         /// Sets the z-order of a video stream.
@@ -228,4 +228,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Initializes a video mixer or presenter. This interface is implemented by mixers and presenters, and
@@ -48,7 +48,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("FA99388A-4383-415A-A930-DD472A8CF6F7"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFTopologyServiceLookupClient
+    internal interface IMFTopologyServiceLookupClient
     {
         /// <summary>
         /// Signals the mixer or presenter to query the enhanced video renderer (EVR) for interface pointers.
@@ -112,4 +112,5 @@ namespace MediaFoundation.EVR
         int ReleaseServicePointers();
     }
 
+#endif
 }

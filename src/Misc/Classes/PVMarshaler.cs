@@ -33,8 +33,10 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
+#if NOT_IN_USE
+
     // Class to release PropVariants on parameters that output PropVariants.  There
     // should be no reason for code to call this class directly.  It is invoked
     // automatically when the appropriate methods are called.
@@ -113,4 +115,6 @@ namespace MediaFoundation.Misc
             return new PVMarshaler();
         }
     }
+
+#endif
 }

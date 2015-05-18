@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -46,7 +47,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/39D6845E-8655-4F8F-BE39-76D704FD1177(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/39D6845E-8655-4F8F-BE39-76D704FD1177(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("EVRFilterConfigPrefs")]
-    public enum EVRFilterConfigPrefs
+    internal enum EVRFilterConfigPrefs
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -61,5 +62,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         Mask = 0x1
     }
-
+#endif
 }

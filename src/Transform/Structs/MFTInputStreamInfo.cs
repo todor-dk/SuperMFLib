@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Structs
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Contains information about an input stream on a Media Foundation transform (MFT). To get these
@@ -53,7 +53,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/DE3D6D70-3525-42A0-BC1A-2625E7EBD918(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DE3D6D70-3525-42A0-BC1A-2625E7EBD918(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 8), UnmanagedName("MFT_INPUT_STREAM_INFO")]
-    public struct MFTInputStreamInfo
+    internal struct MFTInputStreamInfo
     {
         /// <summary>
         /// Maximum amount of time between an input sample and the corresponding output sample, in
@@ -86,5 +86,5 @@ namespace MediaFoundation.Transform
         /// </summary>
         public int cbAlignment;
     }
-
+#endif
 }

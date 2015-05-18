@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -39,7 +40,7 @@ namespace MediaFoundation.EVR
     /// Currently this parameter is ignored. Use the value <see cref="Global"/>.
     /// </summary>
     [UnmanagedName("_MF_SERVICE_LOOKUP_TYPE")]
-    public enum MFServiceLookupType
+    internal enum MFServiceLookupType
     {
         /// <summary>
         /// <i>***** Currently this value is not used *****</i>.
@@ -66,5 +67,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         Global
     }
-
+#endif
 }

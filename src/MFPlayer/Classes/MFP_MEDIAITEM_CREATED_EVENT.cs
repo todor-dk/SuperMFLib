@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Classes
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -63,7 +63,7 @@ namespace MediaFoundation.MFPlayer
     /// </remarks>
     [Obsolete("This API may be removed from future releases of Windows.")]
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFP_MEDIAITEM_CREATED_EVENT")]
-    public class MFP_MEDIAITEM_CREATED_EVENT : MFP_EVENT_HEADER
+    internal class  MFP_MEDIAITEM_CREATED_EVENT : MFP_EVENT_HEADER
     {
         /// <summary>
         /// Pointer to the <see cref="MFPlayer.IMFPMediaItem"/> interface of the new media item. If creating

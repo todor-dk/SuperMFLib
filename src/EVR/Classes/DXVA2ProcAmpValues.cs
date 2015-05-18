@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Contains values for DirectX Video Acceleration (DXVA) video processing operations.
@@ -54,7 +54,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/C84ACD34-E922-46BB-9913-0F94C7C47155(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C84ACD34-E922-46BB-9913-0F94C7C47155(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVA2_ProcAmpValues")]
-    public class DXVA2ProcAmpValues
+    internal class  DXVA2ProcAmpValues
     {
         /// <summary>
         /// Brightness value.
@@ -74,4 +74,5 @@ namespace MediaFoundation.EVR
         public int Saturation;
     }
 
+#endif
 }

@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/0689E132-8DEF-43D1-965F-A6F652AD0FBE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0689E132-8DEF-43D1-965F-A6F652AD0FBE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_SET_HDCP_SRM_PARAMETERS
+    internal struct OPM_SET_HDCP_SRM_PARAMETERS
     {
         /// <summary>
         /// Contains the SRM version number in little-endian format. This number is contained in the <strong>

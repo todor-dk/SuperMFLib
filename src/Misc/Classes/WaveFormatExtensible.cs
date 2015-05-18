@@ -33,9 +33,9 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// The <strong>WAVEFORMATEXTENSIBLE</strong> structure defines the format of waveform-audio data for
@@ -63,7 +63,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/B16CDCAB-FA4F-4C9A-B1F3-AF459BD33245(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B16CDCAB-FA4F-4C9A-B1F3-AF459BD33245(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Explicit, Pack = 1), UnmanagedName("WAVEFORMATEXTENSIBLE")]
-    public class WaveFormatExtensible : WaveFormatEx
+    internal class  WaveFormatExtensible : WaveFormatEx
     {
         /// <summary>
         /// Number of bits of precision in the signal. Usually equal to <see cref="WaveFormatEx.wBitsPerSample"/>. 
@@ -149,4 +149,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

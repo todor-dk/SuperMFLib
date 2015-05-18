@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -46,7 +46,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/C472F2C6-214D-4BB0-BA9D-8DD04FF2A646(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C472F2C6-214D-4BB0-BA9D-8DD04FF2A646(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_DEVICE_TYPE")]
-    public enum DXVAHD_DEVICE_TYPE
+    internal enum DXVAHD_DEVICE_TYPE
     {
         /// <summary>
         /// Hardware device. Video processing is performed in the GPU by the driver.

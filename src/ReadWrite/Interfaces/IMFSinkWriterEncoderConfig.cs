@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.ReadWrite
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("17C3779E-3CDE-4EDE-8C60-3899F5F53AD6")]
-    public interface IMFSinkWriterEncoderConfig
+    internal interface IMFSinkWriterEncoderConfig
     {
         /// <summary>
         /// Dynamically changes the target media type that Sink Writer is encoding to. 

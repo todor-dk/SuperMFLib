@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Classes
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -37,7 +37,7 @@ namespace MediaFoundation.OPM
     /// <summary>
     /// This class exposes Media Foundation API functions for the Output Protection Manager (OPM).
     /// </summary>
-    public class OPMExtern
+    internal class  OPMExtern
     {
         /// <summary>
         /// Creates an Output Protection Manager (OPM) object for each physical monitor that is associated with

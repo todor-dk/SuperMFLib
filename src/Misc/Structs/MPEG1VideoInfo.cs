@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -42,7 +42,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/AE5B8825-7C1C-4A44-B665-098732E6C3BC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AE5B8825-7C1C-4A44-B665-098732E6C3BC(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MPEG1VIDEOINFO"), StructLayout(LayoutKind.Sequential)]
-    public struct MPEG1VideoInfo
+    internal struct MPEG1VideoInfo
     {
         /// <summary>
         /// <see cref="Misc.VideoInfoHeader"/> structure. 

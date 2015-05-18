@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/20094E3D-3140-451A-A572-C268AD4C50C1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/20094E3D-3140-451A-A572-C268AD4C50C1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS
+    internal struct OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS
     {
         /// <summary>
         /// An <see cref="OPM.OPM_RANDOM_NUMBER" /> structure that contains a cryptographically secure 128-bit

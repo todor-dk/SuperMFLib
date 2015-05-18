@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -58,7 +58,7 @@ namespace MediaFoundation.MFPlayer
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("A714590A-58AF-430a-85BF-44F5EC838D85")]
-    public interface IMFPMediaPlayer
+    internal interface IMFPMediaPlayer
     {
         /// <summary>
         /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.

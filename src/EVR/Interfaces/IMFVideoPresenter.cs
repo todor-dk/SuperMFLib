@@ -29,10 +29,11 @@ using MediaFoundation;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
+using MediaFoundation.Core.Interfaces;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Represents a video presenter. A <em>video presenter</em> is an object that receives video frames,
@@ -54,7 +55,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("29AFF080-182A-4A5D-AF3B-448F3A6346CB")]
-    public interface IMFVideoPresenter : IMFClockStateSink
+    internal interface IMFVideoPresenter : IMFClockStateSink
     {
         #region IMFClockStateSink
 
@@ -275,5 +276,5 @@ namespace MediaFoundation.EVR
             [MarshalAs(UnmanagedType.Interface)] out IMFVideoMediaType ppMediaType
             );
     }
-
+#endif
 }

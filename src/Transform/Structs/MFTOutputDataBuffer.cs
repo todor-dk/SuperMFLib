@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Structs
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Contains information about an output buffer for a Media Foundation transform. This structure is
@@ -52,7 +52,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/57623C8F-F7B6-4CB3-8D54-4EE516C706C3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/57623C8F-F7B6-4CB3-8D54-4EE516C706C3(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFT_OUTPUT_DATA_BUFFER")]
-    public struct MFTOutputDataBuffer
+    internal struct MFTOutputDataBuffer
     {
         /// <summary>
         /// Output stream identifier. Before calling <c>ProcessOutput</c>, set this member to a valid stream
@@ -90,4 +90,5 @@ namespace MediaFoundation.Transform
         public IMFCollection pEvents;
     }
 
+#endif
 }

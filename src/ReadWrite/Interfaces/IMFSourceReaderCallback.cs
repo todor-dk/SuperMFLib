@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.ReadWrite
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("deec8d99-fa1d-4d82-84c2-2c8969944867")]
-    public interface IMFSourceReaderCallback
+    internal interface IMFSourceReaderCallback
     {
         /// <summary>
         /// Called when the <see cref="ReadWrite.IMFSourceReader.ReadSample"/> method completes. 

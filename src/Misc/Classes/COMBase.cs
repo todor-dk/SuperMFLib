@@ -34,13 +34,13 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Runtime.CompilerServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
     /// <summary>
     /// This base class contains common functionality often used with COM.
     /// </summary>
-    abstract public class COMBase
+    abstract internal class  COMBase
     {
         /// <summary>
         /// HRESULT status code: Operation successful.
@@ -157,4 +157,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

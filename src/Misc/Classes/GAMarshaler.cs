@@ -33,10 +33,12 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
     // These classes are used internally and there is probably no reason you will ever
     // need to use them directly.
+
+#if NOT_IN_USE
 
     // Used by MFTEnum
     internal class GAMarshaler : ICustomMarshaler
@@ -158,4 +160,6 @@ namespace MediaFoundation.Misc
             return new GAMarshaler();
         }
     }
+
+#endif
 }

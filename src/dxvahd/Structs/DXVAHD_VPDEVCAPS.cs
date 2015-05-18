@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -63,7 +63,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/340669D4-2A84-4030-83C3-A61469FDFD61(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/340669D4-2A84-4030-83C3-A61469FDFD61(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_VPDEVCAPS")]
-    public struct DXVAHD_VPDEVCAPS
+    internal struct DXVAHD_VPDEVCAPS
     {
         /// <summary>
         /// Specifies the device type, as a member of the <see cref="dxvahd.DXVAHD_DEVICE_TYPE"/> enumeration. 

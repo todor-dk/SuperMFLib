@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.ReadWrite
     /// <a href="http://msdn.microsoft.com/en-US/library/8981A682-3C0B-458B-910A-D1462ED73E64(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8981A682-3C0B-458B-910A-D1462ED73E64(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MF_SOURCE_READER_FLAG")]
-    public enum MF_SOURCE_READER_FLAG
+    internal enum MF_SOURCE_READER_FLAG
     {
         /// <summary>
         /// Default value / no flags are set.

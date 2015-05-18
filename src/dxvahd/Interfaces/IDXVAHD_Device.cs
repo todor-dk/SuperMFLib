@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -51,7 +51,7 @@ namespace MediaFoundation.dxvahd
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("95f12dfd-d77e-49be-815f-57d579634d6d"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXVAHD_Device
+    internal interface IDXVAHD_Device
     {
         /// <summary>
         /// Creates one or more Microsoft Direct3D video surfaces.

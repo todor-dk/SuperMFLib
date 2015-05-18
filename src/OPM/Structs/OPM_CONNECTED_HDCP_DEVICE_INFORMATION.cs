@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -58,7 +58,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/1FB59959-782B-44E8-81B1-ECA3C32A0783(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1FB59959-782B-44E8-81B1-ECA3C32A0783(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_CONNECTED_HDCP_DEVICE_INFORMATION
+    internal struct OPM_CONNECTED_HDCP_DEVICE_INFORMATION
     {
         /// <summary>
         /// An <see cref="OPM.OPM_RANDOM_NUMBER" /> structure. This structure contains the same 128-bit random

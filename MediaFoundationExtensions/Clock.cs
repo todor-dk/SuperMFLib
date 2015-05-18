@@ -114,7 +114,7 @@ namespace MediaFoundation
         /// <summary>
         /// Contains the last clock time that was correlated with system time.
         /// </summary>
-        public struct CorrelatedTimes
+        internal struct CorrelatedTimes
         {
             /// <summary>
             /// The last known clock time.

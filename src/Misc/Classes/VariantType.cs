@@ -33,9 +33,9 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// <see cref="ConstPropVariant"/> is used for [In] parameters.  This is important since
@@ -163,7 +163,7 @@ namespace MediaFoundation.Misc
     /// </remarks>
     /// <seealso cref="PropVariant"/>
     [StructLayout(LayoutKind.Explicit)]
-    public class ConstPropVariant : IDisposable
+    internal class  ConstPropVariant : IDisposable
     {
         /// <summary>
         /// Creates a copy of a <c>PROPVARIANT</c> structure. 
@@ -202,7 +202,7 @@ namespace MediaFoundation.Misc
         /// Specifies the variant type of the value contained in the <see cref="ConstPropVariant"/>.
         /// </summary>
         [UnmanagedName("VARTYPE")]
-        public enum VariantType : short
+        internal enum VariantType : short
         {
             /// <summary>
             /// <strong>VT_EMPTY</strong>. Valid member: None.
@@ -331,7 +331,7 @@ namespace MediaFoundation.Misc
             public IntPtr pElems;
         }
 
-        #region Member variables
+    #region Member variables
 
         /// <summary>
         /// Value type tag.
@@ -1379,7 +1379,7 @@ namespace MediaFoundation.Misc
             ConstPropVariant.PropVariantCopy(copyDestination, this);
         }
 
-        #region IDisposable Members
+    #region IDisposable Members
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -1399,4 +1399,5 @@ namespace MediaFoundation.Misc
         #endregion
     }
 
+#endif
 }

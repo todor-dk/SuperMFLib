@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Sets a new mixer or presenter for the <c>Enhanced Video Renderer</c> (EVR). 
@@ -51,7 +51,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("DFDFD197-A9CA-43D8-B341-6AF3503792CD"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFVideoRenderer
+    internal interface IMFVideoRenderer
     {
         /// <summary>
         /// Sets a new mixer or presenter for the enhanced video renderer (EVR).
@@ -100,4 +100,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

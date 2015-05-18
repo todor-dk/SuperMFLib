@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/79C0E5E5-62EF-4B8A-9E3B-3A9482731B16(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/79C0E5E5-62EF-4B8A-9E3B-3A9482731B16(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_HDCP_KEY_SELECTION_VECTOR
+    internal struct OPM_HDCP_KEY_SELECTION_VECTOR
     {
         /// <summary>
         /// A buffer that contains the device's KSV. (This is the value named <em>Bksv</em> in the HDCP

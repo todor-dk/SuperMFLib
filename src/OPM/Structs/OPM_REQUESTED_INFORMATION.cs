@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/84FFA808-1BDB-47C8-A18C-6DFA6FCF90DE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/84FFA808-1BDB-47C8-A18C-6DFA6FCF90DE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_REQUESTED_INFORMATION
+    internal struct OPM_REQUESTED_INFORMATION
     {
         /// <summary>
         /// An <see cref="OPM.OPM_OMAC" /> structure that contains a Message Authentication Code (MAC) of the

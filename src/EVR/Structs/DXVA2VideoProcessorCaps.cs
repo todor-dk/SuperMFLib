@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Structs
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Describes the capabilities of a DirectX Video Acceleration (DVXA) video processor mode.
@@ -60,7 +60,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/CFF01719-E653-4EA1-A177-9A6948B0DA56(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CFF01719-E653-4EA1-A177-9A6948B0DA56(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVA2_VideoProcessorCaps")]
-    public struct DXVA2VideoProcessorCaps
+    internal struct DXVA2VideoProcessorCaps
     {
         /// <summary>
         /// Identifies the type of device. The following values are defined.
@@ -117,4 +117,5 @@ namespace MediaFoundation.EVR
         public int DetailFilterTechnology;
     }
 
+#endif
 }

@@ -30,9 +30,10 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
 
+    #if NOT_IN_USE
 
     /// <summary>
     /// The following flags define DirectX Video Acceleration (DXVA) filter settings..
@@ -46,7 +47,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/6514992E-8188-4D28-879C-547E9B340B28(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6514992E-8188-4D28-879C-547E9B340B28(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("Unnamed enum")]
-    public enum DXVA2Filters
+    internal enum DXVA2Filters
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -101,5 +102,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         DetailFilterChromaRadius = 12
     }
-
+#endif
 }

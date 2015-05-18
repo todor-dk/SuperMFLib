@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/1F3DDE4C-CD9D-4361-B2B2-DB3C9D2EA146(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1F3DDE4C-CD9D-4361-B2B2-DB3C9D2EA146(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVAHD_DEVICE_CAPS")]
-    public enum DXVAHD_DEVICE_CAPS
+    internal enum DXVAHD_DEVICE_CAPS
     {
         /// <summary>
         /// The device can blend video content in linear color space. Most video content is gamma corrected,

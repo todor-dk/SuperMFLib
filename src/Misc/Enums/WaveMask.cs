@@ -25,9 +25,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Enums
 {
 
+    #if NOT_IN_USE
 
     /// <summary>
     /// Specifies which channels are present in the multichannel audio stream. 
@@ -42,7 +43,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-gb/library/windows/desktop/dd390971(v=vs.85).aspx">http://msdn.microsoft.com/en-gb/library/windows/desktop/dd390971(v=vs.85).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("SPEAKER_* defines")]
-    public enum WaveMask
+    internal enum WaveMask
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -121,5 +122,5 @@ namespace MediaFoundation.Misc
         /// </summary>
         TopBackRight = 0x20000
     }
-
+#endif
 }

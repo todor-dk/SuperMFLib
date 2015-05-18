@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -58,7 +58,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/25EC6802-CA6E-42D4-B1D5-DE7597E3D042(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/25EC6802-CA6E-42D4-B1D5-DE7597E3D042(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_VPCAPS")]
-    public struct DXVAHD_VPCAPS
+    internal struct DXVAHD_VPCAPS
     {
         /// <summary>
         /// A GUID that identifies the video processor. This GUID is defined by the device, and is used in

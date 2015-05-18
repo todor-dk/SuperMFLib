@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/60A167CB-F95E-4EB5-995F-BE4CCEAEE47D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/60A167CB-F95E-4EB5-995F-BE4CCEAEE47D(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_COLOR_RGBA")]
-    public struct DXVAHD_COLOR_RGBA
+    internal struct DXVAHD_COLOR_RGBA
     {
         /// <summary>
         /// The red value.

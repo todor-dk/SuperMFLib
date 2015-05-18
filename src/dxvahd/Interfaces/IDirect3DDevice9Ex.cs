@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -48,7 +48,7 @@ namespace MediaFoundation.dxvahd
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/VS|DIRECTX_SDK|~\IDIRECT3DDEVICE9EX.HTM(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/VS|DIRECTX_SDK|~\IDIRECT3DDEVICE9EX.HTM(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public interface IDirect3DDevice9Ex
+    internal interface IDirect3DDevice9Ex
     {
     }
 

@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Returns the device identifier supported by a video renderer component. This interface is
@@ -49,7 +49,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("A38D9567-5A9C-4F3C-B293-8EB415B279BA")]
-    public interface IMFVideoDeviceID
+    internal interface IMFVideoDeviceID
     {
         /// <summary>
         /// Returns the identifier of the video device supported by an EVR mixer or presenter.
@@ -86,4 +86,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

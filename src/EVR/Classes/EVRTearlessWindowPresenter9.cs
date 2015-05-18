@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
-
+#if NOT_IN_USE
     /// <summary>
     /// To get a pointer to <see cref="IMFVideoPresenter"/> interface that implements the EVT tearless presents, 
     /// instantiate this class. The CLSID is <c>CLSID_EVRTearlessWindowPresenter9</c>.
@@ -49,8 +49,8 @@ namespace MediaFoundation.EVR
     [UnmanagedName("CLSID_EVRTearlessWindowPresenter9"),
     ComImport,
     Guid("a0a7a57b-59b2-4919-a694-add0a526c373")]
-    public class EVRTearlessWindowPresenter9
+    internal class  EVRTearlessWindowPresenter9
     {
     }
-
+#endif
 }

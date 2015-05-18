@@ -25,9 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// The <strong>VIDEOINFOHEADER</strong> structure describes the bitmap and color information for a
@@ -52,7 +52,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/A175592B-0DC1-4001-B52F-785407965932(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A175592B-0DC1-4001-B52F-785407965932(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("VIDEOINFOHEADER"), StructLayout(LayoutKind.Sequential)]
-    public class VideoInfoHeader
+    internal class  VideoInfoHeader
     {
         /// <summary>
         /// A <c>RECT</c> structure that specifies the source video window. This structure can be a clipping
@@ -88,5 +88,7 @@ namespace MediaFoundation.Misc
         /// </summary>
         public BitmapInfoHeader BmiHeader;  // Custom marshaler?
     }
+
+#endif
 
 }

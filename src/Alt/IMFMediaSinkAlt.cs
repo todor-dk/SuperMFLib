@@ -62,6 +62,7 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region Bugs in Vista that appear to be fixed in W7
 
     /// <summary>
@@ -78,7 +79,7 @@ namespace MediaFoundation.Alt
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("6EF2A660-47C0-4666-B13D-CBB717F2FA2C"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFMediaSinkAlt
+    internal interface IMFMediaSinkAlt
     {
         /// <summary>
         /// Gets the characteristics of the media sink.
@@ -431,4 +432,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

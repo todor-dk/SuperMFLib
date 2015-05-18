@@ -25,9 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Exposes methods for enumerating, getting, and setting property values.
@@ -42,7 +42,7 @@ namespace MediaFoundation.Misc
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99")]
-    public interface IPropertyStore
+    internal interface IPropertyStore
     {
         /// <summary>
         /// This method returns a count of the number of properties that are attached to the file.
@@ -204,4 +204,5 @@ namespace MediaFoundation.Misc
         int Commit();
     }
 
+#endif
 }

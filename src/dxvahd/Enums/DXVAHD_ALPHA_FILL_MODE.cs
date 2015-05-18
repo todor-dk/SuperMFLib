@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/F5E9F37E-5600-4139-86B2-7F63C2981B69(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F5E9F37E-5600-4139-86B2-7F63C2981B69(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_ALPHA_FILL_MODE")]
-    public enum DXVAHD_ALPHA_FILL_MODE
+    internal enum DXVAHD_ALPHA_FILL_MODE
     {
         /// <summary>
         /// Alpha values inside the target rectangle are set to opaque.

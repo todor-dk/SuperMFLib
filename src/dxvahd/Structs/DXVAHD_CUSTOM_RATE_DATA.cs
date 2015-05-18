@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/12CAC4A8-CFDF-484C-8443-EF47DD3A152B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/12CAC4A8-CFDF-484C-8443-EF47DD3A152B(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_CUSTOM_RATE_DATA")]
-    public struct DXVAHD_CUSTOM_RATE_DATA
+    internal struct DXVAHD_CUSTOM_RATE_DATA
     {
         /// <summary>
         /// The ratio of the output frame rate to the input frame rate, expressed as a

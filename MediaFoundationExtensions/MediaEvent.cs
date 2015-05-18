@@ -148,7 +148,7 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/B4F686BE-9472-433C-B983-6C48DFD3AC76(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4F686BE-9472-433C-B983-6C48DFD3AC76(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public class MediaEvent : MediaEvent<IMFMediaEvent>
+    internal class  MediaEvent : MediaEvent<IMFMediaEvent>
     {
         #region Construction
 

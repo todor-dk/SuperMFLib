@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -51,7 +51,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/D3A5BE4B-39D1-43DA-B87E-AB4DD7815262(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D3A5BE4B-39D1-43DA-B87E-AB4DD7815262(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_RANDOM_NUMBER
+    internal struct OPM_RANDOM_NUMBER
     {
         /// <summary>
         /// A 128-bit array that contains a random number.

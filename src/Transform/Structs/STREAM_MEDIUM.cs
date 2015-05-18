@@ -27,7 +27,7 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -51,7 +51,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/C3E3FD40-F6E6-4E43-927F-5DFF4169A52C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C3E3FD40-F6E6-4E43-927F-5DFF4169A52C(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("STREAM_MEDIUM")]
-    public struct STREAM_MEDIUM
+    internal struct STREAM_MEDIUM
     {
         /// <summary>
         /// Reserved.

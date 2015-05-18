@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/9CCA24F0-5FFF-4125-B1FE-D2F9278B5181(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9CCA24F0-5FFF-4125-B1FE-D2F9278B5181(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA")]
-    public struct DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA
+    internal struct DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA
     {
         /// <summary>
         /// Specifies how the device performs frame-rate conversion, if required. The default state value is 

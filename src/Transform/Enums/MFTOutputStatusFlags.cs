@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Indicates whether a Media Foundation transform (MFT) can produce output data.
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/951900B1-364E-4867-A1F8-50D485D13C77(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/951900B1-364E-4867-A1F8-50D485D13C77(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_OUTPUT_STATUS_FLAGS")]
-    public enum MFTOutputStatusFlags
+    internal enum MFTOutputStatusFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -55,4 +55,5 @@ namespace MediaFoundation.Transform
         SampleReady = 0x00000001
     }
 
+#endif
 }

@@ -51,12 +51,7 @@ namespace MediaFoundation
             object ppvObject;
             int hr = MFExtern.PSCreateMemoryPropertyStore(typeof(IPropertyStore).GUID, out ppvObject);
             COM.ThrowIfNotOK(hr);
-            if (ppvObject == null)
-                return null;
-            IPropertyStore propStore = (IPropertyStore)ppvObject;
-            if (!Object.ReferenceEquals(ppvObject, propStore))
-                COM.SafeRelease(ppvObject);
-            return propStore.ToPropertyStore(); 
+            return PropertyStore.FromComObject(ppvObject, i => new PropertyStore(i));
         }
 
         /// <summary>

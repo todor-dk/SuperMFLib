@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.MFPlayer
     /// <a href="http://msdn.microsoft.com/en-US/library/95BEB13D-DB84-4713-9C27-27B37EAC7F2F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/95BEB13D-DB84-4713-9C27-27B37EAC7F2F(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFP_EVENT_TYPE")]
-    public enum MFP_EVENT_TYPE
+    internal enum MFP_EVENT_TYPE
     {
         /// <summary>
         /// Playback has started. This event is sent when the <see cref="MFPlayer.IMFPMediaPlayer.Play"/>

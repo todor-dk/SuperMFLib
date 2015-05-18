@@ -33,9 +33,9 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// The <strong>WAVEFORMATEX</strong> structure defines the format of waveform-audio data. Only format
@@ -63,7 +63,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/4F3BF6FB-B15F-43B3-82F1-E7A8A3007057(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4F3BF6FB-B15F-43B3-82F1-E7A8A3007057(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("WAVEFORMATEX")]
-    public class WaveFormatEx
+    internal class  WaveFormatEx
     {
         /// <summary>
         /// Waveform-audio format type. Format tags are registered with Microsoft Corporation for many
@@ -403,4 +403,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

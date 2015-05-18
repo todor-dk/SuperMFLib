@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -45,7 +46,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/C0A34CFF-F86F-4005-9320-5DADFDDE5808(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C0A34CFF-F86F-4005-9320-5DADFDDE5808(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFVideoAspectRatioMode")]
-    public enum MFVideoAspectRatioMode
+    internal enum MFVideoAspectRatioMode
     {
         /// <summary>
         /// Do not maintain the aspect ratio of the video. Stretch the video to fit the output rectangle.
@@ -85,5 +86,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         Mask = 0x00000007
     }
-
+#endif
 }

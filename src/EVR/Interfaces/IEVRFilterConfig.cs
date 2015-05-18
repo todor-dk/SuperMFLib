@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Sets the number of input pins on the DirectShow <c>Enhanced Video Renderer</c> (EVR) filter. To get
@@ -48,7 +48,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("83E91E85-82C1-4ea7-801D-85DC50B75086")]
-    public interface IEVRFilterConfig
+    internal interface IEVRFilterConfig
     {
         /// <summary>
         /// Sets the number of input pins on the EVR filter.
@@ -122,4 +122,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

@@ -62,6 +62,7 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region Bugs in Vista that appear to be fixed in W7
 
     /// <summary>
@@ -84,7 +85,7 @@ namespace MediaFoundation.Alt
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("36F846FC-2256-48B6-B58E-E2B638316581"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFMediaEventQueueAlt
+    internal interface IMFMediaEventQueueAlt
     {
         /// <summary>
         /// Retrieves the next event in the queue. This method is synchronous.
@@ -393,4 +394,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

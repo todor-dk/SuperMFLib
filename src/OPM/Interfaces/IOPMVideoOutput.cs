@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -50,7 +50,7 @@ namespace MediaFoundation.OPM
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("0A15159D-41C7-4456-93E1-284CD61D4E8D"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IOPMVideoOutput
+    internal interface IOPMVideoOutput
     {
         /// <summary>
         /// Begins the initialization sequence for an Output Protection Manager (OPM) session.

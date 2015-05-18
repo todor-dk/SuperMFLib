@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Controls how the <c>Enhanced Video Renderer</c> (EVR) displays video. 
@@ -54,7 +54,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("A490B1E4-AB84-4D31-A1B2-181E03B1077A"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFVideoDisplayControl
+    internal interface IMFVideoDisplayControl
     {
         /// <summary>
         /// Gets the size and aspect ratio of the video, prior to any stretching by the video renderer. 
@@ -659,4 +659,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

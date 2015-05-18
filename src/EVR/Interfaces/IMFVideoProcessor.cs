@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Controls video processing in the <c>Enhanced Video Renderer</c> (EVR). The operations controlled
@@ -55,7 +55,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("6AB0000C-FECE-4d1f-A2AC-A9573530656E")]
-    public interface IMFVideoProcessor
+    internal interface IMFVideoProcessor
     {
         /// <summary>
         /// Retrieves the video processor modes that the video driver supports.
@@ -521,4 +521,5 @@ namespace MediaFoundation.EVR
             int ClrBkg);
     }
 
+#endif
 }

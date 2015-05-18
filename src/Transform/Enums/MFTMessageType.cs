@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines messages for a Media Foundation transform (MFT). To send a message to an MFT, call 
@@ -43,7 +43,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/55B0AA32-53AF-4F19-9D99-9885C1E28588(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/55B0AA32-53AF-4F19-9D99-9885C1E28588(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFT_MESSAGE_TYPE")]
-    public enum MFTMessageType
+    internal enum MFTMessageType
     {
         /// <summary>
         /// Requests the MFT to drain any stored data.
@@ -105,4 +105,5 @@ namespace MediaFoundation.Transform
         CommandMarker = 0x20000000
     }
 
+#endif
 }

@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/8064820E-533E-4B40-8EEB-E3AD6A6B1FF7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8064820E-533E-4B40-8EEB-E3AD6A6B1FF7(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_RATIONAL")]
-    public struct DXVAHD_RATIONAL
+    internal struct DXVAHD_RATIONAL
     {
         /// <summary>
         /// The numerator of the ratio.

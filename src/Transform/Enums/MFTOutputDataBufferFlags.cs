@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines flags for the <see cref="Transform.IMFTransform.ProcessOutput"/> method. 
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/B975A1A9-2CD1-4187-9934-C6877F10CEC6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B975A1A9-2CD1-4187-9934-C6877F10CEC6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_OUTPUT_DATA_BUFFER_FLAGS")]
-    public enum MFTOutputDataBufferFlags
+    internal enum MFTOutputDataBufferFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -92,4 +92,5 @@ namespace MediaFoundation.Transform
         NoSample = 0x00000300
     }
 
+#endif
 }

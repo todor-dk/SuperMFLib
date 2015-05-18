@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -56,7 +56,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/54B53E4D-990B-4496-AAE6-039F443337AE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54B53E4D-990B-4496-AAE6-039F443337AE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA")]
-    public struct DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA
+    internal struct DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA
     {
         /// <summary>
         /// <i>***** Documentation Missing *****</i>. This is part of <strong>DXVA-HD API ETW</strong>.

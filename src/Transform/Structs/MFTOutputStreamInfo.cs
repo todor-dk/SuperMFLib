@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Structs
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Contains information about an output stream on a Media Foundation transform (MFT). To get these
@@ -51,7 +51,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/4181D8B8-7C1B-4F8E-A0C6-63AB039539F6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4181D8B8-7C1B-4F8E-A0C6-63AB039539F6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("MFT_OUTPUT_STREAM_INFO")]
-    public struct MFTOutputStreamInfo
+    internal struct MFTOutputStreamInfo
     {
         /// <summary>
         /// Bitwise <strong>OR</strong> of zero or more flags from the
@@ -77,4 +77,5 @@ namespace MediaFoundation.Transform
         public int cbAlignment;
     }
 
+#endif
 }

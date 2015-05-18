@@ -33,15 +33,15 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
     /// <summary>
     /// The <c>MFInt</c> class wraps a <see cref="System.Int32"/> value. 
     /// This is useful when an external API needs a pointer to an integer value.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public class MFInt
+    internal class  MFInt
     {
         /// <summary>
         /// Integer value being wrapped.
@@ -139,4 +139,6 @@ namespace MediaFoundation.Misc
             return Convert.ToInt32(obj) == m_value;
         }
     }
+
+#endif
 }

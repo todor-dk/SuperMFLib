@@ -25,9 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Specifies the FMTID/PID identifier that programmatically identifies a property. Replaces 
@@ -48,7 +48,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/3F5F31AF-F040-443B-9045-9761055381EA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3F5F31AF-F040-443B-9045-9761055381EA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("PROPERTYKEY")]
-    public class PropertyKey
+    public class  PropertyKey
     {
         /// <summary>
         /// A unique GUID for the property.
@@ -89,4 +89,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

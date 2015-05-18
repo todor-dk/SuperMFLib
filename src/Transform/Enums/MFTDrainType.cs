@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Not supported.
@@ -46,7 +46,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/8243B154-BE93-4A81-9990-F022DC8CB736(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8243B154-BE93-4A81-9990-F022DC8CB736(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("_MFT_DRAIN_TYPE")]
-    public enum MFTDrainType
+    internal enum MFTDrainType
     {
         /// <summary>
         /// Reserved. 
@@ -58,4 +58,5 @@ namespace MediaFoundation.Transform
         NoTails = 0x00000001
     }
 
+#endif
 }

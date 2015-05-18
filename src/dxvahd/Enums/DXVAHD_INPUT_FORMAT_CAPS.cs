@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/DDFFF29C-3A40-4238-93E7-821C4FFC27AF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DDFFF29C-3A40-4238-93E7-821C4FFC27AF(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVAHD_INPUT_FORMAT_CAPS")]
-    public enum DXVAHD_INPUT_FORMAT_CAPS
+    internal enum DXVAHD_INPUT_FORMAT_CAPS
     {
         /// <summary>
         /// The device can deinterlace an input stream that contains interlaced RGB video.

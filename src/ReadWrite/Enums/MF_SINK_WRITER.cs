@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -44,7 +44,7 @@ namespace MediaFoundation.ReadWrite
     /// to indicate different predefined streams.
     /// </summary>
     [UnmanagedName("Unnamed enum")]
-    public enum MF_SINK_WRITER
+    internal enum MF_SINK_WRITER
     {
         /// <summary>
         /// Invalid stream index.

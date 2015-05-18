@@ -33,14 +33,16 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
+
+#if NOT_IN_USE
 
     /// <summary>
     /// Represents a FOURCC Code.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public class FourCC
+    internal class  FourCC
     {
         /// <summary>
         /// Integer containing the four character code.
@@ -274,4 +276,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

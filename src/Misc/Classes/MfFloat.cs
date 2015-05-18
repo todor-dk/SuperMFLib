@@ -33,14 +33,15 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
+#if NOT_IN_USE
     /// <summary>
     /// The <c>MfFloat</c> class wraps a <see cref="System.Single"/> value. 
     /// This is useful when an external API needs a pointer to a float value.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public class MfFloat
+    internal class  MfFloat
     {
         /// <summary>
         /// Float value being wrapped.
@@ -96,4 +97,5 @@ namespace MediaFoundation.Misc
         //}
     }
 
+#endif
 }

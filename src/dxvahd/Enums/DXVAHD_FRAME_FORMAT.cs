@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -46,7 +46,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/FC720DD3-E9C1-4B92-AC09-8E53CFF44BEC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FC720DD3-E9C1-4B92-AC09-8E53CFF44BEC(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_FRAME_FORMAT")]
-    public enum DXVAHD_FRAME_FORMAT
+    internal enum DXVAHD_FRAME_FORMAT
     {
         /// <summary>
         /// Frames are progressive.

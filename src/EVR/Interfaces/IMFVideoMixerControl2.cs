@@ -30,7 +30,7 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("8459616D-966E-4930-B658-54FA7E5A16D3")]
-    public interface IMFVideoMixerControl2 : IMFVideoMixerControl
+    internal interface IMFVideoMixerControl2 : IMFVideoMixerControl
     {
         #region IMFVideoMixerControl methods
 

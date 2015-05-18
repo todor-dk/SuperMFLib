@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/20865210-7F0F-4310-879E-9D1FE97F5DF2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/20865210-7F0F-4310-879E-9D1FE97F5DF2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_GET_CODEC_INFO_INFORMATION
+    internal struct OPM_GET_CODEC_INFO_INFORMATION
     {
         /// <summary>
         /// An <see cref="OPM.OPM_RANDOM_NUMBER" /> structure. This structure contains the same 128-bit random

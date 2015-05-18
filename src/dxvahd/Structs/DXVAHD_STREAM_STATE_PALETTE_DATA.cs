@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/91F69451-72E6-4028-92D5-555DCF834CF7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/91F69451-72E6-4028-92D5-555DCF834CF7(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_PALETTE_DATA")]
-    public struct DXVAHD_STREAM_STATE_PALETTE_DATA
+    internal struct DXVAHD_STREAM_STATE_PALETTE_DATA
     {
         /// <summary>
         /// The number of palette entries. The default state value is 0.

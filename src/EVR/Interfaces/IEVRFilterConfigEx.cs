@@ -30,7 +30,7 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -50,7 +50,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("AEA36028-796D-454F-BEEE-B48071E24304")]
-    public interface IEVRFilterConfigEx : IEVRFilterConfig
+    internal interface IEVRFilterConfigEx : IEVRFilterConfig
     {
         #region IEVRFilterConfig methods
 

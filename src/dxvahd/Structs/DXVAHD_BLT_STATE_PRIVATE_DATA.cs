@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/B85D4429-9346-4C85-8C3D-EFFFE0C1E63A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B85D4429-9346-4C85-8C3D-EFFFE0C1E63A(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_PRIVATE_DATA")]
-    public struct DXVAHD_BLT_STATE_PRIVATE_DATA
+    internal struct DXVAHD_BLT_STATE_PRIVATE_DATA
     {
         /// <summary>
         /// A GUID that identifies the private state. The meaning of this value is defined by the device.

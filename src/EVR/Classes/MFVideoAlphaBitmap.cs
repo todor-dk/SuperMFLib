@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Specifies a bitmap for the enhanced video renderer (EVR) to alpha-blend with the video.
@@ -56,7 +56,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/609041F2-7BA4-4157-819B-4AC21612DCA2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/609041F2-7BA4-4157-819B-4AC21612DCA2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFVideoAlphaBitmap")]
-    public class MFVideoAlphaBitmap
+    internal class  MFVideoAlphaBitmap
     {
         /// <summary>
         /// If <c>TRUE</c>, the hdc member is used. Otherwise, the <c>pDDs</c> member is used.
@@ -78,4 +78,5 @@ namespace MediaFoundation.EVR
         public MFVideoAlphaBitmapParams @paras;
     }
 
+#endif
 }

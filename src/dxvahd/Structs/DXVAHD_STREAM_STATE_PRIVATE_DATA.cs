@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/3B7CE487-EDEC-4FF2-B971-72DDCC28162C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3B7CE487-EDEC-4FF2-B971-72DDCC28162C(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_PRIVATE_DATA")]
-    public struct DXVAHD_STREAM_STATE_PRIVATE_DATA
+    internal struct DXVAHD_STREAM_STATE_PRIVATE_DATA
     {
         /// <summary>
         /// A GUID that identifies the private stream state. The following GUID is defined.

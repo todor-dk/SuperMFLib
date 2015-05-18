@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -43,7 +43,7 @@ namespace MediaFoundation.ReadWrite
     /// Enumeration containing values used by the <see cref="IMFSourceReader"/> methods.
     /// </summary>
     [UnmanagedName("Unnamed enum")]
-    public enum MF_SOURCE_READER_INDEX
+    internal enum MF_SOURCE_READER_INDEX
     {
         /// <summary>
         /// <i>***** Documentation Missing *****</i>.

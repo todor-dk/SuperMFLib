@@ -227,7 +227,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        MFSessionCapabilities SessionCapabilities
+        public MFSessionCapabilities SessionCapabilities
         {
             get 
             {

@@ -30,7 +30,7 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -56,7 +56,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("83A4CE40-7710-494b-A893-A472049AF630")]
-    public interface IEVRTrustedVideoPlugin
+    internal interface IEVRTrustedVideoPlugin
     {
         /// <summary>
         /// Queries whether the plug-in has any transient vulnerabilities at this time. 

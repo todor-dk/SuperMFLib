@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -51,7 +51,7 @@ namespace MediaFoundation.dxvahd
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("95f4edf4-6e03-4cd7-be1b-3075d665aa52"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXVAHD_VideoProcessor
+    internal interface IDXVAHD_VideoProcessor
     {
         /// <summary>
         /// Sets a state parameter for a blit operation by a Microsoft DirectX Video Acceleration High

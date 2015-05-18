@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/F850531B-EEE0-4943-8C41-050EC78EAB63(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F850531B-EEE0-4943-8C41-050EC78EAB63(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA")]
-    public struct DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA
+    internal struct DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA
     {
         /// <summary>
         /// Specifies whether to use the destination rectangle, or use the entire output surface. The default

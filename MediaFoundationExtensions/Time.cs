@@ -12,7 +12,7 @@ namespace MediaFoundation
     /// <remarks>
     /// See: http://msdn.microsoft.com/en-us/library/windows/desktop/dd979590(v=vs.85).aspx
     /// </remarks>
-    public struct Time
+    internal struct Time
     {
         /// <summary>
         /// Represents time / timespan in the Media Foundation framework.

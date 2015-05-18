@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Alpha-blends a static bitmap image with the video displayed by the <c>Enhanced Video Renderer</c>
@@ -55,7 +55,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("814C7B20-0FDB-4eec-AF8F-F957C8F69EDC")]
-    public interface IMFVideoMixerBitmap
+    internal interface IMFVideoMixerBitmap
     {
         /// <summary>
         /// Sets a bitmap image for the enhanced video renderer (EVR) to alpha-blend with the video.
@@ -190,4 +190,5 @@ namespace MediaFoundation.EVR
             [Out] MFVideoAlphaBitmapParams pBmpParms);
     }
 
+#endif
 }

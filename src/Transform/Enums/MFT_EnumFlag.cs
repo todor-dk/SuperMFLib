@@ -27,7 +27,7 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -46,7 +46,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/BA39FB66-D8B6-49C1-8312-18EBDCB012C9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BA39FB66-D8B6-49C1-8312-18EBDCB012C9(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_ENUM_FLAG")]
-    public enum MFT_EnumFlag
+    internal enum MFT_EnumFlag
     {
         /// <summary>
         /// Default value / no flags are set.

@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
+#if NOT_IN_USE
 
     /// <summary>
     /// Represents the default video presenter for the enhanced video renderer (EVR). 
@@ -40,8 +41,9 @@ namespace MediaFoundation.EVR
     [UnmanagedName("CLSID_MFVideoPresenter9"),
     ComImport,
     Guid("98455561-5136-4d28-AB08-4CEE40EA2781")]
-    public class MFVideoPresenter9
+    internal class  MFVideoPresenter9
     {
     }
 
+#endif
 }

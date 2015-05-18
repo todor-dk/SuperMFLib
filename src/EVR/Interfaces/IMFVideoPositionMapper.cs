@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Maps a position on an input video stream to the corresponding position on an output video stream.
@@ -50,7 +50,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("1F6A9F17-E70B-4E24-8AE4-0B2C3BA7A4AE"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFVideoPositionMapper
+    internal interface IMFVideoPositionMapper
     {
         /// <summary>
         /// Maps output image coordinates to input image coordinates. This method provides the reverse
@@ -114,4 +114,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

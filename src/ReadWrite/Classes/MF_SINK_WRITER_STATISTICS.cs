@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Classes
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -72,7 +72,7 @@ namespace MediaFoundation.ReadWrite
     /// <a href="http://msdn.microsoft.com/en-US/library/FF083AE1-9A53-4215-9738-D1776F8D7F9B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FF083AE1-9A53-4215-9738-D1776F8D7F9B(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MF_SINK_WRITER_STATISTICS")]
-    public class MF_SINK_WRITER_STATISTICS
+    internal class  MF_SINK_WRITER_STATISTICS
     {
         /// <summary>
         /// The size of the structure, in bytes.

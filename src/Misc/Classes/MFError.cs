@@ -33,7 +33,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
 
     /// <summary>
@@ -1414,6 +1414,11 @@ namespace MediaFoundation.Misc
         private static extern int FormatMessage(FormatMessageFlags dwFlags, IntPtr lpSource,
             int dwMessageId, int dwLanguageId, out IntPtr lpBuffer, int nSize, IntPtr[] Arguments);
 
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, EntryPoint = "FormatMessageW", ExactSpelling = true, BestFitMapping = true)]
+        private static extern int FormatMessage(int dwFlags, IntPtr lpSource,
+                    int dwMessageId, int dwLanguageId, [Out]StringBuilder lpBuffer,
+                    int nSize, IntPtr va_list_arguments);
+
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode, EntryPoint = "LoadLibraryExW", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         private static extern IntPtr LoadLibraryEx(string lpFileName, IntPtr hFile, LoadLibraryExFlags dwFlags);
 
@@ -1428,7 +1433,7 @@ namespace MediaFoundation.Misc
 
         #region Declarations
 
-        [Flags, UnmanagedName("#defines in WinBase.h")]
+        [Flags, UnmanagedName("#defined in WinBase.h")]
         private enum LoadLibraryExFlags
         {
             DontResolveDllReferences = 0x00000001,
@@ -1451,8 +1456,8 @@ namespace MediaFoundation.Misc
 
         #endregion
 
-        private static IntPtr s_hModule = IntPtr.Zero;
-        private const string MESSAGEFILE = "mferror.dll";
+        private static IntPtr MessageFileHandle = IntPtr.Zero;
+        private const string MessageFile = "mferror.dll";
 
         /// <summary>
         /// Returns a string describing a MF error.  Works for both error codes
@@ -1462,20 +1467,20 @@ namespace MediaFoundation.Misc
         /// <returns>The string, or null if no error text can be found</returns>
         public static string GetErrorText(int hr)
         {
-            string sRet = null;
-            int dwBufferLength;
+            string result = null;
+            int bufferLength;
             IntPtr ip = IntPtr.Zero;
 
-            FormatMessageFlags dwFormatFlags =
+            FormatMessageFlags formatFlags =
                 FormatMessageFlags.AllocateBuffer |
                 FormatMessageFlags.IgnoreInserts |
                 FormatMessageFlags.FromSystem |
                 FormatMessageFlags.MaxWidthMask;
 
             // Scan both the Windows Media library, and the system library looking for the message
-            dwBufferLength = FormatMessage(
-                dwFormatFlags,
-                s_hModule, // module to get message from (NULL == system)
+            bufferLength = MFError.FormatMessage(
+                formatFlags,
+                MFError.MessageFileHandle, // module to get message from (NULL == system)
                 hr, // error number to get message for
                 0, // default language
                 out ip,
@@ -1485,23 +1490,23 @@ namespace MediaFoundation.Misc
 
             // Not a system message.  In theory, you should be able to get both with one call.  In practice (at
             // least on my 64bit box), you need to make 2 calls.
-            if (dwBufferLength == 0)
+            if (bufferLength == 0)
             {
-                if (s_hModule == IntPtr.Zero)
+                if (MFError.MessageFileHandle == IntPtr.Zero)
                 {
                     // Load the Media Foundation error message dll
-                    s_hModule = LoadLibraryEx(MESSAGEFILE, IntPtr.Zero, LoadLibraryExFlags.LoadLibraryAsDataFile);
+                    MFError.MessageFileHandle = MFError.LoadLibraryEx(MFError.MessageFile, IntPtr.Zero, LoadLibraryExFlags.LoadLibraryAsDataFile);
                 }
 
-                if (s_hModule != IntPtr.Zero)
+                if (MFError.MessageFileHandle != IntPtr.Zero)
                 {
                     // If the load succeeds, make sure we look in it
-                    dwFormatFlags |= FormatMessageFlags.FromHmodule;
+                    formatFlags |= FormatMessageFlags.FromHmodule;
 
                     // Scan both the Windows Media library, and the system library looking for the message
-                    dwBufferLength = FormatMessage(
-                        dwFormatFlags,
-                        s_hModule, // module to get message from (NULL == system)
+                    bufferLength = MFError.FormatMessage(
+                        formatFlags,
+                        MFError.MessageFileHandle, // module to get message from (NULL == system)
                         hr, // error number to get message for
                         0, // default language
                         out ip,
@@ -1517,19 +1522,38 @@ namespace MediaFoundation.Misc
                 // the message), no exception is thrown.  sRet just stays null.  The
                 // try/finally is for the (remote) possibility that we run out of memory
                 // creating the string.
-                sRet = Marshal.PtrToStringUni(ip);
+                result = Marshal.PtrToStringUni(ip);
             }
             finally
             {
                 // Cleanup
                 if (ip != IntPtr.Zero)
                 {
-                    LocalFree(ip);
+                    MFError.LocalFree(ip);
                 }
             }
 
-            return sRet;
+            if (!String.IsNullOrWhiteSpace(result))
+                return result;
+
+            StringBuilder sb = new StringBuilder(512);
+            bufferLength = MFError.FormatMessage(
+                    FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_ARGUMENT_ARRAY,
+                    IntPtr.Zero, hr, 0, sb, sb.Capacity, IntPtr.Zero);
+            if (bufferLength != 0)
+            {
+                // result is the # of characters copied to the StringBuilder.
+                return sb.ToString();
+            }
+            else
+            {
+                return String.Format("Error: {0} (0x{0:X8})", hr);
+            }
         }
+
+        private const int FORMAT_MESSAGE_IGNORE_INSERTS = 0x00000200;
+        private const int FORMAT_MESSAGE_FROM_SYSTEM = 0x00001000;
+        private const int FORMAT_MESSAGE_ARGUMENT_ARRAY = 0x00002000;
 
         /// <summary>
         /// If hr has a "failed" status code (E_*), throw an exception.  Note that status

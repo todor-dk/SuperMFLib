@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/75036101-7498-4D66-AFC3-DF76AE3CCA39(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/75036101-7498-4D66-AFC3-DF76AE3CCA39(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_STREAM_STATE")]
-    public enum DXVAHD_STREAM_STATE
+    internal enum DXVAHD_STREAM_STATE
     {
         /// <summary>
         /// Specifies the video format of the input stream. The state data is a 

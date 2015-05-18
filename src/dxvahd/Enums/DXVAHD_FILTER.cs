@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/E6ABAC04-C8CB-4130-B48E-FB5D25794D62(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E6ABAC04-C8CB-4130-B48E-FB5D25794D62(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_FILTER")]
-    public enum DXVAHD_FILTER
+    internal enum DXVAHD_FILTER
     {
         /// <summary>
         /// Adjusts brightness.

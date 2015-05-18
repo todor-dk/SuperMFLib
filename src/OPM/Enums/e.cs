@@ -35,7 +35,7 @@ using System.Security;
 // Output Protection Manager (OPM) enables an application to protect video content 
 // as it travels over a physical connector to a display device.
 // </summary>
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -67,7 +67,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/6C8EC020-5F12-453B-BBEB-3BAABB1CA213(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6C8EC020-5F12-453B-BBEB-3BAABB1CA213(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum e
+    internal enum e
     {
         /// <summary>
         /// Indicates a type of bus other than the types listed here.

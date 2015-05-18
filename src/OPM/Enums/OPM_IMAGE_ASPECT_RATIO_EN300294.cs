@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -45,7 +45,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/3C0FC524-B75F-4397-BD01-25BE44062E8C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3C0FC524-B75F-4397-BD01-25BE44062E8C(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum OPM_IMAGE_ASPECT_RATIO_EN300294
+    internal enum OPM_IMAGE_ASPECT_RATIO_EN300294
     {
         /// <summary>
         /// Full format 4:3.

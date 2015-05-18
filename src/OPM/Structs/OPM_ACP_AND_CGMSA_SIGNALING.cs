@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -64,7 +64,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/7388BDD9-A8BC-45F4-8539-A175190FB3C3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7388BDD9-A8BC-45F4-8539-A175190FB3C3(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_ACP_AND_CGMSA_SIGNALING
+    internal struct OPM_ACP_AND_CGMSA_SIGNALING
     {
         /// <summary>
         /// An <see cref="OPM.OPM_RANDOM_NUMBER" /> structure. This structure contains the same 128-bit random

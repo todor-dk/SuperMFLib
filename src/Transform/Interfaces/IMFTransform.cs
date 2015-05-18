@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Implemented by all <c>Media Foundation Transforms</c> (MFTs). 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Transform
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("BF94C121-5B05-4E6F-8000-BA598961414D")]
-    public interface IMFTransform
+    internal interface IMFTransform
     {
         /// <summary>
         /// Gets the minimum and maximum number of input and output streams for this Media Foundation transform
@@ -1069,4 +1069,5 @@ namespace MediaFoundation.Transform
         );
     }
 
+#endif
 }

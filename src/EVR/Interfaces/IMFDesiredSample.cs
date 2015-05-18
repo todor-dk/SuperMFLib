@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Enables the presenter for the enhanced video renderer (EVR) to request a specific frame from the
@@ -52,7 +52,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("56C294D0-753E-4260-8D61-A3D8820B1D54"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFDesiredSample
+    internal interface IMFDesiredSample
     {
         /// <summary>
         /// Called by the mixer to get the time and duration of the sample requested by the presenter.
@@ -141,4 +141,5 @@ namespace MediaFoundation.EVR
         void Clear();
     }
 
+#endif
 }

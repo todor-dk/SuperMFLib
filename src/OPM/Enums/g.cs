@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -48,7 +48,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/484DFEA9-301D-4B2B-B5D1-D785EBAA8C8F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/484DFEA9-301D-4B2B-B5D1-D785EBAA8C8F(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum g
+    internal enum g
     {
         /// <summary>
         /// Unknown protection mechanism.

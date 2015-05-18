@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/DD7AB16E-2DC6-462E-B55D-B93A14C362CF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DD7AB16E-2DC6-462E-B55D-B93A14C362CF(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA")]
-    public struct DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA
+    internal struct DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA
     {
         /// <summary>
         /// <strong>If TRUE</strong>, the <strong>SourceAspectRatio</strong> and <strong>DestinationAspectRatio

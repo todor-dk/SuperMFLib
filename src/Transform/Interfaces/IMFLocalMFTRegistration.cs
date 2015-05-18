@@ -27,7 +27,7 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -50,7 +50,7 @@ namespace MediaFoundation.Transform
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("149c4d73-b4be-4f8d-8b87-079e926b6add")]
-    public interface IMFLocalMFTRegistration
+    internal interface IMFLocalMFTRegistration
     {
         /// <summary>
         /// Registers one or more Media Foundation transforms (MFTs) in the caller's process.

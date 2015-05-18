@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines a normalized rectangle, which is used to specify sub-rectangles in a video rectangle. When
@@ -60,7 +60,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/C1DD42CA-64A0-4F30-82E1-EDA3F4721526(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C1DD42CA-64A0-4F30-82E1-EDA3F4721526(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("MFVideoNormalizedRect")]
-    public class MFVideoNormalizedRect
+    internal class  MFVideoNormalizedRect
     {
         /// <summary>
         /// X-coordinate of the upper-left corner of the rectangle.
@@ -166,4 +166,5 @@ namespace MediaFoundation.EVR
         }
     }
 
+#endif
 }

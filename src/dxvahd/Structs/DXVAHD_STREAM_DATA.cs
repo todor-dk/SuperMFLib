@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -60,7 +60,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/95D74C87-5884-4004-926F-108E9BBB012D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/95D74C87-5884-4004-926F-108E9BBB012D(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_DATA")]
-    public struct DXVAHD_STREAM_DATA
+    internal struct DXVAHD_STREAM_DATA
     {
         /// <summary>
         /// Specifies whether this input stream is enabled. If the value is <strong>TRUE</strong>, the

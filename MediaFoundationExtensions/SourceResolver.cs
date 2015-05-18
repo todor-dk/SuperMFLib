@@ -83,9 +83,9 @@ namespace MediaFoundation
             int hr = this.Interface.CreateObjectFromURL(url, flags, properties.GetInterface(), out objectType, out value);
             COM.ThrowIfNotOK(hr);
             if (objectType == MFObjectType.MediaSource)
-                return ((IMFMediaSource)value).ToMediaSource();
+                return MediaSource.FromComObject(value, i => new MediaSource(i));
             if (objectType == MFObjectType.ByteStream)
-                return ((IMFByteStream)value).ToByteStream();
+                return ByteStream.FromComObject(value, i => new ByteStream(i));
             return null; // Must be invalid!
         }
 
@@ -150,9 +150,9 @@ namespace MediaFoundation
             int hr = this.Interface.CreateObjectFromByteStream(byteStream.GetInterface(), url, flags, properties.GetInterface(), out objectType, out value);
             COM.ThrowIfNotOK(hr);
             if (objectType == MFObjectType.MediaSource)
-                return ((IMFMediaSource)value).ToMediaSource();
+                return MediaSource.FromComObject(value, i => new MediaSource(i));
             if (objectType == MFObjectType.ByteStream)
-                return ((IMFByteStream)value).ToByteStream();
+                return ByteStream.FromComObject(value, i => new ByteStream(i));
             return null; // Must be invalid!
         }
 
@@ -232,7 +232,7 @@ namespace MediaFoundation
         /// <summary>
         /// Represents an obbject that can be passed to <see cref="CancelObjectCreation"/>.
         /// </summary>
-        public class CancelCookie : COM<object>
+        internal class  CancelCookie : COM<object>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="CancelCookie"/> class.
@@ -266,9 +266,9 @@ namespace MediaFoundation
             int hr = this.Interface.EndCreateObjectFromURL(result.GetInterface(), out objectType, out value);
             COM.ThrowIfNotOK(hr);
             if (objectType == MFObjectType.MediaSource)
-                return ((IMFMediaSource)value).ToMediaSource();
+                return MediaSource.FromComObject(value, i => new MediaSource(i));
             if (objectType == MFObjectType.ByteStream)
-                return ((IMFByteStream)value).ToByteStream();
+                return ByteStream.FromComObject(value, i => new ByteStream(i));
             return null; // Must be invalid!
         }
 
@@ -359,9 +359,9 @@ namespace MediaFoundation
             int hr = this.Interface.EndCreateObjectFromByteStream(result.GetInterface(), out objectType, out value);
             COM.ThrowIfNotOK(hr);
             if (objectType == MFObjectType.MediaSource)
-                return ((IMFMediaSource)value).ToMediaSource();
+                return MediaSource.FromComObject(value, i => new MediaSource(i));
             if (objectType == MFObjectType.ByteStream)
-                return ((IMFByteStream)value).ToByteStream();
+                return ByteStream.FromComObject(value, i => new ByteStream(i));
             return null; // Must be invalid!
         }
 

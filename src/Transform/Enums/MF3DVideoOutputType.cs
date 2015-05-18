@@ -27,7 +27,7 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -44,7 +44,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/A41469B3-9BBF-4664-9ABA-6894A4F94BBE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A41469B3-9BBF-4664-9ABA-6894A4F94BBE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MF3DVideoOutputType")]
-    public enum MF3DVideoOutputType
+    internal enum MF3DVideoOutputType
     {
         /// <summary>
         /// Output the base view only. Discard the other view.

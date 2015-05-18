@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+    #if NOT_IN_USE
 
     /// <summary>
     /// Indicates the status of an input stream on a Media Foundation transform (MFT).
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/C63052A1-58B6-4537-9214-6F8D79A9EAFD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C63052A1-58B6-4537-9214-6F8D79A9EAFD(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_INPUT_STATUS_FLAGS")]
-    public enum MFTInputStatusFlags
+    internal enum MFTInputStatusFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -54,5 +54,5 @@ namespace MediaFoundation.Transform
         /// </summary>
         AcceptData = 0x00000001
     }
-
+#endif
 }

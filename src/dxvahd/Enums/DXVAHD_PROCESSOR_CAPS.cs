@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/6FE6B1FE-4EEF-427A-B28F-A359B066E552(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6FE6B1FE-4EEF-427A-B28F-A359B066E552(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVAHD_PROCESSOR_CAPS")]
-    public enum DXVAHD_PROCESSOR_CAPS
+    internal enum DXVAHD_PROCESSOR_CAPS
     {
         /// <summary>
         /// The video processor can perform blend deinterlacing.

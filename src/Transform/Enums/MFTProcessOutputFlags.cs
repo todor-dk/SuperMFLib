@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines flags for processing output samples in a Media Foundation transform (MFT).
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/846E91A5-7CD8-4B58-9484-B9CB9AF0BEBF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/846E91A5-7CD8-4B58-9484-B9CB9AF0BEBF(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_PROCESS_OUTPUT_FLAGS")]
-    public enum MFTProcessOutputFlags
+    internal enum MFTProcessOutputFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -64,4 +64,5 @@ namespace MediaFoundation.Transform
         RegenerateLastOutput = 0x00000002
     }
 
+#endif
 }

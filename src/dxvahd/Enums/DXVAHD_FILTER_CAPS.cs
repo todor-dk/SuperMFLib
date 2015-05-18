@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/2F4E0B48-FBCE-49E8-9EA8-1B6F0A022D60(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2F4E0B48-FBCE-49E8-9EA8-1B6F0A022D60(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVAHD_FILTER_CAPS")]
-    public enum DXVAHD_FILTER_CAPS
+    internal enum DXVAHD_FILTER_CAPS
     {
         /// <summary>
         /// The device can adjust the brightness level.

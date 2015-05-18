@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -44,7 +44,7 @@ namespace MediaFoundation.ReadWrite
     /// that are used with functions that expect stream indexes.
     /// </summary>
     [UnmanagedName("Unnamed enum")]
-    public enum MF_SOURCE_READER
+    internal enum MF_SOURCE_READER
     {
         /// <summary>
         /// Indicates an invalid stream index.

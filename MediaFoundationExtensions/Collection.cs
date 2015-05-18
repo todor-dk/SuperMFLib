@@ -23,7 +23,7 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public class Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
+    internal class  Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
         where TItem : COM
     {
         private readonly Func<object, TItem> ItemFactory;

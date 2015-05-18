@@ -34,7 +34,7 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite
+namespace MediaFoundation.ReadWrite.Interfaces
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.ReadWrite
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("666f76de-33d2-41b9-a458-29ed0a972c58")]
-    public interface IMFSinkWriterCallback
+    internal interface IMFSinkWriterCallback
     {
         /// <summary>
         /// Called when the <c>IMFSinkWriter::Finalize</c> method completes. 

@@ -1134,7 +1134,7 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/E12259F4-B631-4D4A-A296-C1CC6334B962(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E12259F4-B631-4D4A-A296-C1CC6334B962(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public class Attributes : Attributes<IMFAttributes>
+    internal class  Attributes : Attributes<IMFAttributes>
     {
         #region Construction
 
@@ -1172,7 +1172,7 @@ namespace MediaFoundation
     /// Represents a two 32-bit integer pair of upper and lower part.
     /// </summary>
     [StructLayout(LayoutKind.Explicit)]
-    public struct Int32Int32
+    internal struct Int32Int32
     {
         /// <summary>
         /// 64-bit integer value.

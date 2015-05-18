@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -44,7 +44,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/1FB59959-782B-44E8-81B1-ECA3C32A0783(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1FB59959-782B-44E8-81B1-ECA3C32A0783(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum a
+    internal enum a
     {
         /// <summary>
         /// The device is not an HDCP repeater.

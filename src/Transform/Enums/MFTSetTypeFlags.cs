@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines flags for the setting or testing the media type on a Media Foundation transform (MFT).
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/DD7E97FB-80AB-4E6B-AC2A-A257D7E8EC63(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DD7E97FB-80AB-4E6B-AC2A-A257D7E8EC63(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_SET_TYPE_FLAGS")]
-    public enum MFTSetTypeFlags
+    internal enum MFTSetTypeFlags
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -54,4 +54,5 @@ namespace MediaFoundation.Transform
         TestOnly = 0x00000001
     }
 
+#endif
 }

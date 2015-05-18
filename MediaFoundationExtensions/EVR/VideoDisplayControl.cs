@@ -91,7 +91,7 @@ namespace MediaFoundation
         /// <summary>
         /// Contains the size and aspect ratio of the video, prior to any stretching by the video renderer.
         /// </summary>
-        public struct VideoSizeNative
+        internal struct VideoSizeNative
         {
             /// <summary>
             /// The size of the native video rectangle.
@@ -136,7 +136,7 @@ namespace MediaFoundation
         /// Contains the range of sizes that the enhanced video renderer (EVR) can display without significantly
         /// degrading performance or image quality. 
         /// </summary>
-        public struct VideoSizeIdeal
+        internal struct VideoSizeIdeal
         {
             /// <summary>
             /// The minimum ideal size.
@@ -159,7 +159,7 @@ namespace MediaFoundation
         /// <summary>
         /// Represents a size.
         /// </summary>
-        public struct Size
+        internal struct Size
         {
             /// <summary>
             /// Specifies the rectangle's width. 
@@ -208,7 +208,7 @@ namespace MediaFoundation
         /// <summary>
         /// Value for the <see cref="VideoPosition"/> property.
         /// </summary>
-        public struct VideoPos
+        internal struct VideoPos
         {
             /// <summary>
             /// The source rectangle. If this parameter is <strong>null</strong>, the source rectangle does not change. 
@@ -332,7 +332,7 @@ namespace MediaFoundation
         /// <summary>
         /// Represents an image captures with the <see cref="GetCurrentImage"/> method.
         /// </summary>
-        public class CapturedImage : IDisposable
+        internal class  CapturedImage : IDisposable
         {
             /// <summary>
             /// <see cref="BitmapInfoHeader"/> structure that contains a description of the bitmap.

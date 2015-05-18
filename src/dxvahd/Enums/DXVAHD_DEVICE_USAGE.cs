@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/D071DEA8-2BAB-4768-BDBE-86AF08A65DC5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D071DEA8-2BAB-4768-BDBE-86AF08A65DC5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_DEVICE_USAGE")]
-    public enum DXVAHD_DEVICE_USAGE
+    internal enum DXVAHD_DEVICE_USAGE
     {
         /// <summary>
         /// Normal video playback. The graphics driver should expose a set of capabilities that are appropriate

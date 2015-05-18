@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Classes
 {
-
+#if NOT_IN_USE
     /// <summary>
     /// To create the enhanced video renderer (EVR) filter, instantiate this class. 
     /// The CLSID is <c>CLSID_EnhancedVideoRenderer</c>.
@@ -40,8 +40,9 @@ namespace MediaFoundation.EVR
     [UnmanagedName("CLSID_EnhancedVideoRenderer"), 
     ComImport, 
     Guid("FA10746C-9B63-4b6c-BC49-FC300EA5F256")]
-    public class EnhancedVideoRenderer
+    internal class  EnhancedVideoRenderer
     {
     }
 
+#endif
 }

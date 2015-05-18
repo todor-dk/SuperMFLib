@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/A1BA825B-0574-4657-8A10-447A3CAF8149(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A1BA825B-0574-4657-8A10-447A3CAF8149(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_D3DFORMAT_DATA")]
-    public struct DXVAHD_STREAM_STATE_D3DFORMAT_DATA
+    internal struct DXVAHD_STREAM_STATE_D3DFORMAT_DATA
     {
         /// <summary>
         /// The surface format, specified as a <strong>D3DFORMAT</strong> value. You can also use a FOURCC code

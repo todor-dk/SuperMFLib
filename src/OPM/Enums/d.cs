@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -45,7 +45,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/B6C450C0-E97F-472D-AE09-FA1E062AEB9E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B6C450C0-E97F-472D-AE09-FA1E062AEB9E(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum d
+    internal enum d
     {
         /// <summary>
         /// DVI version 1.0.

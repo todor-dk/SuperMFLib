@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -45,7 +45,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/F52B4EE6-1AB3-4153-86E3-5AE69FD8A958(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F52B4EE6-1AB3-4153-86E3-5AE69FD8A958(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public enum OPM_ACP_PROTECTION_LEVEL
+    internal enum OPM_ACP_PROTECTION_LEVEL
     {
         /// <summary>
         /// ACP is disabled.

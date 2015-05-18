@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/51135D6E-4F97-44D9-B1D5-F7D2095EE6F1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/51135D6E-4F97-44D9-B1D5-F7D2095EE6F1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_ALPHA_DATA")]
-    public struct DXVAHD_STREAM_STATE_ALPHA_DATA
+    internal struct DXVAHD_STREAM_STATE_ALPHA_DATA
     {
         /// <summary>
         /// <strong>If TRUE</strong>, alpha blending is enabled. Otherwise, alpha blending is disabled. The

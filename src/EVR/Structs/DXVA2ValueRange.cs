@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Structs
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines the range of supported values for a DirectX Video Acceleration (DXVA) operation.
@@ -54,7 +54,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/E01328BB-9069-4874-AA35-B3C9BC1C6094(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E01328BB-9069-4874-AA35-B3C9BC1C6094(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVA2_ValueRange")]
-    public struct DXVA2ValueRange
+    internal struct DXVA2ValueRange
     {
         /// <summary>
         /// Minimum supported value.
@@ -74,4 +74,5 @@ namespace MediaFoundation.EVR
         public int StepSize;
     }
 
+#endif
 }

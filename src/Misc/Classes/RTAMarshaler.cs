@@ -33,8 +33,10 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
+#if NOT_IN_USE
+
     // These classes are used internally and there is probably no reason you will ever
     // need to use them directly.
 
@@ -90,4 +92,6 @@ namespace MediaFoundation.Misc
             return new RTAMarshaler();
         }
     }
+
+#endif
 }

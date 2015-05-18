@@ -25,9 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Exposes methods that get and set named properties.
@@ -42,7 +42,7 @@ namespace MediaFoundation.Misc
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("71604b0f-97b0-4764-8577-2f13e98a1422")]
-    public interface INamedPropertyStore
+    internal interface INamedPropertyStore
     {
         /// <summary>
         /// Gets the value of a named property from the named property store.
@@ -185,5 +185,7 @@ namespace MediaFoundation.Misc
             int iProp,
             [MarshalAs(UnmanagedType.BStr)] out string pbstrName);
     }
+
+#endif
 
 }

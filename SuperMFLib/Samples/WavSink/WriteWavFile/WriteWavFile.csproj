@@ -71,10 +71,6 @@
       <Project>{59d2b4b5-2852-4396-a0d9-9ca546ac3c09}</Project>
       <Name>SuperMFLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WavSink\WavSink.csproj">
-      <Project>{EA1F760B-169A-4F0E-9800-4DB45559142C}</Project>
-      <Name>WavSink</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

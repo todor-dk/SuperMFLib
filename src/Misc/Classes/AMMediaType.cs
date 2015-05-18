@@ -25,10 +25,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
 
-
+#if NOT_IN_USE
 
     /// <summary>
     /// The <strong>AM_MEDIA_TYPE</strong> structure describes the format of a media sample. 
@@ -58,7 +58,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/973697D0-2897-48B5-88CA-A88A9650EB02(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/973697D0-2897-48B5-88CA-A88A9650EB02(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("AM_MEDIA_TYPE"), StructLayout(LayoutKind.Sequential)]
-    public class AMMediaType
+    internal class  AMMediaType
     {
         /// <summary>
         /// Globally unique identifier (GUID) that specifies the major type of the media sample. For a list of
@@ -117,4 +117,5 @@ namespace MediaFoundation.Misc
         public IntPtr formatPtr; // Pointer to a buff determined by formatType
     }
 
+#endif
 }

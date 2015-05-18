@@ -62,12 +62,13 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region Bugs in Vista that appear to be fixed in W7
 
     /// <summary>
     /// Alternative implementation of <see cref="MFExtern"/>.
     /// </summary>
-    public class MFExternAlt
+    internal class  MFExternAlt
     {
         /// <summary>
         /// Creates an event queue.
@@ -105,4 +106,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

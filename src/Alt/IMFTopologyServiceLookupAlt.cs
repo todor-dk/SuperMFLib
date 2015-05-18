@@ -62,6 +62,7 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region Bugs in Vista and W7
 
     /// <summary>
@@ -84,7 +85,7 @@ namespace MediaFoundation.Alt
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("FA993889-4383-415A-A930-DD472A8CF6F7"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFTopologyServiceLookupAlt
+    internal interface IMFTopologyServiceLookupAlt
     {
         /// <summary>
         /// Retrieves an interface from the enhanced video renderer (EVR), or from the video mixer or video
@@ -154,4 +155,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

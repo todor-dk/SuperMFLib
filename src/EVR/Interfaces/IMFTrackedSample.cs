@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Tracks the reference counts on a video media sample. Video samples created by the 
@@ -48,7 +48,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("245BF8E9-0755-40F7-88A5-AE0F18D55E17")]
-    public interface IMFTrackedSample
+    internal interface IMFTrackedSample
     {
         /// <summary>
         /// Sets the owner for the sample.
@@ -93,4 +93,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

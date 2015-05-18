@@ -33,8 +33,10 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
+
+#if NOT_IN_USE
 
     /// <summary>
     /// Extends the <see cref="WaveFormatEx"/> class with additional data.
@@ -45,7 +47,7 @@ namespace MediaFoundation.Misc
     /// </remarks>
     /// <seealso cref="WaveFormatEx"/>
     [StructLayout(LayoutKind.Sequential, Pack = 1), UnmanagedName("WAVEFORMATEX")]
-    public class WaveFormatExWithData : WaveFormatEx
+    internal class  WaveFormatExWithData : WaveFormatEx
     {
         /// <summary>
         /// Data that immediately follows the <c>WAVEFORMATEX</c> structure.
@@ -123,4 +125,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

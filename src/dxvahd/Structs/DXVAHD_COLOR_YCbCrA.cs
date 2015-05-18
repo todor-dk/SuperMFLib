@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/3E37DAF1-5529-4042-AB6E-89A7F77D5E15(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3E37DAF1-5529-4042-AB6E-89A7F77D5E15(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_COLOR_YCbCrA")]
-    public struct DXVAHD_COLOR_YCbCrA
+    internal struct DXVAHD_COLOR_YCbCrA
     {
         /// <summary>
         /// The Y (luma) value.

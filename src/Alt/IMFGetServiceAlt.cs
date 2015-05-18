@@ -62,6 +62,7 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region "Limitation of .Net"
 
     // When I originally added IMFGetService to this file, it was my intent that p3 should be
@@ -91,7 +92,7 @@ namespace MediaFoundation.Alt
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("FA993888-4383-415A-A930-DD472A8CF6F7")]
-    public interface IMFGetServiceAlt
+    internal interface IMFGetServiceAlt
     {
         /// <summary>
         /// Retrieves a service interface.
@@ -140,4 +141,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

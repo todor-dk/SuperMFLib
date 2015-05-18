@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -55,7 +55,7 @@ namespace MediaFoundation.MFPlayer
     /// <a href="http://msdn.microsoft.com/en-US/library/5AA13072-239A-41B6-A0B6-A2729BAB2DB4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5AA13072-239A-41B6-A0B6-A2729BAB2DB4(v=VS.85,d=hv.2).aspx</a></remarks>
     [Flags, UnmanagedName("_MFP_CREDENTIAL_FLAGS")]
     [Obsolete("Applications should use the Media Session for playback.")]
-    public enum MFP_CREDENTIAL_FLAGS
+    internal enum MFP_CREDENTIAL_FLAGS
     {
         /// <summary>
         /// Default value / no flags are set.

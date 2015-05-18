@@ -30,8 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Enums
 {
+    #if NOT_IN_USE
 
 
     /// <summary>
@@ -46,7 +47,7 @@ namespace MediaFoundation.EVR
     /// <a href="http://msdn.microsoft.com/en-US/library/71B92702-79A0-4C18-BB56-5E7C9E49CAD2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/71B92702-79A0-4C18-BB56-5E7C9E49CAD2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVP_MESSAGE_TYPE")]
-    public enum MFVPMessageType
+    internal enum MFVPMessageType
     {
         /// <summary>
         /// The presenter should discard any pending samples. The <em>ulParam</em> parameter is not used and
@@ -90,5 +91,5 @@ namespace MediaFoundation.EVR
         /// </summary>
         CancelStep
     }
-
+#endif
 }

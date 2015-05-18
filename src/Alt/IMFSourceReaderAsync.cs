@@ -62,6 +62,7 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region "Limitation of .Net"
 
     // This is the ASync version of IMFSourceReader.  The only difference is the ReadSample method, which must allow
@@ -80,7 +81,7 @@ namespace MediaFoundation.Alt
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("70ae66f2-c809-4e4f-8915-bdcb406b7993")]
-    public interface IMFSourceReaderAsync
+    internal interface IMFSourceReaderAsync
     {
         /// <summary>
         /// Queries whether a stream is selected.
@@ -598,4 +599,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

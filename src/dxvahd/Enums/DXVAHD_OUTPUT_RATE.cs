@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -50,7 +50,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/F96184D8-C5C2-4767-899F-323935FA9E89(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F96184D8-C5C2-4767-899F-323935FA9E89(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_OUTPUT_RATE")]
-    public enum DXVAHD_OUTPUT_RATE
+    internal enum DXVAHD_OUTPUT_RATE
     {
         /// <summary>
         /// The frame output is at the normal rate.

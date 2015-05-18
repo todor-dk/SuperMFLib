@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/CD5F56FF-61D7-49DF-8114-F6A14DE8E06B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CD5F56FF-61D7-49DF-8114-F6A14DE8E06B(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_BLT_STATE")]
-    public enum DXVAHD_BLT_STATE
+    internal enum DXVAHD_BLT_STATE
     {
         /// <summary>
         /// Specifies the target rectangle, which is the area within the destination surface where the output

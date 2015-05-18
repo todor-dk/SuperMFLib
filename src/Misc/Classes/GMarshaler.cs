@@ -33,10 +33,12 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
     // These classes are used internally and there is probably no reason you will ever
     // need to use them directly.
+
+#if NOT_IN_USE
 
     // Class to handle Array of Guid
     internal class GMarshaler : ICustomMarshaler
@@ -121,4 +123,6 @@ namespace MediaFoundation.Misc
             return new GMarshaler();
         }
     }
+
+#endif
 }

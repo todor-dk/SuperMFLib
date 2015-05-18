@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Enables a custom video mixer or video presenter to get interface pointers from the 
@@ -54,7 +54,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("FA993889-4383-415A-A930-DD472A8CF6F7"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFTopologyServiceLookup
+    internal interface IMFTopologyServiceLookup
     {
         /// <summary>
         /// Retrieves an interface from the enhanced video renderer (EVR), or from the video mixer or video
@@ -123,4 +123,5 @@ namespace MediaFoundation.EVR
             );
     }
 
+#endif
 }

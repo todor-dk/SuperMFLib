@@ -62,6 +62,7 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Alt
 {
+#if NOT_IN_USE
     #region Bugs in Vista that appear to be fixed in W7
 
     /// <summary>
@@ -77,7 +78,7 @@ namespace MediaFoundation.Alt
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
-    public interface IMFMediaStreamAlt : IMFMediaEventGeneratorAlt
+    internal interface IMFMediaStreamAlt : IMFMediaEventGeneratorAlt
     {
         #region IMFMediaEventGeneratorAlt methods
 
@@ -355,4 +356,5 @@ namespace MediaFoundation.Alt
     }
 
     #endregion
+#endif
 }

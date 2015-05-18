@@ -30,9 +30,9 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR
+namespace MediaFoundation.EVR.Interfaces
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// This interface is not supported.
@@ -47,7 +47,7 @@ namespace MediaFoundation.EVR
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("d0cfe38b-93e7-4772-8957-0400c49a4485")]
-    public interface IEVRVideoStreamControl
+    internal interface IEVRVideoStreamControl
     {
         /// <summary>
         /// <strong>Note</strong> This method is not supported. 
@@ -102,4 +102,5 @@ namespace MediaFoundation.EVR
             [MarshalAs(UnmanagedType.Bool)] out bool lpfActive);
     }
 
+#endif
 }

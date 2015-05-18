@@ -27,7 +27,7 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -58,7 +58,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/7D610EDF-89E3-4FF3-9AD8-B92EE50DF522(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7D610EDF-89E3-4FF3-9AD8-B92EE50DF522(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFT_REGISTRATION_INFO")]
-    public struct MFT_REGISTRATION_INFO
+    internal struct MFT_REGISTRATION_INFO
     {
         /// <summary>
         /// CLSID of the Media Foundation transform (MFT) to register.

@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/51F2CFE6-722B-4273-ABF6-E1B8FDEC9808(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/51F2CFE6-722B-4273-ABF6-E1B8FDEC9808(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_SOURCE_RECT_DATA")]
-    public struct DXVAHD_STREAM_STATE_SOURCE_RECT_DATA
+    internal struct DXVAHD_STREAM_STATE_SOURCE_RECT_DATA
     {
         /// <summary>
         /// <strong></strong>Specifies whether to blit the entire input surface or just the source rectangle.

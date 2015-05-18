@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -53,7 +53,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/833BB91B-D891-4C3F-BE20-367B0A23E97E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/833BB91B-D891-4C3F-BE20-367B0A23E97E(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Explicit), UnmanagedName("DXVAHD_COLOR")]
-    public struct DXVAHD_COLOR
+    internal struct DXVAHD_COLOR
     {
         /// <summary>
         /// A <see cref="dxvahd.DXVAHD_COLOR_RGBA" /> structure that contains an RGB color value.

@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/DCD42210-D5F8-42C7-AAC0-08F0CE4B7AC9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DCD42210-D5F8-42C7-AAC0-08F0CE4B7AC9(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_ALPHA_FILL_DATA")]
-    public struct DXVAHD_BLT_STATE_ALPHA_FILL_DATA
+    internal struct DXVAHD_BLT_STATE_ALPHA_FILL_DATA
     {
         /// <summary>
         /// Specifies the alpha fill mode, as a member of the <see cref="dxvahd.DXVAHD_ALPHA_FILL_MODE" />

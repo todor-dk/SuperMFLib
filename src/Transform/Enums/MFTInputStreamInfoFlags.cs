@@ -27,9 +27,9 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Enums
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Describes an input stream on a Media Foundation transform (MFT).
@@ -42,7 +42,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/D9A05A0F-56A7-4A91-93DC-A5079E51DEAC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D9A05A0F-56A7-4A91-93DC-A5079E51DEAC(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("_MFT_INPUT_STREAM_INFO_FLAGS")]
-    public enum MFTInputStreamInfoFlags
+    internal enum MFTInputStreamInfoFlags
     {
         /// <summary>
         /// Each media sample ( <see cref="IMFSample"/> interface) of input data must contain complete,
@@ -121,4 +121,5 @@ namespace MediaFoundation.Transform
         ProcessesInPlace = 0x800
     }
 
+#endif
 }

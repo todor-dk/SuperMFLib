@@ -58,7 +58,7 @@ namespace MediaFoundation
             int hr = MFExtern.MFCreateSourceReaderFromMediaSource(mediaSource.GetInterface(), attributes.GetInterface(), out reader);
             COM.ThrowIfNotOK(hr);
             Debug.Assert(reader != null);
-            return reader.ToSourceReader();
+            return SourceReader.FromComInterface(reader, i => new SourceReader(i));
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace MediaFoundation
             if (hr == MFError.MF_E_NO_MORE_TYPES)
                 return null;
             COM.ThrowIfNotOK(hr);
-            return ppMediaType.ToMediaType();
+            return MediaType.FromComInterface(ppMediaType, i => new MediaType(i));
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace MediaFoundation
             IMFMediaType ppMediaType;
             int hr = this.Interface.GetCurrentMediaType(streamIndex, out ppMediaType);
             COM.ThrowIfNotOK(hr);
-            return ppMediaType.ToMediaType();
+            return MediaType.FromComInterface(ppMediaType, i => new MediaType(i));
         }
 
         /// <summary>
@@ -386,7 +386,7 @@ namespace MediaFoundation
             int hr = this.Interface.ReadSample(streamIndex, controlFlags, out actualStreamIndex, out streamFlags, out time, out sample);
             COM.ThrowIfNotOK(hr);
             timestamp = new Time(time);
-            return sample.ToSample();
+            return Sample.FromComInterface(sample, i => new Sample(i));
         }
 
         /// <summary>

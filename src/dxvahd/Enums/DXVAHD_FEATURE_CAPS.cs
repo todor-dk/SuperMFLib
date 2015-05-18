@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/6014780B-3B8A-48D6-AE30-B48127A2C274(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6014780B-3B8A-48D6-AE30-B48127A2C274(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("DXVAHD_FEATURE_CAPS")]
-    public enum DXVAHD_FEATURE_CAPS
+    internal enum DXVAHD_FEATURE_CAPS
     {
         /// <summary>
         /// The device can set the alpha values on the video output. See 

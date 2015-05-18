@@ -25,9 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Structs
 {
-
+#if NOT_IN_USE
 
     /// <summary>
     /// Defines custom color primaries for a video source. The color primaries define how to convert colors
@@ -41,7 +41,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/2C26E906-E428-4A76-B10A-10A18F300EBE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2C26E906-E428-4A76-B10A-10A18F300EBE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MT_CUSTOM_VIDEO_PRIMARIES"), StructLayout(LayoutKind.Sequential)]
-    public struct MT_CustomVideoPrimaries
+    internal struct MT_CustomVideoPrimaries
     {
         /// <summary>
         /// Red x-coordinate.
@@ -76,5 +76,7 @@ namespace MediaFoundation.Misc
         /// </summary>
         public float fWy;
     }
+
+#endif
 
 }

@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -56,7 +56,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/166FC57E-3B49-44C1-8C6C-691950E7B675(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/166FC57E-3B49-44C1-8C6C-691950E7B675(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA")]
-    public struct DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA
+    internal struct DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA
     {
         /// <summary>
         /// Specifies whether IVTC statistics are enabled. The default state value is <strong>FALSE</strong>.

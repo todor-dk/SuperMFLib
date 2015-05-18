@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -52,7 +52,7 @@ namespace MediaFoundation.MFPlayer
     /// <a href="http://msdn.microsoft.com/en-US/library/A0D5C840-A1AA-48CF-BF2E-7E5C35951FB6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A0D5C840-A1AA-48CF-BF2E-7E5C35951FB6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFP_MEDIAPLAYER_STATE")]
-    public enum MFP_MEDIAPLAYER_STATE
+    internal enum MFP_MEDIAPLAYER_STATE
     {
         /// <summary>
         /// Initial state. No media items have been set on the player object.

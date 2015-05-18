@@ -25,8 +25,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Enums
 {
+#if NOT_IN_USE
 
     /// <summary>
     /// This enumeration contains options for the <see cref="VideoInfoHeader2.InterlaceFlags"/> field.
@@ -39,7 +40,7 @@ namespace MediaFoundation.Misc
     /// <a href="http://msdn.microsoft.com/en-US/library/5E3D5BF0-435F-45DA-8409-A1463B56A7AE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5E3D5BF0-435F-45DA-8409-A1463B56A7AE(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("AMINTERLACE_*"), Flags]
-    public enum AMInterlace
+    internal enum AMInterlace
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -102,4 +103,5 @@ namespace MediaFoundation.Misc
         DisplayModeBobOrWeave = 0x00000080,
     }
 
+#endif
 }

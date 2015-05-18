@@ -23,6 +23,44 @@ namespace MediaFoundation.Internals
             return self.Interface;
         }
 
+        public static TInterface GetUniqueReferenceAndRelease<TInterface>(this object self)
+            where TInterface : class
+        {
+            if (self == null)
+                return null;
+            if (!Marshal.IsComObject(self))
+                return (TInterface)self;
+
+            try
+            {
+                IntPtr pUnk = Marshal.GetIUnknownForObject(self);
+                try
+                {
+                    object unique = Marshal.GetUniqueObjectForIUnknown(pUnk);
+                    try
+                    {
+                        TInterface result = (TInterface)unique;
+                        if (Object.ReferenceEquals(result, unique))
+                            unique = null;
+                        return result;
+                    }
+                    finally
+                    {
+                        if (unique != null)
+                            Marshal.ReleaseComObject(unique);
+                    }
+                }
+                finally
+                {
+                    Marshal.Release(pUnk);
+                }
+            }
+            finally
+            {
+                Marshal.ReleaseComObject(self);
+            }
+        }
+
         public static TInterface GetUniqueReference<TInterface>(this object self)
             where TInterface : class
         {

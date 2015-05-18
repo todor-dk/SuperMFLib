@@ -27,9 +27,10 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 
-namespace MediaFoundation.Transform
+namespace MediaFoundation.Transform.Classes
 {
 
+#if NOT_IN_USE
 
     /// <summary>
     /// Contains media type information for registering a Media Foundation transform (MFT). 
@@ -49,7 +50,7 @@ namespace MediaFoundation.Transform
     /// <a href="http://msdn.microsoft.com/en-US/library/1D26B9EE-545A-4E47-9A68-B9E567F0DEC4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1D26B9EE-545A-4E47-9A68-B9E567F0DEC4(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFT_REGISTER_TYPE_INFO")]
-    public class MFTRegisterTypeInfo
+    internal class  MFTRegisterTypeInfo
     {
         /// <summary>
         /// The major media type. For a list of possible values, see <c>Major Media Types</c>. 
@@ -62,5 +63,7 @@ namespace MediaFoundation.Transform
         /// </summary>
         public Guid guidSubtype;
     }
+
+#endif
 
 }

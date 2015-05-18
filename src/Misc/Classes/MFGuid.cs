@@ -33,10 +33,10 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc
+namespace MediaFoundation.Misc.Classes
 {
 
-
+#if NOT_IN_USE
     /// <summary>
     /// MFGuid is a wrapper class around a System.Guid value type.
     /// </summary>
@@ -44,7 +44,7 @@ namespace MediaFoundation.Misc
     /// This class is necessary to enable null paramters passing.
     /// </remarks>
     [StructLayout(LayoutKind.Explicit)]
-    public class MFGuid
+    internal class  MFGuid
     {
         [FieldOffset(0)]
         private Guid guid;
@@ -169,4 +169,5 @@ namespace MediaFoundation.Misc
         }
     }
 
+#endif
 }

@@ -29,7 +29,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace MediaFoundation.OPM
+namespace MediaFoundation.OPM.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -65,7 +65,7 @@ namespace MediaFoundation.OPM
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/BB7CAEDD-CD9E-4B36-B1A1-A457DE44AFB1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BB7CAEDD-CD9E-4B36-B1A1-A457DE44AFB1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public struct OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS
+    internal struct OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS
     {
         /// <summary>
         /// Specifies the protection standard and format that is currently active. The value is a bitwise

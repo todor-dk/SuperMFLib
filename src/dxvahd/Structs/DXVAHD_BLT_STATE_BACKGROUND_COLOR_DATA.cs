@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Structs
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -54,7 +54,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/34B8C29E-A183-4E68-BD46-802C43D554F7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34B8C29E-A183-4E68-BD46-802C43D554F7(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential), UnmanagedName("DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA")]
-    public struct DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA
+    internal struct DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA
     {
         /// <summary>
         /// If <strong>TRUE</strong>, the <strong>BackgroundColor</strong> member specifies a YCbCr color.

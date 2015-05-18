@@ -29,7 +29,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd
+namespace MediaFoundation.dxvahd.Enums
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -47,7 +47,7 @@ namespace MediaFoundation.dxvahd
     /// <a href="http://msdn.microsoft.com/en-US/library/06DF2D2F-9163-4672-8EA4-57F1942320C5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/06DF2D2F-9163-4672-8EA4-57F1942320C5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("DXVAHD_SURFACE_TYPE")]
-    public enum DXVAHD_SURFACE_TYPE
+    internal enum DXVAHD_SURFACE_TYPE
     {
         /// <summary>
         /// A surface for an input stream. This surface type is equivalent to an off-screen plain surface in

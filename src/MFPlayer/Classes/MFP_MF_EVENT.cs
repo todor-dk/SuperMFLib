@@ -32,7 +32,7 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 
-namespace MediaFoundation.MFPlayer
+namespace MediaFoundation.MFPlayer.Classes
 {
 
 #if ALLOW_UNTESTED_INTERFACES
@@ -63,7 +63,7 @@ namespace MediaFoundation.MFPlayer
     /// </remarks>
     [Obsolete("This API may be removed from future releases of Windows.")]
     [StructLayout(LayoutKind.Sequential), UnmanagedName("MFP_MF_EVENT")]
-    public class MFP_MF_EVENT : MFP_EVENT_HEADER
+    internal class  MFP_MF_EVENT : MFP_EVENT_HEADER
     {
         /// <summary>
         /// Media Foundation event type. Currently, the MFPlay player object forwards the following pipeline
