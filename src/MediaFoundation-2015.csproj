@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MediaFoundation</RootNamespace>
+    <AssemblyName>MediaFoundation</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MediaFoundation.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <LangVersion>5</LangVersion>
+    <DocumentationFile>bin\x86\Debug\MediaFoundation.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>5</LangVersion>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>bin\x64\Release\MediaFoundation.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Alt\IMFFinalizableMediaSinkAlt.cs" />
+    <Compile Include="Alt\IMFGetServiceAlt.cs" />
+    <Compile Include="Alt\IMFMediaEventGeneratorAlt.cs" />
+    <Compile Include="Alt\IMFMediaEventQueueAlt.cs" />
+    <Compile Include="Alt\IMFMediaSinkAlt.cs" />
+    <Compile Include="Alt\IMFMediaSourceAlt.cs" />
+    <Compile Include="Alt\IMFMediaStreamAlt.cs" />
+    <Compile Include="Alt\IMFSourceReaderAsync.cs" />
+    <Compile Include="Alt\IMFStreamSinkAlt.cs" />
+    <Compile Include="Alt\IMFTopologyServiceLookupAlt.cs" />
+    <Compile Include="Alt\IMFTopologyServiceLookupClientAlt.cs" />
+    <Compile Include="Alt\MFExternAlt.cs" />
+    <Compile Include="COM.cs" />
+    <Compile Include="Core\Classes\ASFIndexIdentifier.cs" />
+    <Compile Include="Core\Classes\CColorConvertDMO.cs" />
+    <Compile Include="Core\Classes\CLSID.cs" />
+    <Compile Include="Core\Classes\CreateMediaExtensionObject.cs" />
+    <Compile Include="Core\Classes\HttpSchemePlugin.cs" />
+    <Compile Include="Core\Classes\MFASFMutexType.cs" />
+    <Compile Include="Core\Classes\MFASFSampleExtension.cs" />
+    <Compile Include="Core\Classes\MFAttributesClsid.cs" />
+    <Compile Include="Core\Classes\MFByteStreamProxyClassFactory.cs" />
+    <Compile Include="Core\Classes\MFCaptureEngine.cs" />
+    <Compile Include="Core\Classes\MFCaptureEngineClassFactory.cs" />
+    <Compile Include="Core\Classes\MFConnector.cs" />
+    <Compile Include="Core\Classes\MFEnabletype.cs" />
+    <Compile Include="Core\Classes\MFImageFormat.cs" />
+    <Compile Include="Core\Classes\MFImageSharingEngineClassFactory.cs" />
+    <Compile Include="Core\Classes\MFMediaEngineClassFactory.cs" />
+    <Compile Include="Core\Classes\MFMediaSharingEngineClassFactory.cs" />
+    <Compile Include="Core\Classes\MFMediaType.cs" />
+    <Compile Include="Core\Classes\MFOffset.cs" />
+    <Compile Include="Core\Classes\MFPKEY.cs" />
+    <Compile Include="Core\Classes\MFProperties.cs" />
+    <Compile Include="Core\Classes\MFRepresentation.cs" />
+    <Compile Include="Core\Classes\MFServices.cs" />
+    <Compile Include="Core\Classes\MFStreamFormat.cs" />
+    <Compile Include="Core\Classes\MFTranscodeContainerType.cs" />
+    <Compile Include="Core\Classes\MFTransformCategory.cs" />
+    <Compile Include="Core\Classes\MFVideoArea.cs" />
+    <Compile Include="Core\Classes\MFVideoFormat.cs" />
+    <Compile Include="Core\Classes\MF_BYTE_STREAM_CACHE_RANGE.cs" />
+    <Compile Include="Core\Classes\MF_CAPTURE_ENGINE.cs" />
+    <Compile Include="Core\Classes\MF_MEDIA_ENGINE.cs" />
+    <Compile Include="Core\Classes\MF_MEDIA_SHARING_ENGINE.cs" />
+    <Compile Include="Core\Classes\MF_MSE.cs" />
+    <Compile Include="Core\Classes\MPEG2ByteStreamPlugin.cs" />
+    <Compile Include="Core\Classes\MPEG2DLNASink.cs" />
+    <Compile Include="Core\Classes\NetSchemePlugin.cs" />
+    <Compile Include="Core\Classes\PlayToSourceClassFactory.cs" />
+    <Compile Include="Core\Classes\UrlmonSchemePlugin.cs" />
+    <Compile Include="dxvahd\Classes\DXVAHDETWGUID.cs" />
+    <Compile Include="dxvahd\Classes\OPMExtern.cs" />
+    <Compile Include="dxvahd\Delegates.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_ALPHA_FILL_MODE.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_BLT_STATE.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_DEVICE_CAPS.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_DEVICE_TYPE.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_DEVICE_USAGE.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_FEATURE_CAPS.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_FILTER.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_FILTER_CAPS.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_FRAME_FORMAT.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_INPUT_FORMAT_CAPS.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_ITELECINE_CAPS.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_OUTPUT_RATE.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_PROCESSOR_CAPS.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_STREAM_STATE.cs" />
+    <Compile Include="dxvahd\Enums\DXVAHD_SURFACE_TYPE.cs" />
+    <Compile Include="dxvahd\Interfaces\IDirect3DDevice9Ex.cs" />
+    <Compile Include="dxvahd\Interfaces\IDirect3DSurface9.cs" />
+    <Compile Include="dxvahd\Interfaces\IDXVAHD_Device.cs" />
+    <Compile Include="dxvahd\Interfaces\IDXVAHD_VideoProcessor.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDETW_CREATEVIDEOPROCESSOR.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDETW_DESTROYVIDEOPROCESSOR.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDETW_VIDEOPROCESSBLTHD.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDETW_VIDEOPROCESSBLTHD_STREAM.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDETW_VIDEOPROCESSBLTSTATE.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDETW_VIDEOPROCESSSTREAMSTATE.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHDSW_CALLBACKS.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_BLT_STATE_ALPHA_FILL_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_BLT_STATE_CONSTRICTION_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_BLT_STATE_PRIVATE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_BLT_STATE_TARGET_RECT_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_COLOR.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_COLOR_RGBA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_COLOR_YCbCrA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_CONTENT_DESC.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_CUSTOM_RATE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_FILTER_RANGE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_RATIONAL.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_ALPHA_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_D3DFORMAT_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_FILTER_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_LUMA_KEY_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_PALETTE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_PRIVATE_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_STREAM_STATE_SOURCE_RECT_DATA.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_VPCAPS.cs" />
+    <Compile Include="dxvahd\Structs\DXVAHD_VPDEVCAPS.cs" />
+    <Compile Include="Core\Enums\eAVEncH264VLevel.cs" />
+    <Compile Include="Core\Enums\eAVEncH264VProfile.cs" />
+    <Compile Include="Core\Enums\ASFSelectionStatus.cs" />
+    <Compile Include="Core\Enums\ASFStatusFlags.cs" />
+    <Compile Include="Core\Enums\MediaEventType.cs" />
+    <Compile Include="Core\Enums\MF2DBuffer_LockFlags.cs" />
+    <Compile Include="Core\Enums\MFAsfIndexerFlags.cs" />
+    <Compile Include="Core\Enums\MFASFMultiplexerFlags.cs" />
+    <Compile Include="Core\Enums\MFASFSplitterFlags.cs" />
+    <Compile Include="Core\Enums\MFAsfStreamSelectorFlags.cs" />
+    <Compile Include="Core\Enums\MFASync.cs" />
+    <Compile Include="Core\Enums\MFAsyncCallbackQueue.cs" />
+    <Compile Include="Core\Enums\MFASYNC_WORKQUEUE_TYPE.cs" />
+    <Compile Include="Core\Enums\MFAttributeSerializeOptions.cs" />
+    <Compile Include="Core\Enums\MFAttributesMatchType.cs" />
+    <Compile Include="Core\Enums\MFAttributeType.cs" />
+    <Compile Include="Core\Enums\MFAudioConstriction.cs" />
+    <Compile Include="Core\Enums\MFByteStreamCapabilities.cs" />
+    <Compile Include="Core\Enums\MFByteStreamSeekingFlags.cs" />
+    <Compile Include="Core\Enums\MFByteStreamSeekOrigin.cs" />
+    <Compile Include="Core\Enums\MFClockCharacteristicsFlags.cs" />
+    <Compile Include="Core\Enums\MFClockRelationalFlags.cs" />
+    <Compile Include="Core\Enums\MFClockState.cs" />
+    <Compile Include="Core\Enums\MFEventFlag.cs" />
+    <Compile Include="Core\Enums\MFFileAccessMode.cs" />
+    <Compile Include="Core\Enums\MFFileFlags.cs" />
+    <Compile Include="Core\Enums\MFFileOpenMode.cs" />
+    <Compile Include="Core\Enums\MFMediaEqual.cs" />
+    <Compile Include="Core\Enums\MFMediaSinkCharacteristics.cs" />
+    <Compile Include="Core\Enums\MFMediaSourceCharacteristics.cs" />
+    <Compile Include="Core\Enums\MFNetAuthenticationFlags.cs" />
+    <Compile Include="Core\Enums\MFNetCredentialOptions.cs" />
+    <Compile Include="Core\Enums\MFNetCredentialRequirements.cs" />
+    <Compile Include="Core\Enums\MFNetSourceProtocolType.cs" />
+    <Compile Include="Core\Enums\MFNETSOURCE_STATISTICS_IDS.cs" />
+    <Compile Include="Core\Enums\MFNominalRange.cs" />
+    <Compile Include="Core\Enums\MFObjectType.cs" />
+    <Compile Include="Core\Enums\MFOutputAttribute.cs" />
+    <Compile Include="Core\Enums\MFPluginType.cs" />
+    <Compile Include="Core\Enums\MFPMPSessionCreationFlags.cs" />
+    <Compile Include="Core\Enums\MFPolicyManagerAction.cs" />
+    <Compile Include="Core\Enums\MFQualityAdviseFlags.cs" />
+    <Compile Include="Core\Enums\MFQualityDropMode.cs" />
+    <Compile Include="Core\Enums\MFQualityLevel.cs" />
+    <Compile Include="Core\Enums\MFRateDirection.cs" />
+    <Compile Include="Core\Enums\MFResolution.cs" />
+    <Compile Include="Core\Enums\MFSequencerTopologyFlags.cs" />
+    <Compile Include="Core\Enums\MFSessionCapabilities.cs" />
+    <Compile Include="Core\Enums\MFSessionGetFullTopologyFlags.cs" />
+    <Compile Include="Core\Enums\MFSessionSetTopologyFlags.cs" />
+    <Compile Include="Core\Enums\MFShutdownStatus.cs" />
+    <Compile Include="Core\Enums\MFStandardVideoFormat.cs" />
+    <Compile Include="Core\Enums\MFStartup.cs" />
+    <Compile Include="Core\Enums\MFStreamSinkMarkerType.cs" />
+    <Compile Include="Core\Enums\MFTimeFlags.cs" />
+    <Compile Include="Core\Enums\MFTopologyType.cs" />
+    <Compile Include="Core\Enums\MFTOPOLOGY_DXVA_MODE.cs" />
+    <Compile Include="Core\Enums\MFTOPOLOGY_HARDWARE_MODE.cs" />
+    <Compile Include="Core\Enums\MFTopoStatus.cs" />
+    <Compile Include="Core\Enums\MFURLTrustStatus.cs" />
+    <Compile Include="Core\Enums\MFVideo3DFormat.cs" />
+    <Compile Include="Core\Enums\MFVideo3DSampleFormat.cs" />
+    <Compile Include="Core\Enums\MFVideoChromaSubsampling.cs" />
+    <Compile Include="Core\Enums\MFVideoFlags.cs" />
+    <Compile Include="Core\Enums\MFVideoInterlaceMode.cs" />
+    <Compile Include="Core\Enums\MFVideoLighting.cs" />
+    <Compile Include="Core\Enums\MFVideoPrimaries.cs" />
+    <Compile Include="Core\Enums\MFVideoRotationFormat.cs" />
+    <Compile Include="Core\Enums\MFVideoTransferFunction.cs" />
+    <Compile Include="Core\Enums\MFVideoTransferMatrix.cs" />
+    <Compile Include="Core\Enums\MFWaveFormatExConvertFlags.cs" />
+    <Compile Include="Core\Enums\MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS.cs" />
+    <Compile Include="Core\Enums\MF_CAPTURE_ENGINE_DEVICE_TYPE.cs" />
+    <Compile Include="Core\Enums\MF_CAPTURE_ENGINE_SINK_TYPE.cs" />
+    <Compile Include="Core\Enums\MF_CAPTURE_ENGINE_STREAM_CATEGORY.cs" />
+    <Compile Include="Core\Enums\MF_CONNECT_METHOD.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_CANPLAY.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_CREATEFLAGS.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_ERR.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_EVENT.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_EXTENSION_TYPE.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_KEYERR.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_NETWORK.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_OPM_STATUS.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_PRELOAD.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_PROTECTION_FLAGS.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_READY.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_S3D_PACKING_MODE.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_SEEK_MODE.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_ENGINE_STATISTIC.cs" />
+    <Compile Include="Core\Enums\MF_MEDIA_SHARING_ENGINE_EVENT.cs" />
+    <Compile Include="Core\Enums\MF_MSE_ERROR.cs" />
+    <Compile Include="Core\Enums\MF_MSE_READY.cs" />
+    <Compile Include="Core\Enums\MF_OPM_ACP_PROTECTION_LEVEL.cs" />
+    <Compile Include="Core\Enums\MF_OPM_CGMSA_PROTECTION_LEVEL.cs" />
+    <Compile Include="Core\Enums\MF_PLUGIN_CONTROL_POLICY.cs" />
+    <Compile Include="Core\Enums\MF_Plugin_Type.cs" />
+    <Compile Include="Core\Enums\MF_RESOLUTION.cs" />
+    <Compile Include="Core\Enums\MF_SHARING_ENGINE_EVENT.cs" />
+    <Compile Include="Core\Enums\MF_TRANSCODE_ADJUST_PROFILE_FLAGS.cs" />
+    <Compile Include="Core\Enums\MF_TRANSCODE_TOPOLOGYMODE_FLAGS.cs" />
+    <Compile Include="Core\Enums\MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.cs" />
+    <Compile Include="Core\Enums\MF_VIDEO_PROCESSOR_MIRROR.cs" />
+    <Compile Include="Core\Enums\MF_VIDEO_PROCESSOR_ROTATION.cs" />
+    <Compile Include="Core\Enums\PLAYTO_SOURCE_CREATEFLAGS.cs" />
+    <Compile Include="EVR\Classes\DXVA2ProcAmpValues.cs" />
+    <Compile Include="Core\Interfaces\IMFBufferListNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureEngineOnSampleCallback2.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureSink2.cs" />
+    <Compile Include="Core\Interfaces\IMFCdmSuspendNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFDXGIDeviceManagerSource.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineClassFactory2.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineClassFactoryEx.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineEME.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineNeedKeyNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineOPMInfo.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineSrcElementsEx.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineSupportsSourceTransfer.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaKeys.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaKeySession.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaKeySessionNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSourceExtension.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSourceExtensionNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaStreamSourceSampleRequest.cs" />
+    <Compile Include="Core\Interfaces\IMFSourceBuffer.cs" />
+    <Compile Include="Core\Interfaces\IMFSourceBufferList.cs" />
+    <Compile Include="Core\Interfaces\IMFSourceBufferNotify.cs" />
+    <Compile Include="Core\Interfaces\IPlayToControlWithCapabilities.cs" />
+    <Compile Include="Framework.cs" />
+    <Compile Include="Internals\Contract.cs" />
+    <Compile Include="Internals\GuidMapper.cs" />
+    <Compile Include="MediaEventGenerator.cs" />
+    <Compile Include="MFPlayer\Classes\EHMarshaler.cs" />
+    <Compile Include="EVR\Classes\EnhancedVideoRenderer.cs" />
+    <Compile Include="EVR\Classes\EVRTearlessWindowPresenter9.cs" />
+    <Compile Include="EVR\Classes\MFVideoAlphaBitmap.cs" />
+    <Compile Include="EVR\Classes\MFVideoAlphaBitmapParams.cs" />
+    <Compile Include="EVR\Classes\MFVideoMixer9.cs" />
+    <Compile Include="EVR\Classes\MFVideoNormalizedRect.cs" />
+    <Compile Include="EVR\Classes\MFVideoPresenter9.cs" />
+    <Compile Include="EVR\Enums\DXVA2Filters.cs" />
+    <Compile Include="EVR\Enums\DXVA2ProcAmp.cs" />
+    <Compile Include="EVR\Enums\EVRFilterConfigPrefs.cs" />
+    <Compile Include="EVR\Enums\MFServiceLookupType.cs" />
+    <Compile Include="EVR\Enums\MFVideoAlphaBitmapFlags.cs" />
+    <Compile Include="EVR\Enums\MFVideoAspectRatioMode.cs" />
+    <Compile Include="EVR\Enums\MFVideoMixPrefs.cs" />
+    <Compile Include="EVR\Enums\MFVideoRenderPrefs.cs" />
+    <Compile Include="EVR\Enums\MFVPMessageType.cs" />
+    <Compile Include="EVR\Interfaces\IEVRFilterConfig.cs" />
+    <Compile Include="EVR\Interfaces\IEVRFilterConfigEx.cs" />
+    <Compile Include="EVR\Interfaces\IEVRTrustedVideoPlugin.cs" />
+    <Compile Include="EVR\Interfaces\IEVRVideoStreamControl.cs" />
+    <Compile Include="EVR\Interfaces\IMFDesiredSample.cs" />
+    <Compile Include="EVR\Interfaces\IMFTopologyServiceLookup.cs" />
+    <Compile Include="EVR\Interfaces\IMFTopologyServiceLookupClient.cs" />
+    <Compile Include="EVR\Interfaces\IMFTrackedSample.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoDeviceID.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoDisplayControl.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoMixerBitmap.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoMixerControl.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoMixerControl2.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoPositionMapper.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoPresenter.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoProcessor.cs" />
+    <Compile Include="EVR\Interfaces\IMFVideoRenderer.cs" />
+    <Compile Include="EVR\Structs\DXVA2ValueRange.cs" />
+    <Compile Include="EVR\Structs\DXVA2VideoProcessorCaps.cs" />
+    <Compile Include="Core\Interfaces\IAdvancedMediaCapture.cs" />
+    <Compile Include="Core\Interfaces\IAdvancedMediaCaptureInitializationSettings.cs" />
+    <Compile Include="Core\Interfaces\IAdvancedMediaCaptureSettings.cs" />
+    <Compile Include="Core\Interfaces\IMF2DBuffer.cs" />
+    <Compile Include="Core\Interfaces\IMF2DBuffer2.cs" />
+    <Compile Include="Core\Interfaces\IMFActivate.cs" />
+    <Compile Include="Core\Interfaces\IMFASFContentInfo.cs" />
+    <Compile Include="Core\Interfaces\IMFASFIndexer.cs" />
+    <Compile Include="Core\Interfaces\IMFASFMultiplexer.cs" />
+    <Compile Include="Core\Interfaces\IMFASFMutualExclusion.cs" />
+    <Compile Include="Core\Interfaces\IMFASFProfile.cs" />
+    <Compile Include="Core\Interfaces\IMFASFSplitter.cs" />
+    <Compile Include="Core\Interfaces\IMFASFStreamConfig.cs" />
+    <Compile Include="Core\Interfaces\IMFASFStreamPrioritization.cs" />
+    <Compile Include="Core\Interfaces\IMFASFStreamSelector.cs" />
+    <Compile Include="Core\Interfaces\IMFAsyncCallback.cs" />
+    <Compile Include="Core\Interfaces\IMFAsyncCallbackLogging.cs" />
+    <Compile Include="Core\Interfaces\IMFAsyncResult.cs" />
+    <Compile Include="Core\Interfaces\IMFAttributes.cs" />
+    <Compile Include="Core\Interfaces\IMFAudioMediaType.cs" />
+    <Compile Include="Core\Interfaces\IMFAudioPolicy.cs" />
+    <Compile Include="Core\Interfaces\IMFAudioStreamVolume.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStream.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStreamBuffering.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStreamCacheControl.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStreamCacheControl2.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStreamHandler.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStreamProxyClassFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFByteStreamTimeSeek.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureEngine.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureEngineClassFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureEngineOnEventCallback.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureEngineOnSampleCallback.cs" />
+    <Compile Include="Core\Interfaces\IMFCapturePhotoSink.cs" />
+    <Compile Include="Core\Interfaces\IMFCapturePreviewSink.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureRecordSink.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureSink.cs" />
+    <Compile Include="Core\Interfaces\IMFCaptureSource.cs" />
+    <Compile Include="Core\Interfaces\IMFClock.cs" />
+    <Compile Include="Core\Interfaces\IMFClockStateSink.cs" />
+    <Compile Include="Core\Interfaces\IMFCollection.cs" />
+    <Compile Include="Core\Interfaces\IMFContentEnabler.cs" />
+    <Compile Include="Core\Interfaces\IMFContentProtectionManager.cs" />
+    <Compile Include="Core\Interfaces\IMFDLNASinkInit.cs" />
+    <Compile Include="Core\Interfaces\IMFDRMNetHelper.cs" />
+    <Compile Include="Core\Interfaces\IMFDXGIBuffer.cs" />
+    <Compile Include="Core\Interfaces\IMFDXGIDeviceManager.cs" />
+    <Compile Include="Core\Interfaces\IMFFieldOfUseMFTUnlock.cs" />
+    <Compile Include="Core\Interfaces\IMFFinalizableMediaSink.cs" />
+    <Compile Include="Core\Interfaces\IMFGetService.cs" />
+    <Compile Include="Core\Interfaces\IMFImageSharingEngine.cs" />
+    <Compile Include="Core\Interfaces\IMFImageSharingEngineClassFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFInputTrustAuthority.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaBuffer.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngine.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineClassFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineEx.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineExtension.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineProtectedContent.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEngineSrcElements.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaError.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEvent.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEventGenerator.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaEventQueue.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSession.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSharingEngine.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSharingEngineClassFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSink.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSinkPreroll.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSource.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSourceEx.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSourcePresentationProvider.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaSourceTopologyProvider.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaStream.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaTimeRange.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaType.cs" />
+    <Compile Include="Core\Interfaces\IMFMediaTypeHandler.cs" />
+    <Compile Include="Core\Interfaces\IMFMetadata.cs" />
+    <Compile Include="Core\Interfaces\IMFMetadataProvider.cs" />
+    <Compile Include="Core\Interfaces\IMFNetCredential.cs" />
+    <Compile Include="Core\Interfaces\IMFNetCredentialCache.cs" />
+    <Compile Include="Core\Interfaces\IMFNetCredentialManager.cs" />
+    <Compile Include="Core\Interfaces\IMFNetProxyLocator.cs" />
+    <Compile Include="Core\Interfaces\IMFNetProxyLocatorFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFNetResourceFilter.cs" />
+    <Compile Include="Core\Interfaces\IMFNetSchemeHandlerConfig.cs" />
+    <Compile Include="Core\Interfaces\IMFObjectReferenceStream.cs" />
+    <Compile Include="Core\Interfaces\IMFOutputPolicy.cs" />
+    <Compile Include="Core\Interfaces\IMFOutputSchema.cs" />
+    <Compile Include="Core\Interfaces\IMFOutputTrustAuthority.cs" />
+    <Compile Include="Core\Interfaces\IMFPluginControl.cs" />
+    <Compile Include="Core\Interfaces\IMFPluginControl2.cs" />
+    <Compile Include="Core\Interfaces\IMFPMPClient.cs" />
+    <Compile Include="Core\Interfaces\IMFPMPClientApp.cs" />
+    <Compile Include="Core\Interfaces\IMFPMPHost.cs" />
+    <Compile Include="Core\Interfaces\IMFPMPHostApp.cs" />
+    <Compile Include="Core\Interfaces\IMFPMPServer.cs" />
+    <Compile Include="Core\Interfaces\IMFPresentationClock.cs" />
+    <Compile Include="Core\Interfaces\IMFPresentationDescriptor.cs" />
+    <Compile Include="Core\Interfaces\IMFPresentationTimeSource.cs" />
+    <Compile Include="Core\Interfaces\IMFProtectedEnvironmentAccess.cs" />
+    <Compile Include="Core\Interfaces\IMFQualityAdvise.cs" />
+    <Compile Include="Core\Interfaces\IMFQualityAdvise2.cs" />
+    <Compile Include="Core\Interfaces\IMFQualityAdviseLimits.cs" />
+    <Compile Include="Core\Interfaces\IMFQualityManager.cs" />
+    <Compile Include="Core\Interfaces\IMFRateControl.cs" />
+    <Compile Include="Core\Interfaces\IMFRateSupport.cs" />
+    <Compile Include="Core\Interfaces\IMFRealTimeClient.cs" />
+    <Compile Include="Core\Interfaces\IMFRealTimeClientEx.cs" />
+    <Compile Include="Core\Interfaces\IMFRemoteAsyncCallback.cs" />
+    <Compile Include="Core\Interfaces\IMFRemoteDesktopPlugin.cs" />
+    <Compile Include="Core\Interfaces\IMFRemoteProxy.cs" />
+    <Compile Include="Core\Interfaces\IMFSAMIStyle.cs" />
+    <Compile Include="Core\Interfaces\IMFSample.cs" />
+    <Compile Include="Core\Interfaces\IMFSampleGrabberSinkCallback.cs" />
+    <Compile Include="Core\Interfaces\IMFSampleGrabberSinkCallback2.cs" />
+    <Compile Include="Core\Interfaces\IMFSampleOutputStream.cs" />
+    <Compile Include="Core\Interfaces\IMFSampleProtection.cs" />
+    <Compile Include="Core\Interfaces\IMFSaveJob.cs" />
+    <Compile Include="Core\Interfaces\IMFSchemeHandler.cs" />
+    <Compile Include="Core\Interfaces\IMFSecureChannel.cs" />
+    <Compile Include="Core\Interfaces\IMFSeekInfo.cs" />
+    <Compile Include="Core\Interfaces\IMFSequencerSource.cs" />
+    <Compile Include="Core\Interfaces\IMFSharingEngineClassFactory.cs" />
+    <Compile Include="Core\Interfaces\IMFShutdown.cs" />
+    <Compile Include="Core\Interfaces\IMFSignedLibrary.cs" />
+    <Compile Include="Core\Interfaces\IMFSimpleAudioVolume.cs" />
+    <Compile Include="Core\Interfaces\IMFSourceOpenMonitor.cs" />
+    <Compile Include="Core\Interfaces\IMFSourceResolver.cs" />
+    <Compile Include="Core\Interfaces\IMFSSLCertificateManager.cs" />
+    <Compile Include="Core\Interfaces\IMFStreamDescriptor.cs" />
+    <Compile Include="Core\Interfaces\IMFStreamingSinkConfig.cs" />
+    <Compile Include="Core\Interfaces\IMFStreamSink.cs" />
+    <Compile Include="Core\Interfaces\IMFSystemId.cs" />
+    <Compile Include="Core\Interfaces\IMFTimecodeTranslate.cs" />
+    <Compile Include="Core\Interfaces\IMFTimer.cs" />
+    <Compile Include="Core\Interfaces\IMFTopoLoader.cs" />
+    <Compile Include="Core\Interfaces\IMFTopology.cs" />
+    <Compile Include="Core\Interfaces\IMFTopologyNode.cs" />
+    <Compile Include="Core\Interfaces\IMFTopologyNodeAttributeEditor.cs" />
+    <Compile Include="Core\Interfaces\IMFTranscodeProfile.cs" />
+    <Compile Include="Core\Interfaces\IMFTranscodeSinkInfoProvider.cs" />
+    <Compile Include="Core\Interfaces\IMFTrustedInput.cs" />
+    <Compile Include="Core\Interfaces\IMFTrustedOutput.cs" />
+    <Compile Include="Core\Interfaces\IMFVideoMediaType.cs" />
+    <Compile Include="Core\Interfaces\IMFVideoProcessorControl.cs" />
+    <Compile Include="Core\Interfaces\IMFVideoSampleAllocator.cs" />
+    <Compile Include="Core\Interfaces\IMFVideoSampleAllocatorCallback.cs" />
+    <Compile Include="Core\Interfaces\IMFVideoSampleAllocatorEx.cs" />
+    <Compile Include="Core\Interfaces\IMFVideoSampleAllocatorNotify.cs" />
+    <Compile Include="Core\Interfaces\IMFWorkQueueServices.cs" />
+    <Compile Include="Core\Interfaces\IMFWorkQueueServicesEx.cs" />
+    <Compile Include="Core\Interfaces\IPlayToControl.cs" />
+    <Compile Include="Core\Interfaces\IPlayToSourceClassFactory.cs" />
+    <Compile Include="Core\Externs.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_ACQUIRE_USER_CREDENTIAL_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_ERROR_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_EVENT_HEADER.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_FRAME_STEP_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_MEDIAITEM_CLEARED_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_MEDIAITEM_CREATED_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_MEDIAITEM_SET_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_MF_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_PAUSE_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_PLAYBACK_ENDED_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_PLAY_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_POSITION_SET_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_RATE_SET_EVENT.cs" />
+    <Compile Include="MFPlayer\Classes\MFP_STOP_EVENT.cs" />
+    <Compile Include="MFPlayer\Enums\MFP_CREATION_OPTIONS.cs" />
+    <Compile Include="MFPlayer\Enums\MFP_CREDENTIAL_FLAGS.cs" />
+    <Compile Include="MFPlayer\Enums\MFP_EVENT_TYPE.cs" />
+    <Compile Include="MFPlayer\Enums\MFP_MEDIAITEM_CHARACTERISTICS.cs" />
+    <Compile Include="MFPlayer\Enums\MFP_MEDIAPLAYER_STATE.cs" />
+    <Compile Include="MFPlayer\Interfaces\IMFPMediaItem.cs" />
+    <Compile Include="MFPlayer\Interfaces\IMFPMediaPlayer.cs" />
+    <Compile Include="MFPlayer\Interfaces\IMFPMediaPlayerCallback.cs" />
+    <Compile Include="Misc\Classes\AMMediaType.cs" />
+    <Compile Include="Misc\Classes\BitmapInfoHeader.cs" />
+    <Compile Include="Misc\Classes\BitmapInfoHeaderWithData.cs" />
+    <Compile Include="Misc\Classes\BMMarshaler.cs" />
+    <Compile Include="Misc\Classes\COMBase.cs" />
+    <Compile Include="Misc\Classes\FourCC.cs" />
+    <Compile Include="Misc\Classes\GAMarshaler.cs" />
+    <Compile Include="Misc\Classes\GMarshaler.cs" />
+    <Compile Include="Misc\Classes\MFError.cs" />
+    <Compile Include="Misc\Classes\MfFloat.cs" />
+    <Compile Include="Misc\Classes\MFGuid.cs" />
+    <Compile Include="Misc\Classes\MFInt.cs" />
+    <Compile Include="Misc\Classes\MFRect.cs" />
+    <Compile Include="Misc\Classes\MFSize.cs" />
+    <Compile Include="Misc\Classes\PropertyKey.cs" />
+    <Compile Include="Misc\Classes\PropVariant.cs" />
+    <Compile Include="Misc\Classes\PVMarshaler.cs" />
+    <Compile Include="Misc\Classes\RTAMarshaler.cs" />
+    <Compile Include="Misc\Classes\RTIMarshaler.cs" />
+    <Compile Include="UnmanagedNameAttribute.cs" />
+    <Compile Include="Misc\Classes\VideoInfoHeader.cs" />
+    <Compile Include="Misc\Classes\VideoInfoHeader2.cs" />
+    <Compile Include="Misc\Classes\WaveFormatEx.cs" />
+    <Compile Include="Misc\Classes\WaveFormatExtensible.cs" />
+    <Compile Include="Misc\Classes\WaveFormatExtensibleWithData.cs" />
+    <Compile Include="Misc\Classes\WaveFormatExWithData.cs" />
+    <Compile Include="Misc\Classes\WEMarshaler.cs" />
+    <Compile Include="Misc\Enums\AMControl.cs" />
+    <Compile Include="Misc\Enums\AMCopyProtect.cs" />
+    <Compile Include="Misc\Enums\AMInterlace.cs" />
+    <Compile Include="Misc\Enums\MFVideoPadFlags.cs" />
+    <Compile Include="Misc\Enums\MFVideoSrcContentHintFlags.cs" />
+    <Compile Include="Misc\Classes\VariantType.cs" />
+    <Compile Include="Misc\Enums\WaveMask.cs" />
+    <Compile Include="Misc\Interfaces\INamedPropertyStore.cs" />
+    <Compile Include="Misc\Interfaces\IPropertyStore.cs" />
+    <Compile Include="Misc\Structs\MPEG1VideoInfo.cs" />
+    <Compile Include="Misc\Structs\MT_CustomVideoPrimaries.cs" />
+    <Compile Include="OPM\Classes\MFOpmStatusRequests.cs" />
+    <Compile Include="OPM\Classes\OpmConstants.cs" />
+    <Compile Include="OPM\Classes\OPMExtern.cs" />
+    <Compile Include="OPM\Enums\a.cs" />
+    <Compile Include="OPM\Enums\b.cs" />
+    <Compile Include="OPM\Enums\c.cs" />
+    <Compile Include="OPM\Enums\d.cs" />
+    <Compile Include="OPM\Enums\e.cs" />
+    <Compile Include="OPM\Enums\f.cs" />
+    <Compile Include="OPM\Enums\g.cs" />
+    <Compile Include="OPM\Enums\h.cs" />
+    <Compile Include="OPM\Enums\KSMETHOD_OPMVIDEOOUTPUT.cs" />
+    <Compile Include="OPM\Enums\OPM_ACP_PROTECTION_LEVEL.cs" />
+    <Compile Include="OPM\Enums\OPM_DPCP_PROTECTION_LEVEL.cs" />
+    <Compile Include="OPM\Enums\OPM_HDCP_PROTECTION_LEVEL.cs" />
+    <Compile Include="OPM\Enums\OPM_IMAGE_ASPECT_RATIO_EN300294.cs" />
+    <Compile Include="OPM\Enums\OPM_VIDEO_OUTPUT_SEMANTICS.cs" />
+    <Compile Include="OPM\Interfaces\IOPMVideoOutput.cs" />
+    <Compile Include="OPM\Structs\OPM_ACP_AND_CGMSA_SIGNALING.cs" />
+    <Compile Include="OPM\Structs\OPM_ACTUAL_OUTPUT_FORMAT.cs" />
+    <Compile Include="OPM\Structs\OPM_CONFIGURE_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_CONNECTED_HDCP_DEVICE_INFORMATION.cs" />
+    <Compile Include="OPM\Structs\OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_ENCRYPTED_INITIALIZATION_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_GET_CODEC_INFO_INFORMATION.cs" />
+    <Compile Include="OPM\Structs\OPM_GET_CODEC_INFO_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_GET_INFO_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_HDCP_KEY_SELECTION_VECTOR.cs" />
+    <Compile Include="OPM\Structs\OPM_OMAC.cs" />
+    <Compile Include="OPM\Structs\OPM_OUTPUT_ID_DATA.cs" />
+    <Compile Include="OPM\Structs\OPM_RANDOM_NUMBER.cs" />
+    <Compile Include="OPM\Structs\OPM_REQUESTED_INFORMATION.cs" />
+    <Compile Include="OPM\Structs\OPM_SET_ACP_AND_CGMSA_SIGNALING_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_SET_HDCP_SRM_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_SET_PROTECTION_LEVEL_PARAMETERS.cs" />
+    <Compile Include="OPM\Structs\OPM_STANDARD_INFORMATION.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadWrite\Classes\MFReadWriteClassFactory.cs" />
+    <Compile Include="ReadWrite\Classes\MF_SINK_WRITER_STATISTICS.cs" />
+    <Compile Include="ReadWrite\Enums\MF_SINK_WRITER.cs" />
+    <Compile Include="ReadWrite\Enums\MF_SOURCE_READER.cs" />
+    <Compile Include="ReadWrite\Enums\MF_SOURCE_READER_CONTROL_FLAG.cs" />
+    <Compile Include="ReadWrite\Enums\MF_SOURCE_READER_FLAG.cs" />
+    <Compile Include="ReadWrite\Enums\MF_SOURCE_READER_INDEX.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFReadWriteClassFactory.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSinkWriter.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSinkWriterCallback.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSinkWriterEncoderConfig.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSinkWriterEx.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSourceReader.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSourceReaderCallback.cs" />
+    <Compile Include="ReadWrite\Interfaces\IMFSourceReaderEx.cs" />
+    <Compile Include="Core\Structs\ASFMuxStatistics.cs" />
+    <Compile Include="Core\Structs\DEVICE_INFO.cs" />
+    <Compile Include="Core\Structs\MFARGB.cs" />
+    <Compile Include="Core\Structs\MFAYUVSample.cs" />
+    <Compile Include="Core\Structs\MFByteStreamBufferingParams.cs" />
+    <Compile Include="Core\Structs\MFClockProperties.cs" />
+    <Compile Include="Core\Structs\MFInputTrustAuthorityAccessParams.cs" />
+    <Compile Include="Core\Structs\MFInputTrustAuthorityAction.cs" />
+    <Compile Include="Core\Structs\MFMPEG2DLNASINKSTATS.cs" />
+    <Compile Include="Core\Structs\MFNetCredentialManagerGetParam.cs" />
+    <Compile Include="Core\Structs\MFPaletteEntry.cs" />
+    <Compile Include="Core\Structs\MFRatio.cs" />
+    <Compile Include="Core\Structs\MFTopoNodeAttributeUpdate.cs" />
+    <Compile Include="Core\Structs\MFTranscodeSinkInfo.cs" />
+    <Compile Include="Core\Structs\MFVideoCompressedInfo.cs" />
+    <Compile Include="Core\Structs\MFVideoInfo.cs" />
+    <Compile Include="Core\Structs\MFVideoSurfaceInfo.cs" />
+    <Compile Include="Core\Structs\MF_LeakyBucketPair.cs" />
+    <Compile Include="Core\Structs\Mpeg2VideoInfo.cs" />
+    <Compile Include="Core\Structs\MT_ARBITRARY_HEADER.cs" />
+    <Compile Include="Core\Structs\ROI_AREA.cs" />
+    <Compile Include="Core\Structs\Unnamed1.cs" />
+    <Compile Include="Transform\Classes\MFTRegisterTypeInfo.cs" />
+    <Compile Include="Transform\Enums\MF3DVideoOutputType.cs" />
+    <Compile Include="Transform\Enums\MFTDrainType.cs" />
+    <Compile Include="Transform\Enums\MFTInputStatusFlags.cs" />
+    <Compile Include="Transform\Enums\MFTInputStreamInfoFlags.cs" />
+    <Compile Include="Transform\Enums\MFTMessageType.cs" />
+    <Compile Include="Transform\Enums\MFTOutputDataBufferFlags.cs" />
+    <Compile Include="Transform\Enums\MFTOutputStatusFlags.cs" />
+    <Compile Include="Transform\Enums\MFTOutputStreamInfoFlags.cs" />
+    <Compile Include="Transform\Enums\MFTProcessOutputFlags.cs" />
+    <Compile Include="Transform\Enums\MFTSetTypeFlags.cs" />
+    <Compile Include="Transform\Enums\MFT_EnumFlag.cs" />
+    <Compile Include="Transform\Enums\ProcessOutputStatus.cs" />
+    <Compile Include="Transform\Interfaces\IMFLocalMFTRegistration.cs" />
+    <Compile Include="Transform\Interfaces\IMFTransform.cs" />
+    <Compile Include="Transform\Structs\MFTInputStreamInfo.cs" />
+    <Compile Include="Transform\Structs\MFTOutputDataBuffer.cs" />
+    <Compile Include="Transform\Structs\MFTOutputStreamInfo.cs" />
+    <Compile Include="Transform\Structs\MFT_REGISTRATION_INFO.cs" />
+    <Compile Include="Transform\Structs\STREAM_MEDIUM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MediaFoundation.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
