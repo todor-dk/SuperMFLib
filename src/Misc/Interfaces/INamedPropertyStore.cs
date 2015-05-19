@@ -78,7 +78,7 @@ namespace MediaFoundation.Misc.Interfaces
         [PreserveSig]
         int GetNamedValue(
             [In, MarshalAs(UnmanagedType.LPWStr)] string pszName,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
         );
 
         /// <summary>

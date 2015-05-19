@@ -96,7 +96,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
             );
 
         /// <summary>
@@ -736,7 +736,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetUnknown(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppv
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppv
             );
 
         /// <summary>
@@ -1255,7 +1255,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
             );
 
         /// <summary>

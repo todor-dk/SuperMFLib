@@ -28,11 +28,11 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a description of a media format. 
     /// </summary>
@@ -46,9 +46,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("44AE0FA8-EA31-4109-8D2E-4CAE4997C555")]
-    internal interface IMFMediaType : IMFAttributes
+    public interface IMFMediaType : IMFAttributes
     {
-    #region IMFAttributes methods
+        #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -85,7 +85,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
             );
 
         /// <summary>
@@ -639,7 +639,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetUnknown(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppv
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppv
             );
 
         /// <summary>
@@ -1100,7 +1100,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
             );
 
         /// <summary>
@@ -1163,8 +1163,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMajorType(
-            out Guid pguidMajorType
-            );
+            out Guid pguidMajorType);
 
         /// <summary>
         /// Queries whether the media type is a temporally compressed format. Temporal compression uses
@@ -1193,8 +1192,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int IsCompressedFormat(
-            [MarshalAs(UnmanagedType.Bool)] out bool pfCompressed
-            );
+            [MarshalAs(UnmanagedType.Bool)] out bool pfCompressed);
 
         /// <summary>
         /// Compares two media types and determines whether they are identical. If they are not identical, the
@@ -1243,8 +1241,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int IsEqual(
             [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pIMediaType,
-            out MFMediaEqual pdwFlags
-            );
+            out MFMediaEqual pdwFlags);
 
         /// <summary>
         /// Retrieves an alternative representation of the media type. Currently only the DirectShow <strong>
@@ -1295,8 +1292,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetRepresentation(
             [In, MarshalAs(UnmanagedType.Struct)] Guid guidRepresentation,
-            out IntPtr ppvRepresentation
-            );
+            out IntPtr ppvRepresentation);
 
         /// <summary>
         /// Frees memory that was allocated by the <see cref="IMFMediaType.GetRepresentation"/> method. 
@@ -1328,9 +1324,6 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int FreeRepresentation(
             [In, MarshalAs(UnmanagedType.Struct)] Guid guidRepresentation,
-            [In] IntPtr pvRepresentation
-            );
+            [In] IntPtr pvRepresentation);
     }
-
-#endif
 }

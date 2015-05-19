@@ -34,13 +34,13 @@ using System.Drawing;
 namespace MediaFoundation.Core.Classes
 {
 
-#if NOT_IN_USE
-
     /// <summary>
     /// This class contains the attribute GUIDs that are defined for Media Foundation.
     /// </summary>
-    public static class MFAttributesClsid
+    internal static class MFAttributesClsid
     {
+#if NOT_IN_USE
+
     #region Audio Renderer Attributes
 
         /// <summary>
@@ -1322,7 +1322,9 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Media Type Attributes
+#endif
+
+        #region Media Type Attributes
 
         // {48eba18e-f8c9-4687-bf11-0a74c9f96a8f}   MF_MT_MAJOR_TYPE                {GUID}
         /// <summary>
@@ -1374,6 +1376,8 @@ namespace MediaFoundation.Core.Classes
         /// <a href="http://msdn.microsoft.com/en-US/library/8E600943-92F1-4936-8C00-842FC7F4CB57(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8E600943-92F1-4936-8C00-842FC7F4CB57(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static readonly Guid MF_MT_SUBTYPE = new Guid(0xf7e34c9a, 0x42e8, 0x4714, 0xb7, 0x4b, 0xcb, 0x29, 0xd7, 0x2c, 0x35, 0xe5);
+
+#if NOT_IN_USE
 
         // {c9173739-5e56-461c-b713-46fb995cb95f}   MF_MT_ALL_SAMPLES_INDEPENDENT   {UINT32 (BOOL)}
         /// <summary>
@@ -2154,9 +2158,14 @@ namespace MediaFoundation.Core.Classes
         /// </remarks>
         public static readonly Guid MF_MT_MPEG2_CONTENT_PACKET = new Guid(0x825d55e4, 0x4f12, 0x4197, 0x9e, 0xb3, 0x59, 0xb6, 0xe4, 0x71, 0xf, 0x6);
 
+#endif
+
         #endregion
 
-    #region VIDEO - H264 extra data
+
+#if NOT_IN_USE
+
+        #region VIDEO - H264 extra data
 
         // {F5929986-4C45-4FBB-BB49-6CC534D05B9B}  {UINT32, UVC 1.5 H.264 format descriptor: bMaxCodecConfigDelay}
         /// <summary>
@@ -3503,7 +3512,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Sample Attributes
+        #region Sample Attributes
 
         /// <summary>
         /// Contains the decode time stamp (DTS) for the sample.
@@ -4142,7 +4151,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Stream descriptor Attributes
+        #region Stream descriptor Attributes
 
         /// <summary>
         /// Specifies the language for a stream. 
@@ -4227,7 +4236,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Topology Attributes
+        #region Topology Attributes
 
         /// <summary>
         /// Specifies whether the pipeline trims samples. 
@@ -4346,7 +4355,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Topology Node Attributes
+        #region Topology Node Attributes
 
         /// <summary>
         /// Specifies how the topology loader connects this topology node, and whether this node is optional. 
@@ -5153,7 +5162,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Transform Attributes
+        #region Transform Attributes
 
         /// <summary>
         /// Specifies whether the Topology Loader will change the media types on a Media Foundation transform
@@ -5313,7 +5322,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Presentation Descriptor Attributes
+        #region Presentation Descriptor Attributes
 
         /// <summary>
         /// Contains a pointer to the presentation descriptor from the Protected Media Path (PMP). 
@@ -5539,7 +5548,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region wmcontainer.h Attributes
+        #region wmcontainer.h Attributes
 
         /// <summary>
         /// Specifies the file identifier of an Advanced Systems Format (ASF) file. 
@@ -6535,7 +6544,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Arbitrary
+        #region Arbitrary
 
         // {9E6BD6F5-0109-4f95-84AC-9309153A19FC}   MF_MT_ARBITRARY_HEADER          {MT_ARBITRARY_HEADER}
         /// <summary>
@@ -6615,7 +6624,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Image
+        #region Image
 
         // {ED062CF4-E34E-4922-BE99-934032133D7C}   MF_MT_IMAGE_LOSS_TOLERANT       {UINT32 (BOOL)}
         /// <summary>
@@ -6661,7 +6670,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region MPEG-4 Media Type Attributes
+        #region MPEG-4 Media Type Attributes
 
         // {261E9D83-9529-4B8F-A111-8B9C950A81A9}   MF_MT_MPEG4_SAMPLE_DESCRIPTION   {BLOB}
         /// <summary>
@@ -6739,7 +6748,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion 
 
-    #region Save original format information for AVI and WAV files
+        #region Save original format information for AVI and WAV files
 
         // {d7be3fe0-2bc7-492d-b843-61a1919b70c3}   MF_MT_ORIGINAL_4CC               (UINT32)
         /// <summary>
@@ -6836,7 +6845,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Video Capture Media Type Attributes
+        #region Video Capture Media Type Attributes
 
         // {D2E7558C-DC1F-403f-9A72-D28BB1EB3B5E}   MF_MT_FRAME_RATE_RANGE_MIN      {UINT64 (HI32(Numerator),LO32(Denominator))}
         /// <summary>
@@ -9635,7 +9644,7 @@ namespace MediaFoundation.Core.Classes
 
         #endregion
 
-    #region Misc W8 attributes
+        #region Misc W8 attributes
 
         /// <summary>
         /// Specifies how a Media Foundation transform (MFT) should output a 3D stereoscopic video stream.
@@ -10540,7 +10549,7 @@ namespace MediaFoundation.Core.Classes
         public static readonly Guid MF_DEVICESTREAM_MAX_FRAME_BUFFERS = new Guid(0x1684cebe, 0x3175, 0x4985, 0x88, 0x2c, 0x0e, 0xfd, 0x3e, 0x8a, 0xc1, 0x1e);
 
         #endregion
-    }
 
 #endif
+    }
 }

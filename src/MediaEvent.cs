@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -19,8 +22,8 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaEvent(TInterface comInterface)
-            : base(comInterface)
+        protected MediaEvent(IntPtr unknown)
+            : base(unknown)
         {
         }
 
@@ -148,13 +151,34 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/B4F686BE-9472-433C-B983-6C48DFD3AC76(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4F686BE-9472-433C-B983-6C48DFD3AC76(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    internal class  MediaEvent : MediaEvent<IMFMediaEvent>
+    public sealed class MediaEvent : MediaEvent<IMFMediaEvent>
     {
         #region Construction
 
-        internal MediaEvent(IMFMediaEvent comInterface)
-            : base(comInterface)
+        private MediaEvent(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaEvent"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaEvent's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaEvent"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaEvent FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaEvent result = new MediaEvent(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion

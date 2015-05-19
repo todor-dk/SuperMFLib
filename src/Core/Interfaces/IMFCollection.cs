@@ -31,7 +31,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
 
     /// <summary>
     /// Represents a generic collection of <strong>IUnknown</strong> pointers. 
@@ -46,7 +45,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
-    internal interface IMFCollection
+    public interface IMFCollection
     {
         /// <summary>
         /// Retrieves the number of objects in the collection.
@@ -78,8 +77,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetElementCount(
-            out int pcElements
-            );
+            out int pcElements);
 
         /// <summary>
         /// Retrieves an object in the collection.
@@ -113,8 +111,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetElement(
             [In] int dwElementIndex,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppUnkElement
-            );
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppUnkElement);
 
         /// <summary>
         /// Adds an object to the collection.
@@ -146,8 +143,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int AddElement(
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkElement
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkElement);
 
         /// <summary>
         /// Removes an object from the collection.
@@ -187,8 +183,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int RemoveElement(
             [In] int dwElementIndex,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppUnkElement
-            );
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppUnkElement);
 
         /// <summary>
         /// Adds an object at the specified index in the collection.
@@ -225,8 +220,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int InsertElementAt(
             [In] int dwIndex,
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnknown
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
 
         /// <summary>
         /// Removes all items from the collection.
@@ -254,6 +248,4 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int RemoveAllElements();
     }
-
-#endif
 }

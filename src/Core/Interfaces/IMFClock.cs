@@ -30,11 +30,11 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Core.Structs;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Provides timing information from a clock in Microsoft Media Foundation.
     /// <para/>
@@ -50,7 +50,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("2EB1E945-18B8-4139-9B1A-D5D584818530")]
-    internal interface IMFClock
+    public interface IMFClock
     {
         /// <summary>
         /// Retrieves the characteristics of the clock.
@@ -83,8 +83,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetClockCharacteristics(
-            out MFClockCharacteristicsFlags pdwCharacteristics
-            );
+            out MFClockCharacteristicsFlags pdwCharacteristics);
 
         /// <summary>
         /// Retrieves the last clock time that was correlated with system time. 
@@ -128,8 +127,7 @@ namespace MediaFoundation.Core.Interfaces
         int GetCorrelatedTime(
             [In] int dwReserved,
             out long pllClockTime,
-            out long phnsSystemTime
-            );
+            out long phnsSystemTime);
 
         /// <summary>
         /// Retrieves the clock's continuity key. (Not supported.)
@@ -161,8 +159,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetContinuityKey(
-            out int pdwContinuityKey
-            );
+            out int pdwContinuityKey);
 
         /// <summary>
         /// Retrieves the current state of the clock.
@@ -199,8 +196,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetState(
             [In] int dwReserved,
-            out MFClockState peClockState
-            );
+            out MFClockState peClockState);
 
         /// <summary>
         /// Retrieves the properties of the clock.
@@ -232,9 +228,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetProperties(
-            out MFClockProperties pClockProperties
-            );
+            out MFClockProperties pClockProperties);
     }
-
-#endif
 }

@@ -280,9 +280,9 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetStartStopPosition(
             out Guid pguidStartPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvStartValue,
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvStartValue,
             out Guid pguidStopPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvStopValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvStopValue
         );
 
         /// <summary>
@@ -498,7 +498,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetDuration(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvDurationValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvDurationValue
         );
 
         /// <summary>
@@ -662,7 +662,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         int GetStreamAttribute(
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvValue
         );
 
         /// <summary>
@@ -702,7 +702,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetPresentationAttribute(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvValue
         );
 
         /// <summary>

@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/374DD139-D3E7-45D0-A7D3-1187B928EF57(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/374DD139-D3E7-45D0-A7D3-1187B928EF57(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFASYNC_CALLBACK_QUEUE_ defines")]
-    internal enum MFAsyncCallbackQueue
+    public enum MFAsyncCallbackQueue
     {
         /// <summary>
         /// Undefined work queue.

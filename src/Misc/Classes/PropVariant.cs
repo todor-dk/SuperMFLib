@@ -33,10 +33,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// The <strong>PROPVARIANT</strong> structure is used in the <c>ReadMultiple</c> and 
     /// <c>WriteMultiple</c> methods of <c>IPropertyStorage</c> to define the type tag and the value of a
@@ -154,9 +152,9 @@ namespace MediaFoundation.Misc.Classes
     /// </remarks>
     /// <seealso cref="ConstPropVariant"/>
     [StructLayout(LayoutKind.Explicit)]
-    internal class  PropVariant : ConstPropVariant
+    public class  PropVariant : ConstPropVariant
     {
-    #region Declarations
+        #region Declarations
 
         /// <summary>
         /// Clears a <c>PROPVARIANT</c> structure. 
@@ -439,19 +437,17 @@ namespace MediaFoundation.Misc.Classes
             return new PropVariant(value); // VariantType.IUnknown:
         }
 
-    #region IDisposable Members
+        #region IDisposable Members
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         new public void Dispose()
         {
-            Clear();
+            this.Clear();
             GC.SuppressFinalize(this);
         }
 
         #endregion
     }
-
-#endif
 }

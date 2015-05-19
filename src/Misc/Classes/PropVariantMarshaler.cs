@@ -35,12 +35,10 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.Misc.Classes
 {
-#if NOT_IN_USE
-
     // Class to release PropVariants on parameters that output PropVariants.  There
     // should be no reason for code to call this class directly.  It is invoked
     // automatically when the appropriate methods are called.
-    internal class PVMarshaler : ICustomMarshaler
+    internal class PropVariantMarshaler : ICustomMarshaler
     {
         // The managed object passed in to MarshalManagedToNative
         protected PropVariant m_prop;
@@ -112,9 +110,7 @@ namespace MediaFoundation.Misc.Classes
         // cookie is the value specified in MarshalCookie="asdf", or "" is none is specified.
         public static ICustomMarshaler GetInstance(string cookie)
         {
-            return new PVMarshaler();
+            return new PropVariantMarshaler();
         }
     }
-
-#endif
 }

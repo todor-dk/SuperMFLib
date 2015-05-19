@@ -30,11 +30,11 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a node in a topology. The following node types are supported:
     /// <para/>
@@ -50,9 +50,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC430"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFTopologyNode : IMFAttributes
+    public interface IMFTopologyNode : IMFAttributes
     {
-    #region IMFAttributes methods
+        #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -89,7 +89,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
             );
 
         /// <summary>
@@ -643,7 +643,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetUnknown(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppv
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppv
             );
 
         /// <summary>
@@ -1104,7 +1104,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
             );
 
         /// <summary>
@@ -1166,8 +1166,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetObject(
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pObject
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pObject);
 
         /// <summary>
         /// Gets the object associated with this node. 
@@ -1201,8 +1200,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetObject(
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppObject
-            );
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppObject);
 
         /// <summary>
         /// Retrieves the node type.
@@ -1234,8 +1232,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetNodeType(
-            out MFTopologyType pType
-            );
+            out MFTopologyType pType);
 
         /// <summary>
         /// Retrieves the identifier of the node.
@@ -1262,8 +1259,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetTopoNodeID(
-            out long pID
-            );
+            out long pID);
 
         /// <summary>
         /// Sets the identifier for the node.
@@ -1294,8 +1290,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetTopoNodeID(
-            [In] long ullTopoID
-            );
+            [In] long ullTopoID);
 
         /// <summary>
         /// Retrieves the number of input streams that currently exist on this node.
@@ -1327,8 +1322,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetInputCount(
-            out int pcInputs
-            );
+            out int pcInputs);
 
         /// <summary>
         /// Retrieves the number of output streams that currently exist on this node.
@@ -1360,8 +1354,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetOutputCount(
-            out int pcOutputs
-            );
+            out int pcOutputs);
 
         /// <summary>
         /// Connects an output stream from this node to the input stream of another node.
@@ -1405,8 +1398,7 @@ namespace MediaFoundation.Core.Interfaces
         int ConnectOutput(
             [In] int dwOutputIndex,
             [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pDownstreamNode,
-            [In] int dwInputIndexOnDownstreamNode
-            );
+            [In] int dwInputIndexOnDownstreamNode);
 
         /// <summary>
         /// Disconnects an output stream on this node.
@@ -1440,8 +1432,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int DisconnectOutput(
-            [In] int dwOutputIndex
-            );
+            [In] int dwOutputIndex);
 
         /// <summary>
         /// Retrieves the node that is connected to a specified input stream on this node.
@@ -1485,9 +1476,8 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetInput(
             [In] int dwInputIndex,
-            [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode ppUpstreamNode,
-            out int pdwOutputIndexOnUpstreamNode
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode */ out IntPtr ppUpstreamNode,
+            out int pdwOutputIndexOnUpstreamNode);
 
         /// <summary>
         /// Retrieves the node that is connected to a specified output stream on this node.
@@ -1531,9 +1521,8 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetOutput(
             [In] int dwOutputIndex,
-            [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode ppDownstreamNode,
-            out int pdwInputIndexOnDownstreamNode
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode */ out IntPtr ppUpstreamNode,
+            out int pdwInputIndexOnDownstreamNode);
 
         /// <summary>
         /// Sets the preferred media type for an output stream on this node.
@@ -1571,8 +1560,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetOutputPrefType(
             [In] int dwOutputIndex,
-            [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pType
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pType);
 
         /// <summary>
         /// Retrieves the preferred media type for an output stream on this node.
@@ -1613,8 +1601,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetOutputPrefType(
             [In] int dwOutputIndex,
-            out IMFMediaType ppType
-            );
+            /* out IMFMediaType */ out IntPtr ppType);
 
         /// <summary>
         /// Sets the preferred media type for an input stream on this node.
@@ -1652,8 +1639,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetInputPrefType(
             [In] int dwInputIndex,
-            [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pType
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pType);
 
         /// <summary>
         /// Retrieves the preferred media type for an input stream on this node.
@@ -1694,8 +1680,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetInputPrefType(
             [In] int dwInputIndex,
-            out IMFMediaType ppType
-            );
+            /* out IMFMediaType */ out IntPtr ppType);
 
         /// <summary>
         /// Copies the data from another topology node into this node.
@@ -1728,9 +1713,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int CloneFrom(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode);
     }
-
-#endif
 }

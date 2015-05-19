@@ -31,8 +31,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-    #if NOT_IN_USE
-
     /// <summary>
     /// Provides information about the result of an asynchronous operation. 
     /// </summary>
@@ -46,7 +44,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("AC6B7889-0740-4D51-8619-905994A55CC6")]
-    internal interface IMFAsyncResult
+    public interface IMFAsyncResult
     {
         /// <summary>
         /// Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method.
@@ -80,8 +78,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetState(
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppunkState
-            );
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppunkState);
 
         /// <summary>
         /// Returns the status of the asynchronous operation.
@@ -139,8 +136,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetStatus(
-            [In, MarshalAs(UnmanagedType.Error)] int hrStatus
-            );
+            [In, MarshalAs(UnmanagedType.Error)] int hrStatus);
 
         /// <summary>
         /// Returns an object associated with the asynchronous operation. The type of object, if any, depends
@@ -176,8 +172,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetObject(
-            [MarshalAs(UnmanagedType.Interface)] out object ppObject
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppObject);
 
         /// <summary>
         /// Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method,
@@ -202,5 +197,4 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         IntPtr GetStateNoAddRef();
     }
-#endif
 }

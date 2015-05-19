@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
 
-namespace MediaFoundation.Core.Structs
+namespace MediaFoundation
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Defines the properties of a clock.
     /// </summary>
@@ -57,7 +56,7 @@ namespace MediaFoundation.Core.Structs
     /// <a href="http://msdn.microsoft.com/en-US/library/1EFC6602-9851-40E5-85AA-0335D4E899A2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1EFC6602-9851-40E5-85AA-0335D4E899A2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 8), UnmanagedName("MFCLOCK_PROPERTIES")]
-    internal struct MFClockProperties
+    public struct MFClockProperties
     {
         /// <summary>
         /// The interval at which the clock correlates its clock time with the system time, in 100-nanosecond
@@ -108,6 +107,4 @@ namespace MediaFoundation.Core.Structs
         /// </summary>
         public int dwClockJitter;
     }
-
-#endif
 }

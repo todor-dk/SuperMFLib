@@ -5,6 +5,10 @@ using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
 using System.Diagnostics;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Misc.Classes;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -34,9 +38,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Topology(IMFTopology comInterface)
-            : base(comInterface)
+        private Topology(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Topology"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Topology's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Topology"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Topology FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Topology result = new Topology(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -53,11 +78,11 @@ namespace MediaFoundation
         /// </remarks>
         public static Topology Create()
         {
-            IMFTopology topology;
+            IntPtr topology;
             int hr = MFExtern.MFCreateTopology(out topology);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(topology != null);
-            return topology.ToTopology();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref topology);
+            Debug.Assert(topology != IntPtr.Zero);
+            return Topology.FromUnknown(ref topology);
         }
 
         /// <summary>
@@ -90,7 +115,7 @@ namespace MediaFoundation
         /// </remarks>
         public void AddNode(TopologyNode node)
         {
-            int hr = this.Interface.AddNode(node.GetInterface());
+            int hr = this.Interface.AddNode(node.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -109,8 +134,8 @@ namespace MediaFoundation
         /// </remarks>
         public bool RemoveNode(TopologyNode node)
         {
-            int hr = this.Interface.RemoveNode(node.GetInterface());
-            if (hr == COMBase.E_InvalidArgument)
+            int hr = this.Interface.RemoveNode(node.AccessInterface());
+            if (hr == COM.E_InvalidArgument)
                 return false; // E_INVALIDARG: The specified node is not a member of this topology.
             COM.ThrowIfNotOK(hr);
             return true;
@@ -153,10 +178,10 @@ namespace MediaFoundation
         /// </remarks>
         public TopologyNode GetNode(short index)
         {
-            IMFTopologyNode ppNode;
+            IntPtr ppNode;
             int hr = this.Interface.GetNode(index, out ppNode);
-            COM.ThrowIfNotOK(hr);
-            return ppNode.ToTopologyNode();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppNode);
+            return TopologyNode.FromUnknown(ref ppNode);
         }
 
         /// <summary>
@@ -184,7 +209,7 @@ namespace MediaFoundation
         /// </remarks>
         public void CloneFrom(Topology sourceTopology)
         {
-            int hr = this.Interface.CloneFrom(sourceTopology.GetInterface());
+            int hr = this.Interface.CloneFrom(sourceTopology.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -204,12 +229,16 @@ namespace MediaFoundation
         /// </remarks>
         public TopologyNode GetNodeById(long topologyNodeId)
         {
-            IMFTopologyNode ppNode;
+            IntPtr ppNode = IntPtr.Zero;
             int hr = this.Interface.GetNodeByID(topologyNodeId, out ppNode);
             if (hr == MFError.MF_E_NOT_FOUND)
+            {
+                if (ppNode != IntPtr.Zero)
+                    Marshal.Release(ppNode);
                 return null; // MF_E_NOT_FOUND: The topology does not contain a node with this identifier. 
-            COM.ThrowIfNotOK(hr);
-            return ppNode.ToTopologyNode();
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppNode);
+            return TopologyNode.FromUnknown(ref ppNode);
         }
 
         /// <summary>
@@ -225,10 +254,10 @@ namespace MediaFoundation
         /// </remarks>
         public Collection<TopologyNode> GetSourceNode()
         {
-            IMFCollection ppCollection;
+            IntPtr ppCollection;
             int hr = this.Interface.GetSourceNodeCollection(out ppCollection);
-            COM.ThrowIfNotOK(hr);
-            return ppCollection.ToCollection(e => TopologyNode.FromComObject(e, i => new TopologyNode(i)));
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppCollection);
+            return Collection<TopologyNode>.FromUnknown(ref ppCollection, TopologyNode.FromUnknown);
         }
 
         /// <summary>
@@ -244,10 +273,10 @@ namespace MediaFoundation
         /// </remarks>
         public Collection<TopologyNode> GetOutputNode()
         {
-            IMFCollection ppCollection;
+            IntPtr ppCollection;
             int hr = this.Interface.GetOutputNodeCollection(out ppCollection);
-            COM.ThrowIfNotOK(hr);
-            return ppCollection.ToCollection(e => TopologyNode.FromComObject(e, i => new TopologyNode(i)));
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppCollection);
+            return Collection<TopologyNode>.FromUnknown(ref ppCollection, TopologyNode.FromUnknown);
         }
     }
 }

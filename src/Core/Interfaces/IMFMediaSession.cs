@@ -30,11 +30,11 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Provides playback controls for protected and unprotected content. The Media Session and the
     /// protected media path (PMP) session objects expose this interface. This interface is the primary
@@ -53,7 +53,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("90377834-21D0-4DEE-8214-BA2E3E6C1127"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFMediaSession : IMFMediaEventGenerator
+    public interface IMFMediaSession : IMFMediaEventGenerator
     {
     #region IMFMediaEventGenerator methods
 
@@ -262,8 +262,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetTopology(
             [In] MFSessionSetTopologyFlags dwSetTopologyFlags,
-            [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pTopology
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pTopology);
 
         /// <summary>
         /// Clears all of the presentations that are queued for playback in the Media Session.
@@ -342,8 +341,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int Start(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarStartPosition
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarStartPosition);
 
         /// <summary>
         /// Pauses the Media Session.
@@ -488,8 +486,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetClock(
-            [MarshalAs(UnmanagedType.Interface)] out IMFClock ppClock
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFClock */ out IntPtr ppClock);
 
         /// <summary>
         /// Retrieves the capabilities of the Media Session, based on the current presentation.
@@ -532,8 +529,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetSessionCapabilities(
-            out MFSessionCapabilities pdwCaps
-            );
+            out MFSessionCapabilities pdwCaps);
 
         /// <summary>
         /// Gets a topology from the Media Session.
@@ -579,9 +575,6 @@ namespace MediaFoundation.Core.Interfaces
         int GetFullTopology(
             [In] MFSessionGetFullTopologyFlags dwGetFullTopologyFlags,
             [In] long TopoId,
-            [MarshalAs(UnmanagedType.Interface)] out IMFTopology ppFullTopology
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFTopology */ out IntPtr ppFullTopology);
     }
-
-#endif
 }

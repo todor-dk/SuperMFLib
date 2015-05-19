@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/CFA534C4-88C3-4170-B977-C24EA5593F6C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CFA534C4-88C3-4170-B977-C24EA5593F6C(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_ATTRIBUTES_MATCH_TYPE")]
-    internal enum MFAttributesMatchType
+    public enum MFAttributesMatchType
     {
         /// <summary>
         /// Check whether all the attributes in <em>pThis</em> exist in <em>pTheirs</em> and have the same

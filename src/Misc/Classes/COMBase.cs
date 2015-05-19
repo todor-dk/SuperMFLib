@@ -51,43 +51,7 @@ namespace MediaFoundation.Misc.Classes
         /// </summary>
         public const int S_False = 1;
 
-        /// <summary>
-        /// HRESULT status code: Not implemented.
-        /// </summary>
-        public const int E_NotImplemented = unchecked((int)0x80004001);
-        /// <summary>
-        /// HRESULT status code: No such interface supported.
-        /// </summary>
-        public const int E_NoInterface = unchecked((int)0x80004002);
-        /// <summary>
-        /// HRESULT status code: Pointer that is not valid.
-        /// </summary>
-        public const int E_Pointer = unchecked((int)0x80004003);
-        /// <summary>
-        /// HRESULT status code: Operation aborted.
-        /// </summary>
-        public const int E_Abort = unchecked((int)0x80004004);
-        /// <summary>
-        /// HRESULT status code: Unspecified failure.
-        /// </summary>
-        public const int E_Fail = unchecked((int)0x80004005);
-        /// <summary>
-        /// HRESULT status code: Unexpected failure.
-        /// </summary>
-        public const int E_Unexpected = unchecked((int)0x8000FFFF);
-        /// <summary>
-        /// HRESULT status code: Failed to allocate necessary memory.
-        /// </summary>
-        public const int E_OutOfMemory = unchecked((int)0x8007000E);
-        /// <summary>
-        /// HRESULT status code: One or more arguments are not valid.
-        /// </summary>
-        public const int E_InvalidArgument = unchecked((int)0x80070057);
-        /// <summary>
-        /// HRESULT status code: Indicates that one of the given parameters 
-        /// does not specify a buffer large enough to store the property value. 
-        /// </summary>
-        public const int E_BufferTooSmall = unchecked((int)0x8007007a);
+        
 
         /// <summary>
         /// Provides a generic test for success on any HRESULT status code.

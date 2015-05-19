@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
     /// <summary>
     /// Defines the behavior of the <see cref="IMFMediaSession.SetTopology"/> method. 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/2993BDF9-CF28-4E20-9F38-F51FB0F6429E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2993BDF9-CF28-4E20-9F38-F51FB0F6429E(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFSESSION_SETTOPOLOGY_FLAGS")]
-    internal enum MFSessionSetTopologyFlags
+    public enum MFSessionSetTopologyFlags
     {
         /// <summary>
         /// Default value / no flags are set.

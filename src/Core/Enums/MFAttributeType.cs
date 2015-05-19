@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/1844FBE2-0A07-4C0C-9FFE-4C59FC01F793(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1844FBE2-0A07-4C0C-9FFE-4C59FC01F793(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_ATTRIBUTE_TYPE")]
-    internal enum MFAttributeType
+    public enum MFAttributeType
     {
         /// <summary>
         /// Default value / no flags are set.

@@ -68,10 +68,7 @@
     <Compile Include="ASFStreamConfig.cs" />
     <Compile Include="ASFStreamPrioritization.cs" />
     <Compile Include="ASFStreamSelector.cs" />
-    <Compile Include="AsyncCallback.cs" />
     <Compile Include="AsyncCallbackLogging.cs" />
-    <Compile Include="AsyncResult.cs" />
-    <Compile Include="Attributes.cs" />
     <Compile Include="AudioMediaType.cs" />
     <Compile Include="AudioPolicy.cs" />
     <Compile Include="AudioStreamVolume.cs" />
@@ -95,9 +92,7 @@
     <Compile Include="CaptureSink2.cs" />
     <Compile Include="CaptureSource.cs" />
     <Compile Include="CdmSuspendNotify.cs" />
-    <Compile Include="Clock.cs" />
     <Compile Include="ClockStateSink.cs" />
-    <Compile Include="Collection.cs" />
     <Compile Include="ContentEnabler.cs" />
     <Compile Include="ContentProtectionManager.cs" />
     <Compile Include="DLNASinkInit.cs" />
@@ -152,12 +147,10 @@
     <Compile Include="MediaEngineSrcElementsEx.cs" />
     <Compile Include="MediaEngineSupportsSourceTransfer.cs" />
     <Compile Include="MediaError.cs" />
-    <Compile Include="MediaEvent.cs" />
     <Compile Include="MediaEventQueue.cs" />
     <Compile Include="MediaKeys.cs" />
     <Compile Include="MediaKeySession.cs" />
     <Compile Include="MediaKeySessionNotify.cs" />
-    <Compile Include="MediaSession.cs" />
     <Compile Include="MediaSharingEngine.cs" />
     <Compile Include="MediaSharingEngineClassFactory.cs" />
     <Compile Include="MediaSink.cs" />
@@ -171,7 +164,6 @@
     <Compile Include="MediaStream.cs" />
     <Compile Include="MediaStreamSourceSampleRequest.cs" />
     <Compile Include="MediaTimeRange.cs" />
-    <Compile Include="MediaType.cs" />
     <Compile Include="MediaTypeHandler.cs" />
     <Compile Include="Metadata.cs" />
     <Compile Include="MetadataProvider.cs" />
@@ -252,8 +244,6 @@
     <Compile Include="TimecodeTranslate.cs" />
     <Compile Include="Timer.cs" />
     <Compile Include="TopoLoader.cs" />
-    <Compile Include="Topology.cs" />
-    <Compile Include="TopologyNode.cs" />
     <Compile Include="TopologyNodeAttributeEditor.cs" />
     <Compile Include="TranscodeProfile.cs" />
     <Compile Include="TranscodeSinkInfoProvider.cs" />
@@ -271,13 +261,6 @@
     <Compile Include="WorkQueueServicesEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SourceResolver.cs" />
-    <Compile Include="Time.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\src\MediaFoundation-2015.csproj">
-      <Project>{b78c0f3b-071a-4fd2-829d-7a67e0f7bd1c}</Project>
-      <Name>MediaFoundation-2015</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="MakeNuget.bat" />

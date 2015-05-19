@@ -30,11 +30,11 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a topology. A <em>topology</em> describes a collection of media sources, sinks, and
     /// transforms that are connected in a certain order. These objects are represented within the topology
@@ -53,9 +53,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC433")]
-    internal interface IMFTopology : IMFAttributes
+    public interface IMFTopology : IMFAttributes
     {
-    #region IMFAttributes methods
+        #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -92,8 +92,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
-            );
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue);
 
         /// <summary>
         /// Retrieves the data type of the value associated with a key.
@@ -126,8 +125,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItemType(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out MFAttributeType pType
-            );
+            out MFAttributeType pType);
 
         /// <summary>
         /// Queries whether a stored attribute value equals to a specified <strong>PROPVARIANT</strong>. 
@@ -164,8 +162,7 @@ namespace MediaFoundation.Core.Interfaces
         new int CompareItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant Value,
-            [MarshalAs(UnmanagedType.Bool)] out bool pbResult
-            );
+            [MarshalAs(UnmanagedType.Bool)] out bool pbResult);
 
         /// <summary>
         /// Compares the attributes on this object with the attributes on another object.
@@ -203,8 +200,7 @@ namespace MediaFoundation.Core.Interfaces
         new int Compare(
             [MarshalAs(UnmanagedType.Interface)] IMFAttributes pTheirs,
             MFAttributesMatchType MatchType,
-            [MarshalAs(UnmanagedType.Bool)] out bool pbResult
-            );
+            [MarshalAs(UnmanagedType.Bool)] out bool pbResult);
 
         /// <summary>
         /// Retrieves a <strong>UINT32</strong> value associated with a key. 
@@ -241,8 +237,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetUINT32(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out int punValue
-            );
+            out int punValue);
 
         /// <summary>
         /// Retrieves a <strong>UINT64</strong> value associated with a key. 
@@ -279,8 +274,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetUINT64(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out long punValue
-            );
+            out long punValue);
 
         /// <summary>
         /// Retrieves a <strong>double</strong> value associated with a key. 
@@ -317,8 +311,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetDouble(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out double pfValue
-            );
+            out double pfValue);
 
         /// <summary>
         /// Retrieves a GUID value associated with a key.
@@ -354,8 +347,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetGUID(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out Guid pguidValue
-            );
+            out Guid pguidValue);
 
         /// <summary>
         /// Retrieves the length of a string value associated with a key.
@@ -392,8 +384,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetStringLength(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out int pcchLength
-            );
+            out int pcchLength);
 
         /// <summary>
         /// Retrieves a wide-character string associated with a key.
@@ -441,8 +432,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pwszValue,
             int cchBufSize,
-            out int pcchLength
-            );
+            out int pcchLength);
 
         /// <summary>
         /// Gets a wide-character string associated with a key. This method allocates the memory for the
@@ -483,8 +473,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetAllocatedString(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [MarshalAs(UnmanagedType.LPWStr)] out string ppwszValue,
-            out int pcchLength
-            );
+            out int pcchLength);
 
         /// <summary>
         /// Retrieves the length of a byte array associated with a key.
@@ -520,8 +509,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetBlobSize(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            out int pcbBlobSize
-            );
+            out int pcbBlobSize);
 
         /// <summary>
         /// Retrieves a byte array associated with a key. This method copies the array into a caller-allocated
@@ -566,8 +554,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [Out, MarshalAs(UnmanagedType.LPArray)] byte[] pBuf,
             int cbBufSize,
-            out int pcbBlobSize
-            );
+            out int pcbBlobSize);
 
         // Use GetBlob instead of this
         /// <summary>
@@ -606,8 +593,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetAllocatedBlob(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             out IntPtr ip,  // Read w/Marshal.Copy, Free w/Marshal.FreeCoTaskMem
-            out int pcbSize
-            );
+            out int pcbSize);
 
         /// <summary>
         /// Retrieves an interface pointer associated with a key.
@@ -646,8 +632,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetUnknown(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppv
-            );
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppv);
 
         /// <summary>
         /// Adds an attribute value with a specified key. 
@@ -684,8 +669,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant Value
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant Value);
 
         /// <summary>
         /// Removes a key/value pair from the object's attribute list.
@@ -714,8 +698,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/AC72E6E4-F930-4DE6-92A2-F15E5F9E5D74(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AC72E6E4-F930-4DE6-92A2-F15E5F9E5D74(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int DeleteItem(
-            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey);
 
         /// <summary>
         /// Removes all key/value pairs from the object's attribute list.
@@ -773,8 +756,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetUINT32(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            int unValue
-            );
+            int unValue);
 
         /// <summary>
         /// Associates a <strong>UINT64</strong> value with a key. 
@@ -807,8 +789,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetUINT64(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            long unValue
-            );
+            long unValue);
 
         /// <summary>
         /// Associates a <strong>double</strong> value with a key. 
@@ -841,8 +822,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetDouble(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            double fValue
-            );
+            double fValue);
 
         /// <summary>
         /// Associates a GUID value with a key.
@@ -876,8 +856,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetGUID(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidValue
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidValue);
 
         /// <summary>
         /// Associates a wide-character string with a key.
@@ -911,8 +890,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetString(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, MarshalAs(UnmanagedType.LPWStr)] string wszValue
-            );
+            [In, MarshalAs(UnmanagedType.LPWStr)] string wszValue);
 
         /// <summary>
         /// Associates a byte array with a key.
@@ -948,8 +926,7 @@ namespace MediaFoundation.Core.Interfaces
         new int SetBlob(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
             [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf,
-            int cbBufSize
-            );
+            int cbBufSize);
 
         /// <summary>
         /// Associates an <strong>IUnknown</strong> pointer with a key. 
@@ -982,8 +959,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetUnknown(
             [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnknown
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
 
         /// <summary>
         /// Locks the attribute store so that no other thread can access it. If the attribute store is already
@@ -1066,8 +1042,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/5F511D5C-249C-4311-8380-A932A755EAAF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5F511D5C-249C-4311-8380-A932A755EAAF(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetCount(
-            out int pcItems
-            );
+            out int pcItems);
 
         /// <summary>
         /// Retrieves an attribute at the specified index.
@@ -1107,8 +1082,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pValue
-            );
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue);
 
         /// <summary>
         /// Copies all of the attributes from this object into another attribute store. 
@@ -1133,8 +1107,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/111B55BC-FB8E-45B5-A709-703ACD23C4BE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/111B55BC-FB8E-45B5-A709-703ACD23C4BE(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int CopyAllItems(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFAttributes pDest
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFAttributes pDest);
 
         #endregion
 
@@ -1163,8 +1136,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetTopologyID(
-            out long pID
-            );
+            out long pID);
 
         /// <summary>
         /// Adds a node to the topology.
@@ -1197,8 +1169,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int AddNode(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode);
 
         /// <summary>
         /// Removes a node from the topology.
@@ -1231,8 +1202,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int RemoveNode(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode);
 
         /// <summary>
         /// Gets the number of nodes in the topology. 
@@ -1259,8 +1229,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetNodeCount(
-            out short pwNodes
-            );
+            out short pwNodes);
 
         /// <summary>
         /// Gets a node in the topology, specified by index. 
@@ -1301,8 +1270,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetNode(
             [In] short wIndex,
-            [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode ppNode
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode */ out IntPtr ppNode);
 
         /// <summary>
         /// Removes all nodes from the topology.
@@ -1355,8 +1323,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int CloneFrom(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pTopology
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pTopology);
 
         /// <summary>
         /// Gets a node in the topology, specified by node identifier.
@@ -1396,8 +1363,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetNodeByID(
             [In] long qwTopoNodeID,
-            [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode ppNode
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode */ out IntPtr ppNode);
 
         /// <summary>
         /// Gets the source nodes in the topology. 
@@ -1427,8 +1393,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetSourceNodeCollection(
-            [MarshalAs(UnmanagedType.Interface)] out IMFCollection ppCollection
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFCollection */ out IntPtr ppCollection);
 
         /// <summary>
         /// Gets the output nodes in the topology. 
@@ -1458,9 +1423,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetOutputNodeCollection(
-            [MarshalAs(UnmanagedType.Interface)] out IMFCollection ppCollection
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFCollection */ out IntPtr ppCollection);
     }
-
-#endif
 }

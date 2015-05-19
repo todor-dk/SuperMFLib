@@ -6,6 +6,10 @@ using MediaFoundation.Internals;
 using MediaFoundation.Misc;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Core;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -32,9 +36,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal TopologyNode(IMFTopologyNode comInterface)
-            : base(comInterface)
+        private TopologyNode(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="TopologyNode"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the TopologyNode's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="TopologyNode"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static TopologyNode FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            TopologyNode result = new TopologyNode(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -54,11 +79,11 @@ namespace MediaFoundation
         /// </remarks>
         public static TopologyNode Create(MFTopologyType nodeType)
         {
-            IMFTopologyNode ppNode;
+            IntPtr ppNode;
             int hr = MFExtern.MFCreateTopologyNode(nodeType, out ppNode);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(ppNode != null);
-            return ppNode.ToTopologyNode();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppNode);
+            Debug.Assert(ppNode != IntPtr.Zero);
+            return TopologyNode.FromUnknown(ref ppNode);
         }
 
 
@@ -75,7 +100,7 @@ namespace MediaFoundation
         public void SetObject(object value)
         {
             COM com = value as COM;
-            object pObject = (com != null) ? com.Interface : value;
+            object pObject = (com != null) ? com.AccessInterface() : value;
             int hr = this.Interface.SetObject(pObject);
             COM.ThrowIfNotOK(hr);
         }
@@ -93,15 +118,19 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/039D8009-5E5A-4503-9908-7317BC2BF412(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/039D8009-5E5A-4503-9908-7317BC2BF412(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public object GetObject()
+        public ComObject GetObject()
         {
-            object ppObject;
+            IntPtr ppObject = IntPtr.Zero;
             int hr = this.Interface.GetObject(out ppObject);
             // E_FAIL: There is no object associated with this node. 
-            if (hr == COMBase.E_Fail)
+            if (hr == COM.E_Fail)
+            {
+                if (ppObject != IntPtr.Zero)
+                    Marshal.Release(ppObject);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return ppObject;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
+            return ComObject.FromUnknown(ref ppObject);
         }
 
         /// <summary>
@@ -203,7 +232,7 @@ namespace MediaFoundation
         /// </remarks>
         public void ConnectOutput(int outputIndex, TopologyNode downstreamNode, int inputIndexOnDownstreamNode)
         {
-            int hr = this.Interface.ConnectOutput(outputIndex, downstreamNode.GetInterface(), inputIndexOnDownstreamNode);
+            int hr = this.Interface.ConnectOutput(outputIndex, downstreamNode.AccessInterface(), inputIndexOnDownstreamNode);
             // IMPROVE: May need to handle: E_FAIL - The method failed. ... 
             // An output node cannot have any output connections. If you call this method on an output node, the method returns E_FAIL.
             COM.ThrowIfNotOK(hr);
@@ -252,16 +281,17 @@ namespace MediaFoundation
         /// </remarks>
         public TopologyNode GetInput(int inputIndex, out int outputIndexOnUpstreamNode)
         {
-            IMFTopologyNode ppUpstreamNode;
+            IntPtr ppUpstreamNode = IntPtr.Zero;
             int hr = this.Interface.GetInput(inputIndex, out ppUpstreamNode, out outputIndexOnUpstreamNode);
             // MF_E_NOT_FOUND: The specified input stream is not connected to another node.
             if (hr == MFError.MF_E_NOT_FOUND)
             {
-                COM.SafeRelease(ppUpstreamNode);
+                if (ppUpstreamNode != IntPtr.Zero)
+                    Marshal.Release(ppUpstreamNode);
                 return null;
             }
-            COM.ThrowIfNotOK(hr);
-            return ppUpstreamNode.ToTopologyNode();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppUpstreamNode);
+            return TopologyNode.FromUnknown(ref ppUpstreamNode);
         }
 
         /// <summary>
@@ -305,16 +335,17 @@ namespace MediaFoundation
         /// </remarks>
         public TopologyNode GetOutput(int outputIndex, out int inputIndexOnDownstreamNode)
         {
-            IMFTopologyNode ppDownstreamNode;
+            IntPtr ppDownstreamNode = IntPtr.Zero;
             int hr = this.Interface.GetOutput(outputIndex, out ppDownstreamNode, out inputIndexOnDownstreamNode);
             // MF_E_NOT_FOUND: The specified output stream is not connected to another node.
             if (hr == MFError.MF_E_NOT_FOUND)
             {
-                COM.SafeRelease(ppDownstreamNode);
+                if (ppDownstreamNode != IntPtr.Zero)
+                    Marshal.Release(ppDownstreamNode);
                 return null;
             }
-            COM.ThrowIfNotOK(hr);
-            return ppDownstreamNode.ToTopologyNode();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppDownstreamNode);
+            return TopologyNode.FromUnknown(ref ppDownstreamNode);
         }
 
         /// <summary>
@@ -353,9 +384,9 @@ namespace MediaFoundation
         /// </remarks>
         public void SetOutputPreferredType(int outputIndex, MediaType type)
         {
-            int hr = this.Interface.SetOutputPrefType(outputIndex, type.GetInterface());
+            int hr = this.Interface.SetOutputPrefType(outputIndex, type.AccessInterface());
             // E_NOTIMPL: This node is an output node.
-            if (hr == COMBase.E_NotImplemented)
+            if (hr == COM.E_NotImplemented)
                 throw new COMException("This node is an output node.", hr);
             COM.ThrowIfNotOK(hr);
         }
@@ -375,16 +406,16 @@ namespace MediaFoundation
         /// </remarks>
         public MediaType GetOutputPreferredType(int outputIndex)
         {
-            IMFMediaType ppType;
+            IntPtr ppType;
             int hr = this.Interface.GetOutputPrefType(outputIndex, out ppType);
             // E_FAIL: This node does not have a preferred output type.
-            if (hr == COMBase.E_Fail)
+            if (hr == COM.E_Fail)
                 return null;
             // E_NOTIMPL: This node is an output node.
-            if (hr == COMBase.E_NotImplemented)
+            if (hr == COM.E_NotImplemented)
                 throw new COMException("This node is an output node.", hr);
-            COM.ThrowIfNotOK(hr);
-            return ppType.ToMediaType();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppType);
+            return MediaType.FromUnknown(ref ppType);
         }
 
         /// <summary>
@@ -402,8 +433,8 @@ namespace MediaFoundation
         /// </remarks>
         public void SetInputPreferredType(int inputIndex, MediaType type)
         {
-            int hr = this.Interface.SetInputPrefType(inputIndex, type.GetInterface());
-            if (hr == COMBase.E_NotImplemented)
+            int hr = this.Interface.SetInputPrefType(inputIndex, type.AccessInterface());
+            if (hr == COM.E_NotImplemented)
                 throw new COMException("This node is a source node.", hr);
             COM.ThrowIfNotOK(hr);
         }
@@ -423,16 +454,16 @@ namespace MediaFoundation
         /// </remarks>
         public MediaType GetInputPreferredType(int inputIndex)
         {
-            IMFMediaType ppType;
+            IntPtr ppType;
             int hr = this.Interface.GetInputPrefType(inputIndex, out ppType);
             // E_FAIL: This node does not have a preferred input type.
-            if (hr == COMBase.E_Fail)
+            if (hr == COM.E_Fail)
                 return null;
             // E_NOTIMPL: This node is a source node.
-            if (hr == COMBase.E_NotImplemented)
+            if (hr == COM.E_NotImplemented)
                 throw new COMException("This node is a source node.", hr);
-            COM.ThrowIfNotOK(hr);
-            return ppType.ToMediaType();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppType);
+            return MediaType.FromUnknown(ref ppType);
         }
 
         /// <summary>
@@ -447,7 +478,7 @@ namespace MediaFoundation
         /// </remarks>
         public void CloneFrom(TopologyNode node)
         {
-            int hr = this.Interface.CloneFrom(node.GetInterface());
+            int hr = this.Interface.CloneFrom(node.AccessInterface());
             // MF_E_INVALIDREQUEST: The node types do not match. 
             if (hr == MFError.MF_E_INVALIDREQUEST)
                 throw new COMException("The node types do not match.", hr);

@@ -29,6 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
@@ -45,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("2CD0BD52-BCD5-4B89-B62C-EADC0C031E7D"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFMediaEventGenerator
+    public interface IMFMediaEventGenerator
     {
         /// <summary>
         /// Retrieves the next event in the queue. This method is synchronous.
@@ -83,7 +84,7 @@ namespace MediaFoundation.Core.Interfaces
         ///   [out]  IMFMediaEvent **ppEvent
         /// );
         /// </code>
-        /// <para/>
+        /// <para/> 
         /// The above documentation is © Microsoft Corporation. It is reproduced here 
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
@@ -93,8 +94,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetEvent(
             [In] MFEventFlag dwFlags,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Begins an asynchronous request for the next event in the queue.
@@ -179,9 +179,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int EndGetEvent(
             IMFAsyncResult pResult,
-
-            out IMFMediaEvent ppEvent
-            );
+            /* out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Puts a new event in the object's queue.
@@ -235,7 +233,6 @@ namespace MediaFoundation.Core.Interfaces
             [In] MediaEventType met,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType,
             [In] int hrStatus,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue);
     }
 }

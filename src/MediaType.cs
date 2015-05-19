@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using System.Diagnostics;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Core.Classes;
 
 namespace MediaFoundation
 {
@@ -28,9 +32,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaType(IMFMediaType comInterface)
-            : base(comInterface)
+        private MediaType(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaType"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaType's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaType"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaType FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaType result = new MediaType(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -41,11 +66,11 @@ namespace MediaFoundation
         /// <returns>A new <see cref="MediaType"/> object. The caller must dispose this object.</returns>
         public static MediaType Create()
         {
-            IMFMediaType type = null;
+            IntPtr type;
             int hr = MFExtern.MFCreateMediaType(out type);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(type != null);
-            return type.ToMediaType();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref type);
+            Debug.Assert(type != IntPtr.Zero);
+            return MediaType.FromUnknown(ref type);
         }
 
         /// <summary>
@@ -141,7 +166,7 @@ namespace MediaFoundation
         /// </remarks>
         public bool IsEqual(MediaType mediaType, out MFMediaEqual flags)
         {
-            int hr = this.Interface.IsEqual(mediaType.GetInterface(), out flags);
+            int hr = this.Interface.IsEqual(mediaType.AccessInterface(), out flags);
             if (hr == COM.S_FALSE)
                 return false;
             COM.ThrowIfNotOK(hr);

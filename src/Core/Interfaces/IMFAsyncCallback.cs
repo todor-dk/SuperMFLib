@@ -28,11 +28,10 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-    #if NOT_IN_USE
-
     /// <summary>
     /// Callback interface to notify the application when an asynchronous method completes. 
     /// </summary>
@@ -46,7 +45,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("A27003CF-2354-4F2A-8D6A-AB7CFF15437E")]
-    internal interface IMFAsyncCallback
+    public interface IMFAsyncCallback
     {
         /// <summary>
         /// Provides configuration information to the dispatching thread for a callback.
@@ -105,8 +104,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetParameters(
             out MFASync pdwFlags,
-            out MFAsyncCallbackQueue pdwQueue
-            );
+            out MFAsyncCallbackQueue pdwQueue);
 
         /// <summary>
         /// Called when an asynchronous operation is completed.
@@ -139,8 +137,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int Invoke(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncResult pAsyncResult
-            );
+            /* [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncResult */ IntPtr pAsyncResult);
     }
-#endif
 }

@@ -222,7 +222,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int EndConvertHNSToTimecode(
             IMFAsyncResult pResult,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pPropVarTimecode
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pPropVarTimecode
         );
     }
 

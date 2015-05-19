@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -28,9 +30,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal AsyncResult(IMFAsyncResult comInterface)
-            : base(comInterface)
+        private AsyncResult(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="AsyncResult"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the AsyncResult's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="AsyncResult"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static AsyncResult FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            AsyncResult result = new AsyncResult(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -46,15 +69,19 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F8ED8E71-6DF7-4C94-B400-B4651A00DB5B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F8ED8E71-6DF7-4C94-B400-B4651A00DB5B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public object GetState()
+        public ComObject GetState()
         {
-            object ppunkState;
+            IntPtr ppunkState = IntPtr.Zero;
             int hr = this.Interface.GetState(out ppunkState);
             // E_POINTER: There is no state object associated with this asynchronous result.
-            if (hr == COMBase.E_Pointer)
+            if (hr == COM.E_Pointer)
+            {
+                if (ppunkState != IntPtr.Zero)
+                    Marshal.Release(ppunkState);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return ppunkState;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppunkState);
+            return ComObject.FromUnknown(ref ppunkState);
         }
 
         /// <summary>
@@ -101,15 +128,19 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/B4B871FF-370D-4A37-9FE4-91D1805890EB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4B871FF-370D-4A37-9FE4-91D1805890EB(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public object GetObject()
+        public ComObject GetObject()
         {
-            object ppObject;
+            IntPtr ppObject = IntPtr.Zero;
             int hr = this.Interface.GetObject(out ppObject);
             // E_POINTER: There is no object associated with this asynchronous result.
-            if (hr == COMBase.E_Pointer)
+            if (hr == COM.E_Pointer)
+            {
+                if (ppObject != IntPtr.Zero)
+                    Marshal.Release(ppObject);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return ppObject;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
+            return ComObject.FromUnknown(ref ppObject);
         }
     }
 }

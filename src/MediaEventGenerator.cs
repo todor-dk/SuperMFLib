@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -19,8 +22,8 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaEventGenerator(TInterface comInterface)
-            : base(comInterface)
+        protected MediaEventGenerator(IntPtr unknown)
+            : base(unknown)
         {
         }
 
@@ -37,10 +40,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaEvent GetEvent(MFEventFlag flags)
         {
-            IMFMediaEvent ppEvent;
+            IntPtr ppEvent;
             int hr = this.Interface.GetEvent(flags, out ppEvent);
-            COM.ThrowIfNotOK(hr);
-            return ppEvent.ToMediaEvent();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppEvent);
+            return MediaEvent.FromUnknown(ref ppEvent);
         }
 
         /// <summary>
@@ -95,10 +98,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaEvent EndGetEvent(AsyncResult result)
         {
-            IMFMediaEvent evt;
-            int hr = this.Interface.EndGetEvent(result.GetInterface(), out evt);
-            COM.ThrowIfNotOK(hr);
-            return evt.ToMediaEvent();
+            IntPtr evt;
+            int hr = this.Interface.EndGetEvent(result.AccessInterface(), out evt);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref evt);
+            return MediaEvent.FromUnknown(ref evt);
         }
 
         /// <summary>
@@ -153,8 +156,8 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaEventGenerator(IMFMediaEventGenerator comInterface)
-            : base(comInterface)
+        private MediaEventGenerator(IntPtr unknown)
+            : base(unknown)
         {
         }
 

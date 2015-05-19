@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/A635B9C8-F01F-4757-8DC2-F470C2270EFA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A635B9C8-F01F-4757-8DC2-F470C2270EFA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFSESSION_GETFULLTOPOLOGY_FLAGS")]
-    internal enum MFSessionGetFullTopologyFlags
+    public enum MFSessionGetFullTopologyFlags
     {
         /// <summary>
         /// Default value / no flags are set.

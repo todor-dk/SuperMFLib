@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/D70B432C-6EBD-405C-993F-12C4540736D7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D70B432C-6EBD-405C-993F-12C4540736D7(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFCLOCK_RELATIONAL_FLAGS")]
-    internal enum MFClockRelationalFlags
+    public enum MFClockRelationalFlags
     {
         /// <summary>
         /// Default value / no flags are set.

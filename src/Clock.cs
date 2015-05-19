@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Core.Structs;
 
 namespace MediaFoundation
 {
@@ -34,8 +37,8 @@ namespace MediaFoundation
         /// Initializes a new instance of the <see cref="Clock{TClock}"/> class.
         /// </summary>
         /// <param name="comInterface">The COM interface.</param>
-        internal Clock(TClock comInterface)
-            : base(comInterface)
+        protected Clock(IntPtr unknown)
+            : base(unknown)
         {
         }
 
@@ -114,7 +117,7 @@ namespace MediaFoundation
         /// <summary>
         /// Contains the last clock time that was correlated with system time.
         /// </summary>
-        internal struct CorrelatedTimes
+        public struct CorrelatedTimes
         {
             /// <summary>
             /// The last known clock time.
@@ -200,9 +203,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Clock(IMFClock comInterface)
-            : base(comInterface)
+        internal Clock(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Clock"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Clock's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Clock"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Clock FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Clock result = new Clock(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion

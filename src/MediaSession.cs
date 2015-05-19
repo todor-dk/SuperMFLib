@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -33,9 +37,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaSession(IMFMediaSession comInterface)
-            : base(comInterface)
+        private MediaSession(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaSession"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaSession's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaSession"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaSession FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaSession result = new MediaSession(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -74,10 +99,10 @@ namespace MediaFoundation
         /// </remarks>
         public static MediaSession Create(Attributes configuration)
         {
-            IMFMediaSession ppMediaSession = null;
-            int hr = MFExtern.MFCreateMediaSession(configuration.GetInterface(), out ppMediaSession);
-            COM.ThrowIfNotOK(hr);
-            return ppMediaSession.ToMediaSession();
+            IntPtr ppMediaSession;
+            int hr = MFExtern.MFCreateMediaSession(configuration.AccessInterface(), out ppMediaSession);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaSession);
+            return MediaSession.FromUnknown(ref ppMediaSession);
         }
 
 
@@ -97,7 +122,7 @@ namespace MediaFoundation
         /// </remarks>
         public void SetTopology(MFSessionSetTopologyFlags topologyFlags, Topology topology)
         {
-            int hr = this.Interface.SetTopology(topologyFlags, topology.GetInterface());
+            int hr = this.Interface.SetTopology(topologyFlags, topology.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -213,10 +238,10 @@ namespace MediaFoundation
         {
             get
             {
-                IMFClock ppClock;
+                IntPtr ppClock;
                 int hr = this.Interface.GetClock(out ppClock);
-                COM.ThrowIfNotOK(hr);
-                return ppClock.ToClock();
+                COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppClock);
+                return Clock.FromUnknown(ref ppClock);
             }
         }
 
@@ -261,10 +286,10 @@ namespace MediaFoundation
         /// </remarks>
         public Topology GetFullTopology(MFSessionGetFullTopologyFlags topologyFlags, long topologyId)
         {
-            IMFTopology ppFullTopology;
+            IntPtr ppFullTopology;
             int hr = this.Interface.GetFullTopology(topologyFlags, topologyId, out ppFullTopology);
-            COM.ThrowIfNotOK(hr);
-            return ppFullTopology.ToTopology();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppFullTopology);
+            return Topology.FromUnknown(ref ppFullTopology);
         }
     }
 }

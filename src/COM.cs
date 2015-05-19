@@ -1,9 +1,11 @@
-﻿using MediaFoundation.Misc;
+﻿using MediaFoundation.Internals;
+using MediaFoundation.Misc;
 using MediaFoundation.Misc.Classes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -21,7 +23,7 @@ namespace MediaFoundation
         /// is available, it is used to build the exception, otherwise a generic com error is thrown.
         /// </summary>
         /// <param name="hr">The HRESULT to check.</param>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ThrowIfFailed(int hr)
         {
             MFError.ThrowExceptionForHR(hr);
@@ -34,7 +36,7 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="message">The message that indicates the reason the exception occurred.</param>
         /// <param name="hr">The HRESULT to check.</param>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ThrowIfFailed(string message, int hr)
         {
             if (hr < 0)
@@ -50,7 +52,7 @@ namespace MediaFoundation
         /// <returns>
         /// TRUE if <paramref name="hr"/> represents a success status value; otherwise, FALSE.
         /// </returns>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Succeeded(int hr)
         {
             return (hr >= 0);
@@ -65,7 +67,7 @@ namespace MediaFoundation
         /// <returns>
         /// TRUE if <paramref name="hr"/> represents a failed status value; otherwise, FALSE. 
         /// </returns>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Failed(int hr)
         {
             return (hr < 0);
@@ -119,7 +121,7 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="hr">The HRESULT to check.</param>
         /// <returns>True if <paramref name="hr"/> is <see cref="S_OK"/>, otherwise false.</returns>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsOK(int hr)
         {
             return (hr == COM.S_OK);
@@ -129,39 +131,54 @@ namespace MediaFoundation
         /// Throw an exception if <paramref name="hr"/> is not <see cref="S_OK"/>.
         /// </summary>
         /// <param name="hr">The HRESULT to check for <see cref="S_OK"/>.</param>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)] 
         public static void ThrowIfNotOK(int hr)
         {
             if (hr != COM.S_OK)
                 throw new COMException(MFError.GetErrorText(hr), hr);
         }
 
-#if NOT_IN_USE
+        /// <summary>
+        /// Throw an exception if <paramref name="hr"/> is not <see cref="S_OK"/>.
+        /// </summary>
+        /// <param name="hr">The HRESULT to check for <see cref="S_OK"/>.</param>
+        /// <param name="value">A pointer to IUnknown to dispose if the <paramref name="hr"/> is not <see cref="S_OK"/>.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ThrowIfNotOKAndReleaseInterface(int hr, ref IntPtr unknown)
+        {
+            if (hr != COM.S_OK)
+            {
+                if (unknown != IntPtr.Zero)
+                {
+                    Marshal.Release(unknown);
+                    unknown = IntPtr.Zero;
+                }
+                throw new COMException(MFError.GetErrorText(hr), hr);
+            }
+        }
 
         /// <summary>
         /// Throw an exception if <paramref name="hr"/> is not <see cref="S_OK"/>.
         /// </summary>
         /// <param name="hr">The HRESULT to check for <see cref="S_OK"/>.</param>
         /// <param name="value">A <see cref="PropVariant"/> to dispose if the <paramref name="hr"/> is not <see cref="S_OK"/>.</param>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ThrowIfNotOKAndDisposePropVariant(int hr, PropVariant value)
         {
             if (hr != COM.S_OK)
             {
                 if (value != null)
                     value.Dispose();
-                throw new COMException(Helpers.GetMessage(hr), hr);
+                throw new COMException(MFError.GetErrorText(hr), hr);
             }
         }
-
-#endif
 
         /// <summary>
         /// Throw an exception if <paramref name="hr"/> is not <see cref="S_OK"/>.
         /// </summary>
         /// <param name="message">The message that indicates the reason the exception occurred.</param>
         /// <param name="hr">The HRESULT to check for <see cref="S_OK"/>.</param>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ThrowIfNotOK(string message, int hr)
         {
             if (hr != COM.S_OK)
@@ -173,11 +190,13 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="hr">The HRESULT to check.</param>
         /// <returns>True if <paramref name="hr"/> is <see cref="S_FALSE"/>, otherwise false.</returns>
-        // [MethodImpl(MethodImplOptions.AggressiveInlining)] ... avaialble in 4.5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsFalse(int hr)
         {
             return (hr == COM.S_FALSE);
         }
+
+        #region Constants
 
         /// <summary>
         /// HRESULT status code: Operation successful.
@@ -198,19 +217,96 @@ namespace MediaFoundation
         /// </summary>
         public const int FALSE = 0;
 
+        internal static readonly Guid IID_IUnknown = new Guid("{00000000-0000-0000-C000-000000000046}");
+
         /// <summary>
-        /// Returns the COM interface.
+        /// HRESULT status code: Not implemented.
         /// </summary>
-        public object Interface
-        {
-            get { return this.InternalGetInterface(); }
-        }
+        internal const int E_NotImplemented = unchecked((int)0x80004001);
+        /// <summary>
+        /// HRESULT status code: No such interface supported.
+        /// </summary>
+        internal const int E_NoInterface = unchecked((int)0x80004002);
+        /// <summary>
+        /// HRESULT status code: Pointer that is not valid.
+        /// </summary>
+        internal const int E_Pointer = unchecked((int)0x80004003);
+        /// <summary>
+        /// HRESULT status code: Operation aborted.
+        /// </summary>
+        internal const int E_Abort = unchecked((int)0x80004004);
+        /// <summary>
+        /// HRESULT status code: Unspecified failure.
+        /// </summary>
+        internal const int E_Fail = unchecked((int)0x80004005);
+        /// <summary>
+        /// HRESULT status code: Unexpected failure.
+        /// </summary>
+        internal const int E_Unexpected = unchecked((int)0x8000FFFF);
+        /// <summary>
+        /// HRESULT status code: Failed to allocate necessary memory.
+        /// </summary>
+        internal const int E_OutOfMemory = unchecked((int)0x8007000E);
+        /// <summary>
+        /// HRESULT status code: One or more arguments are not valid.
+        /// </summary>
+        internal const int E_InvalidArgument = unchecked((int)0x80070057);
+        /// <summary>
+        /// HRESULT status code: Indicates that one of the given parameters 
+        /// does not specify a buffer large enough to store the property value. 
+        /// </summary>
+        internal const int E_BufferTooSmall = unchecked((int)0x8007007a);
+
+        #endregion
 
         /// <summary>
         /// Returns the COM interface.
         /// </summary>
-        /// <returns>Returns the COM interface.</returns>
-        protected abstract object InternalGetInterface();
+        /// <remarks>
+        /// The returned <strong>RCW</strong> object is a unique
+        /// wrapper instance around the COM interface. It should
+        /// be releaseed with <see cref="Marshal.ReleaseComObject"/>
+        /// when no longer needed.
+        /// </remarks>
+        public object GetInterface()
+        {
+            return this.AccessInterfacePointer(punk =>
+            {
+                if (punk == IntPtr.Zero)
+                    return null;
+                return Marshal.GetUniqueObjectForIUnknown(punk);
+            });
+        }
+
+        /// <summary>
+        /// Returns the COM interface converted to the given type.
+        /// </summary>
+        /// <remarks>
+        /// The returned <strong>RCW</strong> object is a unique
+        /// wrapper instance around the COM interface. It should
+        /// be releaseed with <see cref="Marshal.ReleaseComObject"/>
+        /// when no longer needed.
+        /// </remarks>
+        public TInterface GetInterface<TInterface>()
+            where TInterface : class
+        {
+            object value = this.GetInterface();
+            if (value == null)
+                return null;
+            TInterface converted = (TInterface)value;
+            if (!Object.ReferenceEquals(converted, value))
+                COM.SafeRelease(value);
+            return converted;
+        }
+
+        /// <summary>
+        /// Accesses the COM interface pointer.
+        /// </summary>
+        /// <param name="action">Action to be performed with the IUnknown pointer.</param>
+        /// <returns>The result from executing the <paramref name="action"/>.</returns>
+        protected abstract TResult AccessInterfacePointer<TResult>(Func<IntPtr, TResult> action);
+
+        internal abstract object InternalGetInterface();
 
         #region IDisposable Interface
 
@@ -269,7 +365,7 @@ namespace MediaFoundation
        
     }
 
-#if NOT_IN_USE
+
     /// <summary>
     /// Base class for implementing objects that reference a COM interface.
     /// This class adds <see cref="IDisposable"/> support to make it compatible
@@ -279,26 +375,44 @@ namespace MediaFoundation
     public abstract class COM<TInterface> : COM
         where TInterface : class
     {
+        private IntPtr Identifier;
         private TInterface _Interface;
         private bool Released;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="COM{TInterface}"/> class.
         /// </summary>
-        /// <param name="comInterface">The COM interface.</param>
-        protected COM(TInterface comInterface)
+        /// <param name="unknown">Pointer to the COM object's IUnknown interface.</param>
+        protected COM(IntPtr unknown)
         {
-            Contract.RequiresNotNull(comInterface, "comInterface");
+            if (unknown == IntPtr.Zero)
+                throw new ArgumentNullException("unknown");
             COM.VerifyAccess();
 
-            this._Interface = comInterface;
+            Guid iid = COM.IID_IUnknown;
+            IntPtr ppv = IntPtr.Zero;
+            int hr = Marshal.QueryInterface(unknown,ref iid, out ppv);
+            COM.ThrowIfFailed(hr);
+            if (ppv == IntPtr.Zero)
+                throw new InvalidComObjectException();
+            this.Identifier = ppv;
+            Marshal.Release(ppv);
+
+            object comObject = Marshal.GetUniqueObjectForIUnknown(unknown);
+            if (comObject == null)
+                throw new InvalidComObjectException();
+            Marshal.Release(unknown);
+
+            this._Interface = (TInterface) comObject;
             this.Released = false;
+            if (!Object.ReferenceEquals(comObject, this._Interface))
+                Marshal.ReleaseComObject(comObject);
         }
 
         /// <summary>
         /// Returns the COM interface.
         /// </summary>
-        public new TInterface Interface
+        protected internal TInterface Interface
         {
             get
             {
@@ -310,42 +424,37 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Returns the COM interface.
+        /// Accesses the interface pointer.
         /// </summary>
-        /// <returns>Returns the COM interface.</returns>
-        protected override sealed object InternalGetInterface()
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="action">Action to be performed with the IUnknown pointer.</param>
+        /// <returns>TResult.</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        protected override TResult AccessInterfacePointer<TResult>(Func<IntPtr, TResult> action)
+        {
+            Contract.RequiresNotNull(action, "action");
+
+            TInterface comInterface = Volatile.Read(ref this._Interface);
+            if (comInterface != null)
+            {
+                // This is to prevent race condition with the Dispose() method
+                lock(comInterface)
+                {
+                    // Check once more ... could be that the interface was released before acquiring the lock
+                    if (Volatile.Read(ref this._Interface) != null)
+                    {
+                        return action(this.Identifier);
+                    }
+                }
+            }
+
+            // The interface has been released. Use NULL pointer.
+            return action(IntPtr.Zero);
+        }
+
+        internal override object InternalGetInterface()
         {
             return this.Interface;
-        }
-
-        public static TResult FromComInterface<TResult>(TInterface comInterface, Func<TInterface, TResult> factory)
-            where TResult : COM<TInterface>
-        {
-            Contract.RequiresNotNull(factory, "factory");
-
-            if (comInterface == null)
-                return null;
-            return factory(comInterface);
-        }
-
-
-        public static TResult FromComObject<TResult>(object comObject, Func<TInterface, TResult> factory)
-            where TResult : COM<TInterface>
-        {
-            return COM<TInterface>.FromComObject(comObject, factory, true);
-        }
-
-        public static TResult FromComObject<TResult>(object comObject, Func<TInterface, TResult> factory, bool takeOwnership)
-            where TResult : COM<TInterface>
-        {
-            Contract.RequiresNotNull(factory, "factory");
-
-            if (comObject == null)
-                return null;
-            TInterface comInterface = (TInterface)comObject;
-            if (takeOwnership && !Object.ReferenceEquals(comObject, comInterface))
-                COM.SafeRelease(comObject);
-            return factory(comInterface);
         }
 
         #region IDisposable Interface
@@ -357,7 +466,23 @@ namespace MediaFoundation
         protected override void Dispose(bool disposing)
         {
             if (disposing)
-                COM.SafeRelease(ref this._Interface);
+            {
+                TInterface comInterface = Volatile.Read(ref this._Interface);
+                if (comInterface != null)
+                {
+                    // Lock it ... this is to ensure no access to the naked IUnknown pointer.
+                    lock (comInterface)
+                    {
+                        COM.SafeRelease(comInterface);
+                        // In here, another thread can access this._Interface, but 
+                        // this thread will fail with "RCW disconnected" exception.
+                        // What is important is that AccessInterfacePointer() will
+                        // not be able to access the naked IUnknown pointer,
+                        // because from now on, this pointer is invalid (and dangerous!).
+                        Volatile.Write(ref this._Interface, null);
+                    }
+                }
+            }
             this.Released = true;
             base.Dispose(disposing);
         }
@@ -372,9 +497,7 @@ namespace MediaFoundation
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
-            if (this._Interface == null)
-                return 0;
-            return this.Interface.GetHashCode();
+            return this.Identifier.GetHashCode();
         }
 
         /// <summary>
@@ -388,12 +511,9 @@ namespace MediaFoundation
                 return false;
             if (Object.ReferenceEquals(this, other))
                 return true;
-            if (this._Interface == null)
+            if (this.GetType() != other.GetType())
                 return false;
-            if (other._Interface == null)
-                return false;
-            return (this._Interface == other._Interface);
-
+            return this.Identifier == other.Identifier;
         }
 
         /// <summary>
@@ -439,6 +559,5 @@ namespace MediaFoundation
 
         #endregion		
     }
-#endif
 }
 

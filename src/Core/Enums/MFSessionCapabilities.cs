@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
     /// <summary>
     /// Flags used in conjunction with the <see cref="IMFMediaSession.GetSessionCapabilities"/> method.
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFSESSIONCAP_* defines")]
-    internal enum MFSessionCapabilities
+    public enum MFSessionCapabilities
     {
         /// <summary>
         /// Default value / no flags are set.

@@ -136,7 +136,7 @@ namespace MediaFoundation.Misc.Interfaces
         [PreserveSig]
         int GetValue(
             [In, MarshalAs(UnmanagedType.LPStruct)] PropertyKey key,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pv
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pv
             );
 
         /// <summary>

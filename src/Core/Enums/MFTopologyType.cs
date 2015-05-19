@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/73EA1F48-0D86-4104-860C-83A4F9189920(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/73EA1F48-0D86-4104-860C-83A4F9189920(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_TOPOLOGY_TYPE")]
-    internal enum MFTopologyType
+    public enum MFTopologyType
     {
         /// <summary>
         /// Reserved.

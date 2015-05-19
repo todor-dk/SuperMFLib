@@ -439,7 +439,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
         new int GetPresentationAttribute(
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvarAttribute
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarAttribute
         );
 
 #endregion

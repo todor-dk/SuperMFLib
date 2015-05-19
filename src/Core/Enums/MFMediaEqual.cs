@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/42B5B0E8-3B13-4BDA-A53C-0428A3C9B131(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/42B5B0E8-3B13-4BDA-A53C-0428A3C9B131(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MF_MEDIATYPE_EQUAL_* defines")]
-    internal enum MFMediaEqual
+    public enum MFMediaEqual
     {
         /// <summary>
         /// Default value / no flags are set.

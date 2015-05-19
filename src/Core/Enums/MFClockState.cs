@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/90E04807-C3BE-4F38-A508-9DFE62700869(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/90E04807-C3BE-4F38-A508-9DFE62700869(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFCLOCK_STATE")]
-    internal enum MFClockState
+    public enum MFClockState
     {
         /// <summary>
         /// The clock is invalid. A clock might be invalid for several reasons. Some clocks return this state

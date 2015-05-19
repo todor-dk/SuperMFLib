@@ -34,6 +34,7 @@ using MediaFoundation.ReadWrite;
 using MediaFoundation.MFPlayer;
 using MediaFoundation.EVR;
 using MediaFoundation.Core.Enums;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation.Core
 {
@@ -328,6 +329,7 @@ namespace MediaFoundation.Core
         public static extern int CreatePropertyStore(
             out IPropertyStore ppStore
         );
+#endif
 
         /// <summary>
         /// Creates an empty attribute store. 
@@ -360,9 +362,11 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateAttributes(
-            out IMFAttributes ppMFAttributes,
+            /* out IMFAttributes */ out IntPtr ppMFAttributes,
             int cInitialSize
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Converts a Media Foundation audio media type to a <strong>WAVEFORMATEX</strong> structure. 
@@ -621,6 +625,8 @@ namespace MediaFoundation.Core
             out IMFMediaEventQueue ppMediaEventQueue
         );
 
+#endif
+
         /// <summary>
         /// Creates an empty media type.
         /// </summary>
@@ -647,8 +653,10 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateMediaType(
-            out IMFMediaType ppMFType
+            /* out IMFMediaType */ out IntPtr ppMFType
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Creates a media event object.
@@ -874,6 +882,8 @@ namespace MediaFoundation.Core
             out IMFActivate ppActivate
         );
 
+#endif
+
         /// <summary>
         /// Creates a topology node.
         /// </summary>
@@ -905,8 +915,10 @@ namespace MediaFoundation.Core
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTopologyNode(
             MFTopologyType NodeType,
-            out IMFTopologyNode ppNode
+            /* out IMFTopologyNode */ out IntPtr ppNode
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Creates the source resolver, which is used to create a media source from a URL or byte stream. 
@@ -936,6 +948,8 @@ namespace MediaFoundation.Core
         public static extern int MFCreateSourceResolver(
             out IMFSourceResolver ppISourceResolver
         );
+
+#endif
 
         /// <summary>
         /// Creates the <c>Media Session</c> in the application's process. 
@@ -975,7 +989,7 @@ namespace MediaFoundation.Core
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateMediaSession(
             IMFAttributes pConfiguration,
-            out IMFMediaSession ppMediaSession
+            /* out IMFMediaSession */ out IntPtr ppMediaSession
         );
 
         /// <summary>
@@ -1009,8 +1023,10 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTopology(
-            out IMFTopology ppTopo
+            /* out IMFTopology */ out IntPtr ppTopo
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Creates an activation object for the <c>Streaming Audio Renderer</c>. 
@@ -1803,7 +1819,7 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFGetSupportedSchemes(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pPropVarSchemeArray
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pPropVarSchemeArray
         );
 
         /// <summary>
@@ -1840,7 +1856,7 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFGetSupportedMimeTypes(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pPropVarSchemeArray
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pPropVarSchemeArray
         );
 
         /// <summary>
@@ -1916,7 +1932,7 @@ namespace MediaFoundation.Core
         public static extern int MFCreateSequencerSegmentOffset(
             int dwId,
             long hnsOffset,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PVMarshaler))] PropVariant pvarSegmentOffset
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarSegmentOffset
         );
 
         /// <summary>
@@ -3340,7 +3356,7 @@ namespace MediaFoundation.Core
 
 #if ALLOW_UNTESTED_INTERFACES
 
-    #region Tested
+        #region Tested
         // While these methods are tested, the interfaces they use are not
 
         /// <summary>
@@ -3486,7 +3502,7 @@ namespace MediaFoundation.Core
 
         #endregion
 
-    #region Work Queue
+        #region Work Queue
 
         /// <summary>
         /// Puts an asynchronous operation on a work queue. 
@@ -4042,7 +4058,7 @@ namespace MediaFoundation.Core
 
         #endregion
 
-    #region Check dllimport
+        #region Check dllimport
 
         /// <summary>
         /// Creates an instance of the AC-3 media sink.
@@ -8878,7 +8894,7 @@ namespace MediaFoundation.Core
             out IntPtr id
         );
 
-    #region Untestable
+        #region Untestable
 
         /// <summary>
         /// [This API is not supported and may be altered or unavailable in the future.]

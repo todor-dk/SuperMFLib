@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -23,19 +24,42 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    internal class  Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
+    public class Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
         where TItem : COM
     {
-        private readonly Func<object, TItem> ItemFactory;
+        public delegate TItem ItemFactoryDelegate(ref IntPtr unknown);
+
+        private readonly ItemFactoryDelegate ItemFactory;
 
         #region Construction
 
-        internal Collection(IMFCollection comInterface, Func<object, TItem> itemFactory)
-            : base(comInterface)
+        private Collection(IntPtr unknown, ItemFactoryDelegate itemFactory)
+            : base(unknown)
         {
             Contract.RequiresNotNull(itemFactory, "itemFactory");
 
             this.ItemFactory = itemFactory;
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Collection"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Collection's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Collection"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Collection<TItem> FromUnknown(ref IntPtr unknown, ItemFactoryDelegate itemFactory)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Collection<TItem> result = new Collection<TItem>(unknown, itemFactory);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -74,10 +98,10 @@ namespace MediaFoundation
         /// </remarks>
         public TItem GetElement(int index)
         {
-            object ppUnkElement;
+            IntPtr ppUnkElement;
             int hr = this.Interface.GetElement(index, out ppUnkElement);
-            COM.ThrowIfNotOK(hr);
-            TItem item = this.ItemFactory(ppUnkElement);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppUnkElement);
+            TItem item = this.ItemFactory(ref ppUnkElement);
             return item;
         }
 
@@ -115,10 +139,10 @@ namespace MediaFoundation
         /// </remarks>
         public TItem RemoveElement(int index)
         {
-            object ppUnkElement;
+            IntPtr ppUnkElement;
             int hr = this.Interface.RemoveElement(index, out ppUnkElement);
-            COM.ThrowIfNotOK(hr);
-            TItem item = this.ItemFactory(ppUnkElement);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppUnkElement);
+            TItem item = this.ItemFactory(ref ppUnkElement);
             return item;
         }
 

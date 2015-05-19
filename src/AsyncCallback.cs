@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -89,7 +92,7 @@ namespace MediaFoundation
             // Not implemented. Assume the default behavior. 
             flags = MFASync.None;
             queue = MFAsyncCallbackQueue.Undefined;
-            return COMBase.E_NotImplemented;
+            return COM.E_NotImplemented;
         }
 
         /// <summary>
@@ -121,9 +124,13 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/22473605-637E-4783-A8CB-98248B0A0327(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/22473605-637E-4783-A8CB-98248B0A0327(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        int IMFAsyncCallback.Invoke(IMFAsyncResult pAsyncResult)
+        int IMFAsyncCallback.Invoke(IntPtr pAsyncResult)
         {
-            using(AsyncResult asyncResult = pAsyncResult.ToAsyncResult())
+            if (pAsyncResult == IntPtr.Zero)
+                return COM.E_Pointer;
+
+            Marshal.AddRef(pAsyncResult);
+            using(AsyncResult asyncResult = AsyncResult.FromUnknown(ref pAsyncResult))
             {
                 return this.Invoke(asyncResult);
             }

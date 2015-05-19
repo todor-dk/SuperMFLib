@@ -32,11 +32,10 @@ using System.Security;
 
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
+using MediaFoundation.Core.Enums;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// <see cref="ConstPropVariant"/> is used for [In] parameters.  This is important since
     /// for [In] parameters, you must *not* clear the <see cref="PropVariant"/>.  The caller
@@ -163,7 +162,7 @@ namespace MediaFoundation.Misc.Classes
     /// </remarks>
     /// <seealso cref="PropVariant"/>
     [StructLayout(LayoutKind.Explicit)]
-    internal class  ConstPropVariant : IDisposable
+    public class  ConstPropVariant : IDisposable
     {
         /// <summary>
         /// Creates a copy of a <c>PROPVARIANT</c> structure. 
@@ -195,14 +194,13 @@ namespace MediaFoundation.Misc.Classes
         [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false), SuppressUnmanagedCodeSecurity]
         protected static extern void PropVariantCopy(
             [Out, MarshalAs(UnmanagedType.LPStruct)] PropVariant pvarDest,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarSource
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarSource);
 
         /// <summary>
         /// Specifies the variant type of the value contained in the <see cref="ConstPropVariant"/>.
         /// </summary>
         [UnmanagedName("VARTYPE")]
-        internal enum VariantType : short
+        public enum VariantType : short
         {
             /// <summary>
             /// <strong>VT_EMPTY</strong>. Valid member: None.
@@ -331,7 +329,7 @@ namespace MediaFoundation.Misc.Classes
             public IntPtr pElems;
         }
 
-    #region Member variables
+        #region Member variables
 
         /// <summary>
         /// Value type tag.
@@ -869,7 +867,7 @@ namespace MediaFoundation.Misc.Classes
         {
             if (type == VariantType.IUnknown)
             {
-                return Marshal.GetObjectForIUnknown(ptr);
+                return Marshal.GetUniqueObjectForIUnknown(ptr);
             }
             throw new ArgumentException("PropVariant contents not an IUnknown");
         }
@@ -1379,7 +1377,7 @@ namespace MediaFoundation.Misc.Classes
             ConstPropVariant.PropVariantCopy(copyDestination, this);
         }
 
-    #region IDisposable Members
+        #region IDisposable Members
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -1390,14 +1388,12 @@ namespace MediaFoundation.Misc.Classes
             // would release the *caller's* copy of the data, which would probably make
             // him cranky.  If we are a PropVariant, the PropVariant.Dispose gets called
             // as well, which *does* do a PropVariantClear.
-            type = VariantType.None;
+            this.type = VariantType.None;
 #if DEBUG
-            longValue = 0;
+            this.longValue = 0;
 #endif
         }
 
         #endregion
     }
-
-#endif
 }

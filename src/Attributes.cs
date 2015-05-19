@@ -6,6 +6,10 @@ using MediaFoundation.Internals;
 using System.Diagnostics;
 using MediaFoundation.Misc;
 using System.Runtime.InteropServices;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
+using MediaFoundation.Core;
 
 namespace MediaFoundation
 {
@@ -21,8 +25,8 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Attributes(TInterface comInterface)
-            : base(comInterface)
+        protected Attributes(IntPtr unknown)
+            : base(unknown)
         {
         }
 
@@ -121,7 +125,7 @@ namespace MediaFoundation
         public bool Compare(Attributes theirs, MFAttributesMatchType matchType)
         {
             bool pbResult;
-            int hr = this.Interface.Compare(theirs.GetInterface(), matchType, out pbResult);
+            int hr = this.Interface.Compare(theirs.AccessInterface(), matchType, out pbResult);
             COM.ThrowIfNotOK(hr);
             return pbResult;
         }
@@ -387,14 +391,13 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TObject GetObject<TObject>(Guid key)
-            where TObject : class
+        public ComObject GetObject(Guid key)
         {
-            Guid iid = typeof(TObject).GUID;
-            object value;
-            int hr = this.Interface.GetUnknown(key, iid, out value);
-            COM.ThrowIfNotOK(hr);
-            return (TObject)value;
+            Guid iid = COM.IID_IUnknown;
+            IntPtr ppv;
+            int hr = this.Interface.GetUnknown(key, iid, out ppv);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppv);
+            return ComObject.FromUnknown(ref ppv);
         }
 
         /// <summary>
@@ -683,16 +686,19 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TObject GetObjectOrNull<TObject>(Guid key)
-            where TObject : class
+        public ComObject GetObjectOrNull(Guid key)
         {
-            Guid iid = typeof(TObject).GUID;
-            object value;
-            int hr = this.Interface.GetUnknown(key, iid, out value);
+            Guid iid = COM.IID_IUnknown;
+            IntPtr ppv = IntPtr.Zero;
+            int hr = this.Interface.GetUnknown(key, iid, out ppv);
             if (hr == MFError.MF_E_ATTRIBUTENOTFOUND)
+            {
+                if (ppv != IntPtr.Zero)
+                    Marshal.Release(ppv);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return (TObject)value;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppv);
+            return ComObject.FromUnknown(ref ppv);
         }
 
         /// <summary>
@@ -951,7 +957,7 @@ namespace MediaFoundation
         /// </remarks>
         public void SetObject(Guid key, COM value)
         {
-            int hr = this.Interface.SetUnknown(key, (value != null) ? value.Interface : null);
+            int hr = this.Interface.SetUnknown(key, value.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -1101,7 +1107,7 @@ namespace MediaFoundation
         /// </remarks>
         public void CopyAllItems(Attributes destination)
         {
-            int hr = this.Interface.CopyAllItems(destination.GetInterface());
+            int hr = this.Interface.CopyAllItems(destination.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
     }
@@ -1134,13 +1140,34 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/E12259F4-B631-4D4A-A296-C1CC6334B962(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E12259F4-B631-4D4A-A296-C1CC6334B962(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    internal class  Attributes : Attributes<IMFAttributes>
+    public sealed class  Attributes : Attributes<IMFAttributes>
     {
         #region Construction
 
-        internal Attributes(IMFAttributes comInterface)
-            : base(comInterface)
+        private Attributes(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Attributes"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Attributes's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Attributes"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Attributes FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Attributes result = new Attributes(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -1160,11 +1187,10 @@ namespace MediaFoundation
         /// </remarks>
         public static Attributes Create(int initialSize)
         {
-            IMFAttributes attribs = null;
-            int hr = MFExtern.MFCreateAttributes(out attribs, initialSize);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(attribs != null);
-            return attribs.ToAttributes();
+            IntPtr unknown = IntPtr.Zero;
+            int hr = MFExtern.MFCreateAttributes(out unknown, initialSize);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref unknown);
+            return Attributes.FromUnknown(ref unknown);
         }
     }
 
@@ -1172,7 +1198,7 @@ namespace MediaFoundation
     /// Represents a two 32-bit integer pair of upper and lower part.
     /// </summary>
     [StructLayout(LayoutKind.Explicit)]
-    internal struct Int32Int32
+    public struct Int32Int32
     {
         /// <summary>
         /// 64-bit integer value.

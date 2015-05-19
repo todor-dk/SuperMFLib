@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Todor Todorov</Author>
+      <Title>Create Wrapper Class Factory Method</Title>
+      <Description>Create Wrapper Class Factory Method</Description>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>mff</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>class</ID>
+          <ToolTip>Class</ToolTip>
+          <Function>ClassName()</Function>
+          <Default>ClassNamePlaceholder</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method decl">
+        <![CDATA[
+        /// <summary>
+        /// Creates a new <see cref="$class$"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the $class$'s IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="$class$"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static $class$ FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            $class$ result = new $class$(unknown);
+            unknown = IntPtr.Zero;
+            return result;
+        }        
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Todor Todorov</Author>
+      <Title>Create Wrapper Class Instance</Title>
+      <Description>Create Wrapper Class Instance</Description>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>mfc</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>class</ID>
+          <ToolTip>Class</ToolTip>
+          <Default>ClassName</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>unknown</ID>
+          <ToolTip>InterfacePointer</ToolTip>
+          <Default>unknown</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method decl">
+        <![CDATA[COM.ThrowIfNotOKAndReleaseInterface(hr, ref $unknown$);
+            return $class$.FromUnknown(ref $unknown$);$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

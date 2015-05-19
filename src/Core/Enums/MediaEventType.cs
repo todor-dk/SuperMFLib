@@ -30,7 +30,7 @@ using MediaFoundation.Misc;
 using System.Drawing;
 using System.ComponentModel;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -38,7 +38,7 @@ namespace MediaFoundation.Core.Enums
     /// Media Foundation Events
     /// </summary>
     [UnmanagedName("Media Foundation Events")]
-    internal enum MediaEventType
+    public enum MediaEventType
     {
         /// <summary>
         /// Unknown event type. You can use this value to initialize variables of type <strong>MediaEventType
