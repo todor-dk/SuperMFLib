@@ -695,6 +695,7 @@
     <Compile Include="Transform\Structs\STREAM_MEDIUM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MakeNuget.bat" />
     <None Include="MediaFoundation.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -719,6 +720,7 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MediaFoundationEx.nuspec" />
     <None Include="README.txt" />
   </ItemGroup>
   <ItemGroup />
