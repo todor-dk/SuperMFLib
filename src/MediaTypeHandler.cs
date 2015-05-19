@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Misc.Classes;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -28,9 +31,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaTypeHandler(IMFMediaTypeHandler comInterface)
-            : base(comInterface)
+        private MediaTypeHandler(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaTypeHandler"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaTypeHandler's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaTypeHandler"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaTypeHandler FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaTypeHandler result = new MediaTypeHandler(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -64,15 +88,16 @@ namespace MediaFoundation
         /// </remarks>
         public bool IsMediaTypeSupported(MediaType mediaType, out MediaType supportedMediaType)
         {
-            IMFMediaType ppMediaType;
-            int hr = this.Interface.IsMediaTypeSupported(mediaType.GetInterface(), out ppMediaType);
+            IntPtr ppMediaType = IntPtr.Zero;
+            int hr = this.Interface.IsMediaTypeSupported(mediaType.AccessInterface(), out ppMediaType);
             // MF_E_INVALIDMEDIATYPE: The object does not support this media type. 
             if (hr == MFError.MF_E_INVALIDMEDIATYPE)
             {
-                supportedMediaType = ppMediaType.ToMediaType();
+                supportedMediaType = MediaType.FromUnknown(ref ppMediaType);
                 return false;
             }
-            COM.SafeRelease(ppMediaType);
+            if (ppMediaType != IntPtr.Zero)
+                Marshal.Release(ppMediaType);
             COM.ThrowIfNotOK(hr);
             supportedMediaType = null;
             return true;
@@ -100,7 +125,7 @@ namespace MediaFoundation
         {
             MediaType supportedMediaType;
             bool supported = this.IsMediaTypeSupported(mediaType, out supportedMediaType);
-            supportedMediaType.Dispose();
+            COM.SafeRelease(supportedMediaType);
             return supported;
         }
 
@@ -141,10 +166,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaType GetMediaType(int index)
         {
-            IMFMediaType ppType;
+            IntPtr ppType = IntPtr.Zero;
             int hr = this.Interface.GetMediaTypeByIndex(index, out ppType);
-            COM.ThrowIfNotOK(hr);
-            return ppType.ToMediaType();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppType);
+            return MediaType.FromUnknown(ref ppType);
         }
 
         /// <summary>
@@ -159,7 +184,7 @@ namespace MediaFoundation
         /// </remarks>
         public void SetCurrentMediaType(MediaType mediaType)
         {
-            int hr = this.Interface.SetCurrentMediaType(mediaType.GetInterface());
+            int hr = this.Interface.SetCurrentMediaType(mediaType.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -175,13 +200,17 @@ namespace MediaFoundation
         /// </remarks>
         public MediaType GetCurrentMediaType()
         {
-            IMFMediaType ppMediaType;
+            IntPtr ppMediaType = IntPtr.Zero;
             int hr = this.Interface.GetCurrentMediaType(out ppMediaType);
             // MF_E_NOT_INITIALIZED: No media type is set. 
             if (hr == MFError.MF_E_NOT_INITIALIZED)
+            {
+                if (ppMediaType != IntPtr.Zero)
+                    Marshal.Release(ppMediaType);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return ppMediaType.ToMediaType();
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaType);
+            return MediaType.FromUnknown(ref ppMediaType);
         }
 
         /// <summary>

@@ -113,7 +113,6 @@
     <Compile Include="EVR\TopologyServiceLookupClient.cs" />
     <Compile Include="EVR\TrackedSample.cs" />
     <Compile Include="EVR\VideoDeviceID.cs" />
-    <Compile Include="EVR\VideoDisplayControl.cs" />
     <Compile Include="EVR\VideoMixerBitmap.cs" />
     <Compile Include="EVR\VideoMixerControl.cs" />
     <Compile Include="EVR\VideoMixerControl2.cs" />
@@ -124,7 +123,6 @@
     <Compile Include="FieldOfUseMFTUnlock.cs" />
     <Compile Include="FinalizableMediaSink.cs" />
     <Compile Include="Functions.cs" />
-    <Compile Include="GetService.cs" />
     <Compile Include="ImageSharingEngine.cs" />
     <Compile Include="ImageSharingEngineClassFactory.cs" />
     <Compile Include="Implementations\Attributes.cs" />
@@ -164,7 +162,6 @@
     <Compile Include="MediaStream.cs" />
     <Compile Include="MediaStreamSourceSampleRequest.cs" />
     <Compile Include="MediaTimeRange.cs" />
-    <Compile Include="MediaTypeHandler.cs" />
     <Compile Include="Metadata.cs" />
     <Compile Include="MetadataProvider.cs" />
     <Compile Include="MFPlayer\PMediaItem.cs" />
@@ -229,7 +226,6 @@
     <Compile Include="SeekInfo.cs" />
     <Compile Include="SequencerSource.cs" />
     <Compile Include="SharingEngineClassFactory.cs" />
-    <Compile Include="Shutdown.cs" />
     <Compile Include="SignedLibrary.cs" />
     <Compile Include="SimpleAudioVolume.cs" />
     <Compile Include="SourceBuffer.cs" />
@@ -237,13 +233,11 @@
     <Compile Include="SourceBufferNotify.cs" />
     <Compile Include="SourceOpenMonitor.cs" />
     <Compile Include="SSLCertificateManager.cs" />
-    <Compile Include="StreamDescriptor.cs" />
     <Compile Include="StreamingSinkConfig.cs" />
     <Compile Include="StreamSink.cs" />
     <Compile Include="SystemId.cs" />
     <Compile Include="TimecodeTranslate.cs" />
     <Compile Include="Timer.cs" />
-    <Compile Include="TopoLoader.cs" />
     <Compile Include="TopologyNodeAttributeEditor.cs" />
     <Compile Include="TranscodeProfile.cs" />
     <Compile Include="TranscodeSinkInfoProvider.cs" />

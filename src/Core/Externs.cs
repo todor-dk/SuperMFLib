@@ -789,6 +789,8 @@ namespace MediaFoundation.Core
             out IMFMediaBuffer ppBuffer
         );
 
+#endif
+
         /// <summary>
         /// Queries an object for a specified service interface.
         /// <para/>
@@ -840,8 +842,10 @@ namespace MediaFoundation.Core
             [In, MarshalAs(UnmanagedType.Interface)] object punkObject,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidService,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [Out, MarshalAs(UnmanagedType.Interface)] out object ppvObject
+            /* [Out, MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppvObject
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Creates an activation object for the enhanced video renderer (EVR) media sink.
@@ -3353,10 +3357,11 @@ namespace MediaFoundation.Core
             [In] IMFMediaType pWrap,
             out IMFMediaType ppOrig
             );
+#endif
 
-#if ALLOW_UNTESTED_INTERFACES
 
         #region Tested
+
         // While these methods are tested, the interfaces they use are not
 
         /// <summary>
@@ -3390,8 +3395,11 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTopoLoader(
-            out IMFTopoLoader ppObj
+            /* out IMFTopoLoader */ out IntPtr ppObj
         );
+
+
+#if ALLOW_UNTESTED_INTERFACES
 
         /// <summary>
         /// Creates the default implementation of the quality manager.
@@ -3499,8 +3507,9 @@ namespace MediaFoundation.Core
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateASFMultiplexer(
             out IMFASFMultiplexer ppIMultiplexer);
-
+#endif
         #endregion
+#if ALLOW_UNTESTED_INTERFACES
 
         #region Work Queue
 
@@ -9172,7 +9181,6 @@ namespace MediaFoundation.Core
             );
 
         #endregion
-#endif
 #endif
     }
 

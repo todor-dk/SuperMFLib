@@ -11,7 +11,7 @@ namespace MediaFoundation
     /// <summary>
     /// Represents the entry point to the Microsoft Media Foundation framework.
     /// </summary>
-    internal class  Framework : IDisposable
+    public sealed class Framework : IDisposable
     {
         /// <summary>
         /// Initializes Microsoft Media Foundation.

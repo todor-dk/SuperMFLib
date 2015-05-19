@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-    #if NOT_IN_USE
-
     /// <summary>
     /// Exposed by some Media Foundation objects that must be explicitly shut down. 
     /// </summary>
@@ -48,7 +47,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFShutdown
+    public interface IMFShutdown
     {
         /// <summary>
         /// Shuts down a Media Foundation object and releases all resources associated with the object. 
@@ -106,5 +105,4 @@ namespace MediaFoundation.Core.Interfaces
             out MFShutdownStatus pStatus
             );
     }
-#endif
 }

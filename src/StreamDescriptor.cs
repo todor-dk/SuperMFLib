@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -27,9 +28,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal StreamDescriptor(IMFStreamDescriptor comInterface)
-            : base(comInterface)
+        private StreamDescriptor(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="StreamDescriptor"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the StreamDescriptor's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="StreamDescriptor"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static StreamDescriptor FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            StreamDescriptor result = new StreamDescriptor(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -68,10 +90,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaTypeHandler GetMediaTypeHandler()
         {
-            IMFMediaTypeHandler ppMediaTypeHandler;
+            IntPtr ppMediaTypeHandler = IntPtr.Zero;
             int hr = this.Interface.GetMediaTypeHandler(out ppMediaTypeHandler);
-            COM.ThrowIfNotOK(hr);
-            return ppMediaTypeHandler.ToMediaTypeHandler();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaTypeHandler);
+            return MediaTypeHandler.FromUnknown(ref ppMediaTypeHandler);
         }
     }
 }

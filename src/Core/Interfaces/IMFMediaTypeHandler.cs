@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Gets and sets media types on an object, such as a media source or media sink. 
     /// </summary>
@@ -48,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("E93DCF6C-4B07-4E1E-8123-AA16ED6EADF5"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFMediaTypeHandler
+    public interface IMFMediaTypeHandler
     {
         /// <summary>
         /// Queries whether the object supports a specified media type.
@@ -88,8 +86,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int IsMediaTypeSupported(
             [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pMediaType,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaType ppMediaType
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaType */ out IntPtr ppMediaType);
 
         /// <summary>
         /// Retrieves the number of media types in the object's list of supported media types.
@@ -116,8 +113,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMediaTypeCount(
-            out int pdwTypeCount
-            );
+            out int pdwTypeCount);
 
         /// <summary>
         /// Retrieves a media type from the object's list of supported media types.
@@ -157,8 +153,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetMediaTypeByIndex(
             [In] int dwIndex,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaType ppType
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaType */ out IntPtr ppType);
 
         /// <summary>
         /// Sets the object's media type.
@@ -191,8 +186,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetCurrentMediaType(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pMediaType
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFMediaType pMediaType);
 
         /// <summary>
         /// Retrieves the current media type of the object.
@@ -226,8 +220,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetCurrentMediaType(
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaType ppMediaType
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaType */ out IntPtr ppMediaType);
 
         /// <summary>
         /// Gets the major media type of the object. 
@@ -254,10 +247,6 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/1560D113-80A9-48BB-9F3D-6E3A288DB962(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1560D113-80A9-48BB-9F3D-6E3A288DB962(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
-        int GetMajorType(
-            out Guid pguidMajorType
-            );
+        int GetMajorType(out Guid pguidMajorType);
     }
-
-#endif
 }

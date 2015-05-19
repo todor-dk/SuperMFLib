@@ -34,9 +34,6 @@ using System.Drawing;
 namespace MediaFoundation.Core.Interfaces
 {
 
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Converts a partial topology into a full topology. The topology loader exposes this interface.
     /// </summary>
@@ -50,7 +47,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("DE9A6157-F660-4643-B56A-DF9F7998C7CD")]
-    internal interface IMFTopoLoader
+    public interface IMFTopoLoader
     {
         /// <summary>
         /// Creates a fully loaded topology from the input partial topology. 
@@ -95,11 +92,8 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int Load(
             [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pInputTopo,
-            [MarshalAs(UnmanagedType.Interface)] out IMFTopology ppOutputTopo,
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFTopology */ out IntPtr ppOutputTopo,
             [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pCurrentTopo
             );
     }
-
-#endif
-
 }

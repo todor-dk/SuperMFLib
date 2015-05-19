@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Gets information about one stream in a media source. 
     /// </summary>
@@ -48,9 +47,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("56C03D9C-9DBB-45F5-AB4B-D80F47C05938"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFStreamDescriptor : IMFAttributes
+    public interface IMFStreamDescriptor : IMFAttributes
     {
-    #region IMFAttributes methods
+        #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -1158,8 +1157,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetStreamIdentifier(
-            out int pdwStreamIdentifier
-            );
+            out int pdwStreamIdentifier);
 
         /// <summary>
         /// Retrieves a media type handler for the stream. The media type handler can be used to enumerate
@@ -1188,9 +1186,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMediaTypeHandler(
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaTypeHandler ppMediaTypeHandler
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaTypeHandler */ out IntPtr ppMediaTypeHandler);
     }
-
-#endif
 }

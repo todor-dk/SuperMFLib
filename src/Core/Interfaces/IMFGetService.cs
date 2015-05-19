@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Queries an object for a specified service interface. 
     /// </summary>
@@ -48,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("FA993888-4383-415A-A930-DD472A8CF6F7")]
-    internal interface IMFGetService
+    public interface IMFGetService
     {
         /// <summary>
         /// Retrieves a service interface.
@@ -92,9 +90,6 @@ namespace MediaFoundation.Core.Interfaces
         int GetService(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidService,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.Interface)] out object ppvObject
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppvObject);
     }
-
-#endif
 }

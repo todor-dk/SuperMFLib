@@ -203,7 +203,7 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Clock(IntPtr unknown)
+        private Clock(IntPtr unknown)
             : base(unknown)
         {
         }

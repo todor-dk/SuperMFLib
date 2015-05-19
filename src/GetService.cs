@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using System.Runtime.InteropServices;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -28,9 +31,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal GetService(IMFGetService comInterface)
-            : base(comInterface)
+        private GetService(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="GetService"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the GetService's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="GetService"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static GetService FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            GetService result = new GetService(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -50,22 +74,25 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService Get<TService>(Guid guidService)
+        public TService Get<TService>(Guid guidService, ItemFactory<TService> factory)
             where TService : class
         {
-            Guid riid = typeof(TService).GUID;
-            object ppvObject;
+            Contract.RequiresNotNull(factory, "factory");
+
+            Guid riid = COM.IID_IUnknown;
+            IntPtr ppvObject = IntPtr.Zero;
             int hr = this.Interface.GetService(guidService, riid, out ppvObject);
             // MF_E_UNSUPPORTED_SERVICE: The object does not support the service.
             if (hr == MFError.MF_E_UNSUPPORTED_SERVICE)
+            {
+                if (ppvObject != IntPtr.Zero)
+                    Marshal.Release(ppvObject);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            if (ppvObject == null)
-                return null;
-            TService service = (TService)ppvObject;
-            if (!Object.ReferenceEquals(ppvObject, service))
-                COM.SafeRelease(ppvObject);
-            return service;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
+            return factory(ref ppvObject);
         }
     }
+
+    public delegate TItem ItemFactory<TItem>(ref IntPtr unknown);
 }

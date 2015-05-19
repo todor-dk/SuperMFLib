@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Misc.Classes;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -28,9 +32,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal TopoLoader(IMFTopoLoader comInterface)
-            : base(comInterface)
+        private TopoLoader(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="TopoLoader"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the TopoLoader's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="TopoLoader"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static TopoLoader FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            TopoLoader result = new TopoLoader(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -41,10 +66,10 @@ namespace MediaFoundation
         /// <returns>A new topology loader. The caller must release the instance.</returns>
         public static TopoLoader Create()
         {
-            IMFTopoLoader ppObj;
+            IntPtr ppObj;
             int hr = MFExtern.MFCreateTopoLoader(out ppObj);
-            COM.ThrowIfNotOK(hr);
-            return ppObj.ToTopoLoader();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObj);
+            return TopoLoader.FromUnknown(ref ppObj);
         }
 
 
@@ -68,14 +93,18 @@ namespace MediaFoundation
         /// </remarks>
         public Topology Load(Topology inputTopology, Topology currentTopology)
         {
-            IMFTopology ppOutputTopo;
-            int hr = this.Interface.Load(inputTopology.GetInterface(), out ppOutputTopo, currentTopology.GetInterface());
+            IntPtr ppOutputTopo = IntPtr.Zero;
+            int hr = this.Interface.Load(inputTopology.AccessInterface(), out ppOutputTopo, currentTopology.AccessInterface());
             // MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED: One or more output nodes contain IMFActivate pointers. 
             // The caller must bind the output nodes to media sinks. See <c>Binding Output Nodes to Media Sinks</c>.
             if (hr == MFError.MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED)
+            {
+                if (ppOutputTopo != IntPtr.Zero)
+                    Marshal.Release(ppOutputTopo);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return ppOutputTopo.ToTopology();
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppOutputTopo);
+            return Topology.FromUnknown(ref ppOutputTopo); 
         }
     }
 }

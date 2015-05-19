@@ -1,4 +1,5 @@
-﻿using MediaFoundation.Internals;
+﻿using MediaFoundation.Core;
+using MediaFoundation.Internals;
 using MediaFoundation.Misc;
 using MediaFoundation.Misc.Classes;
 using System;
@@ -455,6 +456,39 @@ namespace MediaFoundation
         internal override object InternalGetInterface()
         {
             return this.Interface;
+        }
+
+        /// <summary>
+        /// Retrieves a service.
+        /// </summary>
+        /// <param name="guidService">
+        /// The service identifier (SID) of the service. For a list of service identifiers, see 
+        /// <c>Service Interfaces</c>. 
+        /// </param>
+        /// <returns>
+        /// The requested service or null if the object does not support the service.
+        /// The caller must release the instance.
+        /// </returns>
+        /// <remarks>
+        /// View the original documentation topic online: 
+        /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
+        /// </remarks>
+        public TService GetService<TService>(Guid guidService, ItemFactory<TService> factory)
+            where TService : class
+        {
+            Contract.RequiresNotNull(factory, "factory");
+
+            IntPtr ppvObject = IntPtr.Zero;
+            int hr = MFExtern.MFGetService(this.Interface, guidService, COM.IID_IUnknown, out ppvObject);
+            // MF_E_UNSUPPORTED_SERVICE: The object does not support the service.
+            if (hr == MFError.MF_E_UNSUPPORTED_SERVICE)
+            {
+                if (ppvObject != IntPtr.Zero)
+                    Marshal.Release(ppvObject);
+                return null;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
+            return factory(ref ppvObject);
         }
 
         #region IDisposable Interface

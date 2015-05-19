@@ -308,7 +308,9 @@
     <Compile Include="Core\Interfaces\IMFSourceBufferList.cs" />
     <Compile Include="Core\Interfaces\IMFSourceBufferNotify.cs" />
     <Compile Include="Core\Interfaces\IPlayToControlWithCapabilities.cs" />
+    <Compile Include="EVR\VideoDisplayControl.cs" />
     <Compile Include="Framework.cs" />
+    <Compile Include="GetService.cs" />
     <Compile Include="Internals\Contract.cs" />
     <Compile Include="Internals\Extensions.cs" />
     <Compile Include="Internals\GuidMapper.cs" />
@@ -316,6 +318,7 @@
     <Compile Include="MediaEventGenerator.cs" />
     <Compile Include="MediaSession.cs" />
     <Compile Include="MediaType.cs" />
+    <Compile Include="MediaTypeHandler.cs" />
     <Compile Include="MFPlayer\Classes\EHMarshaler.cs" />
     <Compile Include="EVR\Classes\EnhancedVideoRenderer.cs" />
     <Compile Include="EVR\Classes\EVRTearlessWindowPresenter9.cs" />
@@ -549,7 +552,10 @@
     <Compile Include="Misc\Classes\PropVariantMarshaler.cs" />
     <Compile Include="Misc\Classes\RTAMarshaler.cs" />
     <Compile Include="Misc\Classes\RTIMarshaler.cs" />
+    <Compile Include="Shutdown.cs" />
+    <Compile Include="StreamDescriptor.cs" />
     <Compile Include="Time.cs" />
+    <Compile Include="TopoLoader.cs" />
     <Compile Include="Topology.cs" />
     <Compile Include="TopologyNode.cs" />
     <Compile Include="UnmanagedNameAttribute.cs" />

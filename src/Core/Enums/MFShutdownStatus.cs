@@ -31,10 +31,8 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
-
-
     /// <summary>
     /// Describes the current status of a call to the <see cref="IMFShutdown.Shutdown"/> method. 
     /// </summary>
@@ -46,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/A2257260-3F2C-4C6B-88CC-B8927B899782(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A2257260-3F2C-4C6B-88CC-B8927B899782(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFSHUTDOWN_STATUS")]
-    internal enum MFShutdownStatus
+    public enum MFShutdownStatus
     {
         /// <summary>
         /// The shutdown operation has started but is not yet complete.
