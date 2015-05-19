@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Implemented by media source objects.
     /// <para/>
@@ -52,9 +51,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("279A808D-AEC7-40C8-9C6B-A6B492C78A66")]
-    internal interface IMFMediaSource : IMFMediaEventGenerator
+    public interface IMFMediaSource : IMFMediaEventGenerator
     {
-    #region IMFMediaEventGenerator methods
+        #region IMFMediaEventGenerator methods
 
         /// <summary>
         /// Retrieves the next event in the queue. This method is synchronous.
@@ -92,8 +91,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetEvent(
             [In] MFEventFlag dwFlags,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Begins an asynchronous request for the next event in the queue.
@@ -170,8 +168,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int EndGetEvent(
             IMFAsyncResult pResult,
-            out IMFMediaEvent ppEvent
-            );
+            /* out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Puts a new event in the object's queue.
@@ -216,8 +213,7 @@ namespace MediaFoundation.Core.Interfaces
             [In] MediaEventType met,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType,
             [In] int hrStatus,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue);
 
         #endregion
 
@@ -289,8 +285,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int CreatePresentationDescriptor(
-            out IMFPresentationDescriptor ppPresentationDescriptor
-            );
+            /* out IMFPresentationDescriptor */ out IntPtr ppPresentationDescriptor);
 
         /// <summary>
         /// Starts, seeks, or restarts the media source by specifying where to start playback.
@@ -433,6 +428,4 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int Shutdown();
     }
-
-#endif
 }

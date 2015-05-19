@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -28,9 +30,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal PresentationDescriptor(IMFPresentationDescriptor comInterface)
-            : base(comInterface)
+        private PresentationDescriptor(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="PresentationDescriptor"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the PresentationDescriptor's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="PresentationDescriptor"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static PresentationDescriptor FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            PresentationDescriptor result = new PresentationDescriptor(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -83,10 +106,10 @@ namespace MediaFoundation
         /// </remarks>
         public StreamDescriptor GetStreamDescriptor(int index, out bool selected)
         {
-            IMFStreamDescriptor ppDescriptor;
+            IntPtr ppDescriptor;
             int hr = this.Interface.GetStreamDescriptorByIndex(index, out selected, out ppDescriptor);
-            COM.ThrowIfNotOK(hr);
-            return ppDescriptor.ToStreamDescriptor();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppDescriptor);
+            return StreamDescriptor.FromUnknown(ref ppDescriptor);
         }
 
         /// <summary>
@@ -127,10 +150,11 @@ namespace MediaFoundation
         public bool IsStreamSelected(int index)
         {
             bool selected;
-            IMFStreamDescriptor ppDescriptor;
+            IntPtr ppDescriptor;
             int hr = this.Interface.GetStreamDescriptorByIndex(index, out selected, out ppDescriptor);
-            COM.ThrowIfNotOK(hr);
-            COM.SafeRelease(ppDescriptor);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppDescriptor);
+            if (ppDescriptor != IntPtr.Zero)
+                Marshal.Release(ppDescriptor);
             return selected;
         }
 
@@ -180,10 +204,10 @@ namespace MediaFoundation
         /// </remarks>
         public PresentationDescriptor Clone()
         {
-            IMFPresentationDescriptor ppPresentationDescriptor;
+            IntPtr ppPresentationDescriptor;
             int hr = this.Interface.Clone(out ppPresentationDescriptor);
-            COM.ThrowIfNotOK(hr);
-            return ppPresentationDescriptor.ToPresentationDescriptor();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppPresentationDescriptor);
+            return PresentationDescriptor.FromUnknown(ref ppPresentationDescriptor);
         }
     }
 }

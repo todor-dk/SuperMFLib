@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/34CC861C-AB15-48F4-BB6E-736B70383546(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34CC861C-AB15-48F4-BB6E-736B70383546(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFRATE_DIRECTION")]
-    internal enum MFRateDirection
+    public enum MFRateDirection
     {
         /// <summary>
         /// Forward playback.

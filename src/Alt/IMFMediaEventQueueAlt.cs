@@ -127,8 +127,7 @@ namespace MediaFoundation.Alt
         [PreserveSig]
         int GetEvent(
             [In] MFEventFlag dwFlags,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Begins an asynchronous request for the next event in the queue.
@@ -208,8 +207,7 @@ namespace MediaFoundation.Alt
         int EndGetEvent(
             IntPtr p1,
             //[In, MarshalAs(UnmanagedType.Interface)] IMFAsyncResult pResult,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-            );
+            /* out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Puts an event in the queue.

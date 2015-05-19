@@ -5,6 +5,8 @@ using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
 using System.Runtime.InteropServices;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -29,9 +31,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal RateControl(IMFRateControl comInterface)
-            : base(comInterface)
+        private RateControl(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RateControl"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the RateControl's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="RateControl"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static RateControl FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            RateControl result = new RateControl(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -44,7 +67,7 @@ namespace MediaFoundation
         public static RateControl FromService(GetService service)
         {
             Contract.RequiresNotNull(service, "service");
-            return service.Get<IMFRateControl>(MFServices.MF_RATE_CONTROL_SERVICE).ToRateControl();
+            return service.Get(MFService.MF_RATE_CONTROL_SERVICE, RateControl.FromUnknown);
         }
 
         /// <summary>
@@ -55,10 +78,7 @@ namespace MediaFoundation
         public static RateControl FromMediaSession(MediaSession session)
         {
             Contract.RequiresNotNull(session, "session");
-            using (GetService service = session.ToGetService())
-            {
-                return RateControl.FromService(service);
-            }
+            return session.GetService(MFService.MF_RATE_CONTROL_SERVICE, RateControl.FromUnknown);
         }
 
         /// <summary>

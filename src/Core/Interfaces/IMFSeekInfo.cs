@@ -30,13 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// For a particular seek position, gets the two nearest key frames.
     /// </summary>
@@ -50,7 +47,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("26AFEA53-D9ED-42B5-AB80-E64F9EE34779")]
-    internal interface IMFSeekInfo
+    public interface IMFSeekInfo
     {
         /// <summary>
         /// For a particular seek position, gets the two nearest key frames.
@@ -104,7 +101,5 @@ namespace MediaFoundation.Core.Interfaces
             [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarNextKeyFrame
         );        
     }
-
-#endif
 
 }

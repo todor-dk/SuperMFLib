@@ -33,10 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Controls the master volume level of the audio session associated with the streaming audio renderer
     /// (SAR) and the audio capture source.
@@ -57,7 +53,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("089EDF13-CF71-4338-8D13-9E569DBDC319"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFSimpleAudioVolume
+    public interface IMFSimpleAudioVolume
     {
         /// <summary>
         /// Sets the master volume level.
@@ -92,8 +88,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetMasterVolume(
-            [In] float fLevel
-            );
+            [In] float fLevel);
 
         /// <summary>
         /// Retrieves the master volume level.
@@ -128,8 +123,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMasterVolume(
-            out float pfLevel
-            );
+            out float pfLevel);
 
         /// <summary>
         /// Mutes or unmutes the audio.
@@ -163,8 +157,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetMute(
-            [In, MarshalAs(UnmanagedType.Bool)] bool bMute
-            );
+            [In, MarshalAs(UnmanagedType.Bool)] bool bMute);
 
         /// <summary>
         /// Queries whether the audio is muted.
@@ -199,10 +192,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMute(
-            [MarshalAs(UnmanagedType.Bool)] out bool pbMute
-            );
+            [MarshalAs(UnmanagedType.Bool)] out bool pbMute);
     }
-
-#endif
-
 }

@@ -5,6 +5,8 @@ using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
 using System.Runtime.InteropServices;
+using MediaFoundation.Misc.Classes;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -33,9 +35,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Metadata(IMFMetadata comInterface)
-            : base(comInterface)
+        private Metadata(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Metadata"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Metadata's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Metadata"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Metadata FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Metadata result = new Metadata(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion

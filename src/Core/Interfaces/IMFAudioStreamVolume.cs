@@ -33,10 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Controls the volume levels of individual audio channels.
     /// <para/>
@@ -55,7 +51,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("76B1BBDB-4EC8-4F36-B106-70A9316DF593")]
-    internal interface IMFAudioStreamVolume
+    public interface IMFAudioStreamVolume
     {
         /// <summary>
         /// Retrieves the number of channels in the audio stream.
@@ -87,8 +83,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetChannelCount(
-            out int pdwCount
-            );
+            out int pdwCount);
 
         /// <summary>
         /// Sets the volume level for a specified channel in the audio stream.
@@ -126,8 +121,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetChannelVolume(
             [In] int dwIndex,
-            [In] float fLevel
-            );
+            [In] float fLevel);
 
         /// <summary>
         /// Retrieves the volume level for a specified channel in the audio stream.
@@ -165,8 +159,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetChannelVolume(
             [In] int dwIndex,
-            out float pfLevel
-            );
+            out float pfLevel);
 
         /// <summary>
         /// Sets the individual volume levels for all of the channels in the audio stream.
@@ -206,8 +199,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetAllVolumes(
             [In] int dwCount,
-            [In] float[] pfVolumes
-            );
+            [In] float[] pfVolumes);
 
         /// <summary>
         /// Retrieves the volume levels for all of the channels in the audio stream.
@@ -246,10 +238,6 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetAllVolumes(
             [In] int dwCount,
-            [Out] float[] pfVolumes
-            );
+            [Out] float[] pfVolumes);
     }
-
-#endif
-
 }

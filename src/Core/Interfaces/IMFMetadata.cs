@@ -30,10 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
 
     /// <summary>
     /// Manages metadata for an object. Metadata is information that describes a media file, stream, or
@@ -52,7 +52,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("F88CFB8C-EF16-4991-B450-CB8C69E51704"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFMetadata
+    public interface IMFMetadata
     {
         /// <summary>
         /// Sets the language for setting and retrieving metadata. 
@@ -79,8 +79,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetLanguage(
-            [In, MarshalAs(UnmanagedType.LPWStr)] string pwszRFC1766
-            );
+            [In, MarshalAs(UnmanagedType.LPWStr)] string pwszRFC1766);
 
         /// <summary>
         /// Gets the current language setting.
@@ -115,8 +114,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetLanguage(
-            [MarshalAs(UnmanagedType.LPWStr)] out string ppwszRFC1766
-            );
+            [MarshalAs(UnmanagedType.LPWStr)] out string ppwszRFC1766);
 
         /// <summary>
         /// Gets a list of the languages in which metadata is available.
@@ -149,8 +147,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetAllLanguages(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvLanguages
-            );
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvLanguages);
 
         /// <summary>
         /// Sets the value of a metadata property. 
@@ -183,8 +180,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetProperty(
             [In, MarshalAs(UnmanagedType.LPWStr)] string pwszName,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant ppvValue
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant ppvValue);
 
         /// <summary>
         /// Gets the value of a metadata property.
@@ -226,8 +222,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetProperty(
             [In, MarshalAs(UnmanagedType.LPWStr)] string pwszName,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvValue
-            );
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvValue);
 
         /// <summary>
         /// Deletes a metadata property.
@@ -260,8 +255,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int DeleteProperty(
-            [In, MarshalAs(UnmanagedType.LPWStr)] string pwszName
-            );
+            [In, MarshalAs(UnmanagedType.LPWStr)] string pwszName);
 
         /// <summary>
         /// Gets a list of all the metadata property names on this object.
@@ -291,9 +285,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetAllPropertyNames(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvNames
-            );
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvNames);
     }
-
-#endif
 }

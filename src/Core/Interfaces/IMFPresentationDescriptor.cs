@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Describes the details of a presentation. A <em>presentation</em> is a set of related media streams
     /// that share a common presentation time. 
@@ -49,9 +48,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("03CB2711-24D7-4DB6-A17F-F3A7A479A536"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFPresentationDescriptor : IMFAttributes
+    public interface IMFPresentationDescriptor : IMFAttributes
     {
-    #region IMFAttributes methods
+        #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -1161,8 +1160,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetStreamDescriptorCount(
-            out int pdwDescriptorCount
-            );
+            out int pdwDescriptorCount);
 
         /// <summary>
         /// Retrieves a stream descriptor for a stream in the presentation. The stream descriptor contains
@@ -1207,7 +1205,7 @@ namespace MediaFoundation.Core.Interfaces
         int GetStreamDescriptorByIndex(
             [In] int dwIndex,
             [MarshalAs(UnmanagedType.Bool)] out bool pfSelected,
-            [MarshalAs(UnmanagedType.Interface)] out IMFStreamDescriptor ppDescriptor
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFStreamDescriptor */ out IntPtr ppDescriptor
             );
 
         /// <summary>
@@ -1242,8 +1240,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SelectStream(
-            [In] int dwDescriptorIndex
-            );
+            [In] int dwDescriptorIndex);
 
         /// <summary>
         /// Deselects a stream in the presentation.
@@ -1277,8 +1274,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int DeselectStream(
-            [In] int dwDescriptorIndex
-            );
+            [In] int dwDescriptorIndex);
 
         /// <summary>
         /// Creates a copy of this presentation descriptor.
@@ -1306,9 +1302,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int Clone(
-            [MarshalAs(UnmanagedType.Interface)] out IMFPresentationDescriptor ppPresentationDescriptor
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFPresentationDescriptor */ out IntPtr ppPresentationDescriptor);
     }
-
-#endif
 }

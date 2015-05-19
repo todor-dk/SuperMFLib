@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -32,9 +33,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal AudioStreamVolume(IMFAudioStreamVolume comInterface)
-            : base(comInterface)
+        private AudioStreamVolume(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="AudioStreamVolume"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the AudioStreamVolume's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="AudioStreamVolume"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static AudioStreamVolume FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            AudioStreamVolume result = new AudioStreamVolume(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -48,7 +70,7 @@ namespace MediaFoundation
         public static AudioStreamVolume FromService(GetService service)
         {
             Contract.RequiresNotNull(service, "service");
-            return service.Get<IMFAudioStreamVolume>(MFServices.MR_STREAM_VOLUME_SERVICE).ToAudioStreamVolume();
+            return service.Get(MFService.MR_STREAM_VOLUME_SERVICE, AudioStreamVolume.FromUnknown);
         }
 
         /// <summary>
@@ -59,10 +81,7 @@ namespace MediaFoundation
         public static AudioStreamVolume FromMediaSession(MediaSession session)
         {
             Contract.RequiresNotNull(session, "session");
-            using (GetService service = session.ToGetService())
-            {
-                return AudioStreamVolume.FromService(service);
-            }
+            return session.GetService(MFService.MR_STREAM_VOLUME_SERVICE, AudioStreamVolume.FromUnknown);
         }
 
         /// <summary>

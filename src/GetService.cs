@@ -74,7 +74,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService Get<TService>(Guid guidService, ItemFactory<TService> factory)
+        public TService Get<TService>(MFService guidService, ItemFactory<TService> factory)
             where TService : class
         {
             Contract.RequiresNotNull(factory, "factory");

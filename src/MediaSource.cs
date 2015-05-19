@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation
 {
@@ -32,9 +34,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaSource(IMFMediaSource comInterface)
-            : base(comInterface)
+        private MediaSource(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaSource"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaSource's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaSource"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaSource FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaSource result = new MediaSource(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -73,10 +96,10 @@ namespace MediaFoundation
         /// </remarks>
         public PresentationDescriptor CreatePresentationDescriptor()
         {
-            IMFPresentationDescriptor ppPresentationDescriptor;
+            IntPtr ppPresentationDescriptor = IntPtr.Zero;
             int hr = this.Interface.CreatePresentationDescriptor(out ppPresentationDescriptor);
-            COM.ThrowIfNotOK(hr);
-            return ppPresentationDescriptor.ToPresentationDescriptor();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppPresentationDescriptor);
+            return PresentationDescriptor.FromUnknown(ref ppPresentationDescriptor);
         }
 
         /// <summary>
@@ -106,7 +129,7 @@ namespace MediaFoundation
         /// </remarks>
         public void Start(PresentationDescriptor presentationDescriptor, Guid timeFormat, ConstPropVariant startPosition)
         {
-            int hr = this.Interface.Start(presentationDescriptor.GetInterface(), timeFormat, startPosition);
+            int hr = this.Interface.Start(presentationDescriptor.AccessInterface(), timeFormat, startPosition);
             COM.ThrowIfNotOK(hr);
         }
 

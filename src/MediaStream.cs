@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -28,9 +30,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaStream(IMFMediaStream comInterface)
-            : base(comInterface)
+        private MediaStream(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaStream"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaStream's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaStream"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaStream FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaStream result = new MediaStream(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -47,10 +70,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaSource GetMediaSource()
         {
-            IMFMediaSource ppMediaSource;
+            IntPtr ppMediaSource;
             int hr = this.Interface.GetMediaSource(out ppMediaSource);
-            COM.ThrowIfNotOK(hr);
-            return ppMediaSource.ToMediaSource();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaSource);
+            return MediaSource.FromUnknown(ref ppMediaSource);
         }
 
         /// <summary>
@@ -63,12 +86,12 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/574EACFB-3ACD-4B47-9C25-3A67AAE01178(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/574EACFB-3ACD-4B47-9C25-3A67AAE01178(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public StreamDescriptor  GetStreamDescriptor()
+        public StreamDescriptor GetStreamDescriptor()
         {
-            IMFStreamDescriptor ppStreamDescriptor;
+            IntPtr ppStreamDescriptor;
             int hr = this.Interface.GetStreamDescriptor(out ppStreamDescriptor);
-            COM.ThrowIfNotOK(hr);
-            return ppStreamDescriptor.ToStreamDescriptor();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppStreamDescriptor);
+            return StreamDescriptor.FromUnknown(ref ppStreamDescriptor);
         }
 
         /// <summary>
@@ -87,7 +110,7 @@ namespace MediaFoundation
         public bool RequestSample(object token)
         {
             COM com = token as COM;
-            object pToken = (com != null) ? com.Interface : token;
+            object pToken = (com != null) ? com.AccessInterface() : token;
             int hr = this.Interface.RequestSample(pToken);
             // MF_E_END_OF_STREAM: The end of the stream was reached.
             if (hr == MFError.MF_E_END_OF_STREAM)

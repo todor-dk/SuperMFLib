@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Queries the range of playback rates that are supported, including reverse playback.
     /// <para/>
@@ -51,7 +50,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("0A9CCDBC-D797-4563-9667-94EC5D79292D"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFRateSupport
+    public interface IMFRateSupport
     {
         /// <summary>
         /// Retrieves the slowest playback rate supported by the object.
@@ -98,8 +97,7 @@ namespace MediaFoundation.Core.Interfaces
         int GetSlowestRate(
             [In] MFRateDirection eDirection,
             [In, MarshalAs(UnmanagedType.Bool)] bool fThin,
-            out float pflRate
-            );
+            out float pflRate);
 
         /// <summary>
         /// Gets the fastest playback rate supported by the object.
@@ -146,8 +144,7 @@ namespace MediaFoundation.Core.Interfaces
         int GetFastestRate(
             [In] MFRateDirection eDirection,
             [In, MarshalAs(UnmanagedType.Bool)] bool fThin,
-            out float pflRate
-            );
+            out float pflRate);
 
         /// <summary>
         /// Queries whether the object supports a specified playback rate.
@@ -196,9 +193,6 @@ namespace MediaFoundation.Core.Interfaces
         int IsRateSupported(
             [In, MarshalAs(UnmanagedType.Bool)] bool fThin,
             [In] float flRate,
-            [In, Out] MfFloat pflNearestSupportedRate
-            );
+            [In, Out] ref float pflNearestSupportedRate);
     }
-
-#endif
 }

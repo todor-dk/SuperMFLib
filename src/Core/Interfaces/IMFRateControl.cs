@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Gets or sets the playback rate. 
     /// </summary>
@@ -48,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("88DDCD21-03C3-4275-91ED-55EE3929328F"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFRateControl
+    public interface IMFRateControl
     {
         /// <summary>
         /// Sets the playback rate. 
@@ -94,8 +92,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetRate(
             [In, MarshalAs(UnmanagedType.Bool)] bool fThin,
-            [In] float flRate
-            );
+            [In] float flRate);
 
         /// <summary>
         /// Gets the current playback rate.
@@ -134,8 +131,6 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetRate(
             [In, Out, MarshalAs(UnmanagedType.Bool)] ref bool pfThin,
-            out float pflRate
-            );
+            out float pflRate);
     }
-#endif
 }

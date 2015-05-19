@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Gets metadata from a media source or other object.
     /// <para/>
@@ -55,7 +53,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("56181D2D-E221-4ADB-B1C8-3CEE6A53F76F"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFMetadataProvider
+    public interface IMFMetadataProvider
     {
         /// <summary>
         /// Gets a collection of metadata, either for an entire presentation, or for one stream in the
@@ -110,9 +108,6 @@ namespace MediaFoundation.Core.Interfaces
             IMFPresentationDescriptor pPresentationDescriptor,
             [In] int dwStreamIdentifier,
             [In] int dwFlags, // must be zero
-            [MarshalAs(UnmanagedType.Interface)] out IMFMetadata ppMFMetadata
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMetadata */ out IntPtr ppMFMetadata);
     }
-
-#endif
 }

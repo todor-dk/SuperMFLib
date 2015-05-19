@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -47,7 +47,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/115F4A6B-99C2-436E-9483-C44003E61A7D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/115F4A6B-99C2-436E-9483-C44003E61A7D(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFMEDIASOURCE_CHARACTERISTICS")]
-    internal enum MFMediaSourceCharacteristics
+    public enum MFMediaSourceCharacteristics
     {
         /// <summary>
         /// Default value / no flags are set.

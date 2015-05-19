@@ -93,8 +93,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetEvent(
             [In] MFEventFlag dwFlags,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-        );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Begins an asynchronous request for the next event in the queue.
@@ -168,8 +167,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int EndGetEvent(
             IMFAsyncResult pResult,
-            out IMFMediaEvent ppEvent
-        );
+            /* out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Puts a new event in the object's queue.
@@ -219,7 +217,7 @@ namespace MediaFoundation.Core.Interfaces
 
         #endregion
 
-        #region IMFMediaSource methods
+    #region IMFMediaSource methods
 
         /// <summary>
         /// Retrieves the characteristics of the media source.
@@ -283,8 +281,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/B6AC50B7-3EF1-43CF-8126-D9A003EBD825(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B6AC50B7-3EF1-43CF-8126-D9A003EBD825(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int CreatePresentationDescriptor(
-            out IMFPresentationDescriptor ppPresentationDescriptor
-        );
+            /* out IMFPresentationDescriptor */ out IntPtr ppPresentationDescriptor);
 
         /// <summary>
         /// Starts, seeks, or restarts the media source by specifying where to start playback.
@@ -417,7 +414,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int Shutdown();
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Gets an attribute store for the media source.

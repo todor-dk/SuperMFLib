@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents one stream in a media source. 
     /// </summary>
@@ -48,9 +46,9 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
-    internal interface IMFMediaStream : IMFMediaEventGenerator
+    public interface IMFMediaStream : IMFMediaEventGenerator
     {
-    #region IMFMediaEventGenerator methods
+        #region IMFMediaEventGenerator methods
 
         /// <summary>
         /// Retrieves the next event in the queue. This method is synchronous.
@@ -88,8 +86,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetEvent(
             [In] MFEventFlag dwFlags,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Begins an asynchronous request for the next event in the queue.
@@ -166,7 +163,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int EndGetEvent(
             IMFAsyncResult pResult,
-            out IMFMediaEvent ppEvent);
+            /* out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Puts a new event in the object's queue.
@@ -214,7 +211,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue
             );
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Retrieves a pointer to the media source that created this media stream.
@@ -248,8 +245,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMediaSource(
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaSource ppMediaSource
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaSource */ out IntPtr ppMediaSource);
 
         /// <summary>
         /// Retrieves a stream descriptor for this media stream.
@@ -283,8 +279,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetStreamDescriptor(
-            [MarshalAs(UnmanagedType.Interface)] out IMFStreamDescriptor ppStreamDescriptor
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFStreamDescriptor */ out IntPtr ppStreamDescriptor);
 
         /// <summary>
         /// Requests a sample from the media source. 
@@ -321,9 +316,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int RequestSample(
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pToken
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pToken);
     }
-
-#endif
 }

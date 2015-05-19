@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Misc.Classes;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -35,9 +38,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MetadataProvider(IMFMetadataProvider comInterface)
-            : base(comInterface)
+        internal MetadataProvider(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MetadataProvider"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MetadataProvider's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MetadataProvider"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MetadataProvider FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MetadataProvider result = new MetadataProvider(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -51,7 +75,7 @@ namespace MediaFoundation
         public static MetadataProvider FromService(GetService service)
         {
             Contract.RequiresNotNull(service, "service");
-            return service.Get<IMFMetadataProvider>(MFServices.MF_METADATA_PROVIDER_SERVICE).ToMetadataProvider();
+            return service.Get(MFService.MF_METADATA_PROVIDER_SERVICE, MetadataProvider.FromUnknown);
         }
 
         /// <summary>
@@ -62,10 +86,7 @@ namespace MediaFoundation
         public static MetadataProvider FromMediaSource(MediaSource source)
         {
             Contract.RequiresNotNull(source, "source");
-            using (GetService service = source.ToGetService())
-            {
-                return MetadataProvider.FromService(service);
-            }
+            return source.GetService(MFService.MF_METADATA_PROVIDER_SERVICE, MetadataProvider.FromUnknown);
         }
 
 
@@ -92,13 +113,17 @@ namespace MediaFoundation
         /// </remarks>
         public Metadata GetMetadata(PresentationDescriptor presentationDescriptor, int streamIdentifier)
         {
-            IMFMetadata ppMFMetadata;
-            int hr = this.Interface.GetMFMetadata(presentationDescriptor.GetInterface(), streamIdentifier, 0, out ppMFMetadata);
+            IntPtr ppMFMetadata = IntPtr.Zero;
+            int hr = this.Interface.GetMFMetadata(presentationDescriptor.AccessInterface(), streamIdentifier, 0, out ppMFMetadata);
             // MF_E_PROPERTY_NOT_FOUND: No metadata is available for the requested stream or presentation.
             if (hr == MFError.MF_E_PROPERTY_NOT_FOUND)
+            {
+                if (ppMFMetadata != IntPtr.Zero)
+                    Marshal.Release(ppMFMetadata);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return ppMFMetadata.ToMetadata();
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMFMetadata);
+            return Metadata.FromUnknown(ref ppMFMetadata);
         }
     }
 }

@@ -93,8 +93,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetEvent(
             [In] MFEventFlag dwFlags,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent ppEvent
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaEvent */ out IntPtr ppEvent);
 
         /// <summary>
         /// Begins an asynchronous request for the next event in the queue.
@@ -171,7 +170,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int EndGetEvent(
             IMFAsyncResult pResult,
-            out IMFMediaEvent ppEvent);
+            /* out IMFMediaEvent */ out IntPtr ppEvent);
 
 
         /// <summary>

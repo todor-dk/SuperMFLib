@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -31,9 +34,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal RateSupport(IMFRateSupport comInterface)
-            : base(comInterface)
+        internal RateSupport(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RateSupport"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the RateSupport's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="RateSupport"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static RateSupport FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            RateSupport result = new RateSupport(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -46,7 +70,7 @@ namespace MediaFoundation
         public static RateSupport FromService(GetService service)
         {
             Contract.RequiresNotNull(service, "service");
-            return service.Get<IMFRateSupport>(MFServices.MF_RATE_CONTROL_SERVICE).ToRateSupport();
+            return service.Get(MFService.MF_RATE_CONTROL_SERVICE, RateSupport.FromUnknown);
         }
 
         /// <summary>
@@ -57,10 +81,7 @@ namespace MediaFoundation
         public static RateSupport FromMediaSession(MediaSession session)
         {
             Contract.RequiresNotNull(session, "session");
-            using (GetService service = session.ToGetService())
-            {
-                return RateSupport.FromService(service);
-            }
+            return session.GetService(MFService.MF_RATE_CONTROL_SERVICE, RateSupport.FromUnknown);
         }
 
         /// <summary>
@@ -156,7 +177,7 @@ namespace MediaFoundation
         /// </remarks>
         public Support IsRateSupported(bool thinned, float rate, out float nearestSupportedRate)
         {
-            MfFloat pflNearestSupportedRate = new MfFloat(rate);
+            float pflNearestSupportedRate = rate;
             int hr = this.Interface.IsRateSupported(thinned, rate, pflNearestSupportedRate);
             // MF_E_UNSUPPORTED_RATE: The object does not support the specified rate.
             if (hr == MFError.MF_E_UNSUPPORTED_RATE)
