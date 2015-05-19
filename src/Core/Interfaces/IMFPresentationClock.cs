@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a presentation clock, which is used to schedule when samples are rendered and to
     /// synchronize multiple streams.
@@ -49,7 +47,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("868CE85C-8EA9-4F55-AB82-B009A910A805")]
-    internal interface IMFPresentationClock : IMFClock
+    public interface IMFPresentationClock : IMFClock
     {
     #region IMFClock methods
 
@@ -250,8 +248,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetTimeSource(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFPresentationTimeSource pTimeSource
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFPresentationTimeSource pTimeSource);
 
         /// <summary>
         /// Retrieves the clock's presentation time source.
@@ -285,8 +282,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetTimeSource(
-            [MarshalAs(UnmanagedType.Interface)] out IMFPresentationTimeSource ppTimeSource
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFPresentationTimeSource */ out IntPtr ppTimeSource);
 
         /// <summary>
         /// Retrieves the latest clock time. 
@@ -320,8 +316,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetTime(
-            out long phnsClockTime
-            );
+            out long phnsClockTime);
 
         /// <summary>
         /// Registers an object to be notified whenever the clock starts, stops, or pauses, or changes rate.
@@ -353,8 +348,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int AddClockStateSink(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFClockStateSink pStateSink
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFClockStateSink pStateSink);
 
         /// <summary>
         /// Unregisters an object that is receiving state-change notifications from the clock.
@@ -386,8 +380,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int RemoveClockStateSink(
-            [In, MarshalAs(UnmanagedType.Interface)] IMFClockStateSink pStateSink
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFClockStateSink pStateSink);
 
         /// <summary>
         /// Starts the presentation clock.
@@ -424,8 +417,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int Start(
-            [In] long llClockStartOffset
-            );
+            [In] long llClockStartOffset);
 
         /// <summary>
         /// Stops the presentation clock. While the clock is stopped, the clock time does not advance, and the
@@ -486,6 +478,4 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int Pause();
     }
-
-#endif
 }

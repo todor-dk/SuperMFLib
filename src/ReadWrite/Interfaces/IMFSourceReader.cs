@@ -33,13 +33,11 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.ReadWrite.Interfaces
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Implemented by the Microsoft Media Foundation source reader object.
     /// </summary>
@@ -53,7 +51,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("70ae66f2-c809-4e4f-8915-bdcb406b7993")]
-    internal interface IMFSourceReader
+    public interface IMFSourceReader
     {
         /// <summary>
         /// Queries whether a stream is selected.
@@ -188,7 +186,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
         int GetNativeMediaType(
             int dwStreamIndex,
             int dwMediaTypeIndex,
-            out IMFMediaType ppMediaType
+            /* out IMFMediaType */ out IntPtr ppMediaType
         );
 
         /// <summary>
@@ -235,7 +233,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
         [PreserveSig]
         int GetCurrentMediaType(
             int dwStreamIndex,
-            out IMFMediaType ppMediaType
+            /* out IMFMediaType */ out IntPtr ppMediaType
         );
 
         /// <summary>
@@ -416,7 +414,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
             out int pdwActualStreamIndex,
             out MF_SOURCE_READER_FLAG pdwStreamFlags,
             out long pllTimestamp,
-            out IMFSample ppSample
+            /* out IMFSample */ out IntPtr ppSample
         );
 
         /// <summary>
@@ -508,7 +506,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidService,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppvObject
         );
 
         /// <summary>
@@ -569,7 +567,5 @@ namespace MediaFoundation.ReadWrite.Interfaces
             [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarAttribute
         );
     }
-
-#endif
 
 }

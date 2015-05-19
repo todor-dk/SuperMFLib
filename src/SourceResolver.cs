@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Core.Enums;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -29,9 +33,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal SourceResolver(IMFSourceResolver comInterface)
-            : base(comInterface)
+        private SourceResolver(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="SourceResolver"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the SourceResolver's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="SourceResolver"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static SourceResolver FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            SourceResolver result = new SourceResolver(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -46,10 +71,10 @@ namespace MediaFoundation
         /// </remarks>
         public static SourceResolver Create()
         {
-            IMFSourceResolver resolver;
+            IntPtr resolver;
             int hr = MFExtern.MFCreateSourceResolver(out resolver);
-            COM.ThrowIfNotOK(hr);
-            return resolver.ToSourceResolver();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref resolver);
+            return SourceResolver.FromUnknown(ref resolver);
         }
 
 
@@ -79,13 +104,15 @@ namespace MediaFoundation
         /// </remarks>
         public object CreateObjectFromURL(string url, MFResolution flags, PropertyStore properties, out MFObjectType objectType)
         {
-            object value;
-            int hr = this.Interface.CreateObjectFromURL(url, flags, properties.GetInterface(), out objectType, out value);
-            COM.ThrowIfNotOK(hr);
+            IntPtr ppObject;
+            int hr = this.Interface.CreateObjectFromURL(url, flags, properties.AccessInterface(), out objectType, out ppObject);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
             if (objectType == MFObjectType.MediaSource)
-                return MediaSource.FromComObject(value, i => new MediaSource(i));
+                return MediaSource.FromUnknown(ref ppObject);
             if (objectType == MFObjectType.ByteStream)
-                return ByteStream.FromComObject(value, i => new ByteStream(i));
+                return ByteStream.FromUnknown(ref ppObject);
+            if (ppObject != IntPtr.Zero)
+                Marshal.Release(ppObject);
             return null; // Must be invalid!
         }
 
@@ -146,13 +173,15 @@ namespace MediaFoundation
         /// </remarks>
         public object CreateObjectFromByteStream(ByteStream byteStream, string url, MFResolution flags, PropertyStore properties, out MFObjectType objectType)
         {
-            object value;
-            int hr = this.Interface.CreateObjectFromByteStream(byteStream.GetInterface(), url, flags, properties.GetInterface(), out objectType, out value);
-            COM.ThrowIfNotOK(hr);
+            IntPtr ppObject;
+            int hr = this.Interface.CreateObjectFromByteStream(byteStream.AccessInterface(), url, flags, properties.AccessInterface(), out objectType, out ppObject);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
             if (objectType == MFObjectType.MediaSource)
-                return MediaSource.FromComObject(value, i => new MediaSource(i));
+                return MediaSource.FromUnknown(ref ppObject);
             if (objectType == MFObjectType.ByteStream)
-                return ByteStream.FromComObject(value, i => new ByteStream(i));
+                return ByteStream.FromUnknown(ref ppObject);
+            if (ppObject != IntPtr.Zero)
+                Marshal.Release(ppObject);
             return null; // Must be invalid!
         }
 
@@ -220,10 +249,10 @@ namespace MediaFoundation
         /// </remarks>
         public CancelCookie BeginCreateObjectFromURL(string url, MFResolution flags, PropertyStore properties, AsyncCallback callback, object state)
         {
-            object cancelCookie;
-            int hr = this.Interface.BeginCreateObjectFromURL(url, flags, properties.GetInterface(), out cancelCookie, callback, state);
-            COM.ThrowIfNotOK(hr);
-            if (cancelCookie == null)
+            IntPtr cancelCookie = IntPtr.Zero;
+            int hr = this.Interface.BeginCreateObjectFromURL(url, flags, properties.AccessInterface(), out cancelCookie, callback, state);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref cancelCookie);
+            if (cancelCookie == IntPtr.Zero)
                 return null;
             else
                 return new CancelCookie(cancelCookie);
@@ -232,14 +261,14 @@ namespace MediaFoundation
         /// <summary>
         /// Represents an obbject that can be passed to <see cref="CancelObjectCreation"/>.
         /// </summary>
-        internal class  CancelCookie : COM<object>
+        public class  CancelCookie : COM<object>
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="CancelCookie"/> class.
             /// </summary>
             /// <param name="comInterface">The COM interface.</param>
-            public CancelCookie (object comInterface)
-                : base(comInterface)
+            internal CancelCookie (IntPtr unknown)
+                : base(unknown)
 	        {
 	        }
         }
@@ -262,13 +291,15 @@ namespace MediaFoundation
         /// </remarks>
         public object EndCreateObjectFromURL(AsyncResult result, out MFObjectType objectType)
         {
-            object value;
-            int hr = this.Interface.EndCreateObjectFromURL(result.GetInterface(), out objectType, out value);
-            COM.ThrowIfNotOK(hr);
+            IntPtr ppObject;
+            int hr = this.Interface.EndCreateObjectFromURL(result.AccessInterface(), out objectType, out ppObject);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
             if (objectType == MFObjectType.MediaSource)
-                return MediaSource.FromComObject(value, i => new MediaSource(i));
+                return MediaSource.FromUnknown(ref ppObject);
             if (objectType == MFObjectType.ByteStream)
-                return ByteStream.FromComObject(value, i => new ByteStream(i));
+                return ByteStream.FromUnknown(ref ppObject);
+            if (ppObject != IntPtr.Zero)
+                Marshal.Release(ppObject);
             return null; // Must be invalid!
         }
 
@@ -328,9 +359,9 @@ namespace MediaFoundation
         /// </remarks>
         public CancelCookie BeginCreateObjectFromByteStream(ByteStream byteStream, string url, MFResolution flags, PropertyStore properties, AsyncCallback callback, object state)
         {
-            object cancelCookie;
-            int hr = this.Interface.BeginCreateObjectFromByteStream(byteStream.GetInterface(), url, flags, properties.GetInterface(), out cancelCookie, callback, state);
-            COM.ThrowIfNotOK(hr);
+            IntPtr cancelCookie;
+            int hr = this.Interface.BeginCreateObjectFromByteStream(byteStream.AccessInterface(), url, flags, properties.AccessInterface(), out cancelCookie, callback, state);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref cancelCookie);
             if (cancelCookie == null)
                 return null;
             else
@@ -355,13 +386,15 @@ namespace MediaFoundation
         /// </remarks>
         public object EndCreateObjectFromByteStream(AsyncResult result, out MFObjectType objectType)
         {
-            object value;
-            int hr = this.Interface.EndCreateObjectFromByteStream(result.GetInterface(), out objectType, out value);
-            COM.ThrowIfNotOK(hr);
+            IntPtr ppObject;
+            int hr = this.Interface.EndCreateObjectFromByteStream(result.AccessInterface(), out objectType, out ppObject);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
             if (objectType == MFObjectType.MediaSource)
-                return MediaSource.FromComObject(value, i => new MediaSource(i));
+                return MediaSource.FromUnknown(ref ppObject);
             if (objectType == MFObjectType.ByteStream)
-                return ByteStream.FromComObject(value, i => new ByteStream(i));
+                return ByteStream.FromUnknown(ref ppObject);
+            if (ppObject != IntPtr.Zero)
+                Marshal.Release(ppObject);
             return null; // Must be invalid!
         }
 

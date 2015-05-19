@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -43,7 +43,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms698962(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/windows/desktop/ms698962(v=vs.85).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFBYTESTREAM_* defines")]
-    internal enum MFByteStreamCapabilities
+    public enum MFByteStreamCapabilities
     {
         /// <summary>
         /// Default value / no flags are set.

@@ -45,7 +45,7 @@ namespace MediaFoundation.Core
     /// </summary>
     internal static class MFExtern
     {
-#if NOT_IN_USE
+
         /// <summary>
         /// Creates an in-memory property store.
         /// </summary>
@@ -73,8 +73,7 @@ namespace MediaFoundation.Core
         [DllImport("Propsys.dll"), SuppressUnmanagedCodeSecurity]
         public static extern int PSCreateMemoryPropertyStore(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object propStore);
-#endif
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr propStore);
 
         /// <summary>
         /// Shuts down the Microsoft Media Foundation platform. Call this function once for every call to 
@@ -845,8 +844,6 @@ namespace MediaFoundation.Core
             /* [Out, MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppvObject
         );
 
-#if NOT_IN_USE
-
         /// <summary>
         /// Creates an activation object for the enhanced video renderer (EVR) media sink.
         /// </summary>
@@ -883,10 +880,8 @@ namespace MediaFoundation.Core
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateVideoRendererActivate(
             IntPtr hwndVideo,
-            out IMFActivate ppActivate
+            /* out IMFActivate */ out IntPtr ppActivate
         );
-
-#endif
 
         /// <summary>
         /// Creates a topology node.
@@ -922,8 +917,6 @@ namespace MediaFoundation.Core
             /* out IMFTopologyNode */ out IntPtr ppNode
         );
 
-#if NOT_IN_USE
-
         /// <summary>
         /// Creates the source resolver, which is used to create a media source from a URL or byte stream. 
         /// </summary>
@@ -950,10 +943,8 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateSourceResolver(
-            out IMFSourceResolver ppISourceResolver
+            /* out IMFSourceResolver */ out IntPtr ppISourceResolver
         );
-
-#endif
 
         /// <summary>
         /// Creates the <c>Media Session</c> in the application's process. 
@@ -1030,7 +1021,6 @@ namespace MediaFoundation.Core
             /* out IMFTopology */ out IntPtr ppTopo
         );
 
-#if NOT_IN_USE
 
         /// <summary>
         /// Creates an activation object for the <c>Streaming Audio Renderer</c>. 
@@ -1058,8 +1048,10 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateAudioRendererActivate(
-            out IMFActivate ppActivate
+            /* out IMFActivate */ out IntPtr ppActivate
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Creates the presentation clock. The presentation clock is used to schedule the time at which
@@ -5792,6 +5784,7 @@ namespace MediaFoundation.Core
             IMFAttributes pAttributes,
             out IMFSourceReader ppSourceReader
         );
+#endif
 
         /// <summary>
         /// Creates the source reader from a media source.
@@ -5837,9 +5830,10 @@ namespace MediaFoundation.Core
         public static extern int MFCreateSourceReaderFromMediaSource(
             IMFMediaSource pMediaSource,
             IMFAttributes pAttributes,
-            out IMFSourceReader ppSourceReader
+            /* out IMFSourceReader */ out IntPtr ppSourceReader
         );
 
+#if ALLOW_UNTESTED_INTERFACES
         /// <summary>
         /// <strong>Important</strong> Deprecated. This API may be removed from future releases of Windows.
         /// Applications should use the <c>Media Session</c> for playback. 

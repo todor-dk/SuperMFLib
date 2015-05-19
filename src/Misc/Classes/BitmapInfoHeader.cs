@@ -33,10 +33,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation.Misc
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// The <strong>BITMAPINFOHEADER</strong> structure contains information about the dimensions and color
     /// format of a DIB. 
@@ -65,7 +63,7 @@ namespace MediaFoundation.Misc.Classes
     /// <a href="http://msdn.microsoft.com/en-US/library/02F8ED65-8FED-4DDA-9B94-7343A0CFA8C1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/02F8ED65-8FED-4DDA-9B94-7343A0CFA8C1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("BITMAPINFOHEADER")]
-    internal class  BitmapInfoHeader
+    public class  BitmapInfoHeader
     {
         /// <summary>
         /// The number of bytes required by the structure.
@@ -305,6 +303,4 @@ namespace MediaFoundation.Misc.Classes
             }
         }
     }
-
-#endif
 }

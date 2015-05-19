@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Provides the clock times for the presentation clock. 
     /// </summary>
@@ -48,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("7FF12CCE-F76F-41C2-863B-1666C8E5E139"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFPresentationTimeSource : IMFClock
+    public interface IMFPresentationTimeSource : IMFClock
     {
     #region IMFClock methods
 
@@ -248,9 +246,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetUnderlyingClock(
-            [MarshalAs(UnmanagedType.Interface)] out IMFClock ppClock
-            );
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFClock */ out IntPtr ppClock);
     }
-
-#endif
 }

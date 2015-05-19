@@ -31,7 +31,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
 
     /// <summary>
     /// Represents a block of memory that contains media data. Use this interface to access the data in the
@@ -47,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("045FA593-8799-42B8-BC8D-8968C6453507")]
-    internal interface IMFMediaBuffer
+    public interface IMFMediaBuffer
     {
         /// <summary>
         /// Gives the caller access to the memory in the buffer, for reading or writing
@@ -94,8 +93,7 @@ namespace MediaFoundation.Core.Interfaces
         int Lock(
             out IntPtr ppbBuffer,
             out int pcbMaxLength,
-            out int pcbCurrentLength
-            );
+            out int pcbCurrentLength);
 
         /// <summary>
         /// Unlocks a buffer that was previously locked. Call this method once for every call to 
@@ -156,8 +154,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetCurrentLength(
-            out int pcbCurrentLength
-            );
+            out int pcbCurrentLength);
 
         /// <summary>
         /// Sets the length of the valid data in the buffer.
@@ -191,8 +188,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int SetCurrentLength(
-            [In] int cbCurrentLength
-            );
+            [In] int cbCurrentLength);
 
         /// <summary>
         /// Retrieves the allocated size of the buffer.
@@ -224,9 +220,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetMaxLength(
-            out int pcbMaxLength
-            );
+            out int pcbMaxLength);
     }
-
-#endif
 }

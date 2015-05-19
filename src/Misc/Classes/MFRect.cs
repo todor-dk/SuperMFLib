@@ -33,10 +33,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// MFRect is a managed representation of the Win32 RECT structure.
     /// </summary>
@@ -57,7 +55,7 @@ namespace MediaFoundation.Misc.Classes
     /// <a href="http://msdn.microsoft.com/en-US/library/A44F33F4-49B2-4A36-A7BD-FC4A9D3A3943(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A44F33F4-49B2-4A36-A7BD-FC4A9D3A3943(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential)]
-    internal class  MFRect
+    public class  MFRect
     {
         /// <summary>
         /// Specifies the <em>x</em>-coordinate of the upper-left corner of the rectangle. 
@@ -241,6 +239,4 @@ namespace MediaFoundation.Misc.Classes
             bottom = from.bottom;
         }
     }
-
-#endif
 }

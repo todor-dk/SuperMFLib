@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MediaFoundation</RootNamespace>
-    <AssemblyName>MediaFoundation</AssemblyName>
+    <AssemblyName>MediaFoundationEx</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>MediaFoundation.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
@@ -46,7 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <LangVersion>5</LangVersion>
-    <DocumentationFile>bin\x86\Debug\MediaFoundation.XML</DocumentationFile>
+    <DocumentationFile>bin\x86\Debug\MediaFoundationEx.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
@@ -60,10 +60,11 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>5</LangVersion>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>bin\x64\Release\MediaFoundation.XML</DocumentationFile>
+    <DocumentationFile>bin\x64\Release\MediaFoundationEx.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Activate.cs" />
     <Compile Include="Alt\IMFFinalizableMediaSinkAlt.cs" />
     <Compile Include="Alt\IMFGetServiceAlt.cs" />
     <Compile Include="Alt\IMFMediaEventGeneratorAlt.cs" />
@@ -80,7 +81,9 @@
     <Compile Include="AsyncResult.cs" />
     <Compile Include="Attributes.cs" />
     <Compile Include="AudioStreamVolume.cs" />
+    <Compile Include="ByteStream.cs" />
     <Compile Include="Clock.cs" />
+    <Compile Include="ClockStateSink.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="COM.cs" />
     <Compile Include="ComObject.cs" />
@@ -313,9 +316,11 @@
     <Compile Include="Framework.cs" />
     <Compile Include="GetService.cs" />
     <Compile Include="GuidEnum.cs" />
+    <Compile Include="Implementations\Attributes.cs" />
     <Compile Include="Internals\Contract.cs" />
     <Compile Include="Internals\Extensions.cs" />
     <Compile Include="Internals\GuidMapper.cs" />
+    <Compile Include="MediaBuffer.cs" />
     <Compile Include="MediaEvent.cs" />
     <Compile Include="MediaEventGenerator.cs" />
     <Compile Include="MediaSession.cs" />
@@ -558,12 +563,18 @@
     <Compile Include="Misc\Classes\PropVariantMarshaler.cs" />
     <Compile Include="Misc\Classes\RTAMarshaler.cs" />
     <Compile Include="Misc\Classes\RTIMarshaler.cs" />
+    <Compile Include="PresentationClock.cs" />
     <Compile Include="PresentationDescriptor.cs" />
+    <Compile Include="PresentationTimeSource.cs" />
+    <Compile Include="PropertyStore.cs" />
     <Compile Include="RateControl.cs" />
     <Compile Include="RateSupport.cs" />
+    <Compile Include="ReadWrite\SourceReader.cs" />
+    <Compile Include="Sample.cs" />
     <Compile Include="SeekInfo.cs" />
     <Compile Include="Shutdown.cs" />
     <Compile Include="SimpleAudioVolume.cs" />
+    <Compile Include="SourceResolver.cs" />
     <Compile Include="StreamDescriptor.cs" />
     <Compile Include="Time.cs" />
     <Compile Include="TopoLoader.cs" />

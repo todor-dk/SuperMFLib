@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -27,9 +28,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal ClockStateSink(IMFClockStateSink comInterface)
-            : base(comInterface)
+        private ClockStateSink(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ClockStateSink"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the ClockStateSink's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="ClockStateSink"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static ClockStateSink FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            ClockStateSink result = new ClockStateSink(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion

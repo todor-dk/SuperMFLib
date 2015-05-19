@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFoundation-2015", "..\src\MediaFoundation-2015.csproj", "{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFoundationEx", "..\src\MediaFoundationEx.csproj", "{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFoundationExtensions", "..\MediaFoundationExtensions\MediaFoundationExtensions.csproj", "{0FB6E9B0-8DD0-47A4-9EEE-5A118BE32067}"
 EndProject

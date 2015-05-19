@@ -34,12 +34,8 @@ using System.Drawing;
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.ReadWrite.Enums
+namespace MediaFoundation.ReadWrite
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Contains flags for the <see cref="ReadWrite.IMFSourceReader.ReadSample"/> method. 
     /// </summary>
@@ -51,7 +47,7 @@ namespace MediaFoundation.ReadWrite.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/A6367FEA-CEBA-4CE4-9A1B-88A40AFC3055(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A6367FEA-CEBA-4CE4-9A1B-88A40AFC3055(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_SOURCE_READER_CONTROL_FLAG")]
-    internal enum MF_SOURCE_READER_CONTROL_FLAG
+    public enum MF_SOURCE_READER_CONTROL_FLAG
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -64,7 +60,4 @@ namespace MediaFoundation.ReadWrite.Enums
         /// </summary>
         Drain = 0x00000001
     }
-
-#endif
-
 }

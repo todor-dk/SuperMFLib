@@ -30,11 +30,10 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-    #if NOT_IN_USE
-
     /// <summary>
     /// Enables the application to defer the creation of an object. This interface is exposed by activation
     /// objects.
@@ -49,7 +48,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("7FEE9E9A-4A89-47A6-899C-B6A53A70FB67"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFActivate : IMFAttributes
+    public interface IMFActivate : IMFAttributes
     {
         #region IMFAttributes methods
 
@@ -1316,7 +1315,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int ActivateObject(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.Interface)] out object ppv
+            /* [MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppv
             );
 
         /// <summary>
@@ -1372,5 +1371,4 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int DetachObject();
     }
-#endif
 }

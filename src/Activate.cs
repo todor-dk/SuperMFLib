@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using System.Diagnostics;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Core;
 
 namespace MediaFoundation
 {
@@ -29,9 +31,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Activate(IMFActivate comInterface)
-            : base(comInterface)
+        private Activate(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Activate"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Activate's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Activate"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Activate FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Activate result = new Activate(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -49,11 +72,11 @@ namespace MediaFoundation
         /// </remarks>
         public static Activate CreateAudioRendererActivate()
         {
-            IMFActivate activate = null;
+            IntPtr activate = IntPtr.Zero;
             int hr = MFExtern.MFCreateAudioRendererActivate(out activate);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(activate != null);
-            return activate.ToActivate();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref activate);
+            Debug.Assert(activate != IntPtr.Zero);
+            return Activate.FromUnknown(ref activate);
         }
 
         /// <summary>
@@ -72,11 +95,11 @@ namespace MediaFoundation
         /// </remarks>
         public static Activate CreateVideoRendererActivate(IntPtr hwndVideo)
         {
-            IMFActivate activate = null;
+            IntPtr activate = IntPtr.Zero;
             int hr = MFExtern.MFCreateVideoRendererActivate(hwndVideo, out activate);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(activate != null);
-            return activate.ToActivate();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref activate);
+            Debug.Assert(activate != IntPtr.Zero);
+            return Activate.FromUnknown(ref activate);
         }
 
         /// <summary>
@@ -92,12 +115,12 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/120B8070-6732-450D-8334-B3910F7BB4D2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/120B8070-6732-450D-8334-B3910F7BB4D2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public object ActivateObject(Guid interfaceId)
+        public ComObject ActivateObject(Guid interfaceId)
         {
-            object ppv;
+            IntPtr ppv;
             int hr = this.Interface.ActivateObject(interfaceId, out ppv);
-            COM.ThrowIfNotOK(hr);
-            return ppv;
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppv);
+            return ComObject.FromUnknown(ref ppv);
         }
 
         /// <summary>

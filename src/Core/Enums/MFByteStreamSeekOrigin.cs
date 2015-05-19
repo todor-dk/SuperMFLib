@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/AD7AD61A-0C02-4A8F-96C3-33F7D1F0CE51(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AD7AD61A-0C02-4A8F-96C3-33F7D1F0CE51(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFBYTESTREAM_SEEK_ORIGIN")]
-    internal enum MFByteStreamSeekOrigin
+    public enum MFByteStreamSeekOrigin
     {
         /// <summary>
         /// The seek position is specified relative to the start of the stream.

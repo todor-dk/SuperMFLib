@@ -33,11 +33,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation.Misc
 {
-
-#if NOT_IN_USE
-
     /// <summary>
     /// The BITMAPINFO structure defines the dimensions and color information for a Windows device-independent bitmap (DIB). 
     /// </summary>
@@ -62,6 +59,4 @@ namespace MediaFoundation.Misc.Classes
         /// </summary>
         public int[] bmiColors;
     }
-
-#endif
 }

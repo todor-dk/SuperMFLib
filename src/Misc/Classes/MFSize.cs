@@ -33,10 +33,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// The SIZE structure defines the width and height of a rectangle.
     /// </summary>
@@ -55,7 +53,7 @@ namespace MediaFoundation.Misc.Classes
     /// <a href="http://msdn.microsoft.com/en-US/library/08D81096-069F-4554-9BB9-D4A37C0950AC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/08D81096-069F-4554-9BB9-D4A37C0950AC(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("SIZE")]
-    internal class  MFSize
+    public class  MFSize
     {
         /// <summary>
         /// Specifies the rectangle's width. The units depend on which function uses this structure. 
@@ -116,6 +114,4 @@ namespace MediaFoundation.Misc.Classes
             }
         }
     }
-
-#endif
 }

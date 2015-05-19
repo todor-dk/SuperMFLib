@@ -35,7 +35,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.Misc.Classes
 {
-#if NOT_IN_USE
     // These classes are used internally and there is probably no reason you will ever
     // need to use them directly.
 
@@ -93,6 +92,4 @@ namespace MediaFoundation.Misc.Classes
             return new BMMarshaler();
         }
     }
-
-#endif
 }

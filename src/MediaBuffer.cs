@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using System.Diagnostics;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -29,9 +30,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal MediaBuffer(IMFMediaBuffer comInterface)
-            : base(comInterface)
+        private MediaBuffer(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MediaBuffer"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the MediaBuffer's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="MediaBuffer"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static MediaBuffer FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            MediaBuffer result = new MediaBuffer(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion

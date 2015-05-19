@@ -25,10 +25,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using System.Runtime.InteropServices;
 
-namespace MediaFoundation.Misc.Classes
+namespace MediaFoundation
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Specifies the FMTID/PID identifier that programmatically identifies a property. Replaces 
     /// <c>SHCOLUMNID</c>. 
@@ -88,6 +86,4 @@ namespace MediaFoundation.Misc.Classes
             pID = p;
         }
     }
-
-#endif
 }

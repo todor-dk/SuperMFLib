@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -34,9 +35,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal Sample(IMFSample comInterface)
-            : base(comInterface)
+        private Sample(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Sample"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the Sample's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="Sample"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static Sample FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            Sample result = new Sample(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -128,10 +150,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaBuffer GetBufferByIndex(int index)
         {
-            IMFMediaBuffer buffer;
+            IntPtr buffer;
             int hr = this.Interface.GetBufferByIndex(index, out buffer);
-            COM.ThrowIfNotOK(hr);
-            return buffer.ToMediaBuffer();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref buffer);
+            return MediaBuffer.FromUnknown(ref buffer);
         }
 
         /// <summary>
@@ -146,10 +168,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaBuffer ConvertToContiguousBuffer()
         {
-            IMFMediaBuffer buffer;
+            IntPtr buffer;
             int hr = this.Interface.ConvertToContiguousBuffer(out buffer);
-            COM.ThrowIfNotOK(hr);
-            return buffer.ToMediaBuffer();
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref buffer);
+            return MediaBuffer.FromUnknown(ref buffer);
         }
 
         /// <summary>
@@ -162,7 +184,7 @@ namespace MediaFoundation
         /// </remarks>
         public void AddBuffer(MediaBuffer buffer)
         {
-            int hr = this.Interface.AddBuffer(buffer.GetInterface());
+            int hr = this.Interface.AddBuffer(buffer.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -232,7 +254,7 @@ namespace MediaFoundation
         /// </remarks>
         public void CopyToBuffer(MediaBuffer buffer)
         {
-            int hr = this.Interface.CopyToBuffer(buffer.GetInterface());
+            int hr = this.Interface.CopyToBuffer(buffer.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
     }

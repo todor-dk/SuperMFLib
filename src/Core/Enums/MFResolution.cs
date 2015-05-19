@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -48,7 +48,7 @@ namespace MediaFoundation.Core.Enums
     /// <see cref="MF_RESOLUTION"/>
     // NB: Same enum as MF_RESOLUTION!!!
     [Flags, UnmanagedName("Source Resolver Flags")]
-    internal enum MFResolution
+    public enum MFResolution
     {
         /// <summary>
         /// Default value / no flags are set.

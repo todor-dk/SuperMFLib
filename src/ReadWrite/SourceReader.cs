@@ -6,8 +6,12 @@ using MediaFoundation.Internals;
 using MediaFoundation.ReadWrite;
 using MediaFoundation.Misc;
 using System.Diagnostics;
+using MediaFoundation.ReadWrite.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Misc.Classes;
+using System.Runtime.InteropServices;
 
-namespace MediaFoundation
+namespace MediaFoundation.ReadWrite
 {
     /// <summary>
     /// The <see cref="SourceReader"/> class implements a wrapper around the
@@ -30,9 +34,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal SourceReader(IMFSourceReader comInterface)
-            : base(comInterface)
+        private SourceReader(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="SourceReader"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the SourceReader's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="SourceReader"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static SourceReader FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            SourceReader result = new SourceReader(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -54,11 +79,11 @@ namespace MediaFoundation
         /// <returns>A <see cref="SourceReader"/> object. The caller must dispose this object.</returns>
         public static SourceReader CreateFromMediaSource(MediaSource mediaSource, Attributes attributes)
         {
-            IMFSourceReader reader;
-            int hr = MFExtern.MFCreateSourceReaderFromMediaSource(mediaSource.GetInterface(), attributes.GetInterface(), out reader);
-            COM.ThrowIfNotOK(hr);
-            Debug.Assert(reader != null);
-            return SourceReader.FromComInterface(reader, i => new SourceReader(i));
+            IntPtr reader = IntPtr.Zero;
+            int hr = MFExtern.MFCreateSourceReaderFromMediaSource(mediaSource.AccessInterface(), attributes.AccessInterface(), out reader);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref reader);
+            Debug.Assert(reader != IntPtr.Zero);
+            return SourceReader.FromUnknown(ref reader);
         }
 
         /// <summary>
@@ -193,12 +218,16 @@ namespace MediaFoundation
         /// </remarks>
         public MediaType GetNativeMediaType(int streamIndex, int mediaTypeIndex)
         {
-            IMFMediaType ppMediaType;
+            IntPtr ppMediaType = IntPtr.Zero;
             int hr = this.Interface.GetNativeMediaType(streamIndex, mediaTypeIndex, out ppMediaType);
             if (hr == MFError.MF_E_NO_MORE_TYPES)
+            {
+                if (ppMediaType != IntPtr.Zero)
+                    Marshal.Release(ppMediaType);
                 return null;
-            COM.ThrowIfNotOK(hr);
-            return MediaType.FromComInterface(ppMediaType, i => new MediaType(i));
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaType);
+            return MediaType.FromUnknown(ref ppMediaType);
         }
 
         /// <summary>
@@ -238,10 +267,10 @@ namespace MediaFoundation
         /// </remarks>
         public MediaType GetCurrentMediaType(int streamIndex)
         {
-            IMFMediaType ppMediaType;
+            IntPtr ppMediaType;
             int hr = this.Interface.GetCurrentMediaType(streamIndex, out ppMediaType);
-            COM.ThrowIfNotOK(hr);
-            return MediaType.FromComInterface(ppMediaType, i => new MediaType(i));
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaType);
+            return MediaType.FromUnknown(ref ppMediaType);
         }
 
         /// <summary>
@@ -301,7 +330,7 @@ namespace MediaFoundation
         /// </remarks>
         public void SetCurrentMediaType(int streamIndex, MediaType mediaType)
         {
-            int hr = this.Interface.SetCurrentMediaType(streamIndex, IntPtr.Zero, mediaType.GetInterface());
+            int hr = this.Interface.SetCurrentMediaType(streamIndex, IntPtr.Zero, mediaType.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -382,11 +411,11 @@ namespace MediaFoundation
         public Sample ReadSample(int streamIndex, MF_SOURCE_READER_CONTROL_FLAG controlFlags, out int actualStreamIndex, out MF_SOURCE_READER_FLAG streamFlags, out Time timestamp)
         {
             long time;
-            IMFSample sample;
+            IntPtr sample;
             int hr = this.Interface.ReadSample(streamIndex, controlFlags, out actualStreamIndex, out streamFlags, out time, out sample);
-            COM.ThrowIfNotOK(hr);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref sample);
             timestamp = new Time(time);
-            return Sample.FromComInterface(sample, i => new Sample(i));
+            return Sample.FromUnknown(ref sample);
         }
 
         /// <summary>
@@ -469,13 +498,23 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService GetServiceForStream<TService>(int streamIndex, Guid service)
+        public TService GetServiceForStream<TService>(int streamIndex, MFService service, ItemFactory<TService> factory)
+            where TService : class
         {
+            Contract.RequiresNotNull(factory, "factory");
+            
             Guid iid = typeof(TService).GUID;
-            object value;
-            int hr = this.Interface.GetServiceForStream(streamIndex, service, iid, out value);
-            COM.ThrowIfNotOK(hr);
-            return (TService)value;
+            IntPtr ppvObject = IntPtr.Zero;
+            int hr = this.Interface.GetServiceForStream(streamIndex, service, COM.IID_IUnknown, out ppvObject);
+            // MF_E_UNSUPPORTED_SERVICE: The object does not support the service.
+            if (hr == MFError.MF_E_UNSUPPORTED_SERVICE)
+            {
+                if (ppvObject != IntPtr.Zero)
+                    Marshal.Release(ppvObject);
+                return null;
+            }
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
+            return factory(ref ppvObject);
         }
 
         /// <summary>
@@ -498,9 +537,10 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService GetServiceForStream<TService>(StreamAVMS stream, Guid service)
+        public TService GetServiceForStream<TService>(StreamAVMS stream, MFService service, ItemFactory<TService> factory)
+            where TService : class
         {
-            return this.GetServiceForStream<TService>((int)stream, service);
+            return this.GetServiceForStream<TService>((int)stream, service, factory);
         }
 
         /// <summary>

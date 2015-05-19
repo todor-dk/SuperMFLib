@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {
@@ -27,9 +28,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal PresentationTimeSource(IMFPresentationTimeSource comInterface)
-            : base(comInterface)
+        private PresentationTimeSource(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="PresentationTimeSource"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the PresentationTimeSource's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="PresentationTimeSource"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static PresentationTimeSource FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            PresentationTimeSource result = new PresentationTimeSource(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion

@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -46,7 +46,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/E919AE78-E3A5-42C5-B4E0-186E7E4FE54A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E919AE78-E3A5-42C5-B4E0-186E7E4FE54A(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_OBJECT_TYPE")]
-    internal enum MFObjectType
+    public enum MFObjectType
     {
         /// <summary>
         /// Media source. You can query the object for the <see cref="IMFMediaSource"/> interface. 

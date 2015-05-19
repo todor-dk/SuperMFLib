@@ -30,11 +30,8 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR.Enums
+namespace MediaFoundation.EVR
 {
-    #if NOT_IN_USE
-
-
     /// <summary>
     /// Contains flags that define how the enhanced video renderer (EVR) displays the video.
     /// </summary>
@@ -46,7 +43,7 @@ namespace MediaFoundation.EVR.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/A56E7E09-23AF-4AD3-9846-4102233ED3C4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A56E7E09-23AF-4AD3-9846-4102233ED3C4(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFVideoRenderPrefs")]
-    internal enum MFVideoRenderPrefs
+    public enum MFVideoRenderPrefs
     {
         /// <summary>
         /// Default value / no flags are set.
@@ -115,5 +112,4 @@ namespace MediaFoundation.EVR.Enums
         /// </summary>
         Mask = 0x000001ff,
     }
-#endif
 }

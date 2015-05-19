@@ -5,6 +5,9 @@ using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
 using System.Runtime.InteropServices;
+using MediaFoundation.Misc.Interfaces;
+using MediaFoundation.Core;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation
 {
@@ -29,9 +32,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal PropertyStore(IPropertyStore comInterface)
-            : base(comInterface)
+        private PropertyStore(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="PropertyStore"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the PropertyStore's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="PropertyStore"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static PropertyStore FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            PropertyStore result = new PropertyStore(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -48,10 +72,10 @@ namespace MediaFoundation
         /// </remarks>
         public static PropertyStore Create()
         {
-            object ppvObject;
+            IntPtr ppvObject;
             int hr = MFExtern.PSCreateMemoryPropertyStore(typeof(IPropertyStore).GUID, out ppvObject);
-            COM.ThrowIfNotOK(hr);
-            return PropertyStore.FromComObject(ppvObject, i => new PropertyStore(i));
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
+            return PropertyStore.FromUnknown(ref ppvObject);
         }
 
         /// <summary>

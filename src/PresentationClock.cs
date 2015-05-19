@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Misc;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Misc.Classes;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -29,9 +32,30 @@ namespace MediaFoundation
     {
         #region Construction
 
-        internal PresentationClock(IMFPresentationClock comInterface)
-            : base(comInterface)
+        private PresentationClock(IntPtr unknown)
+            : base(unknown)
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="PresentationClock"/> instance from the given IUnknown interface pointer.
+        /// </summary>
+        /// <param name="unknown">
+        /// Pointer to the PresentationClock's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="PresentationClock"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public static PresentationClock FromUnknown(ref IntPtr unknown)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+            PresentationClock result = new PresentationClock(unknown);
+            unknown = IntPtr.Zero;
+            return result;
         }
 
         #endregion
@@ -49,17 +73,21 @@ namespace MediaFoundation
         {
             get
             {
-                IMFPresentationTimeSource pTimeSource;
+                IntPtr pTimeSource = IntPtr.Zero;
                 int hr = this.Interface.GetTimeSource(out pTimeSource);
                 // MF_E_CLOCK_NO_TIME_SOURCE: No time source was set on this clock.
                 if (hr == MFError.MF_E_CLOCK_NO_TIME_SOURCE)
+                {
+                    if (pTimeSource != IntPtr.Zero)
+                        Marshal.Release(pTimeSource);
                     return null;
-                COM.ThrowIfNotOK(hr);
-                return pTimeSource.ToPresentationTimeSource();
+                }
+                COM.ThrowIfNotOKAndReleaseInterface(hr, ref pTimeSource);
+            return PresentationTimeSource.FromUnknown(ref pTimeSource);
             }
             set
             {
-                int hr = this.Interface.SetTimeSource(value.GetInterface());
+                int hr = this.Interface.SetTimeSource(value.AccessInterface());
                 COM.ThrowIfNotOK(hr);
             }
         }
@@ -94,7 +122,7 @@ namespace MediaFoundation
         /// </remarks>
         public void AddClockStateSink(ClockStateSink stateSink)
         {
-            int hr = this.Interface.AddClockStateSink(stateSink.GetInterface());
+            int hr = this.Interface.AddClockStateSink(stateSink.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 
@@ -110,7 +138,7 @@ namespace MediaFoundation
         /// </remarks>
         public void RemoveClockStateSink(ClockStateSink stateSink)
         {
-            int hr = this.Interface.RemoveClockStateSink(stateSink.GetInterface());
+            int hr = this.Interface.RemoveClockStateSink(stateSink.AccessInterface());
             COM.ThrowIfNotOK(hr);
         }
 

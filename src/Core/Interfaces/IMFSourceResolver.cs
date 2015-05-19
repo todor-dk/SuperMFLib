@@ -30,11 +30,11 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
+using MediaFoundation.Misc.Interfaces;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Creates a media source from a URL or a byte stream. The <c>Source Resolver</c> implements this
     /// interface. To create the source resolver, call <see cref="MFExtern.MFCreateSourceResolver"/>
@@ -50,7 +50,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("FBE5A32D-A497-4B61-BB85-97B1A848A6E3"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFSourceResolver
+    public interface IMFSourceResolver
     {
         /// <summary>
         /// Creates a media source or a byte stream from a URL. This method is synchronous. 
@@ -109,7 +109,7 @@ namespace MediaFoundation.Core.Interfaces
             [In] MFResolution dwFlags,
             IPropertyStore pProps,
             out MFObjectType pObjectType,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppObject
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppObject
             );
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace MediaFoundation.Core.Interfaces
             [In] MFResolution dwFlags,
             [In, MarshalAs(UnmanagedType.Interface)] IPropertyStore pProps,
             out MFObjectType pObjectType,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppObject
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppObject
             );
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.LPWStr)] string pwszURL,
             MFResolution dwFlags,
             IPropertyStore pProps,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknownCancelCookie,
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppIUnknownCancelCookie,
             IMFAsyncCallback pCallback,
             [In, MarshalAs(UnmanagedType.IUnknown)] object punkState
             );
@@ -291,7 +291,7 @@ namespace MediaFoundation.Core.Interfaces
         int EndCreateObjectFromURL(
             IMFAsyncResult pResult,
             out MFObjectType pObjectType,
-            [MarshalAs(UnmanagedType.Interface)] out object ppObject
+            /* [MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppObject
             );
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.LPWStr)] string pwszURL,
             [In] MFResolution dwFlags,
             IPropertyStore pProps,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknownCancelCookie,
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppIUnknownCancelCookie,
             IMFAsyncCallback pCallback,
             [MarshalAs(UnmanagedType.IUnknown)] object punkState
            );
@@ -414,7 +414,7 @@ namespace MediaFoundation.Core.Interfaces
         int EndCreateObjectFromByteStream(
             IMFAsyncResult pResult,
             out MFObjectType pObjectType,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppObject
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppObject
             );
 
         /// <summary>
@@ -443,6 +443,4 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.IUnknown)] object pIUnknownCancelCookie
             );
     }
-
-#endif
 }

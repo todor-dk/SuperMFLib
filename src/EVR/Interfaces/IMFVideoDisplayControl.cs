@@ -29,11 +29,12 @@ using MediaFoundation;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
+using MediaFoundation.EVR.Classes;
+using MediaFoundation.EVR.Enums;
 
 namespace MediaFoundation.EVR.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Controls how the <c>Enhanced Video Renderer</c> (EVR) displays video. 
     /// <para/>
@@ -54,7 +55,7 @@ namespace MediaFoundation.EVR.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("A490B1E4-AB84-4D31-A1B2-181E03B1077A"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFVideoDisplayControl
+    public interface IMFVideoDisplayControl
     {
         /// <summary>
         /// Gets the size and aspect ratio of the video, prior to any stretching by the video renderer. 
@@ -658,6 +659,4 @@ namespace MediaFoundation.EVR.Interfaces
             [MarshalAs(UnmanagedType.Bool)] out bool pfFullscreen
             );
     }
-
-#endif
 }

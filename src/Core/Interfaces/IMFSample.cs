@@ -28,12 +28,10 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 using System.Drawing;
+using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a media sample, which is a container object for media data. For video, a sample
     /// typically contains one video frame. For audio data, a sample typically contains multiple audio
@@ -54,7 +52,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     Guid("C40A00F2-B93A-4D80-AE8C-5A1C634F58E4"),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IMFSample : IMFAttributes
+    public interface IMFSample : IMFAttributes
     {
     #region IMFAttributes methods
 
@@ -1419,7 +1417,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetBufferByIndex(
             [In] int dwIndex,
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaBuffer ppBuffer
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaBuffer */ out IntPtr ppBuffer
             );
 
         /// <summary>
@@ -1454,7 +1452,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int ConvertToContiguousBuffer(
-            [MarshalAs(UnmanagedType.Interface)] out IMFMediaBuffer ppBuffer
+            /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaBuffer */ out IntPtr ppBuffer
             );
 
         /// <summary>
@@ -1624,6 +1622,4 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.Interface)] IMFMediaBuffer pBuffer
             );
     }
-
-#endif
 }

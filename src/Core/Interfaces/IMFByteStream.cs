@@ -28,11 +28,10 @@ using System.Runtime.InteropServices;
 
 using MediaFoundation.Misc;
 using System.Drawing;
+using MediaFoundation.Core.Enums;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a byte stream from some data source, which might be a local file, a network file, or
     /// some other source. The <strong>IMFByteStream</strong> interface supports the typical stream
@@ -48,7 +47,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("AD4C1B00-4BF7-422F-9175-756693D9130D")]
-    internal interface IMFByteStream
+    public interface IMFByteStream
     {
         /// <summary>
         /// Retrieves the characteristics of the byte stream. 
@@ -558,5 +557,4 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int Close();
     }
-#endif
 }

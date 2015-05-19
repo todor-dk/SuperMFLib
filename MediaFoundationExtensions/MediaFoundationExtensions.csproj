@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="2DBuffer.cs" />
     <Compile Include="2DBuffer2.cs" />
-    <Compile Include="Activate.cs" />
     <Compile Include="AdvancedMediaCapture.cs" />
     <Compile Include="AdvancedMediaCaptureInitializationSettings.cs" />
     <Compile Include="AdvancedMediaCaptureSettings.cs" />
@@ -72,7 +71,6 @@
     <Compile Include="AudioMediaType.cs" />
     <Compile Include="AudioPolicy.cs" />
     <Compile Include="BufferListNotify.cs" />
-    <Compile Include="ByteStream.cs" />
     <Compile Include="ByteStreamBuffering.cs" />
     <Compile Include="ByteStreamCacheControl.cs" />
     <Compile Include="ByteStreamCacheControl2.cs" />
@@ -91,7 +89,6 @@
     <Compile Include="CaptureSink2.cs" />
     <Compile Include="CaptureSource.cs" />
     <Compile Include="CdmSuspendNotify.cs" />
-    <Compile Include="ClockStateSink.cs" />
     <Compile Include="ContentEnabler.cs" />
     <Compile Include="ContentProtectionManager.cs" />
     <Compile Include="DLNASinkInit.cs" />
@@ -124,11 +121,9 @@
     <Compile Include="Functions.cs" />
     <Compile Include="ImageSharingEngine.cs" />
     <Compile Include="ImageSharingEngineClassFactory.cs" />
-    <Compile Include="Implementations\Attributes.cs" />
     <Compile Include="InputTrustAuthority.cs" />
     <Compile Include="Internals\Extensions.cs" />
     <Compile Include="Internals\Helpers.cs" />
-    <Compile Include="MediaBuffer.cs" />
     <Compile Include="MediaEngine.cs" />
     <Compile Include="MediaEngineClassFactory.cs" />
     <Compile Include="MediaEngineClassFactory2.cs" />
@@ -163,7 +158,6 @@
     <Compile Include="MFPlayer\PMediaPlayer.cs" />
     <Compile Include="MFPlayer\PMediaPlayerCallback.cs" />
     <Compile Include="Misc\NamedPropertyStore.cs" />
-    <Compile Include="Misc\PropertyStore.cs" />
     <Compile Include="NetCredential.cs" />
     <Compile Include="NetCredentialCache.cs" />
     <Compile Include="NetCredentialManager.cs" />
@@ -186,8 +180,6 @@
     <Compile Include="PMPHost.cs" />
     <Compile Include="PMPHostApp.cs" />
     <Compile Include="PMPServer.cs" />
-    <Compile Include="PresentationClock.cs" />
-    <Compile Include="PresentationTimeSource.cs" />
     <Compile Include="ProtectedEnvironmentAccess.cs" />
     <Compile Include="QualityAdvise.cs" />
     <Compile Include="QualityAdvise2.cs" />
@@ -198,7 +190,6 @@
     <Compile Include="ReadWrite\SinkWriterCallback.cs" />
     <Compile Include="ReadWrite\SinkWriterEncoderConfig.cs" />
     <Compile Include="ReadWrite\SinkWriterEx.cs" />
-    <Compile Include="ReadWrite\SourceReader.cs" />
     <Compile Include="ReadWrite\SourceReaderCallback.cs" />
     <Compile Include="ReadWrite\SourceReaderEx.cs" />
     <Compile Include="RealTimeClient.cs" />
@@ -207,7 +198,6 @@
     <Compile Include="RemoteDesktopPlugin.cs" />
     <Compile Include="RemoteProxy.cs" />
     <Compile Include="SAMIStyle.cs" />
-    <Compile Include="Sample.cs" />
     <Compile Include="SampleGrabberSinkCallback.cs" />
     <Compile Include="SampleGrabberSinkCallback2.cs" />
     <Compile Include="SampleOutputStream.cs" />
@@ -244,11 +234,13 @@
     <Compile Include="WorkQueueServices.cs" />
     <Compile Include="WorkQueueServicesEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SourceResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MakeNuget.bat" />
     <None Include="MediaFoundationExtensions.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

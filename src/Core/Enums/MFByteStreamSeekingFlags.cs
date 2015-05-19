@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFBYTESTREAM_SEEK_FLAG_ defines")]
-    internal enum MFByteStreamSeekingFlags
+    public enum MFByteStreamSeekingFlags
     {
         /// <summary>
         /// Default value / no flags are set.

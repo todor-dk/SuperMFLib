@@ -33,8 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-#if NOT_IN_USE
-
     /// <summary>
     /// Receives state-change notifications from the presentation clock. 
     /// </summary>
@@ -48,7 +46,7 @@ namespace MediaFoundation.Core.Interfaces
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("F6696E82-74F7-4F3D-A178-8A5E09C3659F")]
-    internal interface IMFClockStateSink
+    public interface IMFClockStateSink
     {
         /// <summary>
         /// Called when the presentation clock starts. 
@@ -82,8 +80,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int OnClockStart(
             [In] long hnsSystemTime,
-            [In] long llClockStartOffset
-            );
+            [In] long llClockStartOffset);
 
         /// <summary>
         /// Called when the presentation clock stops. 
@@ -114,8 +111,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int OnClockStop(
-            [In] long hnsSystemTime
-            );
+            [In] long hnsSystemTime);
 
         /// <summary>
         /// Called when the presentation clock pauses. 
@@ -142,8 +138,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int OnClockPause(
-            [In] long hnsSystemTime
-            );
+            [In] long hnsSystemTime);
 
         /// <summary>
         /// Called when the presentation clock restarts from the same position while paused. 
@@ -170,8 +165,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int OnClockRestart(
-            [In] long hnsSystemTime
-            );
+            [In] long hnsSystemTime);
 
         /// <summary>
         /// Called when the rate changes on the presentation clock. 
@@ -203,9 +197,6 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int OnClockSetRate(
             [In] long hnsSystemTime,
-            [In] float flRate
-            );
+            [In] float flRate);
     }
-
-#endif
 }
