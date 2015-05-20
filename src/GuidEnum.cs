@@ -69,6 +69,10 @@ namespace MediaFoundation
         /// <returns>The result of the equality operator.</returns>
         public static bool operator ==(GuidEnum left, GuidEnum right)
         {
+            if (Object.ReferenceEquals(left, null) && Object.ReferenceEquals(right, null))
+                return true;
+            if (Object.ReferenceEquals(left, null) || Object.ReferenceEquals(right, null))
+                return false;
             return left.Equals(right);
         }
 
@@ -80,6 +84,11 @@ namespace MediaFoundation
         /// <returns>The result of the inequality operator.</returns>
         public static bool operator !=(GuidEnum left, GuidEnum right)
         {
+            if (Object.ReferenceEquals(left, null) && Object.ReferenceEquals(right, null))
+                return false;
+            if (Object.ReferenceEquals(left, null) || Object.ReferenceEquals(right, null))
+                return true;
+
             return !left.Equals(right);
         }
 
