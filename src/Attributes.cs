@@ -45,7 +45,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/8CC4E529-D5A0-4342-82AC-AE5B28BFD61D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8CC4E529-D5A0-4342-82AC-AE5B28BFD61D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public PropVariant GetItem(Guid key)
+        public PropVariant GetItem(MFAttribute key)
         {
             PropVariant pValue = new PropVariant();
             int hr = this.Interface.GetItem(key, pValue);
@@ -71,7 +71,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/2C3A3C30-DA10-4365-9F76-598A4CA7675C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2C3A3C30-DA10-4365-9F76-598A4CA7675C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public MFAttributeType GetItemType(Guid key)
+        public MFAttributeType GetItemType(MFAttribute key)
         {
             MFAttributeType pType;
             int hr = this.Interface.GetItemType(key, out pType);
@@ -97,7 +97,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F0A6073B-FCE6-4A1F-B7D1-EF6543E7648F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F0A6073B-FCE6-4A1F-B7D1-EF6543E7648F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public bool CompareItem(Guid key, ConstPropVariant value)
+        public bool CompareItem(MFAttribute key, ConstPropVariant value)
         {
             bool pResult;
             int hr = this.Interface.CompareItem(key, value, out pResult);
@@ -144,7 +144,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Int32 GetInt32(Guid key)
+        public Int32 GetInt32(MFAttribute key)
         {
             Int32 value;
             int hr = this.Interface.GetUINT32(key, out value);
@@ -166,7 +166,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Boolean GetBoolean(Guid key)
+        public Boolean GetBoolean(MFAttribute key)
         {
             return (this.GetInt32(key) != COM.FALSE);
         }
@@ -185,7 +185,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Int32Int32 GetUpperLowerInt32(Guid key)
+        public Int32Int32 GetUpperLowerInt32(MFAttribute key)
         {
             Int32Int32 value = Int32Int32.Zero;
             int hr = this.Interface.GetUINT64(key, out value.Value);
@@ -207,7 +207,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Time GetTime(Guid key)
+        public Time GetTime(MFAttribute key)
         {
             Time value = Time.Zero;
             int hr = this.Interface.GetUINT64(key, out value.Value);
@@ -229,7 +229,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Int64 GetInt64(Guid key)
+        public Int64 GetInt64(MFAttribute key)
         {
             Int64 value;
             int hr = this.Interface.GetUINT64(key, out value);
@@ -251,7 +251,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/650A5F7F-609F-477B-8834-FF66CA3A9CA3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/650A5F7F-609F-477B-8834-FF66CA3A9CA3(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public double GetDouble(Guid key)
+        public double GetDouble(MFAttribute key)
         {
             double value;
             int hr = this.Interface.GetDouble(key, out value);
@@ -273,7 +273,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/6DED35E1-2D1C-4E68-AD0F-2BD5BA469853(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6DED35E1-2D1C-4E68-AD0F-2BD5BA469853(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Guid GetGuid(Guid key)
+        public Guid GetGuid(MFAttribute key)
         {
             Guid value;
             int hr = this.Interface.GetGUID(key, out value);
@@ -296,7 +296,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/6CCC753F-E147-47F4-AB95-17687729404A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6CCC753F-E147-47F4-AB95-17687729404A(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public int GetStringLength(Guid key)
+        public int GetStringLength(MFAttribute key)
         {
             int value;
             int hr = this.Interface.GetStringLength(key, out value);
@@ -318,7 +318,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/550A3035-EA16-4784-8F69-9522259BB338(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/550A3035-EA16-4784-8F69-9522259BB338(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public string GetString(Guid key)
+        public string GetString(MFAttribute key)
         {
             string value;
             int length;
@@ -341,7 +341,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/93AB65E7-2168-4CFB-A871-B39554BA66E0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/93AB65E7-2168-4CFB-A871-B39554BA66E0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public int GetBlobSize(Guid key)
+        public int GetBlobSize(MFAttribute key)
         {
             int size;
             int hr = this.Interface.GetBlobSize(key, out size);
@@ -362,7 +362,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/380E0E3A-B5C5-4D31-8793-417262377FEF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/380E0E3A-B5C5-4D31-8793-417262377FEF(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public byte[] GetBlob(Guid key)
+        public byte[] GetBlob(MFAttribute key)
         {
             IntPtr pBytes = IntPtr.Zero;
             int length = 0;
@@ -391,7 +391,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public ComObject GetObject(Guid key)
+        public ComObject GetObject(MFAttribute key)
         {
             Guid iid = COM.IID_IUnknown;
             IntPtr ppv;
@@ -414,7 +414,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Int32? GetInt32OrNull(Guid key)
+        public Int32? GetInt32OrNull(MFAttribute key)
         {
             Int32 value;
             int hr = this.Interface.GetUINT32(key, out value);
@@ -439,7 +439,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E47495E0-3274-4CE2-9FD3-D2FB2AFB7578(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Boolean? GetBooleanOrNull(Guid key)
+        public Boolean? GetBooleanOrNull(MFAttribute key)
         {
             Int32? value = this.GetInt32OrNull(key);
             if (!value.HasValue)
@@ -461,7 +461,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Int32Int32? GetUpperLowerInt32OrNull(Guid key)
+        public Int32Int32? GetUpperLowerInt32OrNull(MFAttribute key)
         {
             Int32Int32 value = Int32Int32.Zero;
             int hr = this.Interface.GetUINT64(key, out value.Value);
@@ -485,7 +485,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Time? GetTimeOrNull(Guid key)
+        public Time? GetTimeOrNull(MFAttribute key)
         {
             Time value = Time.Zero;
             int hr = this.Interface.GetUINT64(key, out value.Value);
@@ -509,7 +509,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F3240FFF-48D8-4D88-8C75-15F00BFE72ED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Int64? GetInt64OrNull(Guid key)
+        public Int64? GetInt64OrNull(MFAttribute key)
         {
             Int64 value;
             int hr = this.Interface.GetUINT64(key, out value);
@@ -533,7 +533,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/650A5F7F-609F-477B-8834-FF66CA3A9CA3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/650A5F7F-609F-477B-8834-FF66CA3A9CA3(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public double? GetDoubleOrNull(Guid key)
+        public double? GetDoubleOrNull(MFAttribute key)
         {
             double value;
             int hr = this.Interface.GetDouble(key, out value);
@@ -557,7 +557,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/6DED35E1-2D1C-4E68-AD0F-2BD5BA469853(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6DED35E1-2D1C-4E68-AD0F-2BD5BA469853(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Guid? GetGuidOrNull(Guid key)
+        public Guid? GetGuidOrNull(MFAttribute key)
         {
             Guid value;
             int hr = this.Interface.GetGUID(key, out value);
@@ -583,7 +583,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/6CCC753F-E147-47F4-AB95-17687729404A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6CCC753F-E147-47F4-AB95-17687729404A(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public int? GetStringLengthOrNull(Guid key)
+        public int? GetStringLengthOrNull(MFAttribute key)
         {
             int value;
             int hr = this.Interface.GetStringLength(key, out value);
@@ -607,7 +607,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/550A3035-EA16-4784-8F69-9522259BB338(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/550A3035-EA16-4784-8F69-9522259BB338(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public string GetStringOrNull(Guid key)
+        public string GetStringOrNull(MFAttribute key)
         {
             string value;
             int length;
@@ -632,7 +632,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/93AB65E7-2168-4CFB-A871-B39554BA66E0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/93AB65E7-2168-4CFB-A871-B39554BA66E0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public int? GetBlobSizeOrNull(Guid key)
+        public int? GetBlobSizeOrNull(MFAttribute key)
         {
             int size;
             int hr = this.Interface.GetBlobSize(key, out size);
@@ -655,7 +655,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/380E0E3A-B5C5-4D31-8793-417262377FEF(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/380E0E3A-B5C5-4D31-8793-417262377FEF(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public byte[] GetBlobOrNull(Guid key)
+        public byte[] GetBlobOrNull(MFAttribute key)
         {
             IntPtr pBytes = IntPtr.Zero;
             int length = 0;
@@ -686,7 +686,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A5F645A1-B7D2-47D3-B77E-AD94815B1C25(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public ComObject GetObjectOrNull(Guid key)
+        public ComObject GetObjectOrNull(MFAttribute key)
         {
             Guid iid = COM.IID_IUnknown;
             IntPtr ppv = IntPtr.Zero;
@@ -716,7 +716,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/1AC6E1C3-CF78-4CFF-A992-4F92F243C443(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1AC6E1C3-CF78-4CFF-A992-4F92F243C443(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetItem(Guid key, ConstPropVariant value)
+        public void SetItem(MFAttribute key, ConstPropVariant value)
         {
             int hr = this.Interface.SetItem(key, value);
             COM.ThrowIfNotOK(hr);
@@ -732,7 +732,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/AC72E6E4-F930-4DE6-92A2-F15E5F9E5D74(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AC72E6E4-F930-4DE6-92A2-F15E5F9E5D74(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void DeleteItem(Guid key)
+        public void DeleteItem(MFAttribute key)
         {
             int hr = this.Interface.DeleteItem(key);
             COM.ThrowIfNotOK(hr);
@@ -764,7 +764,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/9C30FD56-719F-4831-8FBF-CEFCF9D72709(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9C30FD56-719F-4831-8FBF-CEFCF9D72709(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetInt32(Guid key, Int32 value)
+        public void SetInt32(MFAttribute key, Int32 value)
         {
             int hr = this.Interface.SetUINT32(key, value);
             COM.ThrowIfNotOK(hr);
@@ -783,7 +783,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/9C30FD56-719F-4831-8FBF-CEFCF9D72709(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9C30FD56-719F-4831-8FBF-CEFCF9D72709(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetBoolean(Guid key, bool value)
+        public void SetBoolean(MFAttribute key, bool value)
         {
             int hr = this.Interface.SetUINT32(key, value ? COM.TRUE : COM.FALSE);
             COM.ThrowIfNotOK(hr);
@@ -802,7 +802,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/817ED1C1-16AD-4520-A1A0-A93563936B50(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/817ED1C1-16AD-4520-A1A0-A93563936B50(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetInt64(Guid key, Int64 value)
+        public void SetInt64(MFAttribute key, Int64 value)
         {
             int hr = this.Interface.SetUINT64(key, value);
             COM.ThrowIfNotOK(hr);
@@ -821,7 +821,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/817ED1C1-16AD-4520-A1A0-A93563936B50(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/817ED1C1-16AD-4520-A1A0-A93563936B50(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetUpperLowerInt32(Guid key, Int32Int32 value)
+        public void SetUpperLowerInt32(MFAttribute key, Int32Int32 value)
         {
             int hr = this.Interface.SetUINT64(key, value.Value);
             COM.ThrowIfNotOK(hr);
@@ -840,7 +840,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/817ED1C1-16AD-4520-A1A0-A93563936B50(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/817ED1C1-16AD-4520-A1A0-A93563936B50(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetTime(Guid key, Time value)
+        public void SetTime(MFAttribute key, Time value)
         {
             int hr = this.Interface.SetUINT64(key, value.Value);
             COM.ThrowIfNotOK(hr);
@@ -859,7 +859,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/BB58F35E-0FCA-4B19-9976-DE2140E6EBC0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BB58F35E-0FCA-4B19-9976-DE2140E6EBC0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetDouble(Guid key, Double value)
+        public void SetDouble(MFAttribute key, Double value)
         {
             int hr = this.Interface.SetDouble(key, value);
             COM.ThrowIfNotOK(hr);
@@ -878,7 +878,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/D73B53F5-4A8F-4903-986D-FBF4277A2D45(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D73B53F5-4A8F-4903-986D-FBF4277A2D45(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetGuid(Guid key, Guid value)
+        public void SetGuid(MFAttribute key, Guid value)
         {
             int hr = this.Interface.SetGUID(key, value);
             COM.ThrowIfNotOK(hr);
@@ -897,7 +897,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/51D2A2A0-92CB-49E0-B4A9-7201E9D92322(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/51D2A2A0-92CB-49E0-B4A9-7201E9D92322(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetString(Guid key, string value)
+        public void SetString(MFAttribute key, string value)
         {
             int hr = this.Interface.SetString(key, value);
             COM.ThrowIfNotOK(hr);
@@ -916,7 +916,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/4A2A25A9-4DEA-40C8-988C-9E3806C8F31C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4A2A25A9-4DEA-40C8-988C-9E3806C8F31C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetBlob(Guid key, byte[] value)
+        public void SetBlob(MFAttribute key, byte[] value)
         {
             Contract.RequiresNotNull(value, "value");
             int hr = this.Interface.SetBlob(key, value, value.Length);
@@ -936,7 +936,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/DA0C3D59-07C4-4431-A137-8655DDBF6258(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DA0C3D59-07C4-4431-A137-8655DDBF6258(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetObject(Guid key, object value)
+        public void SetObject(MFAttribute key, object value)
         {
             int hr = this.Interface.SetUnknown(key, value);
             COM.ThrowIfNotOK(hr);
@@ -955,7 +955,7 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/DA0C3D59-07C4-4431-A137-8655DDBF6258(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DA0C3D59-07C4-4431-A137-8655DDBF6258(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public void SetObject(Guid key, COM value)
+        public void SetObject(MFAttribute key, COM value)
         {
             int hr = this.Interface.SetUnknown(key, value.AccessInterface());
             COM.ThrowIfNotOK(hr);
@@ -1025,11 +1025,13 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/1290BC45-FCAC-4379-B26C-E67EF678F193(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1290BC45-FCAC-4379-B26C-E67EF678F193(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public PropVariant GetItemByIndex(int index, out Guid key)
+        public PropVariant GetItemByIndex(int index, out MFAttribute key)
         {
             PropVariant value = new PropVariant();
-            int hr = this.Interface.GetItemByIndex(index, out key, value);
+            Guid guid;
+            int hr = this.Interface.GetItemByIndex(index, out guid, value);
             COM.ThrowIfNotOKAndDisposePropVariant(hr, value);
+            key = new MFAttribute(guid);
             return value;
         }
 
@@ -1048,7 +1050,7 @@ namespace MediaFoundation
         /// </remarks>
         public PropVariant GetItemByIndex(int index)
         {
-            Guid na;
+            MFAttribute na;
             return this.GetItemByIndex(index, out na);
         }
 
@@ -1065,12 +1067,12 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/1290BC45-FCAC-4379-B26C-E67EF678F193(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1290BC45-FCAC-4379-B26C-E67EF678F193(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Guid GetKeyByIndex(int index)
+        public MFAttribute GetKeyByIndex(int index)
         {
             Guid key;
             int hr = this.Interface.GetItemByIndex(index, out key, null);
             COM.ThrowIfNotOK(hr);
-            return key;
+            return new MFAttribute(key);
         }
 
         /// <summary>
@@ -1088,7 +1090,7 @@ namespace MediaFoundation
         /// </remarks>
         public object GetValueByIndex(int index)
         {
-            Guid na;
+            MFAttribute na;
             using (PropVariant value = this.GetItemByIndex(index, out na))
             {
                 return value.GetValue();

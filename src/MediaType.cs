@@ -185,7 +185,7 @@ namespace MediaFoundation
         {
             get
             {
-                return this.GetGuid(MFAttributesClsid.MF_MT_SUBTYPE);
+                return this.GetGuid(MFAttribute.MediaType.MF_MT_SUBTYPE);
             }
         }
 

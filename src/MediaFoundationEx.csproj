@@ -94,7 +94,7 @@
     <Compile Include="Core\Classes\HttpSchemePlugin.cs" />
     <Compile Include="Core\Classes\MFASFMutexType.cs" />
     <Compile Include="Core\Classes\MFASFSampleExtension.cs" />
-    <Compile Include="Core\Classes\MFAttributesClsid.cs" />
+    <Compile Include="Core\Classes\MFAttribute.cs" />
     <Compile Include="Core\Classes\MFByteStreamProxyClassFactory.cs" />
     <Compile Include="Core\Classes\MFCaptureEngine.cs" />
     <Compile Include="Core\Classes\MFCaptureEngineClassFactory.cs" />
@@ -109,7 +109,7 @@
     <Compile Include="Core\Classes\MFPKEY.cs" />
     <Compile Include="Core\Classes\MFProperties.cs" />
     <Compile Include="Core\Classes\MFRepresentation.cs" />
-    <Compile Include="Core\Classes\MFServices.cs" />
+    <Compile Include="Core\Classes\MFService.cs" />
     <Compile Include="Core\Classes\MFStreamFormat.cs" />
     <Compile Include="Core\Classes\MFTranscodeContainerType.cs" />
     <Compile Include="Core\Classes\MFTransformCategory.cs" />
