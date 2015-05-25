@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/A7E8E2AF-8B10-47F5-8B09-A7147ACE5BA1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A7E8E2AF-8B10-47F5-8B09-A7147ACE5BA1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MEDIASINK_ defines")]
-    internal enum MFMediaSinkCharacteristics
+    public enum MFMediaSinkCharacteristics
     {
         /// <summary>
         /// Default value / no flags are set.

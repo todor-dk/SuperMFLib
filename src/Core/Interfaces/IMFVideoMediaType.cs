@@ -48,7 +48,7 @@ namespace MediaFoundation.Core.Interfaces
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IMFVideoMediaType : IMFMediaType
     {
-    #region IMFAttributes methods
+        #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -1131,7 +1131,7 @@ namespace MediaFoundation.Core.Interfaces
 
         #endregion
 
-    #region IMFMediaType methods
+        #region IMFMediaType methods
 
         /// <summary>
         /// Gets the major type of the format. 
@@ -1375,6 +1375,6 @@ namespace MediaFoundation.Core.Interfaces
             [In] int lStride
             );
     }
-
+    
 #endif
 }

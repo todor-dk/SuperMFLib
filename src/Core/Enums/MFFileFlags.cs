@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/1E1C906E-C832-4DF1-96F5-86E690C3C34E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1E1C906E-C832-4DF1-96F5-86E690C3C34E(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MF_FILE_FLAGS")]
-    internal enum MFFileFlags
+    public enum MFFileFlags
     {
         /// <summary>
         /// Use the default behavior. 

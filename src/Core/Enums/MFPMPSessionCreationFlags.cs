@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -46,7 +46,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/6341AAFF-AA80-4172-8577-0B757A01EA53(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6341AAFF-AA80-4172-8577-0B757A01EA53(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFPMPSESSION_CREATION_FLAGS")]
-    internal enum MFPMPSessionCreationFlags
+    public enum MFPMPSessionCreationFlags
     {
         /// <summary>
         /// Default value / no flags are set.

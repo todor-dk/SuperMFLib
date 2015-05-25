@@ -24,7 +24,20 @@ namespace MediaFoundation
     /// View the original documentation topic online: 
     /// <a href="http://msdn.microsoft.com/en-US/library/9AA0D2CD-A687-4B3A-834D-CCC8D3A03196(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9AA0D2CD-A687-4B3A-834D-CCC8D3A03196(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    public sealed class ClockStateSink : COM<IMFClockStateSink>
+    public abstract class ClockStateSink<TClockStateSink> : COM<TClockStateSink>
+        where TClockStateSink : class, IMFClockStateSink
+    {
+        #region Construction
+
+        protected ClockStateSink(IntPtr unknown)
+            : base(unknown)
+        {
+        }
+
+        #endregion
+    }
+
+    public sealed class ClockStateSink : ClockStateSink<IMFClockStateSink>
     {
         #region Construction
 

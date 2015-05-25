@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -47,7 +47,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/10A3D7B1-74ED-46CD-B10E-59A8F01726D5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/10A3D7B1-74ED-46CD-B10E-59A8F01726D5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoInterlaceMode")]
-    internal enum MFVideoInterlaceMode
+    public enum MFVideoInterlaceMode
     {
         /// <summary>
         /// Interlaced frames. Each frame contains two fields. The field lines are interleaved, with the lower

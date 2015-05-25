@@ -41,10 +41,19 @@ namespace MediaFoundation.Internals
             {
                 foreach (FieldInfo field in type.GetFields(flags))
                 {
-                    if ((field.IsInitOnly || field.IsLiteral) && field.IsStatic && field.IsPublic && (field.FieldType == typeof(Guid)))
+                    if ((field.IsInitOnly || field.IsLiteral) && field.IsStatic && field.IsPublic)
                     {
-                        Guid guid = (Guid)field.GetValue(null);
-                        mappings[guid] = new Tuple<Type, string>(type, field.Name);
+                        if (field.FieldType == typeof(Guid))
+                        {
+                            Guid guid = (Guid)field.GetValue(null);
+                            mappings[guid] = new Tuple<Type, string>(type, field.Name);
+                        }
+                        if (typeof(GuidEnum).IsAssignableFrom(field.FieldType))
+                        {
+                            GuidEnum value = (GuidEnum)field.GetValue(null);
+                            if (value != null)
+                                mappings[value.Value] = new Tuple<Type, string>(type, field.Name);
+                        }
                     }
                 }
             }

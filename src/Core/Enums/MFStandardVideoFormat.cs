@@ -31,11 +31,8 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
     /// <summary>
     /// Contains values that specify common video formats.
     /// </summary>
@@ -47,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/559EA2E9-308B-428A-AE24-BF3FDC27E24E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/559EA2E9-308B-428A-AE24-BF3FDC27E24E(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFStandardVideoFormat")]
-    internal enum MFStandardVideoFormat
+    public enum MFStandardVideoFormat
     {
         /// <summary>
         /// Reserved; do not use.
@@ -90,7 +87,5 @@ namespace MediaFoundation.Core.Enums
         /// </summary>
         ATSC_HD720p = (ATSC_HD1080i + 1)
     }
-
-#endif
-
+    
 }

@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/0C0E94FA-CBCC-4ABC-9020-AF6D36A4D3B6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0C0E94FA-CBCC-4ABC-9020-AF6D36A4D3B6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_FILE_OPENMODE")]
-    internal enum MFFileOpenMode
+    public enum MFFileOpenMode
     {
         /// <summary>
         /// Open an existing file. Fail if the file does not exist.

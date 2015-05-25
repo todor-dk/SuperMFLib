@@ -498,7 +498,7 @@ namespace MediaFoundation.ReadWrite
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService GetServiceForStream<TService>(int streamIndex, MFService service, ItemFactory<TService> factory)
+        public TService GetServiceForStream<TService>(int streamIndex, MFService service, COM.ComFactory<TService> factory)
             where TService : class
         {
             Contract.RequiresNotNull(factory, "factory");
@@ -537,7 +537,7 @@ namespace MediaFoundation.ReadWrite
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService GetServiceForStream<TService>(StreamAVMS stream, MFService service, ItemFactory<TService> factory)
+        public TService GetServiceForStream<TService>(StreamAVMS stream, MFService service, COM.ComFactory<TService> factory)
             where TService : class
         {
             return this.GetServiceForStream<TService>((int)stream, service, factory);

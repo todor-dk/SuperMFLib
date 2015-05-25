@@ -31,41 +31,39 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
-#if ALLOW_UNTESTED_INTERFACES
-
     /// <summary>
-    /// Specifies whether the topology loader enables Microsoft DirectX Video Acceleration (DXVA) in the
-    /// topology.
+    /// Specifies whether the topology loader will insert hardware-based Media Foundation transforms (MFTs)
+    /// into the topology.
     /// </summary>
     /// <remarks>
     /// The above documentation is © Microsoft Corporation. It is reproduced here 
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
     /// View the original documentation topic online: 
-    /// <a href="http://msdn.microsoft.com/en-US/library/C47F505A-1B98-4309-B462-5B911E1F591F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C47F505A-1B98-4309-B462-5B911E1F591F(v=VS.85,d=hv.2).aspx</a>
+    /// <a href="http://msdn.microsoft.com/en-US/library/FDAA13A5-9B23-440E-BE04-AE926E1B0FF5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FDAA13A5-9B23-440E-BE04-AE926E1B0FF5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [Flags, UnmanagedName("MFTOPOLOGY_DXVA_MODE")]
-    internal enum MFTOPOLOGY_DXVA_MODE
+    [UnmanagedName("MFTOPOLOGY_HARDWARE_MODE")]
+    public enum MFTopologyHardwareMode
     {
         /// <summary>
-        /// The topology loader enables DXVA on the decoder if possible, and drops optional Media Foundation
-        /// transforms (MFTs) that do not support DXVA.
+        /// Use only software  MFTs. Do not use hardware-based MFTs. This mode is the default, for backward
+        /// compatibility with existing applications.
         /// </summary>
-        Default = 0,
+        SoftwareOnly = 0,
         /// <summary>
-        /// The topology loader disables all video acceleration. This setting forces software processing, even
-        /// when the decoder supports DXVA.
+        /// Use hardware-based MFTs when possible, and software MFTs otherwise. This mode is the recommended
+        /// one.
         /// </summary>
-        None = 1,
+        UseHardware = 1,
         /// <summary>
-        /// The topology loader enables DXVA on every MFT that supports it.
+        /// If hardware-based MFTs are available, the topoloader will insert them. If not, the connection will fail.
+        /// <para/>
+        /// Supported in Windows 8.1 and later.
         /// </summary>
-        Full = 2
+        UseOnlyHardware = 2,
     }
-
-#endif
 
 }

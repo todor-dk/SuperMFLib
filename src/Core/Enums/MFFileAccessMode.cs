@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/38108686-5378-4844-8D5A-A433E89F62BB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/38108686-5378-4844-8D5A-A433E89F62BB(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_FILE_ACCESSMODE")]
-    internal enum MFFileAccessMode
+    public enum MFFileAccessMode
     {
         /// <summary>
         /// Default value / no flags are set.

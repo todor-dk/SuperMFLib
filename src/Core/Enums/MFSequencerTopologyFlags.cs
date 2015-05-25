@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -46,7 +46,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/D52BAC8C-E490-417C-AC00-E4CF57FD151C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D52BAC8C-E490-417C-AC00-E4CF57FD151C(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFSequencerTopologyFlags")]
-    internal enum MFSequencerTopologyFlags
+    public enum MFSequencerTopologyFlags
     {
         /// <summary>
         /// Default value / no flags are set.

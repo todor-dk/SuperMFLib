@@ -35,9 +35,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.Misc.Classes
 {
-
-#if NOT_IN_USE
-
     /// <summary>
     /// Represents a FOURCC Code.
     /// </summary>
@@ -275,6 +272,4 @@ namespace MediaFoundation.Misc.Classes
             return (g.ToString().EndsWith("-0000-0010-8000-00aa00389b71"));
         }
     }
-
-#endif
 }

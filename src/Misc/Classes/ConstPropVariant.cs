@@ -33,6 +33,7 @@ using System.Security;
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using MediaFoundation.Core.Enums;
+using MediaFoundation.Internals;
 
 namespace MediaFoundation
 {
@@ -868,6 +869,37 @@ namespace MediaFoundation
             if (type == VariantType.IUnknown)
             {
                 return Marshal.GetUniqueObjectForIUnknown(ptr);
+            }
+            throw new ArgumentException("PropVariant contents not an IUnknown");
+        }
+
+        /// <summary>
+        /// Returns the value of the propvariant as a COM object of type <typeparamref name="TObject"/>
+        /// when <see cref="ValueType"/> is <see cref="VariantType.IUnknown"/>.
+        /// </summary>
+        /// <typeparam name="TObject">Type of the required COM object.</typeparam>
+        /// <param name="factory">Delegate for creating COM objects from IUnknown pointers.</param>
+        /// <returns>A COM object of type <typeparamref name="TObject"/>.</returns>
+        public TObject GetComObject<TObject>(COM.ComFactory<TObject> factory)
+            where TObject : class
+        {
+            Contract.RequiresNotNull(factory, "factory");
+            if (type == VariantType.IUnknown)
+            {
+                IntPtr copy = this.ptr;
+                if (copy == IntPtr.Zero)
+                    return null;
+
+                Marshal.AddRef(copy);
+                try
+                {
+                    return factory(ref copy);
+                }
+                finally
+                {
+                    if (copy != IntPtr.Zero)
+                        Marshal.Release(copy);
+                }
             }
             throw new ArgumentException("PropVariant contents not an IUnknown");
         }

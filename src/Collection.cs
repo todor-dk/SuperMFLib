@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Core.Interfaces;
+using System.Runtime.InteropServices;
 
 namespace MediaFoundation
 {
@@ -27,13 +28,11 @@ namespace MediaFoundation
     public class Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
         where TItem : COM
     {
-        public delegate TItem ItemFactoryDelegate(ref IntPtr unknown);
-
-        private readonly ItemFactoryDelegate ItemFactory;
+        private readonly COM.ComFactory<TItem> ItemFactory;
 
         #region Construction
 
-        private Collection(IntPtr unknown, ItemFactoryDelegate itemFactory)
+        private Collection(IntPtr unknown, COM.ComFactory<TItem> itemFactory)
             : base(unknown)
         {
             Contract.RequiresNotNull(itemFactory, "itemFactory");
@@ -53,7 +52,7 @@ namespace MediaFoundation
         /// <returns>
         /// A new <see cref="Collection"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
         /// </returns>
-        public static Collection<TItem> FromUnknown(ref IntPtr unknown, ItemFactoryDelegate itemFactory)
+        public static Collection<TItem> FromUnknown(ref IntPtr unknown, COM.ComFactory<TItem> itemFactory)
         {
             if (unknown == IntPtr.Zero)
                 return null;
@@ -101,8 +100,16 @@ namespace MediaFoundation
             IntPtr ppUnkElement;
             int hr = this.Interface.GetElement(index, out ppUnkElement);
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppUnkElement);
-            TItem item = this.ItemFactory(ref ppUnkElement);
-            return item;
+            try
+            {
+                TItem item = this.ItemFactory(ref ppUnkElement);
+                return item;
+            }
+            finally
+            {
+                if (ppUnkElement != IntPtr.Zero)
+                    Marshal.Release(ppUnkElement);
+            }
         }
 
         /// <summary>
@@ -142,8 +149,16 @@ namespace MediaFoundation
             IntPtr ppUnkElement;
             int hr = this.Interface.RemoveElement(index, out ppUnkElement);
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppUnkElement);
-            TItem item = this.ItemFactory(ref ppUnkElement);
-            return item;
+            try
+            {
+                TItem item = this.ItemFactory(ref ppUnkElement);
+                return item;
+            }
+            finally
+            {
+                if (ppUnkElement != IntPtr.Zero)
+                    Marshal.Release(ppUnkElement);
+            }
         }
 
         /// <summary>

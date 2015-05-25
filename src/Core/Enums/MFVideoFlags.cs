@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -47,7 +47,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/2530BF1D-05B1-4C16-B00B-117C0DADB301(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2530BF1D-05B1-4C16-B00B-117C0DADB301(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFVideoFlags")]
-    internal enum MFVideoFlags : long
+    public enum MFVideoFlags : long
     {
         /// <summary>
         /// Use this value to mask out the next three flags, which describe the effective aspect ratio of the

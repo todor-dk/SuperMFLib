@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -46,7 +46,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/BD94247A-ED58-4857-A39D-16880EEA75E0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BD94247A-ED58-4857-A39D-16880EEA75E0(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [Flags, UnmanagedName("MFTIMER_FLAGS")]
-    internal enum MFTimeFlags
+    public enum MFTimeFlags
     {
         /// <summary>
         /// Default value / no flags are set.

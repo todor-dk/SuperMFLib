@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/08A05EE8-B053-4480-B7F9-6D96E541CCD9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/08A05EE8-B053-4480-B7F9-6D96E541CCD9(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoTransferMatrix")]
-    internal enum MFVideoTransferMatrix
+    public enum MFVideoTransferMatrix
     {
         /// <summary>
         /// ITU-R BT.601 transfer matrix. Also used for SMPTE 170 and ITU-R BT.470-2 System B,G.

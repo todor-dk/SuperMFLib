@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -46,7 +46,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/FE7547F8-84CD-461A-8D33-DBC0B90ADD37(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FE7547F8-84CD-461A-8D33-DBC0B90ADD37(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFNominalRange")]
-    internal enum MFNominalRange
+    public enum MFNominalRange
     {
         /// <summary>
         /// Unknown nominal range. 

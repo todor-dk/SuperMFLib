@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/2EECA357-B7E2-40B1-B19F-2E12A833C1CA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2EECA357-B7E2-40B1-B19F-2E12A833C1CA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoLighting")]
-    internal enum MFVideoLighting
+    public enum MFVideoLighting
     {
         /// <summary>
         /// Bright lighting; for example, outdoors.

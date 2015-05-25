@@ -83,14 +83,14 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/98F0A9CA-4766-4D2B-89B8-D6E30B75F47D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/98F0A9CA-4766-4D2B-89B8-D6E30B75F47D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public Guid MajorType
+        public MFMediaType.MajorType MajorType
         {
             get
             {
                 Guid type; 
                 int hr = this.Interface.GetMajorType(out type);
                 COM.ThrowIfNotOK(hr);
-                return type;
+                return new MFMediaType.MajorType(type);
             }
         }
 
@@ -181,11 +181,11 @@ namespace MediaFoundation
         /// include PCM audio, Windows Media Audio 9, and so forth.
         /// </summary>
         /// <seealso cref="MFAttributesClsid.MF_MT_SUBTYPE"/>
-        public Guid Subtype
+        public MFMediaType.SubType Subtype
         {
             get
             {
-                return this.GetGuid(MFAttribute.MediaType.MF_MT_SUBTYPE);
+                return new MFMediaType.SubType(this.GetGuid(MFAttribute.MediaType.MF_MT_SUBTYPE));
             }
         }
 

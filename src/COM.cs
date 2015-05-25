@@ -307,6 +307,111 @@ namespace MediaFoundation
         /// <returns>The result from executing the <paramref name="action"/>.</returns>
         protected abstract TResult AccessInterfacePointer<TResult>(Func<IntPtr, TResult> action);
 
+        /// <summary>
+        /// Delegate for creating COM objects from IUnknown pointers.
+        /// </summary>
+        /// <typeparam name="TItem">Type of the COM object.</typeparam>
+        /// <param name="unknown">
+        /// Pointer to the COM object's IUnknown interface.
+        /// <para/>
+        /// Ownership of the IUnknown interface pointer is passed to the new object.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// </param>
+        /// <returns>
+        /// A new instance of <typeparam name="TObject"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
+        /// </returns>
+        public delegate TObject ComFactory<TObject>(ref IntPtr unknown);
+
+        /// <summary>
+        /// Converts this object to a COM object of type <typeparamref name="TObject"/>.
+        /// </summary>
+        /// <typeparam name="TObject">Type of the required COM object.</typeparam>
+        /// <param name="factory">Delegate for creating COM objects from IUnknown pointers.</param>
+        /// <returns>A COM object of type <typeparamref name="TObject"/>.</returns>
+        public TObject GetComObject<TObject>(ComFactory<TObject> factory)
+            where TObject : class
+        {
+            return this.AccessInterfacePointer(unknown =>
+            {
+                if (unknown == IntPtr.Zero)
+                    return null;
+                IntPtr copy = unknown;
+                Marshal.AddRef(copy);
+                try
+                {
+                    return factory(ref copy);
+                }
+                finally
+                {
+                    if (copy != IntPtr.Zero)
+                        Marshal.Release(copy);
+                }
+            });
+        }
+
+        /// <summary>
+        /// Converts this object to a COM object of type <typeparamref name="TObject"/> 
+        /// or null if the requested 
+        /// </summary>
+        /// <typeparam name="TObject">Type of the required COM object.</typeparam>
+        /// <param name="factory">Delegate for creating COM objects from IUnknown pointers.</param>
+        /// <param name="iid">Id of the COM interface to query.</param>
+        /// <returns>A COM object of type <typeparamref name="TObject"/>.</returns>
+        public TObject GetComObjectOrNull<TObject>(ComFactory<TObject> factory)
+            where TObject : COM
+        {
+            Contract.RequiresNotNull(factory, "factory");
+
+            return this.AccessInterfacePointer(unknown =>
+            {
+                if (unknown == IntPtr.Zero)
+                    return null;
+
+                Guid iid = COM.GetIID<TObject>();
+                IntPtr ppv = IntPtr.Zero;
+                int hr = Marshal.QueryInterface(unknown, ref iid, out ppv);
+                if (hr == COM.E_NoInterface)
+                {
+                    if (ppv != IntPtr.Zero)
+                        Marshal.Release(ppv);
+                    return null;
+                }
+
+                try
+                {
+                    return factory(ref ppv);
+                }
+                finally
+                {
+                    if (ppv != IntPtr.Zero)
+                        Marshal.Release(ppv);
+                }
+            });
+        }
+
+        protected static Guid GetIID<TComWrapper>()
+            where TComWrapper : COM
+        {
+            // Ugly hack to get the interface id.
+            Type type = typeof(TComWrapper);
+            while (type != null)
+            {
+                if (type.IsGenericType)
+                {
+                    Type genericType = type.GetGenericTypeDefinition();
+                    if (genericType == typeof(COM<>))
+                    {
+                        Type interfaceType = type.GenericTypeArguments[0];
+                        if (interfaceType.IsInterface)
+                            return interfaceType.GUID;
+                        return COM.IID_IUnknown;
+                    }
+                }
+                type = type.BaseType;
+            }
+            throw new ArgumentException("TObject must be generic type deriving from COM<>.");
+        }
+
         internal abstract object InternalGetInterface();
 
         #region IDisposable Interface
@@ -473,15 +578,16 @@ namespace MediaFoundation
         /// View the original documentation topic online: 
         /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public TService GetService<TService>(MFService guidService, ItemFactory<TService> factory)
-            where TService : class
+        public TService GetService<TService>(MFService guidService, COM.ComFactory<TService> factory)
+            where TService : COM
         {
             Contract.RequiresNotNull(factory, "factory");
 
+            Guid iid = COM.GetIID<TService>();
             IntPtr ppvObject = IntPtr.Zero;
-            int hr = MFExtern.MFGetService(this.Interface, guidService, COM.IID_IUnknown, out ppvObject);
+            int hr = MFExtern.MFGetService(this.Interface, guidService, iid, out ppvObject);
             // MF_E_UNSUPPORTED_SERVICE: The object does not support the service.
-            if (hr == MFError.MF_E_UNSUPPORTED_SERVICE)
+            if ((hr == MFError.MF_E_UNSUPPORTED_SERVICE) || (hr == COM.E_NoInterface))
             {
                 if (ppvObject != IntPtr.Zero)
                     Marshal.Release(ppvObject);

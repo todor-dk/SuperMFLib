@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/7CF2A4F2-C115-4DEE-AB91-6A3FAB33365F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7CF2A4F2-C115-4DEE-AB91-6A3FAB33365F(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_TOPOSTATUS")]
-    internal enum MFTopoStatus
+    public enum MFTopoStatus
     {
         // MF_TOPOSTATUS_INVALID: Invalid value; will not be sent
         /// <summary>

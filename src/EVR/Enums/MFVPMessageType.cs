@@ -30,11 +30,8 @@ using MediaFoundation.Misc;
 using MediaFoundation.Transform;
 using System.Drawing;
 
-namespace MediaFoundation.EVR.Enums
+namespace MediaFoundation.EVR
 {
-    #if NOT_IN_USE
-
-
     /// <summary>
     /// Defines messages for an enhanced video renderer (EVR) presenter. This enumeration is used with the 
     /// <see cref="EVR.IMFVideoPresenter.ProcessMessage"/> method. 
@@ -47,7 +44,7 @@ namespace MediaFoundation.EVR.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/71B92702-79A0-4C18-BB56-5E7C9E49CAD2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/71B92702-79A0-4C18-BB56-5E7C9E49CAD2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVP_MESSAGE_TYPE")]
-    internal enum MFVPMessageType
+    public enum MFVPMessageType
     {
         /// <summary>
         /// The presenter should discard any pending samples. The <em>ulParam</em> parameter is not used and
@@ -91,5 +88,4 @@ namespace MediaFoundation.EVR.Enums
         /// </summary>
         CancelStep
     }
-#endif
 }

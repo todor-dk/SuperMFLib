@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -48,7 +48,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/D1C5F8EE-A451-44AF-BF43-7623CEA2BE37(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D1C5F8EE-A451-44AF-BF43-7623CEA2BE37(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFSTREAMSINK_MARKER_TYPE")]
-    internal enum MFStreamSinkMarkerType
+    public enum MFStreamSinkMarkerType
     {
         /// <summary>
         /// This marker is for the application's use and does not convey any information to the stream sink.

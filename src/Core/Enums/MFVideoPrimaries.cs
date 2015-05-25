@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/A1D6A60C-823C-46C3-A751-18E55FBC52A1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A1D6A60C-823C-46C3-A751-18E55FBC52A1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoPrimaries")]
-    internal enum MFVideoPrimaries
+    public enum MFVideoPrimaries
     {
         /// <summary>
         /// ITU-R BT.470-4 System B,G (NTSC). 

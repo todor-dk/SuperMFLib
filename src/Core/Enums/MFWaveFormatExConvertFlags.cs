@@ -31,7 +31,7 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/CD4A54F3-58E5-4E39-8615-E5037972C9C4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CD4A54F3-58E5-4E39-8615-E5037972C9C4(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFWaveFormatExConvertFlags")]
-    internal enum MFWaveFormatExConvertFlags
+    public enum MFWaveFormatExConvertFlags
     {
         /// <summary>
         /// Convert the media type to a <strong>WAVEFORMATEX</strong> structure if possible, or a <strong>

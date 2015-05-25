@@ -31,10 +31,8 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
-
-#if ALLOW_UNTESTED_INTERFACES
 
     /// <summary>
     /// Specifies the quality level for a pipeline component. The quality level determines how the
@@ -48,7 +46,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/6FE5ABBB-C079-4D74-9C75-6FB502054546(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6FE5ABBB-C079-4D74-9C75-6FB502054546(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_QUALITY_LEVEL")]
-    internal enum MFQualityLevel
+    public enum MFQualityLevel
     {
         /// <summary>
         /// Normal quality. 
@@ -79,7 +77,5 @@ namespace MediaFoundation.Core.Enums
         /// </summary>
         NumQualityLevels
     }
-
-#endif
-
+    
 }

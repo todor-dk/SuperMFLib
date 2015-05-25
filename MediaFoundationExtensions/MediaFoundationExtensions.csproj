@@ -113,7 +113,6 @@
     <Compile Include="EVR\VideoMixerControl.cs" />
     <Compile Include="EVR\VideoMixerControl2.cs" />
     <Compile Include="EVR\VideoPositionMapper.cs" />
-    <Compile Include="EVR\VideoPresenter.cs" />
     <Compile Include="EVR\VideoProcessor.cs" />
     <Compile Include="EVR\VideoRenderer.cs" />
     <Compile Include="FieldOfUseMFTUnlock.cs" />

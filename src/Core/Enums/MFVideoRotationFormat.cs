@@ -31,11 +31,8 @@ using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
-
-#if ALLOW_UNTESTED_INTERFACES
-
     /// <summary>
     /// Describes the rotation of the video image in the counter-clockwise direction.
     /// </summary>
@@ -47,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/E2760742-3914-4B5C-87FB-38F2EF3025C3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E2760742-3914-4B5C-87FB-38F2EF3025C3(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoRotationFormat")]
-    internal enum MFVideoRotationFormat
+    public enum MFVideoRotationFormat
     {
         /// <summary>
         /// The image is not rotated.
@@ -66,7 +63,4 @@ namespace MediaFoundation.Core.Enums
         /// </summary>
         R270 = 270,
     }
-
-#endif
-
 }

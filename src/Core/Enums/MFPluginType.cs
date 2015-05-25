@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/F967CF3F-582C-457A-BA75-980FEB2D9BF3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F967CF3F-582C-457A-BA75-980FEB2D9BF3(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_Plugin_Type")]
-    internal enum MFPluginType
+    public enum MFPluginType
     {
         /// <summary>
         /// Media Foundation transform (MFT).

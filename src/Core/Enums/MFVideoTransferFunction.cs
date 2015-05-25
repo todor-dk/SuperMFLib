@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.Core.Enums
+namespace MediaFoundation
 {
 
 
@@ -44,7 +44,7 @@ namespace MediaFoundation.Core.Enums
     /// <a href="http://msdn.microsoft.com/en-US/library/F9AFF1D5-E9F7-48FD-9C86-8DC597D37DFA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F9AFF1D5-E9F7-48FD-9C86-8DC597D37DFA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoTransferFunction")]
-    internal enum MFVideoTransferFunction
+    public enum MFVideoTransferFunction
     {
         /// <summary>
         /// Unknown. Treat as MFVideoTransFunc_709. 
