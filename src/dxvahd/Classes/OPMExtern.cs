@@ -29,9 +29,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd.Classes
+namespace MediaFoundation.Dxvahd.Classes
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
     /// <summary>

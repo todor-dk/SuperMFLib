@@ -42,7 +42,7 @@ namespace MediaFoundation
     /// Example: <see cref="WaveFormatEx"/> represents the <c>WAVEFORMATEX</c> native structure.
     /// </summary>
     [AttributeUsage(AttributeTargets.Enum | AttributeTargets.Struct | AttributeTargets.Class)]
-    internal class  UnmanagedNameAttribute : System.Attribute
+    internal class UnmanagedNameAttribute : System.Attribute
     {
         private string Name;
 

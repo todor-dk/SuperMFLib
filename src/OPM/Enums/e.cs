@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #endregion
 
-// This file is a mess.  While technically part of MF, I'm in no hurry 
+// This file is a mess.  While technically part of MF, I'm in no hurry
 // to try to get this to work.
 
 using System;
@@ -32,12 +32,11 @@ using System.Security;
 // <summary>
 // The OPM namespace contains types regarding the Output Protection Manager.
 // <para/>
-// Output Protection Manager (OPM) enables an application to protect video content 
+// Output Protection Manager (OPM) enables an application to protect video content
 // as it travels over a physical connector to a display device.
 // </summary>
 namespace MediaFoundation.OPM.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
     /// <summary>

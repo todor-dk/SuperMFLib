@@ -33,31 +33,31 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Defines properties of a clock.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/D70B432C-6EBD-405C-993F-12C4540736D7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D70B432C-6EBD-405C-993F-12C4540736D7(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [Flags, UnmanagedName("MFCLOCK_RELATIONAL_FLAGS")]
+    [Flags]
+    [UnmanagedName("MFCLOCK_RELATIONAL_FLAGS")]
     public enum MFClockRelationalFlags
     {
         /// <summary>
         /// Default value / no flags are set.
         /// </summary>
         None = 0,
+
         /// <summary>
-        /// Jitter values are always negative. In other words, the time returned by 
+        /// Jitter values are always negative. In other words, the time returned by
         /// <see cref="IMFClock.GetCorrelatedTime"/> might jitter behind the actual clock time, but will never
         /// jitter ahead of the actual time. If this flag is not present, the clock might jitter in either
-        /// direction. 
+        /// direction.
         /// </summary>
         JitterNeverAhead = 0x1
     }
-
 }

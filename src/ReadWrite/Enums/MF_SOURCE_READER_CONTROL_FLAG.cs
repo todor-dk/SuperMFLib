@@ -37,13 +37,13 @@ using MediaFoundation.Transform;
 namespace MediaFoundation.ReadWrite
 {
     /// <summary>
-    /// Contains flags for the <see cref="ReadWrite.IMFSourceReader.ReadSample"/> method. 
+    /// Contains flags for the <see cref="ReadWrite.IMFSourceReader.ReadSample"/> method.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A6367FEA-CEBA-4CE4-9A1B-88A40AFC3055(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A6367FEA-CEBA-4CE4-9A1B-88A40AFC3055(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_SOURCE_READER_CONTROL_FLAG")]
@@ -53,10 +53,11 @@ namespace MediaFoundation.ReadWrite
         /// Default value / no flags are set.
         /// </summary>
         None = 0,
+
         /// <summary>
         /// Retrieve any pending samples, but do not request any more samples from the media source. To get all
         /// of the pending samples, call <c>ReadSample</c> with this flag until the method returns a <strong>
-        /// NULL</strong> media sample pointer. 
+        /// NULL</strong> media sample pointer.
         /// </summary>
         Drain = 0x00000001
     }

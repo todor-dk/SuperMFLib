@@ -17,17 +17,17 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFRateSupport"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFRateSupport"/>: 
+    /// <see cref="IMFRateSupport"/>:
     /// Queries the range of playback rates that are supported, including reverse playback.
     /// <para/>
     /// To get a pointer to this interface, call <see cref="IMFGetService.GetService"/> with the service
-    /// identifier MF_RATE_CONTROL_SERVICE. 
+    /// identifier MF_RATE_CONTROL_SERVICE.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A6C495FA-0F6A-4E4C-8FBA-996B22D55053(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A6C495FA-0F6A-4E4C-8FBA-996B22D55053(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class RateSupport : COM<IMFRateSupport>
@@ -89,19 +89,19 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="direction">
         /// Specifies whether to query to the slowest forward playback rate or reverse playback rate. The value
-        /// is a member of the <see cref="MFRateDirection"/> enumeration. 
+        /// is a member of the <see cref="MFRateDirection"/> enumeration.
         /// </param>
         /// <param name="thinned">
         /// If <strong>true</strong>, the method retrieves the slowest thinned playback rate. Otherwise, the
-        /// method retrieves the slowest non-thinned playback rate. For information about thinning, see 
-        /// <c>About Rate Control</c>. 
+        /// method retrieves the slowest non-thinned playback rate. For information about thinning, see
+        /// <c>About Rate Control</c>.
         /// </param>
         /// <returns>
-        /// The slowest playback rate that the object supports or 
+        /// The slowest playback rate that the object supports or
         /// null if the object does not support reverse playback or thinning.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/E10125E9-8BC7-4FB6-8A10-BA5717F1596F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E10125E9-8BC7-4FB6-8A10-BA5717F1596F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public float? GetSlowestRate(MFRateDirection direction, bool thinned)
@@ -123,19 +123,19 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="direction">
         /// Specifies whether to query to the fastest forward playback rate or reverse playback rate. The value
-        /// is a member of the <see cref="MFRateDirection"/> enumeration. 
+        /// is a member of the <see cref="MFRateDirection"/> enumeration.
         /// </param>
         /// <param name="thinned">
         /// If <strong>true</strong>, the method retrieves the fastest thinned playback rate. Otherwise, the
-        /// method retrieves the fastest non-thinned playback rate. For information about thinning, see 
-        /// <c>About Rate Control</c>. 
+        /// method retrieves the fastest non-thinned playback rate. For information about thinning, see
+        /// <c>About Rate Control</c>.
         /// </param>
         /// <returns>
-        /// The fastest playback rate that the object supports or 
+        /// The fastest playback rate that the object supports or
         /// null if the object does not support reverse playback or thinning.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/00413771-21CB-48A7-9080-2C3D195C366B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/00413771-21CB-48A7-9080-2C3D195C366B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public float? GetFastestRate(MFRateDirection direction, bool thinned)
@@ -158,7 +158,7 @@ namespace MediaFoundation
         /// <param name="thinned">
         /// If <strong>true</strong>, the method queries whether the object supports the playback rate with
         /// thinning. Otherwise, the method queries whether the object supports the playback rate without
-        /// thinning. For information about thinning, see <c>About Rate Control</c>. 
+        /// thinning. For information about thinning, see <c>About Rate Control</c>.
         /// </param>
         /// <param name="rate">
         /// The playback rate to query.
@@ -166,13 +166,13 @@ namespace MediaFoundation
         /// <param name="nearestSupportedRate">
         /// If the object does not support the playback rate given in <paramref name="rate"/>, this parameter receives
         /// the closest supported playback rate. If the method returns <strong>true</strong>, this parameter receives the value
-        /// given in <paramref name="rate"/>. 
+        /// given in <paramref name="rate"/>.
         /// </param>
         /// <returns>
         /// True if object supports the specified rate, otherwise false.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3AC04683-17D3-4D87-B260-39B04EAB9E59(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3AC04683-17D3-4D87-B260-39B04EAB9E59(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Support IsRateSupported(bool thinned, float rate, out float nearestSupportedRate)
@@ -185,18 +185,21 @@ namespace MediaFoundation
                 nearestSupportedRate = pflNearestSupportedRate;
                 return Support.Unsupported;
             }
+
             // MF_E_REVERSE_UNSUPPORTED: The object does not support reverse playback.
             if (hr == MFError.MF_E_REVERSE_UNSUPPORTED)
             {
                 nearestSupportedRate = pflNearestSupportedRate;
                 return Support.ReverseUnsupported;
             }
+
             // MF_E_THINNING_UNSUPPORTED: The object does not support thinning.
             if (hr == MFError.MF_E_THINNING_UNSUPPORTED)
             {
                 nearestSupportedRate = pflNearestSupportedRate;
                 return Support.ThinningUnsupported;
             }
+
             COM.ThrowIfNotOK(hr);
             nearestSupportedRate = pflNearestSupportedRate;
             return Support.Supported;
@@ -208,7 +211,7 @@ namespace MediaFoundation
         /// <param name="thinned">
         /// If <strong>true</strong>, the method queries whether the object supports the playback rate with
         /// thinning. Otherwise, the method queries whether the object supports the playback rate without
-        /// thinning. For information about thinning, see <c>About Rate Control</c>. 
+        /// thinning. For information about thinning, see <c>About Rate Control</c>.
         /// </param>
         /// <param name="rate">
         /// The playback rate to query.
@@ -217,7 +220,7 @@ namespace MediaFoundation
         /// True if object supports the specified rate, otherwise false.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3AC04683-17D3-4D87-B260-39B04EAB9E59(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3AC04683-17D3-4D87-B260-39B04EAB9E59(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Support IsRateSupported(bool thinned, float rate)
@@ -235,14 +238,17 @@ namespace MediaFoundation
             /// The rate is supported.
             /// </summary>
             Supported,
+
             /// <summary>
             /// The rate is unsupported.
             /// </summary>
             Unsupported,
+
             /// <summary>
             /// The object does not support reverse playback.
             /// </summary>
             ReverseUnsupported,
+
             /// <summary>
             /// The object does not support thinning.
             /// </summary>

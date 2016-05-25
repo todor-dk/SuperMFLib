@@ -33,28 +33,28 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
-    /// Defines flags for the <see cref="IMFMediaSession.GetFullTopology"/> method. 
+    /// Defines flags for the <see cref="IMFMediaSession.GetFullTopology"/> method.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A635B9C8-F01F-4757-8DC2-F470C2270EFA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A635B9C8-F01F-4757-8DC2-F470C2270EFA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [Flags, UnmanagedName("MFSESSION_GETFULLTOPOLOGY_FLAGS")]
+    [Flags]
+    [UnmanagedName("MFSESSION_GETFULLTOPOLOGY_FLAGS")]
     public enum MFSessionGetFullTopologyFlags
     {
         /// <summary>
         /// Default value / no flags are set.
         /// </summary>
         None = 0x0,
+
         /// <summary>
         /// Get the full topology for the presentation that the Media Session is currently playing.
         /// </summary>
         Current = 0x1
     }
-
 }

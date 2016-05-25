@@ -31,21 +31,21 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
     /// <summary>
     /// Represents a block of memory that contains media data. Use this interface to access the data in the
     /// buffer.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/3CCC7089-D0D0-4EB1-B763-0D4E348AF685(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3CCC7089-D0D0-4EB1-B763-0D4E348AF685(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("045FA593-8799-42B8-BC8D-8968C6453507")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("045FA593-8799-42B8-BC8D-8968C6453507")]
     public interface IMFMediaBuffer
     {
         /// <summary>
@@ -55,17 +55,17 @@ namespace MediaFoundation.Core.Interfaces
         /// Receives a pointer to the start of the buffer.
         /// </param>
         /// <param name="pcbMaxLength">
-        /// Receives the maximum amount of data that can be written to the buffer. This parameter can be 
+        /// Receives the maximum amount of data that can be written to the buffer. This parameter can be
         /// <strong>NULL</strong>. The same value is returned by the <see cref="IMFMediaBuffer.GetMaxLength"/>
-        /// method. 
+        /// method.
         /// </param>
         /// <param name="pcbCurrentLength">
         /// Receives the length of the valid data in the buffer, in bytes. This parameter can be <strong>NULL
-        /// </strong>. The same value is returned by the <see cref="IMFMediaBuffer.GetCurrentLength"/> method. 
+        /// </strong>. The same value is returned by the <see cref="IMFMediaBuffer.GetCurrentLength"/> method.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -83,10 +83,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/28AC372A-6E73-4E66-BF69-BCC244821B71(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/28AC372A-6E73-4E66-BF69-BCC244821B71(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -96,12 +96,12 @@ namespace MediaFoundation.Core.Interfaces
             out int pcbCurrentLength);
 
         /// <summary>
-        /// Unlocks a buffer that was previously locked. Call this method once for every call to 
-        /// <see cref="IMFMediaBuffer.Lock"/>. 
+        /// Unlocks a buffer that was previously locked. Call this method once for every call to
+        /// <see cref="IMFMediaBuffer.Lock"/>.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -114,10 +114,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Unlock();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3CA53321-5533-45F0-B415-6A16F780EC54(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3CA53321-5533-45F0-B415-6A16F780EC54(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -132,7 +132,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -146,10 +146,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/772E3E6C-0616-41F6-A681-D76DA97D85FB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/772E3E6C-0616-41F6-A681-D76DA97D85FB(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -161,11 +161,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="cbCurrentLength">
         /// Length of the valid data, in bytes. This value cannot be greater than the allocated size of the
-        /// buffer, which is returned by the <see cref="IMFMediaBuffer.GetMaxLength"/> method. 
+        /// buffer, which is returned by the <see cref="IMFMediaBuffer.GetMaxLength"/> method.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -180,10 +180,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/CE48458F-EB0F-441A-A4BC-9D3FBEE0CD74(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CE48458F-EB0F-441A-A4BC-9D3FBEE0CD74(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -198,7 +198,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -212,10 +212,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/F0697F1D-18D6-4406-9F19-8CBAAC08AD47(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F0697F1D-18D6-4406-9F19-8CBAAC08AD47(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

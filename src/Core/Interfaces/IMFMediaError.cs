@@ -31,7 +31,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

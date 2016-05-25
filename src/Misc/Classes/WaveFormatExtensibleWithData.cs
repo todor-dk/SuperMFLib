@@ -35,7 +35,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.Misc.Classes
 {
-
 #if NOT_IN_USE
 
     /// <summary>

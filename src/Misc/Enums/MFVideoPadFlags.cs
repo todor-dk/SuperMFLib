@@ -27,7 +27,6 @@ using System.Runtime.InteropServices;
 
 namespace MediaFoundation.Misc.Enums
 {
-
     #if NOT_IN_USE
 
     /// <summary>

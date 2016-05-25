@@ -36,7 +36,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.ReadWrite.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
     /// <summary>

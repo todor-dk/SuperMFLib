@@ -29,7 +29,6 @@ using MediaFoundation.Misc;
 
 namespace MediaFoundation.Transform.Structs
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

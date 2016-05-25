@@ -33,6 +33,5 @@ namespace MediaFoundation
             unknown = IntPtr.Zero;
             return result;
         }
-
     }
 }

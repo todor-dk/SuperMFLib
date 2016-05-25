@@ -14,14 +14,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFPresentationTimeSource"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFPresentationTimeSource"/>: 
-    /// Provides the clock times for the presentation clock. 
+    /// <see cref="IMFPresentationTimeSource"/>:
+    /// Provides the clock times for the presentation clock.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/E5FAB6B7-0ABC-4AD7-89A9-33C673E97CE2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E5FAB6B7-0ABC-4AD7-89A9-33C673E97CE2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class PresentationTimeSource : COM<IMFPresentationTimeSource>

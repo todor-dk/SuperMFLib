@@ -31,7 +31,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Classes
 {
-
     #if NOT_IN_USE
     /// <summary>
     /// Specifies an offset as a fixed-point real number. 

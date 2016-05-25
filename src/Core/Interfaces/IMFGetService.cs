@@ -34,26 +34,27 @@ using System.Drawing;
 namespace MediaFoundation.Core.Interfaces
 {
     /// <summary>
-    /// Queries an object for a specified service interface. 
+    /// Queries an object for a specified service interface.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/102A1DFF-8419-4F86-A145-53CE3D0123F5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/102A1DFF-8419-4F86-A145-53CE3D0123F5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("FA993888-4383-415A-A930-DD472A8CF6F7")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("FA993888-4383-415A-A930-DD472A8CF6F7")]
     public interface IMFGetService
     {
         /// <summary>
         /// Retrieves a service interface.
         /// </summary>
         /// <param name="guidService">
-        /// The service identifier (SID) of the service. For a list of service identifiers, see 
-        /// <c>Service Interfaces</c>. 
+        /// The service identifier (SID) of the service. For a list of service identifiers, see
+        /// <c>Service Interfaces</c>.
         /// </param>
         /// <param name="riid">
         /// The interface identifier (IID) of the interface being requested.
@@ -63,7 +64,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -80,10 +81,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

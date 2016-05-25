@@ -14,19 +14,19 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFAudioStreamVolume"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFAudioStreamVolume"/>: 
+    /// <see cref="IMFAudioStreamVolume"/>:
     /// Controls the volume levels of individual audio channels.
     /// <para/>
     /// The streaming audio renderer (SAR) exposes this interface as a service. To get a pointer to the
     /// interface, call <see cref="IMFGetService.GetService"/> with the service identifier <strong>
     /// MR_STREAM_VOLUME_SERVICE</strong>. You can call <strong>GetService</strong> directly on the SAR or
-    /// call it on the Media Session. 
+    /// call it on the Media Session.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/F06ED262-A2EC-4688-B477-877D04CF1892(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F06ED262-A2EC-4688-B477-877D04CF1892(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class AudioStreamVolume : COM<IMFAudioStreamVolume>
@@ -62,7 +62,7 @@ namespace MediaFoundation
         #endregion
 
         /// <summary>
-        /// Returns the <see cref="AudioStreamVolume"/> from the given <paramref name="service"/> 
+        /// Returns the <see cref="AudioStreamVolume"/> from the given <paramref name="service"/>
         /// (either a streaming audio renderer (SAR) or the Media Session).
         /// </summary>
         /// <param name="service">The service to retrieve the <see cref="AudioStreamVolume"/> from (either a streaming audio renderer (SAR) or the Media Session).</param>
@@ -88,7 +88,7 @@ namespace MediaFoundation
         /// Retrieves the number of channels in the audio stream.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D19A56DB-CD5F-4A19-98F0-42327C259B01(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D19A56DB-CD5F-4A19-98F0-42327C259B01(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int ChannelCount
@@ -106,14 +106,14 @@ namespace MediaFoundation
         /// Sets the volume level for a specified channel in the audio stream.
         /// </summary>
         /// <param name="index">
-        /// Zero-based index of the audio channel. To get the number of channels, call 
-        /// <see cref="ChannelCount"/>. 
+        /// Zero-based index of the audio channel. To get the number of channels, call
+        /// <see cref="ChannelCount"/>.
         /// </param>
         /// <param name="level">
         /// Volume level for the channel.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/7786A6AA-C777-4B65-B38C-A75CD654A080(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7786A6AA-C777-4B65-B38C-A75CD654A080(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetChannelVolume(int index, float level)
@@ -126,14 +126,14 @@ namespace MediaFoundation
         /// Retrieves the volume level for a specified channel in the audio stream.
         /// </summary>
         /// <param name="index">
-        /// Zero-based index of the audio channel. To get the number of channels, call 
-        /// <see cref="ChannelCount"/>. 
+        /// Zero-based index of the audio channel. To get the number of channels, call
+        /// <see cref="ChannelCount"/>.
         /// </param>
         /// <returns>
         /// Returns the volume level for the channel.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5CFCC3A8-2911-45A3-8322-BF4E3B023DD2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5CFCC3A8-2911-45A3-8322-BF4E3B023DD2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public float GetChannelVolume(int index)
@@ -150,10 +150,10 @@ namespace MediaFoundation
         /// <param name="volumes">
         /// An array of size <see cref="ChannelCount"/>. The array specifies the
         /// volume levels for all of the channels. Before calling the method, set each element of the array to
-        /// the desired volume level for the channel. 
+        /// the desired volume level for the channel.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6C278693-5A2F-4AA2-B477-3B3014B2CC89(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6C278693-5A2F-4AA2-B477-3B3014B2CC89(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetAllVolumes(float[] volumes)
@@ -167,10 +167,10 @@ namespace MediaFoundation
         /// Retrieves the volume levels for all of the channels in the audio stream.
         /// </summary>
         /// <returns>
-        /// An array with the volume level for each channel in the stream. 
+        /// An array with the volume level for each channel in the stream.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/CBCC0B5B-A60D-49CA-8B1C-7104E039A7D2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CBCC0B5B-A60D-49CA-8B1C-7104E039A7D2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public float[] GetAllVolumes()

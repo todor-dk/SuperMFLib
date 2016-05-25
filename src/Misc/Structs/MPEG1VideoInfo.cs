@@ -27,7 +27,6 @@ using System.Runtime.InteropServices;
 
 namespace MediaFoundation.Misc.Structs
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

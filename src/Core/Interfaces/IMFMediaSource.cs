@@ -42,15 +42,16 @@ namespace MediaFoundation.Core.Interfaces
     /// more streams, and each stream delivers data of one type, such as audio or video.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/8B579F61-6FEA-4B20-A051-7633FC01FA05(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8B579F61-6FEA-4B20-A051-7633FC01FA05(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("279A808D-AEC7-40C8-9C6B-A6B492C78A66")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("279A808D-AEC7-40C8-9C6B-A6B492C78A66")]
     public interface IMFMediaSource : IMFMediaEventGenerator
     {
         #region IMFMediaEventGenerator methods
@@ -64,7 +65,7 @@ namespace MediaFoundation.Core.Interfaces
         /// interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -99,13 +100,13 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The client must
         /// implement this interface.</param>
         /// <param name="punkState">
-        /// Pointer to the IUnknown interface of a state object, defined by the caller. 
-        /// This parameter can be NULL. You can use this object to hold state information. 
+        /// Pointer to the IUnknown interface of a state object, defined by the caller.
+        /// This parameter can be NULL. You can use this object to hold state information.
         /// The object is returned to the caller when the callback is invoked.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -144,7 +145,7 @@ namespace MediaFoundation.Core.Interfaces
         /// interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -185,7 +186,7 @@ namespace MediaFoundation.Core.Interfaces
         /// method.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -221,12 +222,12 @@ namespace MediaFoundation.Core.Interfaces
         /// Retrieves the characteristics of the media source.
         /// </summary>
         /// <param name="pdwCharacteristics">
-        /// Receives a bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="MFMediaSourceCharacteristics"/> enumeration. 
+        /// Receives a bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="MFMediaSourceCharacteristics"/> enumeration.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -241,16 +242,15 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/CB5D54CD-58A3-4903-B22E-8207F90DBBC0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CB5D54CD-58A3-4903-B22E-8207F90DBBC0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetCharacteristics(
-            out MFMediaSourceCharacteristics pdwCharacteristics
-            );
+            out MFMediaSourceCharacteristics pdwCharacteristics);
 
         /// <summary>
         /// Retrieves a copy of the media source's presentation descriptor. Applications use the presentation
@@ -258,11 +258,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppPresentationDescriptor">
         /// Receives a pointer to the presentation descriptor's <see cref="IMFPresentationDescriptor"/>
-        /// interface. The caller must release the interface. 
+        /// interface. The caller must release the interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -277,10 +277,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B6AC50B7-3EF1-43CF-8126-D9A003EBD825(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B6AC50B7-3EF1-43CF-8126-D9A003EBD825(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -292,28 +292,28 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="pPresentationDescriptor">
         /// Pointer to the <see cref="IMFPresentationDescriptor"/> interface of the media source's presentation
-        /// descriptor. To get the presentation descriptor, call 
+        /// descriptor. To get the presentation descriptor, call
         /// <see cref="IMFMediaSource.CreatePresentationDescriptor"/>. You can modify the presentation
         /// descriptor before calling <strong>Start</strong>, to select or deselect streams or change the media
-        /// types. 
+        /// types.
         /// </param>
         /// <param name="pguidTimeFormat">
         /// Pointer to a GUID that specifies the time format. The time format defines the units for the <em>
         /// pvarStartPosition</em> parameter. If the value <em></em> is <strong>GUID_NULL</strong>, the time
         /// format is 100-nanosecond units. Some media sources might support additional time format GUIDs. This
-        /// parameter can be <strong>NULL</strong>. If the value is <strong>NULL</strong>, it is equalivent to 
-        /// <strong>GUID_NULL</strong>. 
+        /// parameter can be <strong>NULL</strong>. If the value is <strong>NULL</strong>, it is equalivent to
+        /// <strong>GUID_NULL</strong>.
         /// </param>
         /// <param name="pvarStartPosition">
         /// Specifies where to start playback. The units of this parameter are indicated by the time format
         /// given in <em>pguidTimeFormat</em>. If the time format is <strong>GUID_NULL</strong>, the variant
         /// type must be <strong>VT_I8</strong> or <strong>VT_EMPTY</strong>. Use <strong>VT_I8</strong> to
         /// specify a new starting position, in 100-nanosecond units. Use <strong>VT_EMPTY</strong> to start
-        /// from the current position. Other time formats might use other <strong>PROPVARIANT</strong> types. 
+        /// from the current position. Other time formats might use other <strong>PROPVARIANT</strong> types.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -334,25 +334,24 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0A5ABAFE-1525-4BDA-946C-05A6145E57EE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0A5ABAFE-1525-4BDA-946C-05A6145E57EE(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Start(
             [In, MarshalAs(UnmanagedType.Interface)] IMFPresentationDescriptor pPresentationDescriptor,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarStartPosition
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarStartPosition);
 
         /// <summary>
         /// Stops all active streams in the media source.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -365,10 +364,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Stop();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/AA7AF7A0-A6C2-4C9E-9F98-D36716679297(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AA7AF7A0-A6C2-4C9E-9F98-D36716679297(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -379,7 +378,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -393,10 +392,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Pause();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/113B3DC7-918E-427E-AA70-CF474B951C6D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/113B3DC7-918E-427E-AA70-CF474B951C6D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -407,7 +406,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -419,10 +418,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C7F890A8-74BD-4418-BB02-A3FEE62DEC6D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C7F890A8-74BD-4418-BB02-A3FEE62DEC6D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

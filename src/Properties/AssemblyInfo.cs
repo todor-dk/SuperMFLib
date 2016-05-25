@@ -28,7 +28,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
-
 [assembly: AssemblyTitle("MediaFoundation .Net Library")]
 [assembly: AssemblyDescription(".NET Interfaces for calling MediaFoundation.  See http://mfnet.sourceforge.net/")]
 [assembly: AssemblyConfiguration("")]
@@ -47,4 +46,3 @@ using System.Security.Permissions;
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, UnmanagedCode = true)]
-

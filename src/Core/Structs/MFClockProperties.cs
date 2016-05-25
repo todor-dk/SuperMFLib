@@ -49,13 +49,14 @@ namespace MediaFoundation
     /// } MFCLOCK_PROPERTIES;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/1EFC6602-9851-40E5-85AA-0335D4E899A2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1EFC6602-9851-40E5-85AA-0335D4E899A2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [StructLayout(LayoutKind.Sequential, Pack = 8), UnmanagedName("MFCLOCK_PROPERTIES")]
+    [StructLayout(LayoutKind.Sequential, Pack = 8)]
+    [UnmanagedName("MFCLOCK_PROPERTIES")]
     public struct MFClockProperties
     {
         /// <summary>
@@ -64,16 +65,19 @@ namespace MediaFoundation
         /// <see cref="IMFClock.GetCorrelatedTime" /> method is called.
         /// </summary>
         public long qwCorrelationRate;
+
         /// <summary>
         /// The unique identifier of the underlying device that provides the time. If two clocks have the same
         /// unique identifier, they are based on the same device. If the underlying device is not shared
         /// between two clocks, the value can be <strong>GUID_NULL</strong>.
         /// </summary>
         public Guid guidClockId;
+
         /// <summary>
         /// A bitwise <strong>OR</strong> of flags from the <see cref="MFClockRelationalFlags" /> enumeration.
         /// </summary>
         public MFClockRelationalFlags dwClockFlags;
+
         /// <summary>
         /// The clock frequency in Hz. A value of <strong>MFCLOCK_FREQUENCY_HNS</strong> means that the clock
         /// has a frequency of 10 MHz (100-nanosecond ticks), which is the standard <c>MFTIME</c> time unit in
@@ -82,6 +86,7 @@ namespace MediaFoundation
         /// <strong>MFCLOCK_FREQUENCY_HNS</strong>.
         /// </summary>
         public long qwClockFrequency;
+
         /// <summary>
         /// The amount of inaccuracy that may be present on the clock, in parts per billion (ppb). For example,
         /// an inaccuracy of 50 ppb means the clock might drift up to 50 seconds per billion seconds of real
@@ -89,6 +94,7 @@ namespace MediaFoundation
         /// constant is equal to 50 parts per million (ppm).
         /// </summary>
         public int dwClockTolerance;
+
         /// <summary>
         /// The amount of jitter that may be present, in 100-nanosecond units. Jitter is the variation in the
         /// frequency due to sampling the underlying clock. Jitter does not include inaccuracies caused by

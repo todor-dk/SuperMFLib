@@ -32,7 +32,6 @@ using System.Drawing;
 
 namespace MediaFoundation.EVR.Interfaces
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

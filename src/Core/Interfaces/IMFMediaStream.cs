@@ -34,18 +34,19 @@ using System.Drawing;
 namespace MediaFoundation.Core.Interfaces
 {
     /// <summary>
-    /// Represents one stream in a media source. 
+    /// Represents one stream in a media source.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/66D07292-3BFE-4E68-B26F-890996262B98(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/66D07292-3BFE-4E68-B26F-890996262B98(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("D182108F-4EC6-443F-AA42-A71106EC825F")]
     public interface IMFMediaStream : IMFMediaEventGenerator
     {
         #region IMFMediaEventGenerator methods
@@ -59,7 +60,7 @@ namespace MediaFoundation.Core.Interfaces
         /// interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -94,13 +95,13 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The client must
         /// implement this interface.</param>
         /// <param name="punkState">
-        /// Pointer to the IUnknown interface of a state object, defined by the caller. 
-        /// This parameter can be NULL. You can use this object to hold state information. 
+        /// Pointer to the IUnknown interface of a state object, defined by the caller.
+        /// This parameter can be NULL. You can use this object to hold state information.
         /// The object is returned to the caller when the callback is invoked.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -139,7 +140,7 @@ namespace MediaFoundation.Core.Interfaces
         /// interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -180,7 +181,7 @@ namespace MediaFoundation.Core.Interfaces
         /// method.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -208,8 +209,7 @@ namespace MediaFoundation.Core.Interfaces
             [In] MediaEventType met,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType,
             [In] int hrStatus,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue);
 
     #endregion
 
@@ -218,11 +218,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppMediaSource">
         /// Receives a pointer to the <see cref="IMFMediaSource"/> interface of the media source. The caller
-        /// must release the interface. 
+        /// must release the interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -237,10 +237,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FFCA44CA-14AE-4F93-A719-9012A8151A7A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FFCA44CA-14AE-4F93-A719-9012A8151A7A(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -252,11 +252,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppStreamDescriptor">
         /// Receives a pointer to the <see cref="IMFStreamDescriptor"/> interface. The caller must release the
-        /// interface. 
+        /// interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -271,10 +271,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/574EACFB-3ACD-4B47-9C25-3A67AAE01178(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/574EACFB-3ACD-4B47-9C25-3A67AAE01178(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -282,16 +282,16 @@ namespace MediaFoundation.Core.Interfaces
             /* [MarshalAs(UnmanagedType.Interface)] out IMFStreamDescriptor */ out IntPtr ppStreamDescriptor);
 
         /// <summary>
-        /// Requests a sample from the media source. 
+        /// Requests a sample from the media source.
         /// </summary>
         /// <param name="pToken">
         /// Pointer to the <strong>IUnknown</strong> interface to an object that is used as a token for the
         /// request. The caller must implement this object. This parameter can be <strong>NULL</strong>. See
-        /// Remarks. 
+        /// Remarks.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -308,10 +308,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3838167B-5774-47F5-9B8D-2882EAA97167(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3838167B-5774-47F5-9B8D-2882EAA97167(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

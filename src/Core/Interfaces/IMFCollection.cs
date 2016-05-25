@@ -31,20 +31,20 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
     /// <summary>
-    /// Represents a generic collection of <strong>IUnknown</strong> pointers. 
+    /// Represents a generic collection of <strong>IUnknown</strong> pointers.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
     public interface IMFCollection
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -69,10 +69,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4BD46F66-0542-4185-B50E-163CC3B4E2F8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4BD46F66-0542-4185-B50E-163CC3B4E2F8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -84,15 +84,15 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="dwElementIndex">
         /// Zero-based index of the object to retrieve. Objects are indexed in the order in which they were
-        /// added to the collection. 
+        /// added to the collection.
         /// </param>
         /// <param name="ppUnkElement">
         /// Receives a pointer to the object's <strong>IUnknown</strong> interface. The caller must release the
-        /// interface. The retrieved pointer value might be <strong>NULL</strong>. 
+        /// interface. The retrieved pointer value might be <strong>NULL</strong>.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -102,10 +102,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A45983A8-4061-40E1-A11A-67DE0867E553(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A45983A8-4061-40E1-A11A-67DE0867E553(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -117,11 +117,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Adds an object to the collection.
         /// </summary>
         /// <param name="pUnkElement">
-        /// Pointer to the object's <strong>IUnknown</strong> interface. 
+        /// Pointer to the object's <strong>IUnknown</strong> interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -135,10 +135,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1EF2463B-3D5E-4ED0-AB7C-68758E6CC056(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1EF2463B-3D5E-4ED0-AB7C-68758E6CC056(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -155,11 +155,11 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="ppUnkElement">
         /// Receives a pointer to the <strong>IUnknown</strong> interface of the object. The caller must
         /// release the interface. This parameter cannot be <strong>NULL</strong>, but the retrieved pointer
-        /// value might be <strong>NULL</strong>. 
+        /// value might be <strong>NULL</strong>.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -174,10 +174,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/47F33235-6BB5-4103-82B4-87210B0E695C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/47F33235-6BB5-4103-82B4-87210B0E695C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -196,7 +196,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -211,10 +211,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D8F64BF8-EB5B-4673-91BE-796F4EA8DCE0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8F64BF8-EB5B-4673-91BE-796F4EA8DCE0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -227,7 +227,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -239,10 +239,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT RemoveAllElements();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/8C82D287-B73E-46DD-A319-70C5D0F536C6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8C82D287-B73E-46DD-A319-70C5D0F536C6(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

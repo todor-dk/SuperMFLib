@@ -15,14 +15,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFCollection"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFCollection"/>: 
-    /// Represents a generic collection of <strong>IUnknown</strong> pointers. 
+    /// <see cref="IMFCollection"/>:
+    /// Represents a generic collection of <strong>IUnknown</strong> pointers.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public class Collection<TItem> : COM<IMFCollection>, IEnumerable<TItem>
@@ -67,7 +67,7 @@ namespace MediaFoundation
         /// Returns the number of objects in the collection.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4BD46F66-0542-4185-B50E-163CC3B4E2F8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4BD46F66-0542-4185-B50E-163CC3B4E2F8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int Count
@@ -80,19 +80,19 @@ namespace MediaFoundation
                 return pcElements;
             }
         }
-         
+
         /// <summary>
         /// Retrieves an object in the collection.
         /// </summary>
         /// <param name="index">
         /// Zero-based index of the object to retrieve. Objects are indexed in the order in which they were
-        /// added to the collection. 
+        /// added to the collection.
         /// </param>
         /// <returns>
-        /// The object at the given index. The caller must release the object. The returned value might be null. 
+        /// The object at the given index. The caller must release the object. The returned value might be null.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A45983A8-4061-40E1-A11A-67DE0867E553(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A45983A8-4061-40E1-A11A-67DE0867E553(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TItem GetElement(int index)
@@ -119,7 +119,7 @@ namespace MediaFoundation
         /// The element to add to the collection.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1EF2463B-3D5E-4ED0-AB7C-68758E6CC056(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1EF2463B-3D5E-4ED0-AB7C-68758E6CC056(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void AddElement(TItem item)
@@ -137,11 +137,11 @@ namespace MediaFoundation
         /// to the collection.
         /// </param>
         /// <returns>
-        /// Returns the object that was removed. The caller must release the object. 
-        /// The returned value might be null. 
+        /// Returns the object that was removed. The caller must release the object.
+        /// The returned value might be null.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/47F33235-6BB5-4103-82B4-87210B0E695C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/47F33235-6BB5-4103-82B4-87210B0E695C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TItem RemoveElement(int index)
@@ -171,7 +171,7 @@ namespace MediaFoundation
         /// The object to insert.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D8F64BF8-EB5B-4673-91BE-796F4EA8DCE0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8F64BF8-EB5B-4673-91BE-796F4EA8DCE0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void InsertElementAt(int index, TItem item)
@@ -185,7 +185,7 @@ namespace MediaFoundation
         /// Removes all items from the collection.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/8C82D287-B73E-46DD-A319-70C5D0F536C6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8C82D287-B73E-46DD-A319-70C5D0F536C6(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void RemoveAllElements()
@@ -210,7 +210,7 @@ namespace MediaFoundation
 
         private class Enumerator : IEnumerator<TItem>
         {
-            private int NextIndex; 
+            private int NextIndex;
 
             private readonly Collection<TItem> Collection;
 
@@ -264,14 +264,14 @@ namespace MediaFoundation
     ///// exposing <i>civilized</i> version of the <see cref="IMFCollection"/>
     ///// interface's methods.
     ///// <para/>
-    ///// <see cref="IMFCollection"/>: 
-    ///// Represents a generic collection of <strong>IUnknown</strong> pointers. 
+    ///// <see cref="IMFCollection"/>:
+    ///// Represents a generic collection of <strong>IUnknown</strong> pointers.
     ///// </summary>
     ///// <remarks>
-    ///// The above documentation is © Microsoft Corporation. It is reproduced here 
+    ///// The above documentation is © Microsoft Corporation. It is reproduced here
     ///// with the sole purpose to increase usability and add IntelliSense support.
     ///// <para/>
-    ///// View the original documentation topic online: 
+    ///// View the original documentation topic online:
     ///// <a href="http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEC6AA17-2770-4F53-B36D-B94236093D23(v=VS.85,d=hv.2).aspx</a>
     ///// </remarks>
     //public sealed class Collection : Collection<object>

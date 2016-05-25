@@ -29,7 +29,6 @@ using MediaFoundation.Misc;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

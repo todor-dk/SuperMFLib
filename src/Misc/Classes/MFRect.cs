@@ -48,29 +48,32 @@ namespace MediaFoundation
     /// } RECT, *PRECT, NEAR *NPRECT, FAR *LPRECT;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A44F33F4-49B2-4A36-A7BD-FC4A9D3A3943(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A44F33F4-49B2-4A36-A7BD-FC4A9D3A3943(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [StructLayout(LayoutKind.Sequential)]
-    public class  MFRect
+    public class MFRect
     {
         /// <summary>
-        /// Specifies the <em>x</em>-coordinate of the upper-left corner of the rectangle. 
+        /// Specifies the <em>x</em>-coordinate of the upper-left corner of the rectangle.
         /// </summary>
         public int left;
+
         /// <summary>
-        /// Specifies the <em>y</em>-coordinate of the upper-left corner of the rectangle. 
+        /// Specifies the <em>y</em>-coordinate of the upper-left corner of the rectangle.
         /// </summary>
         public int top;
+
         /// <summary>
-        /// Specifies the <em>x</em>-coordinate of the lower-right corner of the rectangle. 
+        /// Specifies the <em>x</em>-coordinate of the lower-right corner of the rectangle.
         /// </summary>
         public int right;
+
         /// <summary>
-        /// Specifies the <em>y</em>-coordinate of the lower-right corner of the rectangle. 
+        /// Specifies the <em>y</em>-coordinate of the lower-right corner of the rectangle.
         /// </summary>
         public int bottom;
 
@@ -90,10 +93,10 @@ namespace MediaFoundation
         /// <param name="b">The <em>y</em>-coordinate of the lower-right corner of the rectangle.</param>
         public MFRect(int l, int t, int r, int b)
         {
-            left = l;
-            top = t;
-            right = r;
-            bottom = b;
+            this.left = l;
+            this.top = t;
+            this.right = r;
+            this.bottom = b;
         }
 
         /// <summary>
@@ -101,15 +104,15 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="rectangle">A <see cref="System.Drawing.Rectangle"/></param>
         /// <remarks>
-        /// Warning, MFRect define a rectangle by defining two of its corners and <see cref="System.Drawing.Rectangle"/> 
+        /// Warning, MFRect define a rectangle by defining two of its corners and <see cref="System.Drawing.Rectangle"/>
         /// define a rectangle with his upper/left corner, its width and height.
         /// </remarks>
         public MFRect(Rectangle rectangle)
         {
-            left = rectangle.Left;
-            top = rectangle.Top;
-            right = rectangle.Right;
-            bottom = rectangle.Bottom;
+            this.left = rectangle.Left;
+            this.top = rectangle.Top;
+            this.right = rectangle.Right;
+            this.bottom = rectangle.Bottom;
         }
 
         /// <summary>
@@ -118,7 +121,7 @@ namespace MediaFoundation
         /// <returns>A string formated like this : [left, top - right, bottom]</returns>
         public override string ToString()
         {
-            return string.Format("[{0}, {1}] - [{2}, {3}]", left, top, right, bottom);
+            return string.Format("[{0}, {1}] - [{2}, {3}]", this.left, this.top, this.right, this.bottom);
         }
 
         /// <summary>
@@ -127,10 +130,10 @@ namespace MediaFoundation
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
-            return left.GetHashCode() |
-                top.GetHashCode() |
-                right.GetHashCode() |
-                bottom.GetHashCode();
+            return this.left.GetHashCode() |
+                this.top.GetHashCode() |
+                this.right.GetHashCode() |
+                this.bottom.GetHashCode();
         }
 
         /// <summary>
@@ -144,21 +147,21 @@ namespace MediaFoundation
             {
                 MFRect cmp = (MFRect)obj;
 
-                return right == cmp.right && bottom == cmp.bottom && left == cmp.left && top == cmp.top;
+                return this.right == cmp.right && this.bottom == cmp.bottom && this.left == cmp.left && this.top == cmp.top;
             }
 
             if (obj is Rectangle)
             {
                 Rectangle cmp = (Rectangle)obj;
 
-                return right == cmp.Right && bottom == cmp.Bottom && left == cmp.Left && top == cmp.Top;
+                return this.right == cmp.Right && this.bottom == cmp.Bottom && this.left == cmp.Left && this.top == cmp.Top;
             }
 
             return false;
         }
 
         /// <summary>
-        /// Checks to see if the rectangle is empty. 
+        /// Checks to see if the rectangle is empty.
         /// </summary>
         /// <remarks>
         /// An empty rectangle is a rectangle where <see cref="right"/> &lt;= <see cref="left"/>,
@@ -167,7 +170,7 @@ namespace MediaFoundation
         /// <returns>Returns true if the rectangle is empty</returns>
         public bool IsEmpty()
         {
-            return (right <= left || bottom <= top);
+            return (this.right <= this.left || this.bottom <= this.top);
         }
 
         /// <summary>
@@ -214,7 +217,7 @@ namespace MediaFoundation
         /// <returns>A System.Drawing.Rectangle</returns>
         public Rectangle ToRectangle()
         {
-            return new Rectangle(left, top, (right - left), (bottom - top));
+            return new Rectangle(this.left, this.top, (this.right - this.left), (this.bottom - this.top));
         }
 
         /// <summary>
@@ -233,10 +236,10 @@ namespace MediaFoundation
         /// <param name="from">The rectangle from which to copy the values.</param>
         public void CopyFrom(MFRect from)
         {
-            left = from.left;
-            top = from.top;
-            right = from.right;
-            bottom = from.bottom;
+            this.left = from.left;
+            this.top = from.top;
+            this.right = from.right;
+            this.bottom = from.bottom;
         }
     }
 }

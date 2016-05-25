@@ -46,19 +46,21 @@ namespace MediaFoundation
     /// } SIZE, *PSIZE, *LPSIZE;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/08D81096-069F-4554-9BB9-D4A37C0950AC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/08D81096-069F-4554-9BB9-D4A37C0950AC(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("SIZE")]
-    public class  MFSize
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [UnmanagedName("SIZE")]
+    public class MFSize
     {
         /// <summary>
-        /// Specifies the rectangle's width. The units depend on which function uses this structure. 
+        /// Specifies the rectangle's width. The units depend on which function uses this structure.
         /// </summary>
         public int cx;
+
         /// <summary>
         /// Specifies the rectangle's height. The units depend on which function uses this structure.
         /// </summary>
@@ -69,8 +71,8 @@ namespace MediaFoundation
         /// </summary>
         public MFSize()
         {
-            cx = 0;
-            cy = 0;
+            this.cx = 0;
+            this.cy = 0;
         }
 
         /// <summary>
@@ -80,22 +82,23 @@ namespace MediaFoundation
         /// <param name="iHeight">The height. The units depend on which function uses this structure.</param>
         public MFSize(int iWidth, int iHeight)
         {
-            cx = iWidth;
-            cy = iHeight;
+            this.cx = iWidth;
+            this.cy = iHeight;
         }
 
         /// <summary>
-        /// Specifies the rectangle's width. The units depend on which function uses this structure. 
+        /// Specifies the rectangle's width. The units depend on which function uses this structure.
         /// </summary>
         public int Width
         {
             get
             {
-                return cx;
+                return this.cx;
             }
+
             set
             {
-                cx = value;
+                this.cx = value;
             }
         }
 
@@ -106,11 +109,12 @@ namespace MediaFoundation
         {
             get
             {
-                return cy;
+                return this.cy;
             }
+
             set
             {
-                cy = value;
+                this.cy = value;
             }
         }
     }

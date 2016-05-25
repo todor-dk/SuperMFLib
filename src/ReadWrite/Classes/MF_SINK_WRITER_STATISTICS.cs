@@ -36,7 +36,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.ReadWrite.Classes
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

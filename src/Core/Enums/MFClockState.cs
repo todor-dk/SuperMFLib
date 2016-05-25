@@ -33,15 +33,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Defines the state of a clock.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/90E04807-C3BE-4F38-A508-9DFE62700869(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/90E04807-C3BE-4F38-A508-9DFE62700869(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFCLOCK_STATE")]
@@ -52,19 +51,21 @@ namespace MediaFoundation
         /// before the first start. This state can also occur if the underlying device is lost.
         /// </summary>
         Invalid,
+
         /// <summary>
         /// The clock is running. While the clock is running, the time advances at the clock's frequency and
         /// current rate.
         /// </summary>
         Running,
+
         /// <summary>
         /// The clock is stopped. While stopped, the clock reports a time of 0.
         /// </summary>
         Stopped,
+
         /// <summary>
         /// The clock is paused. While paused, the clock reports the time it was paused.
         /// </summary>
         Paused
     }
-
 }

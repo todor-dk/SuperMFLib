@@ -35,25 +35,26 @@ namespace MediaFoundation.Core.Interfaces
     /// <summary>
     /// Represents a byte stream from some data source, which might be a local file, a network file, or
     /// some other source. The <strong>IMFByteStream</strong> interface supports the typical stream
-    /// operations, such as reading, writing, and seeking. 
+    /// operations, such as reading, writing, and seeking.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/690035B7-2855-4714-938F-F8250EC70D24(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/690035B7-2855-4714-938F-F8250EC70D24(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("AD4C1B00-4BF7-422F-9175-756693D9130D")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("AD4C1B00-4BF7-422F-9175-756693D9130D")]
     public interface IMFByteStream
     {
         /// <summary>
-        /// Retrieves the characteristics of the byte stream. 
+        /// Retrieves the characteristics of the byte stream.
         /// </summary>
         /// <param name="pdwCapabilities">
-        /// Receives a bitwise <strong>OR</strong> of zero or more flags. The following flags are defined. 
+        /// Receives a bitwise <strong>OR</strong> of zero or more flags. The following flags are defined.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Value</term><description>Meaning</description></listheader>
@@ -70,7 +71,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -79,26 +80,25 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/715E802B-4707-4C6D-9AE9-A4DDFA90F05E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/715E802B-4707-4C6D-9AE9-A4DDFA90F05E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetCapabilities(
-            out MFByteStreamCapabilities pdwCapabilities
-            );
+            out MFByteStreamCapabilities pdwCapabilities);
 
         /// <summary>
-        /// Retrieves the length of the stream. 
+        /// Retrieves the length of the stream.
         /// </summary>
         /// <param name="pqwLength">
-        /// Receives the length of the stream, in bytes. If the length is unknown, this value is -1. 
+        /// Receives the length of the stream, in bytes. If the length is unknown, this value is -1.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -107,26 +107,25 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6FB817A6-5B43-4716-A997-BBD8A0B9305D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6FB817A6-5B43-4716-A997-BBD8A0B9305D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetLength(
-            out long pqwLength
-            );
+            out long pqwLength);
 
         /// <summary>
         /// Sets the length of the stream.
         /// </summary>
         /// <param name="qwLength">
-        /// Length of the stream in bytes. 
+        /// Length of the stream in bytes.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -135,26 +134,25 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/55BEE595-0A32-4B9E-8B22-48FDB2913DFC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/55BEE595-0A32-4B9E-8B22-48FDB2913DFC(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int SetLength(
-            [In] long qwLength
-            );
+            [In] long qwLength);
 
         /// <summary>
-        /// Retrieves the current read or write position in the stream. 
+        /// Retrieves the current read or write position in the stream.
         /// </summary>
         /// <param name="pqwPosition">
-        /// Receives the current position, in bytes. 
+        /// Receives the current position, in bytes.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -163,16 +161,15 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/DE36742A-A8A5-4F40-9FEA-AF89D9A6BF2E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DE36742A-A8A5-4F40-9FEA-AF89D9A6BF2E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetCurrentPosition(
-            out long pqwPosition
-            );
+            out long pqwPosition);
 
         /// <summary>
         /// Sets the current read or write position.
@@ -182,7 +179,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -197,27 +194,26 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/20518FED-4083-413B-B9B1-E54C4C5630D4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/20518FED-4083-413B-B9B1-E54C4C5630D4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int SetCurrentPosition(
-            [In] long qwPosition
-            );
+            [In] long qwPosition);
 
         /// <summary>
         /// Queries whether the current position has reached the end of the stream.
         /// </summary>
         /// <param name="pfEndOfStream">
         /// Receives the value <strong>TRUE</strong> if the end of the stream has been reached, or <strong>
-        /// FALSE</strong> otherwise. 
+        /// FALSE</strong> otherwise.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -226,33 +222,32 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5E5C02EA-D3FC-4D8D-AA8B-87AA033A3644(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5E5C02EA-D3FC-4D8D-AA8B-87AA033A3644(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int IsEndOfStream(
-            [MarshalAs(UnmanagedType.Bool)] out bool pfEndOfStream
-            );
+            [MarshalAs(UnmanagedType.Bool)] out bool pfEndOfStream);
 
         /// <summary>
-        /// Reads data from the stream. 
+        /// Reads data from the stream.
         /// </summary>
         /// <param name="pb">
-        /// Pointer to a buffer that receives the data. The caller must allocate the buffer. 
+        /// Pointer to a buffer that receives the data. The caller must allocate the buffer.
         /// </param>
         /// <param name="cb">
-        /// Size of the buffer in bytes. 
+        /// Size of the buffer in bytes.
         /// </param>
         /// <param name="pcbRead">
         /// Receives the number of bytes that are copied into the buffer. This parameter cannot be <strong>NULL
-        /// </strong>. 
+        /// </strong>.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -263,36 +258,35 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6E0D5363-F2C2-4334-86CA-71FAC61073D3(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6E0D5363-F2C2-4334-86CA-71FAC61073D3(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Read(
             IntPtr pb,
             [In] int cb,
-            out int pcbRead
-            );
+            out int pcbRead);
 
         /// <summary>
-        /// Begins an asynchronous read operation from the stream. 
+        /// Begins an asynchronous read operation from the stream.
         /// </summary>
         /// <param name="pb">
-        /// Pointer to a buffer that receives the data. The caller must allocate the buffer. 
+        /// Pointer to a buffer that receives the data. The caller must allocate the buffer.
         /// </param>
         /// <param name="cb">
-        /// Size of the buffer in bytes. 
+        /// Size of the buffer in bytes.
         /// </param>
         /// <param name="pCallback">
         /// Pointer to the <see cref="IMFAsyncCallback"/> interface of a callback object. The caller must
-        /// implement this interface. 
+        /// implement this interface.
         /// </param>
         /// <param name="pUnkState">The p unk state.</param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -304,10 +298,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/ED4AAF2A-270C-4518-B04D-CDAC966BF9A5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/ED4AAF2A-270C-4518-B04D-CDAC966BF9A5(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -315,22 +309,21 @@ namespace MediaFoundation.Core.Interfaces
             IntPtr pb,
             [In] int cb,
             [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncCallback pCallback,
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkState
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkState);
 
         /// <summary>
-        /// Completes an asynchronous read operation. 
+        /// Completes an asynchronous read operation.
         /// </summary>
         /// <param name="pResult">
         /// Pointer to the <see cref="IMFAsyncResult"/> interface. Pass in the same pointer that your callback
-        /// object received in the <see cref="IMFAsyncCallback.Invoke"/> method. 
+        /// object received in the <see cref="IMFAsyncCallback.Invoke"/> method.
         /// </param>
         /// <param name="pcbRead">
-        /// Receives the number of bytes that were read. 
+        /// Receives the number of bytes that were read.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -340,33 +333,32 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/DD62F644-FB97-474B-8303-3086A7B51C4D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DD62F644-FB97-474B-8303-3086A7B51C4D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int EndRead(
             [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncResult pResult,
-            out int pcbRead
-            );
+            out int pcbRead);
 
         /// <summary>
         /// Writes data to the stream.
         /// </summary>
         /// <param name="pb">
-        /// Pointer to a buffer that contains the data to write. 
+        /// Pointer to a buffer that contains the data to write.
         /// </param>
         /// <param name="cb">
-        /// Size of the buffer in bytes. 
+        /// Size of the buffer in bytes.
         /// </param>
         /// <param name="pcbWritten">
-        /// Receives the number of bytes that are written. 
+        /// Receives the number of bytes that are written.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -377,36 +369,35 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D1F1195A-B6EE-441C-AF8B-FCE3DC163E95(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D1F1195A-B6EE-441C-AF8B-FCE3DC163E95(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Write(
             IntPtr pb,
             [In] int cb,
-            out int pcbWritten
-            );
+            out int pcbWritten);
 
         /// <summary>
-        /// Begins an asynchronous write operation to the stream. 
+        /// Begins an asynchronous write operation to the stream.
         /// </summary>
         /// <param name="pb">
-        /// Pointer to a buffer containing the data to write. 
+        /// Pointer to a buffer containing the data to write.
         /// </param>
         /// <param name="cb">
-        /// Size of the buffer in bytes. 
+        /// Size of the buffer in bytes.
         /// </param>
         /// <param name="pCallback">
         /// Pointer to the <see cref="IMFAsyncCallback"/> interface of a callback object. The caller must
-        /// implement this interface. 
+        /// implement this interface.
         /// </param>
         /// <param name="pUnkState">The p unk state.</param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -418,10 +409,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/078A8FFE-7B4F-487E-8655-FE5EA14BA306(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/078A8FFE-7B4F-487E-8655-FE5EA14BA306(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -429,22 +420,21 @@ namespace MediaFoundation.Core.Interfaces
             IntPtr pb,
             [In] int cb,
             [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncCallback pCallback,
-            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkState
-            );
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkState);
 
         /// <summary>
         /// Completes an asynchronous write operation.
         /// </summary>
         /// <param name="pResult">
         /// Pointer to the <see cref="IMFAsyncResult"/> interface. Pass in the same pointer that your callback
-        /// object received in the <see cref="IMFAsyncCallback.Invoke"/> method. 
+        /// object received in the <see cref="IMFAsyncCallback.Invoke"/> method.
         /// </param>
         /// <param name="pcbWritten">
-        /// Receives the number of bytes that were written. 
+        /// Receives the number of bytes that were written.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -454,28 +444,27 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D3E10E89-EF5D-41C5-B549-4BD632D9370D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D3E10E89-EF5D-41C5-B549-4BD632D9370D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int EndWrite(
             [In, MarshalAs(UnmanagedType.Interface)] IMFAsyncResult pResult,
-            out int pcbWritten
-            );
+            out int pcbWritten);
 
         /// <summary>
         /// Moves the current position in the stream by a specified offset.
         /// </summary>
-        /// <param name="SeekOrigin">
+        /// <param name="seekOrigin">
         /// Specifies the origin of the seek as a member of the <see cref="MFByteStreamSeekOrigin"/>
-        /// enumeration. The offset is calculated relative to this position. 
+        /// enumeration. The offset is calculated relative to this position.
         /// </param>
         /// <param name="llSeekOffset">The ll seek offset.</param>
         /// <param name="dwSeekFlags">
-        /// Specifies zero or more flags. The following flags are defined. 
+        /// Specifies zero or more flags. The following flags are defined.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Value</term><description>Meaning</description></listheader>
@@ -483,11 +472,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </list>
         /// </param>
         /// <param name="pqwCurrentPosition">
-        /// Receives the new position after the seek. 
+        /// Receives the new position after the seek.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -499,37 +488,36 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Seek(
-            [In] MFByteStreamSeekOrigin SeekOrigin,
+            [In] MFByteStreamSeekOrigin seekOrigin,
             [In] long llSeekOffset,
             [In] MFByteStreamSeekingFlags dwSeekFlags,
-            out long pqwCurrentPosition
-            );
+            out long pqwCurrentPosition);
 
         /// <summary>
         /// Clears any internal buffers used by the stream. If you are writing to the stream, the buffered data
-        /// is written to the underlying file or device. 
+        /// is written to the underlying file or device.
         /// </summary>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Flush();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/16EA6C38-52F3-405E-8A8F-BE5D0527099C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/16EA6C38-52F3-405E-8A8F-BE5D0527099C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -537,21 +525,21 @@ namespace MediaFoundation.Core.Interfaces
 
         /// <summary>
         /// Closes the stream and releases any resources associated with the stream, such as sockets or file
-        /// handles. This method also cancels any pending asynchronous I/O requests. 
+        /// handles. This method also cancels any pending asynchronous I/O requests.
         /// </summary>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Close();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D5F704AB-FA3F-4A53-9B97-EB48A75E481B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D5F704AB-FA3F-4A53-9B97-EB48A75E481B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

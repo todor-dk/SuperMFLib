@@ -16,14 +16,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFAsyncResult"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFAsyncResult"/>: 
-    /// Provides information about the result of an asynchronous operation. 
+    /// <see cref="IMFAsyncResult"/>:
+    /// Provides information about the result of an asynchronous operation.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/8C95B1DE-8974-445C-8070-41552EA83E53(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8C95B1DE-8974-445C-8070-41552EA83E53(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class AsyncResult : COM<IMFAsyncResult>
@@ -62,11 +62,11 @@ namespace MediaFoundation
         /// Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method.
         /// </summary>
         /// <returns>
-        /// The object associated with the <strong>Begin</strong> method. If the value is not 
-        /// <strong>null</strong>, the caller must release the interface. 
+        /// The object associated with the <strong>Begin</strong> method. If the value is not
+        /// <strong>null</strong>, the caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/F8ED8E71-6DF7-4C94-B400-B4651A00DB5B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F8ED8E71-6DF7-4C94-B400-B4651A00DB5B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public ComObject GetState()
@@ -80,6 +80,7 @@ namespace MediaFoundation
                     Marshal.Release(ppunkState);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppunkState);
             return ComObject.FromUnknown(ref ppunkState);
         }
@@ -91,7 +92,7 @@ namespace MediaFoundation
         /// The method returns an <strong>HRESULT</strong>.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/AD99F3DD-4885-42E8-8F4E-060D522DDE7B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AD99F3DD-4885-42E8-8F4E-060D522DDE7B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int GetStatus()
@@ -106,7 +107,7 @@ namespace MediaFoundation
         /// The status of the asynchronous operation.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/79DEC067-BA54-435B-8744-9A6F43DD416D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/79DEC067-BA54-435B-8744-9A6F43DD416D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetStatus(int hrStatus)
@@ -121,11 +122,11 @@ namespace MediaFoundation
         /// </summary>
         /// <returns>
         /// Returns an object associated with the asynchronous operation. If no object is associated
-        /// with the operation, this parameter receives the value <strong>null</strong>. If the value is not 
-        /// <strong>null</strong>, the caller must release the interface. 
+        /// with the operation, this parameter receives the value <strong>null</strong>. If the value is not
+        /// <strong>null</strong>, the caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B4B871FF-370D-4A37-9FE4-91D1805890EB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4B871FF-370D-4A37-9FE4-91D1805890EB(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public ComObject GetObject()
@@ -139,6 +140,7 @@ namespace MediaFoundation
                     Marshal.Release(ppObject);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
             return ComObject.FromUnknown(ref ppObject);
         }

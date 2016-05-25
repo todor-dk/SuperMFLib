@@ -31,7 +31,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

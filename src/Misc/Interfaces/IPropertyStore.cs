@@ -32,15 +32,16 @@ namespace MediaFoundation.Misc.Interfaces
     /// Exposes methods for enumerating, getting, and setting property values.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/E995AAA1-D4C9-475F-B1FA-B9123CD5B653(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E995AAA1-D4C9-475F-B1FA-B9123CD5B653(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99")]
     public interface IPropertyStore
     {
         /// <summary>
@@ -51,7 +52,7 @@ namespace MediaFoundation.Misc.Interfaces
         /// </param>
         /// <returns>
         /// The <c>IpropertyStore::GetCount</c> method returns a value of S_OK when the call is
-        /// successful, even if the file has no properties attached. Any other code returned is an error code. 
+        /// successful, even if the file has no properties attached. Any other code returned is an error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -60,16 +61,15 @@ namespace MediaFoundation.Misc.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/23F7B982-29DB-4960-9A1D-2F9E033EBF61(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/23F7B982-29DB-4960-9A1D-2F9E033EBF61(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetCount(
-            out int cProps
-            );
+            out int cProps);
 
         /// <summary>
         /// Gets a property key from the property array of an item.
@@ -80,7 +80,7 @@ namespace MediaFoundation.Misc.Interfaces
         /// <param name="pkey">The pkey.</param>
         /// <returns>
         /// The <c>IPropertyStore::GetAt</c> method returns a value of S_OK if successful. Otherwise, any
-        /// other code it returns must be considered to be an error code. 
+        /// other code it returns must be considered to be an error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -90,17 +90,16 @@ namespace MediaFoundation.Misc.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4F93949A-D5D5-4FBF-8538-6171861E5884(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4F93949A-D5D5-4FBF-8538-6171861E5884(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetAt(
             [In] int iProp,
-            [Out] PropertyKey pkey
-            );
+            [Out] PropertyKey pkey);
 
         /// <summary>
         /// This method retrieves the data for a specific property.
@@ -108,10 +107,10 @@ namespace MediaFoundation.Misc.Interfaces
         /// <param name="key">The key.</param>
         /// <param name="pv">
         /// After the <c>IPropertyStore::GetValue</c> method returns successfully, this parameter points
-        /// to a <c>PROPVARIANT </c> structure that contains data about the property. 
+        /// to a <c>PROPVARIANT </c> structure that contains data about the property.
         /// </param>
         /// <returns>
-        /// Returns S_OK or INPLACE_S_TRUNCATED if successful, or an error value otherwise. 
+        /// Returns S_OK or INPLACE_S_TRUNCATED if successful, or an error value otherwise.
         /// <para/>
         /// INPLACE_S_TRUNCATED is returned to indicate that the returned PROPVARIANT was converted into a more
         /// canonical form. For example, this would be done to trim leading or trailing spaces from a string
@@ -126,17 +125,16 @@ namespace MediaFoundation.Misc.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/11204335-0F00-4AF8-8787-93E91248E5BD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/11204335-0F00-4AF8-8787-93E91248E5BD(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetValue(
             [In, MarshalAs(UnmanagedType.LPStruct)] PropertyKey key,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pv
-            );
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pv);
 
         /// <summary>
         /// This method sets a property value or replaces or removes an existing value.
@@ -144,7 +142,7 @@ namespace MediaFoundation.Misc.Interfaces
         /// <param name="key">The key.</param>
         /// <param name="propvar">The propvar.</param>
         /// <returns>
-        /// The <c>IPropertyStore::SetValue</c> method can return any one of the following: 
+        /// The <c>IPropertyStore::SetValue</c> method can return any one of the following:
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -161,23 +159,22 @@ namespace MediaFoundation.Misc.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/BE21BCB2-6875-4559-ABD7-A496F0FCDDD6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BE21BCB2-6875-4559-ABD7-A496F0FCDDD6(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int SetValue(
             [In, MarshalAs(UnmanagedType.LPStruct)] PropertyKey key,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant propvar
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant propvar);
 
         /// <summary>
         /// After a change has been made, this method saves the changes.
         /// </summary>
         /// <returns>
-        /// The <c>IPropertyStore::Commit</c> method returns any one of the following: 
+        /// The <c>IPropertyStore::Commit</c> method returns any one of the following:
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -193,14 +190,13 @@ namespace MediaFoundation.Misc.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A3CC6815-A16F-45E7-A2D5-8F354F712170(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A3CC6815-A16F-45E7-A2D5-8F354F712170(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Commit();
     }
-
 }

@@ -14,14 +14,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFClockStateSink"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFClockStateSink"/>: 
-    /// Receives state-change notifications from the presentation clock. 
+    /// <see cref="IMFClockStateSink"/>:
+    /// Receives state-change notifications from the presentation clock.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/9AA0D2CD-A687-4B3A-834D-CCC8D3A03196(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9AA0D2CD-A687-4B3A-834D-CCC8D3A03196(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public abstract class ClockStateSink<TClockStateSink> : COM<TClockStateSink>

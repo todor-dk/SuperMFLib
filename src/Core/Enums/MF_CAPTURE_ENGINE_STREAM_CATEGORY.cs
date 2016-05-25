@@ -32,7 +32,6 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.Core.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

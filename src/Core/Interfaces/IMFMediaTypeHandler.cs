@@ -34,34 +34,35 @@ using System.Drawing;
 namespace MediaFoundation.Core.Interfaces
 {
     /// <summary>
-    /// Gets and sets media types on an object, such as a media source or media sink. 
+    /// Gets and sets media types on an object, such as a media source or media sink.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/5B937BF7-4F86-4DC1-A4D5-7E724DCF5B36(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5B937BF7-4F86-4DC1-A4D5-7E724DCF5B36(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("E93DCF6C-4B07-4E1E-8123-AA16ED6EADF5"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("E93DCF6C-4B07-4E1E-8123-AA16ED6EADF5")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMediaTypeHandler
     {
         /// <summary>
         /// Queries whether the object supports a specified media type.
         /// </summary>
         /// <param name="pMediaType">
-        /// Pointer to the <see cref="IMFMediaType"/> interface of the media type to check. 
+        /// Pointer to the <see cref="IMFMediaType"/> interface of the media type to check.
         /// </param>
         /// <param name="ppMediaType">
         /// Receives a pointer to the <see cref="IMFMediaType"/> interface of the closest matching media type,
         /// or receives the value <strong>NULL</strong>. If non- <strong>NULL</strong>, the caller must release
-        /// the interface. This parameter can be <strong>NULL</strong>. See Remarks. 
+        /// the interface. This parameter can be <strong>NULL</strong>. See Remarks.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -77,10 +78,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/EA52DEFA-8B78-4F40-97AE-ED6A5EE4849E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EA52DEFA-8B78-4F40-97AE-ED6A5EE4849E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -96,7 +97,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -105,10 +106,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C5EE41BC-EE8B-4990-AE9D-92EF54597F31(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C5EE41BC-EE8B-4990-AE9D-92EF54597F31(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -119,16 +120,16 @@ namespace MediaFoundation.Core.Interfaces
         /// Retrieves a media type from the object's list of supported media types.
         /// </summary>
         /// <param name="dwIndex">
-        /// Zero-based index of the media type to retrieve. To get the number of media types in the list, call 
-        /// <see cref="IMFMediaTypeHandler.GetMediaTypeCount"/>. 
+        /// Zero-based index of the media type to retrieve. To get the number of media types in the list, call
+        /// <see cref="IMFMediaTypeHandler.GetMediaTypeCount"/>.
         /// </param>
         /// <param name="ppType">
         /// Receives a pointer to the <see cref="IMFMediaType"/> interface. The caller must release the
-        /// interface. 
+        /// interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -144,10 +145,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A1827675-BBC4-45D8-8C6E-644B0D2ADDD4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A1827675-BBC4-45D8-8C6E-644B0D2ADDD4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -159,11 +160,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Sets the object's media type.
         /// </summary>
         /// <param name="pMediaType">
-        /// Pointer to the <see cref="IMFMediaType"/> interface of the new media type. 
+        /// Pointer to the <see cref="IMFMediaType"/> interface of the new media type.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -178,10 +179,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/77FF397E-4FA8-4849-98B8-6BDD035C0E89(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/77FF397E-4FA8-4849-98B8-6BDD035C0E89(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -193,11 +194,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppMediaType">
         /// Receives a pointer to the <see cref="IMFMediaType"/> interface. The caller must release the
-        /// interface. 
+        /// interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -212,10 +213,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B1676E40-81A2-4311-BBA6-528BFA45A708(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B1676E40-81A2-4311-BBA6-528BFA45A708(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -223,15 +224,15 @@ namespace MediaFoundation.Core.Interfaces
             /* [MarshalAs(UnmanagedType.Interface)] out IMFMediaType */ out IntPtr ppMediaType);
 
         /// <summary>
-        /// Gets the major media type of the object. 
+        /// Gets the major media type of the object.
         /// </summary>
         /// <param name="pguidMajorType">
-        /// Receives a GUID that identifies the major type. For a list of possible values, see 
-        /// <c>Major Media Types</c>. 
+        /// Receives a GUID that identifies the major type. For a list of possible values, see
+        /// <c>Major Media Types</c>.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -240,10 +241,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1560D113-80A9-48BB-9F3D-6E3A288DB962(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1560D113-80A9-48BB-9F3D-6E3A288DB962(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

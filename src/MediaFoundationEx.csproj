@@ -46,8 +46,10 @@
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <LangVersion>5</LangVersion>
-    <DocumentationFile>bin\x86\Debug\MediaFoundationEx.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\MediaFoundationEx.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <OutputPath>bin\x64\Release</OutputPath>
@@ -581,6 +583,7 @@
     <Compile Include="TopoLoader.cs" />
     <Compile Include="Topology.cs" />
     <Compile Include="TopologyNode.cs" />
+    <Compile Include="TranscodeProfile.cs" />
     <Compile Include="UnmanagedNameAttribute.cs" />
     <Compile Include="Misc\Classes\VideoInfoHeader.cs" />
     <Compile Include="Misc\Classes\VideoInfoHeader2.cs" />
@@ -722,9 +725,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MediaFoundationEx.nuspec" />
+    <None Include="Misc\Classes\ClassDiagram.cd" />
+    <None Include="packages.config" />
     <None Include="README.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

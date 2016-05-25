@@ -38,18 +38,19 @@ namespace MediaFoundation.Core.Interfaces
     /// Queries the range of playback rates that are supported, including reverse playback.
     /// <para/>
     /// To get a pointer to this interface, call <see cref="IMFGetService.GetService"/> with the service
-    /// identifier MF_RATE_CONTROL_SERVICE. 
+    /// identifier MF_RATE_CONTROL_SERVICE.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A6C495FA-0F6A-4E4C-8FBA-996B22D55053(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A6C495FA-0F6A-4E4C-8FBA-996B22D55053(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("0A9CCDBC-D797-4563-9667-94EC5D79292D"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("0A9CCDBC-D797-4563-9667-94EC5D79292D")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFRateSupport
     {
         /// <summary>
@@ -57,19 +58,19 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="eDirection">
         /// Specifies whether to query to the slowest forward playback rate or reverse playback rate. The value
-        /// is a member of the <see cref="MFRateDirection"/> enumeration. 
+        /// is a member of the <see cref="MFRateDirection"/> enumeration.
         /// </param>
         /// <param name="fThin">
         /// If <strong>TRUE</strong>, the method retrieves the slowest thinned playback rate. Otherwise, the
-        /// method retrieves the slowest non-thinned playback rate. For information about thinning, see 
-        /// <c>About Rate Control</c>. 
+        /// method retrieves the slowest non-thinned playback rate. For information about thinning, see
+        /// <c>About Rate Control</c>.
         /// </param>
         /// <param name="pflRate">
         /// Receives the slowest playback rate that the object supports.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -87,10 +88,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/E10125E9-8BC7-4FB6-8A10-BA5717F1596F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E10125E9-8BC7-4FB6-8A10-BA5717F1596F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -104,19 +105,19 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="eDirection">
         /// Specifies whether to query to the fastest forward playback rate or reverse playback rate. The value
-        /// is a member of the <see cref="MFRateDirection"/> enumeration. 
+        /// is a member of the <see cref="MFRateDirection"/> enumeration.
         /// </param>
         /// <param name="fThin">
         /// If <strong>TRUE</strong>, the method retrieves the fastest thinned playback rate. Otherwise, the
-        /// method retrieves the fastest non-thinned playback rate. For information about thinning, see 
-        /// <c>About Rate Control</c>. 
+        /// method retrieves the fastest non-thinned playback rate. For information about thinning, see
+        /// <c>About Rate Control</c>.
         /// </param>
         /// <param name="pflRate">
         /// Receives the fastest playback rate that the object supports.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -134,10 +135,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/00413771-21CB-48A7-9080-2C3D195C366B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/00413771-21CB-48A7-9080-2C3D195C366B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -152,7 +153,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="fThin">
         /// If <strong>TRUE</strong>, the method queries whether the object supports the playback rate with
         /// thinning. Otherwise, the method queries whether the object supports the playback rate without
-        /// thinning. For information about thinning, see <c>About Rate Control</c>. 
+        /// thinning. For information about thinning, see <c>About Rate Control</c>.
         /// </param>
         /// <param name="flRate">
         /// The playback rate to query.
@@ -160,11 +161,11 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pflNearestSupportedRate">
         /// If the object does not support the playback rate given in <em>flRate</em>, this parameter receives
         /// the closest supported playback rate. If the method returns S_OK, this parameter receives the value
-        /// given in <em>flRate</em>. This parameter can be <strong>NULL</strong>. 
+        /// given in <em>flRate</em>. This parameter can be <strong>NULL</strong>.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -183,10 +184,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3AC04683-17D3-4D87-B260-39B04EAB9E59(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3AC04683-17D3-4D87-B260-39B04EAB9E59(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

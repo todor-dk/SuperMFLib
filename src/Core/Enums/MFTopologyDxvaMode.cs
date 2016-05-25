@@ -33,19 +33,19 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Specifies whether the topology loader enables Microsoft DirectX Video Acceleration (DXVA) in the
     /// topology.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/C47F505A-1B98-4309-B462-5B911E1F591F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C47F505A-1B98-4309-B462-5B911E1F591F(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [Flags, UnmanagedName("MFTOPOLOGY_DXVA_MODE")]
+    [Flags]
+    [UnmanagedName("MFTOPOLOGY_DXVA_MODE")]
     public enum MFTopologyDxvaMode
     {
         /// <summary>
@@ -53,11 +53,13 @@ namespace MediaFoundation
         /// transforms (MFTs) that do not support DXVA.
         /// </summary>
         Default = 0,
+
         /// <summary>
         /// The topology loader disables all video acceleration. This setting forces software processing, even
         /// when the decoder supports DXVA.
         /// </summary>
         None = 1,
+
         /// <summary>
         /// The topology loader enables DXVA on every MFT that supports it.
         /// </summary>

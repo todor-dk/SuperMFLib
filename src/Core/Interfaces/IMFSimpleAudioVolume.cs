@@ -41,18 +41,19 @@ namespace MediaFoundation.Core.Interfaces
     /// interface, call <see cref="IMFGetService.GetService"/>. For the SAR, use the service identifier
     /// MR_POLICY_VOLUME_SERVICE. For the audio capture source, use the service identifier
     /// MR_CAPTURE_POLICY_VOLUME_SERVICE. You can call <strong>GetService</strong> directly on the SAR or
-    /// the audio capture source, or call it on the Media Session. 
+    /// the audio capture source, or call it on the Media Session.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/002D85A7-8BC3-422E-8CED-1907AC121D7B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/002D85A7-8BC3-422E-8CED-1907AC121D7B(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("089EDF13-CF71-4338-8D13-9E569DBDC319"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("089EDF13-CF71-4338-8D13-9E569DBDC319")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFSimpleAudioVolume
     {
         /// <summary>
@@ -64,7 +65,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -80,10 +81,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/42B51817-3C2A-463A-A533-19C327C57354(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/42B51817-3C2A-463A-A533-19C327C57354(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -99,7 +100,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -115,10 +116,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/03CE097E-C4E5-4DAC-84C0-B569EFC420BC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/03CE097E-C4E5-4DAC-84C0-B569EFC420BC(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -129,11 +130,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Mutes or unmutes the audio.
         /// </summary>
         /// <param name="bMute">
-        /// Specify <strong>TRUE</strong> to mute the audio, or <strong>FALSE</strong> to unmute the audio. 
+        /// Specify <strong>TRUE</strong> to mute the audio, or <strong>FALSE</strong> to unmute the audio.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -149,10 +150,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D8840D15-D4D5-481E-9002-54FDBF323C9C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8840D15-D4D5-481E-9002-54FDBF323C9C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -164,11 +165,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="pbMute">
         /// Receives a Boolean value. If <strong>TRUE</strong>, the audio is muted; otherwise, the audio is not
-        /// muted. 
+        /// muted.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -184,10 +185,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/13907D3C-62C0-4CB8-8921-5A38A63D7D6E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/13907D3C-62C0-4CB8-8921-5A38A63D7D6E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

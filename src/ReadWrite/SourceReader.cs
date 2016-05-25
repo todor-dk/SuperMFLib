@@ -20,14 +20,14 @@ namespace MediaFoundation.ReadWrite
     /// exposing <i>civilized</i> version of the <see cref="IMFSourceReader"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFSourceReader"/>: 
+    /// <see cref="IMFSourceReader"/>:
     /// Implemented by the Microsoft Media Foundation source reader object.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/7D3CC314-6B9E-437C-AFDA-EE1965A12721(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7D3CC314-6B9E-437C-AFDA-EE1965A12721(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class SourceReader : COM<IMFSourceReader>
@@ -71,6 +71,7 @@ namespace MediaFoundation.ReadWrite
         {
             return SourceReader.CreateFromMediaSource(mediaSource, null);
         }
+
         /// <summary>
         /// Creates the source reader from a media source.
         /// </summary>
@@ -95,6 +96,7 @@ namespace MediaFoundation.ReadWrite
             /// The first video stream (MF_SOURCE_READER_FIRST_VIDEO_STREAM = 0xFFFFFFFC).
             /// </summary>
             FirstVideoStream = unchecked((int)0xFFFFFFFC),
+
             /// <summary>
             /// The first audio stream (MF_SOURCE_READER_FIRST_AUDIO_STREAM = 0xFFFFFFFD).
             /// </summary>
@@ -108,10 +110,10 @@ namespace MediaFoundation.ReadWrite
         /// The stream to query.
         /// </param>
         /// <returns>
-        /// True if the stream is selected and will generate data. False if the stream is not selected and will not generate data. 
+        /// True if the stream is selected and will generate data. False if the stream is not selected and will not generate data.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/40301426-4BF2-442C-91B5-9916D1314617(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/40301426-4BF2-442C-91B5-9916D1314617(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool GetStreamSelection(StreamAV stream)
@@ -126,10 +128,10 @@ namespace MediaFoundation.ReadWrite
         /// The zero-based index of a stream to query.
         /// </param>
         /// <returns>
-        /// True if the stream is selected and will generate data. False if the stream is not selected and will not generate data. 
+        /// True if the stream is selected and will generate data. False if the stream is not selected and will not generate data.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/40301426-4BF2-442C-91B5-9916D1314617(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/40301426-4BF2-442C-91B5-9916D1314617(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool GetStreamSelection(int streamIndex)
@@ -149,6 +151,7 @@ namespace MediaFoundation.ReadWrite
             /// The first video stream (MF_SOURCE_READER_FIRST_VIDEO_STREAM = 0xFFFFFFFC).
             /// </summary>
             FirstVideoStream = unchecked((int)0xFFFFFFFC),
+
             /// <summary>
             /// The first audio stream (MF_SOURCE_READER_FIRST_AUDIO_STREAM = 0xFFFFFFFD).
             /// </summary>
@@ -164,14 +167,14 @@ namespace MediaFoundation.ReadWrite
         /// Selects or deselects one or more streams.
         /// </summary>
         /// <param name="stream">
-        /// The stream to set. 
+        /// The stream to set.
         /// </param>
         /// <param name="selected">
         /// Specify <strong>true</strong> to select streams or <strong>false</strong> to deselect streams. If a
-        /// stream is deselected, it will not generate data. 
+        /// stream is deselected, it will not generate data.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5EFADCE6-347C-48CF-B42C-D461922B2523(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5EFADCE6-347C-48CF-B42C-D461922B2523(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetStreamSelection(StreamAVA stream, bool selected)
@@ -183,14 +186,14 @@ namespace MediaFoundation.ReadWrite
         /// Selects or deselects one or more streams.
         /// </summary>
         /// <param name="streamIndex">
-        /// The zero-based index of the stream to set. 
+        /// The zero-based index of the stream to set.
         /// </param>
         /// <param name="selected">
         /// Specify <strong>true</strong> to select streams or <strong>false</strong> to deselect streams. If a
-        /// stream is deselected, it will not generate data. 
+        /// stream is deselected, it will not generate data.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5EFADCE6-347C-48CF-B42C-D461922B2523(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5EFADCE6-347C-48CF-B42C-D461922B2523(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetStreamSelection(int streamIndex, bool selected)
@@ -203,17 +206,17 @@ namespace MediaFoundation.ReadWrite
         /// Gets a format that is supported natively by the media source.
         /// </summary>
         /// <param name="streamIndex">
-        /// Specifies the zero-based index of a stream to query. 
+        /// Specifies the zero-based index of a stream to query.
         /// </param>
         /// <param name="mediaTypeIndex">
         /// The zero-based index of the media type to retrieve.
         /// </param>
         /// <returns>
-        /// The <see cref="MediaType"/> or null if no media type is found for the given <paramref name="mediaTypeIndex"/>. 
+        /// The <see cref="MediaType"/> or null if no media type is found for the given <paramref name="mediaTypeIndex"/>.
         /// The caller must release the media type.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4B514F8D-082F-4E84-B512-D4A59706A6D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4B514F8D-082F-4E84-B512-D4A59706A6D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaType GetNativeMediaType(int streamIndex, int mediaTypeIndex)
@@ -226,6 +229,7 @@ namespace MediaFoundation.ReadWrite
                     Marshal.Release(ppMediaType);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMediaType);
             return MediaType.FromUnknown(ref ppMediaType);
         }
@@ -234,24 +238,24 @@ namespace MediaFoundation.ReadWrite
         /// Gets a format that is supported natively by the media source.
         /// </summary>
         /// <param name="stream">
-        /// Specifies the stream to query. 
+        /// Specifies the stream to query.
         /// </param>
         /// <param name="mediaTypeIndex">
         /// The zero-based index of the media type to retrieve.
         /// </param>
         /// <returns>
-        /// The <see cref="MediaType"/> or null if no media type is found for the given <paramref name="mediaTypeIndex"/>. 
+        /// The <see cref="MediaType"/> or null if no media type is found for the given <paramref name="mediaTypeIndex"/>.
         /// The caller must release the media type.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4B514F8D-082F-4E84-B512-D4A59706A6D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4B514F8D-082F-4E84-B512-D4A59706A6D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaType GetNativeMediaType(StreamAV stream, int mediaTypeIndex)
         {
             return this.GetNativeMediaType((int)stream, mediaTypeIndex);
         }
-        
+
         /// <summary>
         /// Gets the current media type for a stream.
         /// </summary>
@@ -262,7 +266,7 @@ namespace MediaFoundation.ReadWrite
         /// The current <see cref="MediaType"/>. The caller must release the media type.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C0FE3B34-42AD-45E4-812D-679BBE01A200(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C0FE3B34-42AD-45E4-812D-679BBE01A200(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaType GetCurrentMediaType(int streamIndex)
@@ -283,7 +287,7 @@ namespace MediaFoundation.ReadWrite
         /// The current <see cref="MediaType"/>. The caller must release the media type.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C0FE3B34-42AD-45E4-812D-679BBE01A200(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C0FE3B34-42AD-45E4-812D-679BBE01A200(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaType GetCurrentMediaType(StreamAV stream)
@@ -295,16 +299,16 @@ namespace MediaFoundation.ReadWrite
         /// Sets the media type for a stream.
         /// <para/>
         /// This media type defines that format that the <c>Source Reader</c> produces as output. It can differ
-        /// from the native format provided by the media source. See Remarks for more information. 
+        /// from the native format provided by the media source. See Remarks for more information.
         /// </summary>
         /// <param name="stream">
-        /// The stream to configure. 
+        /// The stream to configure.
         /// </param>
         /// <param name="mediaType">
-        /// The <see cref="MediaType"/>. 
+        /// The <see cref="MediaType"/>.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/54CAEC4D-1393-487B-94EE-78563B2B4645(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54CAEC4D-1393-487B-94EE-78563B2B4645(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetCurrentMediaType(StreamAV stream, MediaType mediaType)
@@ -316,16 +320,16 @@ namespace MediaFoundation.ReadWrite
         /// Sets the media type for a stream.
         /// <para/>
         /// This media type defines that format that the <c>Source Reader</c> produces as output. It can differ
-        /// from the native format provided by the media source. See Remarks for more information. 
+        /// from the native format provided by the media source. See Remarks for more information.
         /// </summary>
         /// <param name="streamIndex">
         /// The zero-based index of the stream to configure.
         /// </param>
         /// <param name="mediaType">
-        /// The <see cref="MediaType"/>. 
+        /// The <see cref="MediaType"/>.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/54CAEC4D-1393-487B-94EE-78563B2B4645(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54CAEC4D-1393-487B-94EE-78563B2B4645(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetCurrentMediaType(int streamIndex, MediaType mediaType)
@@ -339,22 +343,22 @@ namespace MediaFoundation.ReadWrite
         /// </summary>
         /// <param name="timeFormat">
         /// A GUID that specifies the <em>time format</em>. The time format defines the units for the <em>
-        /// varPosition</em> parameter. The following value is defined for all media sources: 
+        /// varPosition</em> parameter. The following value is defined for all media sources:
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Value</term><description>Meaning</description></listheader>
         /// <item><term><strong>GUID_NULL</strong></term><description>100-nanosecond units.</description></item>
         /// </list>
         /// <para/>
-        /// Some media sources might support additional values. 
+        /// Some media sources might support additional values.
         /// </param>
         /// <param name="position">
         /// The position from which playback will be started. The units are specified by the <paramref name="timeFormat"/>
         /// parameter. If the <paramref name="timeFormat"/> parameter is <strong>GUID_NULL</strong>, set the
-        /// variant type to <strong>VT_I8</strong>. 
+        /// variant type to <strong>VT_I8</strong>.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FB9412F5-4F2F-463D-9988-80E706AFD9C4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FB9412F5-4F2F-463D-9988-80E706AFD9C4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetCurrentPosition(Guid timeFormat, PropVariant position)
@@ -366,15 +370,15 @@ namespace MediaFoundation.ReadWrite
         /// Seeks to a new position in the media source.
         /// </summary>
         /// <param name="position">
-        /// The position from which playback will be started. 
+        /// The position from which playback will be started.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FB9412F5-4F2F-463D-9988-80E706AFD9C4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FB9412F5-4F2F-463D-9988-80E706AFD9C4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetCurrentPosition(Time position)
         {
-            using(PropVariant variant = new PropVariant(position.Value))
+            using (PropVariant variant = new PropVariant(position.Value))
             {
                 this.SetCurrentPosition(Guid.Empty, variant);
             }
@@ -384,28 +388,28 @@ namespace MediaFoundation.ReadWrite
         /// Reads the next sample from the media source.
         /// </summary>
         /// <param name="streamIndex">
-        /// The zero-based index of the stream to pull data from. 
+        /// The zero-based index of the stream to pull data from.
         /// </param>
         /// <param name="controlFlags">
-        /// A bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="ReadWrite.MF_SOURCE_READER_CONTROL_FLAG"/> enumeration. 
+        /// A bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="ReadWrite.MF_SOURCE_READER_CONTROL_FLAG"/> enumeration.
         /// </param>
         /// <param name="actualStreamIndex">
         /// Returns the zero-based index of the stream.
         /// </param>
         /// <param name="streamFlags">
-        /// Returns a bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="ReadWrite.MF_SOURCE_READER_FLAG"/> enumeration. 
+        /// Returns a bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="ReadWrite.MF_SOURCE_READER_FLAG"/> enumeration.
         /// </param>
         /// <param name="timestamp">
         /// Returns the time stamp of the sample, or the time of the stream event indicated in <paramref name="streamFlags"/>.
         /// </param>
         /// <returns>
-        /// A <see cref="Sample"/> object or <strong>null</strong> (see Remarks). If the method returns a non-null value, 
+        /// A <see cref="Sample"/> object or <strong>null</strong> (see Remarks). If the method returns a non-null value,
         /// the caller must dispose the result.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/99BD9BD7-D8D1-433A-BC5A-4B9761DE5048(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/99BD9BD7-D8D1-433A-BC5A-4B9761DE5048(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Sample ReadSample(int streamIndex, MF_SOURCE_READER_CONTROL_FLAG controlFlags, out int actualStreamIndex, out MF_SOURCE_READER_FLAG streamFlags, out Time timestamp)
@@ -422,28 +426,28 @@ namespace MediaFoundation.ReadWrite
         /// Reads the next sample from the media source.
         /// </summary>
         /// <param name="stream">
-        /// The stream to pull data from. 
+        /// The stream to pull data from.
         /// </param>
         /// <param name="controlFlags">
-        /// A bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="ReadWrite.MF_SOURCE_READER_CONTROL_FLAG"/> enumeration. 
+        /// A bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="ReadWrite.MF_SOURCE_READER_CONTROL_FLAG"/> enumeration.
         /// </param>
         /// <param name="actualStreamIndex">
         /// Returns the zero-based index of the stream.
         /// </param>
         /// <param name="streamFlags">
-        /// Returns a bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="ReadWrite.MF_SOURCE_READER_FLAG"/> enumeration. 
+        /// Returns a bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="ReadWrite.MF_SOURCE_READER_FLAG"/> enumeration.
         /// </param>
         /// <param name="timestamp">
         /// Returns the time stamp of the sample, or the time of the stream event indicated in <paramref name="streamFlags"/>.
         /// </param>
         /// <returns>
-        /// A <see cref="Sample"/> object or <strong>null</strong> (see Remarks). If the method returns a non-null value, 
+        /// A <see cref="Sample"/> object or <strong>null</strong> (see Remarks). If the method returns a non-null value,
         /// the caller must dispose the result.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/99BD9BD7-D8D1-433A-BC5A-4B9761DE5048(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/99BD9BD7-D8D1-433A-BC5A-4B9761DE5048(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Sample ReadSample(StreamAVA stream, MF_SOURCE_READER_CONTROL_FLAG controlFlags, out int actualStreamIndex, out MF_SOURCE_READER_FLAG streamFlags, out Time timestamp)
@@ -455,10 +459,10 @@ namespace MediaFoundation.ReadWrite
         /// Flushes one or more streams.
         /// </summary>
         /// <param name="streamIndex">
-        /// The zero-based index of the stream to flush. 
+        /// The zero-based index of the stream to flush.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/34992C64-9956-4B23-A979-DF7F678405B5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34992C64-9956-4B23-A979-DF7F678405B5(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Flush(int streamIndex)
@@ -471,10 +475,10 @@ namespace MediaFoundation.ReadWrite
         /// Flushes one or more streams.
         /// </summary>
         /// <param name="stream">
-        /// The stream to flush. 
+        /// The stream to flush.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/34992C64-9956-4B23-A979-DF7F678405B5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34992C64-9956-4B23-A979-DF7F678405B5(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Flush(StreamAVA stream)
@@ -489,20 +493,20 @@ namespace MediaFoundation.ReadWrite
         /// <param name="streamIndex">The zero-based index of the stream to query.</param>
         /// <param name="service">
         /// A service identifier GUID. If the value is <strong>GUID_NULL</strong>, the method calls <strong>
-        /// QueryInterface</strong> to get the requested interface. Otherwise, the method calls the 
-        /// <see cref="IMFGetService.GetService"/> method. For a list of service identifiers, see 
-        /// <c>Service Interfaces</c>. 
+        /// QueryInterface</strong> to get the requested interface. Otherwise, the method calls the
+        /// <see cref="IMFGetService.GetService"/> method. For a list of service identifiers, see
+        /// <c>Service Interfaces</c>.
         /// </param>
         /// <returns>The requested interface. The caller must dispose the object.</returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TService GetServiceForStream<TService>(int streamIndex, MFService service, COM.ComFactory<TService> factory)
             where TService : class
         {
             Contract.RequiresNotNull(factory, "factory");
-            
+
             Guid iid = typeof(TService).GUID;
             IntPtr ppvObject = IntPtr.Zero;
             int hr = this.Interface.GetServiceForStream(streamIndex, service, COM.IID_IUnknown, out ppvObject);
@@ -513,6 +517,7 @@ namespace MediaFoundation.ReadWrite
                     Marshal.Release(ppvObject);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
             return factory(ref ppvObject);
         }
@@ -524,17 +529,17 @@ namespace MediaFoundation.ReadWrite
         /// <param name="stream">
         /// The object to query. If the value is <see cref="StreamAVMS.MediaSource"/>, the
         /// method queries the media source. Otherwise, it queries the decoder that is associated with the
-        /// specified stream. 
+        /// specified stream.
         /// </param>
         /// <param name="service">
         /// A service identifier GUID. If the value is <strong>GUID_NULL</strong>, the method calls <strong>
-        /// QueryInterface</strong> to get the requested interface. Otherwise, the method calls the 
-        /// <see cref="IMFGetService.GetService"/> method. For a list of service identifiers, see 
-        /// <c>Service Interfaces</c>. 
+        /// QueryInterface</strong> to get the requested interface. Otherwise, the method calls the
+        /// <see cref="IMFGetService.GetService"/> method. For a list of service identifiers, see
+        /// <c>Service Interfaces</c>.
         /// </param>
         /// <returns>The requested interface. The caller must dispose the object.</returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D8868E4D-EEDD-4FBD-B870-D3AF48890C92(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TService GetServiceForStream<TService>(StreamAVMS stream, MFService service, COM.ComFactory<TService> factory)
@@ -552,10 +557,12 @@ namespace MediaFoundation.ReadWrite
             /// The first video stream (MF_SOURCE_READER_FIRST_VIDEO_STREAM = 0xFFFFFFFC).
             /// </summary>
             FirstVideoStream = unchecked((int)0xFFFFFFFC),
+
             /// <summary>
             /// The first audio stream (MF_SOURCE_READER_FIRST_AUDIO_STREAM = 0xFFFFFFFD).
             /// </summary>
             FirstAudioStream = unchecked((int)0xFFFFFFFD),
+
             /// <summary>
             /// The media source (MF_SOURCE_READER_MEDIASOURCE = 0xFFFFFFFF).
             /// </summary>
@@ -575,7 +582,7 @@ namespace MediaFoundation.ReadWrite
         /// The value of the attribute. The <see cref="PropVariant"/> must be disposed.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public PropVariant GetPresentationAttribute(int streamIndex, Guid attribute)
@@ -599,7 +606,7 @@ namespace MediaFoundation.ReadWrite
         /// The value of the attribute. The <see cref="PropVariant"/> must be disposed.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public PropVariant GetPresentationAttribute(StreamAVMS stream, Guid attribute)
@@ -617,15 +624,15 @@ namespace MediaFoundation.ReadWrite
         /// A GUID that identifies the attribute to retrieve.
         /// </param>
         /// <returns>
-        /// The value of the attribute. 
+        /// The value of the attribute.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public object GetPresentationAttributeValue(int streamIndex, Guid attribute)
         {
-            using(PropVariant value = this.GetPresentationAttribute(streamIndex, attribute))
+            using (PropVariant value = this.GetPresentationAttribute(streamIndex, attribute))
             {
                 return value.GetValue();
             }
@@ -641,10 +648,10 @@ namespace MediaFoundation.ReadWrite
         /// A GUID that identifies the attribute to retrieve.
         /// </param>
         /// <returns>
-        /// The value of the attribute. 
+        /// The value of the attribute.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/40544E1E-CCE2-4860-AEB2-B60696B09145(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public object GetPresentationAttributeValue(StreamAVMS stream, Guid attribute)

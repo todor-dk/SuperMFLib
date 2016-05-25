@@ -33,40 +33,40 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
     /// <summary>
     /// Converts a partial topology into a full topology. The topology loader exposes this interface.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/5EBF117C-E60A-40F2-A24B-C4F9DBDAE942(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5EBF117C-E60A-40F2-A24B-C4F9DBDAE942(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("DE9A6157-F660-4643-B56A-DF9F7998C7CD")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("DE9A6157-F660-4643-B56A-DF9F7998C7CD")]
     public interface IMFTopoLoader
     {
         /// <summary>
-        /// Creates a fully loaded topology from the input partial topology. 
+        /// Creates a fully loaded topology from the input partial topology.
         /// </summary>
         /// <param name="pInputTopo">
-        /// A pointer to the <see cref="IMFTopology"/> interface of the partial topology to be resolved. 
+        /// A pointer to the <see cref="IMFTopology"/> interface of the partial topology to be resolved.
         /// </param>
         /// <param name="ppOutputTopo">
         /// Receives a pointer to the <see cref="IMFTopology"/> interface of the completed topology. The caller
-        /// must release the interface. 
+        /// must release the interface.
         /// </param>
         /// <param name="pCurrentTopo">
         /// A pointer to the <see cref="IMFTopology"/> interface of the previous full topology. The topology
         /// loader can re-use objects from this topology in the new topology. This parameter can be <strong>
-        /// NULL</strong>. See Remarks. 
+        /// NULL</strong>. See Remarks.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -83,17 +83,16 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/02CE47DB-54A1-456A-A763-C62039AEA2C9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/02CE47DB-54A1-456A-A763-C62039AEA2C9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Load(
             [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pInputTopo,
             /* [MarshalAs(UnmanagedType.Interface)] out IMFTopology */ out IntPtr ppOutputTopo,
-            [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pCurrentTopo
-            );
+            [In, MarshalAs(UnmanagedType.Interface)] IMFTopology pCurrentTopo);
     }
 }

@@ -18,14 +18,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFTopoLoader"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFTopoLoader"/>: 
+    /// <see cref="IMFTopoLoader"/>:
     /// Converts a partial topology into a full topology. The topology loader exposes this interface.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/5EBF117C-E60A-40F2-A24B-C4F9DBDAE942(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5EBF117C-E60A-40F2-A24B-C4F9DBDAE942(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class TopoLoader : COM<IMFTopoLoader>
@@ -72,30 +72,29 @@ namespace MediaFoundation
             return TopoLoader.FromUnknown(ref ppObj);
         }
 
-
         /// <summary>
-        /// Creates a fully loaded topology from the input partial topology. 
+        /// Creates a fully loaded topology from the input partial topology.
         /// </summary>
         /// <param name="inputTopology">
-        /// The partial topology to be resolved. 
+        /// The partial topology to be resolved.
         /// </param>
         /// <param name="currentTopology">
-        /// The previous full topology. The topology loader can re-use objects from this topology in the new topology. 
-        /// This parameter can be <strong>null</strong>. 
+        /// The previous full topology. The topology loader can re-use objects from this topology in the new topology.
+        /// This parameter can be <strong>null</strong>.
         /// </param>
         /// <returns>
-        /// The completed topology. The caller must release the instance. Null is returned if 
-        /// one or more output nodes contain <see cref="Activate"/> pointers. The caller must bind the output nodes to media sinks. 
+        /// The completed topology. The caller must release the instance. Null is returned if
+        /// one or more output nodes contain <see cref="Activate"/> pointers. The caller must bind the output nodes to media sinks.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/02CE47DB-54A1-456A-A763-C62039AEA2C9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/02CE47DB-54A1-456A-A763-C62039AEA2C9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Topology Load(Topology inputTopology, Topology currentTopology)
         {
             IntPtr ppOutputTopo = IntPtr.Zero;
             int hr = this.Interface.Load(inputTopology.AccessInterface(), out ppOutputTopo, currentTopology.AccessInterface());
-            // MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED: One or more output nodes contain IMFActivate pointers. 
+            // MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED: One or more output nodes contain IMFActivate pointers.
             // The caller must bind the output nodes to media sinks. See <c>Binding Output Nodes to Media Sinks</c>.
             if (hr == MFError.MF_E_TOPO_SINK_ACTIVATES_UNSUPPORTED)
             {
@@ -103,8 +102,9 @@ namespace MediaFoundation
                     Marshal.Release(ppOutputTopo);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppOutputTopo);
-            return Topology.FromUnknown(ref ppOutputTopo); 
+            return Topology.FromUnknown(ref ppOutputTopo);
         }
     }
 }

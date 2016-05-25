@@ -47,29 +47,29 @@ namespace MediaFoundation
     /// <see cref="ConstPropVariant"/>.  If you try to store the <see cref="ConstPropVariant"/>, when the
     /// caller frees his copy, yours will no longer be valid.
     /// <para/>
-    /// The <strong>PROPVARIANT</strong> structure is used in the <c>ReadMultiple</c> and 
+    /// The <strong>PROPVARIANT</strong> structure is used in the <c>ReadMultiple</c> and
     /// <c>WriteMultiple</c> methods of <c>IPropertyStorage</c> to define the type tag and the value of a
-    /// property in a property set. 
+    /// property in a property set.
     /// <para/>
     /// The <strong>PROPVARIANT</strong> structure is also used by the <c>GetValue</c> and <c>SetValue</c>
     /// methods of <see cref="Misc.IPropertyStore"/>, which replaces <c>IPropertySetStorage</c> as the
-    /// primary way to program item properties in Windows Vista. For more information, see 
-    /// <c>Property Handlers</c>. 
+    /// primary way to program item properties in Windows Vista. For more information, see
+    /// <c>Property Handlers</c>.
     /// <para/>
     /// There are five members. The first member, the value-type tag, and the last member, the value of the
     /// property, are significant. The middle three members are reserved for future use.
     /// <para/>
-    /// 	<strong>Note</strong> The <strong>bool</strong> member in previous definitions of this structure
+    ///     <strong>Note</strong> The <strong>bool</strong> member in previous definitions of this structure
     /// has been renamed to <strong>boolVal</strong>, because some compilers now recognize <strong>bool
-    /// </strong> as a keyword. 
+    /// </strong> as a keyword.
     /// <para/>
-    /// 	<strong>Note</strong> The <strong>PROPVARIANT</strong> structure, defined below, includes types
+    ///     <strong>Note</strong> The <strong>PROPVARIANT</strong> structure, defined below, includes types
     /// that can be serialized in the version 1 property set serialization format. The version 1 format
     /// supports all types allowed in the version 0 format plus some additional types. The added types
     /// include "Version 1" in the comment field below. Use these types only if a version 1 property set is
-    /// intended. For more information, see <c>Property Set Serialization</c>. 
+    /// intended. For more information, see <c>Property Set Serialization</c>.
     /// <para/>
-    /// The <strong>PROPVARIANT</strong> structure is defined as follows: 
+    /// The <strong>PROPVARIANT</strong> structure is defined as follows:
     /// </summary>
     /// <remarks>
     /// <code language="cpp" title="C/C++ Syntax">
@@ -154,29 +154,29 @@ namespace MediaFoundation
     ///   };
     /// } PROPVARIANT;
     /// </code>
-    /// 	<para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    ///     <para/>
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/E86CC279-826D-4767-8D96-FC8280060EA1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E86CC279-826D-4767-8D96-FC8280060EA1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     /// <seealso cref="PropVariant"/>
     [StructLayout(LayoutKind.Explicit)]
-    public class  ConstPropVariant : IDisposable
+    public class ConstPropVariant : IDisposable
     {
         /// <summary>
-        /// Creates a copy of a <c>PROPVARIANT</c> structure. 
+        /// Creates a copy of a <c>PROPVARIANT</c> structure.
         /// </summary>
         /// <param name="pvarDest">
         /// Type: <strong><c>PROPVARIANT</c>* </strong>
         /// <para/>
-        /// Pointer to the destination <c>PROPVARIANT</c> structure that receives the copy. 
+        /// Pointer to the destination <c>PROPVARIANT</c> structure that receives the copy.
         /// </param>
         /// <param name="pvarSource">
         /// Type: <strong>const <c>PROPVARIANT</c>* </strong>
         /// <para/>
-        /// Pointer to the source <c>PROPVARIANT</c> structure. 
+        /// Pointer to the source <c>PROPVARIANT</c> structure.
         /// </param>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -186,13 +186,14 @@ namespace MediaFoundation
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/F17F1722-F041-414C-B838-F1F83427FF0C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F17F1722-F041-414C-B838-F1F83427FF0C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false), SuppressUnmanagedCodeSecurity]
+        [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false)]
+        [SuppressUnmanagedCodeSecurity]
         protected static extern void PropVariantCopy(
             [Out, MarshalAs(UnmanagedType.LPStruct)] PropVariant pvarDest,
             [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarSource);
@@ -206,88 +207,102 @@ namespace MediaFoundation
             /// <summary>
             /// <strong>VT_EMPTY</strong>. Valid member: None.
             /// <para/>
-            /// A property with a type indicator of VT_EMPTY has no data associated with it; 
-            /// that is, the size of the value is zero. 
+            /// A property with a type indicator of VT_EMPTY has no data associated with it;
+            /// that is, the size of the value is zero.
             /// </summary>
             None = 0,
+
             /// <summary>
             /// <strong>VT_I2</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.iVal"/>.
             /// <para/>
             /// Two bytes representing a 2-byte signed integer value.
             /// </summary>
             Short = 2,
+
             /// <summary>
             /// <strong>VT_I4</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.intValue"/>.
             /// <para/>
             /// 4-byte signed integer value.
             /// </summary>
             Int32 = 3,
+
             /// <summary>
             /// <strong>VT_R4</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.fltVal"/>.
             /// <para/>
             /// 32-bit IEEE floating point value.
             /// </summary>
             Float = 4,
+
             /// <summary>
             /// <strong>VT_R8</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.doubleValue"/>.
             /// <para/>
             /// 64-bit IEEE floating point value.
             /// </summary>
             Double = 5,
+
             /// <summary>
             /// <strong>VT_UNKNOWN</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ptr"/>.
             /// <para/>
             /// Pointer to an IUnknown interface.
             /// </summary>
             IUnknown = 13,
+
             /// <summary>
             /// <strong>VT_UI1</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.bVal"/>.
             /// <para/>
             /// 1-byte unsigned integer.
             /// </summary>
             UByte = 17,
+
             /// <summary>
             /// <strong>VT_UI2</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.uiVal"/>.
             /// <para/>
             /// 2-byte unsigned integer.
             /// </summary>
             UShort = 18,
+
             /// <summary>
             /// <strong>VT_UI4</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.uintVal"/>.
             /// <para/>
             /// 4-byte unsigned integer.
             /// </summary>
             UInt32 = 19,
+
             /// <summary>
             /// <strong>VT_I8</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.longValue"/>.
             /// <para/>
             /// 8-byte signed integer.
             /// </summary>
             Int64 = 20,
+
             /// <summary>
             /// <strong>VT_UI8</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ulongValue"/>.
             /// <para/>
             /// 8-byte unsigned integer.
             /// </summary>
             UInt64 = 21,
+
             /// <summary>
             /// <strong>VT_LPWSTR</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ptr"/>.
             /// <para/>
             /// A pointer to a null-terminated Unicode string in the user default locale.
             /// </summary>
             String = 31,
+
             /// <summary>
             /// <strong>VT_CLSID</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.ptr"/>.
             /// <para/>
             /// Pointer to a class identifier (CLSID) (or other globally unique identifier (GUID)).
             /// </summary>
             Guid = 72,
+
             /// <summary>
             /// <strong>VT_VECTOR | VT_UI1</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.blobValue"/>.
             /// <para/>
             /// Array of bytes.
             /// </summary>
             Blob = 0x1000 + 17,
+
             /// <summary>
             /// <strong>VT_VECTOR | VT_LPWSTR</strong>. Valid Propvariant Member: <see cref="ConstPropVariant.calpwstrVal"/>.
             /// <para/>
@@ -297,16 +312,18 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Represents a counted array of unsigned bytes. 
+        /// Represents a counted array of unsigned bytes.
         /// This is used when the <see cref="ConstPropVariant.ValueType"/> is <see cref="VariantType.Blob"/>.
         /// </summary>
-        [StructLayout(LayoutKind.Sequential), UnmanagedName("BLOB")] // UnmanagedName("CAUB")
+        [StructLayout(LayoutKind.Sequential)]
+        [UnmanagedName("BLOB")] // UnmanagedName("CAUB")
         protected struct Blob
         {
             /// <summary>
             /// Element count of the array.
             /// </summary>
             public int cbSize;
+
             /// <summary>
             /// Pointer to the first value of the array.
             /// </summary>
@@ -314,16 +331,18 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Represents a counted array of strings. 
+        /// Represents a counted array of strings.
         /// This is used when the <see cref="ConstPropVariant.ValueType"/> is <see cref="VariantType.StringArray"/>.
         /// </summary>
-        [StructLayout(LayoutKind.Sequential), UnmanagedName("CALPWSTR")]
+        [StructLayout(LayoutKind.Sequential)]
+        [UnmanagedName("CALPWSTR")]
         protected struct CALPWstr
         {
             /// <summary>
             /// Element count of the array.
             /// </summary>
             public int cElems;
+
             /// <summary>
             /// Pointer to the first string in the array.
             /// </summary>
@@ -365,13 +384,15 @@ namespace MediaFoundation
         /// <summary>
         /// Valid when <see cref="type"/> is VT_UI2.
         /// </summary>
-        [FieldOffset(8), CLSCompliant(false)]
+        [FieldOffset(8)]
+        [CLSCompliant(false)]
         protected ushort uiVal;
 
         /// <summary>
         /// Valid when <see cref="type"/> is VT_UI1.
         /// </summary>
-        [FieldOffset(8), CLSCompliant(false)]
+        [FieldOffset(8)]
+        [CLSCompliant(false)]
         protected byte bVal;
 
         /// <summary>
@@ -383,7 +404,8 @@ namespace MediaFoundation
         /// <summary>
         /// Valid when <see cref="type"/> is VT_UINT.
         /// </summary>
-        [FieldOffset(8), CLSCompliant(false)]
+        [FieldOffset(8)]
+        [CLSCompliant(false)]
         protected uint uintVal;
 
         /// <summary>
@@ -401,7 +423,8 @@ namespace MediaFoundation
         /// <summary>
         /// Valid when <see cref="type"/> is VT_UI8.
         /// </summary>
-        [FieldOffset(8), CLSCompliant(false)]
+        [FieldOffset(8)]
+        [CLSCompliant(false)]
         protected ulong ulongValue;
 
         /// <summary>
@@ -435,7 +458,7 @@ namespace MediaFoundation
         /// </summary>
         public ConstPropVariant()
         {
-            type = VariantType.None;
+            this.type = VariantType.None;
         }
 
         /// <summary>
@@ -444,7 +467,7 @@ namespace MediaFoundation
         /// <param name="v">The type of the value.</param>
         protected ConstPropVariant(VariantType v)
         {
-            type = v;
+            this.type = v;
         }
 
         /// <summary>
@@ -637,7 +660,7 @@ namespace MediaFoundation
             // Also, since I can't free the previous instance, IUnknowns
             // will linger until the GC cleans up.  Not what I think I
             // want.
-            switch (type)
+            switch (this.type)
             {
                 case VariantType.None:
                 case VariantType.UInt32:
@@ -648,8 +671,9 @@ namespace MediaFoundation
                 case VariantType.Blob:
                 case VariantType.IUnknown:
                     {
-                        return (MFAttributeType)type;
+                        return (MFAttributeType)this.type;
                     }
+
                 default:
                     {
                         throw new Exception("Type is not a MFAttributeType");
@@ -663,7 +687,7 @@ namespace MediaFoundation
         /// <returns>The value type tag of this propvariant.</returns>
         public VariantType GetVariantType()
         {
-            return type;
+            return this.type;
         }
 
         /// <summary>
@@ -680,20 +704,21 @@ namespace MediaFoundation
         /// <returns>An array of strings that is the value of the propvariant.</returns>
         public string[] GetStringArray()
         {
-            if (type == VariantType.StringArray)
+            if (this.type == VariantType.StringArray)
             {
                 string[] sa;
 
-                int iCount = calpwstrVal.cElems;
+                int iCount = this.calpwstrVal.cElems;
                 sa = new string[iCount];
 
                 for (int x = 0; x < iCount; x++)
                 {
-                    sa[x] = Marshal.PtrToStringUni(Marshal.ReadIntPtr(calpwstrVal.pElems, x * IntPtr.Size));
+                    sa[x] = Marshal.PtrToStringUni(Marshal.ReadIntPtr(this.calpwstrVal.pElems, x * IntPtr.Size));
                 }
 
                 return sa;
             }
+
             throw new ArgumentException("PropVariant contents not a string array");
         }
 
@@ -703,10 +728,11 @@ namespace MediaFoundation
         /// <returns>A strings that is the value of the propvariant.</returns>
         public string GetString()
         {
-            if (type == VariantType.String)
+            if (this.type == VariantType.String)
             {
-                return Marshal.PtrToStringUni(ptr);
+                return Marshal.PtrToStringUni(this.ptr);
             }
+
             throw new ArgumentException("PropVariant contents not a string");
         }
 
@@ -716,10 +742,11 @@ namespace MediaFoundation
         /// <returns>An unsigned byte that is the value of the propvariant.</returns>
         public byte GetUByte()
         {
-            if (type == VariantType.UByte)
+            if (this.type == VariantType.UByte)
             {
-                return bVal;
+                return this.bVal;
             }
+
             throw new ArgumentException("PropVariant contents not a byte");
         }
 
@@ -729,10 +756,11 @@ namespace MediaFoundation
         /// <returns>A signed 2-byte integer that is the value of the propvariant.</returns>
         public short GetShort()
         {
-            if (type == VariantType.Short)
+            if (this.type == VariantType.Short)
             {
-                return iVal;
+                return this.iVal;
             }
+
             throw new ArgumentException("PropVariant contents not an Short");
         }
 
@@ -743,10 +771,11 @@ namespace MediaFoundation
         [CLSCompliant(false)]
         public ushort GetUShort()
         {
-            if (type == VariantType.UShort)
+            if (this.type == VariantType.UShort)
             {
-                return uiVal;
+                return this.uiVal;
             }
+
             throw new ArgumentException("PropVariant contents not an UShort");
         }
 
@@ -756,10 +785,11 @@ namespace MediaFoundation
         /// <returns>A signed 4-byte integer that is the value of the propvariant.</returns>
         public int GetInt()
         {
-            if (type == VariantType.Int32)
+            if (this.type == VariantType.Int32)
             {
-                return intValue;
+                return this.intValue;
             }
+
             throw new ArgumentException("PropVariant contents not an int32");
         }
 
@@ -770,10 +800,11 @@ namespace MediaFoundation
         [CLSCompliant(false)]
         public uint GetUInt()
         {
-            if (type == VariantType.UInt32)
+            if (this.type == VariantType.UInt32)
             {
-                return uintVal;
+                return this.uintVal;
             }
+
             throw new ArgumentException("PropVariant contents not an uint32");
         }
 
@@ -783,10 +814,11 @@ namespace MediaFoundation
         /// <returns>A signed 8-byte integer that is the value of the propvariant.</returns>
         public long GetLong()
         {
-            if (type == VariantType.Int64)
+            if (this.type == VariantType.Int64)
             {
-                return longValue;
+                return this.longValue;
             }
+
             throw new ArgumentException("PropVariant contents not an int64");
         }
 
@@ -797,10 +829,11 @@ namespace MediaFoundation
         [CLSCompliant(false)]
         public ulong GetULong()
         {
-            if (type == VariantType.UInt64)
+            if (this.type == VariantType.UInt64)
             {
-                return ulongValue;
+                return this.ulongValue;
             }
+
             throw new ArgumentException("PropVariant contents not an uint64");
         }
 
@@ -810,10 +843,11 @@ namespace MediaFoundation
         /// <returns>A 4-byte floating point that is the value of the propvariant.</returns>
         public float GetFloat()
         {
-            if (type == VariantType.Float)
+            if (this.type == VariantType.Float)
             {
-                return fltVal;
+                return this.fltVal;
             }
+
             throw new ArgumentException("PropVariant contents not a Float");
         }
 
@@ -823,10 +857,11 @@ namespace MediaFoundation
         /// <returns>A 8-byte floating point that is the value of the propvariant.</returns>
         public double GetDouble()
         {
-            if (type == VariantType.Double)
+            if (this.type == VariantType.Double)
             {
-                return doubleValue;
+                return this.doubleValue;
             }
+
             throw new ArgumentException("PropVariant contents not a double");
         }
 
@@ -836,10 +871,11 @@ namespace MediaFoundation
         /// <returns>A Guid that is the value of the propvariant.</returns>
         public Guid GetGuid()
         {
-            if (type == VariantType.Guid)
+            if (this.type == VariantType.Guid)
             {
-                return (Guid)Marshal.PtrToStructure(ptr, typeof(Guid));
+                return (Guid)Marshal.PtrToStructure(this.ptr, typeof(Guid));
             }
+
             throw new ArgumentException("PropVariant contents not a Guid");
         }
 
@@ -849,14 +885,15 @@ namespace MediaFoundation
         /// <returns>An array of unsigned bytes (binary array) that is the value of the propvariant.</returns>
         public byte[] GetBlob()
         {
-            if (type == VariantType.Blob)
+            if (this.type == VariantType.Blob)
             {
-                byte[] b = new byte[blobValue.cbSize];
+                byte[] b = new byte[this.blobValue.cbSize];
 
-                Marshal.Copy(blobValue.pBlobData, b, 0, blobValue.cbSize);
+                Marshal.Copy(this.blobValue.pBlobData, b, 0, this.blobValue.cbSize);
 
                 return b;
             }
+
             throw new ArgumentException("PropVariant contents are not a Blob");
         }
 
@@ -866,10 +903,11 @@ namespace MediaFoundation
         /// <returns>A COM object that is the value of the propvariant.</returns>
         public object GetIUnknown()
         {
-            if (type == VariantType.IUnknown)
+            if (this.type == VariantType.IUnknown)
             {
-                return Marshal.GetUniqueObjectForIUnknown(ptr);
+                return Marshal.GetUniqueObjectForIUnknown(this.ptr);
             }
+
             throw new ArgumentException("PropVariant contents not an IUnknown");
         }
 
@@ -884,7 +922,7 @@ namespace MediaFoundation
             where TObject : class
         {
             Contract.RequiresNotNull(factory, "factory");
-            if (type == VariantType.IUnknown)
+            if (this.type == VariantType.IUnknown)
             {
                 IntPtr copy = this.ptr;
                 if (copy == IntPtr.Zero)
@@ -901,6 +939,7 @@ namespace MediaFoundation
                         Marshal.Release(copy);
                 }
             }
+
             throw new ArgumentException("PropVariant contents not an IUnknown");
         }
 
@@ -957,7 +996,7 @@ namespace MediaFoundation
             // up in the output window
             string sRet;
 
-            switch (type)
+            switch (this.type)
             {
                 case VariantType.None:
                     {
@@ -970,7 +1009,7 @@ namespace MediaFoundation
                         const string FormatString = "x2"; // Hex 2 digit format
                         const int MaxEntries = 16;
 
-                        byte[] blob = GetBlob();
+                        byte[] blob = this.GetBlob();
 
                         // Number of bytes we're going to format
                         int n = Math.Min(MaxEntries, blob.Length);
@@ -994,90 +1033,93 @@ namespace MediaFoundation
                                 sRet += "...";
                             }
                         }
+
                         break;
                     }
 
                 case VariantType.Float:
                     {
-                        sRet = GetFloat().ToString();
+                        sRet = this.GetFloat().ToString();
                         break;
                     }
 
                 case VariantType.Double:
                     {
-                        sRet = GetDouble().ToString();
+                        sRet = this.GetDouble().ToString();
                         break;
                     }
 
                 case VariantType.Guid:
                     {
-                        sRet = GetGuid().ToString();
+                        sRet = this.GetGuid().ToString();
                         break;
                     }
 
                 case VariantType.IUnknown:
                     {
-                        sRet = GetIUnknown().ToString();
+                        sRet = this.GetIUnknown().ToString();
                         break;
                     }
 
                 case VariantType.String:
                     {
-                        sRet = GetString();
+                        sRet = this.GetString();
                         break;
                     }
 
                 case VariantType.Short:
                     {
-                        sRet = GetShort().ToString();
+                        sRet = this.GetShort().ToString();
                         break;
                     }
 
                 case VariantType.UByte:
                     {
-                        sRet = GetUByte().ToString();
+                        sRet = this.GetUByte().ToString();
                         break;
                     }
 
                 case VariantType.UShort:
                     {
-                        sRet = GetUShort().ToString();
+                        sRet = this.GetUShort().ToString();
                         break;
                     }
 
                 case VariantType.Int32:
                     {
-                        sRet = GetInt().ToString();
+                        sRet = this.GetInt().ToString();
                         break;
                     }
 
                 case VariantType.UInt32:
                     {
-                        sRet = GetUInt().ToString();
+                        sRet = this.GetUInt().ToString();
                         break;
                     }
 
                 case VariantType.Int64:
                     {
-                        sRet = GetLong().ToString();
+                        sRet = this.GetLong().ToString();
                         break;
                     }
 
                 case VariantType.UInt64:
                     {
-                        sRet = GetULong().ToString();
+                        sRet = this.GetULong().ToString();
                         break;
                     }
 
                 case VariantType.StringArray:
                     {
                         sRet = "";
-                        foreach (string entry in GetStringArray())
+                        foreach (string entry in this.GetStringArray())
                         {
                             sRet += (sRet.Length == 0 ? "\"" : ",\"") + entry + '\"';
                         }
+
                         break;
                     }
+
                 default:
                     {
                         sRet = base.ToString();
@@ -1098,7 +1140,7 @@ namespace MediaFoundation
             // in a hash table.
             int iRet;
 
-            switch (type)
+            switch (this.type)
             {
                 case VariantType.None:
                     {
@@ -1108,87 +1150,88 @@ namespace MediaFoundation
 
                 case VariantType.Blob:
                     {
-                        iRet = GetBlob().GetHashCode();
+                        iRet = this.GetBlob().GetHashCode();
                         break;
                     }
 
                 case VariantType.Float:
                     {
-                        iRet = GetFloat().GetHashCode();
+                        iRet = this.GetFloat().GetHashCode();
                         break;
                     }
 
                 case VariantType.Double:
                     {
-                        iRet = GetDouble().GetHashCode();
+                        iRet = this.GetDouble().GetHashCode();
                         break;
                     }
 
                 case VariantType.Guid:
                     {
-                        iRet = GetGuid().GetHashCode();
+                        iRet = this.GetGuid().GetHashCode();
                         break;
                     }
 
                 case VariantType.IUnknown:
                     {
-                        iRet = GetIUnknown().GetHashCode();
+                        iRet = this.GetIUnknown().GetHashCode();
                         break;
                     }
 
                 case VariantType.String:
                     {
-                        iRet = GetString().GetHashCode();
+                        iRet = this.GetString().GetHashCode();
                         break;
                     }
 
                 case VariantType.UByte:
                     {
-                        iRet = GetUByte().GetHashCode();
+                        iRet = this.GetUByte().GetHashCode();
                         break;
                     }
 
                 case VariantType.Short:
                     {
-                        iRet = GetShort().GetHashCode();
+                        iRet = this.GetShort().GetHashCode();
                         break;
                     }
 
                 case VariantType.UShort:
                     {
-                        iRet = GetUShort().GetHashCode();
+                        iRet = this.GetUShort().GetHashCode();
                         break;
                     }
 
                 case VariantType.Int32:
                     {
-                        iRet = GetInt().GetHashCode();
+                        iRet = this.GetInt().GetHashCode();
                         break;
                     }
 
                 case VariantType.UInt32:
                     {
-                        iRet = GetUInt().GetHashCode();
+                        iRet = this.GetUInt().GetHashCode();
                         break;
                     }
 
                 case VariantType.Int64:
                     {
-                        iRet = GetLong().GetHashCode();
+                        iRet = this.GetLong().GetHashCode();
                         break;
                     }
 
                 case VariantType.UInt64:
                     {
-                        iRet = GetULong().GetHashCode();
+                        iRet = this.GetULong().GetHashCode();
                         break;
                     }
 
                 case VariantType.StringArray:
                     {
-                        iRet = GetStringArray().GetHashCode();
+                        iRet = this.GetStringArray().GetHashCode();
                         break;
                     }
+
                 default:
                     {
                         iRet = base.GetHashCode();
@@ -1209,13 +1252,13 @@ namespace MediaFoundation
             bool bRet;
             PropVariant p = obj as PropVariant;
 
-            if ((((object)p) == null) || (p.type != type))
+            if ((((object)p) == null) || (p.type != this.type))
             {
                 bRet = false;
             }
             else
             {
-                switch (type)
+                switch (this.type)
                 {
                     case VariantType.None:
                         {
@@ -1228,7 +1271,7 @@ namespace MediaFoundation
                             byte[] b1;
                             byte[] b2;
 
-                            b1 = GetBlob();
+                            b1 = this.GetBlob();
                             b2 = p.GetBlob();
 
                             if (b1.Length == b2.Length)
@@ -1247,78 +1290,79 @@ namespace MediaFoundation
                             {
                                 bRet = false;
                             }
+
                             break;
                         }
 
                     case VariantType.Float:
                         {
-                            bRet = GetFloat() == p.GetFloat();
+                            bRet = this.GetFloat() == p.GetFloat();
                             break;
                         }
 
                     case VariantType.Double:
                         {
-                            bRet = GetDouble() == p.GetDouble();
+                            bRet = this.GetDouble() == p.GetDouble();
                             break;
                         }
 
                     case VariantType.Guid:
                         {
-                            bRet = GetGuid() == p.GetGuid();
+                            bRet = this.GetGuid() == p.GetGuid();
                             break;
                         }
 
                     case VariantType.IUnknown:
                         {
-                            bRet = GetIUnknown() == p.GetIUnknown();
+                            bRet = this.GetIUnknown() == p.GetIUnknown();
                             break;
                         }
 
                     case VariantType.String:
                         {
-                            bRet = GetString() == p.GetString();
+                            bRet = this.GetString() == p.GetString();
                             break;
                         }
 
                     case VariantType.UByte:
                         {
-                            bRet = GetUByte() == p.GetUByte();
+                            bRet = this.GetUByte() == p.GetUByte();
                             break;
                         }
 
                     case VariantType.Short:
                         {
-                            bRet = GetShort() == p.GetShort();
+                            bRet = this.GetShort() == p.GetShort();
                             break;
                         }
 
                     case VariantType.UShort:
                         {
-                            bRet = GetUShort() == p.GetUShort();
+                            bRet = this.GetUShort() == p.GetUShort();
                             break;
                         }
 
                     case VariantType.Int32:
                         {
-                            bRet = GetInt() == p.GetInt();
+                            bRet = this.GetInt() == p.GetInt();
                             break;
                         }
 
                     case VariantType.UInt32:
                         {
-                            bRet = GetUInt() == p.GetUInt();
+                            bRet = this.GetUInt() == p.GetUInt();
                             break;
                         }
 
                     case VariantType.Int64:
                         {
-                            bRet = GetLong() == p.GetLong();
+                            bRet = this.GetLong() == p.GetLong();
                             break;
                         }
 
                     case VariantType.UInt64:
                         {
-                            bRet = GetULong() == p.GetULong();
+                            bRet = this.GetULong() == p.GetULong();
                             break;
                         }
 
@@ -1327,7 +1371,7 @@ namespace MediaFoundation
                             string[] sa1;
                             string[] sa2;
 
-                            sa1 = GetStringArray();
+                            sa1 = this.GetStringArray();
                             sa2 = p.GetStringArray();
 
                             if (sa1.Length == sa2.Length)
@@ -1346,8 +1390,10 @@ namespace MediaFoundation
                             {
                                 bRet = false;
                             }
+
                             break;
                         }
+
                     default:
                         {
                             bRet = base.Equals(obj);

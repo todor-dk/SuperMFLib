@@ -40,6 +40,34 @@ namespace MediaFoundation.Misc.Classes
     // automatically when the appropriate methods are called.
     internal class PropVariantMarshaler : ICustomMarshaler
     {
+        public static readonly System.Collections.Generic.List<DebugInfo> DebugInfos = new System.Collections.Generic.List<DebugInfo>();
+
+        public static void AddDebug(PropVariantMarshaler self, object obj, string op, IntPtr info)
+        {
+            lock (SyncLock)
+            {
+                DebugInfos.Add(new DebugInfo()
+                {
+                    ObjectId = (obj == null) ? 0 : obj.GetHashCode(),
+                    MarshlerId = self.GetHashCode(),
+                    Operation = op,
+                    ThreadId = System.Threading.Thread.CurrentThread.ManagedThreadId,
+                    Info = info
+                });
+            }
+        }
+
+        private static readonly object SyncLock = new object();
+
+        public struct DebugInfo
+        {
+            public int ObjectId;
+            public int MarshlerId;
+            public string Operation;
+            public int ThreadId;
+            public IntPtr Info;
+        }
+
         // The managed object passed in to MarshalManagedToNative
         protected PropVariant m_prop;
 
@@ -47,17 +75,19 @@ namespace MediaFoundation.Misc.Classes
         {
             IntPtr p;
 
-            // Cast the object back to a PropVariant
-            m_prop = managedObj as PropVariant;
+            AddDebug(this, this.m_prop, "MarshalManagedToNative", (IntPtr)((managedObj == null) ? 0 : managedObj.GetHashCode()));
 
-            if (m_prop != null)
+            // Cast the object back to a PropVariant
+            this.m_prop = managedObj as PropVariant;
+
+            if (this.m_prop != null)
             {
                 // Release any memory currently allocated
-                m_prop.Clear();
+                this.m_prop.Clear();
 
                 // Create an appropriately sized buffer, blank it, and send it to
                 // the marshaler to make the COM call with.
-                int iSize = GetNativeDataSize();
+                int iSize = this.GetNativeDataSize();
                 p = Marshal.AllocCoTaskMem(iSize);
 
                 if (IntPtr.Size == 4)
@@ -84,25 +114,30 @@ namespace MediaFoundation.Misc.Classes
         // from MarshalManagedToNative.  The return value is unused.
         public object MarshalNativeToManaged(IntPtr pNativeData)
         {
-            Marshal.PtrToStructure(pNativeData, m_prop);
-            m_prop = null;
+            AddDebug(this, this.m_prop, "MarshalNativeToManaged", pNativeData);
 
-            return m_prop;
+            Marshal.PtrToStructure(pNativeData, this.m_prop);
+            this.m_prop = null;
+
+            return this.m_prop;
         }
 
-        public void CleanUpManagedData(object ManagedObj)
+        public void CleanUpManagedData(object managedObj)
         {
-            m_prop = null;
+            AddDebug(this, this.m_prop, "CleanUpManagedData", (IntPtr)((managedObj == null) ? 0 : managedObj.GetHashCode()));
+            this.m_prop = null;
         }
 
         public void CleanUpNativeData(IntPtr pNativeData)
         {
+            AddDebug(this, this.m_prop, "CleanUpNativeData", pNativeData);
             Marshal.FreeCoTaskMem(pNativeData);
         }
 
         // The number of bytes to marshal out
         public int GetNativeDataSize()
         {
+            AddDebug(this, this.m_prop, "GetNativeDataSize", IntPtr.Zero);
             return Marshal.SizeOf(typeof(PropVariant));
         }
 

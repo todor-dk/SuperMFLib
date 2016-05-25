@@ -39,7 +39,7 @@ namespace MediaFoundation.Misc.Classes
     /// Represents a FOURCC Code.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    internal class  FourCC
+    internal class FourCC
     {
         /// <summary>
         /// Integer containing the four character code.
@@ -60,7 +60,7 @@ namespace MediaFoundation.Misc.Classes
 
             byte[] asc = Encoding.ASCII.GetBytes(fcc);
 
-            LoadFromBytes(asc[0], asc[1], asc[2], asc[3]);
+            this.LoadFromBytes(asc[0], asc[1], asc[2], asc[3]);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace MediaFoundation.Misc.Classes
         /// <param name="d">Fourth character.</param>
         public FourCC(char a, char b, char c, char d)
         {
-            LoadFromBytes((byte)a, (byte)b, (byte)c, (byte)d);
+            this.LoadFromBytes((byte)a, (byte)b, (byte)c, (byte)d);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace MediaFoundation.Misc.Classes
         /// <param name="fcc">Integer containing the four character code.</param>
         public FourCC(int fcc)
         {
-            m_fourCC = fcc;
+            this.m_fourCC = fcc;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace MediaFoundation.Misc.Classes
         /// <param name="d">Fourth character.</param>
         public FourCC(byte a, byte b, byte c, byte d)
         {
-            LoadFromBytes(a, b, c, d);
+            this.LoadFromBytes(a, b, c, d);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace MediaFoundation.Misc.Classes
             byte[] asc;
             asc = g.ToByteArray();
 
-            LoadFromBytes(asc[0], asc[1], asc[2], asc[3]);
+            this.LoadFromBytes(asc[0], asc[1], asc[2], asc[3]);
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace MediaFoundation.Misc.Classes
         /// <param name="d">Fourth character.</param>
         public void LoadFromBytes(byte a, byte b, byte c, byte d)
         {
-            m_fourCC = a | (b << 8) | (c << 16) | (d << 24);
+            this.m_fourCC = a | (b << 8) | (c << 16) | (d << 24);
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace MediaFoundation.Misc.Classes
         /// <returns>Integer containing the four character code.</returns>
         public int ToInt32()
         {
-            return m_fourCC;
+            return this.m_fourCC;
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace MediaFoundation.Misc.Classes
         /// <returns>Guid containing the Four CC media subtype.</returns>
         public Guid ToMediaSubtype()
         {
-            return new Guid(m_fourCC, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
+            return new Guid(this.m_fourCC, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace MediaFoundation.Misc.Classes
             if (!(obj is FourCC))
                 return false;
 
-            return (obj as FourCC).m_fourCC == m_fourCC;
+            return (obj as FourCC).m_fourCC == this.m_fourCC;
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace MediaFoundation.Misc.Classes
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
-            return m_fourCC.GetHashCode();
+            return this.m_fourCC.GetHashCode();
         }
 
         /// <summary>
@@ -229,32 +229,36 @@ namespace MediaFoundation.Misc.Classes
             char c;
             char[] ca = new char[4];
 
-            c = Convert.ToChar(m_fourCC & 255);
+            c = Convert.ToChar(this.m_fourCC & 255);
             if (!Char.IsLetterOrDigit(c))
             {
                 c = ' ';
             }
+
             ca[0] = c;
 
-            c = Convert.ToChar((m_fourCC >> 8) & 255);
+            c = Convert.ToChar((this.m_fourCC >> 8) & 255);
             if (!Char.IsLetterOrDigit(c))
             {
                 c = ' ';
             }
+
             ca[1] = c;
 
-            c = Convert.ToChar((m_fourCC >> 16) & 255);
+            c = Convert.ToChar((this.m_fourCC >> 16) & 255);
             if (!Char.IsLetterOrDigit(c))
             {
                 c = ' ';
             }
+
             ca[2] = c;
 
-            c = Convert.ToChar((m_fourCC >> 24) & 255);
+            c = Convert.ToChar((this.m_fourCC >> 24) & 255);
             if (!Char.IsLetterOrDigit(c))
             {
                 c = ' ';
             }
+
             ca[3] = c;
 
             string s = new string(ca);

@@ -35,50 +35,51 @@ using MediaFoundation.Core.Enums;
 namespace MediaFoundation.Core.Interfaces
 {
     /// <summary>
-    /// Exposed by some Media Foundation objects that must be explicitly shut down. 
+    /// Exposed by some Media Foundation objects that must be explicitly shut down.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/C3052658-51BB-401B-8DB9-3428868899D6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C3052658-51BB-401B-8DB9-3428868899D6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFShutdown
     {
         /// <summary>
-        /// Shuts down a Media Foundation object and releases all resources associated with the object. 
+        /// Shuts down a Media Foundation object and releases all resources associated with the object.
         /// </summary>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9E7824D2-0F76-4C4C-98C5-BA51CD297DE7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9E7824D2-0F76-4C4C-98C5-BA51CD297DE7(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Shutdown();
 
         /// <summary>
-        /// Queries the status of an earlier call to the <see cref="IMFShutdown.Shutdown"/> method. 
+        /// Queries the status of an earlier call to the <see cref="IMFShutdown.Shutdown"/> method.
         /// </summary>
         /// <param name="pStatus">
-        /// Receives a member of the <see cref="MFShutdownStatus"/> enumeration. 
+        /// Receives a member of the <see cref="MFShutdownStatus"/> enumeration.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -94,15 +95,14 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/8CF5F5F3-A3AD-4745-87E8-764ED118477A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8CF5F5F3-A3AD-4745-87E8-764ED118477A(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetShutdownStatus(
-            out MFShutdownStatus pStatus
-            );
+            out MFShutdownStatus pStatus);
     }
 }

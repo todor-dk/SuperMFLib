@@ -37,7 +37,7 @@ namespace MediaFoundation.Misc
 {
     /// <summary>
     /// The <strong>BITMAPINFOHEADER</strong> structure contains information about the dimensions and color
-    /// format of a DIB. 
+    /// format of a DIB.
     /// </summary>
     /// <remarks>
     /// <code language="cpp" title="C/C++ Syntax">
@@ -56,46 +56,51 @@ namespace MediaFoundation.Misc
     /// } BITMAPINFOHEADER, *PBITMAPINFOHEADER;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/02F8ED65-8FED-4DDA-9B94-7343A0CFA8C1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/02F8ED65-8FED-4DDA-9B94-7343A0CFA8C1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("BITMAPINFOHEADER")]
-    public class  BitmapInfoHeader
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [UnmanagedName("BITMAPINFOHEADER")]
+    public class BitmapInfoHeader
     {
         /// <summary>
         /// The number of bytes required by the structure.
         /// </summary>
         public int Size;
+
         /// <summary>
         /// The width of the bitmap, in pixels.
         /// <para/>
         /// If <strong>Compression</strong> is BI_JPEG or BI_PNG, the <strong>biWidth</strong> member
-        /// specifies the width of the decompressed JPEG or PNG image file, respectively. 
+        /// specifies the width of the decompressed JPEG or PNG image file, respectively.
         /// </summary>
         public int Width;
+
         /// <summary>
         /// The height of the bitmap, in pixels. If <strong>Height</strong> is positive, the bitmap is a
         /// bottom-up DIB and its origin is the lower-left corner. If <strong>biHeight</strong> is negative,
-        /// the bitmap is a top-down DIB and its origin is the upper-left corner. 
+        /// the bitmap is a top-down DIB and its origin is the upper-left corner.
         /// <para/>
         /// If <strong>Height</strong> is negative, indicating a top-down DIB, <strong>biCompression</strong>
-        /// must be either BI_RGB or BI_BITFIELDS. Top-down DIBs cannot be compressed. 
+        /// must be either BI_RGB or BI_BITFIELDS. Top-down DIBs cannot be compressed.
         /// <para/>
         /// If <strong>Compression</strong> is BI_JPEG or BI_PNG, the <strong>Height</strong> member
-        /// specifies the height of the decompressed JPEG or PNG image file, respectively. 
+        /// specifies the height of the decompressed JPEG or PNG image file, respectively.
         /// </summary>
         public int Height;
+
         /// <summary>
         /// The number of planes for the target device. This value must be set to 1.
         /// </summary>
         public short Planes;
+
         /// <summary>
         /// The number of bits-per-pixel. The <strong>BitCount</strong> member of the <strong>
         /// BITMAPINFOHEADER</strong> structure determines the number of bits that define each pixel and the
-        /// maximum number of colors in the bitmap. This member must be one of the following values. 
+        /// maximum number of colors in the bitmap. This member must be one of the following values.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Value</term><description>Meaning</description></listheader>
@@ -109,6 +114,7 @@ namespace MediaFoundation.Misc
         /// </list>
         /// </summary>
         public short BitCount;
+
         /// <summary>
         /// The type of compression for a compressed bottom-up bitmap (top-down DIBs cannot be compressed).
         /// This member can be one of the following values.
@@ -124,41 +130,46 @@ namespace MediaFoundation.Misc
         /// </list>
         /// </summary>
         public int Compression;
+
         /// <summary>
         /// The size, in bytes, of the image. This may be set to zero for BI_RGB bitmaps.
         /// <para/>
         /// If <strong>Compression</strong> is BI_JPEG or BI_PNG, <strong>ImageSize</strong> indicates the
-        /// size of the JPEG or PNG image buffer, respectively. 
+        /// size of the JPEG or PNG image buffer, respectively.
         /// </summary>
         public int ImageSize;
+
         /// <summary>
         /// The horizontal resolution, in pixels-per-meter, of the target device for the bitmap. An application
         /// can use this value to select a bitmap from a resource group that best matches the characteristics
         /// of the current device.
         /// </summary>
         public int XPelsPerMeter;
+
         /// <summary>
         /// The vertical resolution, in pixels-per-meter, of the target device for the bitmap.
         /// </summary>
         public int YPelsPerMeter;
+
         /// <summary>
         /// The number of color indexes in the color table that are actually used by the bitmap. If this value
         /// is zero, the bitmap uses the maximum number of colors corresponding to the value of the <strong>
-        /// BitCount</strong> member for the compression mode specified by <strong>Compression</strong>. 
+        /// BitCount</strong> member for the compression mode specified by <strong>Compression</strong>.
         /// <para/>
         /// If <strong>ClrUsed</strong> is nonzero and the <strong>BitCount</strong> member is less than
         /// 16, the <strong>ClrUsed</strong> member specifies the actual number of colors the graphics engine
         /// or device driver accesses. If <strong>BitCount</strong> is 16 or greater, the <strong>ClrUsed
         /// </strong> member specifies the size of the color table used to optimize performance of the system
         /// color palettes. If <strong>BitCount</strong> equals 16 or 32, the optimal color palette starts
-        /// immediately following the three <strong>DWORD</strong> masks. 
+        /// immediately following the three <strong>DWORD</strong> masks.
         /// <para/>
         /// When the bitmap array immediately follows the <see cref="Misc.BitmapInfoHeaderWithData"/>
         /// structure, it is a packed bitmap. Packed bitmaps are referenced by a single pointer. Packed bitmaps
         /// require that the <strong>ClrUsed</strong> member must be either zero or the actual size of the
-        /// color table. 
+        /// color table.
         /// </summary>
         public int ClrUsed;
+
         /// <summary>
         /// The number of color indexes that are required for displaying the bitmap. If this value is zero, all
         /// colors are required.
@@ -282,16 +293,16 @@ namespace MediaFoundation.Misc
         /// <param name="bmi">The bmi.</param>
         public void CopyFrom(BitmapInfoHeader bmi)
         {
-            Size = bmi.Size;
-            Width = bmi.Width;
-            Height = bmi.Height;
-            Planes = bmi.Planes;
-            BitCount = bmi.BitCount;
-            Compression = bmi.Compression;
-            ImageSize = bmi.ImageSize;
-            YPelsPerMeter = bmi.YPelsPerMeter;
-            ClrUsed = bmi.ClrUsed;
-            ClrImportant = bmi.ClrImportant;
+            this.Size = bmi.Size;
+            this.Width = bmi.Width;
+            this.Height = bmi.Height;
+            this.Planes = bmi.Planes;
+            this.BitCount = bmi.BitCount;
+            this.Compression = bmi.Compression;
+            this.ImageSize = bmi.ImageSize;
+            this.YPelsPerMeter = bmi.YPelsPerMeter;
+            this.ClrUsed = bmi.ClrUsed;
+            this.ClrImportant = bmi.ClrImportant;
 
             if (bmi is BitmapInfoHeaderWithData)
             {

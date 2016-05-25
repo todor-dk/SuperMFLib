@@ -34,7 +34,6 @@ using MediaFoundation.EVR;
 
 namespace MediaFoundation.MFPlayer.Interfaces
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

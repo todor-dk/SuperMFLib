@@ -39,20 +39,21 @@ namespace MediaFoundation.Core.Interfaces
     /// Represents a topology. A <em>topology</em> describes a collection of media sources, sinks, and
     /// transforms that are connected in a certain order. These objects are represented within the topology
     /// by <em>topology nodes</em>, which expose the <see cref="IMFTopologyNode"/> interface. A topology
-    /// describes the path of multimedia data through these nodes. 
+    /// describes the path of multimedia data through these nodes.
     /// <para/>
-    /// To create a topology, call <see cref="MFExtern.MFCreateTopology"/>. 
+    /// To create a topology, call <see cref="MFExtern.MFCreateTopology"/>.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/F293E9EE-9BD2-4B3E-A4FF-53457EE910F6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F293E9EE-9BD2-4B3E-A4FF-53457EE910F6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC433")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC433")]
     public interface IMFTopology : IMFAttributes
     {
         #region IMFAttributes methods
@@ -68,7 +69,7 @@ namespace MediaFoundation.Core.Interfaces
         /// and returns S_OK if the key is found, but does not copy the value.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -101,7 +102,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pType">Receives a member of the <see cref="MFAttributeType" /> enumeration.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -128,16 +129,16 @@ namespace MediaFoundation.Core.Interfaces
             out MFAttributeType pType);
 
         /// <summary>
-        /// Queries whether a stored attribute value equals to a specified <strong>PROPVARIANT</strong>. 
+        /// Queries whether a stored attribute value equals to a specified <strong>PROPVARIANT</strong>.
         /// </summary>
         /// <param name="guidKey">GUID that identifies which value to query.</param>
-        /// <param name="Value"><strong>PROPVARIANT</strong> that contains the value to compare.</param>
+        /// <param name="value"><strong>PROPVARIANT</strong> that contains the value to compare.</param>
         /// <param name="pbResult">Receives a Boolean value indicating whether the attribute matches the value given in <em>Value</em>
         /// . See Remarks. This parameter must not be <strong>NULL</strong>. If this parameter is <strong>NULL
         /// </strong>, an access violation occurs.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -161,21 +162,21 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int CompareItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant Value,
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant value,
             [MarshalAs(UnmanagedType.Bool)] out bool pbResult);
 
         /// <summary>
         /// Compares the attributes on this object with the attributes on another object.
         /// </summary>
         /// <param name="pTheirs">Pointer to the <see cref="IMFAttributes" /> interface of the object to compare with this object.</param>
-        /// <param name="MatchType">Member of the <see cref="MFAttributesMatchType" /> enumeration, specifying the type of comparison to
+        /// <param name="matchType">Member of the <see cref="MFAttributesMatchType" /> enumeration, specifying the type of comparison to
         /// make.</param>
         /// <param name="pbResult">Receives a Boolean value. The value is <strong>TRUE</strong> if the two sets of attributes match in
         /// the way specified by the <em>MatchType</em> parameter. Otherwise, the value is <strong>FALSE
         /// </strong>.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -199,11 +200,11 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int Compare(
             [MarshalAs(UnmanagedType.Interface)] IMFAttributes pTheirs,
-            MFAttributesMatchType MatchType,
+            MFAttributesMatchType matchType,
             [MarshalAs(UnmanagedType.Bool)] out bool pbResult);
 
         /// <summary>
-        /// Retrieves a <strong>UINT32</strong> value associated with a key. 
+        /// Retrieves a <strong>UINT32</strong> value associated with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies which value to retrieve. The attribute type must be <strong>
         /// MF_ATTRIBUTE_UINT32</strong>.</param>
@@ -212,7 +213,7 @@ namespace MediaFoundation.Core.Interfaces
         /// parameter is not changed.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -240,7 +241,7 @@ namespace MediaFoundation.Core.Interfaces
             out int punValue);
 
         /// <summary>
-        /// Retrieves a <strong>UINT64</strong> value associated with a key. 
+        /// Retrieves a <strong>UINT64</strong> value associated with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies which value to retrieve. The attribute type must be <strong>
         /// MF_ATTRIBUTE_UINT64</strong>.</param>
@@ -249,7 +250,7 @@ namespace MediaFoundation.Core.Interfaces
         /// parameter is not changed.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -277,7 +278,7 @@ namespace MediaFoundation.Core.Interfaces
             out long punValue);
 
         /// <summary>
-        /// Retrieves a <strong>double</strong> value associated with a key. 
+        /// Retrieves a <strong>double</strong> value associated with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies which value to retrieve. The attribute type must be <strong>
         /// MF_ATTRIBUTE_DOUBLE</strong>.</param>
@@ -286,7 +287,7 @@ namespace MediaFoundation.Core.Interfaces
         /// parameter is not changed.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -322,7 +323,7 @@ namespace MediaFoundation.Core.Interfaces
         /// into this parameter. Otherwise, the original value of this parameter is not changed.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -359,7 +360,7 @@ namespace MediaFoundation.Core.Interfaces
         /// string value, call <see cref="IMFAttributes.GetString" />.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -401,7 +402,7 @@ namespace MediaFoundation.Core.Interfaces
         /// character. This parameter can be <strong>NULL</strong>.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -436,7 +437,7 @@ namespace MediaFoundation.Core.Interfaces
 
         /// <summary>
         /// Gets a wide-character string associated with a key. This method allocates the memory for the
-        /// string. 
+        /// string.
         /// </summary>
         /// <param name="guidKey">A GUID that identifies which value to retrieve. The attribute type must be <strong>
         /// MF_ATTRIBUTE_STRING</strong>.</param>
@@ -446,7 +447,7 @@ namespace MediaFoundation.Core.Interfaces
         /// character. This parameter must not be <strong>NULL</strong>.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -484,7 +485,7 @@ namespace MediaFoundation.Core.Interfaces
         /// in bytes.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -524,7 +525,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pcbBlobSize">Receives the size of the byte array. This parameter can be <strong>NULL</strong>.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -557,6 +558,7 @@ namespace MediaFoundation.Core.Interfaces
             out int pcbBlobSize);
 
         // Use GetBlob instead of this
+
         /// <summary>
         /// Retrieves a byte array associated with a key. This method allocates the memory for the array.
         /// </summary>
@@ -566,7 +568,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pcbSize">Receives the size of the array, in bytes.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -604,7 +606,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="ppv">Receives a pointer to the requested interface. The caller must release the interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -635,16 +637,16 @@ namespace MediaFoundation.Core.Interfaces
             /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppv);
 
         /// <summary>
-        /// Adds an attribute value with a specified key. 
+        /// Adds an attribute value with a specified key.
         /// </summary>
         /// <param name="guidKey">A GUID that identifies the value to set. If this key already exists, the method overwrites the old
         /// value.</param>
-        /// <param name="Value">A <strong>PROPVARIANT</strong> that contains the attribute value. The method copies the value. The
+        /// <param name="value">A <strong>PROPVARIANT</strong> that contains the attribute value. The method copies the value. The
         /// <strong>PROPVARIANT</strong> type must be one of the types listed in the
         /// <see cref="MFAttributeType" /> enumeration.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -669,7 +671,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int SetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant Value);
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant value);
 
         /// <summary>
         /// Removes a key/value pair from the object's attribute list.
@@ -677,7 +679,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="guidKey">GUID that identifies the value to delete.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -705,7 +707,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -726,14 +728,14 @@ namespace MediaFoundation.Core.Interfaces
         new int DeleteAllItems();
 
         /// <summary>
-        /// Associates a <strong>UINT32</strong> value with a key. 
+        /// Associates a <strong>UINT32</strong> value with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies the value to set. If this key already exists, the method overwrites the old
         /// value.</param>
         /// <param name="unValue">New value for this key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -759,14 +761,14 @@ namespace MediaFoundation.Core.Interfaces
             int unValue);
 
         /// <summary>
-        /// Associates a <strong>UINT64</strong> value with a key. 
+        /// Associates a <strong>UINT64</strong> value with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies the value to set. If this key already exists, the method overwrites the old
         /// value.</param>
         /// <param name="unValue">New value for this key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -792,14 +794,14 @@ namespace MediaFoundation.Core.Interfaces
             long unValue);
 
         /// <summary>
-        /// Associates a <strong>double</strong> value with a key. 
+        /// Associates a <strong>double</strong> value with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies the value to set. If this key already exists, the method overwrites the old
         /// value.</param>
         /// <param name="fValue">New value for this key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -832,7 +834,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="guidValue">New value for this key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -867,7 +869,7 @@ namespace MediaFoundation.Core.Interfaces
         /// string.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -901,7 +903,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="cbBufSize">Size of the array, in bytes.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -929,14 +931,14 @@ namespace MediaFoundation.Core.Interfaces
             int cbBufSize);
 
         /// <summary>
-        /// Associates an <strong>IUnknown</strong> pointer with a key. 
+        /// Associates an <strong>IUnknown</strong> pointer with a key.
         /// </summary>
         /// <param name="guidKey">GUID that identifies the value to set. If this key already exists, the method overwrites the old
         /// value.</param>
         /// <param name="pUnknown"><strong>IUnknown</strong> pointer to be associated with this key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -964,11 +966,11 @@ namespace MediaFoundation.Core.Interfaces
         /// <summary>
         /// Locks the attribute store so that no other thread can access it. If the attribute store is already
         /// locked by another thread, this method blocks until the other thread unlocks the object. After
-        /// calling this method, call <see cref="IMFAttributes.UnlockStore"/> to unlock the object. 
+        /// calling this method, call <see cref="IMFAttributes.UnlockStore"/> to unlock the object.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -990,11 +992,11 @@ namespace MediaFoundation.Core.Interfaces
 
         /// <summary>
         /// Unlocks the attribute store after a call to the <see cref="IMFAttributes.LockStore"/> method. While
-        /// the object is unlocked, multiple threads can access the object's attributes. 
+        /// the object is unlocked, multiple threads can access the object's attributes.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1021,7 +1023,7 @@ namespace MediaFoundation.Core.Interfaces
         /// parameter is <strong>NULL</strong>, an access violation occurs.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1056,7 +1058,7 @@ namespace MediaFoundation.Core.Interfaces
         /// memory allocated by this method.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1085,13 +1087,13 @@ namespace MediaFoundation.Core.Interfaces
             [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue);
 
         /// <summary>
-        /// Copies all of the attributes from this object into another attribute store. 
+        /// Copies all of the attributes from this object into another attribute store.
         /// </summary>
         /// <param name="pDest">A pointer to the <see cref="IMFAttributes" /> interface of the attribute store that receives the
         /// copy.</param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1115,11 +1117,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Gets the identifier of the topology.
         /// </summary>
         /// <param name="pID">
-        /// Receives the identifier, as a <c>TOPOID</c> value. 
+        /// Receives the identifier, as a <c>TOPOID</c> value.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1128,10 +1130,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/F7D33D20-1B58-4B88-9A98-1004A5C42DFA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F7D33D20-1B58-4B88-9A98-1004A5C42DFA(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1142,11 +1144,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Adds a node to the topology.
         /// </summary>
         /// <param name="pNode">
-        /// Pointer to the node's <see cref="IMFTopologyNode"/> interface. 
+        /// Pointer to the node's <see cref="IMFTopologyNode"/> interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1161,10 +1163,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5E519524-F5C5-4D4D-922F-166F9E616631(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5E519524-F5C5-4D4D-922F-166F9E616631(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1175,11 +1177,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Removes a node from the topology.
         /// </summary>
         /// <param name="pNode">
-        /// Pointer to the node's <see cref="IMFTopologyNode"/> interface. 
+        /// Pointer to the node's <see cref="IMFTopologyNode"/> interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1194,10 +1196,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0DBAFD3F-315B-4135-AECD-AD46F2C19886(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0DBAFD3F-315B-4135-AECD-AD46F2C19886(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1205,14 +1207,14 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.Interface)] IMFTopologyNode pNode);
 
         /// <summary>
-        /// Gets the number of nodes in the topology. 
+        /// Gets the number of nodes in the topology.
         /// </summary>
         /// <param name="pwNodes">
-        /// Receives the number of nodes. 
+        /// Receives the number of nodes.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1221,10 +1223,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/87378088-1D7A-4AD7-942F-69B6CFC4E573(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/87378088-1D7A-4AD7-942F-69B6CFC4E573(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1232,19 +1234,19 @@ namespace MediaFoundation.Core.Interfaces
             out short pwNodes);
 
         /// <summary>
-        /// Gets a node in the topology, specified by index. 
+        /// Gets a node in the topology, specified by index.
         /// </summary>
         /// <param name="wIndex">
-        /// The zero-based index of the node. To get the number of nodes in the topology, call 
-        /// <see cref="IMFTopology.GetNodeCount"/>. 
+        /// The zero-based index of the node. To get the number of nodes in the topology, call
+        /// <see cref="IMFTopology.GetNodeCount"/>.
         /// </param>
         /// <param name="ppNode">
         /// Receives a pointer to the node's <see cref="IMFTopologyNode"/> interface. The caller must release
-        /// the pointer. 
+        /// the pointer.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1261,10 +1263,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/97053D10-5AC7-40C0-B46B-77D401284D58(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/97053D10-5AC7-40C0-B46B-77D401284D58(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1277,7 +1279,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1289,24 +1291,24 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Clear();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/919A712F-3F1B-4681-9EEB-958AC349D8F6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/919A712F-3F1B-4681-9EEB-958AC349D8F6(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Clear();
 
         /// <summary>
-        /// Converts this topology into a copy of another topology. 
+        /// Converts this topology into a copy of another topology.
         /// </summary>
         /// <param name="pTopology">
-        /// A pointer to the <see cref="IMFTopology"/> interface of the topology to clone. 
+        /// A pointer to the <see cref="IMFTopology"/> interface of the topology to clone.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1315,10 +1317,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B455AA57-9785-4741-BC3B-1F99CBF4E3D9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B455AA57-9785-4741-BC3B-1F99CBF4E3D9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1329,16 +1331,16 @@ namespace MediaFoundation.Core.Interfaces
         /// Gets a node in the topology, specified by node identifier.
         /// </summary>
         /// <param name="qwTopoNodeID">
-        /// The identifier of the node to retrieve. To get a node's identifier, call 
-        /// <see cref="IMFTopologyNode.GetTopoNodeID"/>. 
+        /// The identifier of the node to retrieve. To get a node's identifier, call
+        /// <see cref="IMFTopologyNode.GetTopoNodeID"/>.
         /// </param>
         /// <param name="ppNode">
         /// Receives a pointer to the node's <see cref="IMFTopologyNode"/> interface. The caller must release
-        /// the interface. 
+        /// the interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1354,10 +1356,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/34C8326F-BD34-4BF6-9171-A1ED3191B85E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34C8326F-BD34-4BF6-9171-A1ED3191B85E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1366,17 +1368,17 @@ namespace MediaFoundation.Core.Interfaces
             /* [MarshalAs(UnmanagedType.Interface)] out IMFTopologyNode */ out IntPtr ppNode);
 
         /// <summary>
-        /// Gets the source nodes in the topology. 
+        /// Gets the source nodes in the topology.
         /// </summary>
         /// <param name="ppCollection">
         /// Receives a pointer to the <see cref="IMFCollection"/> interface. The caller must release the
         /// pointer. The collection contains <strong>IUnknown</strong> pointers to all of the source nodes in
         /// the topology. Each pointer can be queried for the <see cref="IMFTopologyNode"/> interface. The
-        /// collection might be empty. 
+        /// collection might be empty.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1385,10 +1387,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9DA7D4CD-AD83-4D64-9773-699F39625056(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9DA7D4CD-AD83-4D64-9773-699F39625056(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -1396,17 +1398,17 @@ namespace MediaFoundation.Core.Interfaces
             /* [MarshalAs(UnmanagedType.Interface)] out IMFCollection */ out IntPtr ppCollection);
 
         /// <summary>
-        /// Gets the output nodes in the topology. 
+        /// Gets the output nodes in the topology.
         /// </summary>
         /// <param name="ppCollection">
         /// Receives a pointer to the <see cref="IMFCollection"/> interface. The caller must release the
         /// pointer. The collection contains <strong>IUnknown</strong> pointers to all of the output nodes in
         /// the topology. Each pointer can be queried for the <see cref="IMFTopologyNode"/> interface. The
-        /// collection might be empty. 
+        /// collection might be empty.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1415,10 +1417,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0862CD4A-4D22-4D8D-A754-0CD376D44B22(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0862CD4A-4D22-4D8D-A754-0CD376D44B22(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

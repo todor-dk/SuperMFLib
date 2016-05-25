@@ -17,14 +17,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFGetService"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFGetService"/>: 
-    /// Queries an object for a specified service interface. 
+    /// <see cref="IMFGetService"/>:
+    /// Queries an object for a specified service interface.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/102A1DFF-8419-4F86-A145-53CE3D0123F5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/102A1DFF-8419-4F86-A145-53CE3D0123F5(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class GetService : COM<IMFGetService>
@@ -63,15 +63,15 @@ namespace MediaFoundation
         /// Retrieves a service.
         /// </summary>
         /// <param name="guidService">
-        /// The service identifier (SID) of the service. For a list of service identifiers, see 
-        /// <c>Service Interfaces</c>. 
+        /// The service identifier (SID) of the service. For a list of service identifiers, see
+        /// <c>Service Interfaces</c>.
         /// </param>
         /// <returns>
         /// The requested service or null if the object does not support the service.
         /// The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TService Get<TService>(MFService guidService, COM.ComFactory<TService> factory)
@@ -89,6 +89,7 @@ namespace MediaFoundation
                     Marshal.Release(ppvObject);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
             try
             {

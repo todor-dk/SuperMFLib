@@ -19,7 +19,7 @@ namespace MediaFoundation
     public abstract class COM : IDisposable
     {
         /// <summary>
-        /// If <paramref name="hr"/> has a "failed" status code (E_*), throw an exception.  
+        /// If <paramref name="hr"/> has a "failed" status code (E_*), throw an exception.
         /// Note that status messages (S_*) are not considered failure codes.  If MediaFoundation error text
         /// is available, it is used to build the exception, otherwise a generic com error is thrown.
         /// </summary>
@@ -31,7 +31,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// If <paramref name="hr"/> has a "failed" status code (E_*), throw an exception.  
+        /// If <paramref name="hr"/> has a "failed" status code (E_*), throw an exception.
         /// Note that status messages (S_*) are not considered failure codes.  If MediaFoundation error text
         /// is available, it is used to build the exception, otherwise a generic com error is thrown.
         /// </summary>
@@ -48,7 +48,7 @@ namespace MediaFoundation
         /// Provides a generic test for success on any HRESULT status code.
         /// </summary>
         /// <param name="hr">
-        /// The status code. This value can be an HRESULT or an SCODE. A non-negative number indicates success. 
+        /// The status code. This value can be an HRESULT or an SCODE. A non-negative number indicates success.
         /// </param>
         /// <returns>
         /// TRUE if <paramref name="hr"/> represents a success status value; otherwise, FALSE.
@@ -66,7 +66,7 @@ namespace MediaFoundation
         /// The status code. This value can be an HRESULT or an SCODE. A negative number indicates failure.
         /// </param>
         /// <returns>
-        /// TRUE if <paramref name="hr"/> represents a failed status value; otherwise, FALSE. 
+        /// TRUE if <paramref name="hr"/> represents a failed status value; otherwise, FALSE.
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Failed(int hr)
@@ -132,7 +132,7 @@ namespace MediaFoundation
         /// Throw an exception if <paramref name="hr"/> is not <see cref="S_OK"/>.
         /// </summary>
         /// <param name="hr">The HRESULT to check for <see cref="S_OK"/>.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)] 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ThrowIfNotOK(int hr)
         {
             if (hr != COM.S_OK)
@@ -154,6 +154,7 @@ namespace MediaFoundation
                     Marshal.Release(unknown);
                     unknown = IntPtr.Zero;
                 }
+
                 throw new COMException(MFError.GetErrorText(hr), hr);
             }
         }
@@ -203,6 +204,7 @@ namespace MediaFoundation
         /// HRESULT status code: Operation successful.
         /// </summary>
         public const int S_OK = 0;
+
         /// <summary>
         /// HRESULT status code: Operation successful, but with some possible warning.
         /// </summary>
@@ -224,37 +226,45 @@ namespace MediaFoundation
         /// HRESULT status code: Not implemented.
         /// </summary>
         internal const int E_NotImplemented = unchecked((int)0x80004001);
+
         /// <summary>
         /// HRESULT status code: No such interface supported.
         /// </summary>
         internal const int E_NoInterface = unchecked((int)0x80004002);
+
         /// <summary>
         /// HRESULT status code: Pointer that is not valid.
         /// </summary>
         internal const int E_Pointer = unchecked((int)0x80004003);
+
         /// <summary>
         /// HRESULT status code: Operation aborted.
         /// </summary>
         internal const int E_Abort = unchecked((int)0x80004004);
+
         /// <summary>
         /// HRESULT status code: Unspecified failure.
         /// </summary>
         internal const int E_Fail = unchecked((int)0x80004005);
+
         /// <summary>
         /// HRESULT status code: Unexpected failure.
         /// </summary>
         internal const int E_Unexpected = unchecked((int)0x8000FFFF);
+
         /// <summary>
         /// HRESULT status code: Failed to allocate necessary memory.
         /// </summary>
         internal const int E_OutOfMemory = unchecked((int)0x8007000E);
+
         /// <summary>
         /// HRESULT status code: One or more arguments are not valid.
         /// </summary>
         internal const int E_InvalidArgument = unchecked((int)0x80070057);
+
         /// <summary>
-        /// HRESULT status code: Indicates that one of the given parameters 
-        /// does not specify a buffer large enough to store the property value. 
+        /// HRESULT status code: Indicates that one of the given parameters
+        /// does not specify a buffer large enough to store the property value.
         /// </summary>
         internal const int E_BufferTooSmall = unchecked((int)0x8007007a);
 
@@ -350,8 +360,8 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Converts this object to a COM object of type <typeparamref name="TObject"/> 
-        /// or null if the requested 
+        /// Converts this object to a COM object of type <typeparamref name="TObject"/>
+        /// or null if the requested
         /// </summary>
         /// <typeparam name="TObject">Type of the required COM object.</typeparam>
         /// <param name="factory">Delegate for creating COM objects from IUnknown pointers.</param>
@@ -407,8 +417,10 @@ namespace MediaFoundation
                         return COM.IID_IUnknown;
                     }
                 }
+
                 type = type.BaseType;
             }
+
             throw new ArgumentException("TObject must be generic type deriving from COM<>.");
         }
 
@@ -423,7 +435,6 @@ namespace MediaFoundation
         {
             this.Dispose(true);
         }
-
 
         /// <summary>
         /// Dispose resources.
@@ -468,9 +479,8 @@ namespace MediaFoundation
         }
 
         #endregion
-       
-    }
 
+    }
 
     /// <summary>
     /// Base class for implementing objects that reference a COM interface.
@@ -497,7 +507,7 @@ namespace MediaFoundation
 
             Guid iid = COM.IID_IUnknown;
             IntPtr ppv = IntPtr.Zero;
-            int hr = Marshal.QueryInterface(unknown,ref iid, out ppv);
+            int hr = Marshal.QueryInterface(unknown, ref iid, out ppv);
             COM.ThrowIfFailed(hr);
             if (ppv == IntPtr.Zero)
                 throw new InvalidComObjectException();
@@ -509,7 +519,7 @@ namespace MediaFoundation
                 throw new InvalidComObjectException();
             Marshal.Release(unknown);
 
-            this._Interface = (TInterface) comObject;
+            this._Interface = (TInterface)comObject;
             this.Released = false;
             if (!Object.ReferenceEquals(comObject, this._Interface))
                 Marshal.ReleaseComObject(comObject);
@@ -544,7 +554,7 @@ namespace MediaFoundation
             if (comInterface != null)
             {
                 // This is to prevent race condition with the Dispose() method
-                lock(comInterface)
+                lock (comInterface)
                 {
                     // Check once more ... could be that the interface was released before acquiring the lock
                     if (Volatile.Read(ref this._Interface) != null)
@@ -567,15 +577,15 @@ namespace MediaFoundation
         /// Retrieves a service.
         /// </summary>
         /// <param name="guidService">
-        /// The service identifier (SID) of the service. For a list of service identifiers, see 
-        /// <c>Service Interfaces</c>. 
+        /// The service identifier (SID) of the service. For a list of service identifiers, see
+        /// <c>Service Interfaces</c>.
         /// </param>
         /// <returns>
         /// The requested service or null if the object does not support the service.
         /// The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4287DD1F-1718-4231-BC62-B58E0E61D688(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TService GetService<TService>(MFService guidService, COM.ComFactory<TService> factory)
@@ -593,6 +603,7 @@ namespace MediaFoundation
                     Marshal.Release(ppvObject);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppvObject);
             return factory(ref ppvObject);
         }
@@ -614,7 +625,7 @@ namespace MediaFoundation
                     lock (comInterface)
                     {
                         COM.SafeRelease(comInterface);
-                        // In here, another thread can access this._Interface, but 
+                        // In here, another thread can access this._Interface, but
                         // this thread will fail with "RCW disconnected" exception.
                         // What is important is that AccessInterfacePointer() will
                         // not be able to access the naked IUnknown pointer,
@@ -623,6 +634,7 @@ namespace MediaFoundation
                     }
                 }
             }
+
             this.Released = true;
             base.Dispose(disposing);
         }
@@ -641,7 +653,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Determines whether the specified COM interface reference is equal to the current COM interface reference. 
+        /// Determines whether the specified COM interface reference is equal to the current COM interface reference.
         /// </summary>
         /// <param name="other">Another COM interface reference to compare to this COM interface reference.</param>
         /// <returns><c>true</c> if this COM interface reference equals the given COM interface reference, <c>false</c> otherwise.</returns>
@@ -668,7 +680,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Compares whether the left COM interface reference operand is equal to the right COM interface reference operand. 
+        /// Compares whether the left COM interface reference operand is equal to the right COM interface reference operand.
         /// </summary>
         /// <param name="left">The left COM interface reference operand.</param>
         /// <param name="right">The right COM interface reference operand.</param>
@@ -683,7 +695,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Compares whether the left COM interface reference operand is not equal to the right COM interface reference operand. 
+        /// Compares whether the left COM interface reference operand is not equal to the right COM interface reference operand.
         /// </summary>
         /// <param name="left">The left COM interface reference operand.</param>
         /// <param name="right">The right COM interface reference operand.</param>
@@ -697,7 +709,6 @@ namespace MediaFoundation
             return !left.Equals(right);
         }
 
-        #endregion		
+        #endregion
     }
 }
-

@@ -16,15 +16,15 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFActivate"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFActivate"/>: 
+    /// <see cref="IMFActivate"/>:
     /// Enables the application to defer the creation of an object. This interface is exposed by activation
     /// objects.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/C0936E3C-3CD1-4C1E-A336-2DEE7D943963(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C0936E3C-3CD1-4C1E-A336-2DEE7D943963(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class Activate : Attributes<IMFActivate>
@@ -60,14 +60,14 @@ namespace MediaFoundation
         #endregion
 
         /// <summary>
-        /// Creates an activation object for the <c>Streaming Audio Renderer</c>. 
+        /// Creates an activation object for the <c>Streaming Audio Renderer</c>.
         /// </summary>
         /// <returns>
-        /// Returns a new <see cref="Activate"/>. Use this object to create the audio renderer. 
-        /// The caller must release the instance. 
+        /// Returns a new <see cref="Activate"/>. Use this object to create the audio renderer.
+        /// The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/BCE55C34-D64A-4F3B-8D09-6C9363E4EB11(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BCE55C34-D64A-4F3B-8D09-6C9363E4EB11(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static Activate CreateAudioRendererActivate()
@@ -86,11 +86,11 @@ namespace MediaFoundation
         /// Handle to the window where the video will be displayed.
         /// </param>
         /// <returns>
-        /// Returns a new <see cref="Activate"/>. Use this object to create the EVR. 
-        /// The caller must release the instance. 
+        /// Returns a new <see cref="Activate"/>. Use this object to create the EVR.
+        /// The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/021887FC-36AF-42D4-AE46-2EDC1C700110(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/021887FC-36AF-42D4-AE46-2EDC1C700110(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static Activate CreateVideoRendererActivate(IntPtr hwndVideo)
@@ -103,16 +103,16 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Creates the object associated with this activation object. 
+        /// Creates the object associated with this activation object.
         /// </summary>
         /// <param name="interfaceId">
-        /// Interface identifier (IID) of the requested interface. 
+        /// Interface identifier (IID) of the requested interface.
         /// </param>
         /// <returns>
-        /// Object for the requested interface. The caller must release the instance. 
+        /// Object for the requested interface. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/120B8070-6732-450D-8334-B3910F7BB4D2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/120B8070-6732-450D-8334-B3910F7BB4D2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public ComObject ActivateObject(Guid interfaceId)
@@ -124,13 +124,13 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Creates the object associated with this activation object. 
+        /// Creates the object associated with this activation object.
         /// </summary>
         /// <returns>
-        /// Object of the requested type. The caller must release the instance. 
+        /// Object of the requested type. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/120B8070-6732-450D-8334-B3910F7BB4D2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/120B8070-6732-450D-8334-B3910F7BB4D2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TObject ActivateObject<TObject>()
@@ -144,7 +144,7 @@ namespace MediaFoundation
         /// Shuts down the created object.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1F88FF31-5A91-4838-BFCE-673A5A85C766(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1F88FF31-5A91-4838-BFCE-673A5A85C766(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void ShutdownObject()
@@ -157,7 +157,7 @@ namespace MediaFoundation
         /// Detaches the created object from the activation object.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/15216C57-F85D-4087-AD52-D35059647828(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/15216C57-F85D-4087-AD52-D35059647828(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void DetachObject()

@@ -36,29 +36,29 @@ using MediaFoundation.Transform;
 namespace MediaFoundation
 {
     /// <summary>
-    /// The <strong>PROPVARIANT</strong> structure is used in the <c>ReadMultiple</c> and 
+    /// The <strong>PROPVARIANT</strong> structure is used in the <c>ReadMultiple</c> and
     /// <c>WriteMultiple</c> methods of <c>IPropertyStorage</c> to define the type tag and the value of a
-    /// property in a property set. 
+    /// property in a property set.
     /// <para/>
     /// The <strong>PROPVARIANT</strong> structure is also used by the <c>GetValue</c> and <c>SetValue</c>
     /// methods of <see cref="Misc.IPropertyStore"/>, which replaces <c>IPropertySetStorage</c> as the
-    /// primary way to program item properties in Windows Vista. For more information, see 
-    /// <c>Property Handlers</c>. 
+    /// primary way to program item properties in Windows Vista. For more information, see
+    /// <c>Property Handlers</c>.
     /// <para/>
     /// There are five members. The first member, the value-type tag, and the last member, the value of the
     /// property, are significant. The middle three members are reserved for future use.
     /// <para/>
-    /// 	<strong>Note</strong> The <strong>bool</strong> member in previous definitions of this structure
+    ///     <strong>Note</strong> The <strong>bool</strong> member in previous definitions of this structure
     /// has been renamed to <strong>boolVal</strong>, because some compilers now recognize <strong>bool
-    /// </strong> as a keyword. 
+    /// </strong> as a keyword.
     /// <para/>
-    /// 	<strong>Note</strong> The <strong>PROPVARIANT</strong> structure, defined below, includes types
+    ///     <strong>Note</strong> The <strong>PROPVARIANT</strong> structure, defined below, includes types
     /// that can be serialized in the version 1 property set serialization format. The version 1 format
     /// supports all types allowed in the version 0 format plus some additional types. The added types
     /// include "Version 1" in the comment field below. Use these types only if a version 1 property set is
-    /// intended. For more information, see <c>Property Set Serialization</c>. 
+    /// intended. For more information, see <c>Property Set Serialization</c>.
     /// <para/>
-    /// The <strong>PROPVARIANT</strong> structure is defined as follows: 
+    /// The <strong>PROPVARIANT</strong> structure is defined as follows:
     /// </summary>
     /// <remarks>
     /// <code language="cpp" title="C/C++ Syntax">
@@ -144,26 +144,26 @@ namespace MediaFoundation
     /// } PROPVARIANT;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/E86CC279-826D-4767-8D96-FC8280060EA1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E86CC279-826D-4767-8D96-FC8280060EA1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     /// <seealso cref="ConstPropVariant"/>
     [StructLayout(LayoutKind.Explicit)]
-    public class  PropVariant : ConstPropVariant
+    public class PropVariant : ConstPropVariant
     {
         #region Declarations
 
         /// <summary>
-        /// Clears a <c>PROPVARIANT</c> structure. 
+        /// Clears a <c>PROPVARIANT</c> structure.
         /// </summary>
         /// <param name="pvar">
         /// Type: <strong><c>PROPVARIANT</c>* </strong>
         /// <para/>
-        /// Pointer to the <c>PROPVARIANT</c> structure to clear. When this function successfully returns, the 
-        /// <strong>PROPVARIANT</strong> is zeroed and the type is set to VT_EMPTY. 
+        /// Pointer to the <c>PROPVARIANT</c> structure to clear. When this function successfully returns, the
+        /// <strong>PROPVARIANT</strong> is zeroed and the type is set to VT_EMPTY.
         /// </param>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -172,24 +172,25 @@ namespace MediaFoundation
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/68B00E4B-39D3-49E3-8A0D-032EDCB23B06(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/68B00E4B-39D3-49E3-8A0D-032EDCB23B06(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false), SuppressUnmanagedCodeSecurity]
+        [DllImport("ole32.dll", ExactSpelling = true, PreserveSig = false)]
+        [SuppressUnmanagedCodeSecurity]
         protected static extern void PropVariantClear(
-            [In, MarshalAs(UnmanagedType.LPStruct)] PropVariant pvar
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] PropVariant pvar);
 
         #endregion
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PropVariant"/> class.
         /// </summary>
-        public PropVariant() : base(VariantType.None)
-        { 
+        public PropVariant()
+            : base(VariantType.None)
+        {
         }
 
         /// <summary>
@@ -197,9 +198,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.String"/>.
         /// </summary>
         /// <param name="value">The string value to initialize the PropVariant with.</param>
-        public PropVariant(string value) : base(VariantType.String)
+        public PropVariant(string value)
+            : base(VariantType.String)
         {
-            ptr = Marshal.StringToCoTaskMemUni(value);
+            this.ptr = Marshal.StringToCoTaskMemUni(value);
         }
 
         /// <summary>
@@ -207,14 +209,15 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.StringArray"/>.
         /// </summary>
         /// <param name="value">The array of string to initialize the PropVariant with.</param>
-        public PropVariant(string[] value) : base(VariantType.StringArray)
+        public PropVariant(string[] value)
+            : base(VariantType.StringArray)
         {
-            calpwstrVal.cElems = value.Length;
-            calpwstrVal.pElems = Marshal.AllocCoTaskMem(IntPtr.Size * value.Length);
+            this.calpwstrVal.cElems = value.Length;
+            this.calpwstrVal.pElems = Marshal.AllocCoTaskMem(IntPtr.Size * value.Length);
 
             for (int x = 0; x < value.Length; x++)
             {
-                Marshal.WriteIntPtr(calpwstrVal.pElems, x * IntPtr.Size, Marshal.StringToCoTaskMemUni(value[x]));
+                Marshal.WriteIntPtr(this.calpwstrVal.pElems, x * IntPtr.Size, Marshal.StringToCoTaskMemUni(value[x]));
             }
         }
 
@@ -223,9 +226,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.UByte"/>.
         /// </summary>
         /// <param name="value">The byte value to initialize the PropVariant with.</param>
-        public PropVariant(byte value) : base(VariantType.UByte)
+        public PropVariant(byte value)
+            : base(VariantType.UByte)
         {
-            bVal = value;
+            this.bVal = value;
         }
 
         /// <summary>
@@ -233,9 +237,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Short"/>.
         /// </summary>
         /// <param name="value">The 2-byte signed integer value to initialize the PropVariant with.</param>
-        public PropVariant(short value) : base(VariantType.Short)
+        public PropVariant(short value)
+            : base(VariantType.Short)
         {
-            iVal = value;
+            this.iVal = value;
         }
 
         /// <summary>
@@ -244,9 +249,10 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="value">The 2-byte unsigned integer value to initialize the PropVariant with.</param>
         [CLSCompliant(false)]
-        public PropVariant(ushort value) : base(VariantType.UShort)
+        public PropVariant(ushort value)
+            : base(VariantType.UShort)
         {
-            uiVal = value;
+            this.uiVal = value;
         }
 
         /// <summary>
@@ -254,9 +260,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Int32"/>.
         /// </summary>
         /// <param name="value">The 4-byte signed integer value to initialize the PropVariant with.</param>
-        public PropVariant(int value) : base(VariantType.Int32)
+        public PropVariant(int value)
+            : base(VariantType.Int32)
         {
-            intValue = value;
+            this.intValue = value;
         }
 
         /// <summary>
@@ -265,9 +272,10 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="value">The 4-byte unsigned integer value to initialize the PropVariant with.</param>
         [CLSCompliant(false)]
-        public PropVariant(uint value) : base(VariantType.UInt32)
+        public PropVariant(uint value)
+            : base(VariantType.UInt32)
         {
-            uintVal = value;
+            this.uintVal = value;
         }
 
         /// <summary>
@@ -275,9 +283,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Float"/>.
         /// </summary>
         /// <param name="value">The 4-byte float value to initialize the PropVariant with.</param>
-        public PropVariant(float value) : base(VariantType.Float)
+        public PropVariant(float value)
+            : base(VariantType.Float)
         {
-            fltVal = value;
+            this.fltVal = value;
         }
 
         /// <summary>
@@ -285,9 +294,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Double"/>.
         /// </summary>
         /// <param name="value">The 8-byte float value to initialize the PropVariant with.</param>
-        public PropVariant(double value) : base(VariantType.Double)
+        public PropVariant(double value)
+            : base(VariantType.Double)
         {
-            doubleValue = value;
+            this.doubleValue = value;
         }
 
         /// <summary>
@@ -295,9 +305,10 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Int64"/>.
         /// </summary>
         /// <param name="value">The 8-byte signed integer value to initialize the PropVariant with.</param>
-        public PropVariant(long value) : base(VariantType.Int64)
+        public PropVariant(long value)
+            : base(VariantType.Int64)
         {
-            longValue = value;
+            this.longValue = value;
         }
 
         /// <summary>
@@ -306,9 +317,10 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="value">The 8-byte unsigned integer value to initialize the PropVariant with.</param>
         [CLSCompliant(false)]
-        public PropVariant(ulong value) : base(VariantType.UInt64)
+        public PropVariant(ulong value)
+            : base(VariantType.UInt64)
         {
-            ulongValue = value;
+            this.ulongValue = value;
         }
 
         /// <summary>
@@ -316,10 +328,11 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Guid"/>.
         /// </summary>
         /// <param name="value">The Guid value to initialize the PropVariant with.</param>
-        public PropVariant(Guid value) : base(VariantType.Guid)
+        public PropVariant(Guid value)
+            : base(VariantType.Guid)
         {
-            ptr = Marshal.AllocCoTaskMem(Marshal.SizeOf(value));
-            Marshal.StructureToPtr(value, ptr, false);
+            this.ptr = Marshal.AllocCoTaskMem(Marshal.SizeOf(value));
+            Marshal.StructureToPtr(value, this.ptr, false);
         }
 
         /// <summary>
@@ -327,11 +340,12 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.Blob"/>.
         /// </summary>
         /// <param name="value">The byte array float value to initialize the PropVariant with.</param>
-        public PropVariant(byte[] value) : base(VariantType.Blob)
+        public PropVariant(byte[] value)
+            : base(VariantType.Blob)
         {
-            blobValue.cbSize = value.Length;
-            blobValue.pBlobData = Marshal.AllocCoTaskMem(value.Length);
-            Marshal.Copy(value, 0, blobValue.pBlobData, value.Length);
+            this.blobValue.cbSize = value.Length;
+            this.blobValue.pBlobData = Marshal.AllocCoTaskMem(value.Length);
+            Marshal.Copy(value, 0, this.blobValue.pBlobData, value.Length);
         }
 
         /// <summary>
@@ -339,14 +353,14 @@ namespace MediaFoundation
         /// The <see cref="ValueType"/> of the new PropVariant will be <see cref="ConstPropVariant.VariantType.IUnknown"/>.
         /// </summary>
         /// <param name="value">The object to initialize the PropVariant with.</param>
-        public PropVariant(object value) : base(VariantType.IUnknown)
+        public PropVariant(object value)
+            : base(VariantType.IUnknown)
         {
-            ptr = Marshal.GetIUnknownForObject(value);
+            this.ptr = Marshal.GetIUnknownForObject(value);
         }
 
-
         /// <summary>
-        /// Initializes a new instance of the <see cref="PropVariant"/> class 
+        /// Initializes a new instance of the <see cref="PropVariant"/> class
         /// from a memory pointer to a <c>PROPVARIANT</c> structure.
         /// </summary>
         /// <param name="value">Memory pointer to a <c>PROPVARIANT</c> structure.</param>
@@ -356,7 +370,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PropVariant"/> class by copying the contents 
+        /// Initializes a new instance of the <see cref="PropVariant"/> class by copying the contents
         /// of the <see cref="ConstPropVariant"/> that is given in the <paramref name="value"/> parameter.
         /// </summary>
         /// <param name="value">The propvariant to be copied.</param>
@@ -378,13 +392,12 @@ namespace MediaFoundation
         /// </summary>
         ~PropVariant()
         {
-            Clear();
+            this.Clear();
         }
 
-
         /// <summary>
-        /// Frees all elements that can be freed in this propvariant. 
-        /// For complex elements with known element pointers, the underlying elements 
+        /// Frees all elements that can be freed in this propvariant.
+        /// For complex elements with known element pointers, the underlying elements
         /// are freed prior to freeing the containing element.
         /// </summary>
         public void Clear()
@@ -406,6 +419,7 @@ namespace MediaFoundation
                 ((ConstPropVariant)value).Copy(result);
                 return result;
             }
+
             if (value == null)
                 return new PropVariant();
             if (value is string)
@@ -442,7 +456,7 @@ namespace MediaFoundation
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
-        new public void Dispose()
+        public new void Dispose()
         {
             this.Clear();
             GC.SuppressFinalize(this);

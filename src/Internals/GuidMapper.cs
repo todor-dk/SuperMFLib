@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MediaFoundation.Internals
 {
-    internal class GuidMapper
+    public class GuidMapper
     {
         public static readonly GuidMapper Current = new GuidMapper(GuidMapper.GetMappings());
 
@@ -48,6 +48,7 @@ namespace MediaFoundation.Internals
                             Guid guid = (Guid)field.GetValue(null);
                             mappings[guid] = new Tuple<Type, string>(type, field.Name);
                         }
+
                         if (typeof(GuidEnum).IsAssignableFrom(field.FieldType))
                         {
                             GuidEnum value = (GuidEnum)field.GetValue(null);

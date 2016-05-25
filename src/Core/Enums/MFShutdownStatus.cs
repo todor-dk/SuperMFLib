@@ -34,13 +34,13 @@ using System.Drawing;
 namespace MediaFoundation
 {
     /// <summary>
-    /// Describes the current status of a call to the <see cref="IMFShutdown.Shutdown"/> method. 
+    /// Describes the current status of a call to the <see cref="IMFShutdown.Shutdown"/> method.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A2257260-3F2C-4C6B-88CC-B8927B899782(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A2257260-3F2C-4C6B-88CC-B8927B899782(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFSHUTDOWN_STATUS")]
@@ -50,10 +50,10 @@ namespace MediaFoundation
         /// The shutdown operation has started but is not yet complete.
         /// </summary>
         Initiated,
+
         /// <summary>
         /// Shutdown is complete.
         /// </summary>
         Completed
     }
-
 }

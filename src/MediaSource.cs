@@ -16,7 +16,7 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFMediaSource"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFMediaSource"/>: 
+    /// <see cref="IMFMediaSource"/>:
     /// Implemented by media source objects.
     /// <para/>
     /// Media sources are objects that generate media data. For example, the data might come from a video
@@ -24,10 +24,10 @@ namespace MediaFoundation
     /// more streams, and each stream delivers data of one type, such as audio or video.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/8B579F61-6FEA-4B20-A051-7633FC01FA05(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8B579F61-6FEA-4B20-A051-7633FC01FA05(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class MediaSource : MediaEventGenerator<IMFMediaSource>
@@ -66,10 +66,10 @@ namespace MediaFoundation
         /// Retrieves the characteristics of the media source.
         /// </summary>
         /// <returns>
-        /// Receives a bitwise <strong>OR</strong> of zero or more flags from the <see cref="MFMediaSourceCharacteristics"/> enumeration. 
+        /// Receives a bitwise <strong>OR</strong> of zero or more flags from the <see cref="MFMediaSourceCharacteristics"/> enumeration.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/CB5D54CD-58A3-4903-B22E-8207F90DBBC0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CB5D54CD-58A3-4903-B22E-8207F90DBBC0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MFMediaSourceCharacteristics Characteristics
@@ -88,10 +88,10 @@ namespace MediaFoundation
         /// descriptor to select streams and to get information about the source content.
         /// </summary>
         /// <returns>
-        /// New <see cref="PresentationDescriptor"/> object. The caller must release the interface. 
+        /// New <see cref="PresentationDescriptor"/> object. The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B6AC50B7-3EF1-43CF-8126-D9A003EBD825(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B6AC50B7-3EF1-43CF-8126-D9A003EBD825(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public PresentationDescriptor CreatePresentationDescriptor()
@@ -106,10 +106,10 @@ namespace MediaFoundation
         /// Starts, seeks, or restarts the media source by specifying where to start playback.
         /// </summary>
         /// <param name="presentationDescriptor">
-        /// The <see cref="PresentationDescriptor"/> of the media source's presentation descriptor. 
-        /// To get the presentation descriptor, call <see cref="MediaSource.CreatePresentationDescriptor"/>. 
-        /// You can modify the presentation descriptor before calling <strong>Start</strong>, 
-        /// to select or deselect streams or change the media types. 
+        /// The <see cref="PresentationDescriptor"/> of the media source's presentation descriptor.
+        /// To get the presentation descriptor, call <see cref="MediaSource.CreatePresentationDescriptor"/>.
+        /// You can modify the presentation descriptor before calling <strong>Start</strong>,
+        /// to select or deselect streams or change the media types.
         /// </param>
         /// <param name="timeFormat">
         /// A GUID that specifies the time format. The time format defines the units for the <em>
@@ -121,10 +121,10 @@ namespace MediaFoundation
         /// given in <paramref name="timeFormat"/>. If the time format is <strong>GUID_NULL</strong>, the variant
         /// type must be <strong>VT_I8</strong> or <strong>VT_EMPTY</strong>. Use <strong>VT_I8</strong> to
         /// specify a new starting position, in 100-nanosecond units. Use <strong>VT_EMPTY</strong> to start
-        /// from the current position. Other time formats might use other <strong>PROPVARIANT</strong> types. 
+        /// from the current position. Other time formats might use other <strong>PROPVARIANT</strong> types.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0A5ABAFE-1525-4BDA-946C-05A6145E57EE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0A5ABAFE-1525-4BDA-946C-05A6145E57EE(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Start(PresentationDescriptor presentationDescriptor, Guid timeFormat, ConstPropVariant startPosition)
@@ -137,21 +137,21 @@ namespace MediaFoundation
         /// Starts, seeks, or restarts the media source by specifying where to start playback.
         /// </summary>
         /// <param name="presentationDescriptor">
-        /// The <see cref="PresentationDescriptor"/> of the media source's presentation descriptor. 
-        /// To get the presentation descriptor, call <see cref="MediaSource.CreatePresentationDescriptor"/>. 
-        /// You can modify the presentation descriptor before calling <strong>Start</strong>, 
-        /// to select or deselect streams or change the media types. 
+        /// The <see cref="PresentationDescriptor"/> of the media source's presentation descriptor.
+        /// To get the presentation descriptor, call <see cref="MediaSource.CreatePresentationDescriptor"/>.
+        /// You can modify the presentation descriptor before calling <strong>Start</strong>,
+        /// to select or deselect streams or change the media types.
         /// </param>
         /// <param name="startPosition">
-        /// Specifies where to start playback. 
+        /// Specifies where to start playback.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0A5ABAFE-1525-4BDA-946C-05A6145E57EE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0A5ABAFE-1525-4BDA-946C-05A6145E57EE(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Start(PresentationDescriptor presentationDescriptor, Time startPosition)
         {
-            using(PropVariant variant = new PropVariant(startPosition.Value))
+            using (PropVariant variant = new PropVariant(startPosition.Value))
             {
                 this.Start(presentationDescriptor, Guid.Empty, variant);
             }
@@ -161,7 +161,7 @@ namespace MediaFoundation
         /// Stops all active streams in the media source.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/AA7AF7A0-A6C2-4C9E-9F98-D36716679297(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AA7AF7A0-A6C2-4C9E-9F98-D36716679297(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Stop()
@@ -174,7 +174,7 @@ namespace MediaFoundation
         /// Pauses all active streams in the media source.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/113B3DC7-918E-427E-AA70-CF474B951C6D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/113B3DC7-918E-427E-AA70-CF474B951C6D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Pause()
@@ -187,7 +187,7 @@ namespace MediaFoundation
         /// Shuts down the media source and releases the resources it is using.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C7F890A8-74BD-4418-BB02-A3FEE62DEC6D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C7F890A8-74BD-4418-BB02-A3FEE62DEC6D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Shutdown()

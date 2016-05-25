@@ -32,7 +32,6 @@ using System.Drawing;
 
 namespace MediaFoundation.EVR.Enums
 {
-
     #if NOT_IN_USE
 
     /// <summary>

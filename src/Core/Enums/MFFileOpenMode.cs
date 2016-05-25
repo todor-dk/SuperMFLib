@@ -33,15 +33,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Specifies how to open or create a file.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/0C0E94FA-CBCC-4ABC-9020-AF6D36A4D3B6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0C0E94FA-CBCC-4ABC-9020-AF6D36A4D3B6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_FILE_OPENMODE")]
@@ -51,23 +50,26 @@ namespace MediaFoundation
         /// Open an existing file. Fail if the file does not exist.
         /// </summary>
         FailIfNotExist = 0,
+
         /// <summary>
         /// Create a new file. Fail if the file already exists.
         /// </summary>
         FailIfExist = 1,
+
         /// <summary>
         /// Open an existing file and truncate it, so that the size is zero bytes. Fail if the file does not
         /// already exist.
         /// </summary>
         ResetIfExist = 2,
+
         /// <summary>
         /// If the file does not exist, create a new file. If the file exists, open it.
         /// </summary>
         AppendIfExist = 3,
+
         /// <summary>
         /// Create a new file. If the file exists, overwrite the file.
         /// </summary>
         DeleteIfExist = 4
     }
-
 }

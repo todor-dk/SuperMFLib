@@ -33,7 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Structs
 {
-
 #if NOT_IN_USE
 
     /// <summary>

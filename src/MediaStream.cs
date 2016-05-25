@@ -16,14 +16,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFMediaStream"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFMediaStream"/>: 
-    /// Represents one stream in a media source. 
+    /// <see cref="IMFMediaStream"/>:
+    /// Represents one stream in a media source.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/66D07292-3BFE-4E68-B26F-890996262B98(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/66D07292-3BFE-4E68-B26F-890996262B98(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class MediaStream : MediaEventGenerator<IMFMediaStream>
@@ -62,10 +62,10 @@ namespace MediaFoundation
         /// Retrieves the media source that created this media stream.
         /// </summary>
         /// <returns>
-        /// Returns the media source that created this media stream. The caller must release the instance. 
+        /// Returns the media source that created this media stream. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FFCA44CA-14AE-4F93-A719-9012A8151A7A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FFCA44CA-14AE-4F93-A719-9012A8151A7A(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaSource GetMediaSource()
@@ -80,10 +80,10 @@ namespace MediaFoundation
         /// Retrieves a stream descriptor for this media stream.
         /// </summary>
         /// <returns>
-        /// The stream descriptor for the media stream. The caller must release the instance. 
+        /// The stream descriptor for the media stream. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/574EACFB-3ACD-4B47-9C25-3A67AAE01178(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/574EACFB-3ACD-4B47-9C25-3A67AAE01178(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public StreamDescriptor GetStreamDescriptor()
@@ -95,16 +95,16 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Requests a sample from the media source. 
+        /// Requests a sample from the media source.
         /// </summary>
         /// <param name="token">
-        /// An object that is used as a token for the request. This parameter can be <strong>null</strong>. 
+        /// An object that is used as a token for the request. This parameter can be <strong>null</strong>.
         /// </param>
         /// <returns>
         /// True if the request successed or false if the end of the stream was reached.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3838167B-5774-47F5-9B8D-2882EAA97167(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3838167B-5774-47F5-9B8D-2882EAA97167(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool RequestSample(object token)

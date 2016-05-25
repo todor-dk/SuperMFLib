@@ -18,7 +18,7 @@ namespace MediaFoundation
         /// </summary>
         /// <returns><see cref="Framework"/> instance that can be disposed to shutdown the framework.</returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         /// <seealso cref="MFExtern.MFStartup"/>
@@ -33,7 +33,7 @@ namespace MediaFoundation
         /// <param name="flags">Optional flags.</param>
         /// <returns><see cref="Framework"/> instance that can be disposed to shutdown the framework.</returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         /// <seealso cref="MFExtern.MFStartup"/>
@@ -49,7 +49,7 @@ namespace MediaFoundation
         /// <param name="flags">Optional flags.</param>
         /// <returns><see cref="Framework"/> instance that can be disposed to shutdown the framework.</returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         /// <seealso cref="MFExtern.MFStartup"/>
@@ -67,8 +67,8 @@ namespace MediaFoundation
         private int Disposed = 0;
 
         /// <summary>
-        /// Shuts down the Microsoft Media Foundation platform. Call this function once for every call to 
-        /// <see cref="MFStartup"/>. Do not call this function from work queue threads. 
+        /// Shuts down the Microsoft Media Foundation platform. Call this function once for every call to
+        /// <see cref="MFStartup"/>. Do not call this function from work queue threads.
         /// </summary>
         /// <seealso cref="MFExtern.MFShutdown"/>
         public void Dispose()
@@ -79,7 +79,6 @@ namespace MediaFoundation
             int hr = MFExtern.MFShutdown();
             COM.ThrowIfNotOK(hr);
         }
-
 
         /// <summary>
         /// Gets the error message for a Win32 error code or HRESULT.

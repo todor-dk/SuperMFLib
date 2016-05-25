@@ -34,37 +34,38 @@ using System.Drawing;
 namespace MediaFoundation.Core.Interfaces
 {
     /// <summary>
-    /// Gets or sets the playback rate. 
+    /// Gets or sets the playback rate.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/54303C32-B260-4364-9130-A592694F2816(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54303C32-B260-4364-9130-A592694F2816(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("88DDCD21-03C3-4275-91ED-55EE3929328F"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("88DDCD21-03C3-4275-91ED-55EE3929328F")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFRateControl
     {
         /// <summary>
-        /// Sets the playback rate. 
+        /// Sets the playback rate.
         /// </summary>
         /// <param name="fThin">
         /// If <strong>TRUE</strong>, the media streams are thinned. Otherwise, the stream is not thinned. For
         /// media sources and demultiplexers, the object must thin the streams when this parameter is <strong>
         /// TRUE</strong>. For downstream transforms, such as decoders and multiplexers, this parameter is
-        /// informative; it notifies the object that the input streams are thinned. For information, see 
-        /// <c>About Rate Control</c>. 
+        /// informative; it notifies the object that the input streams are thinned. For information, see
+        /// <c>About Rate Control</c>.
         /// </param>
         /// <param name="flRate">
         /// The requested playback rate. Postive values indicate forward playback, negative values indicate
-        /// reverse playback, and zero indicates scrubbing (the source delivers a single frame). 
+        /// reverse playback, and zero indicates scrubbing (the source delivers a single frame).
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -83,10 +84,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/428D73FA-F284-4861-A41E-04EA7709DB0F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/428D73FA-F284-4861-A41E-04EA7709DB0F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -100,14 +101,14 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pfThin">
         /// Receives the value <strong>TRUE</strong> if the stream is currently being thinned. If the object
         /// does not support thinning, this parameter always receives the value <strong>FALSE</strong>. This
-        /// parameter can be <strong>NULL</strong>. For more information, see <c>About Rate Control</c>. 
+        /// parameter can be <strong>NULL</strong>. For more information, see <c>About Rate Control</c>.
         /// </param>
         /// <param name="pflRate">
         /// Receives the current playback rate.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -122,10 +123,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FB970D06-0F82-4E35-8E03-68044C7F12CD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FB970D06-0F82-4E35-8E03-68044C7F12CD(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

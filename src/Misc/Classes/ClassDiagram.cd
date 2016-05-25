@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MediaFoundation.PropVariant">
+    <Position X="5" Y="14.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAEAAAAAAAAAAAAAAEAAAAAABAAAA=</HashCode>
+      <FileName>Misc\Classes\PropVariant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MediaFoundation.ConstPropVariant">
+    <Position X="5" Y="0.75" Width="2.5" />
+    <NestedTypes>
+      <Enum Name="MediaFoundation.ConstPropVariant.VariantType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Misc\Classes\ConstPropVariant.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Struct Name="MediaFoundation.ConstPropVariant.Blob" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Misc\Classes\ConstPropVariant.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="MediaFoundation.ConstPropVariant.CALPWstr" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Misc\Classes\ConstPropVariant.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABIAoARgIyAAABIMhAYABQBEIxABhcAAAEVCAAmgErQ=</HashCode>
+      <FileName>Misc\Classes\ConstPropVariant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

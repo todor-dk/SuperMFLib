@@ -14,14 +14,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFStreamDescriptor"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFStreamDescriptor"/>: 
-    /// Gets information about one stream in a media source. 
+    /// <see cref="IMFStreamDescriptor"/>:
+    /// Gets information about one stream in a media source.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A076DC6E-D9CB-4F7E-8CC2-B66292DA295F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A076DC6E-D9CB-4F7E-8CC2-B66292DA295F(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class StreamDescriptor : Attributes<IMFStreamDescriptor>
@@ -63,7 +63,7 @@ namespace MediaFoundation
         /// Returns the stream identifier.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/D282EE48-6145-4557-8FA7-786B893327FA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D282EE48-6145-4557-8FA7-786B893327FA(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int StreamIdentifier
@@ -82,10 +82,10 @@ namespace MediaFoundation
         /// supported media types for the stream, get the current media type, and set the media type.
         /// </summary>
         /// <returns>
-        /// Returns the media type handler. The caller must release the instance. 
+        /// Returns the media type handler. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/8E991417-FE15-4749-94C4-26C621692B52(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8E991417-FE15-4749-94C4-26C621692B52(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaTypeHandler GetMediaTypeHandler()

@@ -40,19 +40,20 @@ namespace MediaFoundation.Core.Interfaces
     /// protected media path (PMP) session objects expose this interface. This interface is the primary
     /// interface that applications use to control the Media Foundation pipeline.
     /// <para/>
-    /// To obtain a pointer to this interface, call <see cref="MFExtern.MFCreateMediaSession"/> or 
-    /// <see cref="MFExtern.MFCreatePMPMediaSession"/>. 
+    /// To obtain a pointer to this interface, call <see cref="MFExtern.MFCreateMediaSession"/> or
+    /// <see cref="MFExtern.MFCreatePMPMediaSession"/>.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/FEEBF891-73FA-4FE6-94CA-3594986FC92D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEEBF891-73FA-4FE6-94CA-3594986FC92D(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("90377834-21D0-4DEE-8214-BA2E3E6C1127"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("90377834-21D0-4DEE-8214-BA2E3E6C1127")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMediaSession : IMFMediaEventGenerator
     {
     #region IMFMediaEventGenerator methods
@@ -66,7 +67,7 @@ namespace MediaFoundation.Core.Interfaces
         /// interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -101,13 +102,13 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The client must
         /// implement this interface.</param>
         /// <param name="punkState">
-        /// Pointer to the IUnknown interface of a state object, defined by the caller. 
-        /// This parameter can be NULL. You can use this object to hold state information. 
+        /// Pointer to the IUnknown interface of a state object, defined by the caller.
+        /// This parameter can be NULL. You can use this object to hold state information.
         /// The object is returned to the caller when the callback is invoked.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -146,7 +147,7 @@ namespace MediaFoundation.Core.Interfaces
         /// interface.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -172,7 +173,6 @@ namespace MediaFoundation.Core.Interfaces
             IMFAsyncResult pResult,
             /* out IMFMediaEvent */ out IntPtr ppEvent);
 
-
         /// <summary>
         /// Puts a new event in the object's queue.
         /// </summary>
@@ -188,7 +188,7 @@ namespace MediaFoundation.Core.Interfaces
         /// method.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -216,24 +216,23 @@ namespace MediaFoundation.Core.Interfaces
             [In] MediaEventType met,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType,
             [In] int hrStatus,
-            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue
-            );
+            [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvValue);
 
         #endregion
 
         /// <summary>
-        /// Sets a topology on the Media Session. 
+        /// Sets a topology on the Media Session.
         /// </summary>
         /// <param name="dwSetTopologyFlags">
         /// Bitwise <strong>OR</strong> of zero or more flags from the <see cref="MFSessionSetTopologyFlags"/>
-        /// enumeration. 
+        /// enumeration.
         /// </param>
         /// <param name="pTopology">
-        /// Pointer to the topology object's <see cref="IMFTopology"/> interface. 
+        /// Pointer to the topology object's <see cref="IMFTopology"/> interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -252,10 +251,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/EA5313F0-B0FD-4945-97A2-B3F17937294F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EA5313F0-B0FD-4945-97A2-B3F17937294F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -268,7 +267,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -282,22 +281,22 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT ClearTopologies();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FCB7E5F1-1095-4766-AFED-43AD2279ABB4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FCB7E5F1-1095-4766-AFED-43AD2279ABB4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int ClearTopologies();
 
         /// <summary>
-        /// Starts the Media Session. 
+        /// Starts the Media Session.
         /// </summary>
         /// <param name="pguidTimeFormat">
         /// Pointer to a GUID that specifies the time format for the <em>pvarStartPosition</em> parameter. This
         /// parameter can be <strong>NULL</strong>. The value <strong>NULL</strong> is equivalent to passing in
-        /// <strong>GUID_NULL</strong>. 
+        /// <strong>GUID_NULL</strong>.
         /// <para/>
         /// The following time format GUIDs are defined:
         /// <para/>
@@ -310,11 +309,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <param name="pvarStartPosition">
         /// Pointer to a <strong>PROPVARIANT</strong> that specifies the starting position for playback. The
-        /// meaning and data type of this parameter are indicated by the <em>pguidTimeFormat</em> parameter. 
+        /// meaning and data type of this parameter are indicated by the <em>pguidTimeFormat</em> parameter.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -331,10 +330,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1BDEC0C0-B042-4E5E-A72B-B15942750CED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1BDEC0C0-B042-4E5E-A72B-B15942750CED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -347,7 +346,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -362,10 +361,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Pause();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FCC576BA-F8BE-4106-A270-756B2ABF52D4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FCC576BA-F8BE-4106-A270-756B2ABF52D4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -376,7 +375,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -390,10 +389,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Stop();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9CC769CC-24EF-4790-A10E-4AEC8FB4FC1F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9CC769CC-24EF-4790-A10E-4AEC8FB4FC1F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -404,7 +403,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -417,10 +416,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Close();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6ED118AE-7538-4EF6-81FC-B762F709838F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6ED118AE-7538-4EF6-81FC-B762F709838F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -431,7 +430,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -443,10 +442,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Shutdown();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5B9663C2-E32E-4075-B397-59AE01558E15(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5B9663C2-E32E-4075-B397-59AE01558E15(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -457,7 +456,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppClock">
         /// Receives a pointer to the presentation clock's <see cref="IMFClock"/> interface. The caller must
-        /// release the interface. 
+        /// release the interface.
         /// </param>
         /// <returns>
         /// The method returns an HRESULT. Possible values include, but are not limited to, those in the
@@ -477,10 +476,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/16444DA2-68F2-4D94-8C6F-9E512D51E5E9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/16444DA2-68F2-4D94-8C6F-9E512D51E5E9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -491,7 +490,7 @@ namespace MediaFoundation.Core.Interfaces
         /// Retrieves the capabilities of the Media Session, based on the current presentation.
         /// </summary>
         /// <param name="pdwCaps">
-        /// Receives a bitwise <strong>OR</strong> of zero or more of the following flags. 
+        /// Receives a bitwise <strong>OR</strong> of zero or more of the following flags.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Value</term><description>Meaning</description></listheader>
@@ -504,7 +503,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -520,10 +519,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -536,18 +535,18 @@ namespace MediaFoundation.Core.Interfaces
         /// This method can get the current topology or a queued topology.
         /// </summary>
         /// <param name="dwGetFullTopologyFlags">
-        /// Bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="MFSessionGetFullTopologyFlags"/> enumeration. 
+        /// Bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="MFSessionGetFullTopologyFlags"/> enumeration.
         /// </param>
-        /// <param name="TopoId">
+        /// <param name="topoId">
         /// The identifier of the topology. This parameter is ignored if the <em>dwGetFullTopologyFlags</em>
         /// parameter contains the <strong>MFSESSION_GETFULLTOPOLOGY_CURRENT</strong> flag. To get the
-        /// identifier of a topology, call <see cref="IMFTopology.GetTopologyID"/>. 
+        /// identifier of a topology, call <see cref="IMFTopology.GetTopologyID"/>.
         /// </param>
         /// <param name="ppFullTopology">The pp full topology.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -564,16 +563,16 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6899DBE2-A684-487F-AB56-8631B3D5A033(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6899DBE2-A684-487F-AB56-8631B3D5A033(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetFullTopology(
             [In] MFSessionGetFullTopologyFlags dwGetFullTopologyFlags,
-            [In] long TopoId,
+            [In] long topoId,
             /* [MarshalAs(UnmanagedType.Interface)] out IMFTopology */ out IntPtr ppFullTopology);
     }
 }

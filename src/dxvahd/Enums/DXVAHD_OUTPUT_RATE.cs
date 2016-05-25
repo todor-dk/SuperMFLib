@@ -29,9 +29,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd.Enums
+namespace MediaFoundation.Dxvahd.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
 

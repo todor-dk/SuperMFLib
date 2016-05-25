@@ -31,66 +31,73 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
-
     /// <summary>
     /// Specifies the color primaries of a video source. The color primaries define how to convert colors
     /// from RGB color space to CIE XYZ color space.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/A1D6A60C-823C-46C3-A751-18E55FBC52A1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A1D6A60C-823C-46C3-A751-18E55FBC52A1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoPrimaries")]
     public enum MFVideoPrimaries
     {
         /// <summary>
-        /// ITU-R BT.470-4 System B,G (NTSC). 
+        /// ITU-R BT.470-4 System B,G (NTSC).
         /// </summary>
         BT470_2_SysBG = 4,
+
         /// <summary>
-        /// ITU-R BT.470-4 System M (NTSC). 
+        /// ITU-R BT.470-4 System M (NTSC).
         /// </summary>
         BT470_2_SysM = 3,
+
         /// <summary>
-        /// ITU-R BT.709. Also used for sRGB and scRGB. 
+        /// ITU-R BT.709. Also used for sRGB and scRGB.
         /// </summary>
         BT709 = 2,
+
         /// <summary>
-        /// EBU 3213. 
+        /// EBU 3213.
         /// </summary>
         EBU3213 = 7,
+
         /// <summary>
-        /// Reserved. This member forces the enumeration type to compile as a <strong>DWORD</strong> value. 
+        /// Reserved. This member forces the enumeration type to compile as a <strong>DWORD</strong> value.
         /// </summary>
         ForceDWORD = 0x7fffffff,
+
         /// <summary>
-        /// Reserved. 
+        /// Reserved.
         /// </summary>
         Last = 9,
+
         /// <summary>
-        /// Reserved. 
+        /// Reserved.
         /// </summary>
-        reserved = 1,
+        Reserved = 1,
+
         /// <summary>
-        /// SMPTE C (SMPTE RP 145). 
+        /// SMPTE C (SMPTE RP 145).
         /// </summary>
         SMPTE_C = 8,
+
         /// <summary>
-        /// SMPTE 170M. 
+        /// SMPTE 170M.
         /// </summary>
         SMPTE170M = 5,
+
         /// <summary>
-        /// SMPTE 240M. 
+        /// SMPTE 240M.
         /// </summary>
         SMPTE240M = 6,
+
         /// <summary>
-        /// The color primaries are unknown. 
+        /// The color primaries are unknown.
         /// </summary>
         Unknown = 0
     }
-
 }

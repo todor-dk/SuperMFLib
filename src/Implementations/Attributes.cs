@@ -12,7 +12,7 @@ namespace MediaFoundation.Implementations
     /// <summary>
     /// Class that implements the <see cref="IMFAttributes"/> interface.
     /// </summary>
-    public class  Attributes : IMFAttributes, IDisposable
+    public class Attributes : IMFAttributes, IDisposable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="_Attributes"/> class.
@@ -25,7 +25,7 @@ namespace MediaFoundation.Implementations
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppMFAttributes);
             try
             {
-                this._Attributes = (IMFAttributes) Marshal.GetUniqueObjectForIUnknown(ppMFAttributes);
+                this._Attributes = (IMFAttributes)Marshal.GetUniqueObjectForIUnknown(ppMFAttributes);
             }
             finally
             {
@@ -80,7 +80,7 @@ namespace MediaFoundation.Implementations
         /// Compares the attributes on this object with the attributes on another object.
         /// </summary>
         /// <param name="pTheirs">Pointer to the <see cref="T:MediaFoundation.IMFAttributes" /> interface of the object to compare with this object.</param>
-        /// <param name="MatchType">Member of the <see cref="T:MediaFoundation.MFAttributesMatchType" /> enumeration, specifying the type of comparison to
+        /// <param name="matchType">Member of the <see cref="T:MediaFoundation.MFAttributesMatchType" /> enumeration, specifying the type of comparison to
         /// make.</param>
         /// <param name="pbResult">Receives a Boolean value. The value is <strong>TRUE</strong> if the two sets of attributes match in
         /// the way specified by the <em>MatchType</em> parameter. Otherwise, the value is <strong>FALSE
@@ -101,17 +101,17 @@ namespace MediaFoundation.Implementations
         /// <para />
         /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1D0C9D1C-448D-4851-B183-94B04ACB2AB5(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1D0C9D1C-448D-4851-B183-94B04ACB2AB5(v=VS.85,d=hv.2).aspx</a></remarks>
-        public int Compare(IMFAttributes pTheirs, MFAttributesMatchType MatchType, out bool pbResult)
+        public int Compare(IMFAttributes pTheirs, MFAttributesMatchType matchType, out bool pbResult)
         {
             COM.VerifyAccess();
-            return this._Attributes.Compare(pTheirs, MatchType, out pbResult);
+            return this._Attributes.Compare(pTheirs, matchType, out pbResult);
         }
 
         /// <summary>
         /// Queries whether a stored attribute value equals to a specified <strong>PROPVARIANT</strong>.
         /// </summary>
         /// <param name="guidKey">GUID that identifies which value to query.</param>
-        /// <param name="Value"><strong>PROPVARIANT</strong> that contains the value to compare.</param>
+        /// <param name="value"><strong>PROPVARIANT</strong> that contains the value to compare.</param>
         /// <param name="pbResult">Receives a Boolean value indicating whether the attribute matches the value given in <em>Value</em>
         /// . See Remarks. This parameter must not be <strong>NULL</strong>. If this parameter is <strong>NULL
         /// </strong>, an access violation occurs.</param>
@@ -131,10 +131,10 @@ namespace MediaFoundation.Implementations
         /// <para />
         /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/F0A6073B-FCE6-4A1F-B7D1-EF6543E7648F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F0A6073B-FCE6-4A1F-B7D1-EF6543E7648F(v=VS.85,d=hv.2).aspx</a></remarks>
-        public int CompareItem(Guid guidKey, ConstPropVariant Value, out bool pbResult)
+        public int CompareItem(Guid guidKey, ConstPropVariant value, out bool pbResult)
         {
             COM.VerifyAccess();
-            return this.CompareItem(guidKey, Value, out pbResult);
+            return this.CompareItem(guidKey, value, out pbResult);
         }
 
         /// <summary>
@@ -762,7 +762,7 @@ namespace MediaFoundation.Implementations
         /// </summary>
         /// <param name="guidKey">A GUID that identifies the value to set. If this key already exists, the method overwrites the old
         /// value.</param>
-        /// <param name="Value">A <strong>PROPVARIANT</strong> that contains the attribute value. The method copies the value. The
+        /// <param name="value">A <strong>PROPVARIANT</strong> that contains the attribute value. The method copies the value. The
         /// <strong>PROPVARIANT</strong> type must be one of the types listed in the
         /// <see cref="T:MediaFoundation.MFAttributeType" /> enumeration.</param>
         /// <returns>The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
@@ -780,10 +780,10 @@ namespace MediaFoundation.Implementations
         /// <para />
         /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1AC6E1C3-CF78-4CFF-A992-4F92F243C443(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1AC6E1C3-CF78-4CFF-A992-4F92F243C443(v=VS.85,d=hv.2).aspx</a></remarks>
-        public int SetItem(Guid guidKey, ConstPropVariant Value)
+        public int SetItem(Guid guidKey, ConstPropVariant value)
         {
             COM.VerifyAccess();
-            return this._Attributes.SetItem(guidKey, Value);
+            return this._Attributes.SetItem(guidKey, value);
         }
 
         /// <summary>

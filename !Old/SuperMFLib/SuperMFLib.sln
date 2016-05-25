@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFoundationEx", "..\src\MediaFoundationEx.csproj", "{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{492D5884-8F75-4F4E-A3D5-D35DEF375CD8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68287B0D-BD55-4853-BC1A-97C9C44392A5}"
+	ProjectSection(SolutionItems) = preProject
+		MediaFoundation.snippet = MediaFoundation.snippet
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|x64.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|x64.Build.0 = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|x86.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|Any CPU.ActiveCfg = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|Mixed Platforms.Build.0 = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|x64.ActiveCfg = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|x64.Build.0 = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|x86.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

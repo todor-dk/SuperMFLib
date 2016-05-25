@@ -34,9 +34,9 @@ namespace MediaFoundation
             if (!(obj is GuidEnum))
                 return false;
 
-            return Equals((GuidEnum)obj);
+            return this.Equals((GuidEnum)obj);
         }
-    
+
         public bool Equals(GuidEnum other)
         {
             if (other == null)
@@ -62,7 +62,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Compares whether the left GuidEnum operand is equal to the right GuidEnum operand. 
+        /// Compares whether the left GuidEnum operand is equal to the right GuidEnum operand.
         /// </summary>
         /// <param name="left">The left GuidEnum operand.</param>
         /// <param name="right">The right GuidEnum operand.</param>
@@ -77,7 +77,7 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Compares whether the left GuidEnum operand is not equal to the right GuidEnum operand. 
+        /// Compares whether the left GuidEnum operand is not equal to the right GuidEnum operand.
         /// </summary>
         /// <param name="left">The left GuidEnum operand.</param>
         /// <param name="right">The right GuidEnum operand.</param>

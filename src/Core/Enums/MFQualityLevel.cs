@@ -33,49 +33,53 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Specifies the quality level for a pipeline component. The quality level determines how the
     /// component consumes or produces samples.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/6FE5ABBB-C079-4D74-9C75-6FB502054546(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6FE5ABBB-C079-4D74-9C75-6FB502054546(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MF_QUALITY_LEVEL")]
     public enum MFQualityLevel
     {
         /// <summary>
-        /// Normal quality. 
+        /// Normal quality.
         /// </summary>
         Normal,
+
         /// <summary>
-        /// One level below normal quality. 
+        /// One level below normal quality.
         /// </summary>
         NormalMinus1,
+
         /// <summary>
-        /// Two levels below normal quality. 
+        /// Two levels below normal quality.
         /// </summary>
         NormalMinus2,
+
         /// <summary>
-        /// Three levels below normal quality. 
+        /// Three levels below normal quality.
         /// </summary>
         NormalMinus3,
+
         /// <summary>
-        /// Four levels below normal quality. 
+        /// Four levels below normal quality.
         /// </summary>
         NormalMinus4,
+
         /// <summary>
-        /// Five levels below normal quality. 
+        /// Five levels below normal quality.
         /// </summary>
         NormalMinus5,
+
         /// <summary>
-        /// Maximum number of quality levels. This value is not a valid flag. 
+        /// Maximum number of quality levels. This value is not a valid flag.
         /// </summary>
         NumQualityLevels
     }
-    
 }

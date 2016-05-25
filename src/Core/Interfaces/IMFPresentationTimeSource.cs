@@ -34,18 +34,19 @@ using System.Drawing;
 namespace MediaFoundation.Core.Interfaces
 {
     /// <summary>
-    /// Provides the clock times for the presentation clock. 
+    /// Provides the clock times for the presentation clock.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/E5FAB6B7-0ABC-4AD7-89A9-33C673E97CE2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E5FAB6B7-0ABC-4AD7-89A9-33C673E97CE2(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("7FF12CCE-F76F-41C2-863B-1666C8E5E139"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("7FF12CCE-F76F-41C2-863B-1666C8E5E139")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFPresentationTimeSource : IMFClock
     {
     #region IMFClock methods
@@ -57,7 +58,7 @@ namespace MediaFoundation.Core.Interfaces
         /// indicating the characteristics of the clock.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -78,11 +79,10 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/50A81E8B-9AA8-484C-AFB7-950068FEEFC4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/50A81E8B-9AA8-484C-AFB7-950068FEEFC4(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetClockCharacteristics(
-            out MFClockCharacteristicsFlags pdwCharacteristics
-            );
+            out MFClockCharacteristicsFlags pdwCharacteristics);
 
         /// <summary>
-        /// Retrieves the last clock time that was correlated with system time. 
+        /// Retrieves the last clock time that was correlated with system time.
         /// </summary>
         /// <param name="dwReserved">Reserved, must be zero.</param>
         /// <param name="pllClockTime">Receives the last known clock time, in units of the clock's frequency.</param>
@@ -90,7 +90,7 @@ namespace MediaFoundation.Core.Interfaces
         /// 100-nanosecond units.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -116,8 +116,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetCorrelatedTime(
             [In] int dwReserved,
             out long pllClockTime,
-            out long phnsSystemTime
-            );
+            out long phnsSystemTime);
 
         /// <summary>
         /// Retrieves the clock's continuity key. (Not supported.)
@@ -125,7 +124,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pdwContinuityKey">Receives the continuity key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -146,8 +145,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/8AFDA8C7-BAB6-40FD-B20C-6BB29ED4900F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8AFDA8C7-BAB6-40FD-B20C-6BB29ED4900F(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetContinuityKey(
-            out int pdwContinuityKey
-            );
+            out int pdwContinuityKey);
 
         /// <summary>
         /// Retrieves the current state of the clock.
@@ -156,7 +154,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="peClockState">Receives the clock state, as a member of the <see cref="MFClockState" /> enumeration.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -179,8 +177,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetState(
             [In] int dwReserved,
-            out MFClockState peClockState
-            );
+            out MFClockState peClockState);
 
         /// <summary>
         /// Retrieves the properties of the clock.
@@ -188,7 +185,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pClockProperties">Pointer to an <see cref="MFClockProperties" /> structure that receives the properties.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -209,8 +206,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/9DFC0EFC-D274-45A6-B1AB-30F6215FBED8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9DFC0EFC-D274-45A6-B1AB-30F6215FBED8(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetProperties(
-            out MFClockProperties pClockProperties
-            );
+            out MFClockProperties pClockProperties);
 
         #endregion
 
@@ -219,11 +215,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppClock">
         /// Receives a pointer to the clock's <see cref="IMFClock"/> interface. The caller must release the
-        /// interface. 
+        /// interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -238,10 +234,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/09C8FEF8-7288-4356-9671-4C927C0CF502(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/09C8FEF8-7288-4356-9671-4C927C0CF502(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

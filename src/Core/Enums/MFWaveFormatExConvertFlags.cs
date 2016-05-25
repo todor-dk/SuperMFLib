@@ -33,15 +33,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Contains flags that specify how to convert an audio media type.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/CD4A54F3-58E5-4E39-8615-E5037972C9C4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CD4A54F3-58E5-4E39-8615-E5037972C9C4(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFWaveFormatExConvertFlags")]
@@ -49,13 +48,13 @@ namespace MediaFoundation
     {
         /// <summary>
         /// Convert the media type to a <strong>WAVEFORMATEX</strong> structure if possible, or a <strong>
-        /// WAVEFORMATEXTENSIBLE</strong> structure otherwise. 
+        /// WAVEFORMATEXTENSIBLE</strong> structure otherwise.
         /// </summary>
         Normal = 0,
+
         /// <summary>
-        /// Convert the media type to a <strong>WAVEFORMATEXTENSIBLE</strong> structure. 
+        /// Convert the media type to a <strong>WAVEFORMATEXTENSIBLE</strong> structure.
         /// </summary>
         ForceExtensible = 1
     }
-
 }

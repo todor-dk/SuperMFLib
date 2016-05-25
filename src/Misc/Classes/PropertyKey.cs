@@ -28,8 +28,8 @@ using System.Runtime.InteropServices;
 namespace MediaFoundation
 {
     /// <summary>
-    /// Specifies the FMTID/PID identifier that programmatically identifies a property. Replaces 
-    /// <c>SHCOLUMNID</c>. 
+    /// Specifies the FMTID/PID identifier that programmatically identifies a property. Replaces
+    /// <c>SHCOLUMNID</c>.
     /// </summary>
     /// <remarks>
     /// <code language="cpp" title="C/C++ Syntax">
@@ -39,31 +39,33 @@ namespace MediaFoundation
     /// } PROPERTYKEY;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/3F5F31AF-F040-443B-9045-9761055381EA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3F5F31AF-F040-443B-9045-9761055381EA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("PROPERTYKEY")]
-    public class  PropertyKey
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [UnmanagedName("PROPERTYKEY")]
+    public class PropertyKey
     {
         /// <summary>
         /// A unique GUID for the property.
         /// </summary>
         public Guid fmtid;
+
         /// <summary>
-        /// A property identifier (PID). This parameter is not used as in SHCOLUMNID. 
-        /// It is recommended that you set this value to PID_FIRST_USABLE. 
+        /// A property identifier (PID). This parameter is not used as in SHCOLUMNID.
+        /// It is recommended that you set this value to PID_FIRST_USABLE.
         /// Any value greater than or equal to 2 is acceptable.
         /// <para/>
         /// Note  Values of 0 and 1 are reserved and should not be used.
         /// </summary>
         /// <remarks>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/77AF6EC6-442D-4A8A-BE42-A5EFB1F3F664(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/77AF6EC6-442D-4A8A-BE42-A5EFB1F3F664(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int pID;
@@ -82,8 +84,8 @@ namespace MediaFoundation
         /// <param name="p">A property identifier (PID).</param>
         public PropertyKey(Guid f, int p)
         {
-            fmtid = f;
-            pID = p;
+            this.fmtid = f;
+            this.pID = p;
         }
     }
 }

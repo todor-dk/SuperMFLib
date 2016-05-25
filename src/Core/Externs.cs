@@ -35,17 +35,17 @@ using MediaFoundation.MFPlayer;
 using MediaFoundation.EVR;
 using MediaFoundation.Core.Enums;
 using MediaFoundation.Core.Interfaces;
+using MediaFoundation.Transform.Classes;
 
 namespace MediaFoundation.Core
 {
     /// <summary>
     /// This class exposes many of the Media Foundation API functions
-    /// as well as additional API functions often used in conjunction 
+    /// as well as additional API functions often used in conjunction
     /// with the the Media Foundation.
     /// </summary>
     internal static class MFExtern
     {
-
         /// <summary>
         /// Creates an in-memory property store.
         /// </summary>
@@ -70,43 +70,45 @@ namespace MediaFoundation.Core
         /// <para />
         /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6E7A2AC0-2A4A-41EC-A2A8-DDBE8AA45BC9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6E7A2AC0-2A4A-41EC-A2A8-DDBE8AA45BC9(v=VS.85,d=hv.2).aspx</a></remarks>
-        [DllImport("Propsys.dll"), SuppressUnmanagedCodeSecurity]
+        [DllImport("Propsys.dll")]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int PSCreateMemoryPropertyStore(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
             /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr propStore);
 
         /// <summary>
-        /// Shuts down the Microsoft Media Foundation platform. Call this function once for every call to 
-        /// <see cref="MFStartup"/>. Do not call this function from work queue threads. 
+        /// Shuts down the Microsoft Media Foundation platform. Call this function once for every call to
+        /// <see cref="MFStartup"/>. Do not call this function from work queue threads.
         /// </summary>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
         /// HRESULT MFShutdown(void);
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/10BE2361-B5B4-4C10-92A1-527CA22C74E4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/10BE2361-B5B4-4C10-92A1-527CA22C74E4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mfplat.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFShutdown();
 
         /// <summary>
         /// Initializes Microsoft Media Foundation.
         /// </summary>
-        /// <param name="Version">
-        /// Version number. Use the value <strong>MF_VERSION</strong>, defined in mfapi.h. 
+        /// <param name="version">
+        /// Version number. Use the value <strong>MF_VERSION</strong>, defined in mfapi.h.
         /// See also <see cref="MF_VERSION"/>.
         /// </param>
         /// <param name="dwFlags">
         /// This parameter is optional when using C++ but required in C. The value must be one of the following
-        /// flags: 
+        /// flags:
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Value</term><description>Meaning</description></listheader>
@@ -117,7 +119,7 @@ namespace MediaFoundation.Core
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -135,17 +137,17 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B4472E40-3681-4B26-9385-4DF7BF19C2D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mfplat.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFStartup(
-            int Version,
-            MFStartup dwFlags
-        );
+            int version,
+            MFStartup dwFlags);
 
         /// <summary>
         /// Version of the Media Foundation SDK. This is the Windows 7 or higher version.
@@ -331,19 +333,19 @@ namespace MediaFoundation.Core
 #endif
 
         /// <summary>
-        /// Creates an empty attribute store. 
+        /// Creates an empty attribute store.
         /// </summary>
         /// <param name="ppMFAttributes">
         /// Receives a pointer to the <see cref="IMFAttributes"/> interface. The caller must release the
-        /// interface. 
+        /// interface.
         /// </param>
         /// <param name="cInitialSize">
         /// The initial number of elements allocated for the attribute store. The attribute store grows as
-        /// needed. 
+        /// needed.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -353,17 +355,17 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A79B1EDD-5CA1-4550-A6CE-58073155AFFD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A79B1EDD-5CA1-4550-A6CE-58073155AFFD(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mfplat.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateAttributes(
             /* out IMFAttributes */ out IntPtr ppMFAttributes,
-            int cInitialSize
-        );
+            int cInitialSize);
 
 #if NOT_IN_USE
 
@@ -631,11 +633,11 @@ namespace MediaFoundation.Core
         /// </summary>
         /// <param name="ppMFType">
         /// Receives a pointer to the <see cref="IMFMediaType"/> interface. The caller must release the
-        /// interface. 
+        /// interface.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -644,16 +646,16 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/05B0941E-03CE-4CED-9022-22B65D1C4B4C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/05B0941E-03CE-4CED-9022-22B65D1C4B4C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mfplat.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateMediaType(
-            /* out IMFMediaType */ out IntPtr ppMFType
-        );
+            /* out IMFMediaType */ out IntPtr ppMFType);
 
 #if NOT_IN_USE
 
@@ -795,24 +797,24 @@ namespace MediaFoundation.Core
         /// <para/>
         /// This function is a helper function that wraps the <see cref="IMFGetService.GetService"/> method.
         /// The function queries the object for the <see cref="IMFGetService"/> interface and, if successful,
-        /// calls <strong>GetService</strong> on the object. 
+        /// calls <strong>GetService</strong> on the object.
         /// </summary>
         /// <param name="punkObject">
-        /// A pointer to the <strong>IUnknown</strong> interface of the object to query. 
+        /// A pointer to the <strong>IUnknown</strong> interface of the object to query.
         /// </param>
         /// <param name="guidService">
-        /// The service identifier (SID) of the service. For a list of service identifiers, see 
-        /// <c>Service Interfaces</c>. 
+        /// The service identifier (SID) of the service. For a list of service identifiers, see
+        /// <c>Service Interfaces</c>.
         /// </param>
         /// <param name="riid">
-        /// The interface identifier (IID) of the interface being requested. 
+        /// The interface identifier (IID) of the interface being requested.
         /// </param>
         /// <param name="ppvObject">
-        /// Receives the interface pointer. The caller must release the interface. 
+        /// Receives the interface pointer. The caller must release the interface.
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -830,19 +832,19 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/119E9E2F-0E26-4DFC-9C89-156B63A63640(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/119E9E2F-0E26-4DFC-9C89-156B63A63640(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFGetService(
             [In, MarshalAs(UnmanagedType.Interface)] object punkObject,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidService,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            /* [Out, MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppvObject
-        );
+            /* [Out, MarshalAs(UnmanagedType.Interface)] out object */ out IntPtr ppvObject);
 
         /// <summary>
         /// Creates an activation object for the enhanced video renderer (EVR) media sink.
@@ -852,11 +854,11 @@ namespace MediaFoundation.Core
         /// </param>
         /// <param name="ppActivate">
         /// Receives a pointer to the <see cref="IMFActivate"/> interface. Use this interface to create the
-        /// EVR. The caller must release the interface. 
+        /// EVR. The caller must release the interface.
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -871,31 +873,31 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/021887FC-36AF-42D4-AE46-2EDC1C700110(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/021887FC-36AF-42D4-AE46-2EDC1C700110(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateVideoRendererActivate(
             IntPtr hwndVideo,
-            /* out IMFActivate */ out IntPtr ppActivate
-        );
+            /* out IMFActivate */ out IntPtr ppActivate);
 
         /// <summary>
         /// Creates a topology node.
         /// </summary>
-        /// <param name="NodeType">
-        /// The type of node to create, specified as a member of the <see cref="MFTopologyType"/> enumeration. 
+        /// <param name="nodeType">
+        /// The type of node to create, specified as a member of the <see cref="MFTopologyType"/> enumeration.
         /// </param>
         /// <param name="ppNode">
         /// Receives a pointer to the node's <see cref="IMFTopologyNode"/> interface. The caller must release
-        /// the interface. 
+        /// the interface.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -905,28 +907,28 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/67C32232-09CB-4098-B80B-4B93EE121190(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/67C32232-09CB-4098-B80B-4B93EE121190(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTopologyNode(
-            MFTopologyType NodeType,
-            /* out IMFTopologyNode */ out IntPtr ppNode
-        );
+            MFTopologyType nodeType,
+            /* out IMFTopologyNode */ out IntPtr ppNode);
 
         /// <summary>
-        /// Creates the source resolver, which is used to create a media source from a URL or byte stream. 
+        /// Creates the source resolver, which is used to create a media source from a URL or byte stream.
         /// </summary>
         /// <param name="ppISourceResolver">
         /// Receives a pointer to the source resolver's <see cref="IMFSourceResolver"/> interface. The caller
-        /// must release the interface. 
+        /// must release the interface.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -935,32 +937,32 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/60D6B0E2-5AB2-4A20-99D9-E6B806A1F576(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/60D6B0E2-5AB2-4A20-99D9-E6B806A1F576(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateSourceResolver(
-            /* out IMFSourceResolver */ out IntPtr ppISourceResolver
-        );
+            /* out IMFSourceResolver */ out IntPtr ppISourceResolver);
 
         /// <summary>
-        /// Creates the <c>Media Session</c> in the application's process. 
+        /// Creates the <c>Media Session</c> in the application's process.
         /// </summary>
         /// <param name="pConfiguration">
         /// Pointer to the <see cref="IMFAttributes"/> interface. This parameter can be <strong>NULL</strong>.
-        /// See Remarks. 
+        /// See Remarks.
         /// </param>
         /// <param name="ppMediaSession">
         /// Receives a pointer to the Media Session's <see cref="IMFMediaSession"/> interface. The caller must
         /// release the interface. Before releasing the last reference to the <strong>IMFMediaSession</strong>
-        /// pointer, the application must call the <see cref="IMFMediaSession.Shutdown"/> method. 
+        /// pointer, the application must call the <see cref="IMFMediaSession.Shutdown"/> method.
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -975,28 +977,28 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/86B2B5EC-231C-4943-9ADD-1A5A60E72268(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/86B2B5EC-231C-4943-9ADD-1A5A60E72268(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateMediaSession(
             IMFAttributes pConfiguration,
-            /* out IMFMediaSession */ out IntPtr ppMediaSession
-        );
+            /* out IMFMediaSession */ out IntPtr ppMediaSession);
 
         /// <summary>
         /// Creates a topology object.
         /// </summary>
         /// <param name="ppTopo">
         /// Receives a pointer to the <see cref="IMFTopology"/> interface of the topology object. The caller
-        /// must release the interface. 
+        /// must release the interface.
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -1010,28 +1012,27 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9811ECA7-E822-4FF7-93E4-2EB6245D4490(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9811ECA7-E822-4FF7-93E4-2EB6245D4490(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTopology(
-            /* out IMFTopology */ out IntPtr ppTopo
-        );
-
+            /* out IMFTopology */ out IntPtr ppTopo);
 
         /// <summary>
-        /// Creates an activation object for the <c>Streaming Audio Renderer</c>. 
+        /// Creates an activation object for the <c>Streaming Audio Renderer</c>.
         /// </summary>
         /// <param name="ppActivate">
         /// Receives a pointer to the <see cref="IMFActivate"/> interface. Use this interface to create the
-        /// audio renderer. The caller must release the interface. 
+        /// audio renderer. The caller must release the interface.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -1040,16 +1041,16 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/BCE55C34-D64A-4F3B-8D09-6C9363E4EB11(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BCE55C34-D64A-4F3B-8D09-6C9363E4EB11(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateAudioRendererActivate(
-            /* out IMFActivate */ out IntPtr ppActivate
-        );
+            /* out IMFActivate */ out IntPtr ppActivate);
 
 #if NOT_IN_USE
 
@@ -3351,7 +3352,6 @@ namespace MediaFoundation.Core
             );
 #endif
 
-
         #region Tested
 
         // While these methods are tested, the interfaces they use are not
@@ -3361,11 +3361,11 @@ namespace MediaFoundation.Core
         /// </summary>
         /// <param name="ppObj">
         /// Receives a pointer to the <see cref="IMFTopoLoader"/> interface of the topology loader. The caller
-        /// must release the interface. 
+        /// must release the interface.
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -3379,17 +3379,16 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0C0173EF-9C29-465C-B725-CE38B220F94F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0C0173EF-9C29-465C-B725-CE38B220F94F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTopoLoader(
-            /* out IMFTopoLoader */ out IntPtr ppObj
-        );
-
+            /* out IMFTopoLoader */ out IntPtr ppObj);
 
 #if ALLOW_UNTESTED_INTERFACES
 
@@ -5790,20 +5789,20 @@ namespace MediaFoundation.Core
         /// Creates the source reader from a media source.
         /// </summary>
         /// <param name="pMediaSource">
-        /// A pointer to the <see cref="IMFMediaSource"/> interface of a media source. 
+        /// A pointer to the <see cref="IMFMediaSource"/> interface of a media source.
         /// </param>
         /// <param name="pAttributes">
         /// Pointer to the <see cref="IMFAttributes"/> interface. You can use this parameter to configure the
-        /// source reader. For more information, see <c>Source Reader Attributes</c>. This parameter can be 
-        /// <strong>NULL</strong>. 
+        /// source reader. For more information, see <c>Source Reader Attributes</c>. This parameter can be
+        /// <strong>NULL</strong>.
         /// </param>
         /// <param name="ppSourceReader">
         /// Receives a pointer to the <see cref="ReadWrite.IMFSourceReader"/> interface. The caller must
-        /// release the interface. 
+        /// release the interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -5820,18 +5819,18 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/924E1813-B025-435B-9770-52503A9EB619(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/924E1813-B025-435B-9770-52503A9EB619(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("Mfreadwrite.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("Mfreadwrite.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateSourceReaderFromMediaSource(
             IMFMediaSource pMediaSource,
             IMFAttributes pAttributes,
-            /* out IMFSourceReader */ out IntPtr ppSourceReader
-        );
+            /* out IMFSourceReader */ out IntPtr ppSourceReader);
 
 #if ALLOW_UNTESTED_INTERFACES
         /// <summary>
@@ -7805,24 +7804,26 @@ namespace MediaFoundation.Core
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateSampleCopierMFT(out IMFTransform ppCopierMFT);
 
+#endif
+
         /// <summary>
         /// Creates an empty transcode profile object.
         /// <para/>
         /// The transcode profile stores configuration settings for the output file. These configuration
         /// settings are specified by the caller, and include audio and video stream properties, encoder
-        /// settings, and container settings. To set these properties, the caller must call the appropriate 
-        /// <see cref="IMFTranscodeProfile"/> methods. 
+        /// settings, and container settings. To set these properties, the caller must call the appropriate
+        /// <see cref="IMFTranscodeProfile"/> methods.
         /// <para/>
         /// The configured transcode profile is passed to the <see cref="MFExtern.MFCreateTranscodeTopology"/>
-        /// function. The underlying topology builder uses these settings to build the transcode topology. 
+        /// function. The underlying topology builder uses these settings to build the transcode topology.
         /// </summary>
         /// <param name="ppTranscodeProfile">
         /// Receives a pointer to the <see cref="IMFTranscodeProfile"/> interface of the transcode profile
-        /// object. Caller must release the interface. 
+        /// object. Caller must release the interface.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -7831,37 +7832,37 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/2A482C6F-6E20-419A-A7EB-085C41CC8186(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2A482C6F-6E20-419A-A7EB-085C41CC8186(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTranscodeProfile(
-            out IMFTranscodeProfile ppTranscodeProfile
-        );
+            /* out IMFTranscodeProfile ppTranscodeProfile */ out IntPtr ppTranscodeProfile);
 
         /// <summary>
         /// Creates a partial transcode topology.
         /// <para/>
         /// The underlying topology builder creates a partial topology by connecting the required pipeline
         /// objects: source, encoder, and sink. The encoder and the sink are configured according to the
-        /// settings specified by the caller in the transcode profile. 
+        /// settings specified by the caller in the transcode profile.
         /// <para/>
         /// To create the transcode profile object, call the <see cref="MFExtern.MFCreateTranscodeProfile"/>
-        /// function and set the required attributes by calling the appropriate the 
-        /// <see cref="IMFTranscodeProfile"/> methods. 
+        /// function and set the required attributes by calling the appropriate the
+        /// <see cref="IMFTranscodeProfile"/> methods.
         /// <para/>
         /// The configured transcode profile is passed to the <strong>MFCreateTranscodeTopology</strong>
         /// function, which creates the transcode topology with the appropriate settings. The caller can then
         /// set this topology on the Media Session and start the session to begin the encoding process. When
-        /// the Media Session ends, the transcoded file is generated. 
+        /// the Media Session ends, the transcoded file is generated.
         /// </summary>
         /// <param name="pSrc">
         /// A pointer to a media source that encapsulates the source file to be transcoded. The media source
         /// object exposes the <see cref="IMFMediaSource"/> interface and can be created by using the source
-        /// resolver. For more information, see <c>Using the Source Resolver</c>. 
+        /// resolver. For more information, see <c>Using the Source Resolver</c>.
         /// </param>
         /// <param name="pwszOutputFilePath">
         /// A pointer to a null-terminated string that contains the name and path of the output file to be
@@ -7870,18 +7871,18 @@ namespace MediaFoundation.Core
         /// <param name="pProfile">
         /// A pointer to the transcode profile that contains the configuration settings for the audio stream,
         /// the video stream, and the container to which the file is written. The transcode profile object
-        /// exposes the <see cref="IMFTranscodeProfile"/> interface and must be created by calling the 
+        /// exposes the <see cref="IMFTranscodeProfile"/> interface and must be created by calling the
         /// <see cref="MFExtern.MFCreateTranscodeProfile"/> function. After the object has been created the
         /// caller must provide the configuration settings by calling appropriate the <strong>
-        /// IMFTranscodeProfile</strong> methods. 
+        /// IMFTranscodeProfile</strong> methods.
         /// </param>
         /// <param name="ppTranscodeTopo">
         /// Receives a pointer to the <see cref="IMFTopology"/> interface of the transcode topology object. The
-        /// caller must release the interface. 
+        /// caller must release the interface.
         /// </param>
         /// <returns>
         /// The function returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -7903,19 +7904,21 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/EF3F19BF-1DB9-459D-9617-D6CCA9D6ABA7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EF3F19BF-1DB9-459D-9617-D6CCA9D6ABA7(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mf.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateTranscodeTopology(
             IMFMediaSource pSrc,
             [MarshalAs(UnmanagedType.LPWStr)] string pwszOutputFilePath,
             IMFTranscodeProfile pProfile,
-            out IMFTopology ppTranscodeTopo
-        );
+            /* out IMFTopology ppTranscodeTopo */ out IntPtr ppTranscodeTopo);
+
+#if ALLOW_UNTESTED_INTERFACES
 
         /// <summary>
         /// Gets a list of output formats from an audio encoder.
@@ -8443,43 +8446,45 @@ namespace MediaFoundation.Core
             out int merit
         );
 
+#endif
+
         /// <summary>
         /// Gets a list of Microsoft Media Foundation transforms (MFTs) that match specified search criteria.
-        /// This function extends the <see cref="MFExtern.MFTEnum"/> function. 
+        /// This function extends the <see cref="MFExtern.MFTEnum"/> function.
         /// </summary>
         /// <param name="guidCategory">
-        /// A GUID that specifies the category of MFTs to enumerate. For a list of MFT categories, see 
-        /// <c>MFT_CATEGORY</c>. 
+        /// A GUID that specifies the category of MFTs to enumerate. For a list of MFT categories, see
+        /// <c>MFT_CATEGORY</c>.
         /// </param>
         /// <param name="Flags">
-        /// The bitwise <strong>OR</strong> of zero or more flags from the <c>_MFT_ENUM_FLAG</c> enumeration. 
+        /// The bitwise <strong>OR</strong> of zero or more flags from the <c>_MFT_ENUM_FLAG</c> enumeration.
         /// </param>
         /// <param name="pInputType">
         /// A pointer to an <see cref="Transform.MFTRegisterTypeInfo"/> structure that specifies an input media
-        /// type to match. 
+        /// type to match.
         /// <para/>
         /// This parameter can be <strong>NULL</strong>. If <strong>NULL</strong>, all input types are matched.
         /// </param>
         /// <param name="pOutputType">
         /// A pointer to an <see cref="Transform.MFTRegisterTypeInfo"/> structure that specifies an output
-        /// media type to match. 
+        /// media type to match.
         /// <para/>
         /// This parameter can be <strong>NULL</strong>. If <strong>NULL</strong>, all output types are
-        /// matched. 
+        /// matched.
         /// </param>
         /// <param name="pppMFTActivate">
         /// Receives an array of <see cref="IMFActivate"/> interface pointers. Each pointer represents an
         /// activation object for an MFT that matches the search criteria. The function allocates the memory
         /// for the array. The caller must release the pointers and call the <c>CoTaskMemFree</c> function to
-        /// free the memory for the array. 
+        /// free the memory for the array.
         /// </param>
         /// <param name="pnumMFTActivate">
         /// Receives the number of elements in the <em>pppMFTActivate</em> array. If no MFTs match the search
-        /// criteria, this parameter receives the value zero. 
+        /// criteria, this parameter receives the value zero.
         /// </param>
         /// <returns>
         /// If this function succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>
-        /// HRESULT</strong> error code. 
+        /// HRESULT</strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -8493,21 +8498,23 @@ namespace MediaFoundation.Core
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/E065AE51-85DD-48EF-9322-DE4ADE62C0FE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E065AE51-85DD-48EF-9322-DE4ADE62C0FE(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
+        [DllImport("mfplat.dll", ExactSpelling = true)]
+        [SuppressUnmanagedCodeSecurity]
         public static extern int MFTEnumEx(
-            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory,
-            int Flags,
+            [In] Guid guidCategory,
+            int flags,
             MFTRegisterTypeInfo pInputType,
             MFTRegisterTypeInfo pOutputType,
-            out IMFActivate[] pppMFTActivate,
-            out int pnumMFTActivate
-        );
+            /* out IMFActivate[] */out IntPtr pppMFTActivate,
+            out int pnumMFTActivate);
+
+#if ALLOW_UNTESTED_INTERFACES
 
         /// <summary>
         /// Creates a new work queue. This function extends the capabilities of the 
@@ -9177,5 +9184,4 @@ namespace MediaFoundation.Core
         #endregion
 #endif
     }
-
 }

@@ -31,16 +31,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
-
     /// <summary>
     /// Specifies the origin for a seek request.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/AD7AD61A-0C02-4A8F-96C3-33F7D1F0CE51(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/AD7AD61A-0C02-4A8F-96C3-33F7D1F0CE51(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFBYTESTREAM_SEEK_ORIGIN")]
@@ -50,10 +48,10 @@ namespace MediaFoundation
         /// The seek position is specified relative to the start of the stream.
         /// </summary>
         Begin,
+
         /// <summary>
         /// The seek position is specified relative to the current read/write position in the stream.
         /// </summary>
         Current
     }
-
 }

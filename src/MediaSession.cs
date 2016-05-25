@@ -18,19 +18,19 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFMediaSession"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFMediaSession"/>: 
+    /// <see cref="IMFMediaSession"/>:
     /// Provides playback controls for protected and unprotected content. The Media Session and the
     /// protected media path (PMP) session objects expose this interface. This interface is the primary
     /// interface that applications use to control the Media Foundation pipeline.
     /// <para/>
-    /// To obtain a pointer to this interface, call <see cref="MFExtern.MFCreateMediaSession"/> or 
-    /// <see cref="MFExtern.MFCreatePMPMediaSession"/>. 
+    /// To obtain a pointer to this interface, call <see cref="MFExtern.MFCreateMediaSession"/> or
+    /// <see cref="MFExtern.MFCreatePMPMediaSession"/>.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/FEEBF891-73FA-4FE6-94CA-3594986FC92D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FEEBF891-73FA-4FE6-94CA-3594986FC92D(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class MediaSession : MediaEventGenerator<IMFMediaSession>
@@ -66,15 +66,15 @@ namespace MediaFoundation
         #endregion
 
         /// <summary>
-        /// Creates the <c>Media Session</c> in the application's process. 
+        /// Creates the <c>Media Session</c> in the application's process.
         /// </summary>
         /// <returns>
-        /// Returns the media session. The caller must release the interface. 
-        /// Before releasing the last reference to the <strong>MediaSession</strong> pointer, 
-        /// the application must call the <see cref="IMFMediaSession.Shutdown"/> method. 
+        /// Returns the media session. The caller must release the interface.
+        /// Before releasing the last reference to the <strong>MediaSession</strong> pointer,
+        /// the application must call the <see cref="IMFMediaSession.Shutdown"/> method.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/86B2B5EC-231C-4943-9ADD-1A5A60E72268(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/86B2B5EC-231C-4943-9ADD-1A5A60E72268(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static MediaSession Create()
@@ -83,18 +83,18 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Creates the <c>Media Session</c> in the application's process. 
+        /// Creates the <c>Media Session</c> in the application's process.
         /// </summary>
         /// <param name="configuration">
         /// An <see cref="Attributes"/> instance. This parameter can be <strong>null</strong>.
         /// </param>
         /// <returns>
-        /// Returns the media session. The caller must release the interface. 
-        /// Before releasing the last reference to the <strong>MediaSession</strong> pointer, 
-        /// the application must call the <see cref="IMFMediaSession.Shutdown"/> method. 
+        /// Returns the media session. The caller must release the interface.
+        /// Before releasing the last reference to the <strong>MediaSession</strong> pointer,
+        /// the application must call the <see cref="IMFMediaSession.Shutdown"/> method.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/86B2B5EC-231C-4943-9ADD-1A5A60E72268(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/86B2B5EC-231C-4943-9ADD-1A5A60E72268(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static MediaSession Create(Attributes configuration)
@@ -105,19 +105,18 @@ namespace MediaFoundation
             return MediaSession.FromUnknown(ref ppMediaSession);
         }
 
-
         /// <summary>
-        /// Sets a topology on the Media Session. 
+        /// Sets a topology on the Media Session.
         /// </summary>
         /// <param name="topologyFlags">
         /// Bitwise <strong>OR</strong> of zero or more flags from the <see cref="MFSessionSetTopologyFlags"/>
-        /// enumeration. 
+        /// enumeration.
         /// </param>
         /// <param name="topology">
         /// The topology.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/EA5313F0-B0FD-4945-97A2-B3F17937294F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/EA5313F0-B0FD-4945-97A2-B3F17937294F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetTopology(MFSessionSetTopologyFlags topologyFlags, Topology topology)
@@ -130,7 +129,7 @@ namespace MediaFoundation
         /// Clears all of the presentations that are queued for playback in the Media Session.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FCB7E5F1-1095-4766-AFED-43AD2279ABB4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FCB7E5F1-1095-4766-AFED-43AD2279ABB4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void ClearTopologies()
@@ -140,10 +139,10 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Starts the Media Session from the current position. 
+        /// Starts the Media Session from the current position.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1BDEC0C0-B042-4E5E-A72B-B15942750CED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1BDEC0C0-B042-4E5E-A72B-B15942750CED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Start()
@@ -157,13 +156,13 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Starts the Media Session. 
+        /// Starts the Media Session.
         /// </summary>
         /// <param name="startPosition">
         /// Starting position relative to the start of the presentation.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1BDEC0C0-B042-4E5E-A72B-B15942750CED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1BDEC0C0-B042-4E5E-A72B-B15942750CED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Start(Time startPosition)
@@ -175,12 +174,11 @@ namespace MediaFoundation
             }
         }
 
-
         /// <summary>
         /// Pauses the Media Session.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/FCC576BA-F8BE-4106-A270-756B2ABF52D4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FCC576BA-F8BE-4106-A270-756B2ABF52D4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Pause()
@@ -193,7 +191,7 @@ namespace MediaFoundation
         /// Stops the Media Session.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9CC769CC-24EF-4790-A10E-4AEC8FB4FC1F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9CC769CC-24EF-4790-A10E-4AEC8FB4FC1F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Stop()
@@ -206,7 +204,7 @@ namespace MediaFoundation
         /// Closes the Media Session and releases all of the resources it is using.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6ED118AE-7538-4EF6-81FC-B762F709838F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6ED118AE-7538-4EF6-81FC-B762F709838F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Close()
@@ -231,7 +229,7 @@ namespace MediaFoundation
         /// Retrieves the Media Session's presentation clock.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/16444DA2-68F2-4D94-8C6F-9E512D51E5E9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/16444DA2-68F2-4D94-8C6F-9E512D51E5E9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Clock Clock
@@ -249,12 +247,12 @@ namespace MediaFoundation
         /// Retrieves the capabilities of the Media Session, based on the current presentation.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3534CFB9-23FF-42A6-A3DB-B5032D427CF2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MFSessionCapabilities SessionCapabilities
         {
-            get 
+            get
             {
                 MFSessionCapabilities pdwCaps;
                 int hr = this.Interface.GetSessionCapabilities(out pdwCaps);
@@ -269,19 +267,19 @@ namespace MediaFoundation
         /// This method can get the current topology or a queued topology.
         /// </summary>
         /// <param name="topologyFlags">
-        /// Bitwise <strong>OR</strong> of zero or more flags from the 
-        /// <see cref="MFSessionGetFullTopologyFlags"/> enumeration. 
+        /// Bitwise <strong>OR</strong> of zero or more flags from the
+        /// <see cref="MFSessionGetFullTopologyFlags"/> enumeration.
         /// </param>
         /// <param name="topologyId">
         /// The identifier of the topology. This parameter is ignored if the <paramref name="topologyFlags"/>
         /// parameter contains the <strong>MFSESSION_GETFULLTOPOLOGY_CURRENT</strong> flag. To get the
-        /// identifier of a topology, call <see cref="IMFTopology.GetTopologyID"/>. 
+        /// identifier of a topology, call <see cref="IMFTopology.GetTopologyID"/>.
         /// </param>
         /// <returns>
         /// The full topology.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/6899DBE2-A684-487F-AB56-8631B3D5A033(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/6899DBE2-A684-487F-AB56-8631B3D5A033(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Topology GetFullTopology(MFSessionGetFullTopologyFlags topologyFlags, long topologyId)

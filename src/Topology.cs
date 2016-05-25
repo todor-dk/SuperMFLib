@@ -19,19 +19,19 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFTopology"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFTopology"/>: 
+    /// <see cref="IMFTopology"/>:
     /// Represents a topology. A <em>topology</em> describes a collection of media sources, sinks, and
     /// transforms that are connected in a certain order. These objects are represented within the topology
     /// by <em>topology nodes</em>, which expose the <see cref="IMFTopologyNode"/> interface. A topology
-    /// describes the path of multimedia data through these nodes. 
+    /// describes the path of multimedia data through these nodes.
     /// <para/>
-    /// To create a topology, call <see cref="MFExtern.MFCreateTopology"/>. 
+    /// To create a topology, call <see cref="MFExtern.MFCreateTopology"/>.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/F293E9EE-9BD2-4B3E-A4FF-53457EE910F6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F293E9EE-9BD2-4B3E-A4FF-53457EE910F6(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class Topology : Attributes<IMFTopology>
@@ -70,10 +70,10 @@ namespace MediaFoundation
         /// Creates a topology object.
         /// </summary>
         /// <returns>
-        /// The topology object. The caller must release the instance. 
+        /// The topology object. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9811ECA7-E822-4FF7-93E4-2EB6245D4490(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9811ECA7-E822-4FF7-93E4-2EB6245D4490(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static Topology Create()
@@ -89,10 +89,10 @@ namespace MediaFoundation
         /// Gets the identifier of the topology.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/F7D33D20-1B58-4B88-9A98-1004A5C42DFA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/F7D33D20-1B58-4B88-9A98-1004A5C42DFA(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
-        public long GetTopologyId
+        public long TopologyId
         {
             get
             {
@@ -110,7 +110,7 @@ namespace MediaFoundation
         /// The note to add.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/5E519524-F5C5-4D4D-922F-166F9E616631(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5E519524-F5C5-4D4D-922F-166F9E616631(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void AddNode(TopologyNode node)
@@ -129,7 +129,7 @@ namespace MediaFoundation
         /// True if the node was removed, otherwise false.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0DBAFD3F-315B-4135-AECD-AD46F2C19886(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0DBAFD3F-315B-4135-AECD-AD46F2C19886(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool RemoveNode(TopologyNode node)
@@ -142,13 +142,13 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Gets the number of nodes in the topology. 
+        /// Gets the number of nodes in the topology.
         /// </summary>
         /// <returns>
-        /// The number of nodes. 
+        /// The number of nodes.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/87378088-1D7A-4AD7-942F-69B6CFC4E573(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/87378088-1D7A-4AD7-942F-69B6CFC4E573(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public short NodeCount
@@ -163,17 +163,17 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Gets a node in the topology, specified by index. 
+        /// Gets a node in the topology, specified by index.
         /// </summary>
         /// <param name="index">
-        /// The zero-based index of the node. To get the number of nodes in the topology, call 
-        /// <see cref="NodeCount"/>. 
+        /// The zero-based index of the node. To get the number of nodes in the topology, call
+        /// <see cref="NodeCount"/>.
         /// </param>
         /// <returns>
         /// The node at the given index.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/97053D10-5AC7-40C0-B46B-77D401284D58(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/97053D10-5AC7-40C0-B46B-77D401284D58(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TopologyNode GetNode(short index)
@@ -188,7 +188,7 @@ namespace MediaFoundation
         /// Removes all nodes from the topology.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/919A712F-3F1B-4681-9EEB-958AC349D8F6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/919A712F-3F1B-4681-9EEB-958AC349D8F6(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Clear()
@@ -198,13 +198,13 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Converts this topology into a copy of another topology. 
+        /// Converts this topology into a copy of another topology.
         /// </summary>
         /// <param name="sourceTopology">
-        /// The topology to clone from (into this topology). 
+        /// The topology to clone from (into this topology).
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/B455AA57-9785-4741-BC3B-1F99CBF4E3D9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/B455AA57-9785-4741-BC3B-1F99CBF4E3D9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void CloneFrom(Topology sourceTopology)
@@ -217,14 +217,14 @@ namespace MediaFoundation
         /// Gets a node in the topology, specified by node identifier.
         /// </summary>
         /// <param name="topologyNodeId">
-        /// The identifier of the node to retrieve. To get a node's identifier, call 
-        /// <see cref="TopologyNode.TopologyNodeId"/>. 
+        /// The identifier of the node to retrieve. To get a node's identifier, call
+        /// <see cref="TopologyNode.TopologyNodeId"/>.
         /// </param>
         /// <returns>
-        /// Topology node with the given identifier or null if the topology does not contain a node with this identifier. 
+        /// Topology node with the given identifier or null if the topology does not contain a node with this identifier.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/34C8326F-BD34-4BF6-9171-A1ED3191B85E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34C8326F-BD34-4BF6-9171-A1ED3191B85E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TopologyNode GetNodeById(long topologyNodeId)
@@ -235,21 +235,22 @@ namespace MediaFoundation
             {
                 if (ppNode != IntPtr.Zero)
                     Marshal.Release(ppNode);
-                return null; // MF_E_NOT_FOUND: The topology does not contain a node with this identifier. 
+                return null; // MF_E_NOT_FOUND: The topology does not contain a node with this identifier.
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppNode);
             return TopologyNode.FromUnknown(ref ppNode);
         }
 
         /// <summary>
-        /// Gets the source nodes in the topology. 
+        /// Gets the source nodes in the topology.
         /// </summary>
         /// <returns>
         /// A collection with the source nodes in the topology. The caller must release the collection.
-        /// The collection might be empty. 
+        /// The collection might be empty.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9DA7D4CD-AD83-4D64-9773-699F39625056(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9DA7D4CD-AD83-4D64-9773-699F39625056(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Collection<TopologyNode> GetSourceNode()
@@ -261,14 +262,14 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Gets the output nodes in the topology. 
+        /// Gets the output nodes in the topology.
         /// </summary>
         /// <returns>
         /// A collection with the output nodes in the topology. The caller must release the collection.
-        /// The collection might be empty. 
+        /// The collection might be empty.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0862CD4A-4D22-4D8D-A754-0CD376D44B22(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0862CD4A-4D22-4D8D-A754-0CD376D44B22(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public Collection<TopologyNode> GetOutputNode()

@@ -18,14 +18,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IPropertyStore"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IPropertyStore"/>: 
+    /// <see cref="IPropertyStore"/>:
     /// Exposes methods for enumerating, getting, and setting property values.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/E995AAA1-D4C9-475F-B1FA-B9123CD5B653(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E995AAA1-D4C9-475F-B1FA-B9123CD5B653(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class PropertyStore : COM<IPropertyStore>
@@ -85,7 +85,7 @@ namespace MediaFoundation
         /// Returns the property count.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/23F7B982-29DB-4960-9A1D-2F9E033EBF61(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/23F7B982-29DB-4960-9A1D-2F9E033EBF61(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int Count
@@ -109,7 +109,7 @@ namespace MediaFoundation
         /// The property key at the given <paramref name="index"/>.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/4F93949A-D5D5-4FBF-8538-6171861E5884(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/4F93949A-D5D5-4FBF-8538-6171861E5884(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public PropertyKey GetAt(int index)
@@ -128,12 +128,12 @@ namespace MediaFoundation
         /// Returns a <see cref="PropVariant"/> containing the value of the property.
         /// The caller must dispose the PropVariant.
         /// <para/>
-        /// If the <paramref name="key"/> is not present in the property store, this method 
-        /// returns a PropVariant and the <see cref="ConstPropVariant.ValueType"/> is set to 
+        /// If the <paramref name="key"/> is not present in the property store, this method
+        /// returns a PropVariant and the <see cref="ConstPropVariant.ValueType"/> is set to
         /// <see cref="ConstPropVariant.VariantType.None"/> (VT_EMPTY).
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/11204335-0F00-4AF8-8787-93E91248E5BD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/11204335-0F00-4AF8-8787-93E91248E5BD(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public PropVariant GetValue(PropertyKey key)
@@ -145,6 +145,7 @@ namespace MediaFoundation
                 pv.Dispose();
                 COM.ThrowIfFailed(hr);
             }
+
             return pv;
         }
 
@@ -158,7 +159,7 @@ namespace MediaFoundation
         /// false if property was changed but the value was set but truncated.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/BE21BCB2-6875-4559-ABD7-A496F0FCDDD6(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BE21BCB2-6875-4559-ABD7-A496F0FCDDD6(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool SetValue(PropertyKey key, ConstPropVariant value)
@@ -180,7 +181,7 @@ namespace MediaFoundation
         /// After a change has been made, this method saves the changes.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A3CC6815-A16F-45E7-A2D5-8F354F712170(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A3CC6815-A16F-45E7-A2D5-8F354F712170(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void Commit()

@@ -29,9 +29,8 @@ using System.Security;
 using MediaFoundation.Misc;
 using System.Drawing;
 
-namespace MediaFoundation.dxvahd.Structs
+namespace MediaFoundation.Dxvahd.Structs
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
     /// <summary>

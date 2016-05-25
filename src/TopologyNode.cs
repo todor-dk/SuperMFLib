@@ -20,16 +20,16 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFTopologyNode"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFTopologyNode"/>: 
+    /// <see cref="IMFTopologyNode"/>:
     /// Represents a node in a topology. The following node types are supported:
     /// <para/>
-    /// To create a new node, call the <see cref="MFExtern.MFCreateTopologyNode"/> function. 
+    /// To create a new node, call the <see cref="MFExtern.MFCreateTopologyNode"/> function.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/01D7EB7C-A3D3-4924-A8EC-A67E9DC17424(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/01D7EB7C-A3D3-4924-A8EC-A67E9DC17424(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class TopologyNode : Attributes<IMFTopologyNode>
@@ -68,13 +68,13 @@ namespace MediaFoundation
         /// Creates a topology node.
         /// </summary>
         /// <param name="nodeType">
-        /// The type of node to create, specified as a member of the <see cref="MFTopologyType"/> enumeration. 
+        /// The type of node to create, specified as a member of the <see cref="MFTopologyType"/> enumeration.
         /// </param>
         /// <returns>
-        /// The new topology node. The caller must release the instance. 
+        /// The new topology node. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/67C32232-09CB-4098-B80B-4B93EE121190(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/67C32232-09CB-4098-B80B-4B93EE121190(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public static TopologyNode Create(MFTopologyType nodeType)
@@ -86,15 +86,14 @@ namespace MediaFoundation
             return TopologyNode.FromUnknown(ref ppNode);
         }
 
-
         /// <summary>
         /// Sets the object associated with this node.
         /// </summary>
         /// <param name="value">
-        /// The object to set. Use the value <strong>null</strong> to clear an object that was previous set. 
+        /// The object to set. Use the value <strong>null</strong> to clear an object that was previous set.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/BBEF706D-A4A0-4FF3-BFDB-8BA39D70617C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BBEF706D-A4A0-4FF3-BFDB-8BA39D70617C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetObject(object value)
@@ -106,29 +105,30 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Gets the object associated with this node. 
+        /// Gets the object associated with this node.
         /// </summary>
         /// <returns>
-        /// Returns object associated with this node. The object may need to be cast to the desired interface 
+        /// Returns object associated with this node. The object may need to be cast to the desired interface
         /// and then to a desired wrapper class. The caller must release the instance.
         /// <para/>
-        /// Null is returned if there is no object associated with this node. 
+        /// Null is returned if there is no object associated with this node.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/039D8009-5E5A-4503-9908-7317BC2BF412(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/039D8009-5E5A-4503-9908-7317BC2BF412(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public ComObject GetObject()
         {
             IntPtr ppObject = IntPtr.Zero;
             int hr = this.Interface.GetObject(out ppObject);
-            // E_FAIL: There is no object associated with this node. 
+            // E_FAIL: There is no object associated with this node.
             if (hr == COM.E_Fail)
             {
                 if (ppObject != IntPtr.Zero)
                     Marshal.Release(ppObject);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppObject);
             return ComObject.FromUnknown(ref ppObject);
         }
@@ -137,10 +137,10 @@ namespace MediaFoundation
         /// Retrieves the node type.
         /// </summary>
         /// <returns>
-        /// Returns the node type, specified as a member of the <see cref="MFTopologyType"/> enumeration. 
+        /// Returns the node type, specified as a member of the <see cref="MFTopologyType"/> enumeration.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/64B2D2B4-1F00-412D-8188-FA361DC317A1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/64B2D2B4-1F00-412D-8188-FA361DC317A1(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MFTopologyType NodeType
@@ -158,8 +158,8 @@ namespace MediaFoundation
         /// Retrieves or sets the identifier of the node.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
-        /// <a href="http://msdn.microsoft.com/en-US/library/9C0E5BE9-6481-4132-AD5B-9DB13FB07391(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9C0E5BE9-6481-4132-AD5B-9DB13FB07391(v=VS.85,d=hv.2).aspx</a> and 
+        /// View the original documentation topic online:
+        /// <a href="http://msdn.microsoft.com/en-US/library/9C0E5BE9-6481-4132-AD5B-9DB13FB07391(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9C0E5BE9-6481-4132-AD5B-9DB13FB07391(v=VS.85,d=hv.2).aspx</a> and
         /// <a href="http://msdn.microsoft.com/en-US/library/80EFA004-D739-4F9A-9EA3-8BF7D97F0A7D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/80EFA004-D739-4F9A-9EA3-8BF7D97F0A7D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public long TopologyNodeId
@@ -171,6 +171,7 @@ namespace MediaFoundation
                 COM.ThrowIfNotOK(hr);
                 return pID;
             }
+
             set
             {
                 int hr = this.Interface.SetTopoNodeID(value);
@@ -182,7 +183,7 @@ namespace MediaFoundation
         /// Retrieves the number of input streams that currently exist on this node.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/84C079DA-5DE6-4C33-B0C7-5FFD017D5513(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/84C079DA-5DE6-4C33-B0C7-5FFD017D5513(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int InputCount
@@ -200,7 +201,7 @@ namespace MediaFoundation
         /// Retrieves the number of output streams that currently exist on this node.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/DC964C38-9DAC-491F-9D70-B1BA7B7001AD(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DC964C38-9DAC-491F-9D70-B1BA7B7001AD(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int OutputCount
@@ -221,19 +222,19 @@ namespace MediaFoundation
         /// Zero-based index of the output stream on this node.
         /// </param>
         /// <param name="downstreamNode">
-        /// The node to connect to. 
+        /// The node to connect to.
         /// </param>
         /// <param name="inputIndexOnDownstreamNode">
         /// Zero-based index of the input stream on the other node.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/2340FD87-27EA-4F98-97E3-48B9506251A9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2340FD87-27EA-4F98-97E3-48B9506251A9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void ConnectOutput(int outputIndex, TopologyNode downstreamNode, int inputIndexOnDownstreamNode)
         {
             int hr = this.Interface.ConnectOutput(outputIndex, downstreamNode.AccessInterface(), inputIndexOnDownstreamNode);
-            // IMPROVE: May need to handle: E_FAIL - The method failed. ... 
+            // IMPROVE: May need to handle: E_FAIL - The method failed. ...
             // An output node cannot have any output connections. If you call this method on an output node, the method returns E_FAIL.
             COM.ThrowIfNotOK(hr);
         }
@@ -248,7 +249,7 @@ namespace MediaFoundation
         /// True of the stream was disconnected or false if the specified output stream is not connected to another node.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/77B91797-D9A7-40DA-827D-6E2A347112DC(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/77B91797-D9A7-40DA-827D-6E2A347112DC(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool DisconnectOutput(int outputIndex)
@@ -271,12 +272,12 @@ namespace MediaFoundation
         /// Receives the index of the output stream that is connected to this node's input stream.
         /// </param>
         /// <returns>
-        /// Returns the node that is connected to the specified input stream 
+        /// Returns the node that is connected to the specified input stream
         /// or null if the specified input stream is not connected to another node.
-        /// The caller must release the interface. 
+        /// The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/49969E6D-C893-4F6F-8C1D-87D32405A65D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/49969E6D-C893-4F6F-8C1D-87D32405A65D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TopologyNode GetInput(int inputIndex, out int outputIndexOnUpstreamNode)
@@ -290,6 +291,7 @@ namespace MediaFoundation
                     Marshal.Release(ppUpstreamNode);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppUpstreamNode);
             return TopologyNode.FromUnknown(ref ppUpstreamNode);
         }
@@ -301,12 +303,12 @@ namespace MediaFoundation
         /// Zero-based index of an input stream on this node.
         /// </param>
         /// <returns>
-        /// Returns the node that is connected to the specified input stream 
+        /// Returns the node that is connected to the specified input stream
         /// or null if the specified input stream is not connected to another node.
-        /// The caller must release the interface. 
+        /// The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/49969E6D-C893-4F6F-8C1D-87D32405A65D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/49969E6D-C893-4F6F-8C1D-87D32405A65D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TopologyNode GetInput(int inputIndex)
@@ -325,12 +327,12 @@ namespace MediaFoundation
         /// Receives the index of the input stream that is connected to this node's output stream.
         /// </param>
         /// <returns>
-        /// Returns the node that is connected to the specified output stream 
+        /// Returns the node that is connected to the specified output stream
         /// or null if the specified output stream is not connected to another node.
-        /// The caller must release the interface. 
+        /// The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0D947D92-4669-4857-BD61-10FA8EBD2598(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0D947D92-4669-4857-BD61-10FA8EBD2598(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TopologyNode GetOutput(int outputIndex, out int inputIndexOnDownstreamNode)
@@ -344,6 +346,7 @@ namespace MediaFoundation
                     Marshal.Release(ppDownstreamNode);
                 return null;
             }
+
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppDownstreamNode);
             return TopologyNode.FromUnknown(ref ppDownstreamNode);
         }
@@ -355,12 +358,12 @@ namespace MediaFoundation
         /// Zero-based index of an output stream on this node.
         /// </param>
         /// <returns>
-        /// Returns the node that is connected to the specified output stream 
+        /// Returns the node that is connected to the specified output stream
         /// or null if the specified output stream is not connected to another node.
-        /// The caller must release the interface. 
+        /// The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0D947D92-4669-4857-BD61-10FA8EBD2598(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0D947D92-4669-4857-BD61-10FA8EBD2598(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public TopologyNode GetOutput(int outputIndex)
@@ -376,10 +379,10 @@ namespace MediaFoundation
         /// Zero-based index of the output stream.
         /// </param>
         /// <param name="type">
-        /// The media type. 
+        /// The media type.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/948FD64D-E3D8-45DE-AAAB-B052D9F0B9D8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/948FD64D-E3D8-45DE-AAAB-B052D9F0B9D8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetOutputPreferredType(int outputIndex, MediaType type)
@@ -401,7 +404,7 @@ namespace MediaFoundation
         /// The media type. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/972052CA-1D87-4FA4-ABEB-6E74BA6C9368(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/972052CA-1D87-4FA4-ABEB-6E74BA6C9368(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaType GetOutputPreferredType(int outputIndex)
@@ -425,10 +428,10 @@ namespace MediaFoundation
         /// Zero-based index of the input stream.
         /// </param>
         /// <param name="type">
-        /// The media type. 
+        /// The media type.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/348B3CBA-8C8C-4DF9-8CB9-B69CD140CFFB(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/348B3CBA-8C8C-4DF9-8CB9-B69CD140CFFB(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SetInputPreferredType(int inputIndex, MediaType type)
@@ -446,10 +449,10 @@ namespace MediaFoundation
         /// Zero-based index of the input stream.
         /// </param>
         /// <returns>
-        /// The media type or null if this node does not have a preferred input type The caller must release the instace. 
+        /// The media type or null if this node does not have a preferred input type The caller must release the instace.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/34849803-2B56-457A-920B-B5F2E208CE2E(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34849803-2B56-457A-920B-B5F2E208CE2E(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MediaType GetInputPreferredType(int inputIndex)
@@ -473,13 +476,13 @@ namespace MediaFoundation
         /// The node to copy into this node.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/90322FBC-E3DE-4801-B10B-63CE538FC83F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/90322FBC-E3DE-4801-B10B-63CE538FC83F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void CloneFrom(TopologyNode node)
         {
             int hr = this.Interface.CloneFrom(node.AccessInterface());
-            // MF_E_INVALIDREQUEST: The node types do not match. 
+            // MF_E_INVALIDREQUEST: The node types do not match.
             if (hr == MFError.MF_E_INVALIDREQUEST)
                 throw new COMException("The node types do not match.", hr);
             COM.ThrowIfNotOK(hr);

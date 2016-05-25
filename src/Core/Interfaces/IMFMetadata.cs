@@ -34,35 +34,35 @@ using MediaFoundation.Misc.Classes;
 
 namespace MediaFoundation.Core.Interfaces
 {
-
     /// <summary>
     /// Manages metadata for an object. Metadata is information that describes a media file, stream, or
     /// other content. Metadata consists of individual properties, where each property contains a
     /// descriptive name and a value. A property may be associated with a particular language.
     /// <para/>
-    /// To get this interface from a media source, use the <see cref="IMFMetadataProvider"/> interface. 
+    /// To get this interface from a media source, use the <see cref="IMFMetadataProvider"/> interface.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/411658CA-DC5E-445B-8D61-0C0429FCFBB1(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/411658CA-DC5E-445B-8D61-0C0429FCFBB1(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    Guid("F88CFB8C-EF16-4991-B450-CB8C69E51704"),
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [Guid("F88CFB8C-EF16-4991-B450-CB8C69E51704")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IMFMetadata
     {
         /// <summary>
-        /// Sets the language for setting and retrieving metadata. 
+        /// Sets the language for setting and retrieving metadata.
         /// </summary>
         /// <param name="pwszRFC1766">
         /// Pointer to a null-terminated string containing an RFC 1766-compliant language tag.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -71,10 +71,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/DA615053-DDD5-448E-905C-B060CDAEFA95(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DA615053-DDD5-448E-905C-B060CDAEFA95(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -86,11 +86,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppwszRFC1766">
         /// Receives a pointer to a null-terminated string containing an RFC 1766-compliant language tag. The
-        /// caller must release the string by calling <c>CoTaskMemFree</c>. 
+        /// caller must release the string by calling <c>CoTaskMemFree</c>.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -106,10 +106,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/75295C93-A389-42C4-AA56-DEBC36A5F532(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/75295C93-A389-42C4-AA56-DEBC36A5F532(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -122,15 +122,15 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="ppvLanguages">
         /// A pointer to a <strong>PROPVARIANT</strong> that receives the list of languages. The list is
         /// returned as an array of null-terminated wide-character strings. Each string in the array is an RFC
-        /// 1766-compliant language tag. 
+        /// 1766-compliant language tag.
         /// <para/>
         /// The returned <strong>PROPVARIANT</strong> type is VT_VECTOR | VT_LPWSTR. The list might be empty,
-        /// if no language tags are present. The caller must free the <strong>PROPVARIANT</strong> by calling 
-        /// <c>PropVariantClear</c>. 
+        /// if no language tags are present. The caller must free the <strong>PROPVARIANT</strong> by calling
+        /// <c>PropVariantClear</c>.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -139,10 +139,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/69296EC5-5811-4F0F-AE9C-CABCA3E66158(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/69296EC5-5811-4F0F-AE9C-CABCA3E66158(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -150,18 +150,18 @@ namespace MediaFoundation.Core.Interfaces
             [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvLanguages);
 
         /// <summary>
-        /// Sets the value of a metadata property. 
+        /// Sets the value of a metadata property.
         /// </summary>
         /// <param name="pwszName">
         /// Pointer to a null-terminated string containing the name of the property.
         /// </param>
         /// <param name="ppvValue">
         /// Pointer to a <strong>PROPVARIANT</strong> that contains the value of the property. For multivalued
-        /// properties, use a <strong>PROPVARIANT</strong> with a VT_VECTOR type. 
+        /// properties, use a <strong>PROPVARIANT</strong> with a VT_VECTOR type.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -171,10 +171,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/416A7FBA-506C-405D-A230-7E8A1C801209(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/416A7FBA-506C-405D-A230-7E8A1C801209(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -187,17 +187,17 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="pwszName">
         /// A pointer to a null-terminated string that containings the name of the property. To get the list of
-        /// property names, call <see cref="IMFMetadata.GetAllPropertyNames"/>. 
+        /// property names, call <see cref="IMFMetadata.GetAllPropertyNames"/>.
         /// </param>
         /// <param name="ppvValue">
         /// Pointer to a <strong>PROPVARIANT</strong> that receives the value of the property. The <strong>
         /// PROPVARIANT</strong> type depends on the property. For multivalued properties, the <strong>
         /// PROPVARIANT</strong> is a <strong>VT_VECTOR</strong> type. The caller must free the <strong>
-        /// PROPVARIANT</strong> by calling <c>PropVariantClear</c>. 
+        /// PROPVARIANT</strong> by calling <c>PropVariantClear</c>.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -213,10 +213,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/177C8612-5C9F-4A71-9EE1-A4C67737AF2D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/177C8612-5C9F-4A71-9EE1-A4C67737AF2D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -232,7 +232,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -247,10 +247,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/7C9A406D-6144-4E9C-B62C-1D9C691391F0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/7C9A406D-6144-4E9C-B62C-1D9C691391F0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -264,11 +264,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Pointer to a <strong>PROPVARIANT</strong> that receives an array of null-terminated wide-character
         /// strings. If no properties are available, the <strong>PROPVARIANT</strong> type is VT_EMPTY.
         /// Otherwise, the <strong>PROPVARIANT</strong> type is VT_VECTOR | VT_LPWSTR. The caller must free the
-        /// <strong>PROPVARIANT</strong> by calling <c>PropVariantClear</c>. 
+        /// <strong>PROPVARIANT</strong> by calling <c>PropVariantClear</c>.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -277,10 +277,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/E0944D42-D6E6-420D-9980-CA6C62736B3D(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E0944D42-D6E6-420D-9980-CA6C62736B3D(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

@@ -15,14 +15,14 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFSeekInfo"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFSeekInfo"/>: 
+    /// <see cref="IMFSeekInfo"/>:
     /// For a particular seek position, gets the two nearest key frames.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/5B1AD3A1-D5ED-4F9D-A895-0312E6EB3072(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/5B1AD3A1-D5ED-4F9D-A895-0312E6EB3072(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class SeekInfo : COM<IMFSeekInfo>
@@ -57,7 +57,6 @@ namespace MediaFoundation
 
         #endregion
 
-
         /// <summary>
         /// Returns the <see cref="SeekInfo"/> from the given <paramref name="service"/> (a media source).
         /// </summary>
@@ -85,7 +84,7 @@ namespace MediaFoundation
         /// For a particular seek position, gets the two nearest key frames.
         /// </summary>
         /// <param name="position">
-        /// The seek position. 
+        /// The seek position.
         /// </param>
         /// <param name="previousKeyFrame">
         /// Receives the position of the nearest key frame that appears earlier than <paramref name="position"/>.
@@ -94,14 +93,14 @@ namespace MediaFoundation
         /// Receives the position of the nearest key frame that appears later than <paramref name="position"/>.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/72A7161A-09CA-4582-B240-1442D70936D7(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/72A7161A-09CA-4582-B240-1442D70936D7(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void GetNearestKeyFrames(Time position, out Time previousKeyFrame, out Time nextKeyFrame)
         {
-            using(PropVariant vPosition = new PropVariant(position.Value))
+            using (PropVariant vPosition = new PropVariant(position.Value))
             {
-                using(PropVariant vPrev = new PropVariant(0L))
+                using (PropVariant vPrev = new PropVariant(0L))
                 {
                     using (PropVariant vNext = new PropVariant(0L))
                     {

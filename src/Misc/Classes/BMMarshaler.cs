@@ -45,9 +45,9 @@ namespace MediaFoundation.Misc.Classes
 
         public IntPtr MarshalManagedToNative(object managedObj)
         {
-            m_bmi = managedObj as BitmapInfoHeader;
+            this.m_bmi = managedObj as BitmapInfoHeader;
 
-            IntPtr ip = m_bmi.GetPtr();
+            IntPtr ip = this.m_bmi.GetPtr();
 
             return ip;
         }
@@ -60,9 +60,9 @@ namespace MediaFoundation.Misc.Classes
 
             // If we this call is In+Out, the return value is ignored.  If
             // this is out, then m_bmi will be null.
-            if (m_bmi != null)
+            if (this.m_bmi != null)
             {
-                m_bmi.CopyFrom(bmi);
+                this.m_bmi.CopyFrom(bmi);
                 bmi = null;
             }
 
@@ -71,7 +71,7 @@ namespace MediaFoundation.Misc.Classes
 
         public void CleanUpManagedData(object ManagedObj)
         {
-            m_bmi = null;
+            this.m_bmi = null;
         }
 
         public void CleanUpNativeData(IntPtr pNativeData)

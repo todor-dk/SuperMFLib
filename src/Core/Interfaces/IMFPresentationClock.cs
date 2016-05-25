@@ -38,15 +38,16 @@ namespace MediaFoundation.Core.Interfaces
     /// synchronize multiple streams.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/979C4F77-CBEE-468C-8F6B-E68442D89025(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/979C4F77-CBEE-468C-8F6B-E68442D89025(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
-    InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
-    Guid("868CE85C-8EA9-4F55-AB82-B009A910A805")]
+    [ComImport]
+    [System.Security.SuppressUnmanagedCodeSecurity]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("868CE85C-8EA9-4F55-AB82-B009A910A805")]
     public interface IMFPresentationClock : IMFClock
     {
     #region IMFClock methods
@@ -58,7 +59,7 @@ namespace MediaFoundation.Core.Interfaces
         /// indicating the characteristics of the clock.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -79,11 +80,10 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/50A81E8B-9AA8-484C-AFB7-950068FEEFC4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/50A81E8B-9AA8-484C-AFB7-950068FEEFC4(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetClockCharacteristics(
-            out MFClockCharacteristicsFlags pdwCharacteristics
-            );
+            out MFClockCharacteristicsFlags pdwCharacteristics);
 
         /// <summary>
-        /// Retrieves the last clock time that was correlated with system time. 
+        /// Retrieves the last clock time that was correlated with system time.
         /// </summary>
         /// <param name="dwReserved">Reserved, must be zero.</param>
         /// <param name="pllClockTime">Receives the last known clock time, in units of the clock's frequency.</param>
@@ -91,7 +91,7 @@ namespace MediaFoundation.Core.Interfaces
         /// 100-nanosecond units.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -117,8 +117,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetCorrelatedTime(
             [In] int dwReserved,
             out long pllClockTime,
-            out long phnsSystemTime
-            );
+            out long phnsSystemTime);
 
         /// <summary>
         /// Retrieves the clock's continuity key. (Not supported.)
@@ -126,7 +125,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pdwContinuityKey">Receives the continuity key.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -147,8 +146,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/8AFDA8C7-BAB6-40FD-B20C-6BB29ED4900F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8AFDA8C7-BAB6-40FD-B20C-6BB29ED4900F(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetContinuityKey(
-            out int pdwContinuityKey
-            );
+            out int pdwContinuityKey);
 
         /// <summary>
         /// Retrieves the current state of the clock.
@@ -157,7 +155,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="peClockState">Receives the clock state, as a member of the <see cref="MFClockState" /> enumeration.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -180,8 +178,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetState(
             [In] int dwReserved,
-            out MFClockState peClockState
-            );
+            out MFClockState peClockState);
 
         /// <summary>
         /// Retrieves the properties of the clock.
@@ -189,7 +186,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <param name="pClockProperties">Pointer to an <see cref="MFClockProperties" /> structure that receives the properties.</param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -210,8 +207,7 @@ namespace MediaFoundation.Core.Interfaces
         /// <a href="http://msdn.microsoft.com/en-US/library/9DFC0EFC-D274-45A6-B1AB-30F6215FBED8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9DFC0EFC-D274-45A6-B1AB-30F6215FBED8(v=VS.85,d=hv.2).aspx</a></remarks>
         [PreserveSig]
         new int GetProperties(
-            out MFClockProperties pClockProperties
-            );
+            out MFClockProperties pClockProperties);
 
         #endregion
 
@@ -220,11 +216,11 @@ namespace MediaFoundation.Core.Interfaces
         /// clock by providing the current time.
         /// </summary>
         /// <param name="pTimeSource">
-        /// Pointer to the <see cref="IMFPresentationTimeSource"/> interface of the time source. 
+        /// Pointer to the <see cref="IMFPresentationTimeSource"/> interface of the time source.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -240,10 +236,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/170B7C8E-9D1A-4168-964A-5FD057D1E8F9(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/170B7C8E-9D1A-4168-964A-5FD057D1E8F9(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -255,11 +251,11 @@ namespace MediaFoundation.Core.Interfaces
         /// </summary>
         /// <param name="ppTimeSource">
         /// Receives a pointer to the time source's <see cref="IMFPresentationTimeSource"/> interface. The
-        /// caller must release the interface. 
+        /// caller must release the interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -274,10 +270,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/E6B6851B-F5B3-40C2-9160-59F2A68C9131(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/E6B6851B-F5B3-40C2-9160-59F2A68C9131(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -285,15 +281,15 @@ namespace MediaFoundation.Core.Interfaces
             /* [MarshalAs(UnmanagedType.Interface)] out IMFPresentationTimeSource */ out IntPtr ppTimeSource);
 
         /// <summary>
-        /// Retrieves the latest clock time. 
+        /// Retrieves the latest clock time.
         /// </summary>
         /// <param name="phnsClockTime">
         /// Receives the latest clock time, in 100-nanosecond units. The time is relative to when the clock was
-        /// last started. 
+        /// last started.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -308,10 +304,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/31037B75-9FA5-48E0-A58C-A451B445147F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/31037B75-9FA5-48E0-A58C-A451B445147F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -322,11 +318,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Registers an object to be notified whenever the clock starts, stops, or pauses, or changes rate.
         /// </summary>
         /// <param name="pStateSink">
-        /// Pointer to the object's <see cref="IMFClockStateSink"/> interface. 
+        /// Pointer to the object's <see cref="IMFClockStateSink"/> interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -340,10 +336,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C90C3D26-51FA-4CD6-A154-6F72C21219D2(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C90C3D26-51FA-4CD6-A154-6F72C21219D2(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -354,11 +350,11 @@ namespace MediaFoundation.Core.Interfaces
         /// Unregisters an object that is receiving state-change notifications from the clock.
         /// </summary>
         /// <param name="pStateSink">
-        /// Pointer to the object's <see cref="IMFClockStateSink"/> interface. 
+        /// Pointer to the object's <see cref="IMFClockStateSink"/> interface.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -372,10 +368,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/C037183D-A81F-4F49-9E02-06DC2476471F(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C037183D-A81F-4F49-9E02-06DC2476471F(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -390,11 +386,11 @@ namespace MediaFoundation.Core.Interfaces
         /// called, the clock's <see cref="IMFPresentationClock.GetTime"/> method returns this value, and the
         /// clock time increments from there. If the value is PRESENTATION_CURRENT_POSITION, the clock starts
         /// from its current position. Use this value if the clock is paused and you want to restart it from
-        /// the same position. 
+        /// the same position.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -409,10 +405,10 @@ namespace MediaFoundation.Core.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/BA5986D1-9C94-4747-A221-43D0583F1FED(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BA5986D1-9C94-4747-A221-43D0583F1FED(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -421,11 +417,11 @@ namespace MediaFoundation.Core.Interfaces
 
         /// <summary>
         /// Stops the presentation clock. While the clock is stopped, the clock time does not advance, and the
-        /// clock's <see cref="IMFPresentationClock.GetTime"/> method returns zero. 
+        /// clock's <see cref="IMFPresentationClock.GetTime"/> method returns zero.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -439,10 +435,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Stop();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/54377D65-2AF7-410D-B8CF-45F467527A45(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/54377D65-2AF7-410D-B8CF-45F467527A45(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -450,11 +446,11 @@ namespace MediaFoundation.Core.Interfaces
 
         /// <summary>
         /// Pauses the presentation clock. While the clock is paused, the clock time does not advance, and the
-        /// clock's <see cref="IMFPresentationClock.GetTime"/> returns the time at which the clock was paused. 
+        /// clock's <see cref="IMFPresentationClock.GetTime"/> returns the time at which the clock was paused.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -469,10 +465,10 @@ namespace MediaFoundation.Core.Interfaces
         /// HRESULT Pause();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/2EDDC9A9-E3A6-46C4-83C6-446B6A7A64B0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2EDDC9A9-E3A6-46C4-83C6-446B6A7A64B0(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]

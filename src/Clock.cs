@@ -16,16 +16,16 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFClock"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFClock"/>: 
+    /// <see cref="IMFClock"/>:
     /// Provides timing information from a clock in Microsoft Media Foundation.
     /// <para/>
-    /// Clocks and some media sinks expose this interface through <strong>QueryInterface</strong>. 
+    /// Clocks and some media sinks expose this interface through <strong>QueryInterface</strong>.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/3A60BFEC-8511-4A84-A833-E0C73C593970(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3A60BFEC-8511-4A84-A833-E0C73C593970(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public abstract class Clock<TClock> : COM<TClock>
@@ -48,7 +48,7 @@ namespace MediaFoundation
         /// Retrieves the characteristics of the clock.
         /// </summary>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/50A81E8B-9AA8-484C-AFB7-950068FEEFC4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/50A81E8B-9AA8-484C-AFB7-950068FEEFC4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MFClockCharacteristicsFlags ClockCharacteristics
@@ -63,13 +63,13 @@ namespace MediaFoundation
         }
 
         /// <summary>
-        /// Retrieves the last clock time that was correlated with system time. 
+        /// Retrieves the last clock time that was correlated with system time.
         /// </summary>
         /// <returns>
         /// Returns the last clock time that was correlated with system time.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/0A897426-D994-4B27-9F13-9B0C7C9B3A9B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/0A897426-D994-4B27-9F13-9B0C7C9B3A9B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public CorrelatedTimes CorrelatedTime
@@ -83,7 +83,6 @@ namespace MediaFoundation
                 return new CorrelatedTimes(this.TicksToTime(pllClockTime), (Time)phnsSystemTime);
             }
         }
-
 
         private Time TicksToTime(long ticks)
         {
@@ -101,7 +100,6 @@ namespace MediaFoundation
                     else
                         this.ClockFrequency = freq;
                 }
-
             }
 
             if (this.ClockFrequency == 0)
@@ -144,7 +142,7 @@ namespace MediaFoundation
         /// Returns the current state of the clock.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/8E2DDA03-F589-4572-B715-2BE7B29A6ACE(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/8E2DDA03-F589-4572-B715-2BE7B29A6ACE(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MFClockState State
@@ -165,7 +163,7 @@ namespace MediaFoundation
         /// The properties of the clock.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9DFC0EFC-D274-45A6-B1AB-30F6215FBED8(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9DFC0EFC-D274-45A6-B1AB-30F6215FBED8(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public MFClockProperties ClockProperties
@@ -187,16 +185,16 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFClock"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFClock"/>: 
+    /// <see cref="IMFClock"/>:
     /// Provides timing information from a clock in Microsoft Media Foundation.
     /// <para/>
-    /// Clocks and some media sinks expose this interface through <strong>QueryInterface</strong>. 
+    /// Clocks and some media sinks expose this interface through <strong>QueryInterface</strong>.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/3A60BFEC-8511-4A84-A833-E0C73C593970(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3A60BFEC-8511-4A84-A833-E0C73C593970(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class Clock : Clock<IMFClock>

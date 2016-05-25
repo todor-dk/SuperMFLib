@@ -15,15 +15,15 @@ namespace MediaFoundation
     /// exposing <i>civilized</i> version of the <see cref="IMFPresentationDescriptor"/>
     /// interface's methods.
     /// <para/>
-    /// <see cref="IMFPresentationDescriptor"/>: 
+    /// <see cref="IMFPresentationDescriptor"/>:
     /// Describes the details of a presentation. A <em>presentation</em> is a set of related media streams
-    /// that share a common presentation time. 
+    /// that share a common presentation time.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/DB03E212-7021-433E-84DC-410B2CF7AF87(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/DB03E212-7021-433E-84DC-410B2CF7AF87(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     public sealed class PresentationDescriptor : Attributes<IMFPresentationDescriptor>
@@ -58,17 +58,16 @@ namespace MediaFoundation
 
         #endregion
 
-
         /// <summary>
         /// Retrieves the number of stream descriptors in the presentation. Each stream descriptor contains
-        /// information about one stream in the media source. To retrieve a stream descriptor, call the 
-        /// <see cref="GetStreamDescriptor(int)"/> method. 
+        /// information about one stream in the media source. To retrieve a stream descriptor, call the
+        /// <see cref="GetStreamDescriptor(int)"/> method.
         /// </summary>
         /// <returns>
         /// The number of stream descriptors.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/A01B8F91-B42A-4910-8AFB-6134F5F65759(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/A01B8F91-B42A-4910-8AFB-6134F5F65759(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public int StreamDescriptorCount
@@ -81,27 +80,27 @@ namespace MediaFoundation
                 return pdwDescriptorCount;
             }
         }
-         
+
         /// <summary>
         /// Retrieves a stream descriptor for a stream in the presentation. The stream descriptor contains
         /// information about the stream.
         /// </summary>
         /// <param name="index">
-        /// Zero-based index of the stream. To find the number of streams in the presentation, get the 
-        /// <see cref="StreamDescriptorCount"/> property. 
+        /// Zero-based index of the stream. To find the number of streams in the presentation, get the
+        /// <see cref="StreamDescriptorCount"/> property.
         /// </param>
         /// <param name="selected">
         /// Receives a Boolean value. The value is <strong>true</strong> if the stream is currently selected,
         /// or <strong>false</strong> if the stream is currently deselected. If a stream is selected, the media
         /// source generates data for that stream when <see cref="MediaSource.Start(PresentationDescriptor, Time)"/> is called. The media
-        /// source will not generated data for deselected streams. To select a stream, call 
-        /// <see cref="SelectStream"/>.To deselect a stream, call <see cref="DeselectStream"/>. 
+        /// source will not generated data for deselected streams. To select a stream, call
+        /// <see cref="SelectStream"/>.To deselect a stream, call <see cref="DeselectStream"/>.
         /// </param>
         /// <returns>
-        /// The stream descriptor. The caller must release the interface. 
+        /// The stream descriptor. The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1DB28049-CD62-4B1B-932B-B4D4E12FD671(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1DB28049-CD62-4B1B-932B-B4D4E12FD671(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public StreamDescriptor GetStreamDescriptor(int index, out bool selected)
@@ -117,14 +116,14 @@ namespace MediaFoundation
         /// information about the stream.
         /// </summary>
         /// <param name="index">
-        /// Zero-based index of the stream. To find the number of streams in the presentation, get the 
-        /// <see cref="StreamDescriptorCount"/> property. 
+        /// Zero-based index of the stream. To find the number of streams in the presentation, get the
+        /// <see cref="StreamDescriptorCount"/> property.
         /// </param>
         /// <returns>
-        /// The stream descriptor. The caller must release the interface. 
+        /// The stream descriptor. The caller must release the interface.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1DB28049-CD62-4B1B-932B-B4D4E12FD671(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1DB28049-CD62-4B1B-932B-B4D4E12FD671(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public StreamDescriptor GetStreamDescriptor(int index)
@@ -140,11 +139,11 @@ namespace MediaFoundation
         /// Returns a Boolean value. The value is <strong>true</strong> if the stream is currently selected,
         /// or <strong>false</strong> if the stream is currently deselected. If a stream is selected, the media
         /// source generates data for that stream when <see cref="MediaSource.Start(PresentationDescriptor, Time)"/> is called. The media
-        /// source will not generated data for deselected streams. To select a stream, call 
-        /// <see cref="SelectStream"/>.To deselect a stream, call <see cref="DeselectStream"/>. 
+        /// source will not generated data for deselected streams. To select a stream, call
+        /// <see cref="SelectStream"/>.To deselect a stream, call <see cref="DeselectStream"/>.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1DB28049-CD62-4B1B-932B-B4D4E12FD671(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1DB28049-CD62-4B1B-932B-B4D4E12FD671(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public bool IsStreamSelected(int index)
@@ -163,26 +162,26 @@ namespace MediaFoundation
         /// </summary>
         /// <param name="index">
         /// The stream number to select, indexed from zero. To find the number of streams in the presentation,
-        /// call <see cref="StreamDescriptorCount"/>. 
+        /// call <see cref="StreamDescriptorCount"/>.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3F0EAACE-9D85-4999-BB3F-34C268DFEA2C(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3F0EAACE-9D85-4999-BB3F-34C268DFEA2C(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void SelectStream(int index)
         {
             int hr = this.Interface.SelectStream(index);
         }
-            
+
         /// <summary>
         /// Deselects a stream in the presentation.
         /// </summary>
         /// <param name="index">
         /// The stream number to deselect, indexed from zero. To find the number of streams in the
-        /// presentation, get the <see cref="StreamDescriptorCount"/> property. 
+        /// presentation, get the <see cref="StreamDescriptorCount"/> property.
         /// </param>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3DE1F0D5-10FC-415B-898B-4643A391BA79(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3DE1F0D5-10FC-415B-898B-4643A391BA79(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public void DeselectStream(int index)
@@ -196,10 +195,10 @@ namespace MediaFoundation
         /// </summary>
         /// <returns>
         /// Returns a <see cref="PresentationDescriptor"/> object representing the new presentation
-        /// descriptor. The caller must release the instance. 
+        /// descriptor. The caller must release the instance.
         /// </returns>
         /// <remarks>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/084B3ADF-092A-4869-92E1-982DB209BD5B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/084B3ADF-092A-4869-92E1-982DB209BD5B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         public PresentationDescriptor Clone()

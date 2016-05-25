@@ -33,7 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
     /// <summary>
     /// Defines the behavior of the source resolver. These flags are also used by 

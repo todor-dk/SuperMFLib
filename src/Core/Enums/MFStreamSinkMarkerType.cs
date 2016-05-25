@@ -33,18 +33,17 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
-    /// Defines stream marker information for the <see cref="IMFStreamSink.PlaceMarker"/> method. The 
+    /// Defines stream marker information for the <see cref="IMFStreamSink.PlaceMarker"/> method. The
     /// <c>PlaceMarker</c> method places a marker on the stream between samples. The <strong>
     /// MFSTREAMSINK_MARKER_TYPE</strong> enumeration defines the marker type and the type of information
-    /// associated with the marker. 
+    /// associated with the marker.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/D1C5F8EE-A451-44AF-BF43-7623CEA2BE37(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/D1C5F8EE-A451-44AF-BF43-7623CEA2BE37(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFSTREAMSINK_MARKER_TYPE")]
@@ -54,23 +53,25 @@ namespace MediaFoundation
         /// This marker is for the application's use and does not convey any information to the stream sink.
         /// </summary>
         Default,
+
         /// <summary>
         /// This marker indicates the end of a segment within a presentation. There might be a gap in the
         /// stream until the next segment starts. There is no data associated with this marker.
         /// </summary>
         EndOfSegment,
+
         /// <summary>
         /// This marker indicates that there is a gap in the stream. The marker data is a <strong>LONGLONG
         /// </strong> value (VT_I8) that specifies the time for the missing sample. The next sample received
-        /// after this marker will have the discontinuity flag. This marker corresponds to an 
-        /// <c>MEStreamTick</c> event from the stream. 
+        /// after this marker will have the discontinuity flag. This marker corresponds to an
+        /// <c>MEStreamTick</c> event from the stream.
         /// </summary>
         Tick,
+
         /// <summary>
-        /// This marker contains a media event. The marker data is a pointer to the event's 
-        /// <see cref="IMFMediaEvent"/> interface (VT_UNKNOWN). 
+        /// This marker contains a media event. The marker data is a pointer to the event's
+        /// <see cref="IMFMediaEvent"/> interface (VT_UNKNOWN).
         /// </summary>
         Event
     }
-
 }

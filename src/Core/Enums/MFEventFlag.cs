@@ -31,15 +31,15 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Flags used in conjunction with the <c>GetEvent</c> method implemented by several Media Foundation interfaces.
     /// </summary>
     /// <remarks>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/512C67A5-E87D-4A81-8577-E64DAC868C40(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [Flags, UnmanagedName("MF_EVENT_FLAG_* defines")]
+    [Flags]
+    [UnmanagedName("MF_EVENT_FLAG_* defines")]
     public enum MFEventFlag
     {
         /// <summary>
@@ -49,14 +49,15 @@ namespace MediaFoundation
         /// This is same as <see cref="None"/>.
         /// </remarks>
         Wait = 0,
+
         /// <summary>
         /// The method blocks until the event generator queues an event.
         /// </summary>
         None = 0,
+
         /// <summary>
         /// The method returns immediately.
         /// </summary>
         NoWait = 0x00000001
     }
-
 }

@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #endregion
 
-// This file is a mess.  While technically part of MF, I'm in no hurry 
+// This file is a mess.  While technically part of MF, I'm in no hurry
 // to try to get this to work.
 
 using System;
@@ -31,7 +31,6 @@ using System.Security;
 
 namespace MediaFoundation.OPM.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
 
     /// <summary>

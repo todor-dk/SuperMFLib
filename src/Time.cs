@@ -12,7 +12,7 @@ namespace MediaFoundation
     /// <remarks>
     /// See: http://msdn.microsoft.com/en-us/library/windows/desktop/dd979590(v=vs.85).aspx
     /// </remarks>
-    public struct Time
+    public struct Time : IEquatable<Time>, IComparable<Time>
     {
         /// <summary>
         /// Represents time / timespan in the Media Foundation framework.
@@ -108,7 +108,7 @@ namespace MediaFoundation
         /// <returns>The result of the conversion.</returns>
         public static explicit operator Time(TimeSpan value)
         {
-            // One tick equals 100 nanoseconds. 
+            // One tick equals 100 nanoseconds.
             // Each unit of reference time is 100 nanoseconds.
             return new Time(value.Ticks);
         }
@@ -149,6 +149,16 @@ namespace MediaFoundation
         public static readonly Time Zero = new Time();
 
         /// <summary>
+        /// Represents the largest (latest) possible value of a <see cref="Time"/>.
+        /// </summary>
+        public static readonly Time MaximumValue = new Time(Int64.MaxValue);
+
+        /// <summary>
+        /// Represents the smallest (earliest) possible value of a <see cref="Time"/>.
+        /// </summary>
+        public static readonly Time MinimumValue = new Time(Int64.MinValue);
+
+        /// <summary>
         /// <see cref="Time"/> representing the duration of 1 second.
         /// </summary>
         public static readonly Time OneSecond = new Time(Time.OneSecondValue);
@@ -180,7 +190,7 @@ namespace MediaFoundation
 
         #endregion
 
-        #region Operatoors
+        #region Operators
 
         /// <summary>
         /// Adds the given times.
@@ -291,6 +301,65 @@ namespace MediaFoundation
             return new Time(-time.Value);
         }
 
+        /// <summary>
+        /// Compares if the <paramref name="left"/> <see cref="Time"/> operand
+        /// is lower than the <paramref name="right"/> <see cref="Time"/> operand.
+        /// </summary>
+        /// <param name="left">The left operand.</param>
+        /// <param name="right">The right operand.</param>
+        /// <returns>The result of the lower than operator.</returns>
+        public static bool operator <(Time left, Time right)
+        {
+            return left.Value < right.Value;
+        }
+
+        /// <summary>
+        /// Compares if the <paramref name="left"/> <see cref="Time"/> operand
+        /// is lower than or equal the <paramref name="right"/> <see cref="Time"/> operand.
+        /// </summary>
+        /// <param name="left">The left operand.</param>
+        /// <param name="right">The right operand.</param>
+        /// <returns>The result of the lower than or equals operator.</returns>
+        public static bool operator <=(Time left, Time right)
+        {
+            return left.Value <= right.Value;
+        }
+
+        /// <summary>
+        /// Compares if the <paramref name="left"/> <see cref="Time"/> operand
+        /// is greather than the <paramref name="right"/> <see cref="Time"/> operand.
+        /// </summary>
+        /// <param name="left">The left operand.</param>
+        /// <param name="right">The right operand.</param>
+        /// <returns>The result of the greather than operator.</returns>
+        public static bool operator >(Time left, Time right)
+        {
+            return left.Value > right.Value;
+        }
+
+        /// <summary>
+        /// Compares if the <paramref name="left"/> <see cref="Time"/> operand
+        /// is greather than or equal the <paramref name="right"/> <see cref="Time"/> operand.
+        /// </summary>
+        /// <param name="left">The left operand.</param>
+        /// <param name="right">The right operand.</param>
+        /// <returns>The result of the greather than or equals operator.</returns>
+        public static bool operator >=(Time left, Time right)
+        {
+            return left.Value >= right.Value;
+        }
+
         #endregion
+
+        /// <summary>
+        /// Compares the current object with another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>A value that indicates the relative order of the objects being compared. The return value has the following meanings: Value Meaning Less than zero This object is less than the <paramref name="other" /> parameter.Zero This object is equal to <paramref name="other" />. Greater than zero This object is greater than <paramref name="other" />.</returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public int CompareTo(Time other)
+        {
+            return this.Value.CompareTo(other.Value);
+        }
     }
 }

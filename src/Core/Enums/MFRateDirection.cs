@@ -33,15 +33,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
     /// <summary>
     /// Specifies the direction of playback (forward or reverse).
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/34CC861C-AB15-48F4-BB6E-736B70383546(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/34CC861C-AB15-48F4-BB6E-736B70383546(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFRATE_DIRECTION")]
@@ -51,10 +50,10 @@ namespace MediaFoundation
         /// Forward playback.
         /// </summary>
         Forward = 0,
+
         /// <summary>
         /// Reverse playback.
         /// </summary>
         Reverse
     }
-
 }

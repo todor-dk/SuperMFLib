@@ -33,30 +33,29 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
-
     /// <summary>
-    /// Contains flags for the <see cref="IMFTimer.SetTimer"/> method. 
+    /// Contains flags for the <see cref="IMFTimer.SetTimer"/> method.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/BD94247A-ED58-4857-A39D-16880EEA75E0(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/BD94247A-ED58-4857-A39D-16880EEA75E0(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [Flags, UnmanagedName("MFTIMER_FLAGS")]
+    [Flags]
+    [UnmanagedName("MFTIMER_FLAGS")]
     public enum MFTimeFlags
     {
         /// <summary>
         /// Default value / no flags are set.
         /// </summary>
         None = 0,
+
         /// <summary>
         /// The time passed to the timer is relative to the current time. If this flag is absent, the time is
         /// expressed as an absolute clock time.
         /// </summary>
         Relative = 0x00000001
     }
-
 }

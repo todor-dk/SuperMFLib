@@ -30,16 +30,14 @@ using MediaFoundation.Misc;
 
 namespace MediaFoundation.Core.Enums
 {
-
-
     /// <summary>
     /// Defines the selection options for an ASF stream.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/1571650B-4D5C-49AE-9E6D-77EF4AE7AE59(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1571650B-4D5C-49AE-9E6D-77EF4AE7AE59(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("ASF_SELECTION_STATUS")]
@@ -49,14 +47,15 @@ namespace MediaFoundation.Core.Enums
         /// No samples from the stream are delivered.
         /// </summary>
         NotSelected = 0,
+
         /// <summary>
         /// Only samples from the stream that are clean points are delivered.
         /// </summary>
         CleanPointsOnly = 1,
+
         /// <summary>
         /// All samples from the stream are delivered.
         /// </summary>
         AllDataUnits = 2
     }
-
 }

@@ -34,7 +34,7 @@ namespace MediaFoundation.EVR
 {
     /// <summary>
     /// Defines a normalized rectangle, which is used to specify sub-rectangles in a video rectangle. When
-    /// a rectangle N is <em>normalized</em> relative to some other rectangle R, it means the following: 
+    /// a rectangle N is <em>normalized</em> relative to some other rectangle R, it means the following:
     /// <para/>
     /// Any coordinates of N that fall outside the range [0...1] are mapped to positions outside the
     /// rectangle R. A normalized rectangle can be used to specify a region within a video rectangle
@@ -51,27 +51,31 @@ namespace MediaFoundation.EVR
     /// } MFVideoNormalizedRect;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/C1DD42CA-64A0-4F30-82E1-EDA3F4721526(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/C1DD42CA-64A0-4F30-82E1-EDA3F4721526(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [StructLayout(LayoutKind.Sequential, Pack = 4), UnmanagedName("MFVideoNormalizedRect")]
-    public class  MFVideoNormalizedRect
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [UnmanagedName("MFVideoNormalizedRect")]
+    public class MFVideoNormalizedRect
     {
         /// <summary>
         /// X-coordinate of the upper-left corner of the rectangle.
         /// </summary>
         public float left;
+
         /// <summary>
         /// Y-coordinate of the upper-left corner of the rectangle.
         /// </summary>
         public float top;
+
         /// <summary>
         /// X-coordinate of the lower-right corner of the rectangle.
         /// </summary>
         public float right;
+
         /// <summary>
         /// Y-coordinate of the lower-right corner of the rectangle.
         /// </summary>
@@ -93,10 +97,10 @@ namespace MediaFoundation.EVR
         /// <param name="b">Y-coordinate of the lower-right corner of the rectangle.</param>
         public MFVideoNormalizedRect(float l, float t, float r, float b)
         {
-            left = l;
-            top = t;
-            right = r;
-            bottom = b;
+            this.left = l;
+            this.top = t;
+            this.right = r;
+            this.bottom = b;
         }
 
         /// <summary>
@@ -105,7 +109,7 @@ namespace MediaFoundation.EVR
         /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
-            return string.Format("left = {0}, top = {1}, right = {2}, bottom = {3}", left, top, right, bottom);
+            return string.Format("left = {0}, top = {1}, right = {2}, bottom = {3}", this.left, this.top, this.right, this.bottom);
         }
 
         /// <summary>
@@ -114,10 +118,10 @@ namespace MediaFoundation.EVR
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public override int GetHashCode()
         {
-            return left.GetHashCode() |
-                top.GetHashCode() |
-                right.GetHashCode() |
-                bottom.GetHashCode();
+            return this.left.GetHashCode() |
+                this.top.GetHashCode() |
+                this.right.GetHashCode() |
+                this.bottom.GetHashCode();
         }
 
         /// <summary>
@@ -131,14 +135,14 @@ namespace MediaFoundation.EVR
             {
                 MFVideoNormalizedRect cmp = (MFVideoNormalizedRect)obj;
 
-                return right == cmp.right && bottom == cmp.bottom && left == cmp.left && top == cmp.top;
+                return this.right == cmp.right && this.bottom == cmp.bottom && this.left == cmp.left && this.top == cmp.top;
             }
 
             return false;
         }
 
         /// <summary>
-        /// Checks to see if the rectangle is empty. 
+        /// Checks to see if the rectangle is empty.
         /// </summary>
         /// <remarks>
         /// An empty rectangle is a rectangle where <see cref="right"/> &lt;= <see cref="left"/>,
@@ -147,20 +151,20 @@ namespace MediaFoundation.EVR
         /// <returns>Returns true if the rectangle is empty</returns>
         public bool IsEmpty()
         {
-            return (right <= left || bottom <= top);
+            return (this.right <= this.left || this.bottom <= this.top);
         }
 
         /// <summary>
-        /// Fill the properties of this rectangle instance from the properties of the 
+        /// Fill the properties of this rectangle instance from the properties of the
         /// given rectangle <paramref name="from"/>.
         /// </summary>
         /// <param name="from">Source rectangle whoes properties are to be copied to this rectangle.</param>
         public void CopyFrom(MFVideoNormalizedRect from)
         {
-            left = from.left;
-            top = from.top;
-            right = from.right;
-            bottom = from.bottom;
+            this.left = from.left;
+            this.top = from.top;
+            this.right = from.right;
+            this.bottom = from.bottom;
         }
     }
 }

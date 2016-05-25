@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaFoundationEx", "..\src\MediaFoundationEx.csproj", "{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopoViewer", "TopoViewer\TopoViewer.csproj", "{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|x64.ActiveCfg = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Debug|x64.Build.0 = Debug|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|Any CPU.ActiveCfg = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|Mixed Platforms.Build.0 = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|x64.ActiveCfg = Release|x64
+		{B78C0F3B-071A-4FD2-829D-7A67E0F7BD1C}.Release|x64.Build.0 = Release|x64
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5C05BB85-D12B-45A0-AB9D-4C3C3A107475}.Release|x64.ActiveCfg = Release|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3FE1BDD2-824D-4101-A427-F5FBEBB2FEF3}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

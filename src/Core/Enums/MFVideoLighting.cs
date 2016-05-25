@@ -31,16 +31,14 @@ using System.Drawing;
 
 namespace MediaFoundation
 {
-
-
     /// <summary>
     /// Describes the optimal lighting for viewing a particular set of video content.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/2EECA357-B7E2-40B1-B19F-2E12A833C1CA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/2EECA357-B7E2-40B1-B19F-2E12A833C1CA(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [UnmanagedName("MFVideoLighting")]
@@ -50,30 +48,35 @@ namespace MediaFoundation
         /// Bright lighting; for example, outdoors.
         /// </summary>
         Bright = 1,
+
         /// <summary>
         /// Dark; for example, a movie theater.
         /// </summary>
         Dark = 4,
+
         /// <summary>
         /// Dim; for example, a living room with a television and additional low lighting.
         /// </summary>
         Dim = 3,
+
         /// <summary>
-        /// Reserved. This member forces the enumeration type to compile as a <strong>DWORD</strong> value. 
+        /// Reserved. This member forces the enumeration type to compile as a <strong>DWORD</strong> value.
         /// </summary>
         ForceDWORD = 0x7fffffff,
+
         /// <summary>
         /// Reserved.
         /// </summary>
         Last = 5,
+
         /// <summary>
         /// Medium brightness; for example, normal office lighting.
         /// </summary>
         Office = 2,
+
         /// <summary>
         /// The optimal lighting is unknown.
         /// </summary>
         Unknown = 0
     }
-
 }

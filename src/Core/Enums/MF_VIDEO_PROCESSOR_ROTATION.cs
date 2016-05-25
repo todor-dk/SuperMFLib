@@ -33,7 +33,6 @@ using System.Drawing;
 
 namespace MediaFoundation.Core.Enums
 {
-
 #if ALLOW_UNTESTED_INTERFACES
     /// <summary>
     /// Specifies how to rotate a video image.
