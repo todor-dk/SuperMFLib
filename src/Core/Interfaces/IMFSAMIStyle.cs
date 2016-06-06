@@ -107,7 +107,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetStyles(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pPropVarStyleArray
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFSAMIStyle.GetStyles")] PropVariant pPropVarStyleArray
             );
 
         /// <summary>

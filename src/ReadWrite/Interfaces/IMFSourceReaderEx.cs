@@ -57,7 +57,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
     Guid("7b981cf0-560e-4116-9875-b099895f23d7")]
     internal interface IMFSourceReaderEx : IMFSourceReader
     {
-        #region IMFSourceReader Methods
+    #region IMFSourceReader Methods
 
         /// <summary>
         /// Queries whether a stream is selected.
@@ -438,10 +438,10 @@ namespace MediaFoundation.ReadWrite.Interfaces
         new int GetPresentationAttribute(
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarAttribute
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFSourceReaderEx.GetPresentationAttribute")] PropVariant pvarAttribute
         );
 
-#endregion
+    #endregion
 
         /// <summary>
         /// Sets the native media type for a stream on the media source.

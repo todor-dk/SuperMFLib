@@ -1816,7 +1816,7 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFGetSupportedSchemes(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pPropVarSchemeArray
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "MFExtern.MFGetSupportedSchemes")] PropVariant pPropVarSchemeArray
         );
 
         /// <summary>
@@ -1853,7 +1853,7 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mf.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFGetSupportedMimeTypes(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pPropVarSchemeArray
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "MFExtern.MFGetSupportedMimeTypes")] PropVariant pPropVarSchemeArray
         );
 
         /// <summary>
@@ -1929,7 +1929,7 @@ namespace MediaFoundation.Core
         public static extern int MFCreateSequencerSegmentOffset(
             int dwId,
             long hnsOffset,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarSegmentOffset
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "MFExtern.MFCreateSequencerSegmentOffset")] PropVariant pvarSegmentOffset
         );
 
         /// <summary>

@@ -454,12 +454,17 @@ namespace MediaFoundation
         #region IDisposable Members
 
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
-        public new void Dispose()
+        /// <param name="disposing">
+        /// <c>true</c> to release both managed and unmanaged resources;
+        /// <c>false</c> to release only unmanaged resources.
+        /// </param>
+        protected override void Dispose(bool disposing)
         {
             this.Clear();
-            GC.SuppressFinalize(this);
+            if (disposing)
+                GC.SuppressFinalize(this);
         }
 
         #endregion

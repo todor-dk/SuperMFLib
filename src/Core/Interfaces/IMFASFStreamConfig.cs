@@ -30,7 +30,7 @@ using MediaFoundation.Misc;
 
 namespace MediaFoundation.Core.Interfaces
 {
-    #if NOT_IN_USE
+#if NOT_IN_USE
 
     /// <summary>
     /// Configures the settings of a stream in an ASF file. The ASF stream configuration object exposes
@@ -49,7 +49,7 @@ namespace MediaFoundation.Core.Interfaces
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IMFASFStreamConfig : IMFAttributes
     {
-        #region IMFAttributes methods
+    #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -91,7 +91,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFASFStreamConfig.GetItem")] PropVariant pValue
             );
 
         /// <summary>
@@ -1250,7 +1250,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFASFStreamConfig.GetItemByIndex")] PropVariant pValue
             );
 
         /// <summary>
@@ -1282,7 +1282,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.Interface)] IMFAttributes pDest
             );
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Gets the major media type of the stream. 

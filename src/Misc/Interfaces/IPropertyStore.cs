@@ -134,7 +134,7 @@ namespace MediaFoundation.Misc.Interfaces
         [PreserveSig]
         int GetValue(
             [In, MarshalAs(UnmanagedType.LPStruct)] PropertyKey key,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pv);
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IPropertyStore.GetValue")] PropVariant pv);
 
         /// <summary>
         /// This method sets a property value or replaces or removes an existing value.

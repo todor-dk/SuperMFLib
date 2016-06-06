@@ -98,7 +98,7 @@ namespace MediaFoundation.Core.Interfaces
         int GetNearestKeyFrames(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat,
             [In, MarshalAs(UnmanagedType.LPStruct)] ConstPropVariant pvarStartPosition,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarPreviousKeyFrame,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvarNextKeyFrame);
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFSeekInfo.GetNearestKeyFrames.0")] PropVariant pvarPreviousKeyFrame,
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFSeekInfo.GetNearestKeyFrames.1")] PropVariant pvarNextKeyFrame);
     }
 }

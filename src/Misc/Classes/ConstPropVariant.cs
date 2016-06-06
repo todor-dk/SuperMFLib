@@ -1462,6 +1462,18 @@ namespace MediaFoundation
         /// </summary>
         public void Dispose()
         {
+            this.Dispose(true);
+        }
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="disposing">
+        /// <c>true</c> to release both managed and unmanaged resources;
+        /// <c>false</c> to release only unmanaged resources.
+        /// </param>
+        protected virtual void Dispose(bool disposing)
+        {
             // If we are a ConstPropVariant, we must *not* call PropVariantClear.  That
             // would release the *caller's* copy of the data, which would probably make
             // him cranky.  If we are a PropVariant, the PropVariant.Dispose gets called

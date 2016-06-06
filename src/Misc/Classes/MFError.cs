@@ -1762,7 +1762,8 @@ namespace MediaFoundation.Misc.Classes
             DontResolveDllReferences = 0x00000001,
             LoadLibraryAsDataFile = 0x00000002,
             LoadWithAlteredSearchPath = 0x00000008,
-            LoadIgnoreCodeAuthzLevel = 0x00000010
+            LoadIgnoreCodeAuthzLevel = 0x00000010,
+            LoadLibrarySearchSystem32 = 0x00000800, // search system32 dir
         }
 
         [Flags]

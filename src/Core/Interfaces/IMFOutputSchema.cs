@@ -52,7 +52,7 @@ namespace MediaFoundation.Core.Interfaces
     Guid("7BE0FC5B-ABD9-44FB-A5C8-F50136E71599")]
     internal interface IMFOutputSchema : IMFAttributes
     {
-        #region IMFAttributes methods
+    #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -89,7 +89,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFOutputSchema.GetItem")] PropVariant pValue
             );
 
         /// <summary>
@@ -1104,7 +1104,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFOutputSchema.GetItemByIndex")] PropVariant pValue
             );
 
         /// <summary>
@@ -1133,7 +1133,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.Interface)] IMFAttributes pDest
             );
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Retrieves the output protection system that is represented by this object. Output protection

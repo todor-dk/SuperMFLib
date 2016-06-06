@@ -50,7 +50,7 @@ namespace MediaFoundation.Core.Interfaces
     internal interface IMFMediaEngineEx : IMFMediaEngine
     {
 
-        #region IMFMediaEngine methods
+    #region IMFMediaEngine methods
 
         /// <summary>
         /// Gets the most recent error status.
@@ -1025,7 +1025,7 @@ namespace MediaFoundation.Core.Interfaces
             out long pPts
             );
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Opens a media resource from a byte stream.
@@ -1093,7 +1093,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetStatistics(
             MF_MEDIA_ENGINE_STATISTIC StatisticID,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pStatistic
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFMediaEngineEx.GetStatistics")] PropVariant pStatistic
             );
 
         /// <summary>
@@ -1326,7 +1326,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetPresentationAttribute(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFMediaEngineEx.GetPresentationAttribute")] PropVariant pvValue
             );
 
         /// <summary>
@@ -1397,7 +1397,7 @@ namespace MediaFoundation.Core.Interfaces
         int GetStreamAttribute(
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFMediaEngineEx.GetStreamAttribute")] PropVariant pvValue
             );
 
         /// <summary>

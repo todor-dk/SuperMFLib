@@ -30,7 +30,7 @@ using MediaFoundation.Misc;
 
 namespace MediaFoundation.Core.Interfaces
 {
-    #if NOT_IN_USE
+#if NOT_IN_USE
 
     /// <summary>
     /// Manages an Advanced Systems Format (ASF) profile. A profile is a collection of information that
@@ -53,7 +53,7 @@ namespace MediaFoundation.Core.Interfaces
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IMFASFProfile : IMFAttributes
     {
-        #region IMFAttributes methods
+    #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -95,7 +95,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFASFProfile.GetItem")] PropVariant pValue
             );
 
         /// <summary>
@@ -1254,7 +1254,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFASFProfile.GetItemByIndex")] PropVariant pValue
             );
 
         /// <summary>
@@ -1286,7 +1286,7 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.Interface)] IMFAttributes pDest
             );
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// Retrieves the number of streams in the profile.

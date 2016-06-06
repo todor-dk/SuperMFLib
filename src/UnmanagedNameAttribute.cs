@@ -32,6 +32,7 @@ using System.Security;
 
 using MediaFoundation.Misc;
 using MediaFoundation.Transform;
+using MediaFoundation;
 
 namespace MediaFoundation
 {
@@ -39,7 +40,7 @@ namespace MediaFoundation
     /// Attribute that is used to decorate the types in the Media Foundation Library
     /// to indicate which unmanaged type they represent.
     /// <para/>
-    /// Example: <see cref="WaveFormatEx"/> represents the <c>WAVEFORMATEX</c> native structure.
+    /// Example: <see cref="MFWaveFormatExConvertFlags"/> represents the <c>WAVEFORMATEX</c> native structure.
     /// </summary>
     [AttributeUsage(AttributeTargets.Enum | AttributeTargets.Struct | AttributeTargets.Class)]
     internal class UnmanagedNameAttribute : System.Attribute

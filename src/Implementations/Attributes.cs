@@ -134,7 +134,7 @@ namespace MediaFoundation.Implementations
         public int CompareItem(Guid guidKey, ConstPropVariant value, out bool pbResult)
         {
             COM.VerifyAccess();
-            return this.CompareItem(guidKey, value, out pbResult);
+            return this._Attributes.CompareItem(guidKey, value, out pbResult);
         }
 
         /// <summary>

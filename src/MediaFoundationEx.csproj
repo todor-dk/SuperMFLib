@@ -46,8 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <LangVersion>5</LangVersion>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\x86\Debug\MediaFoundationEx.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
     <CodeAnalysisRuleSet>..\MediaFoundationEx.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>

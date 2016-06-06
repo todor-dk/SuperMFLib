@@ -30,6 +30,7 @@ using System.Runtime.InteropServices.ComTypes;
 using MediaFoundation.Misc;
 using MediaFoundation;
 using System.Drawing;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {

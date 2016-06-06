@@ -147,7 +147,7 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetAllLanguages(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvLanguages);
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFMetadata.GetAllLanguages")] PropVariant ppvLanguages);
 
         /// <summary>
         /// Sets the value of a metadata property.
@@ -222,7 +222,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetProperty(
             [In, MarshalAs(UnmanagedType.LPWStr)] string pwszName,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvValue);
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFMetadata.GetProperty")] PropVariant ppvValue);
 
         /// <summary>
         /// Deletes a metadata property.
@@ -285,6 +285,6 @@ namespace MediaFoundation.Core.Interfaces
         /// </remarks>
         [PreserveSig]
         int GetAllPropertyNames(
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant ppvNames);
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFMetadata.GetAllPropertyNames")] PropVariant ppvNames);
     }
 }

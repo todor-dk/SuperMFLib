@@ -29,6 +29,7 @@ using System.Runtime.InteropServices;
 using MediaFoundation.Misc;
 using System.Drawing;
 using System.ComponentModel;
+using MediaFoundation.Core.Interfaces;
 
 namespace MediaFoundation
 {

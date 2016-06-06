@@ -53,7 +53,7 @@ namespace MediaFoundation.Core.Interfaces
     Obsolete("To get the properties of the audio format, applications should use the media type attributes. If you need to convert the media type into a WAVEFORMATEX structure, call MFCreateWaveFormatExFromMFMediaType")]
     internal interface IMFAudioMediaType : IMFMediaType
     {
-        #region IMFAttributes methods
+    #region IMFAttributes methods
 
         /// <summary>
         /// Retrieves the value associated with a key.
@@ -95,7 +95,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         new int GetItem(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFAudioMediaType.GetItem")] PropVariant pValue
             );
 
         /// <summary>
@@ -1254,7 +1254,7 @@ namespace MediaFoundation.Core.Interfaces
         new int GetItemByIndex(
             int unIndex,
             out Guid pguidKey,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFAudioMediaType.GetItemByIndex")] PropVariant pValue
             );
 
         /// <summary>
@@ -1286,9 +1286,9 @@ namespace MediaFoundation.Core.Interfaces
             [In, MarshalAs(UnmanagedType.Interface)] IMFAttributes pDest
             );
 
-        #endregion
+    #endregion
 
-        #region IMFMediaType methods
+    #region IMFMediaType methods
 
         /// <summary>
         /// Gets the major type of the format. 
@@ -1490,7 +1490,7 @@ namespace MediaFoundation.Core.Interfaces
             [In] IntPtr pvRepresentation
             );
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// [ <strong>GetAudioFormat</strong> is no longer available for use as of Windows 7. Instead, use the

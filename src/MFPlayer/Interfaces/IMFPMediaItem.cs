@@ -279,9 +279,9 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetStartStopPosition(
             out Guid pguidStartPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvStartValue,
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaItem.GetStartStopPosition.a")] PropVariant pvStartValue,
             out Guid pguidStopPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvStopValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaItem.GetStartStopPosition.b")] PropVariant pvStopValue
         );
 
         /// <summary>
@@ -497,7 +497,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetDuration(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvDurationValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaItem.GetDuration")] PropVariant pvDurationValue
         );
 
         /// <summary>
@@ -661,7 +661,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         int GetStreamAttribute(
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaItem.GetStreamAttribute")] PropVariant pvValue
         );
 
         /// <summary>
@@ -701,7 +701,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetPresentationAttribute(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaItem.GetPresentationAttribute")] PropVariant pvValue
         );
 
         /// <summary>

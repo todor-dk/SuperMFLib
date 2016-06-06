@@ -279,7 +279,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetPosition(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvPositionValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaPlayer.GetPosition")] PropVariant pvPositionValue
         );
 
         /// <summary>
@@ -324,7 +324,7 @@ namespace MediaFoundation.MFPlayer.Interfaces
         [PreserveSig]
         int GetDuration(
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType,
-            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler))] PropVariant pvPositionValue
+            [In, Out, MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(PropVariantMarshaler), MarshalCookie = "IMFPMediaPlayer.GetDuration")] PropVariant pvPositionValue
         );
 
         /// <summary>
