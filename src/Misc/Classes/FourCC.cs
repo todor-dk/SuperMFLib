@@ -105,7 +105,7 @@ namespace MediaFoundation.Misc.Classes
         {
             if (!IsA4ccSubtype(g))
             {
-                throw new Exception("Not a FourCC Guid");
+                throw new ArgumentException("Not a FourCC Guid");
             }
 
             byte[] asc;

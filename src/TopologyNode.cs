@@ -390,7 +390,7 @@ namespace MediaFoundation
             int hr = this.Interface.SetOutputPrefType(outputIndex, type.AccessInterface());
             // E_NOTIMPL: This node is an output node.
             if (hr == COM.E_NotImplemented)
-                throw new COMException("This node is an output node.", hr);
+                throw new MediaFoundationException("This node is an output node.", hr);
             COM.ThrowIfNotOK(hr);
         }
 
@@ -416,7 +416,7 @@ namespace MediaFoundation
                 return null;
             // E_NOTIMPL: This node is an output node.
             if (hr == COM.E_NotImplemented)
-                throw new COMException("This node is an output node.", hr);
+                throw new MediaFoundationException("This node is an output node.", hr);
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppType);
             return MediaType.FromUnknown(ref ppType);
         }
@@ -438,7 +438,7 @@ namespace MediaFoundation
         {
             int hr = this.Interface.SetInputPrefType(inputIndex, type.AccessInterface());
             if (hr == COM.E_NotImplemented)
-                throw new COMException("This node is a source node.", hr);
+                throw new MediaFoundationException("This node is a source node.", hr);
             COM.ThrowIfNotOK(hr);
         }
 
@@ -464,7 +464,7 @@ namespace MediaFoundation
                 return null;
             // E_NOTIMPL: This node is a source node.
             if (hr == COM.E_NotImplemented)
-                throw new COMException("This node is a source node.", hr);
+                throw new MediaFoundationException("This node is a source node.", hr);
             COM.ThrowIfNotOKAndReleaseInterface(hr, ref ppType);
             return MediaType.FromUnknown(ref ppType);
         }
@@ -484,7 +484,7 @@ namespace MediaFoundation
             int hr = this.Interface.CloneFrom(node.AccessInterface());
             // MF_E_INVALIDREQUEST: The node types do not match.
             if (hr == MFError.MF_E_INVALIDREQUEST)
-                throw new COMException("The node types do not match.", hr);
+                throw new MediaFoundationException("The node types do not match.", hr);
             COM.ThrowIfNotOK(hr);
         }
     }

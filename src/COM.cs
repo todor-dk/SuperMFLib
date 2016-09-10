@@ -41,7 +41,7 @@ namespace MediaFoundation
         public static void ThrowIfFailed(string message, int hr)
         {
             if (hr < 0)
-                throw new COMException(message, hr);
+                throw new MediaFoundationException(message, hr);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace MediaFoundation
         public static void ThrowIfNotOK(int hr)
         {
             if (hr != COM.S_OK)
-                throw new COMException(MFError.GetErrorText(hr), hr);
+                throw new MediaFoundationException(MFError.GetErrorText(hr), hr);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace MediaFoundation
                     unknown = IntPtr.Zero;
                 }
 
-                throw new COMException(MFError.GetErrorText(hr), hr);
+                throw new MediaFoundationException(MFError.GetErrorText(hr), hr);
             }
         }
 
@@ -171,7 +171,7 @@ namespace MediaFoundation
             {
                 if (value != null)
                     value.Dispose();
-                throw new COMException(MFError.GetErrorText(hr), hr);
+                throw new MediaFoundationException(MFError.GetErrorText(hr), hr);
             }
         }
 
@@ -184,7 +184,7 @@ namespace MediaFoundation
         public static void ThrowIfNotOK(string message, int hr)
         {
             if (hr != COM.S_OK)
-                throw new COMException(message, hr);
+                throw new MediaFoundationException(message, hr);
         }
 
         /// <summary>

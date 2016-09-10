@@ -200,7 +200,7 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int SetAllVolumes(
             [In] int dwCount,
-            [In] float[] pfVolumes);
+            [In, MarshalAs(UnmanagedType.LPArray)] float[] pfVolumes);
 
         /// <summary>
         /// Retrieves the volume levels for all of the channels in the audio stream.
@@ -239,6 +239,6 @@ namespace MediaFoundation.Core.Interfaces
         [PreserveSig]
         int GetAllVolumes(
             [In] int dwCount,
-            [Out] float[] pfVolumes);
+            [Out, MarshalAs(UnmanagedType.LPArray)] float[] pfVolumes);
     }
 }

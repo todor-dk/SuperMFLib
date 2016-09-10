@@ -1895,7 +1895,7 @@ namespace MediaFoundation.Misc.Classes
                 // If a string is returned, build a COM error from it
                 if (s != null)
                 {
-                    throw new COMException(s, hr);
+                    throw new MediaFoundationException(s, hr);
                 }
                 else
                 {

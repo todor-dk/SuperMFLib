@@ -104,16 +104,16 @@ namespace MediaFoundation
             int hr = this.Interface.SetRate(thinned, rate);
             // MF_E_REVERSE_UNSUPPORTED: The object does not support reverse playback.
             if (hr == MFError.MF_E_REVERSE_UNSUPPORTED)
-                throw new COMException("The object does not support reverse playback.", hr);
+                throw new MediaFoundationException("The object does not support reverse playback.", hr);
             // MF_E_THINNING_UNSUPPORTED: The object does not support thinning.
             if (hr == MFError.MF_E_THINNING_UNSUPPORTED)
-                throw new COMException("The object does not support thinning.", hr);
+                throw new MediaFoundationException("The object does not support thinning.", hr);
             // MF_E_UNSUPPORTED_RATE: The object does not support the requested playback rate.
             if (hr == MFError.MF_E_UNSUPPORTED_RATE)
-                throw new COMException("The object does not support the requested playback rate.", hr);
+                throw new MediaFoundationException("The object does not support the requested playback rate.", hr);
             // MF_E_UNSUPPORTED_RATE_TRANSITION: The object cannot change to the new rate while in the running state.
             if (hr == MFError.MF_E_UNSUPPORTED_RATE_TRANSITION)
-                throw new COMException("The object cannot change to the new rate while in the running state.", hr);
+                throw new MediaFoundationException("The object cannot change to the new rate while in the running state.", hr);
             COM.ThrowIfNotOK(hr);
         }
 

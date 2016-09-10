@@ -153,7 +153,7 @@ namespace MediaFoundation
                 int hr = this.Interface.GetProperty(name, value);
                 // MF_E_PROPERTY_NOT_FOUND: The requested property was not found.
                 if (hr == MFError.MF_E_PROPERTY_NOT_FOUND)
-                    throw new COMException("The requested property was not found.", hr);
+                    throw new MediaFoundationException("The requested property was not found.", hr);
                 COM.ThrowIfNotOK(hr);
                 return value.GetValue();
             }

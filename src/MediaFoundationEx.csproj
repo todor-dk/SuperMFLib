@@ -325,6 +325,7 @@
     <Compile Include="MediaBuffer.cs" />
     <Compile Include="MediaEvent.cs" />
     <Compile Include="MediaEventGenerator.cs" />
+    <Compile Include="MediaFoundationException.cs" />
     <Compile Include="MediaSession.cs" />
     <Compile Include="MediaSource.cs" />
     <Compile Include="MediaStream.cs" />

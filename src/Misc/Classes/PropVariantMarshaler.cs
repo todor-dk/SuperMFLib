@@ -335,7 +335,7 @@ namespace MediaFoundation.Misc.Classes
             if (managedObj == null)
                 return IntPtr.Zero;
             if (!(managedObj is PropVariant))
-                throw new AggregateException("PropVariantMarshaler may only be used to marshal PropVariant objects.");
+                throw new ArgumentException("PropVariantMarshaler may only be used to marshal PropVariant objects.");
 
             if (!(managedObj is CallInPropVariant))
             {
