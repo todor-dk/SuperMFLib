@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MediaFoundation.Core;
 
 namespace MediaFoundation
 {
@@ -360,6 +361,14 @@ namespace MediaFoundation
         public int CompareTo(Time other)
         {
             return this.Value.CompareTo(other.Value);
+        }
+
+        /// <summary>
+        /// Returns the system time.
+        /// </summary>
+        public static Time SystemTime
+        {
+            get { return new Time(MFExtern.MFGetSystemTime()); }
         }
     }
 }

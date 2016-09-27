@@ -49,7 +49,7 @@ namespace MediaFoundation
         /// Pointer to the MediaSession's IUnknown interface.
         /// <para/>
         /// Ownership of the IUnknown interface pointer is passed to the new object.
-        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be considered void.
         /// </param>
         /// <returns>
         /// A new <see cref="MediaSession"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.

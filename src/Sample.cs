@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using MediaFoundation.Internals;
 using MediaFoundation.Core.Interfaces;
+using System.Diagnostics;
+using MediaFoundation.Core;
 
 namespace MediaFoundation
 {
@@ -47,7 +49,7 @@ namespace MediaFoundation
         /// Pointer to the Sample's IUnknown interface.
         /// <para/>
         /// Ownership of the IUnknown interface pointer is passed to the new object.
-        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be considered void.
         /// </param>
         /// <returns>
         /// A new <see cref="Sample"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
@@ -62,6 +64,19 @@ namespace MediaFoundation
         }
 
         #endregion
+
+        /// <summary>
+        /// Creates an empty media sample.
+        /// </summary>
+        /// <returns>The media sample. The caller must release the interface.</returns>
+        public static Sample Create()
+        {
+            IntPtr sample = IntPtr.Zero;
+            int hr = MFExtern.MFCreateSample(out sample);
+            COM.ThrowIfNotOKAndReleaseInterface(hr, ref sample);
+            Debug.Assert(sample != IntPtr.Zero);
+            return Sample.FromUnknown(ref sample);
+        }
 
         /// <summary>
         /// Gets or sets the presentation time of the sample.

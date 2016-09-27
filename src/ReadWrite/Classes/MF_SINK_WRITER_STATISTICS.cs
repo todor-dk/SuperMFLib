@@ -36,9 +36,6 @@ using MediaFoundation.Transform;
 
 namespace MediaFoundation.ReadWrite.Classes
 {
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Contains statistics about the performance of the sink writer.
     /// </summary>
@@ -64,95 +61,112 @@ namespace MediaFoundation.ReadWrite.Classes
     /// } MF_SINK_WRITER_STATISTICS;
     /// </code>
     /// <para/>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/FF083AE1-9A53-4215-9738-D1776F8D7F9B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/FF083AE1-9A53-4215-9738-D1776F8D7F9B(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
-    [StructLayout(LayoutKind.Sequential), UnmanagedName("MF_SINK_WRITER_STATISTICS")]
-    internal class  MF_SINK_WRITER_STATISTICS
+    [StructLayout(LayoutKind.Sequential)]
+    [UnmanagedName("MF_SINK_WRITER_STATISTICS")]
+    public class MF_SINK_WRITER_STATISTICS
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MF_SINK_WRITER_STATISTICS"/> class.
+        /// </summary>
+        public MF_SINK_WRITER_STATISTICS()
+        {
+            this.Size = Marshal.SizeOf(this);
+        }
+
         /// <summary>
         /// The size of the structure, in bytes.
         /// </summary>
-        int cb;
+        public int Size;
 
         /// <summary>
         /// The time stamp of the most recent sample given to the sink writer. The sink writer updates this
-        /// value each time the application calls <see cref="ReadWrite.IMFSinkWriter.WriteSample"/>. 
+        /// value each time the application calls <see cref="ReadWrite.IMFSinkWriter.WriteSample"/>.
         /// </summary>
-        long llLastTimestampReceived;
+        public long LastTimestampReceived;
+
         /// <summary>
         /// The time stamp of the most recent sample to be encoded. The sink writer updates this value whenever
-        /// it calls <see cref="Transform.IMFTransform.ProcessOutput"/> on the encoder. 
+        /// it calls <see cref="Transform.IMFTransform.ProcessOutput"/> on the encoder.
         /// </summary>
-        long llLastTimestampEncoded;
+        public long LastTimestampEncoded;
+
         /// <summary>
         /// The time stamp of the most recent sample given to the media sink. The sink writer updates this
-        /// value whenever it calls <see cref="IMFStreamSink.ProcessSample"/> on the media sink. 
+        /// value whenever it calls <see cref="IMFStreamSink.ProcessSample"/> on the media sink.
         /// </summary>
-        long llLastTimestampProcessed;
+        public long LastTimestampProcessed;
+
         /// <summary>
         /// The time stamp of the most recent stream tick. The sink writer updates this value whenever the
-        /// application calls <see cref="ReadWrite.IMFSinkWriter.SendStreamTick"/>. 
+        /// application calls <see cref="ReadWrite.IMFSinkWriter.SendStreamTick"/>.
         /// </summary>
-        long llLastStreamTickReceived;
+        public long LastStreamTickReceived;
+
         /// <summary>
         /// The system time of the most recent sample request from the media sink. The sink writer updates this
         /// value whenever it receives an <c>MEStreamSinkRequestSample</c> event from the media sink. The value
-        /// is the current system time. 
+        /// is the current system time.
         /// </summary>
-        long llLastSinkSampleRequest;
+        public long LastSinkSampleRequest;
 
         /// <summary>
         /// The number of samples received.
         /// </summary>
-        long qwNumSamplesReceived;
+        public long NumSamplesReceived;
+
         /// <summary>
         /// The number of samples encoded.
         /// </summary>
-        long qwNumSamplesEncoded;
+        public long NumSamplesEncoded;
+
         /// <summary>
         /// The number of samples given to the media sink.
         /// </summary>
-        long qwNumSamplesProcessed;
+        public long NumSamplesProcessed;
+
         /// <summary>
         /// The number of stream ticks received.
         /// </summary>
-        long qwNumStreamTicksReceived;
+        public long NumStreamTicksReceived;
 
         /// <summary>
-        /// The amount of data, in bytes, currently waiting to be processed. 
+        /// The amount of data, in bytes, currently waiting to be processed.
         /// </summary>
-        int dwByteCountQueued;
+        public int ByteCountQueued;
+
         /// <summary>
         /// The total amount of data, in bytes, that has been sent to the media sink.
         /// </summary>
-        long qwByteCountProcessed;
+        public long ByteCountProcessed;
 
         /// <summary>
         /// The number of pending sample requests.
         /// </summary>
-        int dwNumOutstandingSinkSampleRequests;
+        public int NumOutstandingSinkSampleRequests;
 
         /// <summary>
         /// The average rate, in media samples per 100-nanoseconds, at which the application sent samples to
         /// the sink writer.
         /// </summary>
-        int dwAverageSampleRateReceived;
+        public int AverageSampleRateReceived;
+
         /// <summary>
         /// The average rate, in media samples per 100-nanoseconds, at which the sink writer sent samples to
         /// the encoder.
         /// </summary>
-        int dwAverageSampleRateEncoded;
+        public int AverageSampleRateEncoded;
+
         /// <summary>
         /// The average rate, in media samples per 100-nanoseconds, at which the sink writer sent samples to
         /// the media sink.
         /// </summary>
-        int dwAverageSampleRateProcessed;
+        public int AverageSampleRateProcessed;
     }
-
-#endif
 
 }

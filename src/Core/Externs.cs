@@ -716,6 +716,8 @@ namespace MediaFoundation.Core
             out IMFMediaEvent ppEvent
         );
 
+#endif
+
         /// <summary>
         /// Creates an empty media sample.
         /// </summary>
@@ -747,9 +749,9 @@ namespace MediaFoundation.Core
         /// </remarks>
         [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateSample(
-            out IMFSample ppIMFSample
+            /* out IMFSample */ out IntPtr ppIMFSample
         );
-
+        
         /// <summary>
         /// Allocates system memory and creates a media buffer to manage it.
         /// </summary>
@@ -787,10 +789,8 @@ namespace MediaFoundation.Core
         [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern int MFCreateMemoryBuffer(
             int cbMaxLength,
-            out IMFMediaBuffer ppBuffer
+            /* out IMFMediaBuffer */ out IntPtr ppBuffer
         );
-
-#endif
 
         /// <summary>
         /// Queries an object for a specified service interface.
@@ -1703,6 +1703,8 @@ namespace MediaFoundation.Core
         public static extern int MFCancelCreateFile(
             [In] [MarshalAs(UnmanagedType.IUnknown)] object pCancelCookie);
 
+#endif 
+
         /// <summary>
         /// Allocates system memory with a specified byte alignment and creates a media buffer to manage the
         /// memory. 
@@ -1759,7 +1761,7 @@ namespace MediaFoundation.Core
         public static extern int MFCreateAlignedMemoryBuffer(
             [In] int cbMaxLength,
             [In] int cbAligment,
-            out IMFMediaBuffer ppBuffer);
+            /* out IMFMediaBuffer */ out IntPtr ppBuffer);
 
         /// <summary>
         /// Returns the system time. 
@@ -1781,6 +1783,8 @@ namespace MediaFoundation.Core
         [DllImport("mfplat.dll", ExactSpelling = true), SuppressUnmanagedCodeSecurity]
         public static extern long MFGetSystemTime(
             );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Retrieves the URL schemes that are registered for the source resolver.
@@ -1970,6 +1974,8 @@ namespace MediaFoundation.Core
             [MarshalAs(UnmanagedType.IUnknown)] out object ppVideoRenderer
             );
 
+#endif
+
         /// <summary>
         /// Creates a media buffer that wraps an existing media buffer. The new media buffer points to the same
         /// memory as the original media buffer, or to an offset from the start of the memory.
@@ -2020,7 +2026,7 @@ namespace MediaFoundation.Core
             [In] IMFMediaBuffer pBuffer,
             [In] int cbOffset,
             [In] int dwLength,
-            out IMFMediaBuffer ppBuffer);
+            /* out IMFMediaBuffer */ out IntPtr ppBuffer);
 
         /// <summary>
         /// Converts a Media Foundation media buffer into a buffer that is compatible with DirectX Media
@@ -2076,7 +2082,9 @@ namespace MediaFoundation.Core
             [In] IMFSample pSample,
             [In] IMFMediaBuffer pMFMediaBuffer,
             [In] int cbOffset,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppMediaBuffer);
+            /* [MarshalAs(UnmanagedType.IUnknown)] out object */ out IntPtr ppMediaBuffer);
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Initializes the contents of an attribute store from a byte array.
@@ -3351,9 +3359,7 @@ namespace MediaFoundation.Core
             out IMFMediaType ppOrig
             );
 #endif
-
-        #region Tested
-
+        
         // While these methods are tested, the interfaces they use are not
 
         /// <summary>
@@ -3499,11 +3505,9 @@ namespace MediaFoundation.Core
         public static extern int MFCreateASFMultiplexer(
             out IMFASFMultiplexer ppIMultiplexer);
 #endif
-        #endregion
+
 #if ALLOW_UNTESTED_INTERFACES
-
-        #region Work Queue
-
+        
         /// <summary>
         /// Puts an asynchronous operation on a work queue. 
         /// </summary>
@@ -4055,11 +4059,7 @@ namespace MediaFoundation.Core
         public static extern int MFGetWorkQueueMMCSSTaskId(
             int dwWorkQueueId,
             out int pdwTaskId);
-
-        #endregion
-
-        #region Check dllimport
-
+        
         /// <summary>
         /// Creates an instance of the AC-3 media sink.
         /// </summary>
@@ -5430,6 +5430,8 @@ namespace MediaFoundation.Core
             [MarshalAs(UnmanagedType.Interface)] out object ppvObject
         );
 
+#endif
+
         /// <summary>
         /// Creates a system-memory buffer object to hold 2D image data.
         /// </summary>
@@ -5536,8 +5538,10 @@ namespace MediaFoundation.Core
             long llDuration,
             int dwMinLength,
             int dwMinAlignment,
-            out IMFMediaBuffer ppBuffer
+            /* out IMFMediaBuffer */ out IntPtr ppBuffer
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Gets the class identifier for a content protection system.
@@ -5571,9 +5575,7 @@ namespace MediaFoundation.Core
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidProtectionSystemID,
             out Guid pclsid
         );
-
-        #endregion
-
+        
         /// <summary>
         /// Creates an instance of the capture engine.
         /// </summary>
@@ -5602,6 +5604,8 @@ namespace MediaFoundation.Core
         public static extern int MFCreateCaptureEngine(
             out IMFCaptureEngine ppCaptureEngine
         );
+
+#endif
 
         /// <summary>
         /// Creates the sink writer from a URL or byte stream.
@@ -5657,8 +5661,10 @@ namespace MediaFoundation.Core
             [In, MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL,
             IMFByteStream pByteStream,
             IMFAttributes pAttributes,
-            out IMFSinkWriter ppSinkWriter
+            /* out IMFSinkWriter */ out IntPtr ppSinkWriter
         );
+
+#if NOT_IN_USE
 
         /// <summary>
         /// Creates the sink writer from a media sink.
@@ -8903,9 +8909,7 @@ namespace MediaFoundation.Core
             [In] int size,
             out IntPtr id
         );
-
-        #region Untestable
-
+        
         /// <summary>
         /// [This API is not supported and may be altered or unavailable in the future.]
         /// <para/>
@@ -9181,7 +9185,6 @@ namespace MediaFoundation.Core
             out IMFVideoMediaType ppIVideoMediaType
             );
 
-        #endregion
 #endif
     }
 }

@@ -44,7 +44,7 @@ namespace MediaFoundation
         /// Pointer to the MediaType's IUnknown interface.
         /// <para/>
         /// Ownership of the IUnknown interface pointer is passed to the new object.
-        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be considered void.
         /// </param>
         /// <returns>
         /// A new <see cref="MediaType"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
@@ -91,6 +91,10 @@ namespace MediaFoundation
                 int hr = this.Interface.GetMajorType(out type);
                 COM.ThrowIfNotOK(hr);
                 return new MFMediaType.MajorType(type);
+            }
+            set
+            {
+                this.SetGuid(MFAttribute.MediaType.MF_MT_MAJOR_TYPE, value?.Value ?? Guid.Empty);
             }
         }
 
@@ -186,6 +190,10 @@ namespace MediaFoundation
             get
             {
                 return new MFMediaType.SubType(this.GetGuid(MFAttribute.MediaType.MF_MT_SUBTYPE));
+            }
+            set
+            {
+                this.SetGuid(MFAttribute.MediaType.MF_MT_SUBTYPE, value?.Value ?? Guid.Empty);
             }
         }
 

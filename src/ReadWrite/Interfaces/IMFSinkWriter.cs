@@ -33,26 +33,25 @@ using System.Drawing;
 
 using MediaFoundation.EVR;
 using MediaFoundation.Transform;
+using MediaFoundation.Core.Interfaces;
+using MediaFoundation.ReadWrite.Classes;
 
 namespace MediaFoundation.ReadWrite.Interfaces
 {
-#if ALLOW_UNTESTED_INTERFACES
-
-
     /// <summary>
     /// Implemented by the Microsoft Media Foundation sink writer object.
     /// </summary>
     /// <remarks>
-    /// The above documentation is © Microsoft Corporation. It is reproduced here 
+    /// The above documentation is © Microsoft Corporation. It is reproduced here
     /// with the sole purpose to increase usability and add IntelliSense support.
     /// <para/>
-    /// View the original documentation topic online: 
+    /// View the original documentation topic online:
     /// <a href="http://msdn.microsoft.com/en-US/library/76FB915E-1586-429A-88A5-BD1290799352(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/76FB915E-1586-429A-88A5-BD1290799352(v=VS.85,d=hv.2).aspx</a>
     /// </remarks>
     [ComImport, System.Security.SuppressUnmanagedCodeSecurity,
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     Guid("3137f1cd-fe5e-4805-a5d8-fb477448cb3d")]
-    internal interface IMFSinkWriter
+    public interface IMFSinkWriter
     {
         /// <summary>
         /// Adds a stream to the sink writer.
@@ -60,14 +59,14 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// <param name="pTargetMediaType">
         /// A pointer to the <see cref="IMFMediaType"/> interface of a media type. This media type specifies
         /// the format of the samples that will be written to the file. It does not need to match the input
-        /// format. To set the input format, call <see cref="ReadWrite.IMFSinkWriter.SetInputMediaType"/>. 
+        /// format. To set the input format, call <see cref="ReadWrite.IMFSinkWriter.SetInputMediaType"/>.
         /// </param>
         /// <param name="pdwStreamIndex">
         /// Receives the zero-based index of the new stream.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -77,36 +76,35 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/9F9B1216-E915-4188-BCFD-6C41E1821EC4(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/9F9B1216-E915-4188-BCFD-6C41E1821EC4(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int AddStream(
             IMFMediaType pTargetMediaType,
-            out int pdwStreamIndex
-        );
+            out int pdwStreamIndex);
 
         /// <summary>
         /// Sets the input format for a stream on the sink writer.
         /// </summary>
         /// <param name="dwStreamIndex">
         /// The zero-based index of the stream. The index is received by the <em>pdwStreamIndex</em> parameter
-        /// of the <see cref="ReadWrite.IMFSinkWriter.AddStream"/> method. 
+        /// of the <see cref="ReadWrite.IMFSinkWriter.AddStream"/> method.
         /// </param>
         /// <param name="pInputMediaType">
         /// A pointer to the <see cref="IMFMediaType"/> interface of a media type. The media type specifies the
-        /// input format. 
+        /// input format.
         /// </param>
         /// <param name="pEncodingParameters">
         /// A pointer to the <see cref="IMFAttributes"/> interface of an attribute store. Use the attribute
-        /// store to configure the encoder. This parameter can be <strong>NULL</strong>. 
+        /// store to configure the encoder. This parameter can be <strong>NULL</strong>.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -125,25 +123,24 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/02A73F73-3B25-4578-9A7E-C9F8A4C8CD99(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/02A73F73-3B25-4578-9A7E-C9F8A4C8CD99(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int SetInputMediaType(
             int dwStreamIndex,
             IMFMediaType pInputMediaType,
-            IMFAttributes pEncodingParameters
-        );
+            IMFAttributes pEncodingParameters);
 
         /// <summary>
         /// Initializes the sink writer for writing.
         /// </summary>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -156,10 +153,10 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// HRESULT BeginWriting();
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/32252658-662E-4D2F-A5FE-34F24CE60094(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/32252658-662E-4D2F-A5FE-34F24CE60094(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -172,11 +169,11 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// The zero-based index of the stream for this sample.
         /// </param>
         /// <param name="pSample">
-        /// A pointer to the <see cref="IMFSample"/> interface of the sample. 
+        /// A pointer to the <see cref="IMFSample"/> interface of the sample.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -192,17 +189,16 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/1C65A5D0-CC1B-456E-9D88-A24DA57EE30A(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/1C65A5D0-CC1B-456E-9D88-A24DA57EE30A(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int WriteSample(
             int dwStreamIndex,
-            IMFSample pSample
-        );
+            IMFSample pSample);
 
         /// <summary>
         /// Indicates a gap in an input stream.
@@ -216,7 +212,7 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -226,17 +222,16 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/3B4B76B7-1A39-4323-94E7-0B2D159A8038(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/3B4B76B7-1A39-4323-94E7-0B2D159A8038(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int SendStreamTick(
             int dwStreamIndex,
-            long llTimestamp
-        );
+            long llTimestamp);
 
         /// <summary>
         /// Places a marker in the specified stream.
@@ -246,14 +241,14 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// </param>
         /// <param name="pvContext">
         /// Pointer to an application-defined value. The value of this parameter is returned to the caller in
-        /// the <em>pvContext</em> parameter of the caller's 
+        /// the <em>pvContext</em> parameter of the caller's
         /// <see cref="ReadWrite.IMFSinkWriterCallback.OnMarker"/> callback method. The application is
         /// responsible for any memory allocation associated with this data. This parameter can be <strong>NULL
-        /// </strong>. 
+        /// </strong>.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -269,28 +264,27 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/93140993-A926-437E-BC40-9B011C4C6832(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/93140993-A926-437E-BC40-9B011C4C6832(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int PlaceMarker(
             int dwStreamIndex,
-            IntPtr pvContext
-        );
+            IntPtr pvContext);
 
         /// <summary>
         /// Notifies the media sink that a stream has reached the end of a segment.
         /// </summary>
         /// <param name="dwStreamIndex">
         /// The zero-based index of a stream, or <strong>MF_SINK_WRITER_ALL_STREAMS</strong> to signal that all
-        /// streams have reached the end of a segment. 
+        /// streams have reached the end of a segment.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -305,27 +299,26 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/CB5B76B4-FF08-4CAC-BD30-D4F3B57ACB78(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/CB5B76B4-FF08-4CAC-BD30-D4F3B57ACB78(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int NotifyEndOfSegment(
-            int dwStreamIndex
-        );
+            int dwStreamIndex);
 
         /// <summary>
         /// Flushes one or more streams.
         /// </summary>
         /// <param name="dwStreamIndex">
         /// The zero-based index of the stream to flush, or <strong>MF_SINK_WRITER_ALL_STREAMS</strong> to
-        /// flush all of the streams. 
+        /// flush all of the streams.
         /// </param>
         /// <returns>
         /// The method returns an <strong>HRESULT</strong>. Possible values include, but are not limited to,
-        /// those in the following table. 
+        /// those in the following table.
         /// <para/>
         /// <list type="table">
         /// <listheader><term>Return code</term><description>Description</description></listheader>
@@ -340,16 +333,15 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/997235CB-6CA5-434C-81A6-7A294E0CCCCA(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/997235CB-6CA5-434C-81A6-7A294E0CCCCA(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int Flush(
-            int dwStreamIndex
-        );
+            int dwStreamIndex);
 
         /// <summary>
         /// Finalize_s.
@@ -363,23 +355,23 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// </summary>
         /// <param name="dwStreamIndex">
         /// The zero-based index of a stream to query, or <strong>MF_SINK_WRITER_MEDIASINK</strong> to query
-        /// the media sink itself. 
+        /// the media sink itself.
         /// </param>
         /// <param name="guidService">
         /// A service identifier GUID, or <strong>GUID_NULL</strong>. If the value is <strong>GUID_NULL
         /// </strong>, the method calls <strong>QueryInterface</strong> to get the requested interface.
         /// Otherwise, the method calls <see cref="IMFGetService.GetService"/>. For a list of service
-        /// identifiers, see <c>Service Interfaces</c>. 
+        /// identifiers, see <c>Service Interfaces</c>.
         /// </param>
         /// <param name="riid">
-        /// The interface identifier (IID) of the interface being requested. 
+        /// The interface identifier (IID) of the interface being requested.
         /// </param>
         /// <param name="ppvObject">
         /// Receives a pointer to the requested interface. The caller must release the interface.
         /// </param>
         /// <returns>
         /// If this method succeeds, it returns <strong>S_OK</strong>. Otherwise, it returns an <strong>HRESULT
-        /// </strong> error code. 
+        /// </strong> error code.
         /// </returns>
         /// <remarks>
         /// <code language="cpp" title="C/C++ Syntax">
@@ -391,10 +383,10 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/166F8F71-E52D-43B1-9137-E4BF79BF5421(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/166F8F71-E52D-43B1-9137-E4BF79BF5421(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
@@ -402,20 +394,19 @@ namespace MediaFoundation.ReadWrite.Interfaces
             int dwStreamIndex,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidService,
             [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid,
-            [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject
-        );
+            out IntPtr ppvObject);
 
         /// <summary>
         /// Gets statistics about the performance of the sink writer.
         /// </summary>
         /// <param name="dwStreamIndex">
         /// The zero-based index of a stream to query, or <strong>MF_SINK_WRITER_ALL_STREAMS </strong> to query
-        /// the media sink itself. 
+        /// the media sink itself.
         /// </param>
         /// <param name="pStats">
         /// A pointer to an <see cref="ReadWrite.MF_SINK_WRITER_STATISTICS"/> structure. Before calling the
         /// method, set the <strong>cb</strong> member to the size of the structure in bytes. The method fills
-        /// the structure with statistics from the sink writer. 
+        /// the structure with statistics from the sink writer.
         /// </param>
         /// <returns>
         /// This method can return one of these values.
@@ -434,19 +425,16 @@ namespace MediaFoundation.ReadWrite.Interfaces
         /// );
         /// </code>
         /// <para/>
-        /// The above documentation is © Microsoft Corporation. It is reproduced here 
+        /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
         /// <para/>
-        /// View the original documentation topic online: 
+        /// View the original documentation topic online:
         /// <a href="http://msdn.microsoft.com/en-US/library/84028B1D-3843-4289-A04C-3039311D095B(v=VS.85,d=hv.2).aspx">http://msdn.microsoft.com/en-US/library/84028B1D-3843-4289-A04C-3039311D095B(v=VS.85,d=hv.2).aspx</a>
         /// </remarks>
         [PreserveSig]
         int GetStatistics(
             int dwStreamIndex,
-            out MF_SINK_WRITER_STATISTICS pStats
-        );
+            [Out] MF_SINK_WRITER_STATISTICS pStats);
     }
-
-#endif
 
 }

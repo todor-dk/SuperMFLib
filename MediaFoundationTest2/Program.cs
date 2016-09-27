@@ -6,7 +6,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using MediaFoundation;
+using MediaFoundation.Core.Classes;
 using MediaFoundation.ReadWrite;
+using MediaFoundation.ReadWrite.Classes;
 
 namespace MediaFoundationTest
 {
@@ -18,14 +20,122 @@ namespace MediaFoundationTest
         {
             MultimediaFramework = Framework.Startup(MFStartup.NoSocket); // We'll never dispose this as long as the process is running
 
-            var d = GetDurationStreamReader(@"c:\temp\emirates2.mp4");
+            using (Attributes attribs = Attributes.Create(1))
+            {
+                attribs.SetGuid(MFAttribute.SinkWriter.MF_TRANSCODE_CONTAINERTYPE, MFTranscodeContainerType.MPEG4);
 
-            string[] files = Directory.GetFiles(@"C:\Temp\Server\DirectShow");
+                using (SinkWriter sink = SinkWriter.CreateFromURL(@"c:\temp\test.mov", attribs))
+                {
+                    int stream;
 
-            files.AsParallel().ForAll(file => GetDurationStreamReader(file));
+                    // Set the output media type.
+                    using (MediaType outputType = MediaType.Create())
+                    {
+                        outputType.MajorType = MFMediaType.MajorType.Video;
+                        outputType.Subtype = MFMediaType.SubType.Video.H264;
+                        outputType.SetInt32(MFAttribute.MediaTypes.Video.MF_MT_INTERLACE_MODE, (int)MFVideoInterlaceMode.Progressive);
+                        outputType.SetUpperLowerInt32(MFAttribute.MediaTypes.Video.MF_MT_FRAME_SIZE, new Int32Int32(640, 480));
+                        outputType.SetUpperLowerInt32(MFAttribute.MediaTypes.Video.MF_MT_FRAME_RATE, new Int32Int32(25, 1));
+                        outputType.SetUpperLowerInt32(MFAttribute.MediaTypes.Video.MF_MT_PIXEL_ASPECT_RATIO, new Int32Int32(1, 1));
+                        outputType.SetInt32(MFAttribute.MediaTypes.Video.MF_MT_AVG_BITRATE, 500000);
+                        stream = sink.AddStream(outputType);
+                    }
+
+                    // Set the output media type.
+                    using (MediaType inputType = MediaType.Create())
+                    {
+                        inputType.MajorType = MFMediaType.MajorType.Video;
+                        inputType.Subtype = MFMediaType.SubType.Video.RGB32;
+                        inputType.SetInt32(MFAttribute.MediaTypes.Video.MF_MT_INTERLACE_MODE, (int)MFVideoInterlaceMode.Progressive);
+                        inputType.SetUpperLowerInt32(MFAttribute.MediaTypes.Video.MF_MT_FRAME_SIZE, new Int32Int32(640, 480));
+                        inputType.SetUpperLowerInt32(MFAttribute.MediaTypes.Video.MF_MT_FRAME_RATE, new Int32Int32(25, 1));
+                        inputType.SetUpperLowerInt32(MFAttribute.MediaTypes.Video.MF_MT_PIXEL_ASPECT_RATIO, new Int32Int32(1, 1));
+                        sink.SetInputMediaType(stream, inputType);
+                    }
+
+                    MF_SINK_WRITER_STATISTICS stats;
+                    //stats = sink.GetStatistics();
+                    //stats = sink.GetStatistics(stream);
+
+                    // Tell the sink writer to start accepting data.
+                    sink.BeginWriting();
+
+                    stats = sink.GetStatistics();
+                    stats = sink.GetStatistics(stream);
+
+                    // Send frames to the sink writer.
+                    Time time = Time.Zero;
+                    for (int i = 0; i < 250; i++)
+                    {
+                        if (i == 100)
+                        {
+                            stats = sink.GetStatistics();
+                            stats = sink.GetStatistics(stream);
+                            time = time + (Time.OneSecondValue / 25);
+                        }
+                        WriteFrame(sink, stream, time);
+                    }
+
+                    sink.Finalize();
+
+                    stats = sink.GetStatistics();
+                    stats = sink.GetStatistics(stream);
+                }
+            }
 
             System.Diagnostics.Debug.WriteLine("OK!");
         }
+
+        private static void WriteFrame(SinkWriter sink, int stream, Time time)
+        {
+            // Create a new memory buffer.
+            int bufferSize = 640 * 480 * 4;
+            using (MediaBuffer buffer = MediaBuffer.CreateMemoryBuffer(bufferSize))
+            {
+                // Lock the buffer and copy the video frame to the buffer.
+                IntPtr data = buffer.Lock();
+                try
+                {
+                    for (int i = 0; i < bufferSize; i = i + 4)
+                    {
+                        Marshal.WriteInt32(data, i, 0x0000FF00); // Fill green
+                    }
+                }
+                finally
+                {
+                    buffer.Unlock();
+                }
+
+                // Set the data length of the buffer.
+                buffer.CurrentLength = bufferSize;
+
+                // Create a media sample and add the buffer to the sample.
+                using (Sample sample = Sample.Create())
+                {
+                    sample.AddBuffer(buffer);
+
+                    // Set the time stamp and the duration.
+                    sample.SampleTime = time;
+                    sample.SampleDuration = (Time.OneSecond / 25);
+
+                    // Send the sample to the Sink Writer.
+                    sink.WriteSample(stream, sample);
+                }
+            }
+        }
+
+        //static void Main(string[] args)
+        //{
+        //    MultimediaFramework = Framework.Startup(MFStartup.NoSocket); // We'll never dispose this as long as the process is running
+
+        //    var d = GetDurationStreamReader(@"c:\temp\emirates2.mp4");
+
+        //    string[] files = Directory.GetFiles(@"C:\Temp\Server\DirectShow");
+
+        //    files.AsParallel().ForAll(file => GetDurationStreamReader(file));
+
+        //    System.Diagnostics.Debug.WriteLine("OK!");
+        //}
 
         private static Time? GetDuration(string path)
         {

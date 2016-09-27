@@ -1,1 +1,1 @@
-..\packages\NuGet.CommandLine.3.4.3\tools\nuget pack MediaFoundationEx.csproj -IncludeReferencedProjects
+..\packages\NuGet.CommandLine.3.4.3\tools\nuget pack MediaFoundationEx.csproj -IncludeReferencedProjects -Prop Platform=AnyCPU

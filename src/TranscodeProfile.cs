@@ -51,7 +51,7 @@ namespace MediaFoundation
         /// Pointer to the TranscodeProfile's IUnknown interface.
         /// <para/>
         /// Ownership of the IUnknown interface pointer is passed to the new object.
-        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be concidered void.
+        /// On return <paramref name="unknown"/> is set to NULL. The pointer should be considered void.
         /// </param>
         /// <returns>
         /// A new <see cref="TranscodeProfile"/> or <strong>null</strong> if <paramref name="unknown"/> is NULL.
@@ -219,6 +219,7 @@ namespace MediaFoundation
         /// </param>
         /// <returns>
         /// The transcode topology object. The caller must release the interface.
+        /// </returns>
         /// <remarks>
         /// The above documentation is © Microsoft Corporation. It is reproduced here
         /// with the sole purpose to increase usability and add IntelliSense support.
